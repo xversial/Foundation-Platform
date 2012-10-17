@@ -6,12 +6,15 @@
 
 @section('content')
 <section id="extensions">
+
     <header class="row-fluid">
-        <div class="span6">
+        <div class="span4">
             <h1>{{ Lang::line('extensions::general.title')->get() }}</h1>
             <p>{{ Lang::line('extensions::general.description.view', array('extension' => array_get($extension, 'info.name')))->get() }}</p>
         </div>
-        <nav class="actions span6 pull-right"></nav>
+        <nav class="tertiary-navigation span8">
+			@widget('platform.menus::menus.nav', 2, 1, 'nav nav-pills pull-right', ADMIN)
+		</nav>
     </header>
 
     <hr>
