@@ -1,23 +1,37 @@
-<form action="{{ URL::to_secure(ADMIN.'/settings') }}" id="general-form" class="form-horizontal" method="POST" accept-char="UTF-8">
+<form action="{{ URL::to_admin('settings') }}" id="general-form" class="" method="POST" accept-char="UTF-8">
     <input type="hidden" name="{{ Session::csrf_token }}" value="{{ Session::token() }}">
 
     <input type="hidden" name="extension" value="themes" />
 
     <fieldset>
-        <div>
-            <label for="theme-frontend">{{ Lang::line('themes::form.settings.fields.frontend') }}</label>
-            {{ Form::select('theme:frontend', $frontend_themes, array_get($settings, 'theme.frontend'), array('id' => 'theme-frontend')) }}
-            <span class="help"></span>
-        </div>
 
-        <div>
-            <label for="theme-backend">{{ Lang::line('themes::form.settings.fields.backend') }}</label>
-            {{ Form::select('theme:backend', $backend_themes, array_get($settings, 'theme.backend'), array('id' => 'theme-backend')) }}
-            <span class="help"></span>
-        </div>
+		<legend>Theme Select</legend>
+
+		<!-- Frontend Theme -->
+    	<div class="control-group">
+			<label for="theme-frontend">{{ Lang::line('themes::form.settings.fields.frontend') }}</label>
+			<div class="controls">
+				<div class="input-append">
+					{{ Form::select('theme:frontend', $frontend_themes, array_get($settings, 'theme.frontend'), array('id' => 'theme-frontend')) }}
+					<span class="add-on"><i class="icon-picture"></i></span>
+				</div>
+				<span class="help-block"></span>
+			</div>
+		</div>
+
+		<!-- Backend Theme -->
+    	<div class="control-group">
+			<label for="theme-backend">{{ Lang::line('themes::form.settings.fields.backend') }}</label>
+			<div class="controls">
+				<div class="input-append">
+					{{ Form::select('theme:backend', $backend_themes, array_get($settings, 'theme.backend'), array('id' => 'theme-backend')) }}
+					<span class="add-on"><i class="icon-picture"></i></span>
+				</div>
+				<span class="help-block"></span>
+			</div>
+		</div>
+
     </fieldset>
-
-    <p class="messages"></p>
 
     <hr />
 

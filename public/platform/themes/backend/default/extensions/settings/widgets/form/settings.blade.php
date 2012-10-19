@@ -47,7 +47,7 @@
 
     <fieldset>
 
-		<legend> Frontend Filesystem Messages</legend>
+		<legend>Frontend Filesystem Messages</legend>
 
 		<!-- Frontend Fallback Message -->
     	<div class="control-group">
@@ -77,7 +77,7 @@
 
 	<fieldset>
 
-		<legend> Backend Filesystem Messages</legend>
+		<legend>Backend Filesystem Messages</legend>
 
 		<!-- Backend Fallback Message -->
     	<div class="control-group">
