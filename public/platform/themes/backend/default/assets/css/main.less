@@ -136,12 +136,24 @@ hr {
 /* #Forms
 ================================================== */
 form legend {
-	border-bottom:none;
+	position:relative;
+	color:@purple;
+}
+
+form legend span {
+	position: absolute;
+	top:0;
+	left:0;
+}
+
+form legend {
+	float: left;
 }
 
 form fieldset {
 	background:@secondary;
 	padding:10px;
+	margin:5px 0;
 	border:1px solid @etch;
 	.border-radius(4px)
 }
@@ -150,14 +162,11 @@ form input,
 form textarea,
 form select,
 form .input-append .add-on, form .input-prepend .add-on {
-	min-height: 28px;
-	padding:4px 10px;
-	/*background:#f7f7f7 url(../img/ico-alerts.png) -32px 2px no-repeat;*/
 	outline: none;
 }
 
 form .input-append .add-on i, form .input-prepend .add-on i {
-	padding-top:4px;
+	padding:0 4px;
 	display:inline-block;
 	font-size:18px;
 }
@@ -183,7 +192,6 @@ form select.required:focus + .add-on > i {
 /* Enhanced error styling */
 form input.error + .add-on > i::before
 {
-	/*background-position: right -62px;*/
 	color:@orange;
 	content: "\f071";
 
@@ -191,13 +199,11 @@ form input.error + .add-on > i::before
 }
 form input.required + .add-on > i::before
 {
-	/*background-position: right -30px;*/
 	color:@red;
 	content: "\f06a";
 }
 form input.valid + .add-on > i::before
 {
-	/*background-position: right 2px;*/
 	//content: "\f071";
 }
 
