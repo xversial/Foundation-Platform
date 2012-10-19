@@ -103,27 +103,31 @@
 				@widget('platform.menus::menus.nav', 'admin', 1, 'nav nav-tabs', ADMIN)
 			</nav>
 
-			<nav class="secondary-navigation hidden-desktop">
-					@widget('platform.menus::menus.nav', 1, 1, 'nav nav-stacked nav-pills', ADMIN)
-			</nav>
 
 			<div class="page container-fluid">
-				<div class="row-fluid">
+				<!-- <div class="row-fluid hidden-desktop">
 					<div class="span12">
-						<nav class="secondary-navigation visible-desktop">
-							@widget('platform.menus::menus.nav', 1, 1, 'nav nav-pills', ADMIN)
-							<hr>
+						<nav class="secondary-navigation">
+							@widget('platform.menus::menus.nav', 1, 1, 'nav nav-stacked nav-pills', ADMIN)
 						</nav>
 					</div>
-				</div>
-				<div class="row-fluid">
-					<div class="span12">
-						<div class="content">
-							@widget('platform.application::messages.all')
-							@yield('content')
+				</div> -->
+				<div class="secondary-navigation tabbable tabs-left visible-desktop">
+					@widget('platform.menus::menus.nav', 1, 1, 'nav nav-tabs', ADMIN)
+
+				<div class="tab-content">
+
+							<div class="content">
+								<!-- <nav class="tertiary-navigation hidden-desktop">
+									@widget('platform.menus::menus.nav', 2, 1, 'nav nav-stacked nav-pills', ADMIN)
+								</nav> -->
+								@widget('platform.application::messages.all')
+								@yield('content')
+							</div>
 						</div>
-					</div>
-				</div>
+
+  				</div>
+
 			</div>
 			<div id="push"></div>
 

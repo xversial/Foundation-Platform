@@ -22,7 +22,7 @@
 /* #Layout
 ================================================== */
 body {
-	background: @bodyBackground url(../img/bg-body.png);
+	background: @base url(../img/bg-body.png);
 }
 
 html,
@@ -35,6 +35,7 @@ body {
     height: auto !important;
     height: 100%;
     margin: 0 auto -60px;
+    text-align: center;
 }
 #push,
 body > footer {
@@ -56,55 +57,61 @@ hr {
 	font-size:18px;
 }
 
-#base .primary-navigation > ul > .active > a {
-	background-color:@page;
-}
-
 #base .secondary-navigation > ul {
-	margin-bottom: 0;
 }
 
 #base .secondary-navigation > ul li {
-	text-align: center;
+
 }
 
-
 #base .tertiary-navigation {
+	padding:20px;
+}
 
+#base .tertiary-navigation > ul {
+	margin:0;
+}
+#base .tertiary-navigation > ul li {
+	text-align:center;
+}
+
+#base .tertiary-navigation > ul > .active > a {
 }
 
 #base .quaternary-navigation  > ul {
 
 }
 
-
-#base .page {
-	background:@page;
-	min-height: 600px;
-	border:1px solid @etch;
-	.border-radius(4px)
+#base .quaternary-navigation > ul > .active > a {
+	background-color:@quaternary;
 }
 
-#base .page .content {
-	text-align: center;
-	padding:14px;
+
+#base .page {
+	background:@primary;
+	border:1px solid @etch;
+	padding:20px 10px;
+	.border-radius(4px)
 }
 
 #base .page .tab-content {
-	background:white;
+	background:@secondary;
+	min-height: 600px;
 	padding:10px;
-	border:1px solid #ddd;
+	border:1px solid @etch;
 	.border-radius(4px)
+
 }
 
+#base .page .content > section {
+}
 
-
-#base .page .content > section > header {
-
+#base .page .content {
+	padding:10px;
 }
 
 #base .page .content > section > header h1 {
-	margin-bottom:0;
+	margin:0;
 }
 
 #base .page .content > section > header nav {
@@ -112,16 +119,11 @@ hr {
 }
 
 
-#base .page .content > section > .section-content {
+#base .page .section-content {
 	background:@white;
 	border:1px solid @etch;
-}
-
-#base .page .content .actions {
-	background:#fff;
-	border: 1px solid #ddd;
 	padding:10px;
-	margin-bottom:10px;
+	.border-radius(4px)
 }
 
 .copyright, .licence {
@@ -137,14 +139,11 @@ form legend {
 	border-bottom:none;
 }
 
-form .help-block {
-	font-style: italic;
-}
-form hr {
-	margin: 10px 0;
-	border: 0;
-	border-top: 1px solid #ddd;
-	border-bottom: 1px solid #fff;
+form fieldset {
+	background:@secondary;
+	padding:10px;
+	border:1px solid @etch;
+	.border-radius(4px)
 }
 
 form input,
