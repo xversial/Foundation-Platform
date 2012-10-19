@@ -121,19 +121,20 @@
 @section('content')
 	<section id="menus-edit">
 
-		<header class="row-fluid">
-			<div class="span12">
+		<header class="clearfix">
+			<div class="pull-left">
 				<h1>{{ Lang::line('menus::general.update.title') }}</h1>
 				<p>{{ Lang::line('menus::general.update.description') }}</p>
 			</div>
+			<nav class="tertiary-navigation pull-right visible-desktop">
+				@widget('platform.menus::menus.nav', 2, 1, 'nav nav-pills', ADMIN)
+			</nav>
 		</header>
 
-		<form method="POST" method="POST" accept-char="UTF-8" autocomplete="off" id="menu">
-			{{ Form::token() }}
+		<hr>
 
-			<div class="tabbable">
-
-				<ul class="nav nav-tabs">
+		<nav class="quaternary-navigation tabbable hidden-desktop">
+	    	<ul class="nav nav-pills">
 					<li class="{{ ($menu_slug) ? 'active' : null }}">
 						<a href="#menus-edit-children" data-toggle="tab">{{ Lang::line('menus::general.tabs.children') }}</a>
 					</li>
@@ -141,14 +142,27 @@
 						<a href="#menus-edit-root" data-toggle="tab">{{ Lang::line('menus::general.tabs.root') }}</a>
 					</li>
 				</ul>
+	    </nav>
 
-				<div class="tab-content">
+	    <form method="POST" method="POST" accept-char="UTF-8" autocomplete="off" id="menu">
+			{{ Form::token() }}
+
+	    <div class="quaternary-navigation">
+		    <nav class="tabbable visable-desktop">
+		    	<ul class="nav nav-tabs">
+					<li class="{{ ($menu_slug) ? 'active' : null }}">
+						<a href="#menus-edit-children" data-toggle="tab">{{ Lang::line('menus::general.tabs.children') }}</a>
+					</li>
+					<li class="{{ ( ! $menu_slug) ? 'active' : null }}">
+						<a href="#menus-edit-root" data-toggle="tab">{{ Lang::line('menus::general.tabs.root') }}</a>
+					</li>
+				</ul>
+		    </nav>
+		    <div class="tab-content">
 					<div id="menus-edit-children" class="tab-pane {{ ($menu_slug) ? 'active' : null }}">
 
 						<div class="row-fluid">
 							<div class="span3" id="menu-new-child">
-
-								<div class="well well-small">
 									<fieldset>
 										<legend>{{ Lang::line('menus::form.create.child.legend') }}</legend>
 
@@ -213,7 +227,6 @@
 										</div>
 
 									</fieldset>
-								</div>
 
 							</div>
 							<!-- /end - menu-new-child -->
@@ -266,9 +279,8 @@
 
 					</div>
 				</div>
+		</div>
 
-			</div>
-			<!-- /end - tabbable -->
 
 			<div class="form-actions">
 				<button type="submit" class="btn btn-primary btn-save-menu" data-loading-text="{{ Lang::line('button.loading') }}" data-complete-text="{{ Lang::line('button.saved') }}">
