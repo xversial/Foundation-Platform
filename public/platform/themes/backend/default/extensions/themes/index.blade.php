@@ -31,9 +31,7 @@
         <nav class="tertiary-navigation pull-right visible-desktop">
 			@widget('platform.menus::menus.nav', 2, 1, 'nav nav-pills', ADMIN)
 		</nav>
-
     </header>
-
 
 	<hr>
 

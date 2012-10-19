@@ -5,8 +5,7 @@
 	{{ Lang::line('users::general.users.title') }}
 @endsection
 
-<!-- Queue Styles -->
-{{ Theme::queue_asset('table', 'css/vendor/platform/table.css', 'style') }}
+<!-- Queue Styles | e.g Theme::queue_asset('name', 'path_to_css', 'dependency')-->
 
 <!-- Styles -->
 @section ('styles')
@@ -24,13 +23,13 @@
 @section('content')
 <section id="users">
 
-	<header class="row-fluid">
-		<div class="span4">
+	<header class="clearfix">
+		<div class="pull-left">
 			<h1>{{ Lang::line('users::general.users.title') }}</h1>
 			<p>{{ Lang::line('users::general.users.description') }}</p>
 		</div>
-		<nav class="tertiary-navigation span8">
-			@widget('platform.menus::menus.nav', 2, 1, 'nav nav-pills pull-right', ADMIN)
+		<nav class="tertiary-navigation pull-right visible-desktop">
+			@widget('platform.menus::menus.nav', 2, 1, 'nav nav-pills', ADMIN)
 		</nav>
 	</header>
 
