@@ -39,30 +39,37 @@
 
 <!-- Page Content -->
 @section('content')
-<section id="users-edit">
+	<section id="user-edit">
 
-	<header class="row-fluid">
-		<div class="span12">
-			<h1>{{ Lang::line('users::general.users.update.title') }}</h1>
-			<p>{{ Lang::line('users::general.users.update.description') }}</p>
-		</div>
-	</header>
-
-	<hr>
-
-	<div class="tabbable">
-		<ul class="nav nav-tabs">
-			<li class="active"><a href="#general" data-toggle="tab">{{ Lang::line('users::general.tabs.general') }}</a></li>
-			<li><a href="#permissions" data-toggle="tab">{{ Lang::line('users::general.tabs.permissions') }}</a></li>
-		</ul>
-		<div class="tab-content">
-			<div class="tab-pane active" id="general">
-				@widget('platform.users::admin.user.form.edit', $id)
+		<header class="clearfix">
+			<div class="pull-left">
+				<h1>{{ Lang::line('users::general.users.update.title') }}</h1>
+				<p>{{ Lang::line('users::general.users.update.description') }}</p>
 			</div>
-			<div class="tab-pane" id="permissions">
-				@widget('platform.users::admin.user.form.permissions', $id)
-			</div>
+			<nav class="tertiary-navigation pull-right visible-desktop">
+				@widget('platform.menus::menus.nav', 2, 1, 'nav nav-pills', ADMIN)
+			</nav>
+		</header>
+
+		<hr>
+
+
+		<div class="quaternary-navigation">
+		    <nav class="tabbable visable-desktop">
+		    	<ul class="nav nav-tabs">
+					<li class="active"><a href="#general" data-toggle="tab">{{ Lang::line('users::general.tabs.general') }}</a></li>
+					<li><a href="#permissions" data-toggle="tab">{{ Lang::line('users::general.tabs.permissions') }}</a></li>
+			</ul>
+		    </nav>
+		    <div class="tab-content">
+		        <div class="tab-pane active" id="general">
+					@widget('platform.users::admin.user.form.edit', $id)
+				</div>
+				<div class="tab-pane" id="permissions">
+					@widget('platform.users::admin.user.form.permissions', $id)
+				</div>
+		    </div>
 		</div>
-	</div>
-</section>
+
+	</section>
 @endsection

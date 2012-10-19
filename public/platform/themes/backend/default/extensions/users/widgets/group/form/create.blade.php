@@ -17,8 +17,6 @@
 
 	</fieldset>
 
-	<p class="messages"></p>
-
 	<div class="form-actions">
 		<a class="btn btn-large" href="{{ URL::to_secure(ADMIN.'/users/groups') }}">{{ Lang::line('button.cancel') }}</a>
 		<button class="btn btn-large btn-primary" type="submit">{{ Lang::line('button.create') }}</button>

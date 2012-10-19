@@ -21,48 +21,48 @@
 
 <!-- Page Content -->
 @section('content')
-<section id="users">
+	<section id="users">
 
-	<header class="clearfix">
-		<div class="pull-left">
-			<h1>{{ Lang::line('users::general.users.title') }}</h1>
-			<p>{{ Lang::line('users::general.users.description') }}</p>
-		</div>
-		<nav class="tertiary-navigation pull-right visible-desktop">
-			@widget('platform.menus::menus.nav', 2, 1, 'nav nav-pills', ADMIN)
-		</nav>
-	</header>
-
-	<hr>
-
-	<div id="table">
-
-		<div class="actions clearfix">
-			<div id="table-filters" class="form-inline pull-left"></div>
-			<div class="processing pull-left"></div>
-			<div class="pull-right">
-				<a class="btn btn-large btn-primary" href="{{ URL::to_admin('users/create') }}">{{ Lang::line('button.create') }}</a>
+		<header class="clearfix">
+			<div class="pull-left">
+				<h1>{{ Lang::line('users::general.users.title') }}</h1>
+				<p>{{ Lang::line('users::general.users.description') }}</p>
 			</div>
-		</div>
+			<nav class="tertiary-navigation pull-right visible-desktop">
+				@widget('platform.menus::menus.nav', 2, 1, 'nav nav-pills', ADMIN)
+			</nav>
+		</header>
 
-		<div class="tabbable tabs-right">
-			<ul id="table-pagination" class="nav nav-tabs"></ul>
-			<div class="tab-content">
-				<table id="users-table" class="table table-bordered table-striped">
-					<thead>
-						<tr>
-							@foreach ($columns as $key => $col)
-							<th data-table-key="{{ $key }}">{{ $col }}</th>
-							@endforeach
-							<th></th>
-						</tr>
-					<thead>
-					<tbody></tbody>
-				</table>
+		<hr>
+
+		<div id="table">
+
+			<div class="actions clearfix">
+				<div id="table-filters" class="form-inline pull-left"></div>
+				<div class="processing pull-left"></div>
+				<div class="pull-right">
+					<a class="btn btn-large btn-primary" href="{{ URL::to_admin('users/create') }}">{{ Lang::line('button.create') }}</a>
+				</div>
 			</div>
+
+			<div class="tabbable tabs-right">
+				<ul id="table-pagination" class="nav nav-tabs"></ul>
+				<div class="tab-content">
+					<table id="users-table" class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								@foreach ($columns as $key => $col)
+								<th data-table-key="{{ $key }}">{{ $col }}</th>
+								@endforeach
+								<th></th>
+							</tr>
+						<thead>
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+
 		</div>
 
-	</div>
-
-</section>
+	</section>
 @endsection

@@ -3,6 +3,8 @@
 
 	<fieldset>
 
+		<legend>Updating {{ $group['name'] }}</legend>
+
 		<!-- Group Name -->
 		<div class="control-group">
 			<label class="control-label" for="name">{{ Lang::line('users::form.groups.edit.name') }}</label>
@@ -16,8 +18,6 @@
 		</div>
 
 	</fieldset>
-
-	<p class="messages"></p>
 
 	<div class="form-actions">
 		<a class="btn btn-large" href="{{ URL::to_secure(ADMIN.'/users/groups') }}">{{ Lang::line('button.cancel') }}</a>

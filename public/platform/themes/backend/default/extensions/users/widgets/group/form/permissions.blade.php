@@ -14,12 +14,9 @@
 
 			@endforeach
 		</fieldset>
-		<hr>
 	@endforeach
 
-	<p class="messages"></p>
-
-	<div class="actions">
+	<div class="form-actions">
 		<a class="btn btn-large" href="{{ URL::to_secure(ADMIN.'/users/groups') }}">{{ Lang::line('button.cancel') }}</a>
 		<button class="btn btn-large btn-primary" type="submit">{{ Lang::line('button.update') }}</button>
 	</div>

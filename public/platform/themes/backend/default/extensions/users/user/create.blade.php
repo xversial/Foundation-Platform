@@ -38,24 +38,25 @@
 
 <!-- Page Content -->
 @section('content')
+	<section id="users">
 
-<section id="users">
+		<header class="clearfix">
+			<div class="pull-left">
+				<h1>{{ Lang::line('users::general.users.create.title') }}</h1>
+				<p>{{ Lang::line('users::general.users.create.description') }}</p>
+			</div>
+			<nav class="tertiary-navigation pull-right visible-desktop">
+				@widget('platform.menus::menus.nav', 2, 1, 'nav nav-pills', ADMIN)
+			</nav>
+		</header>
 
-	<header class="row-fluid">
-		<div class="span12">
-			<h1>{{ Lang::line('users::general.users.create.title') }}</h1>
-			<p>{{ Lang::line('users::general.users.create.description') }}</p>
+		<hr>
+
+		<div class="row-fluid">
+			<div class="quaternary span12">
+				@widget('platform.users::admin.user.form.create')
+			</div>
 		</div>
-	</header>
 
-	<hr>
-
-	<div class="row-fluid">
-		<div class="span12">
-			@widget('platform.users::admin.user.form.create')
-		</div>
-	</div>
-
-</section>
-
+	</section>
 @endsection

@@ -1,6 +1,9 @@
 <form action="{{ URL::to_admin('users/edit/'.$user['id']) }}" id="edit-form" class="form-horizontal" method="POST" accept-char="UTF-8">
 <input type="hidden" name="{{ Session::csrf_token }}" value="{{ Session::token() }}">
 	<fieldset>
+
+		<legend>Updating {{ $user['metadata']['first_name'] . ' ' . $user['metadata']['last_name'] }}</legend>
+
 		<!-- First Name -->
 		<div class="control-group">
 			<label class="control-label" for="first_name">{{ lang::line('users::form.users.create.first_name') }}:</label>
@@ -71,8 +74,6 @@
 		</div>
 
 	</fieldset>
-
-	<p class="messages"></p>
 
 	<div class="form-actions">
 		<a class="btn btn-large" href="{{ URL::to_secure(ADMIN.'/users') }}">{{ Lang::line('button.cancel') }}</a>

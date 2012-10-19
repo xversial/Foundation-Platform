@@ -19,22 +19,25 @@
 
 <!-- Page Content -->
 @section('content')
-<section id="groups">
+	<section id="groups">
 
-	<header class="row-fluid">
-		<div class="span12">
-			<h1>{{ Lang::line('users::general.groups.create.title') }}</h1>
-			<p>{{ Lang::line('users::general.groups.create.description') }}</p>
+		<header class="clearfix">
+			<div class="pull-left">
+				<h1>{{ Lang::line('users::general.groups.create.title') }}</h1>
+				<p>{{ Lang::line('users::general.groups.create.description') }}</p>
+			</div>
+			<nav class="tertiary-navigation pull-right visible-desktop">
+				@widget('platform.menus::menus.nav', 2, 1, 'nav nav-pills', ADMIN)
+			</nav>
+		</header>
+
+		<hr>
+
+		<div class="row-fluid">
+			<div class="quaternary span12">
+				@widget('platform.users::admin.group.form.create')
+			</div>
 		</div>
-	</header>
 
-	<hr>
-
-	<div class="row-fluid">
-		<div class="span12">
-			@widget('platform.users::admin.group.form.create')
-		</div>
-	</div>
-
-</section>
+	</section>
 @endsection
