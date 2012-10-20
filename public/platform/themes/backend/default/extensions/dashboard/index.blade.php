@@ -19,19 +19,32 @@
 
 <!-- Page Content -->
 @section ('content')
-<section id="dashbaord">
+<section id="dashboard">
 
-	<header class="clearfix">
-			<div class="pull-left">
-				<h1>{{ Lang::line('dashboard::general.title') }}</h1>
-				<p>{{ Lang::line('dashboard::general.description') }}</p>
-			</div>
-			<nav class="tertiary-navigation pull-right visible-desktop">
+	<!-- Tertiary Navigation & Actions -->
+	<header class="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+			<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+			<a class="btn btn-navbar" data-toggle="collapse" data-target="#tertiary-navigation">
+				<span class="icon-reorder"></span>
+			</a>
+
+			<a class="brand" href="#">{{ Lang::line('dashboard::general.title') }}</a>
+
+			<!-- Everything you want hidden at 940px or less, place within here -->
+			<div id="tertiary-navigation" class="nav-collapse">
 				@widget('platform.menus::menus.nav', 2, 1, 'nav nav-pills', ADMIN)
-			</nav>
+			</div>
+
+			</div>
+		</div>
 	</header>
 
 	<hr>
+
+	<div class="quaternary page"></div>
 
 </section>
 @endsection

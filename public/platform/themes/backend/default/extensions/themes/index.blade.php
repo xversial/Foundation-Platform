@@ -23,37 +23,51 @@
 @section('content')
 <section id="themes">
 
-    <header class="clearfix">
-    	<div class="pull-left">
-        	<h1>{{ Lang::line('themes::general.title')->get() }}</h1>
-        	<p>{{ Lang::line('themes::general.description')->get() }}</p>
-        </div>
-        <nav class="tertiary-navigation pull-right visible-desktop">
-			@widget('platform.menus::menus.nav', 2, 1, 'nav nav-pills', ADMIN)
-		</nav>
-    </header>
+	<!-- Tertiary Navigation & Actions -->
+	<header class="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+			<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+			<a class="btn btn-navbar" data-toggle="collapse" data-target="#tertiary-navigation">
+				<span class="icon-reorder"></span>
+			</a>
+
+			<a class="brand" href="#">{{ Lang::line('themes::general.title') }}</a>
+
+			<!-- Everything you want hidden at 940px or less, place within here -->
+			<div id="tertiary-navigation" class="nav-collapse">
+				@widget('platform.menus::menus.nav', 2, 1, 'nav pull-right', ADMIN)
+			</div>
+
+			</div>
+		</div>
+	</header>
 
 	<hr>
 
-    <div class="selections row-fluid">
-        @foreach ($themes as $theme)
-        <div class="active span3">
-            <div class="thumbnail">
-                <img src="{{ $theme['thumbnail'] }}" title="{{ $theme['name'] }}">
-                <div class="caption">
-                    <h5>{{ $theme['name'] }}</h5>
-                    <p class="version">{{ Lang::line('themes::general.version')->get() }} {{ $theme['version'] }}</p>
-                    <p class="author">{{ Lang::line('themes::general.author')->get() }}  {{ $theme['author'] }}</p>
-                    <p>{{ $theme['description'] }}</p>
-                    @if ($theme['active'])
-                    <a href="{{ URL::to_admin('themes/edit/' . $type . '/' . $theme['theme']) }}" class="btn" data-theme="{ $active['theme'] }}" data-type="backend">{{ Lang::line('button.edit')->get() }}</a>
-                    @else
-                    <a href="{{ URL::to_admin('themes/activate/' . $type . '/' . $theme['theme']) }}" class="btn activate" data-token="{{ Session::token() }}" data-theme="{{ $theme['theme'] }}" data-type="{{ $type }}">{{ Lang::line('button.enable')->get() }}</a>
-                    @endif
-                </div>
-            </div>
-        </div>
-        @endforeach
-    </div>
+	<div class="quaternary page">
+		<div class="selections row-fluid">
+	        @foreach ($themes as $theme)
+	        <div class="active span3">
+	            <div class="thumbnail">
+	                <img src="{{ $theme['thumbnail'] }}" title="{{ $theme['name'] }}">
+	                <div class="caption">
+	                    <h5>{{ $theme['name'] }}</h5>
+	                    <p class="version">{{ Lang::line('themes::general.version')->get() }} {{ $theme['version'] }}</p>
+	                    <p class="author">{{ Lang::line('themes::general.author')->get() }}  {{ $theme['author'] }}</p>
+	                    <p>{{ $theme['description'] }}</p>
+	                    @if ($theme['active'])
+	                    <a href="{{ URL::to_admin('themes/edit/' . $type . '/' . $theme['theme']) }}" class="btn" data-theme="{ $active['theme'] }}" data-type="backend">{{ Lang::line('button.edit')->get() }}</a>
+	                    @else
+	                    <a href="{{ URL::to_admin('themes/activate/' . $type . '/' . $theme['theme']) }}" class="btn activate" data-token="{{ Session::token() }}" data-theme="{{ $theme['theme'] }}" data-type="{{ $type }}">{{ Lang::line('button.enable')->get() }}</a>
+	                    @endif
+	                </div>
+	            </div>
+	        </div>
+	        @endforeach
+	    </div>
+	</div>
+
 </section>
 @endsection

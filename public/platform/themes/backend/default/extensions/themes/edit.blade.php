@@ -23,54 +23,62 @@
 @section('content')
 <section id="themes">
 
-	<header class="row-fluid">
-		<div class="span6">
-			<h1>{{ $theme['name'] }}</h1>
-			<p>{{ $theme['description'] }} by {{ $theme['author'] }} v{{ $theme['version'] }}</p>
+	<!-- Tertiary Navigation & Actions -->
+	<header class="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+			<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+			<a class="btn btn-navbar" data-toggle="collapse" data-target="#tertiary-navigation">
+				<span class="icon-reorder"></span>
+			</a>
+
+			<a class="brand" href="#">{{ $theme['name'] }} by {{ $theme['author'] }}</a>
+
+			</div>
 		</div>
-		<nav class="actions span6 pull-right"></nav>
 	</header>
 
 	<hr>
 
-	<div class="theme row-fluid">
-		<div class="span12">
+	<div class="quaternary page">
+		<div class="row-fluid">
+			<div class="span12">
+				@if (count($theme['options']))
+					{{ Form::open(null, 'POST', array('id' => 'theme-options', 'class' => 'form-horizontal')) }}
 
-			@if (count($theme['options']))
-				{{ Form::open(null, 'POST', array('id' => 'theme-options', 'class' => 'form-horizontal')) }}
+						{{ Form::token() }}
 
-					{{ Form::token() }}
-
-					<div class="well">
-						@foreach ($theme['options'] as $id => $option)
-						<fieldset>
-							<legend>{{ $option['text'] }}</legend>
-							@foreach ($option['styles'] as $style => $value)
-								<label>{{ $style }}</label>
-								<input type="text" name="options[{{$id}}][styles][{{$style}}]" value="{{ $value }}">
+							@foreach ($theme['options'] as $id => $option)
+							<fieldset>
+								<legend>{{ $option['text'] }}</legend>
+								@foreach ($option['styles'] as $style => $value)
+									<label>{{ $style }}</label>
+									<input type="text" name="options[{{$id}}][styles][{{$style}}]" value="{{ $value }}">
+								@endforeach
+							</fieldset>
 							@endforeach
-						</fieldset>
-						@endforeach
-					</div>
 
-		            <button class="btn btn-large btn-primary" type="submit">
-		            	{{ Lang::line('button.update') }}
-		            </button>
-		            <a class="btn btn-large" href="{{ URL::to_secure(ADMIN.'/themes/'.$type) }}">{{ Lang::line('button.cancel') }}</a>
+						<div class="form-actions">
+				            <button class="btn btn-large btn-primary" type="submit">
+				            	{{ Lang::line('button.update') }}
+				            </button>
+				            <a class="btn btn-large" href="{{ URL::to_secure(ADMIN.'/themes/'.$type) }}">{{ Lang::line('button.cancel') }}</a>
+				        </div>
 
-				{{ Form::close() }}
+					{{ Form::close() }}
 
-			@else
+				@else
 
-			<div class="unavailable">
-				{{ Lang::line('themes::messages.no_options') }}
+				<div class="unavailable">
+					{{ Lang::line('themes::messages.no_options') }}
+				</div>
+
+				@endif
+
 			</div>
-
-			@endif
-
 		</div>
 	</div>
 
 </section>
-
 @endsection

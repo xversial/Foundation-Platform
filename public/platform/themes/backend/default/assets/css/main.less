@@ -49,14 +49,41 @@ hr {
 	border-bottom: 1px solid @white;
 }
 
-#base .primary {}
-#base .secondary {}
-#base .tertiary {}
-#base .quaternary {
-	background:@quaternary;
-	padding:10px;
+#base .page {
 	border:1px solid @etch;
+	padding:14px;
 	.border-radius(4px)
+}
+
+#base .primary {
+	background-color: @primary;
+}
+
+#base .secondary {
+	background-color: @secondary;
+}
+
+#base .tertiary {
+	background-color: @tertiary;
+}
+
+#base .quaternary {
+	background-color: @quaternary;
+	min-height: 600px;
+}
+
+/* #Navigation
+================================================== */
+
+#base .user-navigation > ul {
+		background-color:#eee;
+		padding:4px;
+		border:1px solid @etch;
+		.border-radius(6px)
+	}
+
+#base .user-navigation {
+
 }
 
 #base .primary-navigation > ul {
@@ -75,18 +102,9 @@ hr {
 }
 
 #base .tertiary-navigation {
-	padding:20px;
+
 }
 
-#base .tertiary-navigation > ul {
-	margin:0;
-}
-#base .tertiary-navigation > ul li {
-	text-align:center;
-}
-
-#base .tertiary-navigation > ul > .active > a {
-}
 
 #base .quaternary-navigation  > ul {
 
@@ -97,44 +115,8 @@ hr {
 }
 
 
-#base .page {
-	background:@primary;
-	border:1px solid @etch;
-	padding:20px 10px;
-	.border-radius(4px)
-}
-
-#base .page .tab-content {
-	background:@secondary;
-	min-height: 600px;
-	padding:10px;
-	border:1px solid @etch;
-	.border-radius(4px)
-
-}
-
-#base .page .content > section {
-}
-
-#base .page .content {
-	padding:10px;
-}
-
-#base .page .content > section > header h1 {
-	margin:0;
-}
-
-#base .page .content > section > header nav {
-
-}
 
 
-#base .page .section-content {
-	background:@white;
-	border:1px solid @etch;
-	padding:10px;
-	.border-radius(4px)
-}
 
 .copyright, .licence {
 	font-size:11px;
@@ -226,7 +208,7 @@ form input.valid + .add-on > i::before
 	}
 
 	#table .actions {
-		background:@quaternary;
+		background:@white;
 		border: 1px solid @etch;
 		padding:10px;
 		margin-bottom:10px;

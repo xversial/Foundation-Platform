@@ -43,48 +43,25 @@
 		<![endif]-->
 		<div id="base">
 
-			<header class="desktop-navigation clearfix visible-desktop">
-				<a class="brand" href="{{ URL::to_admin() }}">
-					<img src="{{ Theme::asset('img/brand.png') }}" title="@get.settings.site.title">
-				</a>
-				<div class="about">
-					<h1>@get.settings.site.title</h1>
-					<p>@get.settings.site.tagline</p>
-				</div>
-				<nav class="profile-navigation">
-					<ul class="nav nav-pills pull-right">
-						<li>
-							<a href="{{ URL::to() }}" target="_self">
-								<i class="icon-home"></i> <span>Home</span>
-							</a>
-						</li>
-						<li>
-							<a href="{{ URL::to('/logout') }}" target="_self">
-								<i class="icon-signout"></i> <span>Logout</span>
-							</a>
-						</li>
-						<li class="divider-vertical"></li>
-					</ul>
-				</nav>
-			</header>
-
-			<header class="mobile-navigation navbar hidden-desktop">
+			<header class="navbar">
 				<div class="navbar-inner">
 					<div class="container-fluid">
-						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<a class="btn btn-navbar" data-toggle="collapse" data-target="#primary-navigation">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</a>
-						<a class="brand" href="{{ URL::to_admin() }}">
-							@get.settings.site.title
-						</a>
+
+						<a class="brand" href="{{ URL::to_admin() }}">@get.settings.site.title</a>
+
 						<ul class="nav pull-right">
+							<li class="divider-vertical"></li>
 							<li>
 								<a href="{{ URL::to() }}" target="_self">
 									<i class="icon-home"></i> <span>Home</span>
 								</a>
 							</li>
+							<li class="divider-vertical"></li>
 							<li>
 								<a href="{{ URL::to('/logout') }}" target="_self">
 									<i class="icon-signout"></i> <span>Logout</span>
@@ -92,40 +69,31 @@
 							</li>
 							<li class="divider-vertical"></li>
 						</ul>
-						<div class="nav-collapse collapse">
-							@widget('platform.menus::menus.nav', 'admin', 1, 'nav nav-stacked nav-pills', ADMIN)
+						<div id="primary-navigation" class="nav-collapse collapse">
+							@widget('platform.menus::menus.nav', 'admin', 1, 'nav', ADMIN)
 						</div><!--/.nav-collapse -->
 					</div>
 				</div>
-			</header>
+			</header><!--/.Mobile Navigation -->
 
-			<nav class="primary-navigation visible-desktop">
-				@widget('platform.menus::menus.nav', 'admin', 1, 'nav nav-tabs', ADMIN)
-			</nav>
+			<div class="primary page container-fluid">
 
-
-			<div class="page container-fluid">
-				<!-- <div class="row-fluid hidden-desktop">
+				<div class="row-fluid hidden-desktop">
 					<div class="span12">
 						<nav class="secondary-navigation">
 							@widget('platform.menus::menus.nav', 1, 1, 'nav nav-stacked nav-pills', ADMIN)
 						</nav>
 					</div>
-				</div> -->
-				<div class="secondary-navigation tabbable tabs-left visible-desktop">
-					@widget('platform.menus::menus.nav', 1, 1, 'nav nav-tabs', ADMIN)
+				</div>
 
-				<div class="tab-content">
+				<div class="tabbable tabs-left">
 
-							<div class="content">
-								<!-- <nav class="tertiary-navigation hidden-desktop">
-									@widget('platform.menus::menus.nav', 2, 1, 'nav nav-stacked nav-pills', ADMIN)
-								</nav> -->
-								@widget('platform.application::messages.all')
-								@yield('content')
-							</div>
-						</div>
+					@widget('platform.menus::menus.nav', 1, 1, 'secondary-navigation nav nav-tabs visible-desktop', ADMIN)
 
+					<div class="secondary page tab-content">
+						@widget('platform.application::messages.all')
+						@yield('content')
+					</div>
   				</div>
 
 			</div>

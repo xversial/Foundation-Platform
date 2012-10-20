@@ -19,21 +19,41 @@
 @endsection
 
 @section('content')
-	<section id="settings">
+<section id="settings">
 
-		<header class="clearfix">
-			<div class="pull-left">
-				<h1>{{ Lang::line('settings::general.title') }}</h1>
-				<p>{{ Lang::line('settings::general.description') }}</p>
-			</div>
-			<nav class="tertiary-navigation pull-right visible-desktop">
+	<!-- Tertiary Navigation & Actions -->
+	<header class="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+			<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+			<a class="btn btn-navbar" data-toggle="collapse" data-target="#tertiary-navigation">
+				<span class="icon-reorder"></span>
+			</a>
+
+			<a class="brand" href="#">{{ Lang::line('settings::general.title') }}</a>
+
+			<!-- Everything you want hidden at 940px or less, place within here -->
+			<div id="tertiary-navigation" class="nav-collapse">
 				@widget('platform.menus::menus.nav', 2, 1, 'nav nav-pills', ADMIN)
-			</nav>
-		</header>
+			</div>
 
-	    <hr>
+			</div>
+		</div>
+	</header>
 
-	    <nav class="quaternary-navigation tabbable hidden-desktop">
+    <!-- Quaternary Desktop Navigation -->
+    <nav class="quaternary-navigation tabbable visible-desktop">
+    	<ul class="nav nav-tabs">
+            @foreach ( $settings as $extension => $data )
+            <li{{ ( $extension === 'settings' ? ' class="active"' : '' ) }}><a href="#tab_{{ $extension }}" data-toggle="tab">{{ Lang::line($extension . '::form.settings.legend')->get() }}</a></li>
+            @endforeach
+        </ul>
+    </nav>
+
+    <div class="quaternary page">
+    	 <!-- Quaternary Mobile Navigation -->
+	    <nav class="hidden-desktop">
 	    	<ul class="nav nav-stacked nav-pills">
 	            @foreach ( $settings as $extension => $data )
 	            <li{{ ( $extension === 'settings' ? ' class="active"' : '' ) }}><a href="#tab_{{ $extension }}" data-toggle="tab">{{ Lang::line($extension . '::form.settings.legend')->get() }}</a></li>
@@ -41,23 +61,14 @@
 	        </ul>
 	    </nav>
 
-	    <div class="quaternary-navigation">
-		    <nav class="tabbable visable-desktop">
-		    	<ul class="nav nav-tabs">
-		            @foreach ( $settings as $extension => $data )
-		            <li{{ ( $extension === 'settings' ? ' class="active"' : '' ) }}><a href="#tab_{{ $extension }}" data-toggle="tab">{{ Lang::line($extension . '::form.settings.legend')->get() }}</a></li>
-		            @endforeach
-		        </ul>
-		    </nav>
-		    <div class="tab-content">
-		        @foreach ( $settings as $extension => $data )
-		        <div class="tab-pane{{ ( $extension === 'settings' ? ' active' : '' ) }}" id="tab_{{ $extension }}">
-		            @widget('platform.' . $extension . '::settings.index', $data)
-		        </div>
-		        @endforeach
-		    </div>
-		</div>
+	    <div class="tab-content">
+	        @foreach ( $settings as $extension => $data )
+	        <div class="tab-pane{{ ( $extension === 'settings' ? ' active' : '' ) }}" id="tab_{{ $extension }}">
+	            @widget('platform.' . $extension . '::settings.index', $data)
+	        </div>
+	        @endforeach
+	    </div>
+	</div>
 
-
-	</section>
+</section>
 @endsection

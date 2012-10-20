@@ -105,9 +105,7 @@
 
     </fieldset>
 
-    <hr>
-
-    <div class="actions">
+    <div class="form-actions">
         <button class="btn btn-large btn-primary" type="submit">{{ Lang::line('button.update') }}</button>
     </div>
 
