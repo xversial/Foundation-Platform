@@ -64,7 +64,7 @@ class Localisation_Timezones_v1_0_0
             'extension' => 'localisation',
             'type'      => 'site',
             'name'      => 'timezone',
-            'value'     => 'Europe\London'
+            'value'     => 'Europe/London'
         ));
     }
 

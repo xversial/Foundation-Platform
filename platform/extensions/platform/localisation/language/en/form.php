@@ -36,11 +36,11 @@ return array(
         'fields' => array(
             'country'       => 'Default Country',
             'currency'      => 'Default Currency',
-            'currency_auto' => 'Auto Update Currency'
+            'currency_auto' => 'Auto Update Currency',
             'language'      => 'Default Language',
-            'timezone'      => 'Default Timezone',
+            'timezone'      => 'Default Timezone'
         )
-    )
+    ),
 
     'general' => array(
         'disabled'   => 'Disabled',

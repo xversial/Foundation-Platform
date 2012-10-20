@@ -24,7 +24,7 @@
 
         <div>
             <label for="site-currency-auto-update">{{ Lang::line('localisation::form.settings.fields.currency_auto')->get() }}</label>
-            {{ Form::select('site:currency_auto_update', currencies_update_interval(), Platform::get('localisation.site.currency_auto_update'), array('id' => 'site-currency-auto-update')) }}
+            {{ Form::select('site:currency_auto_update', currencies_update_intervals(), Platform::get('localisation.site.currency_auto_update'), array('id' => 'site-currency-auto-update')) }}
             <span class="help"></span>
         </div>
 

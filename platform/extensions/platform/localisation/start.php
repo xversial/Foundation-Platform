@@ -63,7 +63,7 @@ if (Platform::extensions_manager()->is_enabled('localisation'))
 
     // Set the timezone.
     //
-    Config::set('application.timezone', strtolower($settings['timezone']));
+    Config::set('application.timezone', $settings['timezone']);
 
     // Set the Openexchangerates.org API Key.
     //
