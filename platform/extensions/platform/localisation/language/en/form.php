@@ -25,11 +25,27 @@
  * --------------------------------------------------------------------------
  */
 return array(
-	'warning' => 'Warning',
-	'enabled'    => 'Enabled',
-	'disabled'   => 'Disabled',
-	'created_at' => 'Created At',
-	'status'     => 'Status',
-	'required'   => 'Required'
-);
+    /*
+     * -----------------------------------------
+     * Settings form.
+     * -----------------------------------------
+     */
+    'settings' => array(
+        'legend' => 'Localisation',
 
+        'fields' => array(
+            'country'       => 'Default Country',
+            'currency'      => 'Default Currency',
+            'currency_auto' => 'Auto Update Currency'
+            'language'      => 'Default Language',
+            'timezone'      => 'Default Timezone',
+        )
+    )
+
+    'general' => array(
+        'disabled'   => 'Disabled',
+        'everyday'   => 'Everyday',
+        'once_week'  => 'Once a Week',
+        'once_month' => 'Once a Month'
+    )
+);
