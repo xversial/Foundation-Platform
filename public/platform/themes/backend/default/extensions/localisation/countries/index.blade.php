@@ -49,7 +49,7 @@
                         <thead>
                             <tr>
                                 <th data-table-key="name" class="span4">{{ Lang::line('localisation::countries/table.name') }}</th>
-                                <th data-table-key="abbreviation"class="span2">{{ Lang::line('localisation::countries/table.iso_code_2') }}</th>
+                                <th data-table-key="iso_code_2"class="span2">{{ Lang::line('localisation::countries/table.iso_code_2') }}</th>
                                 <th class="span2"></th>
                             </tr>
                         <thead>

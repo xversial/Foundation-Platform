@@ -2,7 +2,7 @@
 
 <!-- Page Title -->
 @section('title')
-    {{ Lang::line('localisation::currencies/general.title')->get() }}
+    {{ Lang::line('localisation::currencies/general.title') }}
 @endsection
 
 <!-- Queue Scripts -->
@@ -48,8 +48,8 @@
                     <table id="currencies-table" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th data-table-key="name" class="span4">{{ Lang::line('localisation::currencies/table.name')->get() }}</th>
-                                <th data-table-key="abbreviation"class="span2">{{ Lang::line('localisation::currencies/table.code')->get() }}</th>
+                                <th data-table-key="name" class="span4">{{ Lang::line('localisation::currencies/table.name') }}</th>
+                                <th data-table-key="code"class="span2">{{ Lang::line('localisation::currencies/table.code') }}</th>
                                 <th class="span2"></th>
                             </tr>
                         <thead>
