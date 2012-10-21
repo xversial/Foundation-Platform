@@ -213,7 +213,7 @@ class Themes_API_Themes_Controller extends API_Controller
 
         // Is this the current active theme ?
         //
-        if ($info['active'])
+        if ($theme_info['active'])
         {
             // Theme is already activated.
             //
