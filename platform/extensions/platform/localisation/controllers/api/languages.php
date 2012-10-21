@@ -24,7 +24,7 @@
  * What we can use in this class.
  * --------------------------------------------------------------------------
  */
-use Platform\Localisation\Language;
+use Platform\Localisation\Model\Language;
 
 
 /**

@@ -24,7 +24,7 @@
  * What we can use in this class.
  * --------------------------------------------------------------------------
  */
-use Platform\Localisation\Timezone;
+use Platform\Localisation\Model\Timezone;
 
 
 /**

@@ -18,7 +18,7 @@
  * @link       http://cartalyst.com
  */
 
-namespace Platform\Localisation;
+namespace Platform\Localisation\Model;
 
 
 /**

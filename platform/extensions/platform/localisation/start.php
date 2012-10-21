@@ -26,7 +26,7 @@
  */
 Autoloader::namespaces(array(
     'Platform\\Localisation\\Widgets' => __DIR__ . DS . 'widgets',
-    'Platform\\Localisation'          => __DIR__ . DS . 'models'
+    'Platform\\Localisation\\Model'   => __DIR__ . DS . 'models'
 ));
 
 
