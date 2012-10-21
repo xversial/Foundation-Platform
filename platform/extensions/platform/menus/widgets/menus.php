@@ -128,7 +128,8 @@ class Menus
             try
             {
                 $items = API::get('menus/' . $active_path[(int) $start] . '/children', array(
-                    'limit' => $children_depth ?: false
+                    'enabled' => true,
+                    'limit'   => $children_depth ?: false
                 ));
             }
             catch (APIClientException $e)
