@@ -1,62 +1,60 @@
 @layout('templates.default')
 
+<!-- Page Title -->
 @section('title')
-    {{ Lang::line('localisation::languages/general.title')->get() }}
+    {{ Lang::line('localisation::languages/general.title') }}
 @endsection
 
-@section ('styles')
-{{ Theme::asset('css/table.css') }}
-@endsection
+<!-- Queue Scripts -->
+{{ Theme::queue_asset('table', 'js/vendor/platform/table.js', 'jquery') }}
+{{ Theme::queue_asset('languages', 'localisation::js/languages.js', 'jquery') }}
 
-@section('scripts')
-{{ Theme::asset('js/table.js') }}
-{{ Theme::asset('localisation::js/languages.js') }}
-@endsection
-
+<!-- Page Content -->
 @section('content')
 <section id="languages">
-    <header class="head row-fluid">
-        <div class="span6">
-            <h1>{{ Lang::line('localisation::languages/general.title')->get() }}</h1>
-            <p>{{ Lang::line('localisation::languages/general.description.index')->get() }}</p>
+
+    <!-- Tertiary Navigation & Actions -->
+    <header class="navbar">
+        <div class="navbar-inner">
+            <div class="container">
+                <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+                <a class="btn btn-navbar" data-toggle="collapse" data-target="#tertiary-navigation">
+                    <span class="icon-reorder"></span>
+                </a>
+
+                <a class="brand" href="#">{{ Lang::line('localisation::languages/general.title') }}</a>
+
+                <!-- Everything you want hidden at 940px or less, place within here -->
+                <div id="tertiary-navigation" class="nav-collapse">
+                    @widget('platform.menus::menus.nav', 2, 1, 'nav pull-right', ADMIN)
+                </div>
+            </div>
         </div>
     </header>
 
-    <hr />
-
-    <div id="table">
-        <div class="actions clearfix">
-            <div id="table-filters" class="form-inline pull-left"></div>
-            <div class="pull-right">
-                <a class="btn btn-large btn-primary" href="{{ URL::to_admin('localisation/languages/create') }}">{{ Lang::line('button.create')->get() }}</a>
-            </div>
-        </div>
-
-        <div class="row-fluid">
-            <div class="span12">
-                <div class="row-fluid">
-                    <ul id="table-filters-applied" class="nav nav-tabs span10"></ul>
+    <div class="quaternary page">
+        <div id="table">
+            <div class="actions clearfix">
+                <div id="table-filters" class="form-inline pull-left"></div>
+                <div class="processing pull-left"></div>
+                <div class="pull-right">
+                    <a class="btn btn-large btn-primary" href="{{ URL::to_admin('localisation/languages/create') }}">{{ Lang::line('button.create') }}</a>
                 </div>
-                <div class="row-fluid">
-                    <div class="span10">
-                        <div class="table-wrapper">
-                            <table id="users-table" class="table table-bordered table-striped">
-                                <thead>
-                                    <tr>
-                                        <th data-table-key="name" class="span4">{{ Lang::line('localisation::languages/table.name')->get() }}</th>
-                                        <th data-table-key="abbreviation"class="span2">{{ Lang::line('localisation::languages/table.abbreviation')->get() }}</th>
-                                        <th class="span2"></th>
-                                    </tr>
-                                <thead>
-                                <tbody>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="tabs-right span2">
-                        <div class="processing"></div>
-                        <ul id="table-pagination" class="nav nav-tabs"></ul>
-                    </div>
+            </div>
+
+            <div class="tabbable tabs-right">
+                <ul id="table-pagination" class="nav nav-tabs"></ul>
+                <div class="tab-content">
+                    <table id="languages-table" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th data-table-key="name" class="span4">{{ Lang::line('localisation::languages/table.name') }}</th>
+                                <th data-table-key="abbreviation"class="span2">{{ Lang::line('localisation::languages/table.abbreviation') }}</th>
+                                <th class="span2"></th>
+                            </tr>
+                        <thead>
+                        <tbody></tbody>
+                    </table>
                 </div>
             </div>
         </div>

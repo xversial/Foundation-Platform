@@ -1,19 +1,32 @@
 @layout('templates.default')
 
+<!-- Page Title -->
 @section('title')
     {{ Lang::line('localisation::currencies/general.title')->get() }}
 @endsection
 
+<!-- Page Content -->
 @section('content')
 <section id="currencies">
-    <header class="head row-fluid">
-        <div class="span6">
-            <h1>{{ Lang::line('localisation::currencies/general.title')->get() }}</h1>
-            <p>{{ Lang::line('localisation::currencies/general.description.delete', array('currency' => $currency['name']))->get() }}</p>
+
+    <!-- Tertiary Navigation & Actions -->
+    <header class="navbar">
+        <div class="navbar-inner">
+            <div class="container">
+                <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+                <a class="btn btn-navbar" data-toggle="collapse" data-target="#tertiary-navigation">
+                    <span class="icon-reorder"></span>
+                </a>
+
+                <a class="brand" href="#">{{ Lang::line('localisation::currencies/general.description.delete', array('currency' => $currency['name'])) }}</a>
+
+                <!-- Everything you want hidden at 940px or less, place within here -->
+                <div id="tertiary-navigation" class="nav-collapse">
+                    @widget('platform.menus::menus.nav', 2, 1, 'nav pull-right', ADMIN)
+                </div>
+            </div>
         </div>
     </header>
-
-    <hr />
 
     {{ Form::open() }}
         {{ Form::token() }}
