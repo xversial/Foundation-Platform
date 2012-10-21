@@ -73,18 +73,20 @@ class Settings
      */
     public function index($settings = null)
     {
-    	$filesystem_options = array(
-			'error'   => 'Error',
-			'info'    => 'Info',
-			'sucess'  => 'Success',
-			'warning' => 'Warning',
-			'off'     => 'Off',
-    	);
+        // Filesystem options.
+        //
+        $filesystem_options = array(
+            'error'   => 'Error',
+            'info'    => 'Info',
+            'sucess'  => 'Success',
+            'warning' => 'Warning',
+            'off'     => 'Off'
+        );
 
         // Show the form.
         //
         return Theme::make('settings::widgets.form.settings')
-        	->with('settings', $settings)
-        	->with('filesystem_options', $filesystem_options);
+            ->with('settings', $settings)
+            ->with('filesystem_options', $filesystem_options);
     }
 }
