@@ -672,12 +672,12 @@ class Platform
 
     /**
      * --------------------------------------------------------------------------
-     * Function: licence()
+     * Function: license()
      * --------------------------------------------------------------------------
      *
      * Returns the string for a Platform license.
      *
-     * If no extension is passed, we assume the default extension is .txt
+     * If no extension is passed, we assume the default file extension is .txt
      *
      * @access   public
      * @param    string

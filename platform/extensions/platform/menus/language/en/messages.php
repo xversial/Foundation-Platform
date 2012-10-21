@@ -26,7 +26,7 @@
  */
 return array(
     'update' => array(
-        'success'     => 'Menu :menu update with success.',
+        'success'     => 'Menu :menu was updated successfully.',
         'error'       => 'Menu was not updated, please try again.',
         'no_children' => 'No children hierarchy was provided.'
     )
