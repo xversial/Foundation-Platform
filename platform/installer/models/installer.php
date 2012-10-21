@@ -182,7 +182,7 @@ class Installer
     	$config['ftp_timeout'] = 90;
 
     	// get config stub
-    	$string = file_get_contents(path('installer') . DS . 'stubs' . DS . 'filesystem' . EXT);
+    	$string = file_get_contents(path('base') . 'installer' . DS . 'stubs' . DS . 'filesystem' . EXT);
 
     	if (array_key_exists('ftp_enable', $config) and $config['ftp_enable'] == 1)
     	{
@@ -231,11 +231,11 @@ class Installer
         // Load config file stub.
         //
         $filesystem = \Filesystem::make();
-    	$string = $filesystem->file()->contents(path('installer') . DS . 'stubs' . DS . 'database' . DS . $config['driver'] . EXT);
+    	$string = $filesystem->file()->contents(path('base') . 'installer' . DS . 'stubs' . DS . 'database' . DS . $config['driver'] . EXT);
 
     	if ( ! $string)
     	{
-    		$string = $filesystem->file()->contents(path('installer'). DS . 'stubs' . DS . 'database' . EXT);
+    		$string = $filesystem->file()->contents(path('base') . 'installer' . DS . 'stubs' . DS . 'database' . EXT);
     	}
 
         // Determine replacements.

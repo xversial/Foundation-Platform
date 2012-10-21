@@ -257,7 +257,7 @@ class Platform
         // Register the installer bundle.
         //
         Bundle::register('installer', array(
-            'location' => 'path: ' . path('installer'),
+            'location' => 'path: ' . path('base') . 'installer',
             'handles'  => 'installer'
         ));
 
@@ -272,31 +272,6 @@ class Platform
             // Redirect to the installer page.
             //
             Redirect::to('installer')->send();
-            exit;
-        }
-    }
-
-
-    public static function start_updater()
-    {
-        // Register the updater bundle.
-        //
-        Bundle::register('updater', array(
-            'location' => 'path: ' . path('updater'),
-            'handles'  => 'updater'
-        ));
-
-        // Start the updater bundle.
-        //
-        Bundle::start('updater');
-
-        // If we are not in the updater.
-        //
-        if ( ! URI::is('updater|updater/*'))
-        {
-            // Redirectr to the updater page.
-            //
-            Redirect::to('updater')->send();
             exit;
         }
     }
