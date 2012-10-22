@@ -1,7 +1,8 @@
-{{ Form::open() }}
+<form method="POST" accept-char="UTF-8" autocomplete="off" id="localisation_settings_form">
+
     {{ Form::token() }}
 
-    {{ Form::hidden('extension', 'localisation') }}
+    <input type="hidden" name="extension" value="localisation">
 
     <fieldset>
         <div>
@@ -13,6 +14,12 @@
         <div>
             <label for="site-language">{{ Lang::line('localisation::form.settings.fields.language') }}</label>
             {{ Form::select('site:language', languages(), Platform::get('localisation.site.language'), array('id' => 'site-language')) }}
+            <span class="help"></span>
+        </div>
+
+        <div>
+            <label for="site-currency_api_key">{{ Lang::line('localisation::form.settings.fields.currency_api_key') }}</label>
+            <input type="text" name="site:currency_api_key" id="site-currency_api_key" value="@get.localisation.site.currency_api_key">
             <span class="help"></span>
         </div>
 
@@ -33,11 +40,23 @@
             {{ Form::select('site:timezone', timezones(), Platform::get('localisation.site.timezone'), array('id' => 'site-timezone')) }}
             <span class="help"></span>
         </div>
+
+        <div>
+            <label for="site-date_format">{{ Lang::line('localisation::form.settings.fields.date_format') }}</label>
+            {{ Form::select('site:date_format', date_formats(), Platform::get('localisation.site.date_format'), array('id' => 'site-date_format')) }}
+            <span class="help"></span>
+        </div>
+
+        <div>
+            <label for="site-time_format">{{ Lang::line('localisation::form.settings.fields.time_format') }}</label>
+            {{ Form::select('site:time_format', time_formats(), Platform::get('localisation.site.time_format'), array('id' => 'site-time_format')) }}
+            <span class="help"></span>
+        </div>
     </fieldset>
 
-    <hr />
+    <hr>
 
     <div class="actions">
         <button class="btn btn-large btn-primary" type="submit">{{ Lang::line('button.update') }}</button>
     </div>
-{{ Form::close() }}
+</form>

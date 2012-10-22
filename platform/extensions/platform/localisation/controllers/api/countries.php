@@ -94,7 +94,7 @@ class Localisation_API_Countries_Controller extends API_Controller
             #$regions = API::get('localisation/regions/' . $country_code);
             $regions = array();
 
-            // Check if country is being used by the system.
+            // Check if this country is being used by the system.
             //
             $country['default'] = ( $country['iso_code_2'] === strtoupper(Platform::get('localisation.site.country')) ? true : false );
 

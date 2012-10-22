@@ -63,11 +63,16 @@ if (Platform::extensions_manager()->is_enabled('localisation'))
 
     // Set the locale.
     //
-    setlocale(LC_ALL, $settings['language_locale'] . '.1252');
+    #setlocale(LC_ALL, $settings['language_locale']);
 
     // Set the timezone.
     //
     Config::set('application.timezone', $settings['timezone']);
+
+    // Set both date and time formats.
+    //
+    Config::set('application.date_format', $settings['date_format']);
+    Config::set('application.time_format', $settings['time_format']);
 
     // Set the Openexchangerates.org API Key.
     //
@@ -86,6 +91,6 @@ if (Platform::extensions_manager()->is_enabled('localisation'))
 
         // Proceed with the update.
         //
-        Platform\Localisation\Currency::update_currencies();
+        Platform\Localisation\Model\Currency::update_currencies();
     }
 }

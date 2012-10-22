@@ -86,6 +86,10 @@ class Localisation_API_Languages_Controller extends API_Controller
                 ), API::STATUS_NOT_FOUND);
             }
 
+            // Check if this language is being used by the system.
+            //
+            $language['default'] = ( $language['abbreviation'] === Platform::get('localisation.site.language') ? true : false );
+
             // Return the language information.
             //
             return new Response($language);

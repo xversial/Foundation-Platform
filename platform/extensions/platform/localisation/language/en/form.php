@@ -34,11 +34,14 @@ return array(
         'legend' => 'Localisation',
 
         'fields' => array(
-            'country'       => 'Default Country',
-            'currency'      => 'Default Currency',
-            'currency_auto' => 'Auto Update Currency',
-            'language'      => 'Default Language',
-            'timezone'      => 'Default Timezone'
+            'country'          => 'Default Country',
+            'currency'         => 'Default Currency',
+            'currency_auto'    => 'Auto Update Currency',
+            'currency_api_key' => 'Open Exchange Rates API Key',
+            'language'         => 'Default Language',
+            'timezone'         => 'Default Timezone',
+            'date_format'      => 'Date Format',
+            'time_format'      => 'Time Format'
         )
     ),
 

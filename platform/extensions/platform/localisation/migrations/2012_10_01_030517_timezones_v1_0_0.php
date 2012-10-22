@@ -57,7 +57,7 @@ class Localisation_Timezones_v1_0_0
     {
         /*
          * --------------------------------------------------------------------------
-         * # 1) Set the default timezone.
+         * # 1) Configuration settings.
          * --------------------------------------------------------------------------
          */
         DB::table('settings')->insert(array(
@@ -81,8 +81,11 @@ class Localisation_Timezones_v1_0_0
      */
     public function down()
     {
-        // Delete the record from the settings table.
-        //  
+        /*
+         * --------------------------------------------------------------------------
+         * # 2) Delete configuration settings.
+         * --------------------------------------------------------------------------
+         */
         DB::table('settings')->where('extension', '=', 'localisation')->where('name', '=', 'timezone')->delete();
     }
 }

@@ -173,3 +173,47 @@ function currencies_update_intervals()
         2592000 => Lang::line('Localisation::form.general.once_month')->get()
     );
 }
+
+
+/**
+ * --------------------------------------------------------------------------
+ * Function: time_formats()
+ * --------------------------------------------------------------------------
+ *
+ * Returns an array of time formats we can choose from.
+ *
+ * @access   public
+ * @return   array
+ */
+function time_formats()
+{
+    return array(
+        'H:i:s',
+        'H:i',
+        'g:i:s a',
+        'g:i a'
+    );
+}
+
+
+/**
+ * --------------------------------------------------------------------------
+ * Function: date_formats()
+ * --------------------------------------------------------------------------
+ *
+ * Returns an array of date formats we can choose from.
+ *
+ * @access   public
+ * @return   array
+ */
+function date_formats()
+{
+    return array(
+        'Y-m-d',
+        'Y-d-m',
+        'd-m-Y',
+        'm-d-Y',
+        'M j Y',
+        'jS M Y'
+    );
+}

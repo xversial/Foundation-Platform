@@ -174,7 +174,7 @@ class Currency extends Crud
 
         // Check the log file to see when we ran the updater for the last time.
         //
-        if (file_exists($file = \Bundle::path('localisation') . 'data' . DS . 'currencies.json') and $force === false)
+        if (file_exists($file = \Bundle::path('localisation') . 'currencies.json') and $force === false)
         {
             // Check if we need to update currencies or not.
             //
@@ -207,7 +207,7 @@ class Currency extends Crud
                 $code = $currency['code'];
                 $update = array(
                     'code' => $code,
-                    'rate' => $json->rates->$code
+                    //'rate' => $json->rates->$code
                 );
 
                 // Update this currency.

@@ -71,7 +71,6 @@ class Localisation_Countries_v1_0_0
             $table->string('subregion')->nullable();
             $table->string('currency')->nullable();
             $table->integer('cdh_id')->nullable();
-            $table->integer('default')->default(0);
             $table->integer('status')->default(1);
             $table->timestamps();
         });
@@ -82,9 +81,13 @@ class Localisation_Countries_v1_0_0
          * # 2) Populate the countries table.
          * --------------------------------------------------------------------------
          */
+        // Define a default country, just in case.
+        //
+        $default = 'gb';
+
         // Read the countries from the CSV file.
         //
-        $file = json_decode(File::get(__DIR__ . DS . 'data' . DS . 'countries.json'), true);
+        $file = json_decode(Filesystem::make('native')->file()->contents(__DIR__ . DS . 'data' . DS . 'countries.json'), true);
 
         // Loop through the countries.
         //
@@ -106,6 +109,15 @@ class Localisation_Countries_v1_0_0
                 'created_at'         => new \DateTime,
                 'updated_at'         => new \DateTime
             );
+
+            // Is this a default country ?
+            //
+            if (isset($country['default']))
+            {
+                // Mark it as the default then.
+                //
+                $default = $country['iso_code_2'];
+            }
         }
 
         // Insert the countries into the database.
@@ -115,21 +127,20 @@ class Localisation_Countries_v1_0_0
 
         /*
          * --------------------------------------------------------------------------
-         * # 3) Set the default country.
+         * # 3) Configuration settings.
          * --------------------------------------------------------------------------
          */
-        DB::table('countries')->where('iso_code_2', '=', 'GB')->update(array('default' => 1));
         DB::table('settings')->insert(array(
             'extension' => 'localisation',
             'type'      => 'site',
             'name'      => 'country',
-            'value'     => 'gb'
+            'value'     => $default
         ));
 
 
         /*
          * --------------------------------------------------------------------------
-         * # 4) Create the menu.
+         * # 4) Create the menus.
          * --------------------------------------------------------------------------
          */
         // Admin > System > Localisation > Countries
@@ -159,16 +170,27 @@ class Localisation_Countries_v1_0_0
      */
     public function down()
     {
-        // Delete the countries table.
-        //
+        /*
+         * --------------------------------------------------------------------------
+         * # 1) Drop the necessary tables.
+         * --------------------------------------------------------------------------
+         */
         Schema::drop('countries');
 
-        // Delete the record from the settings table.
-        //  
+
+        /*
+         * --------------------------------------------------------------------------
+         * # 2) Delete configuration settings.
+         * --------------------------------------------------------------------------
+         */
         DB::table('settings')->where('extension', '=', 'localisation')->where('name', '=', 'country')->delete();
 
-        // Delete the menu.
-        //
+
+        /*
+         * --------------------------------------------------------------------------
+         * # 3) Delete the menus.
+         * --------------------------------------------------------------------------
+         */
         if ($menu = Menu::find('admin-countries'))
         {
             $menu->delete();

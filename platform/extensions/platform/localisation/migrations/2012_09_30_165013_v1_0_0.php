@@ -57,7 +57,7 @@ class Localisation_v1_0_0
     {
         /*
          * --------------------------------------------------------------------------
-         * # 1) Create the menu.
+         * # 1) Create the menus.
          * --------------------------------------------------------------------------
          */
         // Admin > System > Localisation
@@ -73,6 +73,33 @@ class Localisation_v1_0_0
             'class'         => 'icon-plane'
         ));
         $localisation->last_child_of($system_menu);
+
+
+        /*
+         * --------------------------------------------------------------------------
+         * # 2) Configuration settings.
+         * --------------------------------------------------------------------------
+         */
+        $settings = array(
+            // Default date format.
+            //
+            array(
+                'extension' => 'localisation',
+                'type'      => 'site',
+                'name'      => 'date_format',
+                'value'     => 'Y-m-d'
+            ),
+
+            // Default time format.
+            //
+            array(
+                'extension' => 'localisation',
+                'type'      => 'site',
+                'name'      => 'time_format',
+                'value'     => 'H:i:s'
+            )
+        );
+        DB::table('settings')->insert($settings);
     }
 
 
@@ -88,11 +115,22 @@ class Localisation_v1_0_0
      */
     public function down()
     {
-        // Delete the localisation menu.
-        //
+        /*
+         * --------------------------------------------------------------------------
+         * # 1) Delete the menus.
+         * --------------------------------------------------------------------------
+         */
         if ($menu = Menu::find('admin-localisation'))
         {
             $menu->delete();
         }
+
+
+        /*
+         * --------------------------------------------------------------------------
+         * # 2) Delete configuration settings.
+         * --------------------------------------------------------------------------
+         */
+        DB::table('settings')->where('extension', '=', 'localisation')->where('name', 'LIKE', '%_format')->delete();
     }
 }

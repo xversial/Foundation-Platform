@@ -66,7 +66,6 @@ class Localisation_Languages_v1_0_0
             $table->string('slug');
             $table->string('abbreviation', 5);
             $table->string('locale');
-            $table->integer('default')->default(0);
             $table->integer('status')->default(1);
             $table->timestamps();
         });
@@ -84,7 +83,7 @@ class Localisation_Languages_v1_0_0
 
         // Read the json file.
         //
-        $file = json_decode(File::get(__DIR__ . DS . 'data' . DS . 'languages.json'), true);
+        $file = json_decode(Filesystem::make('native')->file()->contents(__DIR__ . DS . 'data' . DS . 'languages.json'), true);
 
         // Loop through the languages.
         //
@@ -96,7 +95,6 @@ class Localisation_Languages_v1_0_0
                 'slug'         => \Str::slug($language['name']),
                 'abbreviation' => $language['abbreviation'],
                 'locale'       => $language['locale'],
-                'default'      => ( isset($language['default']) ? 1 : 0 ),
                 'status'       => ( isset($language['status']) ? $language['status'] : 1 ),
                 'created_at'   => new \DateTime,
                 'updated_at'   => new \DateTime
@@ -120,16 +118,21 @@ class Localisation_Languages_v1_0_0
 
         /*
          * --------------------------------------------------------------------------
-         * # 3) Set the default language and default locale.
+         * # 3) Configuration settings.
          * --------------------------------------------------------------------------
          */
         $settings = array(
+            // Default language.
+            //
             array(
                 'extension' => 'localisation',
                 'type'      => 'site',
                 'name'      => 'language',
                 'value'     => $default
             ),
+
+            // Default language locale.
+            //
             array(
                 'extension' => 'localisation',
                 'type'      => 'site',
@@ -172,16 +175,27 @@ class Localisation_Languages_v1_0_0
      */
     public function down()
     {
-        // Delete the languages table.
-        //
+        /*
+         * --------------------------------------------------------------------------
+         * # 1) Drop the necessary tables.
+         * --------------------------------------------------------------------------
+         */
         Schema::drop('languages');
 
-        // Delete the record from the settings table.
-        //  
+
+        /*
+         * --------------------------------------------------------------------------
+         * # 2) Delete configuration settings.
+         * --------------------------------------------------------------------------
+         */
         DB::table('settings')->where('extension', '=', 'localisation')->where('name', 'LIKE', 'language%')->delete();
 
-        // Delete the menu.
-        //
+
+        /*
+         * --------------------------------------------------------------------------
+         * # 3) Delete the menus.
+         * --------------------------------------------------------------------------
+         */
         if ($menu = Menu::find('admin-languages'))
         {
             $menu->delete();

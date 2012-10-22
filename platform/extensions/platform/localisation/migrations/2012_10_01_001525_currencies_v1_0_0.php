@@ -70,7 +70,6 @@ class Localisation_Currencies_v1_0_0
             $table->string('decimal_place', 1)->nullable();
             $table->decimal('rate', 15, 8)->nullable();
             $table->integer('cdh_id')->nullable();
-            $table->integer('default')->default(0);
             $table->integer('status')->default(1);
             $table->timestamps();
         });
@@ -87,7 +86,7 @@ class Localisation_Currencies_v1_0_0
 
         // Read the json file.
         //
-        $file = json_decode(File::get(__DIR__ . DS . 'data' . DS . 'currencies.json'), true);
+        $file = json_decode(Filesystem::make('native')->file()->contents(__DIR__ . DS . 'data' . DS . 'currencies.json'), true);
 
         // Loop through the currencies.
         //
@@ -102,7 +101,6 @@ class Localisation_Currencies_v1_0_0
                 'symbol_right'  => ( isset($currency['symbol_right']) ? $currency['symbol_right'] : '' ),
                 'decimal_place' => ( isset($currency['decimal_place']) ? $currency['decimal_place'] : 2 ),
                 'rate'          => ( isset($currency['rate']) ? $currency['rate'] : '' ),
-                'default'       => ( isset($currency['default']) ? 1 : 0 ),
                 'status'        => ( isset($currency['status']) ? $currency['status'] : 1 ),
                 'created_at'    => new \DateTime,
                 'updated_at'    => new \DateTime
@@ -123,35 +121,38 @@ class Localisation_Currencies_v1_0_0
 
         /*
          * --------------------------------------------------------------------------
-         * # 3) Make some inserts into the settings table.
+         * # 3) Configuration settings.
          * --------------------------------------------------------------------------
          */
-        // Set the default currency.
-        //
-        DB::table('settings')->insert(array(
-            'extension' => 'localisation',
-            'type'      => 'site',
-            'name'      => 'currency',
-            'value'     => strtoupper($default)
-        ));
+        $settings = array(
+            // Default currency.
+            //
+            array(
+                'extension' => 'localisation',
+                'type'      => 'site',
+                'name'      => 'currency',
+                'value'     => strtoupper($default)
+            ),
 
-        // Set the interval time for every rate update.
-        //
-        DB::table('settings')->insert(array(
-            'extension' => 'localisation',
-            'type'      => 'site',
-            'name'      => 'currency_auto_update',
-            'value'     =>  604800
-        ));
+            // Set the interval time for every rate update.
+            //
+            array(
+                'extension' => 'localisation',
+                'type'      => 'site',
+                'name'      => 'currency_auto_update',
+                'value'     =>  604800
+            ),
 
-        // Set the default API Key for Openexchangerates.org
-        //
-        DB::table('settings')->insert(array(
-            'extension' => 'localisation',
-            'type'      => 'site',
-            'name'      => 'currency_api_key',
-            'value'     =>  ''
-        ));
+            // Default API Key for Openexchangerates.org
+            //
+            array(
+                'extension' => 'localisation',
+                'type'      => 'site',
+                'name'      => 'currency_api_key',
+                'value'     =>  ''
+            )
+        );
+        DB::table('settings')->insert($settings);
 
 
         /*
@@ -186,16 +187,27 @@ class Localisation_Currencies_v1_0_0
      */
     public function down()
     {
-        // Delete the currencies table.
-        //
+        /*
+         * --------------------------------------------------------------------------
+         * # 1) Drop the necessary tables.
+         * --------------------------------------------------------------------------
+         */
         Schema::drop('currencies');
 
-        // Delete the record from the settings table.
-        //  
+
+        /*
+         * --------------------------------------------------------------------------
+         * # 2) Delete configuration settings.
+         * --------------------------------------------------------------------------
+         */
         DB::table('settings')->where('extension', '=', 'localisation')->where('name', 'LIKE', '%currency%')->delete();
 
-        // Delete the menu.
-        //
+
+        /*
+         * --------------------------------------------------------------------------
+         * # 3) Delete the menus.
+         * --------------------------------------------------------------------------
+         */
         if ($menu = Menu::find('admin-currencies'))
         {
             $menu->delete();

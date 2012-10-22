@@ -86,6 +86,10 @@ class Localisation_API_Currencies_Controller extends API_Controller
                 ), API::STATUS_NOT_FOUND);
             }
 
+            // Check if this currency is being used by the system.
+            //
+            $currency['default'] = ( $currency['code'] === Platform::get('localisation.site.currency') ? true : false );
+
             // Return the currency information.
             //
             return new Response($currency);
