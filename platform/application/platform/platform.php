@@ -134,10 +134,6 @@ class Platform
             // Start the extensions.
             //
             static::extensions_manager()->start_extensions();
-
-            // Grab and store all the settings.
-            //
-            static::$settings = API::get('settings', array('organize' => true));
         }
     }
 
@@ -431,8 +427,16 @@ class Platform
      */
     public static function get($setting = null, $default = null)
     {
+        // Separate the settings.
+        //
         $settings = explode('.', $setting);
+
+        // Get the extension.
+        //
         $extension = array_shift($settings);
+
+        // 
+        //
         if (count($settings) > 1)
         {
             $type = array_shift($settings);
@@ -444,6 +448,17 @@ class Platform
             $name = array_shift($settings);
         }
 
+        // Do we have settings stored ?
+        //
+        if(empty(static::$settings))
+        {
+            // Nope, grab and store all the settings from the database.
+            //
+            static::$settings = API::get('settings', array('organize' => true));
+        }
+
+        // If an extension settings does not exist.
+        //
         if ( ! array_key_exists($extension, static::$settings))
         {
             try
