@@ -160,7 +160,16 @@ class Pages_v1_1_0
 				'type'      => 'status',
 				'name'      => 'enabled',
 				'value'     => '1'
-			)
+			),
+
+			// default page (/index)
+			//
+			array(
+				'extension' => 'pages',
+				'type'      => 'default',
+				'name'      => 'page',
+				'value'     => 'home',
+			),
 		);
 
 		// Insert the settings into the database.
