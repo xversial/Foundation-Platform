@@ -170,4 +170,35 @@ class Directory extends \Filesystem\Driver\Directory
 		return @ftp_chdir($this->connection_id, $path);
 	}
 
+	/**
+	 * -----------------------------------------
+	 * Function: exists()
+	 * -----------------------------------------
+	 *
+	 * See if Directory Exists
+	 *
+	 * @access   public
+	 * @param    string
+	 * @return   bool
+	 */
+	public function exists($path)
+	{
+		// find the current directory
+		//
+		$current_dir = $this->current();
+
+		// see if we can change to the request directory
+		//
+		$response = $this->change($path);
+
+		// if we were able to change directories, change back to current
+		//
+		if ($response)
+		{
+			$this->change($current_dir);
+		}
+
+		return $response;
+	}
+
 }

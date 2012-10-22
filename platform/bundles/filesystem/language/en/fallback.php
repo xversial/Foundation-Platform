@@ -13,6 +13,7 @@ return array(
 		'current'  => 'Filesystem fellback to the native driver to find the current directory.',
 		'contents' => 'Filesystem fellback to the native driver to find the directories contents.',
 		'change'   => 'Filesystem fellback to the native driver to change directories.',
+		'exists'   => 'Filesystem fellback to the native driver to see if the directory exists.',
 	),
 
 	'file' => array(

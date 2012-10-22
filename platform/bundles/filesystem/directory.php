@@ -287,4 +287,30 @@ class Directory
 		return $response;
 	}
 
+	/**
+	 * -----------------------------------------
+	 * Function: exists()
+	 * -----------------------------------------
+	 *
+	 * See if Directory Exists
+	 *
+	 * @access   public
+	 * @param    string
+	 * @return   bool
+	 */
+	public function exists($path)
+	{
+		$response = $this->call('exists', Filesystem::findPath($path));
+
+		if ( ! $response)
+		{
+			\Event::fire(
+				\Config::get('filesystem::filesystem.event.failed'),
+				array(\Lang::line('filesystem::failed.directory.exists')->get())
+			);
+		}
+
+		return $response;
+	}
+
 }
