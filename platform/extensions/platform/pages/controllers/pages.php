@@ -1,45 +1,22 @@
 <?php
-/**
- * Part of the Platform application.
- *
- * NOTICE OF LICENSE
- *
- * Licensed under the 3-clause BSD License.
- *
- * This source file is subject to the 3-clause BSD License that is
- * bundled with this package in the LICENSE file.  It is also available at
- * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
- *
- * @package    Platform
- * @version    1.0.3
- * @author     Cartalyst LLC
- * @license    BSD License (3-clause)
- * @copyright  (c) 2011 - 2012, Cartalyst LLC
- * @link       http://cartalyst.com
- */
+
+use Platform\Pages\Helper;
 
 class Pages_Pages_Controller extends Public_Controller
 {
-	public function before()
+	public function get_page($slug = false)
 	{
-		parent::before();
-		$this->active_menu('main-home');
-	}
+		$slug = ($slug) ?: Platform::get('pages.default.page');
 
-	public function get_index()
-	{
-		return Theme::make('pages::index');
-	}
+		$page = API::get('pages/'.$slug);
+		$content = $page['content'];
 
-	public function get_about()
-	{
-		$this->active_menu('about');
-		return 'about page';
-	}
+		$pattern = "/@content\('([\w-_]+?)'\)/";
 
-	public function get_contact()
-	{
-		$this->active_menu('contact');
-		return 'contact page';
+		$content = preg_replace_callback($pattern, 'Platform\Pages\Helper::content', $content);
+
+		return Theme::make('pages::templates.'.$page['template'])
+			->with('name', $page['name'])
+			->with('content', $content);
 	}
 }

@@ -33,8 +33,8 @@ return array(
 	'info' => array(
 		'name'        => 'Pages',
 		'author'      => 'Cartalyst LLC',
-		'description' => 'An extension to manage pages until a CMS is completed.',
-		'version'     => '1.0',
+		'description' => 'An extension to manage pages and content.',
+		'version'     => '1.1',
 		'is_core'     => true,
 	),
 
@@ -45,17 +45,16 @@ return array(
      * -----------------------------------------
      */
 	'routes' => function(){
-		Route::any('/', 'pages::pages@index');
+		Route::any('/', function() {
+			return Controller::call('pages::pages@page');
+		});
 
-		Route::any('(:any)(/.*)?', function($page = 'index', $params = null) {
+		Route::any('(:any)', function($page = 'index') {
 
 			// check if the page is a bundle
 			if ( ! Bundle::exists($page))
 			{
-				$page = ($page == 'home') ? 'index' : $page;
-				$params = explode('/', substr($params, 1));
-
-				return Controller::call('pages::pages@'.$page, $params);
+				return Controller::call('pages::pages@page', array($page));
 			}
 		});
 	}

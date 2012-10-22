@@ -11,6 +11,7 @@ return array(
 		'current'  => 'Filesystem failed to find the current directory.',
 		'contents' => 'Filesystem failed to find the directories contents.',
 		'change'   => 'Filesystem failed to change directories.',
+		'exists'   => 'Filesystem failed to check if the directory exists.',
 	),
 
 	'file' => array(

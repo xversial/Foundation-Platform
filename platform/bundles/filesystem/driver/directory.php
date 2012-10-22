@@ -128,4 +128,16 @@ abstract class Directory
 	 */
 	abstract public function change($path);
 
+	/**
+	 * -----------------------------------------
+	 * Function: exists()
+	 * -----------------------------------------
+	 *
+	 * See if Directory Exists
+	 *
+	 * @access   public
+	 * @param    string
+	 * @return   bool
+	 */
+	abstract public function exists($path);
 }

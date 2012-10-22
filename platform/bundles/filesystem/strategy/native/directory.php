@@ -211,4 +211,19 @@ class Directory extends \Filesystem\Driver\Directory
 		return chdir($path);
 	}
 
+	/**
+	 * -----------------------------------------
+	 * Function: exists()
+	 * -----------------------------------------
+	 *
+	 * See if Directory Exists
+	 *
+	 * @access   public
+	 * @param    string
+	 * @return   bool
+	 */
+	public function exists($path)
+	{
+		return is_dir($path);
+	}
 }
