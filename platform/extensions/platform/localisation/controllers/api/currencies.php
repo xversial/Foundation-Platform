@@ -208,7 +208,7 @@ class Localisation_API_Currencies_Controller extends API_Controller
         $currency->symbol_right  = Input::get('symbol_right');
         $currency->decimal_place = Input::get('decimal_place');
         $currency->rate          = Input::get('rate');
-        $currency->status        = ( ! $currency['default'] ? Input::get('status') : 1 );
+        $currency->status        = ( $currency['code'] === Platform::get('localisation.site.currency') ? 1 : Input::get('status') );
 
         try
         {
@@ -282,7 +282,7 @@ class Localisation_API_Currencies_Controller extends API_Controller
 
         // Check if this is a default currency.
         //
-        if ($currency['default'])
+        if ($currency['code'] === Platform::get('localisation.site.currency'))
         {
             // Return a response.
             //
@@ -420,13 +420,16 @@ class Localisation_API_Currencies_Controller extends API_Controller
             ), API::STATUS_NOT_FOUND);
         }
 
-        // Make the current default currency, not default anymore.
+        // Is this currency the default already ?
         //
-        DB::table('currencies')->where('default', '=', 1)->update(array('default' => 0));
-
-        // Make this currency the default.
-        //
-        DB::table('currencies')->where('code', '=', $currency['code'])->update(array('default' => 1));
+        if ($currency['code'] === Platform::get('localisation.site.currency'))
+        {
+            // Return a response.
+            //
+            return new Response(array(
+                'message' => Lang::line('localisation::currencies/message.update.already_default', array('currency' => $currency['name']))->get()
+            ));
+        }
 
         // Update the settings table.
         //

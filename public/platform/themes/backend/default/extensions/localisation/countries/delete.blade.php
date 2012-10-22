@@ -18,7 +18,7 @@
                     <span class="icon-reorder"></span>
                 </a>
 
-                <a class="brand" href="#">{{ Lang::line('localisation::countries/general.description.delete', array('country' => $country['name'])) }}</a>
+                <a class="brand" href="{{ URL::to_admin('localisation/countries') }}">{{ Lang::line('localisation::countries/general.title') }}</a>
 
                 <!-- Everything you want hidden at 940px or less, place within here -->
                 <div id="tertiary-navigation" class="nav-collapse">
@@ -28,8 +28,10 @@
         </div>
     </header>
 
-    {{ Form::open() }}
-        {{ Form::token() }}
+    <h2>{{ Lang::line('localisation::countries/general.description.delete', array('country' => $country['name'])) }}</h2>
+
+    <form action="{{ URL::to_admin('localisation/countries/delete/' . $country['slug']) }}" id="countries-delete-form" class="form-horizontal" method="POST" accept-char="UTF-8">
+        <input type="hidden" name="{{ Session::csrf_token }}" value="{{ Session::token() }}">
 
         <div class="alert alert-error">
             <h3>{{ Lang::line('general.warning') }}</h3>
@@ -43,6 +45,6 @@
             <a href="{{ URL::to_admin('localisation/countries') }}" class="btn btn-success"><i class="icon-remove icon-white"></i> {{ Lang::line('button.cancel') }}</a>
             @endif
         </div>
-    {{ Form::close() }}
+    </form>
 </section>
 @endsection

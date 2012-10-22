@@ -224,7 +224,7 @@ class Localisation_API_Countries_Controller extends API_Controller
         $country->region             = ( Input::get('region') ?: $country['region'] );
         $country->subregion          = ( Input::get('subregion') ?: $country['subregion'] );
         $country->currency           = ( Input::get('currency') ?: $country['currency'] );
-        $country->status             = ( ! $country['default'] ? Input::get('status') : 1 );
+        $country->status             = ( $country['iso_code_2'] === Platform::get('localisation.site.country') ? 1 : Input::get('status') );
 
         try
         {
@@ -298,7 +298,7 @@ class Localisation_API_Countries_Controller extends API_Controller
 
         // Check if this is a default country.
         //
-        if ($country['default'])
+        if ($country['iso_code_2'] === Platform::get('localisation.site.country'))
         {
             // Return a response.
             //
@@ -437,13 +437,16 @@ class Localisation_API_Countries_Controller extends API_Controller
             ), API::STATUS_NOT_FOUND);
         }
 
-        // Make the current default country, not default anymore.
+        // Is this country the default already ?
         //
-        DB::table('countries')->where('default', '=', 1)->update(array('default' => 0));
-
-        // Make this country the default.
-        //
-        DB::table('countries')->where('iso_code_2', '=', $country['iso_code_2'])->update(array('default' => 1));
+        if ($country['iso_code_2'] === Platform::get('localisation.site.country'))
+        {
+            // Return a response.
+            //
+            return new Response(array(
+                'message' => Lang::line('localisation::countries/message.update.already_default', array('country' => $country['name']))->get()
+            ));
+        }
 
         // Update the settings table.
         //

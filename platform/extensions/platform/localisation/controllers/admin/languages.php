@@ -146,13 +146,13 @@ class Localisation_Admin_Languages_Controller extends Admin_Controller
      */
     public function post_create()
     {
-        return $this->post_view();
+        return $this->post_edit();
     }
 
 
     /**
      * --------------------------------------------------------------------------
-     * Function: get_view()
+     * Function: get_edit()
      * --------------------------------------------------------------------------
      *
      * Language editing page.
@@ -161,7 +161,7 @@ class Localisation_Admin_Languages_Controller extends Admin_Controller
      * @param    string
      * @return   mixed
      */
-    public function get_view($language_code)
+    public function get_edit($language_code)
     {
         try
         {
@@ -189,13 +189,13 @@ class Localisation_Admin_Languages_Controller extends Admin_Controller
 
         // Show the page.
         //
-        return Theme::make('localisation::languages.view')->with('language', $language);
+        return Theme::make('localisation::languages.edit')->with('language', $language);
     }
 
 
     /**
      * --------------------------------------------------------------------------
-     * Function: post_view()
+     * Function: post_edit()
      * --------------------------------------------------------------------------
      *
      * Language editing form processing page.
@@ -204,7 +204,7 @@ class Localisation_Admin_Languages_Controller extends Admin_Controller
      * @param    string
      * @return   mixed
      */
-    public function post_view($language_code = false)
+    public function post_edit($language_code = false)
     {
         try
         {
@@ -240,7 +240,7 @@ class Localisation_Admin_Languages_Controller extends Admin_Controller
             {
                 // Redirect to the language page.
                 //
-                return Redirect::to_admin('localisation/languages/view/' . $language_slug);
+                return Redirect::to_admin('localisation/languages/edit/' . $language_slug);
             }
             else
             {

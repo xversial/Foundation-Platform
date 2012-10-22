@@ -36,10 +36,11 @@ return array(
     ),
 
     'update' => array(
-        'success'       => 'Currency :currency was successfully updated.',
-        'fail'          => 'An error occurred while updating the currency :currency !',
-        'disable_error' => 'You cannot disable a default currency !',
-        'default'       => 'Currency :currency is now the current default system currency.'
+        'success'         => 'Currency :currency was successfully updated.',
+        'fail'            => 'An error occurred while updating the currency :currency !',
+        'disable_error'   => 'You cannot disable a default currency !',
+        'default'         => 'Currency :currency is now the current default system currency.',
+        'already_default' => 'Currency :currency is already the default currency.'
     ),
 
     'delete' => array(
