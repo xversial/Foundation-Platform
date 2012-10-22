@@ -22,7 +22,7 @@ class Helper
 
 			if ($content)
 			{
-				return $content['content'];
+				return static::renderContent($content['content']);
 			}
 
 			return 'content not found.';
@@ -30,28 +30,17 @@ class Helper
 		catch(APIClientException $e)
 		{
 			return $e->getMessage();
-			return 'error retriever content.';
+			return 'error retrieving content.';
 		}
 	}
 
-	public static function page($slug)
+	public static function renderContent($content)
 	{
-		try
-		{
-			$page = API::get('pages/'.$slug);
+		$pattern = "/@content\('([\w-_]+?)'\)/";
 
-			if ($page)
-			{
-				return $page['content'];
-			}
+		$content = preg_replace_callback($pattern, 'Platform\Pages\Helper::content', $content);
 
-			return 'page not found.';
-		}
-		catch(APIClientException $e)
-		{
-			return $e->getMessage();
-			return 'error retriever page.';
-		}
+		return $content;
 	}
 
 	public static function findTemplates()

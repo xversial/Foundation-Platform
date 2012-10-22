@@ -8,12 +8,21 @@ class Pages_Pages_Controller extends Public_Controller
 	{
 		$slug = ($slug) ?: Platform::get('pages.default.page');
 
-		$page = API::get('pages/'.$slug);
-		$content = $page['content'];
+		try
+		{
+			$page = API::get('pages/'.$slug);
 
-		$pattern = "/@content\('([\w-_]+?)'\)/";
+			if ( ! $page)
+			{
+				return Event::first('404');
+			}
+		}
+		catch(APIClientException $e)
+		{
+			return Event::first('404');
+		}
 
-		$content = preg_replace_callback($pattern, 'Platform\Pages\Helper::content', $content);
+		$content = Helper::renderContent($page['content']);
 
 		return Theme::make('pages::templates.'.$page['template'])
 			->with('name', $page['name'])

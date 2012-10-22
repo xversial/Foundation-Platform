@@ -43,17 +43,3 @@ Blade::extend(function($view)
 
 	return preg_replace($pattern, '<?php echo Platform\Pages\Helper::content$2; ?>', $view);
 });
-
-/**
- * Register @content with blade.
- *
- *  TODO: add error logging when widget/plugin fails
- *
- * @return   string
- */
-Blade::extend(function($view)
-{
-	$pattern = Blade::matcher('page');
-
-	return preg_replace($pattern, '<?php echo Platform\Pages\Helper::page$2; ?>', $view);
-});
