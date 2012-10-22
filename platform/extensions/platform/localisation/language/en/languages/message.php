@@ -36,11 +36,11 @@ return array(
     ),
 
     'update' => array(
-        'success'       => 'Language :language was successfully updated.',
-        'fail'          => 'An error occurred while updating the language :language !',
-        'disable_error' => 'You cannot disable a default language !',
-        'default'       => 'Language :language is now the current default system language.',
-        'already_default' => 'Language :language is already the default language'
+        'success'         => 'Language :language was successfully updated.',
+        'fail'            => 'An error occurred while updating the language :language !',
+        'disable_error'   => 'You cannot disable a default language !',
+        'default'         => 'Language :language is now the current default system language.',
+        'already_default' => 'Language :language is already the default language.'
     ),
 
     'delete' => array(

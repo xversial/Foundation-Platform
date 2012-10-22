@@ -36,10 +36,11 @@ return array(
     ),
 
     'update' => array(
-        'success'       => 'Country :country was successfully updated.',
-        'fail'          => 'An error occurred while updating the country :country !',
-        'disable_error' => 'You cannot disable a default country !',
-        'default'       => 'Country :country is now the current default system country.'
+        'success'         => 'Country :country was successfully updated.',
+        'fail'            => 'An error occurred while updating the country :country !',
+        'disable_error'   => 'You cannot disable a default country !',
+        'default'         => 'Country :country is now the current default system country.',
+        'already_default' => 'Country :country is already the default country.'
     ),
 
     'delete' => array(

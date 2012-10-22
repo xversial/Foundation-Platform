@@ -202,7 +202,7 @@ class Localisation_API_Languages_Controller extends API_Controller
         $language->slug         = \Str::slug(Input::get('name'));
         $language->abbreviation = Input::get('abbreviation');
         $language->locale       = Input::get('locale');
-        $language->status       = ( ! $language['default'] ? Input::get('status') : 1 );
+        $language->status       = ( $language['abbreviation'] === Platform::get('localisation.site.language') ? 1 : Input::get('status') );
 
         try
         {
@@ -276,7 +276,7 @@ class Localisation_API_Languages_Controller extends API_Controller
 
         // Check if this is a default language.
         //
-        if ($language['default'])
+        if ($language['abbreviation'] === Platform::get('localisation.site.language'))
         {
             // Return a response.
             //
@@ -416,22 +416,14 @@ class Localisation_API_Languages_Controller extends API_Controller
 
         // Is this language the default already ?
         //
-        if ($language['default'] === 1)
+        if ($language['abbreviation'] === Platform::get('localisation.site.language'))
         {
             // Return a response.
             //
             return new Response(array(
-                'message' => Lang::line('localisation::languages/message.update.already_default', array('language' => $language_code))->get()
+                'message' => Lang::line('localisation::languages/message.update.already_default', array('language' => $language['name']))->get()
             ));
         }
-
-        // Make the current default language, not default anymore.
-        //
-        DB::table('languages')->where('default', '=', 1)->update(array('default' => 0));
-
-        // Make this language the default.
-        //
-        DB::table('languages')->where('abbreviation', '=', $language['abbreviation'])->update(array('default' => 1));
 
         // Update the settings table.
         //
