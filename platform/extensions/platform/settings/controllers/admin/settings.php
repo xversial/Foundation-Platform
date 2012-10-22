@@ -203,7 +203,7 @@ class Settings_Admin_Settings_Controller extends Admin_Controller
         {
             // Make the API request.
             //
-            $request = API::put('settings', array( 'settings' => $settings ));
+            $request = API::put('settings', array('settings' => $settings));
 
             // If we have fields that were updated with success.
             //
