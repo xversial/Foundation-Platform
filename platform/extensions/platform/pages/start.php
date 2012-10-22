@@ -27,7 +27,7 @@
 Autoloader::namespaces(array(
 	'Platform\\Pages\\Widgets' => __DIR__ . DS . 'widgets',
 	'Platform\\Pages\\Model'   => __DIR__ . DS . 'models',
-	'Platform\\Pages' => __DIR__ . DS . 'libraries',
+	'Platform\\Pages'          => __DIR__ . DS . 'libraries',
 ));
 
 /**

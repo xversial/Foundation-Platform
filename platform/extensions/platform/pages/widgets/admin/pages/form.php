@@ -22,6 +22,7 @@ namespace Platform\Pages\Widgets;
 
 use API;
 use APIClientException;
+use Platform;
 use Platform\Pages\Helper;
 use Theme;
 
@@ -34,11 +35,17 @@ class Admin_Pages_Form
 	 */
 	public function create()
 	{
+		// default template
+		//
+		$template = Platform::get('pages.default.template');
+
 		// retrieve templates
 		//
 		$templates = Helper::findTemplates();
 
-		return Theme::make('pages::widgets.pages.form.create')->with('templates', $templates);
+		return Theme::make('pages::widgets.pages.form.create')
+			->with('template', $template)
+			->with('templates', $templates);
 	}
 
 	/**

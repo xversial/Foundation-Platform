@@ -25,7 +25,7 @@
 		<div class="control-group">
 			<label for="template" class="control-label">Template:</label>
 			<div class="controls">
-				{{ Form::select('templates', $templates) }}
+				{{ Form::select('templates', $templates, $template) }}
 				<span class="help-block">Page Template to use.</span>
 			</div>
 		</div>

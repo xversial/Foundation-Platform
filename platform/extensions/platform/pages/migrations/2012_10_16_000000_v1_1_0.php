@@ -170,6 +170,15 @@ class Pages_v1_1_0
 				'name'      => 'page',
 				'value'     => 'home',
 			),
+
+			// default template (default)
+			//
+			array(
+				'extension' => 'pages',
+				'type'      => 'default',
+				'name'      => 'template',
+				'value'     => 'default'
+			),
 		);
 
 		// Insert the settings into the database.
