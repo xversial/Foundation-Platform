@@ -16,6 +16,13 @@
 
 <!-- Scripts -->
 @section('scripts')
+
+<script>
+	$(document).ready(function() {
+		Validate.setup($("#general-form"), $("#login-form"), $("#login-form"));
+	});
+</script>
+
 @endsection
 
 @section('content')
