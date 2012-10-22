@@ -61,6 +61,10 @@ if (Platform::extensions_manager()->is_enabled('localisation'))
     //
     Config::set('application.language', strtolower($settings['language']));
 
+    // Set the locale.
+    //
+    setlocale(LC_ALL, $settings['language_locale'] . '.1252');
+
     // Set the timezone.
     //
     Config::set('application.timezone', $settings['timezone']);

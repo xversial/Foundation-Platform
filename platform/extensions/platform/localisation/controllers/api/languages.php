@@ -437,6 +437,12 @@ class Localisation_API_Languages_Controller extends API_Controller
             ->where('name', '=', 'language')
             ->update(array('value' => $language['abbreviation']));
 
+        DB::table('settings')
+            ->where('extension', '=', 'localisation')
+            ->where('type', '=', 'site')
+            ->where('name', '=', 'language_locale')
+            ->update(array('value' => $language['locale']));
+
         // Return a response.
         //
         return new Response(array(

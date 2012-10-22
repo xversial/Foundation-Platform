@@ -77,9 +77,10 @@ class Localisation_Languages_v1_0_0
          * # 2) Insert the languages.
          * --------------------------------------------------------------------------
          */
-        // Define a default language, just in case.
+        // Define a default language and locale, just in case.
         //
         $default = 'en';
+        $locale  = 'English_United Kingdom';
 
         // Read the json file.
         //
@@ -108,6 +109,7 @@ class Localisation_Languages_v1_0_0
                 // Mark it as the default then.
                 //
                 $default = $language['abbreviation'];
+                $locale  = $language['locale'];
             }
         }
 
@@ -118,15 +120,24 @@ class Localisation_Languages_v1_0_0
 
         /*
          * --------------------------------------------------------------------------
-         * # 3) Set the default language.
+         * # 3) Set the default language and default locale.
          * --------------------------------------------------------------------------
          */
-        DB::table('settings')->insert(array(
-            'extension' => 'localisation',
-            'type'      => 'site',
-            'name'      => 'language',
-            'value'     => $default
-        ));
+        $settings = array(
+            array(
+                'extension' => 'localisation',
+                'type'      => 'site',
+                'name'      => 'language',
+                'value'     => $default
+            ),
+            array(
+                'extension' => 'localisation',
+                'type'      => 'site',
+                'name'      => 'language_locale',
+                'value'     => $locale
+            )
+        );
+        DB::table('settings')->insert($settings);
 
 
         /*
@@ -167,7 +178,7 @@ class Localisation_Languages_v1_0_0
 
         // Delete the record from the settings table.
         //  
-        DB::table('settings')->where('extension', '=', 'localisation')->where('name', '=', 'language')->delete();
+        DB::table('settings')->where('extension', '=', 'localisation')->where('name', 'LIKE', 'language%')->delete();
 
         // Delete the menu.
         //
