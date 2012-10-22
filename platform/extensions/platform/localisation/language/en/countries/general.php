@@ -35,7 +35,7 @@ return array(
     'description' => array(
         'index'  => 'Manage your system countries.',
         'create' => 'Creating a new country',
-        'view'   => 'Viewing the country :country',
+        'edit'   => 'Updating the country :country',
         'delete' => 'Deleting the country :country'
     )
 );

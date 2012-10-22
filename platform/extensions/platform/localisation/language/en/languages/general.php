@@ -35,7 +35,7 @@ return array(
     'description' => array(
         'index'  => 'Manage your system languages.',
         'create' => 'Creating a new language',
-        'view'   => 'Viewing the language :language',
+        'edit'   => 'Updating the language :language',
         'delete' => 'Deleting the language :language'
     )
 );
