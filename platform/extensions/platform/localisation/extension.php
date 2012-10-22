@@ -35,7 +35,7 @@ return array(
         'author'      => 'Cartalyst LLC',
         'description' => 'Manage your system languages, countries, currencies and timezones.',
         'version'     => '1.0',
-        'is_core'     => false
+        'is_core'     => true
     ),
 
 
