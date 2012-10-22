@@ -34,7 +34,7 @@
 				<span class="icon-reorder"></span>
 			</a>
 
-			<a class="brand" href="#">Manage Content</a>
+			<a class="brand" href="#">Content Management</a>
 
 			<!-- Everything you want hidden at 940px or less, place within here -->
 			<div id="tertiary-navigation" class="nav-collapse">
