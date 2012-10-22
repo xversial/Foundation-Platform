@@ -105,8 +105,6 @@ class Table
             $columns = array_keys($defaults['select']);
         }
 
-        $columns = (empty($columns)) ? '*' : $columns;
-
         return array($query, $columns);
     }
 
