@@ -13,27 +13,28 @@
     <header class="navbar">
         <div class="navbar-inner">
             <div class="container">
-
                 <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
                 <a class="btn btn-navbar" data-toggle="collapse" data-target="#tertiary-navigation">
                     <span class="icon-reorder"></span>
                 </a>
 
-                <a class="brand" href="#">{{ Lang::line('localisation::currencies/general.description.view', array('currency' => $currency['name'])) }}</a>
+                <a class="brand" href="{{ URL::to_admin('localisation/currencies') }}">{{ Lang::line('localisation::currencies/general.title') }}</a>
 
                 <!-- Everything you want hidden at 940px or less, place within here -->
                 <div id="tertiary-navigation" class="nav-collapse">
                     @widget('platform.menus::menus.nav', 2, 1, 'nav pull-right', ADMIN)
                 </div>
-
             </div>
         </div>
     </header>
 
     <div class="quaternary page">
-        {{ Form::open() }}
-            {{ Form::token() }}
+        <form action="{{ URL::to_admin('localisation/currencies/edit/' . $currency['slug']) }}" id="currency-edit-form" class="form-horizontal" method="POST" accept-char="UTF-8">
+            <input type="hidden" name="{{ Session::csrf_token }}" value="{{ Session::token() }}">
+
             <fieldset>
+                <legend>{{ Lang::line('localisation::currencies/general.description.edit', array('currency' => $currency['name'])) }}</legend>
+
                 <div class="control-group">
                     <label class="control-label" for="name">{{ Lang::line('localisation::currencies/table.name') }}</label>
                     <div class="controls">
@@ -93,8 +94,7 @@
                 <a class="btn btn-large btn-danger" href="{{ URL::to_admin('localisation/currencies/delete/' . $currency['slug']) }}">{{ Lang::line('button.delete') }}</a>
                 @endif
             </div>
-        {{ Form::close() }}
-
+        </form>
     </div>
 </section>
 @endsection

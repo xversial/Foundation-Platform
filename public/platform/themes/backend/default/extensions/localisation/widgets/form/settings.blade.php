@@ -1,6 +1,6 @@
 <form method="POST" accept-char="UTF-8" autocomplete="off" id="localisation_settings_form">
 
-    {{ Form::token() }}
+    <input type="hidden" name="{{ Session::csrf_token }}" value="{{ Session::token() }}">
 
     <input type="hidden" name="extension" value="localisation">
 
@@ -18,14 +18,14 @@
         </div>
 
         <div>
-            <label for="site-currency_api_key">{{ Lang::line('localisation::form.settings.fields.currency_api_key') }}</label>
-            <input type="text" name="site:currency_api_key" id="site-currency_api_key" value="@get.localisation.site.currency_api_key">
+            <label for="site-currency">{{ Lang::line('localisation::form.settings.fields.currency') }}</label>
+            {{ Form::select('site:currency', currencies(), Platform::get('localisation.site.currency'), array('id' => 'site-currency')) }}
             <span class="help"></span>
         </div>
 
         <div>
-            <label for="site-currency">{{ Lang::line('localisation::form.settings.fields.currency') }}</label>
-            {{ Form::select('site:currency', currencies(), Platform::get('localisation.site.currency'), array('id' => 'site-currency')) }}
+            <label for="site-currency_api_key">{{ Lang::line('localisation::form.settings.fields.currency_api_key') }}</label>
+            <input type="text" name="site:currency_api_key" id="site-currency_api_key" value="@get.localisation.site.currency_api_key">
             <span class="help"></span>
         </div>
 

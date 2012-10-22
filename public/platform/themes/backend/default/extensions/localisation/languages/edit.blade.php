@@ -18,7 +18,7 @@
                     <span class="icon-reorder"></span>
                 </a>
 
-                <a class="brand" href="#">{{ Lang::line('localisation::languages/general.description.view', array('language' => $language['name'])) }}</a>
+                <a class="brand" href="{{ URL::to_admin('localisation/languages') }}">{{ Lang::line('localisation::languages/general.title') }}</a>
 
                 <!-- Everything you want hidden at 940px or less, place within here -->
                 <div id="tertiary-navigation" class="nav-collapse">
@@ -29,9 +29,12 @@
     </header>
 
     <div class="quaternary page">
-        {{ Form::open() }}
-            {{ Form::token() }}
+        <form action="{{ URL::to_admin('localisation/languages/edit/' . $language['slug']) }}" id="languages-edit-form" class="form-horizontal" method="POST" accept-char="UTF-8">
+            <input type="hidden" name="{{ Session::csrf_token }}" value="{{ Session::token() }}">
+
             <fieldset>
+                <legend>{{ Lang::line('localisation::languages/general.description.edit', array('language' => $language['name'])) }}</legend>
+
                 <div class="control-group">
                     <label class="control-label" for="name">{{ Lang::line('localisation::languages/table.name') }}</label>
                     <div class="controls">
@@ -70,7 +73,7 @@
                 <a class="btn btn-large btn-danger" href="{{ URL::to_admin('localisation/languages/delete/' . $language['slug']) }}">{{ Lang::line('button.delete') }}</a>
             	@endif
             </div>
-        {{ Form::close() }}
+        </form>
     </div>
 </section>
 @endsection

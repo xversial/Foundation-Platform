@@ -35,7 +35,7 @@ return array(
     'description' => array(
         'index'  => 'Manage your system currencies.',
         'create' => 'Creating a new currency',
-        'view'   => 'Viewing the currency :currency',
+        'edit'   => 'Updating the currency :currency',
         'delete' => 'Deleting the currency :currency'
     )
 );

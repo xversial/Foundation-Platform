@@ -18,7 +18,7 @@
                     <span class="icon-reorder"></span>
                 </a>
 
-                <a class="brand" href="#">{{ Lang::line('localisation::countries/general.description.create') }}</a>
+                <a class="brand" href="{{ URL::to_admin('localisation/countries') }}">{{ Lang::line('localisation::countries/general.title') }}</a>
 
                 <!-- Everything you want hidden at 940px or less, place within here -->
                 <div id="tertiary-navigation" class="nav-collapse">
@@ -29,9 +29,12 @@
     </header>
 
     <div class="quaternary page">
-        {{ Form::open() }}
-            {{ Form::token() }}
+        <form action="{{ URL::to_admin('localisation/countries/create') }}" id="countries-create-form" class="form-horizontal" method="POST" accept-char="UTF-8">
+            <input type="hidden" name="{{ Session::csrf_token }}" value="{{ Session::token() }}">
+
             <fieldset>
+                <legend>{{ Lang::line('localisation::countries/general.description.create') }}</legend>
+
                 <div class="control-group">
                     <label class="control-label" for="name">{{ Lang::line('localisation::countries/table.name') }}</label>
                     <div class="controls">
@@ -88,7 +91,7 @@
                 <button class="btn btn-large btn-primary" type="submit" name="save" id="save" value="1">{{ Lang::line('button.create') }}</button>
                 <button class="btn btn-large btn-primary" type="submit" name="save_exit" id="save_exit" value="1">{{ Lang::line('button.create_exit') }}</button>
             </div>
-        {{ Form::close() }}
+        </form>
     </div>
 </section>
 @endsection
