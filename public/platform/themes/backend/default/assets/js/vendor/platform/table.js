@@ -288,7 +288,7 @@ if (platform == undefined)
 			self.$filtersApplied.on('click', 'a', function(e) {
 				e.preventDefault();
 
-				var filter = $(this).parent(),
+				var filter = $(this),
 					key    = filter.attr('data-table-filterkey');
 
 				if (key == 'search_all') {
