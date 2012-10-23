@@ -44,5 +44,6 @@ return array(
     'complete'       => 'Complete',
     'saved'          => 'Saved',
     'deleted'        => 'Deleted',
-    'updated'        => 'Updated'
+    'updated'        => 'Updated',
+    'details'        => 'Details'
 );
