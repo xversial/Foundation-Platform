@@ -2,7 +2,7 @@
 
 <!-- Page Title -->
 @section('title')
-	Edit Content
+	{{ Lang::line('pages::general.content.title') }}
 @endsection
 
 <!-- Queue Styles | e.g Theme::queue_asset('name', 'path_to_css', 'dependency')-->
@@ -40,7 +40,7 @@
 				<span class="icon-reorder"></span>
 			</a>
 
-			<a class="brand" href="#">Content Management</a>
+			<a class="brand" href="#">{{ Lang::line('pages::general.content.title') }}</a>
 
 			<!-- Everything you want hidden at 940px or less, place within here -->
 			<div id="tertiary-navigation" class="nav-collapse">

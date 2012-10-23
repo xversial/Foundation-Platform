@@ -123,11 +123,11 @@ class Pages_Api_Pages_Controller extends API_Controller
 	{
 		$defaults = array(
 			'select'    => array(
-				'id'       => 'Id',
-				'name'     => 'Name',
-				'slug'     => 'Slug',
-				'template' => 'Template',
-				'status'   => 'Status',
+				'id'       => Lang::line('pages::table.pages.id')->get(),
+				'name'     => Lang::line('pages::table.pages.name')->get(),
+				'slug'     => Lang::line('pages::table.pages.slug')->get(),
+				'template' => Lang::line('pages::table.pages.template')->get(),
+				'status'   => Lang::line('pages::table.pages.status')->get(),
 			),
 			'alias'     => array(),
 			'where'     => array(),

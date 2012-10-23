@@ -2,7 +2,7 @@
 
 <!-- Page Title -->
 @section('title')
-	pages - Pages
+	{{ Lang::line('pages::general.pages.title') }}
 @endsection
 
 <!-- Queue Styles -->
@@ -34,7 +34,7 @@
 				<span class="icon-reorder"></span>
 			</a>
 
-			<a class="brand" href="#">Page Management</a>
+			<a class="brand" href="#">{{ Lang::line('pages::general.pages.title') }}</a>
 
 			<!-- Everything you want hidden at 940px or less, place within here -->
 			<div id="tertiary-navigation" class="nav-collapse">

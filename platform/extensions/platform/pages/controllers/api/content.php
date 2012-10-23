@@ -123,9 +123,9 @@ class Pages_Api_Content_Controller extends API_Controller
 	{
 		$defaults = array(
 			'select'    => array(
-				'id' => 'Id',
-				'name' => 'Name',
-				'slug' => 'Slug',
+				'id'   => Lang::line('pages::table.content.id')->get(),
+				'name' => Lang::line('pages::table.content.name')->get(),
+				'slug' => Lang::line('pages::table.content.slug')->get(),
 			),
 			'alias'     => array(),
 			'where'     => array(),

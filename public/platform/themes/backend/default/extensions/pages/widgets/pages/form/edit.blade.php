@@ -2,40 +2,41 @@
 	<input type="hidden" name="{{ Session::csrf_token }}" value="{{ Session::token() }}">
 
 	<fieldset>
+		<legend>{{ lang::line('pages::form.pages.edit.legend') }}</legend>
 
 		<!-- Name -->
 		<div class="control-group">
-			<label class="control-label" for="name">Name:</label>
+			<label class="control-label" for="name">{{ lang::line('pages::form.pages.edit.name') }}:</label>
 			<div class="controls">
 				<input type="text" name="name" id="name" value="{{ Input::old('name', $page['name']) }}" placeholder="Name" required>
-				<span class="help-block">Descriptive name for your page.</span>
+				<span class="help-block">{{ lang::line('pages::form.pages.edit.name_help') }}</span>
 			</div>
 		</div>
 
 		<!-- Slug -->
 		<div class="control-group">
-			<label class="control-label" for="slug">Slug:</label>
+			<label class="control-label" for="slug">{{ lang::line('pages::form.pages.edit.slug') }}:</label>
 			<div class="controls">
 				<input type="text" name="slug" id="slug" value="{{ Input::old('slug', $page['slug']) }}" placeholder="Slug" required>
-				<span class="help-block">Slug to find page by</span>
+				<span class="help-block">{{ lang::line('pages::form.pages.edit.slug_help') }}</span>
 			</div>
 		</div>
 
 		<!-- Templates -->
 		<div class="control-group">
-			<label for="template" class="control-label">Template:</label>
+			<label for="template" class="control-label">{{ lang::line('pages::form.pages.edit.template') }}:</label>
 			<div class="controls">
 				{{ Form::select('template', $templates, Input::old('template', $page['template'], array('id' => 'template'))) }}
-				<span class="help-block">Page Template to use.</span>
+				<span class="help-block">{{ lang::line('pages::form.pages.edit.template_help') }}</span>
 			</div>
 		</div>
 
 		<!-- Value -->
 		<div class="control-group">
-			<label class="control-label" for="value">Content:</label>
+			<label class="control-label" for="value">{{ lang::line('pages::form.pages.edit.value') }}:</label>
 			<div class="controls">
 				<textarea name="value" id="Value" placeholder="content" required>{{ Input::old('value', $page['value']) }}</textarea>
-				<span class="help-block">Contents of your page.</span>
+				<span class="help-block">{{ lang::line('pages::form.pages.edit.value_help') }}</span>
 			</div>
 		</div>
 
