@@ -102,13 +102,14 @@ class Input {
 	/**
 	 * Get the JSON payload for the request.
 	 *
+	 * @param  bool    $as_array
 	 * @return object
 	 */
-	public static function json()
+	public static function json($as_array = false)
 	{
 		if ( ! is_null(static::$json)) return static::$json;
 
-		return static::$json = json_decode(Request::foundation()->getContent());
+		return static::$json = json_decode(Request::foundation()->getContent(), $as_array);
 	}
 
 	/**
@@ -285,6 +286,15 @@ class Input {
 	public static function replace(array $input)
 	{
 		Request::foundation()->request->replace($input);
+	}
+
+	/**
+	 * Clear the input for the current request.
+	 * @return void
+	 */
+	public static function clear()
+	{
+		Request::foundation()->request->replace(array());
 	}
 
 }
