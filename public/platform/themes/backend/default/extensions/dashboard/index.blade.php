@@ -28,7 +28,9 @@
 
 			<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
 			<a class="btn btn-navbar" data-toggle="collapse" data-target="#tertiary-navigation">
-				<span class="icon-reorder"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
 			</a>
 
 			<a class="brand" href="#">{{ Lang::line('dashboard::general.title') }}</a>

@@ -39,37 +39,57 @@
 
 <!-- Page Content -->
 @section('content')
-	<section id="user-edit">
+<section id="user-edit">
 
-		<header class="clearfix">
-			<div class="pull-left">
-				<h1>{{ Lang::line('users::general.users.update.title') }}</h1>
-				<p>{{ Lang::line('users::general.users.update.description') }}</p>
-			</div>
-			<nav class="tertiary-navigation pull-right visible-desktop">
-				@widget('platform.menus::menus.nav', 2, 1, 'nav nav-pills', ADMIN)
-			</nav>
-		</header>
+		<!-- Tertiary Navigation & Actions -->
+    <header class="navbar">
+        <div class="navbar-inner">
+            <div class="container">
 
-		<hr>
+            <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+            <a class="btn btn-navbar" data-toggle="collapse" data-target="#tertiary-navigation">
+                <span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+            </a>
 
+            <a class="brand" href="#">{{ Lang::line('users::general.users.update.title') }}</a>
 
-		<div class="quaternary-navigation">
-		    <nav class="tabbable visable-desktop">
-		    	<ul class="nav nav-tabs">
-					<li class="active"><a href="#general" data-toggle="tab">{{ Lang::line('users::general.tabs.general') }}</a></li>
-					<li><a href="#permissions" data-toggle="tab">{{ Lang::line('users::general.tabs.permissions') }}</a></li>
+            <!-- Everything you want hidden at 940px or less, place within here -->
+            <div id="tertiary-navigation" class="nav-collapse">
+                @widget('platform.menus::menus.nav', 2, 1, 'nav nav-pills', ADMIN)
+            </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Quaternary Desktop Navigation -->
+    <nav class="quaternary-navigation tabbable visible-desktop">
+	    <ul class="nav nav-tabs">
+			<li class="active"><a href="#general" data-toggle="tab">{{ Lang::line('users::general.tabs.general') }}</a></li>
+			<li><a href="#permissions" data-toggle="tab">{{ Lang::line('users::general.tabs.permissions') }}</a></li>
+		</ul>
+    </nav>
+
+    <div class="quaternary page">
+         <!-- Quaternary Mobile Navigation -->
+        <nav class="hidden-desktop">
+	        <ul class="nav nav-stacked nav-pills">
+				<li class="active"><a href="#general" data-toggle="tab">{{ Lang::line('users::general.tabs.general') }}</a></li>
+				<li><a href="#permissions" data-toggle="tab">{{ Lang::line('users::general.tabs.permissions') }}</a></li>
 			</ul>
-		    </nav>
-		    <div class="tab-content">
-		        <div class="tab-pane active" id="general">
-					@widget('platform.users::admin.user.form.edit', $id)
-				</div>
-				<div class="tab-pane" id="permissions">
-					@widget('platform.users::admin.user.form.permissions', $id)
-				</div>
-		    </div>
-		</div>
+        </nav>
 
-	</section>
+        <div class="tab-content">
+	        <div class="tab-pane active" id="general">
+				@widget('platform.users::admin.user.form.edit', $id)
+			</div>
+			<div class="tab-pane" id="permissions">
+				@widget('platform.users::admin.user.form.permissions', $id)
+			</div>
+	    </div>
+    </div>
+
+</section>
 @endsection
