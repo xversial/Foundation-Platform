@@ -19,9 +19,7 @@
 
 <!-- Content -->
 @section('content')
-<section id="page default">
-
-	<h1>{{ $name }}</h1>
+<section id="{{ $slug }} page default">
 
 	{{ $content }}
 
