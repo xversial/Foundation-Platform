@@ -55,7 +55,7 @@
             <div class="controls">
                 <div class="input-append">
                     {{ Form::select('filesystem:frontend_fallback_message', $filesystem_options, $settings['filesystem']['frontend_fallback_message'], array('id' => 'frontend-fallback-message')) }}
-                    <span class="add-on"><i class="icon-warning-sign"></i></span>
+                    <span class="add-on"><i class="icon-bell"></i></span>
                 </div>
                 <span class="help-block"></span>
             </div>
@@ -67,7 +67,7 @@
             <div class="controls">
                 <div class="input-append">
                     {{ Form::select('filesystem:frontend_failed_message', $filesystem_options, $settings['filesystem']['frontend_failed_message'], array('id' => 'frontend-failed-message')) }}
-                    <span class="add-on"><i class="icon-warning-sign"></i></span>
+                    <span class="add-on"><i class="icon-bell"></i></span>
                 </div>
                 <span class="help-block"></span>
             </div>
@@ -85,7 +85,7 @@
             <div class="controls">
                 <div class="input-append">
                     {{ Form::select('filesystem:backend_fallback_message', $filesystem_options, $settings['filesystem']['backend_fallback_message'], array('id' => 'filesystem-fallback-message')) }}
-                    <span class="add-on"><i class="icon-warning-sign"></i></span>
+                    <span class="add-on"><i class="icon-bell"></i></span>
                 </div>
                 <span class="help-block"></span>
             </div>
@@ -97,7 +97,7 @@
             <div class="controls">
                 <div class="input-append">
                     {{ Form::select('filesystem:backend_failed_message', $filesystem_options, $settings['filesystem']['backend_failed_message'], array('id' => 'filesystem-failed-message')) }}
-                    <span class="add-on"><i class="icon-warning-sign"></i></span>
+                    <span class="add-on"><i class="icon-bell"></i></span>
                 </div>
                 <span class="help-block"></span>
             </div>
