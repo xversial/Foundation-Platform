@@ -53,7 +53,7 @@ class Language extends Crud
      */
     public static $_rules = array(
         'name'         => 'required',
-        'abbreviation' => 'required|min:2|max:3|unique:languages,abbreviation',
+        'abbreviation' => 'required|size:2|unique:languages,abbreviation',
         'locale'       => 'required',
         'status'       => 'required'
     );
