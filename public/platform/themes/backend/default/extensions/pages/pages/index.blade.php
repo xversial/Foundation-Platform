@@ -31,7 +31,9 @@
 
 			<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
 			<a class="btn btn-navbar" data-toggle="collapse" data-target="#tertiary-navigation">
-				<span class="icon-reorder"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
 			</a>
 
 			<a class="brand" href="#">{{ Lang::line('pages::general.pages.title') }}</a>
@@ -57,7 +59,7 @@
 					<a class="btn btn-large btn-primary" href="{{ URL::to_secure(ADMIN.'/pages/create') }}">{{ Lang::line('button.create') }}</a>
 				</div>
 			</div>
-
+			<div id="table-filters-applied"></div>
 			<div class="tabbable tabs-right">
 				<ul id="table-pagination" class="nav nav-tabs"></ul>
 				<div class="tab-content">
