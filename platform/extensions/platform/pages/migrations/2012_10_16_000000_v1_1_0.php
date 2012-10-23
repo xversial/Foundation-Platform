@@ -212,6 +212,15 @@ class Pages_v1_1_0
 				'value'     => 'Platform',
 			),
 
+			// Copyright
+			//
+			array(
+				'name'      => 'Copyright',
+				'slug'      => 'copyright',
+				'value'     => 'The BSD 3-Clause License - Copyright &copy; 2011-2012, Cartalyst LLC',
+			),
+
+
 			// Feature Block Develop
 			//
 			array(
