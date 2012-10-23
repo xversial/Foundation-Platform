@@ -62,13 +62,14 @@ class Installer_Index_Controller extends Base_Controller
         // Setup CSS.
         //
         Asset::add('bootstrap', 'platform/installer/css/bootstrap.min.css');
+ 		Asset::add('font-awesome', 'platform/installer/css/font-awesome.css');
         Asset::add('installer', 'platform/installer/css/installer.css');
 
         // Setup JS.
         //
         Asset::add('jquery', 'platform/installer/js/jquery.js');
         Asset::add('url', 'platform/installer/js/url.js');
-        Asset::add('bootstrap', 'platform/installer/js/bootstrap.js', array('jquery'));
+        Asset::add('bootstrap', 'platform/installer/js/bootstrap.min.js', array('jquery'));
         Asset::add('validation', 'platform/installer/js/validate.js', array('jquery'));
         Asset::add('tempo', 'platform/installer/js/tempo.js', array('jquery'));
         Asset::add('installer', 'platform/installer/js/installer.js', array('jquery'));

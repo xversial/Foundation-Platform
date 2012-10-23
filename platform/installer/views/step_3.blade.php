@@ -42,54 +42,89 @@
 
 
 @section('content')
-<div class="contain">
-	<h2>{{ Lang::line('installer::general.step_3.description') }}</h2>
+<section id="checks">
+	<header>
+		<h2>{{ Lang::line('installer::general.step_3.description') }}</h2>
+	</header>
 	<hr>
-	<form id="user-form" class="form-horizontal" method="POST" accept-char="UTF-8">
-	<input type="hidden" name="{{ Session::csrf_token }}" value="{{ Session::token() }}">
-		<fieldset>
-			<legend>{{ Lang::line('installer::form.user.legend') }}</legend>
-			<!-- User First Name -->
-			<div>
-				<label for="first_name">{{ Lang::line('installer::form.user.first_name') }}</label>
-				<input type="text" name="first_name" id="first_name" value="" placeholder="{{ Lang::line('installer::form.user.first_name') }}" required>
-				<span class="help">{{ Lang::line('installer::form.user.first_name_help') }}</span>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<form id="user-form" class="form-horizontal" method="POST" accept-char="UTF-8">
+				<input type="hidden" name="{{ Session::csrf_token }}" value="{{ Session::token() }}">
+					<fieldset class="well">
+						<legend>{{ Lang::line('installer::form.user.legend') }}</legend>
+
+						<!-- User First Name -->
+						<div class="control-group">
+							<label class="control-label" for="first_name">{{ Lang::line('installer::form.user.first_name') }}</label>
+							<div class="controls">
+								<div class="input-append">
+									<input type="text" name="first_name" id="first_name" value="" placeholder="{{ Lang::line('installer::form.user.first_name') }}" required>
+									<span class="add-on"><i class="icon-user"></i></span>
+								</div>
+								<span class="help-block">{{ Lang::line('installer::form.user.first_name_help') }}</span>
+							</div>
+						</div>
+
+						<!-- User Last Name -->
+						<div class="control-group">
+							<label class="control-label" for="last_name">{{ Lang::line('installer::form.user.last_name') }}</label>
+							<div class="controls">
+								<div class="input-append">
+									<input type="text" name="last_name" id="last_name" value="" placeholder="{{ Lang::line('installer::form.user.last_name') }}" required>
+									<span class="add-on"><i class="icon-user"></i></span>
+								</div>
+								<span class="help-block">{{ Lang::line('installer::form.user.last_name_help') }}</span>
+							</div>
+						</div>
+
+						<!-- User Email Addres -->
+						<div class="control-group">
+							<label class="control-label" for="email">{{ Lang::line('installer::form.user.email') }}</label>
+							<div class="controls">
+								<div class="input-append">
+									<input type="email" name="email" id="email" value="" placeholder="{{ Lang::line('installer::form.user.email') }}" required>
+									<span class="add-on"><i class="icon-envelope"></i></span>
+								</div>
+								<span class="help-block">{{ Lang::line('installer::form.user.email_help') }}</span>
+							</div>
+						</div>
+
+						<!-- User Password -->
+						<div class="control-group">
+							<label class="control-label" for="password">{{ Lang::line('installer::form.user.password') }}</label>
+							<div class="controls">
+								<div class="input-append">
+									<input type="password" name="password" id="password" placeholder="{{ Lang::line('installer::form.user.password') }}" required>
+									<span class="add-on"><i class="icon-lock"></i></span>
+								</div>
+								<span class="help-block">{{ Lang::line('installer::form.user.password_help') }}</span>
+							</div>
+						</div>
+
+						<!-- User Password Confirm -->
+						<div class="control-group">
+							<label class="control-label" for="password_confirmation">{{ Lang::line('installer::form.user.password_confirm') }}</label>
+							<div class="controls">
+								<div class="input-append">
+									<input type="password" name="password_confirmation" id="password_confirmation" placeholder="{{ Lang::line('installer::form.user.password_confirm') }}" required>
+									<span class="add-on"><i class="icon-lock"></i></span>
+								</div>
+								<span class="help-block">{{ Lang::line('installer::form.user.password_confirm_help') }}</span>
+							</div>
+						</div>
+
+					</fieldset>
+
+					<div class="form-actions">
+						<div class="pull-right">
+							<button type="submit" class="btn btn-large">{{ Lang::line('installer::button.next') }}</button>
+						</div>
+					</div>
+				</form>
 			</div>
-
-
-			<!-- User Last Name -->
-			<div>
-				<label for="last_name">{{ Lang::line('installer::form.user.last_name') }}</label>
-				<input type="text" name="last_name" id="last_name" value="" placeholder="{{ Lang::line('installer::form.user.last_name') }}" required>
-				<span class="help">{{ Lang::line('installer::form.user.last_name_help') }}</span>
-			</div>
-
-			<!-- User Email Addres -->
-			<div>
-				<label for="email">{{ Lang::line('installer::form.user.email') }}</label>
-				<input type="email" name="email" id="email" value="" placeholder="{{ Lang::line('installer::form.user.email') }}" required>
-				<span class="help">{{ Lang::line('installer::form.user.email_help') }}</span>
-			</div>
-
-			<!-- User Password -->
-			<div>
-				<label for="password">{{ Lang::line('installer::form.user.password') }}</label>
-				<input type="password" name="password" id="password" placeholder="{{ Lang::line('installer::form.user.password') }}" required>
-				<span class="help">{{ Lang::line('installer::form.user.password_help') }}</span>
-			</div>
-
-			<!-- User Password Confirm -->
-			<div>
-				<label for="password_confirmation">{{ Lang::line('installer::form.user.password_confirm') }}</label>
-				<input type="password" name="password_confirmation" id="password_confirmation" placeholder="{{ Lang::line('installer::form.user.password_confirm') }}" required>
-				<span class="help">{{ Lang::line('installer::form.user.password_confirm_help') }}</span>
-			</div>
-
-		</fieldset>
-
-		<div class="actions">
-			<button type="submit" class="btn btn-large">{{ Lang::line('installer::button.next') }}</button>
 		</div>
-	</form>
-</div>
+	</div>
+</section>
 @endsection

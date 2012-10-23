@@ -56,7 +56,7 @@ return array(
     'step_2' => array(
         'title'            => 'Database',
         'tagline'          => 'Database Credentials',
-        'description'      => 'Now its time to create a database, then give us the details and we\'ll do the rest.',
+        'description'      => 'Now its time to create a database, give us the details and we\'ll do the rest.',
         'step'             => 'Step 2:',
         'step_description' => 'Database Credentials'
     ),
@@ -70,7 +70,7 @@ return array(
     'step_3' => array(
         'title'            => 'Administration',
         'tagline'          => 'An account to rule them all',
-        'description'      => 'Now you need an administrator, create your initial user and you\'re almost ready to rock.',
+        'description'      => 'Now you need an administrator, create your initial user and you\'re ready to rock.',
         'step'             => 'Step 3:',
         'step_description' => 'Administration'
     ),

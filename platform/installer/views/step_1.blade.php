@@ -19,65 +19,121 @@
 @endsection
 
 @section('content')
-<div class="contain">
-
-	<div id="native">
+<section id="checks">
+	<header>
 		<h2>{{ Lang::line('installer::general.step_1.description') }}</h2>
-		<hr>
-		<div class="permissions" id="permissions-pass">
-		<div data-template>
-			<code class="alert alert-success">[%.%]</code>
-		</div>
-		</div>
-		<div class="permissions" id="permissions-fail">
-			<div data-template>
-				<code class="alert alert-error">[%.%]</code>
+	</header>
+	<hr>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="permissions" id="permissions-pass">
+				<div data-template>
+					<code class="alert alert-success">[%.%]</code>
+				</div>
+				</div>
+				<div class="permissions" id="permissions-fail">
+					<div data-template>
+						<code class="alert alert-error">[%.%]</code>
+					</div>
+				</div>
 			</div>
 		</div>
+		<div class="row-fluid">
+			<div class="span12">
+				<form id="filesystem-form" class="form-horizontal" method="POST" accept-char="UTF-8">
+				<input type="hidden" name="{{ Session::csrf_token }}" value="{{ Session::token() }}">
+
+				<div class="navbar">
+					<div class="navbar-inner">
+						<a class="brand" href="#">Enable FTP</a>
+						<div class="pull-right">
+							<label class="checkbox">
+							  <input type="checkbox" name="ftp_enable" data-toggle="collapse" data-target="#ftp" id="ftp_enable" value="1">
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<div id="ftp" class="collapse out">
+
+					<!-- FTP Credentials -->
+					<fieldset class="well">
+						<legend>FTP Credentials</legend>
+
+						<p class="summary">While using FTP is optional, it is highly recommended.  Using FTP for the filesystem will help prevent permission issues with creating and writing to directories and files.  If FTP fails it will fallback to the native PHP driver.</p>
+
+						<!-- Server -->
+						<div class="control-group">
+							<label class="control-label" for="ftp-server">Server</label>
+							<div class="controls">
+								<div class="input-append">
+									<input type="text" name="ftp_server" id="ftp_server" placeholder="server">
+									<span class="add-on"><i class="icon-hdd"></i></span>
+								</div>
+								<span class="help-block"></span>
+							</div>
+						</div>
+
+						<!-- User -->
+						<div class="control-group">
+							<label class="control-label" for="ftp-user">User</label>
+							<div class="controls">
+								<div class="input-append">
+									<input type="text" name="ftp_user" id="ftp_user" placeholder="user">
+									<span class="add-on"><i class="icon-user"></i></span>
+								</div>
+								<span class="help-block"></span>
+							</div>
+						</div>
+
+						<!-- Password -->
+						<div class="control-group">
+							<label class="control-label" for="ftp-password">Password</label>
+							<div class="controls">
+								<div class="input-append">
+									<input type="password" name="ftp_password" id="ftp_password" placeholder="password">
+									<span class="add-on"><i class="icon-lock"></i></span>
+								</div>
+								<span class="help-block"></span>
+							</div>
+						</div>
+
+						<!-- Port -->
+						<div class="control-group">
+							<label class="control-label" for="ftp-port">Port</label>
+							<div class="controls">
+								<div class="input-append">
+									<input type="text" name="ftp_port" id="ftp_port" value="21" placeholder="port">
+									<span class="add-on"><i class="icon-cog"></i></span>
+								</div>
+								<span class="help-block"></span>
+							</div>
+						</div>
+
+						<!-- Test FTP -->
+						<div class="control-group">
+							<label class="control-label">Test FTP</label>
+							<div class="controls">
+								<a href="{{ URL::to('installer/ftp_test') }}" class="btn btn-medium" id="ftp-test">Connect</a>
+								<div id="ftp-status" class="help-block"></div>
+							</div>
+						</div>
+
+					</fieldset>
+
+				</div>
+
+				<!-- Form Actions -->
+				<div class="form-actions">
+					<div class="pull-right">
+						<button type="submit" id="continue-btn" class="btn btn-large {{ (count($permissions['fail']) > 0) ? 'disabled' : null }}">
+							{{ Lang::line('installer::button.next') }}
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
 	</div>
-	<hr>
-	<form id="filesystem-form" class="form-horizontal" method="POST" accept-char="UTF-8">
-		<input type="hidden" name="{{ Session::csrf_token }}" value="{{ Session::token() }}">
-
-		<!-- FTP Credentials -->
-		<div id="ftp">
-			<fieldset>
-				<legend>FTP Credentials</legend>
-				<p>While using FTP is optional, it is highly recommended.  Using FTP for the filesystem will help prevent permission issues with creating and writing to directories and files.  If FTP fails it will fallback to the native PHP driver.</p>
-				<div>
-					<label for="ftp_enable">Use FTP</label>
-					<input type="checkbox" name="ftp_enable" id="ftp_enable" value="1">&nbsp;enable
-				</div>
-				<div>
-					<label for="server">Server</label>
-					<input type="text" name="ftp_server" id="ftp_server" placeholder="server">
-				</div>
-				<div>
-					<label for="user">User</label>
-					<input type="text" name="ftp_user" id="ftp_user" placeholder="user">
-				</div>
-				<div>
-					<label for="password">Password</label>
-					<input type="password" name="ftp_password" id="ftp_password" placeholder="password">
-				</div>
-				<div>
-					<label for="port">Port</label>
-					<input type="text" name="ftp_port" id="ftp_port" value="21" placeholder="port">
-				</div>
-				<div>
-					<label for=""></label>
-					<a href="{{ URL::to('installer/ftp_test') }}" class="btn btn-medium" id="ftp-test">Test FTP</a> <span id="ftp-status"></span>
-				</div>
-			</fieldset>
-		</div>
-
-		<!-- Form Actions -->
-		<div class="actions">
-			<button type="submit" id="continue-btn" class="btn btn-large {{ (count($permissions['fail']) > 0) ? 'disabled' : null }}">
-				{{ Lang::line('installer::button.next') }}
-			</button>
-		</div>
-	</form>
-
-</div>
+</section>
 @endsection

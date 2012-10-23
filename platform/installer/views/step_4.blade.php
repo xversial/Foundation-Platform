@@ -19,20 +19,26 @@
 @endsection
 
 @section('content')
-<div class="contain">
 
-	<h2>{{ Lang::line('installer::general.step_4.description') }}</h2>
-	<p class="lead">{{ Lang::line('installer::general.step_4.licence') }}</p>
+<section id="checks">
+	<header>
+		<h2>{{ Lang::line('installer::general.step_4.description') }}</h2>
+		<p>{{ Lang::line('installer::general.step_4.licence') }}</p>
+	</header>
 	<hr>
-	<div class="well">
-		<pre style="word-break: break-word;">{{ $license }}</pre>
-	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
 
-	<div class="actions">
-		<p>
-			<a href="{{ URL::base() }}" class="btn btn-large">I Agree, Continue to the Home Page</a>
-		</p>
-	</div>
+				<pre style="word-break: break-word;">{{ $license }}</pre>
 
-</div>
+				<p class="agree">
+					<a href="{{ URL::base() }}" class="btn btn-large">I Agree, Continue to the Home Page</a>
+				</p>
+
+			</div>
+		</div>
+	</div>
+</section>
+
 @endsection

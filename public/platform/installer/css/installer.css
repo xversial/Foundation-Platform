@@ -68,99 +68,77 @@ pre code{display:block;padding:8px;background:#fbfbfb;border:1px solid #fff;}*/
 
 /* #Forms
 ================================================== */
-
-form {
-	text-align: left;
+form legend {
+	position:relative;
+	color:#49182d;
 }
 
-form fieldset {
-	border:1px solid #ccc;
-	padding:10px;
+form legend span {
+	position: absolute;
+	top:0;
+	left:0;
 }
 
 form legend {
-	border-bottom:none;
+	float: left;
+}
+
+form fieldset {
+	background:@secondary;
 	padding:10px;
-	margin:0;
-}
-
-form fieldset div {
-	padding:4px;
-	vertical-align: middle;
-}
-
-form label {
-	display: inline-block;
-	width: auto;
-	padding:8px;
-	text-align: right;
-	min-width:120px;
+	margin:5px 0;
+	border:1px solid @etch;
+	.border-radius(4px)
 }
 
 form input,
 form textarea,
-form select {
-	min-height: 28px;
-	padding:4px;
-	background:url(../img/ico-alerts.png) -32px 4px no-repeat;
+form select,
+form .input-append .add-on, form .input-prepend .add-on {
 	outline: none;
 }
 
-
-form input::-webkit-input-placeholder,
-form input:-moz-placeholder {
-	color: #A6A6A6;
+form .input-append .add-on i, form .input-prepend .add-on i {
+	padding:0 4px;
+	display:inline-block;
+	font-size:18px;
 }
 
-form .help
-{
-	font-size: 12px;
-	padding: 3px;
-	width: 150px;
-	outline: 0;
-	font-style: italic;
+
+form input:required.valid + .add-on > i,
+form input.valid:focus + .add-on > i,
+form input:checked + .add-on > i,
+form select:required.valid + .add-on > i,
+form select.valid:focus + .add-on > i{
+	color: #46a546;
 }
 
-form input:required.valid + .help,
-form input.valid:focus + .help,
-form input:checked + .help,
-form select:required.valid + .help,
-form select.valid:focus + .help {
-	color: #A6AD3C;
-}
-
-form input:required.required + .help,
-form input:required.error + .help,
-form input.required:focus + .help
-form select:required.required + .help,
-form select.required:focus + .help {
-	color: #8A211D;
+form input:required.required + .add-on > i,
+form input:required.error + .add-on > i,
+form input.required:focus + .add-on > i,
+form select:required.required + .add-on > i,
+form select.required:focus + .add-on > i {
+	color: #9d261d;
 }
 
 
 /* Enhanced error styling */
-form input.error
+form input.error + .add-on > i::before
 {
-	background-position: right -62px;
+	color:#f89406;
+	content: "\f071";
+
 
 }
-form input.required
+form input.required + .add-on > i::before
 {
-	background-position: right -32px;
+	color:#9d261d;
+	content: "\f06a";
 }
-form input.valid
+form input.valid + .add-on > i::before
 {
-	background-position: right 2px;
-}
-
-form input.error::-webkit-input-placeholder,
-form inputerror :-moz-placeholder {
-	color: #fff;
-}
-
-form .actions {
-	padding:10px 0;
-	margin:0 auto;
+	color: #46a546;
+	content: "\f00c";
 }
 
 /* #Installer
@@ -182,7 +160,6 @@ form .actions {
 		border-left:1px solid #fff;
 		border-right:1px solid #ddd;
 	}
-
 
 	#installer .navigation h1 {
 		color:#49182D;
@@ -228,24 +205,22 @@ form .actions {
 		padding:14px 10px;
 	}
 
-
 	#installer .content {
 		background: #fbfbfb;
 		border:1px solid #fff;
 		margin:0;
-		/*padding:20px;*/
-		text-align: center;
 	}
 
-	#installer .content .contain {
-		/*background:#fbfbfb;*/
-		/*border:1px solid #ddd;*/
-		/*padding:20px;*/
+	#installer .content section {
 		max-width:960px;
 		margin:0 auto;
 	}
 
-	#installer .content h2 {
+	#installer .content section header {
+		text-align: center;
+	}
+
+	#installer .content header > h2 {
 		font-family: Helvetica, Arial, sans-serif;
 		font-size: 26px;
 		font-style: normal;
@@ -264,31 +239,19 @@ form .actions {
 		padding:10px;
 	}
 
-	/* Forms - overides form.css*/
-
-	#installer form {
-		width:400px;
-		margin:0 auto;
+	#installer form .checkbox {
+		padding-top:10px;
 	}
 
-	#installer fieldset {
-		border:none;
+	#installer form .help-block {
+		font-style: italic;
+		padding-top:4px;
 	}
 
-	#installer form legend {
-		text-align:center;
-	}
-	#installer form .help {
-		display:block;
-		margin-left:140px;
-		min-width:220px;
-	}
-	#installer form .actions {
-		text-align:center;
-		padding:20px 0;
+	#installer form .summary {
+		padding:10px 0;
 	}
 
-	#installer form .messages {
-		margin:8px auto;
-		margin-bottom:0;
+	#installer .agree {
+		text-align: center;
 	}
