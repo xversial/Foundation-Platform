@@ -193,7 +193,7 @@ class Localisation_API_Languages_Controller extends API_Controller
         // Now update the rules.
         //
         Language::set_validation(array(
-            'abbreviation' => 'required|min:2|max:3|unique:languages,abbreviation,' . $language->abbreviation . ',abbreviation'
+            'abbreviation' => 'required|size:2|unique:languages,abbreviation,' . $language->abbreviation . ',abbreviation'
         ));
 
         // Update the language data.
