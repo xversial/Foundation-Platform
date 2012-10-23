@@ -26,19 +26,19 @@
 		<div class="navbar-inner">
 			<div class="container">
 
-			<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-			<a class="btn btn-navbar" data-toggle="collapse" data-target="#tertiary-navigation">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</a>
+				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target="#tertiary-navigation">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
 
-			<a class="brand" href="#">{{ Lang::line('users::general.groups.create.title') }}</a>
+				<a class="brand" href="#">{{ Lang::line('users::general.groups.create.title') }}</a>
 
-			<!-- Everything you want hidden at 940px or less, place within here -->
-			<div id="tertiary-navigation" class="nav-collapse">
-				@widget('platform.menus::menus.nav', 2, 1, 'nav nav-pills', ADMIN)
-			</div>
+				<!-- Everything you want hidden at 940px or less, place within here -->
+				<div id="tertiary-navigation" class="nav-collapse">
+					@widget('platform.menus::menus.nav', 2, 1, 'nav nav-pills', ADMIN)
+				</div>
 
 			</div>
 		</div>
