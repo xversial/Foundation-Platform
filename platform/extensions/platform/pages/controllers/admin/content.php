@@ -13,6 +13,7 @@ class Pages_Admin_Content_Controller extends Admin_Controller
 		$options = Input::get();
 
 		// Grab our datatable
+		//
 		$datatable = API::get('pages/content/datatable', $options);
 
 		$data = array(
@@ -42,29 +43,26 @@ class Pages_Admin_Content_Controller extends Admin_Controller
 
 	public function post_create()
 	{
-		// Prepare the data
+		// Prepare data
 		//
 		$data = array(
 			'name'    => Input::get('name'),
 			'slug'    => Input::get('slug'),
-			'value'   => Input::get('content'),
+			'value'   => Input::get('value'),
 		);
 
 		try
 		{
-			// Create the content
+			// Create content
+			//
 			API::post('pages/content', $data);
 
-			// Set success message
-			//
-			Platform::messages()->success('Content Created Successfully');
+			Platform::messages()->success(Lang::line('pages::messages.content.create.success')->get());
 
 			return Redirect::to_admin('pages/content');
 		}
 		catch (APIClientException $e)
 		{
-			// Set the error message.
-            //
             Platform::messages()->error($e->getMessage());
 
             // Set the other error messages.
@@ -85,6 +83,8 @@ class Pages_Admin_Content_Controller extends Admin_Controller
 
 	public function post_edit($id)
 	{
+		// Prepare data
+		//
 		$data = array(
 			'name'    => Input::get('name'),
 			'slug'    => Input::get('slug'),
@@ -93,16 +93,16 @@ class Pages_Admin_Content_Controller extends Admin_Controller
 
 		try
 		{
+			// Edit content
+			//
 			API::put('pages/content/'.$id, $data);
 
-			Platform::messages()->success('Content Updated Successfully.');
+			Platform::messages()->success(Lang::line('pages::messages.content.edit.success')->get());
 
 			return Redirect::to_admin('pages/content');
 		}
 		catch (APIClientException $e)
 		{
-			// Set the error message.
-            //
             Platform::messages()->error($e->getMessage());
 
             // Set the other error messages.
@@ -123,6 +123,8 @@ class Pages_Admin_Content_Controller extends Admin_Controller
 	{
 		try
 		{
+			// Delete content
+			//
 			API::delete('pages/content/'.$id);
 		}
 		catch (APIClientException $e)

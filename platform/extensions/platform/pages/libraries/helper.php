@@ -25,12 +25,11 @@ class Helper
 				return static::renderContent($content['value']);
 			}
 
-			return 'content not found.';
+			return Lang::line('pages::messages.content.not_found')->get();
 		}
 		catch(APIClientException $e)
 		{
 			return $e->getMessage();
-			return 'error retrieving content.';
 		}
 	}
 

@@ -28,11 +28,11 @@ class Pages_Api_Content_Controller extends API_Controller
 				return new Response($content);
 			}
 
-			return new Response('Could not find content', API::STATUS_NOT_FOUND);
+			return new Response(Lang::line('pages::messages.content.not_found')->get(), API::STATUS_NOT_FOUND);
 		}
 		catch (Exception $e)
 		{
-			return new Response('Could not find content', API::STATUS_NOT_FOUND);
+			return new Response(Lang::line('pages::messages.content.not_found')->get(), API::STATUS_NOT_FOUND);
 		}
 	}
 
@@ -50,7 +50,7 @@ class Pages_Api_Content_Controller extends API_Controller
 			}
 
 			return new Response(array(
-				'message' => 'Unable to Create Content',
+				'message' => Lang::line('pages::messages.content.create.error')->get(),
 				'errors'  => ($content->validation()->errors->has()) ? $content->validation()->errors->all() : array(),
 				), ($content->validation()->errors->has()) ? API::STATUS_BAD_REQUEST : API::STATUS_UNPROCESSABLE_ENTITY);
 		}
@@ -76,7 +76,7 @@ class Pages_Api_Content_Controller extends API_Controller
 			}
 
 			return new Response(array(
-					'message' => 'Could not update content.',
+					'message' => Lang::line('pages::messages.content.edit.error')->get(),
 					'errors'  => ($content->validation()->errors->has()) ? $content->validation()->errors->all() : array(),
 				), ($content->validation()->errors->has()) ? API::STATUS_BAD_REQUEST : API::STATUS_UNPROCESSABLE_ENTITY);
 		}
@@ -97,7 +97,7 @@ class Pages_Api_Content_Controller extends API_Controller
 			if ($content === null)
 			{
 				return new Response(array(
-					'message' => 'Content does not exist.'
+					'message' => Lang::line('pages::messages.content.delete.error')->get()
 				), API::STATUS_NOT_FOUND);
 			}
 
@@ -107,7 +107,7 @@ class Pages_Api_Content_Controller extends API_Controller
 			}
 
 			return new Response(array(
-				'message' => 'There was an error deleting the content.',
+				'message' => Lang::line('pages::messages.content.delete.error')->get(),
 				'errors'  => ($content->validation()->errors->has()) ? $content->validation()->errors->all() : array(),
 			), ($content->validation()->errors->has()) ? API::STATUS_BAD_REQUEST : API::STATUS_UNPROCESSABLE_ENTITY);
 		}

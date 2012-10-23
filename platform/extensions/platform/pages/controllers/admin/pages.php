@@ -44,7 +44,7 @@ class Pages_Admin_Pages_Controller extends Admin_Controller
 
 	public function post_create()
 	{
-		// Prepare the data
+		// Prepare data
 		//
 		$data = array(
 			'name'     => Input::get('name'),
@@ -56,19 +56,16 @@ class Pages_Admin_Pages_Controller extends Admin_Controller
 
 		try
 		{
-			// Create the pages
+			// Create page
+			//
 			API::post('pages', $data);
 
-			// Set success message
-			//
-			Platform::messages()->success('Page Created Successfully');
+			Platform::messages()->success(Lang::line('pages::messages.pages.create.success')->get());
 
 			return Redirect::to_admin('pages');
 		}
 		catch (APIClientException $e)
 		{
-			// Set the error message.
-            //
             Platform::messages()->error($e->getMessage());
 
             // Set the other error messages.
@@ -89,6 +86,8 @@ class Pages_Admin_Pages_Controller extends Admin_Controller
 
 	public function post_edit($id)
 	{
+		// Prepare data
+		//
 		$data = array(
 			'name'     => Input::get('name'),
 			'slug'     => Input::get('slug'),
@@ -99,16 +98,16 @@ class Pages_Admin_Pages_Controller extends Admin_Controller
 
 		try
 		{
+			// Edit page
+			//
 			API::put('pages/pages/'.$id, $data);
 
-			Platform::messages()->success('pages Updated Successfully.');
+			Platform::messages()->success(Lang::line('pages::messages.pages.edit.success')->get());
 
 			return Redirect::to_admin('pages');
 		}
 		catch (APIClientException $e)
 		{
-			// Set the error message.
-            //
             Platform::messages()->error($e->getMessage());
 
             // Set the other error messages.
