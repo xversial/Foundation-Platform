@@ -12,12 +12,15 @@
 @endsection
 
 <!-- Queue Scripts -->
-{{ Theme::queue_asset('validate', 'js/validate.js', 'jquery') }}
+{{ Theme::queue_asset('validate', 'js/vendor/platform/validate.js', 'jquery') }}
+{{ Theme::queue_asset('helpers', 'js/vendor/platform/helpers.js', 'jquery') }}
 
 <!-- Scripts -->
 @section('scripts')
-<script>
-
+<script type="text/javascript">
+	(function($) {
+		$('#name').on('blur', function() { $('#slug').val($(this).slugify()) });
+	})(jQuery);
 </script>
 @endsection
 
