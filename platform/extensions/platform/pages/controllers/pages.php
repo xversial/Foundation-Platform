@@ -22,7 +22,7 @@ class Pages_Pages_Controller extends Public_Controller
 			return Event::first('404');
 		}
 
-		$content = Helper::renderContent($page['content']);
+		$content = Helper::renderContent($page['value']);
 
 		return Theme::make('pages::templates.'.$page['template'])
 			->with('name', $page['name'])

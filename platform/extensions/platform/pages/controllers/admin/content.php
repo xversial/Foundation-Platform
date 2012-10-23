@@ -47,7 +47,7 @@ class Pages_Admin_Content_Controller extends Admin_Controller
 		$data = array(
 			'name'    => Input::get('name'),
 			'slug'    => Input::get('slug'),
-			'content' => Input::get('content'),
+			'value'   => Input::get('content'),
 		);
 
 		try
@@ -88,7 +88,7 @@ class Pages_Admin_Content_Controller extends Admin_Controller
 		$data = array(
 			'name'    => Input::get('name'),
 			'slug'    => Input::get('slug'),
-			'content' => Input::get('content'),
+			'value'   => Input::get('content'),
 		);
 
 		try

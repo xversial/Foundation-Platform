@@ -22,7 +22,7 @@ class Helper
 
 			if ($content)
 			{
-				return static::renderContent($content['content']);
+				return static::renderContent($content['value']);
 			}
 
 			return 'content not found.';

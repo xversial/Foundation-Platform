@@ -52,15 +52,15 @@ class Content extends Crud
 	 *
 	 * @var string
 	 */
-	protected static $_table = 'pages_content';
+	protected static $_table = 'content';
 
 	/**
 	 * @var  array  $rules  Validation rules for model attributes
 	 */
 	protected static $_rules = array(
 		'name'    => 'required',
-		'slug'    => 'required|unique:pages_content',
-		'content' => 'required',
+		'slug'    => 'required|unique:content',
+		'value' => 'required',
 	);
 
 	/**

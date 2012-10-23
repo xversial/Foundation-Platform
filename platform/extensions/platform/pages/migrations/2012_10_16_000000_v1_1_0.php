@@ -60,12 +60,12 @@ class Pages_v1_1_0
     	 * -----------------------------------------
     	 */
 
-		Schema::create('pages_content', function($table)
+		Schema::create('content', function($table)
 		{
 			$table->increments('id')->unsigned();
 			$table->string('name');
 			$table->string('slug');
-			$table->text('content');
+			$table->text('value');
 		});
 
 		Schema::create('pages', function($table)
@@ -73,7 +73,7 @@ class Pages_v1_1_0
     		$table->increments('id')->unsigned();
     		$table->string('name');
     		$table->string('slug');
-    		$table->text('content');
+    		$table->text('value');
     		$table->string('template');
     		$table->boolean('status');
     	});
@@ -168,7 +168,7 @@ class Pages_v1_1_0
 				'extension' => 'pages',
 				'type'      => 'default',
 				'name'      => 'page',
-				'value'     => 'home',
+				'value'     => 1,
 			),
 
 			// default template (default)
@@ -184,6 +184,69 @@ class Pages_v1_1_0
 		// Insert the settings into the database.
 		//
 		DB::table('settings')->insert($settings);
+
+		/*
+         * --------------------------------------------------------------------------
+         * # 4) Initial Welcome Page & Content.
+         * --------------------------------------------------------------------------
+         */
+
+		// Default Welcome Page
+		//
+		$page = array(
+			'name'      => 'Welcome',
+			'slug'      => 'welcome',
+			'value'     => '<div class="introduction hero-unit">@content(\'welcome-page-introduction\')</div><div class="features row"><div class="span4">@content(\'feature-block-develop\')</div><div class="span4">@content(\'feature-block-design\')</div><div class="span4">@content(\'feature-block-extend\')</div></div>',
+			'template'  => 'default',
+			'status'    => '1',
+		);
+
+		DB::table('pages')->insert($page);
+
+		$content = array(
+			// Company Name
+			//
+			array(
+				'name'      => 'Company',
+				'slug'      => 'company',
+				'value'     => 'Platform',
+			),
+
+			// Feature Block Develop
+			//
+			array(
+				'name'      => 'Feature Block Develop',
+				'slug'      => 'feature-block-develop',
+				'value'     => '<h2>Develop</h2><p>Platform is Core light and built upon a strong PHP framework with great documentation and a fantastic community, Laravel.</p>',
+			),
+
+			// Feature Block Design
+			//
+			array(
+				'name'      => 'Feature Block Design',
+				'slug'      => 'feature-block-design',
+				'value'     => '<h2>Design</h2><p>Powerful theme system that utilizes the blade template engine giving front end developers a solid separation between logic and markup.</p>',
+			),
+
+			// Feature Block Extend
+			//
+			array(
+				'name'      => 'Feature Block Extend',
+				'slug'      => 'feature-block-extend',
+				'value'     => '<h2>Extend</h2><p>You won’t find complex and tangled control structures; everything in Platform is an extension and completely modular.</p>',
+			),
+
+			// Welcome Page Introduction
+			//
+			array(
+				'name'      => 'Welcome Page Introduction',
+				'slug'      => 'welcome-page-introduction',
+				'value'     => '<h1>@content(\'company\')</h1><p>An application bootstrap for Laravel. The fundamentals + a few essentials included. It\'s well documented, feature awesome, open source, and always free.</p><p><a href="http://www.getplatform.com" class="btn btn-primary btn-large" target="_blank">Learn more &raquo</a></p>',
+			),
+
+		);
+
+		DB::table('content')->insert($content);
 
     }
 

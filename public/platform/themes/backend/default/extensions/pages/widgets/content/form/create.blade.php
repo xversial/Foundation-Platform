@@ -21,11 +21,11 @@
 			</div>
 		</div>
 
-		<!-- Content -->
+		<!-- Value -->
 		<div class="control-group">
-			<label class="control-label" for="content">Content:</label>
+			<label class="control-label" for="value">Content:</label>
 			<div class="controls">
-				<textarea name="content" id="content" placeholder="content" required>{{ Input::old('content') }}</textarea>
+				<textarea name="value" id="value" placeholder="content" required>{{ Input::old('value') }}</textarea>
 				<span class="help-block">Value of your content.</span>
 			</div>
 		</div>

@@ -32,9 +32,9 @@
 
 		<!-- Value -->
 		<div class="control-group">
-			<label class="control-label" for="content">Content:</label>
+			<label class="control-label" for="value">Content:</label>
 			<div class="controls">
-				<textarea name="content" id="Value" placeholder="content" required>{{ Input::old('content', $page['content']) }}</textarea>
+				<textarea name="value" id="Value" placeholder="content" required>{{ Input::old('value', $page['value']) }}</textarea>
 				<span class="help-block">Contents of your page.</span>
 			</div>
 		</div>

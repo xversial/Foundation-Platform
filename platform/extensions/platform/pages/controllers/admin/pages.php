@@ -49,7 +49,7 @@ class Pages_Admin_Pages_Controller extends Admin_Controller
 		$data = array(
 			'name'     => Input::get('name'),
 			'slug'     => Input::get('slug'),
-			'content'  => Input::get('content'),
+			'value'    => Input::get('value'),
 			'template' => Input::get('template', 'default'),
 			'status'   => Input::get('status', 1),
 		);
@@ -92,7 +92,7 @@ class Pages_Admin_Pages_Controller extends Admin_Controller
 		$data = array(
 			'name'     => Input::get('name'),
 			'slug'     => Input::get('slug'),
-			'content'  => Input::get('content'),
+			'value'    => Input::get('value'),
 			'template' => Input::get('template', 'default'),
 			'status'   => Input::get('status', 1),
 		);

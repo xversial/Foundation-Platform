@@ -123,20 +123,16 @@ form select.required:focus + .add-on > i {
 
 
 /* Enhanced error styling */
-form input.error + .add-on > i::before
-{
+form input.error + .add-on > i::before {
 	color:#f89406;
 	content: "\f071";
-
-
 }
-form input.required + .add-on > i::before
-{
+form input.required + .add-on > i::before {
 	color:#9d261d;
 	content: "\f06a";
 }
-form input.valid + .add-on > i::before
-{
+form input.valid + .add-on > i::before,
+form select.valid + .add-on > i {
 	color: #46a546;
 	content: "\f00c";
 }

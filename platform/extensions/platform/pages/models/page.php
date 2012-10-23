@@ -51,7 +51,7 @@ class Page extends Crud
 	protected static $_rules = array(
 		'name'    => 'required',
 		'slug'    => 'required|unique:pages',
-		'content' => 'required',
+		'value' => 'required',
 	);
 
 	/**
