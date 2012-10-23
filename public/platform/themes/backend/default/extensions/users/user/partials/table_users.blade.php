@@ -6,7 +6,7 @@
 		<td class="span2">{{ $row['email'] }}</td>
 		<td class="span1">{{ $row['groups'] }}</td>
 		<td class="span1">{{ $row['status'] }}</td>
-		<td class="span2">{{ gmdate(Config::get('application.date_format') . ' ' . Config::get('application.time_format'), $row['created_at']) }}</td>
+		<td class="span2">{{ strftime(Config::get('application.date_format') . ' ' . Config::get('application.time_format'), $row['created_at']) }}</td>
 		<td class="span2">
 			<div class="btn-group">
 			<a class="btn btn-mini" href="{{ URL::to_secure(ADMIN.'/users/edit/'.$row['id']) }}">{{ Lang::line('button.edit') }}</a>
