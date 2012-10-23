@@ -469,7 +469,7 @@ class Menus_API_Menus_Controller extends API_Controller
 
 					// Remove from anyone who's not admin
 					case Menu::VISIBILITY_ADMIN:
-						if (Sentry::check() and Sentry::user()->has_access('is_admin') or Sentry::user()->has_access('superuser'))
+						if (Sentry::check() and (Sentry::user()->has_access('is_admin') or Sentry::user()->has_access('superuser')))
 						{
 							$child['uri'] = ADMIN.'/'.$child['uri'];
 						}
