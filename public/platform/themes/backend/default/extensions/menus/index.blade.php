@@ -22,26 +22,37 @@
 @section('content')
 <section id="menus">
 
-	<header class="clearfix">
-		<div class="pull-left">
-			<h1>{{ Lang::line('menus::general.title') }}</h1>
-			<p>{{ Lang::line('menus::general.description') }}</p>
+	<!-- Tertiary Navigation & Actions -->
+	<header class="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+			<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+			<a class="btn btn-navbar" data-toggle="collapse" data-target="#tertiary-navigation">
+				<span class="icon-reorder"></span>
+			</a>
+
+			<a class="brand" href="#">{{ Lang::line('menus::general.title') }}</a>
+
+			<!-- Everything you want hidden at 940px or less, place within here -->
+			<div id="tertiary-navigation" class="nav-collapse">
+				@widget('platform.menus::menus.nav', 2, 1, 'nav nav-pills', ADMIN)
+			</div>
+
+			</div>
 		</div>
-		<nav class="tertiary-navigation pull-right visible-desktop">
-			@widget('platform.menus::menus.nav', 2, 1, 'nav nav-pills', ADMIN)
-		</nav>
 	</header>
 
 	<hr>
 
-	<div id="table">
-
-		<div class="actions clearfix">
-			<div class="pull-right">
-				{{ HTML::link_to_secure(ADMIN.'/menus/create', Lang::line('button.create'), array('class' => 'btn btn-large btn-primary')) }}
+	<div class="quaternary page">
+		<div id="table">
+			<div class="actions clearfix">
+				<div class="pull-right">
+					{{ HTML::link_to_secure(ADMIN.'/menus/create', Lang::line('button.create'), array('class' => 'btn btn-large btn-primary')) }}
+				</div>
 			</div>
-		</div>
-		<div class="quaternary">
+			<hr>
 			<table class="table table-bordered">
 				<thead>
 					<tr>
@@ -82,8 +93,9 @@
 					@endforelse
 				</tbody>
 			</table>
+
 		</div>
 	</div>
-
 </section>
+
 @endsection
