@@ -53,10 +53,8 @@
 
 	<hr>
 
-	<div class="row-fluid">
-		<div class="span12">
-			@widget('platform.pages::admin.content.form.create')
-		</div>
+	<div class="quaternary page">
+		@widget('platform.pages::admin.content.form.create')
 	</div>
 
 </section>
