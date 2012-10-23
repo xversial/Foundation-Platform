@@ -1,6 +1,6 @@
 {
 
-	"name":        "New Backend Theme",
+	"name":        "Default Theme",
 	"description": "A default backend theme for Cartalyst",
 	"author":      "Cartalyst LLC",
 	"version":     0.1,
@@ -11,23 +11,39 @@
 			"text":     "Body Background",
 			"selector": "body",
 			"styles":   {
-				"background": "#eee"
+				"background": "#f5f5f5"
 			}
 		},
 
-		"base": {
-			"text":     "Base Background",
-			"selector": "#base>header",
+		"primary": {
+			"text":     "Primary Background",
+			"selector": "#base .primary",
+			"styles":   {
+				"background": "#fff"
+			}
+		},
+
+		"secondary": {
+			"text":     "Secondary Background",
+			"selector": "#base .secondary",
 			"styles":   {
 				"background": "#f7f7f7"
 			}
 		},
 
-		"page": {
-			"text":     "Page Background",
-			"selector": "#page",
+		"tertiary": {
+			"text":     "Tertiary Background",
+			"selector": "#base .tertiary",
 			"styles":   {
-				"background": "#fbfbfb"
+				"background": "#fefefe"
+			}
+		},
+
+		"qauternary": {
+			"text":     "Quaternary Background",
+			"selector": "#base .quaternary",
+			"styles":   {
+				"background": "#f2f2f2"
 			}
 		}
 

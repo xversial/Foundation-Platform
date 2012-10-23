@@ -26,7 +26,7 @@
 		<div class="control-group">
 			<label class="control-label" for="value">{{ lang::line('pages::form.content.create.value') }}:</label>
 			<div class="controls">
-				<textarea name="value" id="value" placeholder="content" required>{{ Input::old('value') }}</textarea>
+				<textarea rows="10" name="value" id="value" placeholder="content" required>{{ Input::old('value') }}</textarea>
 				<span class="help-block">{{ lang::line('pages::form.content.create.value_help') }}</span>
 			</div>
 		</div>

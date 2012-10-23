@@ -23,9 +23,7 @@
 		@yield('styles')
 
 		<!-- Apply Style Options -->
-		<style>
-            @widget('platform.themes::options.css')
-        </style>
+        @widget('platform.themes::options.css')
 
         <!-- Modernizr -->
 		{{ Theme::queue_asset('modernizr', 'js/vendor/modernizr/modernizr-2.6.1-respond-1.1.0.min.js') }}

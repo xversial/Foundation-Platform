@@ -35,7 +35,7 @@
 		<div class="control-group">
 			<label class="control-label" for="value">{{ lang::line('pages::form.pages.edit.value') }}:</label>
 			<div class="controls">
-				<textarea name="value" id="Value" placeholder="content" required>{{ Input::old('value', $page['value']) }}</textarea>
+				<textarea rows="10" class="field" name="value" id="Value" placeholder="content" required>{{ Input::old('value', $page['value']) }}</textarea>
 				<span class="help-block">{{ lang::line('pages::form.pages.edit.value_help') }}</span>
 			</div>
 		</div>
