@@ -140,7 +140,7 @@ class Localisation_Currencies_v1_0_0
                 'extension' => 'localisation',
                 'type'      => 'site',
                 'name'      => 'currency_auto_update',
-                'value'     =>  604800
+                'value'     => ''
             ),
 
             // Default API Key for Openexchangerates.org

@@ -61,13 +61,14 @@ if (Platform::extensions_manager()->is_enabled('localisation'))
     //
     Config::set('application.language', strtolower($settings['language']));
 
-    // Set the locale.
-    //
-    #setlocale(LC_ALL, $settings['language_locale']);
-
     // Set the timezone.
     //
     Config::set('application.timezone', $settings['timezone']);
+    date_default_timezone_set($settings['timezone']);
+
+    // Set the locale.
+    //
+    setlocale(LC_ALL, $settings['language_locale']);
 
     // Set both date and time formats.
     //

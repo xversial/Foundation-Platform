@@ -188,10 +188,9 @@ function currencies_update_intervals()
 function time_formats()
 {
     return array(
-        'H:i:s'   => 'H:i:s',
-        'H:i'     => 'H:i',
-        'g:i:s a' => 'g:i:s a',
-        'g:i a'   => 'g:i a'
+        '%H:%M:%S %p' => strftime('%H:%M:%S %p', time()),
+        '%H:%M:%S'    => strftime('%H:%M:%S', time()),
+        '%H:%M'       => strftime('%H:%M', time())
     );
 }
 
@@ -209,11 +208,9 @@ function time_formats()
 function date_formats()
 {
     return array(
-        'Y-m-d'  => 'Y-m-d',
-        'Y-d-m'  => 'Y-d-m',
-        'd-m-Y'  => 'd-m-Y',
-        'm-d-Y'  => 'm-d-Y',
-        'M j Y'  => 'M j Y',
-        'jS M Y' => 'jS M Y'
+        '%Y-%m-%d' => strftime('%Y-%m-%d', time()),
+        '%Y-%d-%m' => strftime('%Y-%d-%m', time()),
+        '%d-%m-%Y' => strftime('%d-%m-%Y', time()),
+        '%m-%d-%Y' => strftime('%m-%d-%Y', time())
     );
 }

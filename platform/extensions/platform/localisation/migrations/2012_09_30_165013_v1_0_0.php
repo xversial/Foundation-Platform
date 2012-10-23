@@ -87,7 +87,7 @@ class Localisation_v1_0_0
                 'extension' => 'localisation',
                 'type'      => 'site',
                 'name'      => 'date_format',
-                'value'     => 'Y-m-d'
+                'value'     => '%Y-%m-%d'
             ),
 
             // Default time format.
@@ -96,7 +96,7 @@ class Localisation_v1_0_0
                 'extension' => 'localisation',
                 'type'      => 'site',
                 'name'      => 'time_format',
-                'value'     => 'H:i:s'
+                'value'     => '%H:%M:%S'
             )
         );
         DB::table('settings')->insert($settings);
