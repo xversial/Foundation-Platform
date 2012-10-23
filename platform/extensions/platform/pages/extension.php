@@ -68,5 +68,22 @@ return array(
 				return Controller::call('pages::pages@page', array($page));
 			}
 		});
-	}
+	},
+
+	/*
+     * -----------------------------------------
+     * Rules
+     * -----------------------------------------
+     */
+	'rules' => array(
+		'pages::admin.pages@index',
+		'pages::admin.pages@create',
+		'pages::admin.pages@edit',
+		'pages::admin.pages@delete',
+		'pages::admin.content@index',
+		'pages::admin.content@create',
+		'pages::admin.content@edit',
+		'pages::admin.content@delete'
+	),
+
 );
