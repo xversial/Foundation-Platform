@@ -24,42 +24,57 @@
 @section('content')
 <section id="groups">
 
-	<header class="row-fluid">
-		<div class="span4">
-			<h1>{{ Lang::line('users::general.groups.title') }}</h1>
-			<p>{{ Lang::line('users::general.groups.description') }}</p>
+	<!-- Tertiary Navigation & Actions -->
+	<header class="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+			<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+			<a class="btn btn-navbar" data-toggle="collapse" data-target="#tertiary-navigation">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+
+			<a class="brand" href="#">{{ Lang::line('users::general.groups.title') }}</a>
+
+			<!-- Everything you want hidden at 940px or less, place within here -->
+			<div id="tertiary-navigation" class="nav-collapse">
+				@widget('platform.menus::menus.nav', 2, 1, 'nav nav-pills', ADMIN)
+			</div>
+
+			</div>
 		</div>
-		<nav class="tertiary-navigation span8">
-			@widget('platform.menus::menus.nav', 2, 1, 'nav nav-pills pull-right', ADMIN)
-		</nav>
 	</header>
 
 	<hr>
 
-	<div id="table">
+	<div class="quaternary page">
 
-		<div class="actions clearfix">
-			<div id="table-filters" class="form-inline pull-left"></div>
-			<div class="processing pull-left"></div>
-			<div class="pull-right">
-				<a class="btn btn-large btn-primary" href="{{ URL::to_admin('users/groups/create') }}">{{ Lang::line('button.create') }}</a>
+		<div id="table">
+			<div class="actions clearfix">
+				<div id="table-filters" class="form-inline pull-left"></div>
+				<div class="processing pull-left"></div>
+				<div class="pull-right">
+					<a class="btn btn-large btn-primary" href="{{ URL::to_admin('users/groups/create') }}">{{ Lang::line('button.create') }}</a>
+				</div>
 			</div>
-		</div>
-
-		<div class="tabbable tabs-right">
-			<ul id="table-pagination" class="nav nav-tabs"></ul>
-			<div class="tab-content">
-				<table id="users-table" class="table table-bordered table-striped">
-					<thead>
-						<tr>
-							@foreach ($columns as $key => $col)
-							<th data-table-key="{{ $key }}">{{ $col }}</th>
-							@endforeach
-							<th></th>
-						</tr>
-					<thead>
-					<tbody></tbody>
-				</table>
+			<div id="table-filters-applied"></div>
+			<div class="tabbable tabs-right">
+				<ul id="table-pagination" class="nav nav-tabs"></ul>
+				<div class="tab-content">
+					<table id="users-table" class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								@foreach ($columns as $key => $col)
+								<th data-table-key="{{ $key }}">{{ $col }}</th>
+								@endforeach
+								<th></th>
+							</tr>
+						<thead>
+						<tbody></tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 
