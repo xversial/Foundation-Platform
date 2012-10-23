@@ -23,7 +23,7 @@
  * --------------------------------------------------------------------------
  * Admin Controller Class
  * --------------------------------------------------------------------------
- * 
+ *
  * The admin controller.
  *
  * @package    Platform
@@ -73,14 +73,16 @@ class Admin_Controller extends Authorized_Controller
         //
         if (Config::get('application.ssl') and ! Request::secure())
         {
-            return Redirect::to_secure(URI::current())->send();
+            Redirect::to_secure(URI::current())->send();
+            exit;
         }
 
         // Now make sure the user has extensions specific permissions.
         //
         if ( ! Sentry::user()->has_access())
         {
-            return Redirect::to_admin('insufficient_permissions')->send();
+            Redirect::to_admin('insufficient_permissions')->send();
+            exit;
         }
 
         // Set the active theme.
