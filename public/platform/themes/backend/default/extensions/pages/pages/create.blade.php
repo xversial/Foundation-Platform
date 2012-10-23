@@ -19,7 +19,8 @@
 @section('scripts')
 <script type="text/javascript">
 	(function($) {
-		$('#name').on('blur', function() { $('#slug').val($(this).slugify()) });
+		var $slug = $('#slug');
+		$('#name').on('keyup', function() { $slug.val($(this).slugify()) });
 	})(jQuery);
 </script>
 @endsection
