@@ -263,8 +263,7 @@ class Theme extends Crud
                 'description' => null,
                 'author'      => null,
                 'version'     => '1.0',
-                'active'      => ( $active === $name ? true : false ),
-                'thumbnail'   => static::thumbnail($type, $name)
+                'active'      => ( $active === $name ? true : false )
             ), BundleTheme::info($type . DS . $name));
         }
 
@@ -282,8 +281,7 @@ class Theme extends Crud
                 'description' => null,
                 'author'      => null,
                 'version'     => '1.0',
-                'active'      => ( $active === $theme ? true : false ),
-                'thumbnail'   => static::thumbnail($type, $theme)
+                'active'      => ( $active === $theme ? true : false )
             ), BundleTheme::info($type . DS . $theme));
         }
 
@@ -306,23 +304,5 @@ class Theme extends Crud
     public static function types()
     {
         return static::$_types;
-    }
-
-
-    /**
-     * --------------------------------------------------------------------------
-     * Function: thumbnail()
-     * --------------------------------------------------------------------------
-     *
-     * Returns the theme thumbnail url.
-     *
-     * @access   public
-     * @param    string
-     * @param    string
-     * @return   string
-     */
-    public static function thumbnail($type, $theme)
-    {
-        return BundleTheme\Asset::url(str_finish(BundleTheme::directory(), DS) . $type . DS . $theme . DS . 'assets' . DS . 'img' . DS . 'theme-thumbnail.png');
     }
 }
