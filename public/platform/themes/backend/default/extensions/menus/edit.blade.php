@@ -52,6 +52,7 @@
 				// the default, static) is chosen. The value is passed
 				// through the callback.
 				chooseCallback: function(value, menuSortable) {
+					var ns = menuSortable.options.namespace;
 
 					// Do different custom actions based on the value
 					// chosen
@@ -59,7 +60,8 @@
 						case '{{ Platform\Menus\Menu::TYPE_PAGE }}':
 
 							// And the name DOM object
-							var $name = $(menuSortable.options.nestySortable.fields.name.newSelector);
+							var $name       = $(menuSortable.options.nestySortable.fields.name.newSelector),
+							    $pageSelect = $(menuSortable.options.nestySortable.fields.page_id.newSelector);
 
 							// A function to update the menu
 							function prefillNewChild(pageName) {
@@ -69,21 +71,18 @@
 
 								// Let's make menu sortable update the slug by triggering
 								// a blur
-								$name.trigger('blur.'+menuSortable.options.namespace);
+								$name.trigger('blur.'+ns);
 							}
 
-							// Grab the selected option DOM object
-							var $selectOption = $(menuSortable.options.nestySortable.fields.type.newSelector+' option[value="'+value+'"]');
-
-							// Prefill the new child
-							prefillNewChild($selectOption.text());
-
-							// Attach an observer to the page select
-							var $pageSelect = $(menuSortable.options.nestySortable.fields.page_id.newSelector);
-
-							$pageSelect.on('change', function() {
+							// When the page select changes, we'll
+							// update the name properties of the
+							// new child.
+							$pageSelect.on('change.'+ns, function() {
 								prefillNewChild($(this).find('option[value="'+$(this).val()+'"]').text());
 							});
+
+							// And, let's trigger the initial change
+							$pageSelect.trigger('change.'+ns);
 
 							break;
 					}
@@ -223,94 +222,94 @@
 
 						<div class="row-fluid">
 							<div class="span3" id="menu-new-child">
-									<fieldset>
-										<legend>{{ Lang::line('menus::form.create.child.legend') }}</legend>
+								<fieldset>
+									<legend>{{ Lang::line('menus::form.create.child.legend') }}</legend>
 
-										<!-- Item Name -->
-										<div class="control-group">
-											<input type="text" id="new-child-name" class="input-block-level" value="" placeholder="{{ Lang::line('menus::form.child.name') }}" required>
-										</div>
+									<!-- Item Name -->
+									<div class="control-group">
+										<input type="text" id="new-child-name" class="input-block-level" value="" placeholder="{{ Lang::line('menus::form.child.name') }}" required>
+									</div>
 
-										<!-- Slug -->
-										<div class="control-group">
-											<input type="text" id="new-child-slug" class="input-block-level" value="" placeholder="{{ Lang::line('menus::form.child.slug') }}" required>
-										</div>
+									<!-- Slug -->
+									<div class="control-group">
+										<input type="text" id="new-child-slug" class="input-block-level" value="" placeholder="{{ Lang::line('menus::form.child.slug') }}" required>
+									</div>
 
-										<label>{{ Lang::line('menus::form.child.type.title') }}</label>
+									<label>{{ Lang::line('menus::form.child.type.title') }}</label>
 
-										<select id="new-child-type" class="input-block-level">
-											<option value="{{ Platform\Menus\Menu::TYPE_STATIC }}" selected>{{ Lang::line('menus::form.child.type.static') }}</option>
-											@if (count($pages) > 0)
-												<option value="{{ Platform\Menus\Menu::TYPE_PAGE }}">{{ Lang::line('menus::form.child.type.page') }}</option>
-											@endif
-										</select>
-
-										<div data-new-child-type="{{ Platform\Menus\Menu::TYPE_STATIC }}" class="show">
-
-											<!-- URI -->
-											<div class="control-group">
-												<input type="text" id="new-child-uri" class="input-block-level" value="" placeholder="{{ Lang::line('menus::form.child.uri') }}">
-											</div>
-
-										</div>
-
+									<select id="new-child-type" class="input-block-level">
+										<option value="{{ Platform\Menus\Menu::TYPE_STATIC }}" selected>{{ Lang::line('menus::form.child.type.static') }}</option>
 										@if (count($pages) > 0)
-											<div data-new-child-type="{{ Platform\Menus\Menu::TYPE_PAGE }}">
-
-												<div class="control-group">
-													<select id="new-child-page-id" class="input-block-level">
-														@foreach ($pages as $page)
-															<option value="{{ $page['id'] }}">{{ $page['name'] }}</option>
-														@endforeach
-													</select>
-												</div>
-
-											</div>
+											<option value="{{ Platform\Menus\Menu::TYPE_PAGE }}">{{ Lang::line('menus::form.child.type.page') }}</option>
 										@endif
+									</select>
 
-										<!-- Secure -->
+									<div data-new-child-type="{{ Platform\Menus\Menu::TYPE_STATIC }}" class="show">
+
+										<!-- URI -->
 										<div class="control-group">
-											<label class="checkbox">
-												<input type="checkbox" value="1" id="new-child-secure" class="checkbox">
-												{{ Lang::line('menus::form.child.secure') }}
-											</label>
+											<input type="text" id="new-child-uri" class="input-block-level" value="" placeholder="{{ Lang::line('menus::form.child.uri') }}">
 										</div>
 
-										<!-- Visibility -->
-										<div class="control-group">
-											<label for="new-child-visibility">{{ Lang::line('menus::form.child.visibility.title') }}</label>
-											<select id="new-child-visibility" class="input-block-level">
-												<option value="{{ Platform\Menus\Menu::VISIBILITY_ALWAYS }}" selected>{{ Lang::line('menus::form.child.visibility.always') }}</option>
-												<option value="{{ Platform\Menus\Menu::VISIBILITY_LOGGED_IN }}">{{ Lang::line('menus::form.child.visibility.logged_in') }}</option>
-												<option value="{{ Platform\Menus\Menu::VISIBILITY_LOGGED_OUT }}">{{ Lang::line('menus::form.child.visibility.logged_out') }}</option>
-												<option value="{{ Platform\Menus\Menu::VISIBILITY_ADMIN }}">{{ Lang::line('menus::form.child.visibility.admin') }}</option>
-											</select>
-										</div>
+									</div>
 
-										<!-- Target -->
-										<div class="control-group">
-											<label>{{ Lang::line('menus::form.child.target.title') }}</label>
-											<select id="new-child-target" class="input-block-level">
-												<option value="{{ Platform\Menus\Menu::TARGET_SELF }}" selected>{{ Lang::line('menus::form.child.target.self') }}</option>
-												<option value="{{ Platform\Menus\Menu::TARGET_BLANK }}">{{ Lang::line('menus::form.child.target.blank') }}</option>
-												<option value="{{ Platform\Menus\Menu::TARGET_PARENT }}">{{ Lang::line('menus::form.child.target.parent') }}</option>
-												<option value="{{ Platform\Menus\Menu::TARGET_TOP }}">{{ Lang::line('menus::form.child.target.top') }}</option>
-											</select>
-										</div>
+									@if (count($pages) > 0)
+										<div data-new-child-type="{{ Platform\Menus\Menu::TYPE_PAGE }}">
 
-										<!-- CSS class -->
-										<div class="control-group">
-											<label for="new-child-class">{{ Lang::line('menus::form.child.class') }}</label>
-											<input type="text" id="new-child-class" class="input-block-level" value="" placeholder="{{ Lang::line('menus::form.child.class') }}">
-										</div>
+											<div class="control-group">
+												<select id="new-child-page-id" class="input-block-level">
+													@foreach ($pages as $page)
+														<option value="{{ $page['id'] }}">{{ $page['name'] }}</option>
+													@endforeach
+												</select>
+											</div>
 
-										<div class="form-actions">
-											<button type="button" class="btn btn-primary children-add-new">
-												{{ Lang::line('menus::button.add_child') }}
-											</button>
 										</div>
+									@endif
 
-									</fieldset>
+									<!-- Secure -->
+									<div class="control-group">
+										<label class="checkbox">
+											<input type="checkbox" value="1" id="new-child-secure" class="checkbox">
+											{{ Lang::line('menus::form.child.secure') }}
+										</label>
+									</div>
+
+									<!-- Visibility -->
+									<div class="control-group">
+										<label for="new-child-visibility">{{ Lang::line('menus::form.child.visibility.title') }}</label>
+										<select id="new-child-visibility" class="input-block-level">
+											<option value="{{ Platform\Menus\Menu::VISIBILITY_ALWAYS }}" selected>{{ Lang::line('menus::form.child.visibility.always') }}</option>
+											<option value="{{ Platform\Menus\Menu::VISIBILITY_LOGGED_IN }}">{{ Lang::line('menus::form.child.visibility.logged_in') }}</option>
+											<option value="{{ Platform\Menus\Menu::VISIBILITY_LOGGED_OUT }}">{{ Lang::line('menus::form.child.visibility.logged_out') }}</option>
+											<option value="{{ Platform\Menus\Menu::VISIBILITY_ADMIN }}">{{ Lang::line('menus::form.child.visibility.admin') }}</option>
+										</select>
+									</div>
+
+									<!-- Target -->
+									<div class="control-group">
+										<label>{{ Lang::line('menus::form.child.target.title') }}</label>
+										<select id="new-child-target" class="input-block-level">
+											<option value="{{ Platform\Menus\Menu::TARGET_SELF }}" selected>{{ Lang::line('menus::form.child.target.self') }}</option>
+											<option value="{{ Platform\Menus\Menu::TARGET_BLANK }}">{{ Lang::line('menus::form.child.target.blank') }}</option>
+											<option value="{{ Platform\Menus\Menu::TARGET_PARENT }}">{{ Lang::line('menus::form.child.target.parent') }}</option>
+											<option value="{{ Platform\Menus\Menu::TARGET_TOP }}">{{ Lang::line('menus::form.child.target.top') }}</option>
+										</select>
+									</div>
+
+									<!-- CSS class -->
+									<div class="control-group">
+										<label for="new-child-class">{{ Lang::line('menus::form.child.class') }}</label>
+										<input type="text" id="new-child-class" class="input-block-level" value="" placeholder="{{ Lang::line('menus::form.child.class') }}">
+									</div>
+
+									<div class="form-actions">
+										<button type="button" class="btn btn-primary children-add-new">
+											{{ Lang::line('menus::button.add_child') }}
+										</button>
+									</div>
+
+								</fieldset>
 
 							</div>
 							<!-- /end - menu-new-child -->
@@ -320,14 +319,14 @@
 								<ol class="menu-children">
 									@if (isset($menu['children']))
 										@foreach ($menu['children'] as $child)
-											@render('menus::edit.child', array('child' => $child))
+											@render('menus::edit.child', array('child' => $child, 'pages' => $pages))
 										@endforeach
 									@endif
 								</ol>
 
 								<div class="new-child-template-container hide">
 									<ul class="new-child-template">
-										@render('menus::edit.child', array('child' => array(), 'template' => true))
+										@render('menus::edit.child', array('child' => array(), 'pages' => $pages, 'template' => true))
 									</ul>
 								</div>
 

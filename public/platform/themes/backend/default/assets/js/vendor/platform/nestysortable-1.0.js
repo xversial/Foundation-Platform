@@ -73,6 +73,9 @@
 			// field or false for invalid field.
 			invalidFieldCallback : function(slug, field, value) {},
 
+			// Callback for after an item is added
+			afterAddCallback: function(item) {},
+
 			// The ID of the last item added. Used so we fill
 			// new templates with an ID that won't clash with existing
 			// items.
@@ -234,6 +237,9 @@
 				$.each(that.options.fields, function(slug, field) {
 					$(field.newSelector).val('');
 				});
+
+				// Callback
+				that.options.afterAddCallback(data);
 			});
 
 			return this;

@@ -6,6 +6,7 @@
 				<i class="icon-move"></i>
 			</span>
 			{{ array_get($child, 'name', '[%control.name%]') }}
+
 			<span class="child-toggle-details">
 				<i class="icon-edit"></i>
 			</span>
@@ -37,13 +38,20 @@
 					</div>
 				</div>
 
-				<!-- URI -->
-				<div class="control-group">
-					<label class="control-label" for="menu-children-{{ array_get($child, 'id', '[%id%]') }}-uri">{{ Lang::line('menus::form.child.uri') }}</label>
-					<div class="controls">
-						<input type="text" name="children[{{ array_get($child, 'id', '[%id%]') }}][uri]" id="menu-children-{{ array_get($child, 'id', '[%id%]') }}-uri" class="child-uri" value="{{ array_get($child, 'uri', '[%control.uri%]') }}" {{ (array_key_exists('uri', $child) and ( ! array_get($child, 'user_editable') or URL::valid(array_get($child, 'uri')))) ? 'disabled' : 'required' }}>
-					</div>
-				</div>
+				@if (array_get($child, 'id'))
+					@if (array_get($child, 'type', Platform\Menus\Menu::TYPE_STATIC) == Platform\Menus\Menu::TYPE_STATIC)
+						@render('menus::edit.child.static', array('child' => $child))
+					@elseif (array_get($child, 'type', Platform\Menus\Menu::TYPE_STATIC) == Platform\Menus\Menu::TYPE_STATIC)
+						@render('menus::edit.child.page', array('child' => $child, 'pages' => $pages))
+					@endif
+				@else
+					[? if raw.type == '{{ Platform\Menus\Menu::TYPE_STATIC }}' ?]
+						@render('menus::edit.child.static', array('child' => $child))
+					[? endif ?]
+					[? if raw.type == '{{ Platform\Menus\Menu::TYPE_PAGE }}' ?]
+						@render('menus::edit.child.page', array('child' => $child, 'pages' => $pages))
+					[? endif ?]
+				@endif
 				
 				<!-- Secure -->
 				<div class="control-group">
@@ -105,7 +113,7 @@
 	@if (isset($child['children']) and is_array($child['children']) and count($child['children']) > 0)
 		<ol>
 			@foreach ($child['children'] as $grand_child)
-				@render('menus::edit.child', array('child' => $grand_child))
+				@render('menus::edit.child', array('child' => $grand_child, 'pages' => $pages))
 			@endforeach
 		</ol>
 	@endif

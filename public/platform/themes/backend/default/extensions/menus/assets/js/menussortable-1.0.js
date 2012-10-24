@@ -123,6 +123,14 @@
 					$(field.newSelector).closest('.control-group').addClass('error');
 				},
 
+				// Callback for after an item is added
+				afterAddCallback: function(item) {
+
+					// Trigger a change on tye menu type select. The rest is taken care of.
+					$(that.options.nestySortable.fields.type.newSelector).trigger('change.'+that.options.namespace);
+
+				},
+
 				// This is the selector for the new item's template.
 				// This container should be hidden at all times as we
 				// clone the HTML inside of this, apply the template and
