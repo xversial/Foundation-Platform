@@ -42,6 +42,10 @@
                 </div>
             </div>
 
+            <div id="table-filters-applied"></div>
+
+            <hr>
+
             <div class="tabbable tabs-right">
                 <ul id="table-pagination" class="nav nav-tabs"></ul>
                 <div class="tab-content">
