@@ -465,7 +465,7 @@ SQL;
                 // type.
                 switch ($child->type)
                 {
-                    case self::TYPE_PAGE:
+                    case Menu::TYPE_PAGE:
                         $child->uri = DB::raw('NULL');
                         break;
 
