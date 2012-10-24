@@ -167,10 +167,10 @@ function timezones()
 function currencies_update_intervals()
 {
     return array(
-        0       => Lang::line('Localisation::form.general.disabled')->get(),
-        86400   => Lang::line('Localisation::form.general.everyday')->get(),
-        604800  => Lang::line('Localisation::form.general.once_week')->get(),
-        2592000 => Lang::line('Localisation::form.general.once_month')->get()
+        0       => Lang::line('general.disabled')->get(),
+        86400   => Lang::line('localisation::form.general.everyday')->get(),
+        604800  => Lang::line('localisation::form.general.once_week')->get(),
+        2592000 => Lang::line('localisation::form.general.once_month')->get()
     );
 }
 
@@ -188,9 +188,9 @@ function currencies_update_intervals()
 function time_formats()
 {
     return array(
-        '%H:%M:%S %p' => strftime('%H:%M:%S %p', time()),
-        '%H:%M:%S'    => strftime('%H:%M:%S', time()),
-        '%H:%M'       => strftime('%H:%M', time())
+        '%H:%M:%S %p' => strftime('%H:%M:%S %p', time()), # 17:16:32 PM
+        '%H:%M:%S'    => strftime('%H:%M:%S', time()),    # 17:16:32
+        '%H:%M'       => strftime('%H:%M', time())        # 17:16
     );
 }
 
@@ -208,9 +208,22 @@ function time_formats()
 function date_formats()
 {
     return array(
-        '%Y-%m-%d' => strftime('%Y-%m-%d', time()),
-        '%Y-%d-%m' => strftime('%Y-%d-%m', time()),
-        '%d-%m-%Y' => strftime('%d-%m-%Y', time()),
-        '%m-%d-%Y' => strftime('%m-%d-%Y', time())
+        '%d-%m-%Y' => strftime('%d-%m-%Y', time()), # 20-10-2012
+        '%d-%b-%Y' => strftime('%d-%b-%Y', time()), # 20-Oct-2012
+        '%Y-%m-%d' => strftime('%Y-%m-%d', time()), # 2012-10-20
+        '%Y-%b-%d' => strftime('%Y-%b-%d', time()), # 2012-Oct-20
+
+        '%d.%m.%Y' => strftime('%d.%m.%Y', time()), # 20.10.2012
+        '%d.%b.%Y' => strftime('%d.%b.%Y', time()), # 20.Oct.2012
+        '%Y.%m.%d' => strftime('%Y.%m.%d', time()), # 2012.10.20
+        '%Y.%b.%d' => strftime('%Y.%b.%d', time()), # 2012.Oct.20
+
+        '%d/%m/%Y' => strftime('%d/%m/%Y', time()), # 20/10/2012
+        '%d/%b/%Y' => strftime('%d/%b/%Y', time()), # 20/Oct/2012
+        '%Y/%m/%d' => strftime('%Y/%m/%d', time()), # 2012/10/20
+        '%Y/%b/%d' => strftime('%Y/%b/%d', time()), # 2012/Oct/20
+
+        '%A, %d %B %Y' => strftime('%A, %d %B %Y', time()), # Saturday, 20 October 2012
+        '%d %B %Y'     => strftime('%d %B %Y', time())      # 20 October 2012
     );
 }

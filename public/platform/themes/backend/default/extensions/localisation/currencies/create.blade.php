@@ -36,52 +36,52 @@
                 <legend>{{ Lang::line('localisation::currencies/general.description.create') }}</legend>
 
                 <div class="control-group">
-                    <label class="control-label" for="name">{{ Lang::line('localisation::currencies/table.name') }}</label>
+                    <label class="control-label" for="name">{{ Lang::line('localisation::currencies/form.name') }}</label>
                     <div class="controls">
-                        <input type="text" name="name" id="name" value="{{ Input::old('name'); }}" placeholder="{{ Lang::line('localisation::currencies/table.name') }}" required />
-                        <span class="help-block"></span>
+                        <input type="text" name="name" id="name" value="{{ Input::old('name'); }}" required />
+                        <span class="help-block">{{ Lang::line('localisation::currencies/form.name_help') }}</span>
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="code">{{ Lang::line('localisation::currencies/table.code') }}</label>
+                    <label class="control-label" for="code">{{ Lang::line('localisation::currencies/form.code') }}</label>
                     <div class="controls">
-                        <input type="text" name="code" id="code" value="{{ Input::old('code'); }}" placeholder="{{ Lang::line('localisation::currencies/table.code') }}" required />
-                        <span class="help-block"></span>
+                        <input type="text" name="code" id="code" value="{{ Input::old('code'); }}" required />
+                        <span class="help-block">{{ Lang::line('localisation::currencies/form.code_help') }}</span>
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="symbol_left">{{ Lang::line('localisation::currencies/table.symbol_left') }}</label>
+                    <label class="control-label" for="symbol_left">{{ Lang::line('localisation::currencies/form.symbol_left') }}</label>
                     <div class="controls">
-                        <input type="text" name="symbol_left" id="symbol_left" value="{{ Input::old('symbol_left'); }}" placeholder="{{ Lang::line('localisation::currencies/table.symbol_left') }}" />
-                        <span class="help-block"></span>
+                        <input type="text" name="symbol_left" id="symbol_left" value="{{ Input::old('symbol_left'); }}" />
+                        <span class="help-block">{{ Lang::line('localisation::currencies/form.symbol_left_help') }}</span>
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="symbol_right">{{ Lang::line('localisation::currencies/table.symbol_right') }}</label>
+                    <label class="control-label" for="symbol_right">{{ Lang::line('localisation::currencies/form.symbol_right') }}</label>
                     <div class="controls">
-                        <input type="text" name="symbol_right" id="symbol_right" value="{{ Input::old('symbol_right'); }}" placeholder="{{ Lang::line('localisation::currencies/table.symbol_right') }}" />
-                        <span class="help-block"></span>
+                        <input type="text" name="symbol_right" id="symbol_right" value="{{ Input::old('symbol_right'); }}" />
+                        <span class="help-block">{{ Lang::line('localisation::currencies/form.symbol_right_help') }}</span>
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="decimal_place">{{ Lang::line('localisation::currencies/table.decimal_place') }}</label>
+                    <label class="control-label" for="decimal_place">{{ Lang::line('localisation::currencies/form.decimal_place') }}</label>
                     <div class="controls">
-                        <input type="text" name="decimal_place" id="decimal_place" value="{{ Input::old('decimal_place'); }}" placeholder="{{ Lang::line('localisation::currencies/table.decimal_place') }}" required />
-                        <span class="help-block"></span>
+                        <input type="text" name="decimal_place" id="decimal_place" value="{{ Input::old('decimal_place'); }}" required />
+                        <span class="help-block">{{ Lang::line('localisation::currencies/form.decimal_place_help') }}</span>
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="rate">{{ Lang::line('localisation::currencies/table.rate') }}</label>
+                    <label class="control-label" for="rate">{{ Lang::line('localisation::currencies/form.rate') }}</label>
                     <div class="controls">
-                        <input type="text" name="rate" id="rate" value="{{ Input::old('rate'); }}" placeholder="{{ Lang::line('localisation::currencies/table.rate') }}" required />
-                        <span class="help-block"></span>
+                        <input type="text" name="rate" id="rate" value="{{ Input::old('rate'); }}" required />
+                        <span class="help-block">{{ Lang::line('localisation::currencies/form.rate_help') }}</span>
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="status">{{ Lang::line('localisation::currencies/table.status') }}</label>
+                    <label class="control-label" for="status">{{ Lang::line('localisation::currencies/form.status') }}</label>
                     <div class="controls">
                         {{ Form::select('status', general_statuses()); }}
-                        <span class="help-block"></span>
+                        <span class="help-block">{{ Lang::line('localisation::currencies/form.status_help') }}</span>
                     </div>
                 </div>
             </fieldset>

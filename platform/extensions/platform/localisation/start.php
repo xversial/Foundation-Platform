@@ -68,7 +68,8 @@ if (Platform::extensions_manager()->is_enabled('localisation'))
 
     // Set the locale.
     //
-    setlocale(LC_ALL, $settings['language_locale']);
+    $language = DB::table('languages')->where('abbreviation', '=', strtolower($settings['language']))->first();
+    setlocale(LC_ALL, $language->locale);
 
     // Set both date and time formats.
     //

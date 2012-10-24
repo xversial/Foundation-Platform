@@ -36,31 +36,31 @@
                 <legend>{{ Lang::line('localisation::languages/general.description.create') }}</legend>
 
                 <div class="control-group">
-                    <label class="control-label" for="name">{{ Lang::line('localisation::languages/table.name') }}</label>
+                    <label class="control-label" for="name">{{ Lang::line('localisation::languages/form.name') }}</label>
                     <div class="controls">
-                        <input type="text" name="name" id="name" value="{{ Input::old('name'); }}" placeholder="{{ Lang::line('localisation::languages/table.name') }}" required />
-                        <span class="help-block"></span>
+                        <input type="text" name="name" id="name" value="{{ Input::old('name'); }}" required />
+                        <span class="help-block">{{ Lang::line('localisation::languages/form.name_help') }}</span>
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="abbreviation">{{ Lang::line('localisation::languages/table.abbreviation') }}</label>
+                    <label class="control-label" for="abbreviation">{{ Lang::line('localisation::languages/form.abbreviation') }}</label>
                     <div class="controls">
-                        <input type="text" name="abbreviation" id="abbreviation" value="{{ Input::old('abbreviation'); }}" placeholder="{{ Lang::line('localisation::languages/table.abbreviation') }}" required />
-                        <span class="help-block"></span>
+                        <input type="text" name="abbreviation" id="abbreviation" value="{{ Input::old('abbreviation'); }}" required />
+                        <span class="help-block">{{ Lang::line('localisation::languages/form.abbreviation_help') }}</span>
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="locale">{{ Lang::line('localisation::languages/table.locale') }}</label>
+                    <label class="control-label" for="locale">{{ Lang::line('localisation::languages/form.locale') }}</label>
                     <div class="controls">
-                        <input type="text" name="locale" id="locale" value="{{ Input::old('locale'); }}" placeholder="{{ Lang::line('localisation::languages/table.locale') }}" required />
-                        <span class="help-block"></span>
+                        <input type="text" name="locale" id="locale" value="{{ Input::old('locale'); }}" required />
+                        <span class="help-block">{{ Lang::line('localisation::languages/form.locale_help') }}</span>
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="status">{{ Lang::line('localisation::languages/table.status') }}</label>
+                    <label class="control-label" for="status">{{ Lang::line('localisation::languages/form.status') }}</label>
                     <div class="controls">
                         {{ Form::select('status', general_statuses()); }}
-                        <span class="help-block"></span>
+                        <span class="help-block">{{ Lang::line('localisation::languages/form.status_help') }}</span>
                     </div>
                 </div>
             </fieldset>
