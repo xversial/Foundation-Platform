@@ -156,7 +156,7 @@ class Localisation_Languages_v1_0_0
             'extension'     => 'languages',
             'slug'          => 'admin-languages',
             'uri'           => 'localisation/languages',
-            'user_editable' => 1,
+            'user_editable' => 0,
             'status'        => 1
         ));
         $languages_menu->last_child_of($localisation_menu);

@@ -168,7 +168,7 @@ class Localisation_Currencies_v1_0_0
             'extension'     => 'currencies',
             'slug'          => 'admin-currencies',
             'uri'           => 'localisation/currencies',
-            'user_editable' => 1,
+            'user_editable' => 0,
             'status'        => 1
         ));
         $currencies_menu->last_child_of($localisation_menu);

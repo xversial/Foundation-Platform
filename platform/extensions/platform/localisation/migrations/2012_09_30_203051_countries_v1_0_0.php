@@ -151,7 +151,7 @@ class Localisation_Countries_v1_0_0
             'extension'     => 'countries',
             'slug'          => 'admin-countries',
             'uri'           => 'localisation/countries',
-            'user_editable' => 1,
+            'user_editable' => 0,
             'status'        => 1
         ));
         $countries_menu->last_child_of($localisation_menu);

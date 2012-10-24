@@ -68,7 +68,7 @@ class Localisation_v1_0_0
             'extension'     => 'localisation',
             'slug'          => 'admin-localisation',
             'uri'           => 'localisation',
-            'user_editable' => 1,
+            'user_editable' => 0,
             'status'        => 1,
             'class'         => 'icon-plane'
         ));
