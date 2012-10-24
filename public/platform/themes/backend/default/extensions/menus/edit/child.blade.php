@@ -41,8 +41,7 @@
 				<div class="control-group">
 					<label class="control-label" for="menu-children-{{ array_get($child, 'id', '[%id%]') }}-uri">{{ Lang::line('menus::form.child.uri') }}</label>
 					<div class="controls">
-						<input type="text" name="children[{{ array_get($child, 'id', '[%id%]') }}][uri]" id="menu-children-{{ array_get($child, 'id', '[%id%]') }}-uri" class="child-uri" value="<?php echo array_get($child, 'uri', 
-						'[%control.uri%]'); ?>" {{ (array_key_exists('uri', $child) and ( ! array_get($child, 'user_editable') or URL::valid(array_get($child, 'uri')))) ? 'disabled' : 'required' }}>
+						<input type="text" name="children[{{ array_get($child, 'id', '[%id%]') }}][uri]" id="menu-children-{{ array_get($child, 'id', '[%id%]') }}-uri" class="child-uri" value="{{ array_get($child, 'uri', '[%control.uri%]') }}" {{ (array_key_exists('uri', $child) and ( ! array_get($child, 'user_editable') or URL::valid(array_get($child, 'uri')))) ? 'disabled' : 'required' }}>
 					</div>
 				</div>
 				
@@ -50,13 +49,6 @@
 				<div class="control-group">
 					<label class="control-label" for="menu-children-{{ array_get($child, 'id', '[%id%]') }}-secure">{{ Lang::line('menus::form.child.secure') }}</label>
 					<div class="controls">
-						<?php /*
-						Not Working
-						<div class="toggle basic success {{ ( ! array_get($child, 'user_editable') or URL::valid(array_get($child, 'user_editable'))) ? 'disabled' : null }}" data-enabled="{{ Lang::line('general.enabled') }}" data-disabled="{{ Lang::line('general.disabled') }}" data-toggle="toggle">
-							<input type="checkbox" id="menu-children-{{ array_get($child, 'id', '[%id%]') }}-secure" value="{{ array_get($child, 'secure', '[%control.secure%]') }}" {{ ( ! array_get($child, 'user_editable') or URL::valid(array_get($child, 'user_editable'))) ? 'disabled' : null }}>
-							<label class="check" for="menu-children-{{ array_get($child, 'id', '[%id%]') }}-secure"></label>
-						</div>
-						*/ ?>
 						<label class="checkbox">
 							<input type="checkbox" name="children[{{ array_get($child, 'id', '[%id%]') }}][secure]" id="menu-children-{{ array_get($child, 'id', '[%id%]') }}-secure" class="child-secure" value="1" {{ (array_key_exists('secure', $child) and ( ! array_get($child, 'user_editable') or URL::valid(array_get($child, 'user_editable')))) ? 'disabled' : null }} {{ (array_key_exists('secure', $child)) ? ((array_get($child, 'secure')) ? 'checked' : null) : '[%control.secure%]' }}>
 							{{ Lang::line('menus::form.child.secure') }}
@@ -94,7 +86,7 @@
 				<div class="control-group">
 					<label class="control-label" for="menu-children-{{ array_get($child, 'id', '[%id%]') }}-class">{{ Lang::line('menus::form.child.class') }}</label>
 					<div class="controls">
-						<input type="text" name="children[{{ array_get($child, 'id', '[%id%]') }}][class]" id="menu-children-{{ array_get($child, 'id', '[%id%]') }}-class" class="child-class" value="<?php echo array_get($child, 'class', '[%control.class%]'); ?>">
+						<input type="text" name="children[{{ array_get($child, 'id', '[%id%]') }}][class]" id="menu-children-{{ array_get($child, 'id', '[%id%]') }}-class" class="child-class" value="{{ array_get($child, 'class', '[%control.class%]') }}" {{ (array_key_exists('user_editable', $child) and ( ! array_get($child, 'user_editable'))) ? 'disabled' : null }}>
 					</div>
 				</div>
 
