@@ -14,7 +14,7 @@
 
 <!-- Queue Scripts -->
 {{ Theme::queue_asset('table', 'js/vendor/platform/table.js', 'jquery') }}
-{{ Theme::queue_asset('groups', 'users::js/groups.js', 'jquery') }}
+{{ Theme::queue_asset('groups', 'platform/users::js/groups.js', 'jquery') }}
 
 <!-- Scripts -->
 @section('scripts')

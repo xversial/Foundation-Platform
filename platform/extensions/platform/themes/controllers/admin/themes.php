@@ -121,20 +121,21 @@ class Themes_Admin_Themes_Controller extends Admin_Controller
         //
         $this->active_menu('admin-' . ( $type == 'frontend'? 'frontend' : 'backend'));
 
-        // Initialize the data array.
-        //
-        $data = array(
-            'type' => $type,
-            'name' => $name
-        );
-
-        // Get theme data.
-        //
         try
         {
+            // Get this theme options.
+            //
+            $options = array_get(API::get('themes/' . $type . '/' . $name . '/options'), 'options');
+
+            // Initialize the data array.
+            //
+            $data = array(
+                'type' => $type,
+                'name' => $name
+            );
+
             // Merge the default theme info with the custom options.
             //
-            $options       = array_get(API::get('themes/' . $type . '/' . $name . '/options'), 'options');
             $data['theme'] = API::get('themes/' . $type . '/' . $name);
             $data['theme']['options'] = array_replace_recursive(array_get($data, 'theme.options'), $options);
             $data['theme']['changed'] = (count($options) >= 1 ? true : false);

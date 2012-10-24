@@ -6,7 +6,7 @@
 @endsection
 
 <!-- Queue Styles -->
-{{ Theme::queue_asset('menus', 'menus::css/menus.less', 'style') }}
+{{ Theme::queue_asset('menus', 'platform/menus::css/menus.less', 'style') }}
 
 <!-- Styles -->
 @section ('styles')

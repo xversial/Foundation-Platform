@@ -14,7 +14,7 @@
 
 <!-- Queue Scripts -->
 {{ Theme::queue_asset('table', 'js/vendor/platform/table.js', 'jquery') }}
-{{ Theme::queue_asset('pages', 'pages::js/table-pages.js', 'jquery') }}
+{{ Theme::queue_asset('pages', 'platform/pages::js/table-pages.js', 'jquery') }}
 
 <!-- Scripts -->
 @section('scripts')

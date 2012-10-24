@@ -13,7 +13,7 @@
 
 <!-- Queue Scripts -->
 {{ Theme::queue_asset('table', 'js/vendor/platform/table.js', 'jquery') }}
-{{ Theme::queue_asset('users', 'users::js/users.js', 'jquery') }}
+{{ Theme::queue_asset('users', 'platform/users::js/users.js', 'jquery') }}
 
 <!-- Scripts -->
 @section('scripts')

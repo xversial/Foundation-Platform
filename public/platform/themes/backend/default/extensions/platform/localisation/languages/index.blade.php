@@ -7,7 +7,7 @@
 
 <!-- Queue Scripts -->
 {{ Theme::queue_asset('table', 'js/vendor/platform/table.js', 'jquery') }}
-{{ Theme::queue_asset('languages', 'localisation::js/languages.js', 'jquery') }}
+{{ Theme::queue_asset('languages', 'platform/localisation::js/languages.js', 'jquery') }}
 
 <!-- Page Content -->
 @section('content')

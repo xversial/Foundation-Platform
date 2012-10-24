@@ -6,10 +6,10 @@
 @endsection
 
 <!-- Queue Styles -->
-{{ Theme::queue_asset('themes','themes::css/themes.less', 'style') }}
+{{ Theme::queue_asset('themes','platform/themes::css/themes.less', 'style') }}
 
 <!-- Queue Scripts -->
-{{ Theme::queue_asset('themes','themes::js/themes.js', 'jquery') }}
+{{ Theme::queue_asset('themes','platform/themes::js/themes.js', 'jquery') }}
 
 <!-- Page Content -->
 @section('content')
