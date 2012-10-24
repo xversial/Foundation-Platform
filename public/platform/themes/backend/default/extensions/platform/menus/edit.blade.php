@@ -172,7 +172,7 @@
 				// items.
 				lastItemId: {{ $last_child_id }}
 			}
-		})
+		});
 	});
 </script>
 @endsection
