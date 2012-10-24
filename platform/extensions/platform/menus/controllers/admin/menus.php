@@ -18,6 +18,7 @@
  * @link       http://cartalyst.com
  */
 
+use Platform\Menus\Menu;
 
 /**
  * --------------------------------------------------------------------------
@@ -443,10 +444,12 @@ class Menus_Admin_Menus_Controller extends Admin_Controller
             'name'       => Input::get('children.' . $child['id'] . '.name'),
             'slug'       => Input::get('children.' . $child['id'] . '.slug'),
             'uri'        => Input::get('children.' . $child['id'] . '.uri'),
+            'page_id'    => Input::get('children.' . $child['id'] . '.page_id'),
             'class'      => Input::get('children.' . $child['id'] . '.class'),
-            'target'     => Input::get('children.' . $child['id'] . '.target', 0),
-            'visibility' => Input::get('children.' . $child['id'] . '.visibility', 0),
-            'status'     => Input::get('children.' . $child['id'] . '.status', 1)
+            'target'     => Input::get('children.' . $child['id'] . '.target', Menu::TARGET_SELF),
+            'visibility' => Input::get('children.' . $child['id'] . '.visibility', Menu::VISIBILITY_ALWAYS),
+            'status'     => Input::get('children.' . $child['id'] . '.status', 1),
+            'type'       => Input::get('children.' . $child['id'] . '.type', Menu::TYPE_STATIC),
         );
 
         // Determine if we're a new child or not. If we're
@@ -459,7 +462,7 @@ class Menus_Admin_Menus_Controller extends Admin_Controller
 
         // Now, look for secure URLs.
         //
-        if (URL::valid($new_child['uri']))
+        if ($new_child['type'] == Menu::TYPE_STATIC and URL::valid($new_child['uri']))
         {
             $new_child['secure'] = (int) starts_with($new_child['uri'], 'https://');
         }

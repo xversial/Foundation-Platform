@@ -460,6 +460,21 @@ SQL;
                     $child->user_editable = 1;
                 }
 
+                // Now, if the child is user editable, let's filter
+                // out the properties we don't need based on the child
+                // type.
+                switch ($child->type)
+                {
+                    case self::TYPE_PAGE:
+                        $child->uri = DB::raw('NULL');
+                        break;
+
+                    // Default is a static child
+                    default:
+                        $child->page_id = DB::raw('NULL');
+                        break;
+                }
+
                 // Any user editable children, we'll
                 // check their slug starts with the root
                 // child's slug

@@ -39,12 +39,20 @@
 				</div>
 
 				@if (array_get($child, 'id'))
+					<div class="hide">
+						<input type="hidden" name="children[{{ array_get($child, 'id') }}][type]" value="{{ array_get($child, 'type', Platform\Menus\Menu::TYPE_STATIC) }}">
+					</div>
+
 					@if (array_get($child, 'type', Platform\Menus\Menu::TYPE_STATIC) == Platform\Menus\Menu::TYPE_STATIC)
 						@render('menus::edit.child.static', array('child' => $child))
-					@elseif (array_get($child, 'type', Platform\Menus\Menu::TYPE_STATIC) == Platform\Menus\Menu::TYPE_STATIC)
+					@elseif (array_get($child, 'type', Platform\Menus\Menu::TYPE_STATIC) == Platform\Menus\Menu::TYPE_PAGE)
 						@render('menus::edit.child.page', array('child' => $child, 'pages' => $pages))
 					@endif
 				@else
+					<div class="hide">
+						<input type="hidden" name="children[[%id%]][type]" value="[% raw.type %]">
+					</div>
+
 					[? if raw.type == '{{ Platform\Menus\Menu::TYPE_STATIC }}' ?]
 						@render('menus::edit.child.static', array('child' => $child))
 					[? endif ?]
