@@ -137,6 +137,7 @@ class Themes_Admin_Themes_Controller extends Admin_Controller
             $options       = array_get(API::get('themes/' . $type . '/' . $name . '/options'), 'options');
             $data['theme'] = API::get('themes/' . $type . '/' . $name);
             $data['theme']['options'] = array_replace_recursive(array_get($data, 'theme.options'), $options);
+            $data['theme']['changed'] = (count($options) >= 1 ? true : false);
         }
         catch (APIClientException $e)
         {
@@ -176,18 +177,32 @@ class Themes_Admin_Themes_Controller extends Admin_Controller
      */
     public function post_edit($type, $name)
     {
-        // Prepare the data array.
-        //
-        $data = array(
-            'status'  => Input::get('status', 1),
-            'options' => Input::get('options', array())
-        );
-
         try
         {
-            // Update the theme data.
+            // Do we want to reset the theme options ?
             //
-            API::put('themes/' . $type . '/' . $name . '/options', $data);
+            if(Input::get('reset_changes'))
+            {
+                // Make the request.
+                //
+                API::put('themes/' . $type . '/' . $name . '/reset');
+            }
+    
+            // No, we want to update the theme data.
+            //
+            else
+            {
+                // Prepare the data array.
+                //
+                $data = array(
+                    'status'  => Input::get('status', 1),
+                    'options' => Input::get('options', array())
+                );
+
+                // Update the theme data.
+                //
+                API::put('themes/' . $type . '/' . $name . '/options', $data);
+            }
 
             // Set the success message.
             //

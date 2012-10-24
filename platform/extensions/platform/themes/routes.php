@@ -50,6 +50,16 @@ Route::any(API . '/themes/(' . $reserved . ')/(:any)/options', 'themes::api.them
 
 
 /**
+ * Route /api/themes/:type/:name/reset.
+ *
+ *  <code>
+ *      /api/themes/backend/default/reset => themes::themes.api.reset(backend, default)
+ *  </code>
+ */
+Route::any(API . '/themes/(' . $reserved . ')/(:any)/reset', 'themes::api.themes@reset');
+
+
+/**
  * Route /admin/themes/:type
  *
  * This shows the all the themes based on the type provided.

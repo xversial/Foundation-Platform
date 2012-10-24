@@ -45,5 +45,6 @@ return array(
     'saved'          => 'Saved',
     'deleted'        => 'Deleted',
     'updated'        => 'Updated',
-    'details'        => 'Details'
+    'details'        => 'Details',
+    'reset_changes'  => 'Reset Changes'
 );
