@@ -26,6 +26,8 @@
  */
 return array(
 
+    'legend' => 'Menu Properties',
+
     'root' => array(
         'name' => 'Name',
         'slug' => 'Slug',

@@ -107,8 +107,8 @@
 				</div>
 
 				<div class="form-actions">
-					<a href="#" class="pull-right btn btn-{{ (array_get($child, 'user_editable')) ? 'danger' : 'inverse' }} btn-mini child-remove {{ (array_key_exists('user_editable', $child) and ( ! array_get($child, 'user_editable'))) ? 'disabled' : null }}">
-						{{ Lang::line('menus::button.remove_child'.(( ! array_get($child, 'user_editable')) ? '_disabled' : null)) }}
+					<a href="#" class="pull-right btn btn-mini child-remove btn-{{ (array_key_exists('user_editable', $child) and ( ! array_get($child, 'user_editable'))) ? 'inverse disabled' : 'danger' }}">
+						{{ Lang::line('menus::button.remove_child'.((array_key_exists('user_editable', $child) and ( ! array_get($child, 'user_editable'))) ? '_disabled' : null)) }}
 					</a>
 				</div>
 

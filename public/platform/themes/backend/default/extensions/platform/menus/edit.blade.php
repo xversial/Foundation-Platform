@@ -21,7 +21,7 @@
 {{ Theme::queue_asset('jquery-nestedsortable', 'js/vendor/platform/nestedsortable-1.3.5.js', 'jquery') }}
 {{ Theme::queue_asset('tempo', 'js/vendor/tempojs/tempo-1.8.min.js') }}
 {{ Theme::queue_asset('jquery-nestysortable', 'js/vendor/platform/nestysortable-1.0.js', 'jquery') }}
-{{ Theme::queue_asset('menussortable', 'menus::js/menussortable-1.0.js', 'jquery') }}
+{{ Theme::queue_asset('menussortable', 'platform/menus::js/menussortable-1.0.js', 'jquery') }}
 {{ Theme::queue_asset('validate', 'js/vendor/platform/validate.js', 'jquery') }}
 
 <!-- Scripts -->
@@ -192,178 +192,145 @@
 
 		<hr>
 
-		<nav class="quaternary-navigation tabbable hidden-desktop">
-			<ul class="nav nav-pills">
-					<li class="{{ ($menu_slug) ? 'active' : null }}">
-						<a href="#menus-edit-children" data-toggle="tab">{{ Lang::line('menus::general.tabs.children') }}</a>
-					</li>
-					<li class="{{ ( ! $menu_slug) ? 'active' : null }}">
-						<a href="#menus-edit-root" data-toggle="tab">{{ Lang::line('menus::general.tabs.root') }}</a>
-					</li>
-				</ul>
-		</nav>
-
 		<form method="POST" method="POST" accept-char="UTF-8" autocomplete="off" id="menu">
 			{{ Form::token() }}
 
-			<div class="quaternary-navigation">
-				<nav class="tabbable visable-desktop">
-					<ul class="nav nav-tabs">
-						<li class="{{ ($menu_slug) ? 'active' : null }}">
-							<a href="#menus-edit-children" data-toggle="tab">{{ Lang::line('menus::general.tabs.children') }}</a>
-						</li>
-						<li class="{{ ( ! $menu_slug) ? 'active' : null }}">
-							<a href="#menus-edit-root" data-toggle="tab">{{ Lang::line('menus::general.tabs.root') }}</a>
-						</li>
-					</ul>
-				</nav>
-				<div class="tab-content">
-					<div id="menus-edit-children" class="tab-pane {{ ($menu_slug) ? 'active' : null }}">
+			<fieldset class="form-horizontal">
 
-						<div class="row-fluid">
-							<div class="span3" id="menu-new-child">
-								<fieldset>
-									<legend>{{ Lang::line('menus::form.create.child.legend') }}</legend>
+				<legend>{{ Lang::line('menus::form.legend') }}</legend>
 
-									<!-- Item Name -->
-									<div class="control-group">
-										<input type="text" id="new-child-name" class="input-block-level" value="" placeholder="{{ Lang::line('menus::form.child.name') }}" required>
-									</div>
-
-									<!-- Slug -->
-									<div class="control-group">
-										<input type="text" id="new-child-slug" class="input-block-level" value="" placeholder="{{ Lang::line('menus::form.child.slug') }}" required>
-									</div>
-
-									<label>{{ Lang::line('menus::form.child.type.title') }}</label>
-
-									<select id="new-child-type" class="input-block-level">
-										<option value="{{ Platform\Menus\Menu::TYPE_STATIC }}" selected>{{ Lang::line('menus::form.child.type.static') }}</option>
-										@if (count($pages) > 0)
-											<option value="{{ Platform\Menus\Menu::TYPE_PAGE }}">{{ Lang::line('menus::form.child.type.page') }}</option>
-										@endif
-									</select>
-
-									<div data-new-child-type="{{ Platform\Menus\Menu::TYPE_STATIC }}" class="show">
-
-										<!-- URI -->
-										<div class="control-group">
-											<input type="text" id="new-child-uri" class="input-block-level" value="" placeholder="{{ Lang::line('menus::form.child.uri') }}">
-										</div>
-
-									</div>
-
-									@if (count($pages) > 0)
-										<div data-new-child-type="{{ Platform\Menus\Menu::TYPE_PAGE }}">
-
-											<div class="control-group">
-												<select id="new-child-page-id" class="input-block-level">
-													@foreach ($pages as $page)
-														<option value="{{ $page['id'] }}">{{ $page['name'] }}</option>
-													@endforeach
-												</select>
-											</div>
-
-										</div>
-									@endif
-
-									<!-- Secure -->
-									<div class="control-group">
-										<label class="checkbox">
-											<input type="checkbox" value="1" id="new-child-secure" class="checkbox">
-											{{ Lang::line('menus::form.child.secure') }}
-										</label>
-									</div>
-
-									<!-- Visibility -->
-									<div class="control-group">
-										<label for="new-child-visibility">{{ Lang::line('menus::form.child.visibility.title') }}</label>
-										<select id="new-child-visibility" class="input-block-level">
-											<option value="{{ Platform\Menus\Menu::VISIBILITY_ALWAYS }}" selected>{{ Lang::line('menus::form.child.visibility.always') }}</option>
-											<option value="{{ Platform\Menus\Menu::VISIBILITY_LOGGED_IN }}">{{ Lang::line('menus::form.child.visibility.logged_in') }}</option>
-											<option value="{{ Platform\Menus\Menu::VISIBILITY_LOGGED_OUT }}">{{ Lang::line('menus::form.child.visibility.logged_out') }}</option>
-											<option value="{{ Platform\Menus\Menu::VISIBILITY_ADMIN }}">{{ Lang::line('menus::form.child.visibility.admin') }}</option>
-										</select>
-									</div>
-
-									<!-- Target -->
-									<div class="control-group">
-										<label>{{ Lang::line('menus::form.child.target.title') }}</label>
-										<select id="new-child-target" class="input-block-level">
-											<option value="{{ Platform\Menus\Menu::TARGET_SELF }}" selected>{{ Lang::line('menus::form.child.target.self') }}</option>
-											<option value="{{ Platform\Menus\Menu::TARGET_BLANK }}">{{ Lang::line('menus::form.child.target.blank') }}</option>
-											<option value="{{ Platform\Menus\Menu::TARGET_PARENT }}">{{ Lang::line('menus::form.child.target.parent') }}</option>
-											<option value="{{ Platform\Menus\Menu::TARGET_TOP }}">{{ Lang::line('menus::form.child.target.top') }}</option>
-										</select>
-									</div>
-
-									<!-- CSS class -->
-									<div class="control-group">
-										<label for="new-child-class">{{ Lang::line('menus::form.child.class') }}</label>
-										<input type="text" id="new-child-class" class="input-block-level" value="" placeholder="{{ Lang::line('menus::form.child.class') }}">
-									</div>
-
-									<div class="form-actions">
-										<button type="button" class="btn btn-primary children-add-new">
-											{{ Lang::line('menus::button.add_child') }}
-										</button>
-									</div>
-
-								</fieldset>
-
-							</div>
-							<!-- /end - menu-new-child -->
-
-							<div class="span9">
-
-								<ol class="menu-children">
-									@if (isset($menu['children']))
-										@foreach ($menu['children'] as $child)
-											@render('platform.menus::edit.child', array('child' => $child, 'pages' => $pages))
-										@endforeach
-									@endif
-								</ol>
-
-								<div class="new-child-template-container hide">
-									<ul class="new-child-template">
-										@render('platform.menus::edit.child', array('child' => array(), 'pages' => $pages, 'template' => true))
-									</ul>
-								</div>
-
-							</div>
-						</div>
-
-					</div>
-					<div id="menus-edit-root" class="tab-pane {{ ( ! $menu_slug) ? 'active' : null }}">
-
-						<br>
-
-						<fieldset class="form-horizontal">
-
-							<div class="control-group">
-								<label class="control-label" for="menu-name">
-									{{ Lang::line('menus::form.root.name') }}
-								</label>
-								<div class="controls">
-									<input type="text" name="name" id="menu-name" value="{{ array_get($menu, 'name') }}" {{ (array_key_exists('user_editable', $menu) and ( ! array_get($menu, 'user_editable'))) ? 'disabled' : 'required'}}>
-								</div>
-							</div>
-
-							<div class="control-group">
-								<label class="control-label" for="menu-slug">
-									{{ Lang::line('menus::form.root.slug') }}
-								</label>
-								<div class="controls">
-									<input type="text" name="slug" id="menu-slug" value="{{ array_get($menu, 'slug') }}"  {{ (array_key_exists('user_editable', $menu) and ( ! array_get($menu, 'user_editable'))) ? 'disabled' : 'required'}}>
-								</div>
-							</div>
-
-						</fieldset>
-
+				<div class="control-group">
+					<label class="control-label" for="menu-name">
+						{{ Lang::line('menus::form.root.name') }}
+					</label>
+					<div class="controls">
+						<input type="text" name="name" id="menu-name" value="{{ array_get($menu, 'name') }}" {{ (array_key_exists('user_editable', $menu) and ( ! array_get($menu, 'user_editable'))) ? 'disabled' : 'required'}}>
 					</div>
 				</div>
-			</div>
 
+				<div class="control-group">
+					<label class="control-label" for="menu-slug">
+						{{ Lang::line('menus::form.root.slug') }}
+					</label>
+					<div class="controls">
+						<input type="text" name="slug" id="menu-slug" value="{{ array_get($menu, 'slug') }}"  {{ (array_key_exists('user_editable', $menu) and ( ! array_get($menu, 'user_editable'))) ? 'disabled' : 'required'}}>
+					</div>
+				</div>
+
+			</fieldset>
+
+			<div class="row-fluid">
+				<div class="span3" id="menu-new-child">
+					<fieldset>
+						<legend>{{ Lang::line('menus::form.create.child.legend') }}</legend>
+
+						<!-- Item Name -->
+						<div class="control-group">
+							<input type="text" id="new-child-name" class="input-block-level" value="" placeholder="{{ Lang::line('menus::form.child.name') }}" required>
+						</div>
+
+						<!-- Slug -->
+						<div class="control-group">
+							<input type="text" id="new-child-slug" class="input-block-level" value="" placeholder="{{ Lang::line('menus::form.child.slug') }}" required>
+						</div>
+
+						<label>{{ Lang::line('menus::form.child.type.title') }}</label>
+
+						<select id="new-child-type" class="input-block-level">
+							<option value="{{ Platform\Menus\Menu::TYPE_STATIC }}" selected>{{ Lang::line('menus::form.child.type.static') }}</option>
+							@if (count($pages) > 0)
+								<option value="{{ Platform\Menus\Menu::TYPE_PAGE }}">{{ Lang::line('menus::form.child.type.page') }}</option>
+							@endif
+						</select>
+
+						<div data-new-child-type="{{ Platform\Menus\Menu::TYPE_STATIC }}" class="show">
+
+							<!-- URI -->
+							<div class="control-group">
+								<input type="text" id="new-child-uri" class="input-block-level" value="" placeholder="{{ Lang::line('menus::form.child.uri') }}">
+							</div>
+
+						</div>
+
+						@if (count($pages) > 0)
+							<div data-new-child-type="{{ Platform\Menus\Menu::TYPE_PAGE }}">
+
+								<div class="control-group">
+									<select id="new-child-page-id" class="input-block-level">
+										@foreach ($pages as $page)
+											<option value="{{ $page['id'] }}">{{ $page['name'] }}</option>
+										@endforeach
+									</select>
+								</div>
+
+							</div>
+						@endif
+
+						<!-- Secure -->
+						<div class="control-group">
+							<label class="checkbox">
+								<input type="checkbox" value="1" id="new-child-secure" class="checkbox">
+								{{ Lang::line('menus::form.child.secure') }}
+							</label>
+						</div>
+
+						<!-- Visibility -->
+						<div class="control-group">
+							<label for="new-child-visibility">{{ Lang::line('menus::form.child.visibility.title') }}</label>
+							<select id="new-child-visibility" class="input-block-level">
+								<option value="{{ Platform\Menus\Menu::VISIBILITY_ALWAYS }}" selected>{{ Lang::line('menus::form.child.visibility.always') }}</option>
+								<option value="{{ Platform\Menus\Menu::VISIBILITY_LOGGED_IN }}">{{ Lang::line('menus::form.child.visibility.logged_in') }}</option>
+								<option value="{{ Platform\Menus\Menu::VISIBILITY_LOGGED_OUT }}">{{ Lang::line('menus::form.child.visibility.logged_out') }}</option>
+								<option value="{{ Platform\Menus\Menu::VISIBILITY_ADMIN }}">{{ Lang::line('menus::form.child.visibility.admin') }}</option>
+							</select>
+						</div>
+
+						<!-- Target -->
+						<div class="control-group">
+							<label>{{ Lang::line('menus::form.child.target.title') }}</label>
+							<select id="new-child-target" class="input-block-level">
+								<option value="{{ Platform\Menus\Menu::TARGET_SELF }}" selected>{{ Lang::line('menus::form.child.target.self') }}</option>
+								<option value="{{ Platform\Menus\Menu::TARGET_BLANK }}">{{ Lang::line('menus::form.child.target.blank') }}</option>
+								<option value="{{ Platform\Menus\Menu::TARGET_PARENT }}">{{ Lang::line('menus::form.child.target.parent') }}</option>
+								<option value="{{ Platform\Menus\Menu::TARGET_TOP }}">{{ Lang::line('menus::form.child.target.top') }}</option>
+							</select>
+						</div>
+
+						<!-- CSS class -->
+						<div class="control-group">
+							<label for="new-child-class">{{ Lang::line('menus::form.child.class') }}</label>
+							<input type="text" id="new-child-class" class="input-block-level" value="" placeholder="{{ Lang::line('menus::form.child.class') }}">
+						</div>
+
+						<div class="form-actions">
+							<button type="button" class="btn btn-primary children-add-new">
+								{{ Lang::line('menus::button.add_child') }}
+							</button>
+						</div>
+
+					</fieldset>
+
+				</div>
+				<!-- /end - menu-new-child -->
+
+				<div class="span9">
+
+					<ol class="menu-children">
+						@if (isset($menu['children']))
+							@foreach ($menu['children'] as $child)
+								@render('platform.menus::edit.child', array('child' => $child, 'pages' => $pages))
+							@endforeach
+						@endif
+					</ol>
+
+					<div class="new-child-template-container hide">
+						<ul class="new-child-template">
+							@render('platform.menus::edit.child', array('child' => array(), 'pages' => $pages, 'template' => true))
+						</ul>
+					</div>
+
+				</div>
+			</div>
 
 			<div class="form-actions">
 				<button type="submit" class="btn btn-primary btn-save-menu" data-loading-text="{{ Lang::line('button.loading') }}" data-complete-text="{{ Lang::line('button.saved') }}">
