@@ -27,8 +27,5 @@
 return array(
     'id'           => 'ID',
     'name'         => 'Language Name',
-    'slug'         => 'Language Slug',
-    'abbreviation' => 'Abbreviation',
-    'locale'       => 'Locale',
-    'status'       => 'Language Status'
+    'abbreviation' => 'Abbreviation'
 );

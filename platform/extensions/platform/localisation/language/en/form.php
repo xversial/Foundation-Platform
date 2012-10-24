@@ -46,7 +46,6 @@ return array(
     ),
 
     'general' => array(
-        'disabled'   => 'Disabled',
         'everyday'   => 'Everyday',
         'once_week'  => 'Once a Week',
         'once_month' => 'Once a Month'

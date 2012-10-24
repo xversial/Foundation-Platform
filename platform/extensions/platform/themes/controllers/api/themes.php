@@ -330,16 +330,16 @@ class Themes_API_Themes_Controller extends API_Controller
      * @param    string
      * @return   Response
      */
-    public function put_options($type, $name)
+    public function put_options($type, $theme)
     {
         // Check if the theme exists.
         //
-        if ( ! $theme_info = Theme::fetch($type, $name))
+        if ( ! $theme_info = Theme::fetch($type, $theme))
         {
             // Theme was not found.
             //
             return new Response(array(
-                'message' => Lang::line('themes::messages.not_found', array('theme' => $type . '\\' . $name))->get()
+                'message' => Lang::line('themes::messages.not_found', array('theme' => $type . '\\' . $theme))->get()
             ), API::STATUS_NOT_FOUND);
         }
 
@@ -349,19 +349,20 @@ class Themes_API_Themes_Controller extends API_Controller
 
         // Find a theme option entity.
         //
-        $theme_model  = Theme::find(function($query) use ($type, $name)
+        $theme_model = Theme::find(function($query) use ($type, $theme)
         {
             return $query->where('type', '=', $type)
-                         ->where('theme', '=', $name);
+                         ->where('theme', '=', $theme);
         });
 
-        // Create if non-existent
+        // Create if non-existent.
+        //
         if (is_null($theme_model))
         {
             $exists             = false;
             $theme_model        = new Theme();
             $theme_model->type  = $type;
-            $theme_model->theme = $name;
+            $theme_model->theme = $theme;
         }
 
         // Merge the default options with the posted ones.
@@ -373,17 +374,56 @@ class Themes_API_Themes_Controller extends API_Controller
         //
         if ($theme_model->save())
         {
-            return new Response($name, ($exists ? API::STATUS_OK : API::STATUS_CREATED));
+            return new Response($theme, ($exists ? API::STATUS_OK : API::STATUS_CREATED));
         }
 
         // An error ocurred while updating the theme.
         //
-        else
+        return new Response(array(
+            'message' => Lang::line('themes::messages.update.fail', array('theme' => $type . '\\' . $theme))->get(),
+            'errors'  => ($theme_model->validation()->errors->has()) ? $theme_model->validation()->errors->all() : array()
+        ), ($theme_model->validation()->errors->has()) ? API::STATUS_BAD_REQUEST : API::STATUS_UNPROCESSABLE_ENTITY);
+    }
+
+
+    /**
+     * --------------------------------------------------------------------------
+     * Function: put_reset()
+     * --------------------------------------------------------------------------
+     *
+     * Resets the theme options to it's defaults.
+     *
+     *  <code>
+     *      API::put('themes/backend/default/reset');
+     *  </code>
+     *
+     * @access   public
+     * @param    string
+     * @param    string
+     * @return   Response
+     */
+    public function put_reset($type, $theme)
+    {
+        // Update the theme.
+        //
+        $theme_model = Theme::find(function($query) use ($type, $theme)
         {
-            return new Response(array(
-                'message' => Lang::line('themes::messages.update.fail', array('theme' => $type . '\\' . $name))->get(),
-                'errors'  => ($theme_model->validation()->errors->has()) ? $theme_model->validation()->errors->all() : array()
-            ), ($theme_model->validation()->errors->has()) ? API::STATUS_BAD_REQUEST : API::STATUS_UNPROCESSABLE_ENTITY);
+            return $query->where('type', '=', $type)
+                         ->where('theme', '=', $theme);
+        });
+
+        // Update the theme.
+        //
+        if($theme_model->delete())
+        {
+           return new Response($theme, API::STATUS_OK); 
         }
+
+        // An error ocurred while updating the theme.
+        //
+        return new Response(array(
+            'message' => Lang::line('themes::messages.update.fail', array('theme' => $type . '\\' . $theme))->get(),
+            'errors'  => ($theme_model->validation()->errors->has()) ? $theme_model->validation()->errors->all() : array()
+        ), ($theme_model->validation()->errors->has()) ? API::STATUS_BAD_REQUEST : API::STATUS_UNPROCESSABLE_ENTITY);
     }
 }

@@ -25,7 +25,23 @@
  * --------------------------------------------------------------------------
  */
 return array(
-    'id'   => 'ID',
-    'name' => 'Currency Name',
-    'code' => 'Code'
+    // Language Name
+    //
+    'name'      => 'Language name',
+    'name_help' => 'The language name.',
+
+    // Abbreviation
+    //
+    'abbreviation'      => 'Abbreviation',
+    'abbreviation_help' => 'The two alpha character language code.',
+
+    // Locale
+    //
+    'locale'      => 'Locale',
+    'locale_help' => 'The identifier to get language, culture, or regionally-specific language strings.',
+
+    // Language Status
+    //
+    'status'      => 'Language Status',
+    'status_help' => 'The language status.'
 );
