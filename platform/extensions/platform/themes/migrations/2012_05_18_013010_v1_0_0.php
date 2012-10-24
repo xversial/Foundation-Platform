@@ -32,7 +32,7 @@ use Platform\Menus\Menu;
  * Install Class v1.0.0
  * --------------------------------------------------------------------------
  * 
- * Extensions installation.
+ * Themes installation.
  *
  * @package    Platform
  * @author     Cartalyst LLC

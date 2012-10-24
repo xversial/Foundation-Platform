@@ -55,10 +55,10 @@
 
             <div class="form-actions">
                 <a class="btn btn-large" href="{{ URL::to_admin('themes/' . $type) }}">{{ Lang::line('button.cancel') }}</a>
+                <button class="btn btn-large btn-primary" type="submit" name="save" id="save" value="1">{{ Lang::line('button.update') }}</button>
                 @if ($theme['changed'])
                 <button class="btn btn-large btn-warning" type="submit" name="reset_changes" id="reset_changes" value="1">{{ Lang::line('button.reset_changes') }}</button>
                 @endif
-                <button class="btn btn-large btn-primary" type="submit">{{ Lang::line('button.update') }}</button>
             </div>
         </form>
         @else

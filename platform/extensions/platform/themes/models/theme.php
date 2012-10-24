@@ -28,6 +28,8 @@ namespace Platform\Themes;
  */
 use Config,
     Crud,
+    Filesystem,
+    Platform,
     Str,
     Theme as BundleTheme;
 
@@ -136,7 +138,7 @@ class Theme extends Crud
      * Function: after_insert()
      * --------------------------------------------------------------------------
      *
-     * Gets call after the insert() query is exectuted to modify the result.
+     * Gets called after the insert() query is exectuted to modify the result.
      *
      * Must return a proper result.
      *
@@ -146,13 +148,17 @@ class Theme extends Crud
      */
     protected function after_insert($result)
     {
+        // Valid result ?
+        //
         if ($result)
         {
             // Find css file and rewrite contents.
             //
-            file_put_contents(static::$_filepath, static::$_css_content);
+            Filesystem::make('native')->file()->write(static::$_filepath, static::$_css_content);
         }
 
+        // Return the result.
+        //
         return $result;
     }
 
@@ -162,7 +168,7 @@ class Theme extends Crud
      * Function: after_update()
      * --------------------------------------------------------------------------
      *
-     * Gets call after the update() query is exectuted to modify the result
+     * Gets called after the update() query is exectuted to modify the result
      *
      * Must return a proper result.
      *
@@ -172,13 +178,17 @@ class Theme extends Crud
      */
     protected function after_update($result)
     {
+        // Valid result ?
+        //
         if ($result)
         {
             // Find css file and rewrite contents.
             //
-            file_put_contents(static::$_filepath, static::$_css_content);
+            Filesystem::make('native')->file()->write(static::$_filepath, static::$_css_content);
         }
 
+        // Return the result.
+        //
         return $result;
     }
 
@@ -188,7 +198,8 @@ class Theme extends Crud
      * Function: after_find()
      * --------------------------------------------------------------------------
      *
-     * Gets call after the find() query is exectuted to modify the result.
+     * Gets called after the find() query is exectuted to modify the result.
+     *
      * Must return a proper result.
      *
      * @access   protected
@@ -197,12 +208,16 @@ class Theme extends Crud
      */
     protected function after_find($result)
     {
+        // Valid result ?
+        //
         if ($result)
         {
             $result->options = ($result->options) ? json_decode($result->options) : array();
             $result->status = (bool) $result->status;
         }
 
+        // Return the result.
+        //
         return $result;
     }
 
@@ -221,13 +236,13 @@ class Theme extends Crud
      */
     public static function fetch($type, $name = null)
     {
-        // Get the list of themes names.
+        // Get the list of theme names.
         //
         $theme_list = BundleTheme::all($type);
 
         // Get the current active theme for this theme type.
         //
-        $active = \Platform::get('themes.theme.' . $type);
+        $active = Platform::get('themes.theme.' . $type);
 
         // Returning one theme ?
         //

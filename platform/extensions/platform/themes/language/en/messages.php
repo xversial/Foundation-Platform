@@ -27,7 +27,7 @@
 return array(
     'update' => array(
         'success'   => 'Theme :theme was updated.',
-        'fail'      => 'Theme :theme was not updated',
+        'fail'      => 'Theme :theme was not updated'
     ),
 
     'activate' => array(
