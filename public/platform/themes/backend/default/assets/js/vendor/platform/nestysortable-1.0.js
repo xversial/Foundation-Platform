@@ -170,9 +170,14 @@
 							if (valid === false) {
 								return false; // Break
 							}
-						}
+						} else {
 
-						return;
+							// If there was no callback and our element is
+							// invalidat
+							valid = false;
+
+							return false; // Break $.each() loop
+						}
 					}
 
 					// Checkboxes have a boolean attribute,
@@ -197,6 +202,8 @@
 				if (valid !== true) {
 					return false;
 				}
+
+				console.log(data);
 
 				// Get the template
 				var $template = $(that.options.template.selector).clone();
