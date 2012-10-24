@@ -201,7 +201,25 @@ class Pages_v1_1_0
 			'status'    => '1',
 		);
 
-		DB::table('pages')->insert($page);
+		$welcome_page_id = DB::table('pages')->insert($page);
+
+		// Create the main link.
+        //
+        $main = Menu::main_menu();
+
+        // Create the home link.
+        //
+        $home = new Menu(array(
+            'name'          => 'Home',
+            'extension'     => '',
+            'slug'          => 'main-home',
+            'visibility'    => 0,
+            'user_editable' => 1,
+            'status'        => 1,
+            'type'          => Menu::TYPE_PAGE,
+            'page_id'       => $welcome_page_id,
+        ));
+        $home->first_child_of($main);
 
 		$content = array(
 			// Company Name

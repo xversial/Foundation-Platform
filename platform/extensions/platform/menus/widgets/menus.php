@@ -29,6 +29,8 @@ namespace Platform\Menus\Widgets;
 use API,
     APIClientException,
     Input,
+    Platform,
+    Platform\Menus\Menu,
     Sentry,
     Theme;
 
@@ -49,6 +51,13 @@ use API,
  */
 class Menus
 {
+    /**
+     * Cached pages array used on menu item output.
+     *
+     * @var array
+     */
+    public $pages = null;
+
     /**
      * --------------------------------------------------------------------------
      * Function: nav()
@@ -138,6 +147,32 @@ class Menus
             }
         }
 
+        // Now loop through items and take actions based
+        // on the item type.
+        foreach ($items as &$item)
+        {
+            switch ($item['type'])
+            {
+                case Menu::TYPE_PAGE:
+
+                    // Fallback page URI
+                    $item['page_uri'] = '';
+
+                    $pages = array_filter($this->pages(), function($page) use ($item)
+                    {
+                        return $page['id'] == $item['page_id'];
+                    });
+
+                    // Grab the first match for the page
+                    if (is_array($page = reset($pages)) and array_key_exists('id', $page))
+                    {
+                        $item['page_uri'] = ($page['id'] != Platform::get('pages.default.page')) ? $page['slug'] : '';;
+                    }
+
+                    break;
+            }
+        }
+
         // Return the widget view.
         //
         return Theme::make('menus::widgets.nav')
@@ -147,5 +182,22 @@ class Menus
                     ->with('before_uri', $before_uri)
                     ->with('start', $start)
                     ->with('child_depth', $children_depth);
+    }
+
+    public function pages()
+    {
+        if ($this->pages === null)
+        {
+            try
+            {
+                $this->pages = API::get('pages');
+            }
+            catch (APIClientException $e)
+            {
+                $this->pages = array();
+            }
+        }
+
+        return $this->pages;
     }
 }

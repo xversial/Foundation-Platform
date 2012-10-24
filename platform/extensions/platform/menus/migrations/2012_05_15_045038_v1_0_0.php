@@ -115,19 +115,6 @@ class Menus_v1_0_0
         //
         $main = Menu::main_menu();
 
-        // Create the home link.
-        //
-        $home = new Menu(array(
-            'name'          => 'Home',
-            'extension'     => '',
-            'slug'          => 'main-home',
-            'uri'           => '',
-            'visibility'    => 0,
-            'user_editable' => 1,
-            'status'        => 1
-        ));
-        $home->last_child_of($main);
-
         // Create the login link.
         //
         $login = new Menu(array(
