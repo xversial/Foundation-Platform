@@ -462,7 +462,7 @@ class Users_API_Users_Controller extends API_Controller
 				// Get the Swift Mailer instance
 				$mailer = IoC::resolve('mailer');
 
-				$link = URL::to_admin('reset_password_confirm/'.$reset['link']);
+				$link = URL::to('reset_password_confirm/'.$reset['link']);
 
 				// Get email
 				$filesystem = Filesystem::make('native');

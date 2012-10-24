@@ -32,7 +32,7 @@ use Laravel\CLI\Command,
  * --------------------------------------------------------------------------
  * Install Class v1.0.0
  * --------------------------------------------------------------------------
- * 
+ *
  * Users installation.
  *
  * @package    Platform
@@ -75,7 +75,7 @@ class Users_v1_0_0
         //
         Sentry::group()->create(array(
             'name'        => 'admin',
-            'permissions' => ''
+            'permissions' => '{"is_admin":1}'
         ));
 
         Sentry::group()->create(array(
