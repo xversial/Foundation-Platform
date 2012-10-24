@@ -57,21 +57,41 @@ class Menus_v1_1_0
 	{
         /*
          * --------------------------------------------------------------------------
-         * # 1) Update the menu table.
+         * # 1) Grab all menu itmes.
+         * --------------------------------------------------------------------------
+         */
+        $menus = Menu::all();
+
+        /*
+         * --------------------------------------------------------------------------
+         * # 2) Update the menu table.
          * --------------------------------------------------------------------------
          */
 		Schema::table('menus', function($table)
 		{
-			// Add menu type column
-			$table->string('type')
-			      ->default('static')
-			      ->nullable();
-
-			// We're now supporting "page" types.
-			$table->integer('page_id')
-			      ->unsigned()
-			      ->nullable();
+            // Remove the old columns as their column types are
+            // not consistent.
+            $table->drop_column('target');
+            $table->drop_column('visibility');
 		});
+
+        Schema::table('menus', function($table)
+        {
+            // Add menu type column
+            $table->integer('type')
+                  ->default(Menu::TYPE_STATIC);
+
+            // Re-add columns
+            $table->integer('target')
+                  ->default(Menu::TARGET_SELF);
+            $table->integer('visibility')
+                  ->default(Menu::VISIBILITY_ALWAYS);
+
+            // We're now supporting "page" types.
+            $table->integer('page_id')
+                  ->unsigned()
+                  ->nullable();
+        });
 
 
         /*
@@ -79,17 +99,15 @@ class Menus_v1_1_0
          * # 2) Update the menu items.
          * --------------------------------------------------------------------------
          */
-		
-		$menus = Menu::all();
 
 		foreach ($menus as $menu)
 		{
-			if ($menu->is_root())
+			if ( ! $menu->is_root())
 			{
-				continue;
+                $menu->type = Menu::TYPE_STATIC;
 			}
 
-			$menu->type = 'static';
+            // Save all menu items to update the columns
 			$menu->save();
 		}
 	}

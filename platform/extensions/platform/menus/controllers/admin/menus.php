@@ -195,6 +195,23 @@ class Menus_Admin_Menus_Controller extends Admin_Controller
             $all_children = array();
         }
 
+        try
+        {
+            $pages = array();
+
+            foreach (API::get('pages') as $page)
+            {
+                $pages[] = array(
+                    'id'   => $page['id'],
+                    'name' => $page['name'],
+                );
+            }
+        }
+        catch (APIClientException $e)
+        {
+            $pages = array();
+        }
+
         // Get the last child's ID.
         //
         $last_child_id = array_get(end($all_children), 'id', 0);
@@ -217,7 +234,8 @@ class Menus_Admin_Menus_Controller extends Admin_Controller
             'menu_slug'       => array_get($menu, 'slug', false),
             'last_child_id'   => $last_child_id,
             'root_slug'       => array_get($menu, 'slug', false),
-            'persisted_slugs' => $persisted_slugs
+            'persisted_slugs' => $persisted_slugs,
+            'pages'           => $pages,
         );
 
         // Show the page.

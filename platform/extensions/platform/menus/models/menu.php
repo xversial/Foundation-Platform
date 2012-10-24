@@ -55,6 +55,14 @@ class Menu extends Nesty
     const VISIBILITY_ADMIN      = 3;
 
     /**
+     * Possible menu child types.
+     *
+     * @constant
+     */
+    const TYPE_STATIC = 0;
+    const TYPE_PAGE   = 1;
+
+    /**
      * The name of the table associated with the model.
      *
      * @access    protected

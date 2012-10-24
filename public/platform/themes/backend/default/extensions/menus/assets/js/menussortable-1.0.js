@@ -75,6 +75,28 @@
 				separator    : '-'
 			},
 
+			// Child types
+			types: {
+
+				// This is the value of the child type that is
+				// a static child. Static children are required and
+				// cannot be removed.
+				staticValue: 0,
+
+				// This is the attribute used to describe
+				// the container that holds the options for
+				// each type. When the type select is changed,
+				// The element who's {below attribute} matches
+				// the value of that select will be shown, and
+				// other ones will be hidden.
+				newContainerAttribute: 'data-new-child-type',
+
+				// Callback fired whenever a menu type (other than
+				// the default, static) is chosen. The value is passed
+				// through the callback.
+				chooseCallback: function(value, menuSortable) { }
+			},
+
 			// Children
 			children: {
 				toggleSelector: '.child-toggle-details',
@@ -123,6 +145,7 @@
 
 		return this.setupNestySortable()
 		           .validateSlugs()
+		           .observeTypes()
 		           .checkUris()
 		           .toggleChildren();
 	}
@@ -257,49 +280,12 @@
 			// Lastly, on load, trigger an update event
 			that.$element.trigger('root_slug_update.'+ns);
 
-			// // Loop through fields and build list of selectors
-			// var selectors    = [],
-			//     allowedTypes = 'search tel url email datetime date month week time datetime-local number range color'.split(' ');
-
-			// // Loop through selectors and observe them. Build a nice slug
-			// // accordingly.
-			// $.each(that.options.nestySortable.fields, function(fieldSlug, field) {
-
-			// 	// Skip non allowed field slugs
-			// 	var nonAllowedSlugs = ['slug'];
-			// 	if ($.inArray(fieldSlug, nonAllowedSlugs) > -1) {
-			// 		return;
-			// 	}
-
-			// 	var $dom = $(field.newSelector);
-			// 	if ($dom.is(function() {
-
-			// 		// Check input types
-			// 		if ((this.nodeName.toLowerCase() !== 'input') || ($.inArray($(this).attr('type'), allowedTypes) > -1)) {
-			// 			return false;
-			// 		}
-
-			// 		return true;
-			// 	} )) {
-			// 		selectors.push(field.newSelector);
-			// 	}
-			// });
-			// $(selectors.join(', ')).on('blur', function() {
-			// 	that.$element.trigger('new_slug_update.'+ns)
-			// 	             .trigger('new_uri_update.'+ns);
-			// });
-			
 			// New child names
 			$(that.options.nestySortable.fields.name.newSelector).on('blur.'+ns, function() {
 				var value = $(this).val();
 				that.$element.trigger('new_slug_update.'+ns, [value])
 				             .trigger('new_uri_update.'+ns, [value]);
 			});
-
-			// // Existing names
-			// $('body').on('blur.'+ns, that.options.nestySortable.fields.name.itemSelector, function() {
-				
-			// });
 
 			// When the person blurs on a slug
 			$(that.options.slugs.newSelector).on('blur', function() {
@@ -309,9 +295,52 @@
 			return this;
 		},
 
+		observeTypes: function() {
+			var that = this,
+			      ns = this.options.namespace,
+			    attr = that.options.types.newContainerAttribute;
+
+			$(that.options.nestySortable.fields.type.newSelector).on('change.'+ns, function() {
+
+				// Find the target container
+				var val = $(this).val();
+				var $target = $('['+attr+'="'+val+'"]');
+
+				if ( ! $target.length) {
+					$.error('No new child type container found for type {'+val+'}')
+				}
+
+				// Hide all other type containers and remove their
+				// validation attributes
+				$('['+attr+']').not($target).each(function() {
+					$(this).find(':input').attr('novalidate', 'novalidate');
+					$(this).removeClass('show');
+				});
+
+				// Show our container and add the validation back
+				// in
+				$target.addClass('show')
+				       .find(':input').removeAttr('novalidate');
+
+				// Call the callback only if we're on a custom
+				// menu item type
+				if (val != that.options.types.staticValue) {
+					that.options.types.chooseCallback(val, that);
+				}
+			});
+
+			return this;
+		},
+
 		checkUris: function() {
 			var that = this,
 			      ns = this.options.namespace;
+
+			// URIs are not always required as some menu types
+			// only deal with pages.
+			if (typeof that.options.nestySortable.fields.uri === 'undefined') {
+				return this;
+			}
 
 			function isFullUrl(url) {
 				return /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/.test(url);

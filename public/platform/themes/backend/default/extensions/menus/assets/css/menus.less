@@ -1,34 +1,19 @@
+// New child type containers
+[data-new-child-type] {
+	display: none;
+
+	&.show {
+		display: block;
+	}
+}
+
+// Setup the menu placeholder
 .placeholder {
 	background-color: #eee;
 	-webkit-border-radius: 3px;
 	   -moz-border-radius: 3px;
 	        border-radius: 3px;
 }
-
-.ui-nestedSortable-error {
-	background: @errorBackground;
-	color: @errorText;
-}
-
-// // Add child
-// .platform-new-child {
-// 	width:300px;
-// 	float:left;
-// }
-
-// .platform-new-child hr,
-// .platform-new-child legend {
-// 	margin:4px 0;
-// 	padding:0;
-// 	text-align:center;
-// }
-
-// .platform-new-child .btn {
-// 	text-align:center;
-// 	width:220px;
-// 	margin:0 auto;
-// 	display:block;
-// }
 
 // Menu itself
 .menu-children,
@@ -40,6 +25,7 @@
 	list-style-image: none;
 }
 
+// Child list
 .menu-children {
 
 	// All children lists

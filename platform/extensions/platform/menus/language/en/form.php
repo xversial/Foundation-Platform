@@ -35,6 +35,11 @@ return array(
     'child' => array(
         'name'   => 'Name',
         'slug'   => 'Slug',
+        'type'   => array(
+            'title'  => 'Type',
+            'static' => 'Static',
+            'page'   => 'Page',
+        ),
         'uri'    => 'Uri',
         'secure' => 'Make Secure (HTTPS)',
         'class'  => 'CSS class',

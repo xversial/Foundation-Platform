@@ -30,8 +30,6 @@
 
 	$(document).ready(function() {
 
-
-
 		// Menu sortable plugin
 		$('#menu').menuSortable({
 
@@ -41,6 +39,55 @@
 				// our slugs are unique and the user doesn't
 				// get an error when saving.
 				persisted: {{ json_encode($persisted_slugs) }},
+			},
+
+			types: {
+
+				// This is the value of the child type that is
+				// a static child. Static children are required and
+				// cannot be removed.
+				staticValue: {{ Platform\Menus\Menu::TYPE_STATIC }},
+
+				// Callback fired whenever a menu type (other than
+				// the default, static) is chosen. The value is passed
+				// through the callback.
+				chooseCallback: function(value, menuSortable) {
+
+					// Do different custom actions based on the value
+					// chosen
+					switch (value) {
+						case '{{ Platform\Menus\Menu::TYPE_PAGE }}':
+
+							// And the name DOM object
+							var $name = $(menuSortable.options.nestySortable.fields.name.newSelector);
+
+							// A function to update the menu
+							function prefillNewChild(pageName) {
+
+								// Let's prefill the name and slugs.
+								$name.val(pageName);
+
+								// Let's make menu sortable update the slug by triggering
+								// a blur
+								$name.trigger('blur.'+menuSortable.options.namespace);
+							}
+
+							// Grab the selected option DOM object
+							var $selectOption = $(menuSortable.options.nestySortable.fields.type.newSelector+' option[value="'+value+'"]');
+
+							// Prefill the new child
+							prefillNewChild($selectOption.text());
+
+							// Attach an observer to the page select
+							var $pageSelect = $(menuSortable.options.nestySortable.fields.page_id.newSelector);
+
+							$pageSelect.on('change', function() {
+								prefillNewChild($(this).find('option[value="'+$(this).val()+'"]').text());
+							});
+
+							break;
+					}
+				}
 			},
 
 			// Define Nesty Sortable dependency for the menu sortable.
@@ -81,27 +128,40 @@
 						itemSelector: '.child-slug'
 					},
 
-					'uri' : {
-						newSelector: '#new-child-uri',
-						itemSelector: '.child-uri'
+					'type' : {
+						newSelector: '#new-child-type',
+						itemSelector: '.child-type',
 					},
 
 					// ------------------------
 					// Optional fields for menu
 					// ------------------------
 
+					'page_id' : {
+						newSelector: '#new-child-page-id',
+						itemSelector: '.child-page-id',
+					},
+
+					'uri' : {
+						newSelector: '#new-child-uri',
+						itemSelector: '.child-uri'
+					},
+
 					'secure' : {
 						newSelector: '#new-child-secure',
 						itemSelector: '.child-secure'
 					},
+
 					'visibility' : {
 						newSelector: '#new-child-visibility',
 						itemSelector: '.child-visibility'
 					},
+
 					'target' : {
 						newSelector: '#new-child-target',
 						itemSelector: '.child-target'
 					},
+
 					'class' : {
 						newSelector: '#new-child-class',
 						itemSelector: '.child-class'
@@ -111,7 +171,7 @@
 				// The ID of the last item added. Used so we fill
 				// new templates with an ID that won't clash with existing
 				// items.
-				lastItemId           : {{ $last_child_id }}
+				lastItemId: {{ $last_child_id }}
 			}
 		})
 	});
@@ -134,7 +194,7 @@
 		<hr>
 
 		<nav class="quaternary-navigation tabbable hidden-desktop">
-	    	<ul class="nav nav-pills">
+			<ul class="nav nav-pills">
 					<li class="{{ ($menu_slug) ? 'active' : null }}">
 						<a href="#menus-edit-children" data-toggle="tab">{{ Lang::line('menus::general.tabs.children') }}</a>
 					</li>
@@ -142,23 +202,23 @@
 						<a href="#menus-edit-root" data-toggle="tab">{{ Lang::line('menus::general.tabs.root') }}</a>
 					</li>
 				</ul>
-	    </nav>
+		</nav>
 
-	    <form method="POST" method="POST" accept-char="UTF-8" autocomplete="off" id="menu">
+		<form method="POST" method="POST" accept-char="UTF-8" autocomplete="off" id="menu">
 			{{ Form::token() }}
 
-	    <div class="quaternary-navigation">
-		    <nav class="tabbable visable-desktop">
-		    	<ul class="nav nav-tabs">
-					<li class="{{ ($menu_slug) ? 'active' : null }}">
-						<a href="#menus-edit-children" data-toggle="tab">{{ Lang::line('menus::general.tabs.children') }}</a>
-					</li>
-					<li class="{{ ( ! $menu_slug) ? 'active' : null }}">
-						<a href="#menus-edit-root" data-toggle="tab">{{ Lang::line('menus::general.tabs.root') }}</a>
-					</li>
-				</ul>
-		    </nav>
-		    <div class="tab-content">
+			<div class="quaternary-navigation">
+				<nav class="tabbable visable-desktop">
+					<ul class="nav nav-tabs">
+						<li class="{{ ($menu_slug) ? 'active' : null }}">
+							<a href="#menus-edit-children" data-toggle="tab">{{ Lang::line('menus::general.tabs.children') }}</a>
+						</li>
+						<li class="{{ ( ! $menu_slug) ? 'active' : null }}">
+							<a href="#menus-edit-root" data-toggle="tab">{{ Lang::line('menus::general.tabs.root') }}</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="tab-content">
 					<div id="menus-edit-children" class="tab-pane {{ ($menu_slug) ? 'active' : null }}">
 
 						<div class="row-fluid">
@@ -176,20 +236,44 @@
 											<input type="text" id="new-child-slug" class="input-block-level" value="" placeholder="{{ Lang::line('menus::form.child.slug') }}" required>
 										</div>
 
-										<!-- URI -->
-										<div class="control-group">
-											<input type="text" id="new-child-uri" class="input-block-level" value="" placeholder="{{ Lang::line('menus::form.child.uri') }}">
+										<label>{{ Lang::line('menus::form.child.type.title') }}</label>
+
+										<select id="new-child-type" class="input-block-level">
+											<option value="{{ Platform\Menus\Menu::TYPE_STATIC }}" selected>{{ Lang::line('menus::form.child.type.static') }}</option>
+											@if (count($pages) > 0)
+												<option value="{{ Platform\Menus\Menu::TYPE_PAGE }}">{{ Lang::line('menus::form.child.type.page') }}</option>
+											@endif
+										</select>
+
+										<div data-new-child-type="{{ Platform\Menus\Menu::TYPE_STATIC }}" class="show">
+
+											<!-- URI -->
+											<div class="control-group">
+												<input type="text" id="new-child-uri" class="input-block-level" value="" placeholder="{{ Lang::line('menus::form.child.uri') }}">
+											</div>
+
 										</div>
+
+										@if (count($pages) > 0)
+											<div data-new-child-type="{{ Platform\Menus\Menu::TYPE_PAGE }}">
+
+												<div class="control-group">
+													<select id="new-child-page-id" class="input-block-level">
+														@foreach ($pages as $page)
+															<option value="{{ $page['id'] }}">{{ $page['name'] }}</option>
+														@endforeach
+													</select>
+												</div>
+
+											</div>
+										@endif
 
 										<!-- Secure -->
 										<div class="control-group">
-											<label>
+											<label class="checkbox">
+												<input type="checkbox" value="1" id="new-child-secure" class="checkbox">
 												{{ Lang::line('menus::form.child.secure') }}
 											</label>
-											<!-- <div class="toggle basic success" data-enabled="{{ Lang::line('general.enabled') }}" data-disabled="{{ Lang::line('general.disabled') }}" data-toggle="toggle"> -->
-												<input type="checkbox" value="1" id="new-child-secure" class="checkbox">
-												<!-- <label class="check" for="new-child-secure"></label> -->
-											<!-- </div> -->
 										</div>
 
 										<!-- Visibility -->
@@ -279,7 +363,7 @@
 
 					</div>
 				</div>
-		</div>
+			</div>
 
 
 			<div class="form-actions">
