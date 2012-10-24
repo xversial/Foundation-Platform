@@ -35,7 +35,7 @@ class Admin_Group_Form
 	public function create()
 	{
 
-		return Theme::make('users::widgets.group.form.create', $data = array());
+		return Theme::make('platform.users::widgets.group.form.create', $data = array());
 	}
 
 	/**
@@ -55,7 +55,7 @@ class Admin_Group_Form
 			return Redirect::to(ADMIN.'/users');
 		}
 
-		return Theme::make('users::widgets.group.form.edit', $data);
+		return Theme::make('platform.users::widgets.group.form.edit', $data);
 	}
 
 	/**
@@ -108,7 +108,7 @@ class Admin_Group_Form
 			'extension_rules' => $extension_rules
 		);
 
-		return Theme::make('users::widgets.group.form.permissions', $data);
+		return Theme::make('platform.users::widgets.group.form.permissions', $data);
 	}
 
 }

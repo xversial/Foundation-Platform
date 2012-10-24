@@ -52,7 +52,7 @@ class Admin_User_Form
 			$data['groups'] = array();
 		}
 
-		return Theme::make('users::widgets.user.form.create', $data);
+		return Theme::make('platform.users::widgets.user.form.create', $data);
 	}
 
 	/**
@@ -86,7 +86,7 @@ class Admin_User_Form
 			$data['user_groups'][$user_group['name']] = ucfirst($user_group['name']);
 		}
 
-		return Theme::make('users::widgets.user.form.edit', $data);
+		return Theme::make('platform.users::widgets.user.form.edit', $data);
 	}
 
 	/**
@@ -138,7 +138,7 @@ class Admin_User_Form
 			'extension_rules'     => $extension_rules
 		);
 
-		return Theme::make('users::widgets.user.form.permissions', $data);
+		return Theme::make('platform.users::widgets.user.form.permissions', $data);
 	}
 
 }

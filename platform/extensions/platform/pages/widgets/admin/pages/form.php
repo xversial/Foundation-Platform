@@ -43,7 +43,7 @@ class Admin_Pages_Form
 		//
 		$templates = Helper::findTemplates();
 
-		return Theme::make('pages::widgets.pages.form.create')
+		return Theme::make('platform.pages::widgets.pages.form.create')
 			->with('template', $template)
 			->with('templates', $templates);
 	}
@@ -71,7 +71,7 @@ class Admin_Pages_Form
 		//
 		$templates = Helper::findTemplates();
 
-		return Theme::make('pages::widgets.pages.form.edit', $data)->with('templates', $templates);;
+		return Theme::make('platform.pages::widgets.pages.form.edit', $data)->with('templates', $templates);;
 	}
 
 }

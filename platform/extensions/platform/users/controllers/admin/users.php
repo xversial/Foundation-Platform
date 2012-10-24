@@ -60,14 +60,14 @@ class Users_Admin_Users_Controller extends Admin_Controller
 		if (Request::ajax())
 		{
 			return json_encode(array(
-				"content"        => Theme::make('users::user.partials.table_users', $data)->render(),
+				"content"        => Theme::make('platform.users::user.partials.table_users', $data)->render(),
 				"count"          => $datatable['count'],
 				"count_filtered" => $datatable['count_filtered'],
 				"paging"         => $datatable['paging'],
 			));
 		}
 
-		return Theme::make('users::user.index', $data);
+		return Theme::make('platform.users::user.index', $data);
 	}
 
 	/**
@@ -77,7 +77,7 @@ class Users_Admin_Users_Controller extends Admin_Controller
 	 */
 	public function get_create()
 	{
-		return Theme::make('users::user.create');
+		return Theme::make('platform.users::user.create');
 	}
 
 	/**
@@ -100,7 +100,7 @@ class Users_Admin_Users_Controller extends Admin_Controller
 	{
 		$data = array('id' => $id);
 
-		return Theme::make('users::user.edit', $data);
+		return Theme::make('platform.users::user.edit', $data);
 	}
 
 	/**
@@ -233,7 +233,7 @@ class Users_Admin_Users_Controller extends Admin_Controller
 	public function get_insufficient_permissions()
 	{
 		$this->active_menu('');
-		return Theme::make('users::insufficient_permissions');
+		return Theme::make('platform.users::insufficient_permissions');
 	}
 
 }

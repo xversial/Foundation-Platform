@@ -79,7 +79,7 @@ You can use **@include** to render a view into another view. The rendered view w
 
 Similarly, you can use **@render**, which behaves the same as **@include** except the rendered view will **not** inherit the data from the current view.
 
-	@render('admin.list')
+	@render('platform.admin.list')
 
 #### Blade comments:
 

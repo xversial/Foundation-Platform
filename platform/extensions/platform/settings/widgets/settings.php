@@ -85,7 +85,7 @@ class Settings
 
         // Show the form.
         //
-        return Theme::make('settings::widgets.form.settings')
+        return Theme::make('platform.settings::widgets.form.settings')
             ->with('settings', $settings)
             ->with('filesystem_options', $filesystem_options);
     }

@@ -39,7 +39,7 @@ use API,
  * --------------------------------------------------------------------------
  * Menus widget
  * --------------------------------------------------------------------------
- * 
+ *
  * This widget purpose is to show navigation menus on the UI.
  *
  * @package    Platform
@@ -65,10 +65,10 @@ class Menus
      *
      * Returns a navigation menu, based off the active menu.
      *
-     * If the start is an integer, it's the depth from the top level item based 
+     * If the start is an integer, it's the depth from the top level item based
      * on the current active item.
      *
-     * If it's a string, it's the slug of the item to start rendering from, 
+     * If it's a string, it's the slug of the item to start rendering from,
      * irrespective of active item.
      *
      * @access   public
@@ -175,7 +175,7 @@ class Menus
 
         // Return the widget view.
         //
-        return Theme::make('menus::widgets.nav')
+        return Theme::make('platform.menus::widgets.nav')
                     ->with('items', $items)
                     ->with('active_path', $active_path)
                     ->with('class', $class)

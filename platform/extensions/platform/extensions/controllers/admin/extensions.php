@@ -113,7 +113,7 @@ class Extensions_Admin_Extensions_Controller extends Admin_Controller
 
         // Show the page.
         //
-        return Theme::make('extensions::index')->with('extensions', $extensions);
+        return Theme::make('platform.extensions::index')->with('extensions', $extensions);
     }
 
 
@@ -429,7 +429,7 @@ class Extensions_Admin_Extensions_Controller extends Admin_Controller
 
         // Show the page.
         //
-        return Theme::make('extensions::view')->with('extension', $extension)->with('extensions', $extensions);
+        return Theme::make('platform.extensions::view')->with('extension', $extension)->with('extensions', $extensions);
     }
 
 

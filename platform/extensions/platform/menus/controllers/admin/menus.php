@@ -24,7 +24,7 @@ use Platform\Menus\Menu;
  * --------------------------------------------------------------------------
  * Menus > Admin Class
  * --------------------------------------------------------------------------
- * 
+ *
  * Menus management.
  *
  * @package    Platform
@@ -96,7 +96,7 @@ class Menus_Admin_Menus_Controller extends Admin_Controller
 
         // Show the page.
         //
-        return Theme::make('menus::index')->with('menus', $menus);
+        return Theme::make('platform.menus::index')->with('menus', $menus);
     }
 
 
@@ -241,7 +241,7 @@ class Menus_Admin_Menus_Controller extends Admin_Controller
 
         // Show the page.
         //
-        return Theme::make('menus::edit', $data);
+        return Theme::make('platform.menus::edit', $data);
     }
 
 

@@ -31,7 +31,7 @@ use Platform\Menus\Menu;
  * --------------------------------------------------------------------------
  * Dashboard > Admin Class
  * --------------------------------------------------------------------------
- * 
+ *
  * The admin main page.
  *
  * @package    Platform
@@ -79,6 +79,6 @@ class Dashboard_Admin_Dashboard_Controller extends Admin_Controller
     {
         // Show the page.
         //
-        return Theme::make('dashboard::index');
+        return Theme::make('platform.dashboard::index');
     }
 }

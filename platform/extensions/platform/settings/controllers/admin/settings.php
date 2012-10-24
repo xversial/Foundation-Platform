@@ -126,7 +126,7 @@ class Settings_Admin_Settings_Controller extends Admin_Controller
 
         // Show the page.
         //
-        return Theme::make('settings::index')->with('settings', $settings);
+        return Theme::make('platform.settings::index')->with('settings', $settings);
     }
 
 

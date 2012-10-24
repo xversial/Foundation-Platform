@@ -25,7 +25,7 @@ class Pages_Admin_Pages_Controller extends Admin_Controller
 		if (Request::ajax())
 		{
 			$data = array(
-				'content'        => Theme::make('pages::pages.partials.table', $data)->render(),
+				'content'        => Theme::make('platform.pages::pages.partials.table', $data)->render(),
 				'count'          => $datatable['count'],
 				'count_filtered' => $datatable['count_filtered'],
 				'paging'         => $datatable['paging'],
@@ -34,12 +34,12 @@ class Pages_Admin_Pages_Controller extends Admin_Controller
 			return json_encode($data);
 		}
 
-		return Theme::make('pages::pages.index', $data);
+		return Theme::make('platform.pages::pages.index', $data);
 	}
 
 	public function get_create()
 	{
-		return Theme::make('pages::pages.create');
+		return Theme::make('platform.pages::pages.create');
 	}
 
 	public function post_create()
@@ -81,7 +81,7 @@ class Pages_Admin_Pages_Controller extends Admin_Controller
 
 	public function get_edit($id)
 	{
-		return Theme::make('pages::pages.edit')->with('id', $id);
+		return Theme::make('platform.pages::pages.edit')->with('id', $id);
 	}
 
 	public function post_edit($id)
@@ -121,7 +121,7 @@ class Pages_Admin_Pages_Controller extends Admin_Controller
 		}
 
 
-		return Theme::make('pages::pages.edit')->with('id', $id);
+		return Theme::make('platform.pages::pages.edit')->with('id', $id);
 	}
 
 	public function get_delete($id)

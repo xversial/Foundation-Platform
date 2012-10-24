@@ -35,7 +35,7 @@ class Users_Auth_Controller extends Public_Controller
 	public function get_register()
 	{
 		$this->active_menu('main-register');
-		return Theme::make('users::auth/register');
+		return Theme::make('platform.users::auth/register');
 	}
 
 	public function post_register()
@@ -103,7 +103,7 @@ class Users_Auth_Controller extends Public_Controller
 	{
 		API::get('users/logout');
 		$this->active_menu('main-login');
-		return Theme::make('users::auth/login');
+		return Theme::make('platform.users::auth/login');
 	}
 
 	/**
@@ -207,7 +207,7 @@ class Users_Auth_Controller extends Public_Controller
 	public function get_reset_password()
 	{
 		$this->active_menu('main-login');
-		return Theme::make('users::auth/reset_password');
+		return Theme::make('platform.users::auth/reset_password');
 	}
 
 	/**

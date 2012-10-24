@@ -99,7 +99,7 @@ class Themes_Admin_Themes_Controller extends Admin_Controller
 
         // Show the page.
         //
-        return Theme::make('themes::index')->with('type', $type)->with('themes', $themes);
+        return Theme::make('platform.themes::index')->with('type', $type)->with('themes', $themes);
     }
 
 
@@ -159,7 +159,7 @@ class Themes_Admin_Themes_Controller extends Admin_Controller
 
         // Show the page.
         //
-        return Theme::make('themes::edit', $data);
+        return Theme::make('platform.themes::edit', $data);
     }
 
 
@@ -187,7 +187,7 @@ class Themes_Admin_Themes_Controller extends Admin_Controller
                 //
                 API::put('themes/' . $type . '/' . $name . '/reset');
             }
-    
+
             // No, we want to update the theme data.
             //
             else

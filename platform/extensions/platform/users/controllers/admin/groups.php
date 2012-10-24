@@ -55,7 +55,7 @@ class Users_Admin_Groups_Controller extends Admin_Controller
 		if (Request::ajax())
 		{
 			$data = (json_encode(array(
-				"content"        => Theme::make('users::group.partials.table_groups', $data)->render(),
+				"content"        => Theme::make('platform.users::group.partials.table_groups', $data)->render(),
 				"count"          => $datatable['count'],
 				"count_filtered" => $datatable['count_filtered'],
 				"paging"         => $datatable['paging'],
@@ -64,7 +64,7 @@ class Users_Admin_Groups_Controller extends Admin_Controller
 			return $data;
 		}
 
-		return Theme::make('users::group.index', $data);
+		return Theme::make('platform.users::group.index', $data);
 	}
 
 	/**
@@ -74,7 +74,7 @@ class Users_Admin_Groups_Controller extends Admin_Controller
 	 */
 	public function get_create()
 	{
-		return Theme::make('users::group.create', $data = array());
+		return Theme::make('platform.users::group.create', $data = array());
 	}
 
 	/**
@@ -95,7 +95,7 @@ class Users_Admin_Groups_Controller extends Admin_Controller
 	 */
 	public function get_edit($id = null)
 	{
-		return Theme::make('users::group.edit', array('id' => $id));
+		return Theme::make('platform.users::group.edit', array('id' => $id));
 	}
 
 	/**
