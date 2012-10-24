@@ -454,6 +454,7 @@ SQL;
                     $child->uri        = $duplicate->uri;
                     $child->secure     = $duplicate->secure;
                     $child->visibility = $duplicate->visibility;
+                    $child->class      = $duplicate->class;
                 }
                 elseif ($child->is_new())
                 {
