@@ -19,7 +19,6 @@
 	<p class="step">{{ Lang::line('installer::install.step_2.tagline') }}</p>
 	<div class="breadcrumbs">
 		<ul class="nav">
-			<ul class="nav">
 			<li><span>{{ Lang::line('installer::install.step_1.step') }}</span> {{ Lang::line('installer::install.step_1.step_description') }}</li>
 			<li class="active"><span>{{ Lang::line('installer::install.step_2.step') }}</span> {{ Lang::line('installer::install.step_2.step_description') }}</li>
 			<li><span>{{ Lang::line('installer::install.step_3.step') }}</span> {{ Lang::line('installer::install.step_3.step_description') }}</li>
@@ -110,11 +109,12 @@
 
 						<!-- Drop Table Warning -->
 						<div class="control-group">
+							<label for="disclaimer" class="control-label">{{ Lang::line('installer::form.database.disclaimer') }}</label>
 							<div class="controls">
-								<label for="disclaimer">{{ Lang::line('installer::form.database.disclaimer') }}
+								<label class="checkbox">
 									<input type="checkbox" name="disclaimer" value="" required>
+									{{ Lang::line('installer::form.database.disclaimer_help') }}
 								</label>
-								<span class="help-block">{{ Lang::line('installer::form.database.disclaimer_help') }}</span>
 							</div>
 						</div>
 

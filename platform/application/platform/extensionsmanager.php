@@ -24,8 +24,7 @@
  * What we can use in this class.
  * --------------------------------------------------------------------------
  */
-use Laravel\Config, Laravel\CLI\Command, Laravel\Database\Schema;
-
+use Laravel\CLI\Command;
 
 /**
  * --------------------------------------------------------------------------
@@ -81,23 +80,23 @@ class ExtensionsManager
      * @access   public
      * @var      array
      */
-    public $disabled = array();
+    protected $disabled = array();
 
     /**
      * Stores each extension dependencies.
      *
-     * @access   private
+     * @access   protected
      * @var      array
      */
-    private $dependencies = array();
+    protected $dependencies = array();
 
     /**
      * Stores each extension dependents.
      *
-     * @access   private
+     * @access   protected
      * @var      array
      */
-    private $dependents = array();
+    protected $dependents = array();
 
     /**
      * Needed flag, to use when checking if the extension can be modified, like
@@ -105,10 +104,10 @@ class ExtensionsManager
      *
      * We can use this flag to turn the checking Off when installing Platform.
      *
-     * @access   private
+     * @access   protected
      * @var      boolean
      */
-    private $checking = true;
+    protected $checking = true;
 
 
     /**
@@ -587,7 +586,7 @@ class ExtensionsManager
     {
         // If we are installing Platform, this check is useless.
         //
-        if ($this->checking === false)
+        if ($this->checking() === false)
         {
             // Extension can be installed.
             //
@@ -693,7 +692,7 @@ class ExtensionsManager
     {
         // If we are installing Platform, this check is useless.
         //
-        if ($this->checking === false)
+        if ($this->checking() === false)
         {
             // Extension can be enabled.
             //
@@ -1363,10 +1362,10 @@ class ExtensionsManager
      *
      * This returns all the extensions within the extensions directory.
      *
-     * @access   private
+     * @access   protected
      * @return   array
      */
-    private function extensions_directories()
+    protected function extensions_directories()
     {
         // Initiate an empty array.
         //
@@ -1413,6 +1412,26 @@ class ExtensionsManager
         return $this->extensions = $extensions;
     }
 
+    /**
+     * --------------------------------------------------------------------------
+     * Function: checking()
+     * --------------------------------------------------------------------------
+     *
+     * Sets the checking property
+     *
+     * @access   public
+     * @return   void
+     */
+    public function checking($checking = null)
+    {
+        if ($checking === null)
+        {
+            return $this->checking;
+        }
+
+        return $this->checking = $checking;
+    }
+
 
     /**
      * --------------------------------------------------------------------------
@@ -1421,48 +1440,13 @@ class ExtensionsManager
      *
      * Prepares the Platform database for extensions.
      *
+     * @depreciated since v1.1
+     *
      * @access   public
      * @return   void
      */
     public function prepare()
     {
-        // Disable the checking.
-        //
-        $this->checking = false;
-
-        // Resolves core tasks.
-        //
-        require_once path('sys') . 'cli/dependencies' . EXT;
-
-        // Check for the migrations table.
-        //
-        try
-        {
-            DB::table('laravel_migrations')->count();
-        }
-        catch ( Exception $e )
-        {
-            Command::run(array('migrate:install'));
-        }
-
-        // Check for the extensions table.
-        //
-        try
-        {
-            DB::table('extensions')->count();
-        }
-        catch ( Exception $e )
-        {
-            Schema::create('extensions', function($table){
-                $table->increments('id');
-                $table->string('slug', 50)->unique();
-                $table->string('version', 10)->default(0);
-                $table->boolean('enabled');
-            });
-        }
-
-        // Start the extensions, just in case the install process got interrupted.
-        //
-        $this->start_extensions();
+        return;
     }
 }

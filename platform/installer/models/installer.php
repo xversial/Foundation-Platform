@@ -107,7 +107,9 @@ class Installer
         // Define all the files we need to check.
         //
         $files = array(
-            path('app') . 'config' . DS . 'database' . EXT
+            path('app') . 'config' . DS . 'application' . EXT,
+            path('app') . 'config' . DS . 'database' . EXT,
+            path('app') . 'config' . DS . 'platform' . EXT,
         );
 
         // Loop through the directories.
@@ -322,7 +324,7 @@ class Installer
     {
         // Prepare the database to install the extensions.
         //
-        Platform::extensions_manager()->prepare();
+        Platform::install_update();
 
         // Get all the uninstalled extensions and sort the dependencies.
         //
@@ -425,5 +427,30 @@ class Installer
     {
         $permissions = static::permissions();
         return (bool) ( count( $permissions['fail'] ) === 0 );
+    }
+
+    /**
+     * --------------------------------------------------------------------------
+     * Function: update()
+     * --------------------------------------------------------------------------
+     *
+     * Updates the core of Platform.
+     *
+     * @access   public
+     * @return   boolean
+     */
+    public static function update()
+    {
+        $result = Platform::install_update();
+
+        $path     = path('app').'config/platform'.EXT;
+        $contents = File::get($path);
+
+        // Look for the version declaration and update it.
+        $contents = preg_replace('/\'installed_version\'(?:\s+|t+|)\=>(?:\s+|t+|)\'(.*)(?=,)/', '\'installed_version\' => \''.Platform::version().'\'', $contents);
+
+        File::put($path, $contents);
+
+        return $result;
     }
 }

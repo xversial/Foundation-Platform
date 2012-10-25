@@ -25,6 +25,7 @@
  * --------------------------------------------------------------------------
  */
 return array(
+
     /*
      * -----------------------------------------
      * Step 2 : Form
@@ -64,5 +65,17 @@ return array(
         'password_help'         => 'Password for admin.',
         'password_confirm'      => 'Confirm Password',
         'password_confirm_help' => 'Password confirmation for admin.'
-    )
+    ),
+
+    /*
+     * -----------------------------------------
+     * Step 1 : Update
+     * -----------------------------------------
+     */
+    'update' => array(
+        'legend'          => 'Updating',
+        'disclaimer'      => 'Warning',
+        'disclaimer_help' => 'I have backed up my entire database in preparation to update Platform.'
+    ),
+
 );

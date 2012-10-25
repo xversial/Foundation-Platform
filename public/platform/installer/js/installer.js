@@ -50,7 +50,7 @@ $(document).ready(function() {
 
 		// Bind the check
 		$('body').bind('checkPassInterval', function() {
-			$.getJSON(platform.url.base('installer/permissions'), function(data) {
+			$.getJSON(platform.url.base('installer/install/permissions'), function(data) {
 				permissionsPass.render(data.pass);
 				permissionsFail.render(data.fail);
 
@@ -78,7 +78,7 @@ $(document).ready(function() {
 
 		$.ajax({
 			type     : 'POST',
-			url      : platform.url.base('installer/ftp_test'),
+			url      : platform.url.base('installer/install/ftp_test'),
 			async    : false,
 			data     : $('#filesystem-form').serialize(),
 			dataType : 'JSON',
@@ -127,7 +127,7 @@ $(document).ready(function() {
 		{
 			$.ajax({
 				type     : 'POST',
-				url      : platform.url.base('installer/confirm_db'),
+				url      : platform.url.base('installer/install/confirm_db'),
 				async    : false,
 				data     : $('#database-form').serialize(),
 				dataType : 'JSON',

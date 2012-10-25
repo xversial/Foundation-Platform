@@ -41,7 +41,7 @@ use Installer\Installer;
  * @link       http://cartalyst.com
  * @version    1.1
  */
-class Installer_Install_Controller extends Base_Controller
+class Installer_Install_Controller extends Installer_Base_Controller
 {
     /**
      * --------------------------------------------------------------------------
@@ -61,7 +61,7 @@ class Installer_Install_Controller extends Base_Controller
 
         // Check if Platform is already installed.
         //
-        if (Platform::is_installed() and URI::segment(2) !== 'step_4')
+        if (Platform::is_installed() and URI::segment(3) !== 'step_4')
         {
             Redirect::to('installer/install/step_4')->send();
             exit;
@@ -69,26 +69,11 @@ class Installer_Install_Controller extends Base_Controller
 
         // If we're not prepared for installation.
         //
-        if ( ! Installer::is_prepared() and ! in_array(URI::segment(2, 'step_1'), array('step_1', 'permissions')))
+        if ( ! Installer::is_prepared() and ! in_array(URI::segment(3, 'step_1'), array('step_1', 'permissions')))
         {
             Redirect::to('installer')->send();
             exit;
         }
-    }
-
-    /**
-     * --------------------------------------------------------------------------
-     * Function: get_index()
-     * --------------------------------------------------------------------------
-     *
-     * An alias for the step 1.
-     *
-     * @access   public
-     * @return   void
-     */
-    public function post_index()
-    {
-        return $this->post_step_1();
     }
 
 

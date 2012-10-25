@@ -31,7 +31,6 @@
 	<p class="step">{{ Lang::line('installer::install.step_3.tagline') }}</p>
 	<div class="breadcrumbs">
 		<ul class="nav">
-			<ul class="nav">
 			<li><span>{{ Lang::line('installer::install.step_1.step') }}</span> {{ Lang::line('installer::install.step_1.step_description') }}</li>
 			<li><span>{{ Lang::line('installer::install.step_2.step') }}</span> {{ Lang::line('installer::install.step_2.step_description') }}</li>
 			<li class="active"><span>{{ Lang::line('installer::install.step_3.step') }}</span> {{ Lang::line('installer::install.step_3.step_description') }}</li>

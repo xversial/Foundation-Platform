@@ -45,6 +45,31 @@ class Installer_Update_Controller extends Installer_Base_Controller
 {
     /**
      * --------------------------------------------------------------------------
+     * Function: before()
+     * --------------------------------------------------------------------------
+     *
+     * This function is called before the action is executed.
+     *
+     * @access   public
+     * @return   mixed
+     */
+    public function before()
+    {
+        // Call the parent.
+        //
+        parent::before();
+
+        // Check if Platform is already installed.
+        //
+        if ( ! Platform::is_installed())
+        {
+            Redirect::to('installer')->send();
+            exit;
+        }
+    }
+
+    /**
+     * --------------------------------------------------------------------------
      * Function: get_step_1()
      * --------------------------------------------------------------------------
      *
@@ -61,8 +86,55 @@ class Installer_Update_Controller extends Installer_Base_Controller
             ->with('installed_version', Config::get('platform.installed_version'));
     }
 
+    /**
+     * --------------------------------------------------------------------------
+     * Function: post_step_1()
+     * --------------------------------------------------------------------------
+     *
+     * Check the person has backed up their database first.
+     *
+     * @access   public
+     * @return   View
+     */
     public function post_step_1()
     {
-        sleep(5);
+        if ( ! $disclaimer = Input::get('disclaimer'))
+        {
+            return Redirect::to('installer/update');
+        }
+
+        return Redirect::to('installer/update/update');
+    }
+
+    /**
+     * --------------------------------------------------------------------------
+     * Function: get_update()
+     * --------------------------------------------------------------------------
+     *
+     * Actually does the update process.
+     *
+     * @access   public
+     * @return   void
+     */
+    public function get_update()
+    {
+        Installer::update();
+
+        return Redirect::to('installer/update/step_2');
+    }
+
+    /**
+     * --------------------------------------------------------------------------
+     * Function: get_step_2()
+     * --------------------------------------------------------------------------
+     *
+     * The completion step.
+     *
+     * @access   public
+     * @return   View
+     */
+    public function get_step_2()
+    {
+        return View::make('installer::update.step_2')->with('license', Platform::license());
     }
 }

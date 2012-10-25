@@ -49,7 +49,7 @@ return array(
         'title'            => 'Complete',
         'tagline'          => 'Update Complete',
         'description'      => 'Congratulations - you\'ve updated Platform!',
-        'step'             => 'Step 1:',
+        'step'             => 'Step 2:',
         'step_description' => 'Complete',
         'licence'          => 'Platform Licence Agreement'
     )

@@ -33,6 +33,14 @@
  * @link       http://cartalyst.com
  * @version    1.1
  */
+
+/*
+ * --------------------------------------------------------------------------
+ * What we can use in this class.
+ * --------------------------------------------------------------------------
+ */
+use Laravel\CLI\Command;
+
 class Platform
 {
     /**
@@ -760,5 +768,44 @@ class Platform
     public static function version()
     {
         return self::VERSION;
+    }
+
+    /**
+     * --------------------------------------------------------------------------
+     * Function: install_update()
+     * --------------------------------------------------------------------------
+     *
+     * Updates Laravel to the latest version (by running all migrations etc)
+     *
+     * @access   public
+     * @return   string
+     */
+    public static function install_update()
+    {
+        // Disable the checking.
+        //
+        static::extensions_manager()->checking(false);
+
+        // Resolves core tasks.
+        //
+        require_once path('sys') . 'cli/dependencies' . EXT;
+
+        // Check for the migrations table.
+        //
+        try
+        {
+            DB::table('laravel_migrations')->count();
+        }
+        catch (Exception $e)
+        {
+            Command::run(array('migrate:install'));
+        }
+
+        // Now, run the core migrations
+        Command::run(array('migrate'));
+
+        // Start the extensions, just in case the install process got interrupted.
+        //
+        Platform::extensions_manager()->start_extensions();
     }
 }

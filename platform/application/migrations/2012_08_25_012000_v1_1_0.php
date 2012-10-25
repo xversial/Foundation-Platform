@@ -31,7 +31,7 @@
  * @license    BSD License (3-clause)
  * @link       http://cartalyst.com
  */
-class v1_0_0
+class V1_1_0
 {
     /**
      * --------------------------------------------------------------------------
@@ -45,22 +45,30 @@ class v1_0_0
      */
     public function up()
     {
+        $extensions = array();
+
     	// Now, some people may be upgrading to 1.1 from 1.0. If this is
     	// the case, the `extensions` table exists. If so, we skip the
     	// create statement
     	try
     	{
     		// Grab all extensions registered
-    		$extensions = DB::table('extensions')->get();
+    		$_extensions = DB::table('extensions')->get();
+
+            foreach ($_extensions as $extension)
+            {
+                $extensions[] = (array) $extension;
+            }
 
     		// And drop the table
-    		Schema::drop_table('extensions');
+    		Schema::drop('extensions');
     	}
     	catch (Laravel\Database\Exception $e)
     	{
-    		$extension = array();
+    		
     	}
 
+        // Create hte extnesions table
     	Schema::create('extensions', function($table){
             $table->increments('id');
             $table->string('vendor', 150);
@@ -68,6 +76,12 @@ class v1_0_0
             $table->string('version', 10);
             $table->boolean('enabled')->default(0);
         });
+
+        // If we grabbed extensions from the database
+        if (count($extensions) > 0)
+        {
+            DB::table('extensions')->insert($extensions);
+        }
     }
 
 
@@ -83,6 +97,6 @@ class v1_0_0
      */
     public function down()
     {
-
+        // No need to revert.
     }
 }
