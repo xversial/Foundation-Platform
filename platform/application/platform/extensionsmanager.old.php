@@ -244,7 +244,7 @@ class ExtensionsManager
 
         // Spin through the extensions from the directories, and merge with the installed extensions data.
         //
-        foreach ($this->extensions_directories() as $extension)
+        foreach ($this->extensions() as $extension)
         {
             // Get this extension slug.
             //
@@ -1367,49 +1367,54 @@ class ExtensionsManager
      */
     protected function extensions_directories()
     {
-        // Initiate an empty array.
-        //
-        $extensions = array();
-
-        // Declare the directories we want to search for extensions.
-        //
-        $directories = array(
-            (array) glob(path('extensions') . '*' . DS . '*' . DS . 'extension' . EXT, GLOB_NOSORT),
-            (array) glob(path('extensions') . '*' . DS . 'extension' . EXT, GLOB_NOSORT)
-        );
-
-        // Loop through the directories.
-        //
-        foreach ($directories as $directory)
+        if (count($this->extensions) === 0)
         {
-            // Loop through each extension.
+            // Initiate an empty array.
             //
-            foreach ((array) $directory as $extension)
+            $extensions = array();
+
+            // Declare the directories we want to search for extensions.
+            //
+            $directories = array(
+                (array) glob(path('extensions') . '*' . DS . '*' . DS . 'extension' . EXT, GLOB_NOSORT),
+                (array) glob(path('extensions') . '*' . DS . 'extension' . EXT, GLOB_NOSORT)
+            );
+
+            // Loop through the directories.
+            //
+            foreach ($directories as $directory)
             {
-                // The full path to this extension
+                // Loop through each extension.
                 //
-                $extension = dirname($extension);
-
-                // The name of this extension.
-                //
-                $slug = basename($extension);
-
-                // Check if the extension is not in the array already.
-                //
-                if ( ! in_array($slug, $extensions))
+                foreach ((array) $directory as $extension)
                 {
-                    $extensions[ $slug ] = $this->get($slug);
+                    // The full path to this extension
+                    //
+                    $extension = dirname($extension);
+
+                    // The name of this extension.
+                    //
+                    $slug = basename($extension);
+
+                    // Check if the extension is not in the array already.
+                    //
+                    if ( ! in_array($slug, $extensions))
+                    {
+                        $extensions[ $slug ] = $this->get($slug);
+                    }
                 }
             }
+
+            // Sort the extensions.
+            //
+            ksort($extensions);
+
+            // Return and store the extensions.
+            //
+            $this->extensions = $extensions;
         }
 
-        // Sort the extensions.
-        //
-        ksort($extensions);
-
-        // Return and store the extensions.
-        //
-        return $this->extensions = $extensions;
+        return $this->extensions;
     }
 
     /**
