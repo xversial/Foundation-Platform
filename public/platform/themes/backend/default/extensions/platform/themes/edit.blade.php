@@ -43,7 +43,7 @@
                     <legend>{{ $option['text'] }}</legend>
                                 
                     @foreach ($option['styles'] as $style => $value)
-                    <label class="control-label" for="{{ $id }}_{{ $style }}">{{ $style }}</label>
+                    <label class="control-label" for="{{ $id }}_{{ $style }}"><kbd>{{ $style }}</kbd></label>
                     
                     <div class="controls">
                         <input type="text" id="{{ $id }}_{{ $style }}" name="options[{{ $id }}][styles][{{ $style }}]" value="{{ $value }}">

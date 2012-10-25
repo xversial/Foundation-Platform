@@ -1,7 +1,7 @@
 @layout('installer::template')
 
 @section('title')
-{{ Lang::line('installer::general.title')->get() }} | {{ Lang::line('installer::general.step_2.title')->get() }}
+{{ Lang::line('installer::install.title')->get() }} | {{ Lang::line('installer::general.step_2.title')->get() }}
 @endsection
 
 @section('scripts')
@@ -15,15 +15,15 @@
 @endsection
 
 @section('navigation')
-	<h1>{{ Lang::line('installer::general.step_2.title') }}</h1>
-	<p class="step">{{ Lang::line('installer::general.step_2.tagline') }}</p>
+	<h1>{{ Lang::line('installer::install.step_2.title') }}</h1>
+	<p class="step">{{ Lang::line('installer::install.step_2.tagline') }}</p>
 	<div class="breadcrumbs">
 		<ul class="nav">
 			<ul class="nav">
-			<li><span>{{ Lang::line('installer::general.step_1.step') }}</span> {{ Lang::line('installer::general.step_1.step_description') }}</li>
-			<li class="active"><span>{{ Lang::line('installer::general.step_2.step') }}</span> {{ Lang::line('installer::general.step_2.step_description') }}</li>
-			<li><span>{{ Lang::line('installer::general.step_3.step') }}</span> {{ Lang::line('installer::general.step_3.step_description') }}</li>
-			<li><span>{{ Lang::line('installer::general.step_4.step') }}</span> {{ Lang::line('installer::general.step_4.step_description') }}</li>
+			<li><span>{{ Lang::line('installer::install.step_1.step') }}</span> {{ Lang::line('installer::install.step_1.step_description') }}</li>
+			<li class="active"><span>{{ Lang::line('installer::install.step_2.step') }}</span> {{ Lang::line('installer::install.step_2.step_description') }}</li>
+			<li><span>{{ Lang::line('installer::install.step_3.step') }}</span> {{ Lang::line('installer::install.step_3.step_description') }}</li>
+			<li><span>{{ Lang::line('installer::install.step_4.step') }}</span> {{ Lang::line('installer::install.step_4.step_description') }}</li>
 		</ul>
 	</div>
 @endsection
@@ -32,7 +32,7 @@
 @section('content')
 <section id="checks">
 	<header>
-		<h2>{{ Lang::line('installer::general.step_2.description') }}</h2>
+		<h2>{{ Lang::line('installer::install.step_2.description') }}</h2>
 	</header>
 	<hr>
 	<div class="container-fluid">
@@ -124,7 +124,7 @@
 
 					<div class="form-actions">
 						<div class="pull-right">
-							<a class="btn btn-large" href="{{URL::to('installer/step_1');}}">{{ Lang::line('installer::button.previous') }}</a>
+							<a class="btn btn-large" href="{{URL::to('installer/install/step_1');}}">{{ Lang::line('installer::button.previous') }}</a>
 							<button type="submit" class="btn btn-large" disabled>{{ Lang::line('installer::button.next') }}</button>
 						</div>
 					</div>

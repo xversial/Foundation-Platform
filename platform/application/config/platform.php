@@ -18,26 +18,16 @@
  * @link       http://cartalyst.com
  */
 
-/*
- * --------------------------------------------------------------------------
- * Auto-Loader Mappings
- * --------------------------------------------------------------------------
- *
- * Registering a mapping couldn't be easier. Just pass an array of class
- * to path maps into the "map" function of Autoloader. Then, when you
- * want to use that class, just use it. It's simple!
- *
- */
-Autoloader::map(array(
-	'Installer_Base_Controller' => __DIR__ . DS . 'controllers' . DS . 'base' . EXT
-));
-
 
 /*
  * --------------------------------------------------------------------------
- * Register some namespaces.
+ * Return the configuration.
  * --------------------------------------------------------------------------
  */
-Autoloader::namespaces(array(
-    'Installer' => __DIR__ . DS . 'models'
-));
+
+return array(
+
+	// The installed version of Platform. This is automagically
+	// updated when you install platform.
+	'installed_version' => '1.0.3',
+);

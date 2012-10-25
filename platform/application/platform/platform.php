@@ -40,7 +40,7 @@ class Platform
      *
      * @constant
      */
-    const PLATFORM_VERSION = '1.0.3';
+    const VERSION = '1.1';
 
     /**
      * Flag for whether Platform is initalized.
@@ -112,7 +112,7 @@ class Platform
 
         // Check if Platform is installed.
         //
-        if ( ! static::is_installed())
+        if ( ! static::is_installed() or static::has_update())
         {
             // Start the installer.
             //
@@ -162,6 +162,13 @@ class Platform
             {
                 throw new Exception('No database file exists in application/config');
             }
+        }
+
+        // Check the platform configuration has the version number.
+        //
+        if ( ! ($version = Config::get('platform.installed_version')))
+        {
+            return false;
         }
 
         // List installed extensions, if the count is 0, it is not installed.
@@ -235,6 +242,22 @@ class Platform
         //
         return true;
     }
+
+    /**
+     * --------------------------------------------------------------------------
+     * Function: is_installed()
+     * --------------------------------------------------------------------------
+     *
+     * Determines if Platform has been installed or not.
+     *
+     * @access   public
+     * @return   boolean
+     */
+    public static function has_update()
+    {
+        return (( ! $version = Config::get('platform.installed_version')) or version_compare($version, static::version(), '<') === true);
+    }
+
 
 
     /**
@@ -736,6 +759,6 @@ class Platform
      */
     public static function version()
     {
-        return self::PLATFORM_VERSION;
+        return self::VERSION;
     }
 }

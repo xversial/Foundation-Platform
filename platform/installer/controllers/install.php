@@ -41,7 +41,7 @@ use Installer\Installer;
  * @link       http://cartalyst.com
  * @version    1.1
  */
-class Installer_Index_Controller extends Base_Controller
+class Installer_Install_Controller extends Base_Controller
 {
     /**
      * --------------------------------------------------------------------------
@@ -59,26 +59,11 @@ class Installer_Index_Controller extends Base_Controller
         //
         parent::before();
 
-        // Setup CSS.
-        //
-        Asset::add('bootstrap', 'platform/installer/css/bootstrap.min.css');
- 		Asset::add('font-awesome', 'platform/installer/css/font-awesome.css');
-        Asset::add('installer', 'platform/installer/css/installer.css');
-
-        // Setup JS.
-        //
-        Asset::add('jquery', 'platform/installer/js/jquery.js');
-        Asset::add('url', 'platform/installer/js/url.js');
-        Asset::add('bootstrap', 'platform/installer/js/bootstrap.min.js', array('jquery'));
-        Asset::add('validation', 'platform/installer/js/validate.js', array('jquery'));
-        Asset::add('tempo', 'platform/installer/js/tempo.js', array('jquery'));
-        Asset::add('installer', 'platform/installer/js/installer.js', array('jquery'));
-
         // Check if Platform is already installed.
         //
         if (Platform::is_installed() and URI::segment(2) !== 'step_4')
         {
-            Redirect::to('installer/step_4')->send();
+            Redirect::to('installer/install/step_4')->send();
             exit;
         }
 
@@ -89,22 +74,6 @@ class Installer_Index_Controller extends Base_Controller
             Redirect::to('installer')->send();
             exit;
         }
-    }
-
-
-    /**
-     * --------------------------------------------------------------------------
-     * Function: get_index()
-     * --------------------------------------------------------------------------
-     *
-     * An alias for the step 1.
-     *
-     * @access   public
-     * @return   void
-     */
-    public function get_index()
-    {
-        return $this->get_step_1();
     }
 
     /**
@@ -147,7 +116,7 @@ class Installer_Index_Controller extends Base_Controller
 
         // Show the page.
         //
-        return View::make('installer::step_1')
+        return View::make('installer::install.step_1')
         	->with('drivers', $drivers)
         	->with('permissions', Installer::permissions());
     }
@@ -191,7 +160,7 @@ class Installer_Index_Controller extends Base_Controller
 
         // Continue to step 2.
         //
-        return Redirect::to('installer/step_2');
+        return Redirect::to('installer/install/step_2');
     }
 
 
@@ -230,7 +199,7 @@ class Installer_Index_Controller extends Base_Controller
 
         // Show the page.
         //
-        return View::make('installer::step_2')->with('drivers', Installer::database_drivers())->with('credentials', $credentials);
+        return View::make('installer::install.step_2')->with('drivers', Installer::database_drivers())->with('credentials', $credentials);
     }
 
 
@@ -252,7 +221,7 @@ class Installer_Index_Controller extends Base_Controller
 
         // Continue to step 3.
         //
-        return Redirect::to('installer/step_3');
+        return Redirect::to('installer/install/step_3');
     }
 
 
@@ -270,7 +239,7 @@ class Installer_Index_Controller extends Base_Controller
     {
         // Show the page.
         //
-        return View::make('installer::step_3');
+        return View::make('installer::install.step_3');
     }
 
 
@@ -293,7 +262,7 @@ class Installer_Index_Controller extends Base_Controller
 
         // Now install Platform !
         //
-        return Redirect::to('installer/install');
+        return Redirect::to('installer/install/install');
     }
 
 
@@ -312,14 +281,14 @@ class Installer_Index_Controller extends Base_Controller
     	// Create the Filesystem Config first so we can use for other file creations
     	//
     	Installer::create_filesystem_config(Installer::get_step_data(1, function() {
-    		Redirect::to('installer/step_1')->send();
+    		Redirect::to('installer/install/step_1')->send();
     		exit;
     	}));
 
         // 1) Create the database config file.
         //
         Installer::create_database_config(Installer::get_step_data(2, function() {
-            Redirect::to('installer/step_2')->send();
+            Redirect::to('installer/install/step_2')->send();
             exit;
         }));
 
@@ -351,7 +320,7 @@ class Installer_Index_Controller extends Base_Controller
             // Get the admin user data.
             //
             $user = Installer::get_step_data(3, function() {
-                Redirect::to('installer/step_3')->send();
+                Redirect::to('installer/install/step_3')->send();
                 exit;
             });
             $user = array(
@@ -376,12 +345,12 @@ class Installer_Index_Controller extends Base_Controller
         {
             // Redirect to the step 3.
             //
-            return Redirect::to('installer/step_3');
+            return Redirect::to('installer/install/step_3');
         }
 
         // Redirect to the final step.
         //
-        return Redirect::to('installer/step_4');
+        return Redirect::to('installer/install/step_4');
     }
 
 
@@ -403,7 +372,7 @@ class Installer_Index_Controller extends Base_Controller
 
         // Show the page.
         //
-        return View::make('installer::step_4')->with('license', Platform::license());
+        return View::make('installer::install.step_4')->with('license', Platform::license());
     }
 
 
@@ -534,23 +503,5 @@ class Installer_Index_Controller extends Base_Controller
             'error'   => false,
             'message' => array('Successfully validated user')
         ));
-    }
-
-
-    /**
-     * --------------------------------------------------------------------------
-     * Function: __call()
-     * --------------------------------------------------------------------------
-     *
-     * Catch-all method for requests that can't be matched.
-     *
-     * @access   public
-     * @param    string
-     * @param    array
-     * @return   Response
-     */
-    public function __call($method, $parameters)
-    {
-        return $this->get_index();
     }
 }

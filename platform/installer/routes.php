@@ -18,13 +18,27 @@
  * @link       http://cartalyst.com
  */
 
-
-/*
- * --------------------------------------------------------------------------
- * Remove /index/ out of the installer routes.
- * --------------------------------------------------------------------------
- */
-Route::any('installer/(:any?)', function($action = 'index')
+Route::get('installer', function()
 {
-    return Controller::call('installer::index@' . $action);
+	if ( ! Platform::is_installed())
+	{
+		return Redirect::to('installer/install');
+	}
+
+	if (Platform::has_update())
+	{
+		return Redirect::to('installer/update');
+	}
 });
+
+Route::controller(Controller::detect('installer'));
+
+// /*
+//  * --------------------------------------------------------------------------
+//  * Remove /index/ out of the installer routes.
+//  * --------------------------------------------------------------------------
+//  */
+// Route::any('installer/(:any?)', function($action = 'index')
+// {
+//     return Controller::call('installer::index@' . $action);
+// });

@@ -218,6 +218,23 @@ if ( ! Request::cli() and Config::get('session.driver') !== '')
  */
 Bundle::start('crud');
 
+// Resolves core tasks.
+//
+require_once path('sys') . 'cli/dependencies' . EXT;
+
+// Command::run(array('migrate:install'));
+
+// try
+// {
+//     DB::table('extenfsions')->get();
+// }
+// catch (Laravel\Database\Exception $e)
+// {echo get_class($e);
+//     echo '<Pre>';
+//     print_R($e);
+// }
+
+//         die();
 
 /**
  * --------------------------------------------------------------------------

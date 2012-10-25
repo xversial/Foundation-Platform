@@ -1,19 +1,19 @@
 @layout('installer::template')
 
 @section('title')
-{{ Lang::line('installer::general.title')->get() }} | {{ Lang::line('installer::general.step_1.title')->get() }}
+{{ Lang::line('installer::install.title')->get() }} | {{ Lang::line('installer::general.step_1.title')->get() }}
 @endsection
 
 @section('navigation')
-	<h1>{{ Lang::line('installer::general.step_1.title') }}</h1>
-	<p class="step">{{ Lang::line('installer::general.step_1.tagline') }}</p>
+	<h1>{{ Lang::line('installer::install.step_1.title') }}</h1>
+	<p class="step">{{ Lang::line('installer::install.step_1.tagline') }}</p>
 	<div class="breadcrumbs">
 		<ul class="nav">
 			<ul class="nav">
-			<li class="active"><span>{{ Lang::line('installer::general.step_1.step') }}</span> {{ Lang::line('installer::general.step_1.step_description') }}</li>
-			<li><span>{{ Lang::line('installer::general.step_2.step') }}</span> {{ Lang::line('installer::general.step_2.step_description') }}</li>
-			<li><span>{{ Lang::line('installer::general.step_3.step') }}</span> {{ Lang::line('installer::general.step_3.step_description') }}</li>
-			<li><span>{{ Lang::line('installer::general.step_4.step') }}</span> {{ Lang::line('installer::general.step_4.step_description') }}</li>
+			<li class="active"><span>{{ Lang::line('installer::install.step_1.step') }}</span> {{ Lang::line('installer::install.step_1.step_description') }}</li>
+			<li><span>{{ Lang::line('installer::install.step_2.step') }}</span> {{ Lang::line('installer::install.step_2.step_description') }}</li>
+			<li><span>{{ Lang::line('installer::install.step_3.step') }}</span> {{ Lang::line('installer::install.step_3.step_description') }}</li>
+			<li><span>{{ Lang::line('installer::install.step_4.step') }}</span> {{ Lang::line('installer::install.step_4.step_description') }}</li>
 		</ul>
 	</div>
 @endsection
@@ -21,7 +21,7 @@
 @section('content')
 <section id="checks">
 	<header>
-		<h2>{{ Lang::line('installer::general.step_1.description') }}</h2>
+		<h2>{{ Lang::line('installer::install.step_1.description') }}</h2>
 	</header>
 	<hr>
 	<div class="container-fluid">
@@ -115,7 +115,7 @@
 						<div class="control-group">
 							<label class="control-label">Test FTP</label>
 							<div class="controls">
-								<a href="{{ URL::to('installer/ftp_test') }}" class="btn btn-medium" id="ftp-test">Connect</a>
+								<a href="{{ URL::to('installer/install/ftp_test') }}" class="btn btn-medium" id="ftp-test">Connect</a>
 								<div id="ftp-status" class="help-block"></div>
 							</div>
 						</div>

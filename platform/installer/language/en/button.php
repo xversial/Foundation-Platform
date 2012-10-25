@@ -26,5 +26,5 @@
  */
 return array(
     'previous' => 'Back',
-    'next'     => 'Continue'
+    'next'     => 'Continue',
 );
