@@ -18,6 +18,7 @@
  * @link       http://cartalyst.com
  */
 
+
 /**
  * --------------------------------------------------------------------------
  * Install Class v1.1.0
@@ -31,7 +32,7 @@
  * @license    BSD License (3-clause)
  * @link       http://cartalyst.com
  */
-class V1_1_0
+class v1_1_0
 {
     /**
      * --------------------------------------------------------------------------
@@ -45,31 +46,33 @@ class V1_1_0
      */
     public function up()
     {
+        // Fallback array.
+        //
         $extensions = array();
 
-    	// Now, some people may be upgrading to 1.1 from 1.0. If this is
-    	// the case, the `extensions` table exists. If so, we skip the
-    	// create statement
-    	try
-    	{
-    		// Grab all extensions registered
-    		$_extensions = DB::table('extensions')->get();
-
-            foreach ($_extensions as $extension)
+        // Now, some people may be upgrading to 1.1 from 1.0,
+        // if this is the case, the `extensions` table exists.
+        //
+        try
+        {
+            // Grab all the registered extensions.
+            //
+            foreach (DB::table('extensions')->get() as $extension)
             {
                 $extensions[] = (array) $extension;
             }
 
-    		// And drop the table
-    		Schema::drop('extensions');
-    	}
-    	catch (Laravel\Database\Exception $e)
-    	{
-    		
-    	}
+            // And drop the table.
+            //
+            Schema::drop('extensions');
+        }
+        catch (Laravel\Database\Exception $e)
+        {
+        }
 
-        // Create hte extnesions table
-    	Schema::create('extensions', function($table){
+        // Create the extensions table.
+        //
+        Schema::create('extensions', function($table){
             $table->increments('id');
             $table->string('vendor', 150);
             $table->string('slug', 150);
@@ -77,9 +80,12 @@ class V1_1_0
             $table->boolean('enabled')->default(0);
         });
 
-        // If we grabbed extensions from the database
+        // If we grabbed extensions from the database.
+        //
         if (count($extensions) > 0)
         {
+            // Insert the extensions on the database again.
+            //
             DB::table('extensions')->insert($extensions);
         }
     }

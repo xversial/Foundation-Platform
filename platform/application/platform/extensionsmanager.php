@@ -26,6 +26,7 @@
  */
 use Laravel\CLI\Command;
 
+
 /**
  * --------------------------------------------------------------------------
  * Extensions Manager Class
@@ -45,39 +46,39 @@ class ExtensionsManager
     /**
      * Stores all the extensions.
      *
-     * @access   public
+     * @access   protected
      * @var      array
      */
-    public $extensions = array();
+    protected $extensions = array();
 
     /**
      * Stores all the installed extensions.
      *
-     * @access   public
+     * @access   protected
      * @var      object
      */
-    public $installed = array();
+    protected $installed = array();
 
     /**
      * Stores all the uninstalled extensions.
      *
-     * @access   public
+     * @access   protected
      * @var      array
      */
-    public $uninstalled = array();
+    protected $uninstalled = array();
 
     /**
      * Stores all the enabled extensions.
      *
-     * @access   public
+     * @access   protected
      * @var      array
      */
-    public $enabled = array();
+    protected $enabled = array();
 
     /**
      * Stores all the disabled extensions.
      *
-     * @access   public
+     * @access   protected
      * @var      array
      */
     protected $disabled = array();
@@ -790,7 +791,7 @@ class ExtensionsManager
      * Function: has_update()
      * --------------------------------------------------------------------------
      *
-     * Checks if a extension has an update available.
+     * Checks if an extension has an update available.
      *
      * @access   public
      * @param    string
@@ -822,7 +823,7 @@ class ExtensionsManager
      * Function: has_dependencies()
      * --------------------------------------------------------------------------
      *
-     * Checks if a extension has dependencies, and return them if found any.
+     * Checks if an extension has dependencies, and return them if found any.
      *
      * @access   public
      * @param    string
@@ -839,7 +840,7 @@ class ExtensionsManager
      * Function: has_dependents()
      * --------------------------------------------------------------------------
      *
-     * Checks if a extension has dependents, and return them if found any.
+     * Checks if an extension has dependents, and return them if found any.
      *
      * @access   public
      * @param    string
@@ -856,7 +857,7 @@ class ExtensionsManager
      * Function: required_extensions()
      * --------------------------------------------------------------------------
      *
-     * This returns all the required extensions that a extension needs to be installed.
+     * This returns all the required extensions that an extension needs to be installed.
      *
      * It checks if the dependent extensions are: ' Uninstalled or Disabled '
      *
@@ -902,7 +903,7 @@ class ExtensionsManager
      * Function: current_version()
      * --------------------------------------------------------------------------
      *
-     * Returns the current version of a extension.
+     * Returns the current version of an extension.
      *
      * @access   public
      * @param    string
@@ -919,7 +920,7 @@ class ExtensionsManager
      * Function: new_version()
      * --------------------------------------------------------------------------
      *
-     * Returns the new version of a extension, if an update is available, otherwise,
+     * Returns the new version of an extension, if an update is available, otherwise,
      * returns the current version of the extension.
      *
      * @access   public
@@ -946,7 +947,7 @@ class ExtensionsManager
      * Function: install()
      * --------------------------------------------------------------------------
      *
-     * Installs a extension by the given slug.
+     * Installs an extension by the given slug.
      *
      * As an optional parameter, you can also enable the extension automatically.
      *
@@ -1014,7 +1015,7 @@ class ExtensionsManager
             }
         }
 
-        // extension installed.
+        // Extension installed.
         //
         return true;
     }
@@ -1025,7 +1026,7 @@ class ExtensionsManager
      * Function: uninstall()
      * --------------------------------------------------------------------------
      *
-     * Uninstalls a extension by the given slug.
+     * Uninstalls an extension by the given slug.
      *
      * @access   public
      * @param    string
@@ -1099,7 +1100,7 @@ class ExtensionsManager
      * Function: enable()
      * --------------------------------------------------------------------------
      *
-     * Enables a extension by the given slug.
+     * Enables an extension by the given slug.
      *
      * @access   public
      * @param    string
@@ -1152,7 +1153,7 @@ class ExtensionsManager
      * Function: disable()
      * --------------------------------------------------------------------------
      *
-     * Disables a extension by the given slug.
+     * Disables an extension by the given slug.
      *
      * @access   public
      * @param    string
@@ -1203,7 +1204,7 @@ class ExtensionsManager
      * Function: update()
      * --------------------------------------------------------------------------
      *
-     * Updates a extension by the given slug.
+     * Updates an extension by the given slug.
      *
      * @access   public
      * @param    string
@@ -1250,7 +1251,7 @@ class ExtensionsManager
      * Function: get()
      * --------------------------------------------------------------------------
      *
-     * Retrieve all the needed information about a extension.
+     * Retrieve all the needed information about an extension.
      *
      * @access   public
      * @param    string
@@ -1323,7 +1324,7 @@ class ExtensionsManager
      * Function: find_extension()
      * --------------------------------------------------------------------------
      *
-     * Finds the extension.php file of a extension with the given slug.
+     * Finds the extension.php file of an extension with the given slug.
      *
      * @access   public
      * @param    string
@@ -1412,19 +1413,20 @@ class ExtensionsManager
         return $this->extensions = $extensions;
     }
 
+
     /**
      * --------------------------------------------------------------------------
      * Function: checking()
      * --------------------------------------------------------------------------
      *
-     * Sets the checking property
+     * Sets the checking property.
      *
      * @access   public
      * @return   void
      */
     public function checking($checking = null)
     {
-        if ($checking === null)
+        if (is_null($checking))
         {
             return $this->checking;
         }
@@ -1440,7 +1442,7 @@ class ExtensionsManager
      *
      * Prepares the Platform database for extensions.
      *
-     * @depreciated since v1.1
+     * @deprecated since v1.1
      *
      * @access   public
      * @return   void

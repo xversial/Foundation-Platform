@@ -19,6 +19,14 @@
  */
 
 
+/*
+ * --------------------------------------------------------------------------
+ * What we can use in this class.
+ * --------------------------------------------------------------------------
+ */
+use Laravel\CLI\Command;
+
+
 /**
  * --------------------------------------------------------------------------
  * Platform Class
@@ -33,14 +41,6 @@
  * @link       http://cartalyst.com
  * @version    1.1
  */
-
-/*
- * --------------------------------------------------------------------------
- * What we can use in this class.
- * --------------------------------------------------------------------------
- */
-use Laravel\CLI\Command;
-
 class Platform
 {
     /**
@@ -251,12 +251,13 @@ class Platform
         return true;
     }
 
+
     /**
      * --------------------------------------------------------------------------
-     * Function: is_installed()
+     * Function: has_update()
      * --------------------------------------------------------------------------
      *
-     * Determines if Platform has been installed or not.
+     * Checks if Platform is updated.
      *
      * @access   public
      * @return   boolean
@@ -265,7 +266,6 @@ class Platform
     {
         return (( ! $version = Config::get('platform.installed_version')) or version_compare($version, static::version(), '<') === true);
     }
-
 
 
     /**
@@ -770,6 +770,7 @@ class Platform
         return self::VERSION;
     }
 
+
     /**
      * --------------------------------------------------------------------------
      * Function: install_update()
@@ -801,7 +802,8 @@ class Platform
             Command::run(array('migrate:install'));
         }
 
-        // Now, run the core migrations
+        // Now, run the core migrations.
+        //
         Command::run(array('migrate'));
 
         // Start the extensions, just in case the install process got interrupted.
