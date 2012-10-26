@@ -311,6 +311,7 @@ class ExtensionsManager
             // Get basic extension information to set in the object
             $installed          = $this->is_installed($extension);
             $_extension['info'] = array_merge($_extension['info'], $extension, array(
+                'vendor' => $extension['vendor'],
                 'bundle_name' => $this->bundle_name($extension),
                 'installed'   => $installed,
             ));
@@ -1072,7 +1073,7 @@ class ExtensionsManager
     {
         $extension = $this->unparse($extension);
 
-        return str_replace('.', ':', $extension);
+        return str_replace('.', '/', $extension);
     }
 
     /**
@@ -1105,6 +1106,8 @@ class ExtensionsManager
             return true;
         }
 
+
+        $bundle_name = str_replace($extension['info']['vendor'] . '/', '', $bundle_name);
 
         // Register this extension with Laravel.
         //

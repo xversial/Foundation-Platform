@@ -58,7 +58,7 @@ Route::any(ADMIN . '/(:any?)/(:any?)/(:any?)(/.*)?', function($bundle = 'dashboa
         $params     = explode('/', $action.$params);
     }
 
-    print_r($controller);
+    #print_r($controller);
 
     // Execute the controller.
     //
