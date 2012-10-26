@@ -141,8 +141,9 @@ class Platform
 
             echo '<pre>';
 
-            $extensions = static::extensions_manager()->extensions();
+            $extensions = static::extensions_manager()->start_extensions();
 
+            print_r($extensions);
 
             die();
 
