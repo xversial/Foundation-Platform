@@ -31,7 +31,7 @@ Route::any(ADMIN . '/(:any?)/(:any?)/(:any?)(/.*)?', function($bundle = 'dashboa
 {
     // Check if the extension exists.
     //
-    if ( ! Bundle::exists($bundle))
+    if ( ! Bundle::exists($bundle = Bundle::handles(Uri::current())))
     {
         return Response::error('404');
     }
@@ -51,6 +51,10 @@ Route::any(ADMIN . '/(:any?)/(:any?)/(:any?)(/.*)?', function($bundle = 'dashboa
         $controller = $bundle . '::admin.' . $bundle . '@' . (($controller) ?: 'index');
         $params     = explode('/', $action.$params);
     }
+
+    print_r($controller);
+
+    die();
 
     // Execute the controller.
     //
