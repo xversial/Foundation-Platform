@@ -57,7 +57,7 @@ return array(
      */
 	'routes' => function(){
 		Route::any('/', function() {
-			return Controller::call('pages::pages@page');
+			return Controller::call('platform.pages::pages@page');
 		});
 
 		Route::any('(:any)', function($page = 'index') {
@@ -65,7 +65,7 @@ return array(
 			// check if the page is a bundle
 			if ( ! Bundle::exists($page))
 			{
-				return Controller::call('pages::pages@page', array($page));
+				return Controller::call('platform.pages::pages@page', array($page));
 			}
 		});
 	},
