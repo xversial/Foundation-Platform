@@ -31,36 +31,9 @@ return array(
      * -----------------------------------------
      */
     'info' => array(
-        'name'        => 'Extensions',
+        'name'        => 'Test Extension',
         'author'      => 'Cartalyst LLC',
-        'description' => 'An extension to manage them all.',
+        'description' => 'Test',
         'version'     => '1.1',
-        'is_core'     => true
     ),
-
-
-    /*
-     * -----------------------------------------
-     * Extension dependencies.
-     * -----------------------------------------
-     */
-    'dependencies' => array(
-        'platform.menus'
-    ),
-
-
-    /*
-     * -----------------------------------------
-     * Rules
-     * -----------------------------------------
-     */
-    'rules' => array(
-        'extensions::admin.extensions@index',
-        'extensions::admin.extensions@view',
-        'extensions::admin.extensions@install',
-        'extensions::admin.extensions@uninstall',
-        'extensions::admin.extensions@enable',
-        'extensions::admin.extensions@disable',
-        'extensions::admin.extensions@update'
-    )
 );

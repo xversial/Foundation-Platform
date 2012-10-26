@@ -57,7 +57,9 @@ return array(
      * -----------------------------------------
      */
     'not_found'         => 'Extension <b>:extension</b> was not found !',
-    'missing_files'     => 'Extension <b>:extension</b> required files are missing !',
+    'invalid_extension' => 'Invalid extension properties passed.',
+    'missing_files'     => 'Extension <b>:extension</b> required files are missing',
+    'invalid_directory' => 'Extension in directory <b>:directory</b> contains illegal characters',
     'invalid_file'      => 'Extension <b>:extension</b> doesn\'t have a valid extension.php file',
     'invalid_routes'    => 'Extension <b>:extension</b> "routes" must be a function / closure',
     'invalid_listeners' => 'Extension <b>:extension</b> "listeners" must be a function / closure',

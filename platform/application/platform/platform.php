@@ -139,6 +139,13 @@ class Platform
             //
             static::register_blade_extensions();
 
+            echo '<pre>';
+
+            $extensions = static::extensions_manager()->extensions();
+
+
+            die();
+
             // Start the extensions.
             //
             static::extensions_manager()->start_extensions();
