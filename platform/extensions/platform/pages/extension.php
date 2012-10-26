@@ -55,17 +55,19 @@ return array(
      * Extension routes.
      * -----------------------------------------
      */
-	'routes' => function(){
-		Route::any('/', function() {
-			return Controller::call('platform.pages::pages@page');
+	'routes' => function()
+	{
+		Route::any('/', function()
+		{
+			return Controller::call('platform:pages::pages@page');
 		});
 
-		Route::any('(:any)', function($page = 'index') {
-
-			// check if the page is a bundle
+		Route::any('(:any)', function($page = 'index')
+		{
+			// Check if the page is a bundle
 			if ( ! Bundle::exists($page))
 			{
-				return Controller::call('platform.pages::pages@page', array($page));
+				return Controller::call('platform:pages::pages@page', array($page));
 			}
 		});
 	},

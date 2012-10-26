@@ -31,7 +31,7 @@ Route::any(ADMIN . '/(:any?)/(:any?)/(:any?)(/.*)?', function($bundle = 'dashboa
 {
     // Check if the extension exists.
     //
-    if ( ! Bundle::exists($bundle = Bundle::handles(Uri::current())))
+    if ( ! Bundle::exists($bundle = Bundle::handles($bundle)))
     {
         return Response::error('404');
     }
@@ -48,13 +48,17 @@ Route::any(ADMIN . '/(:any?)/(:any?)/(:any?)(/.*)?', function($bundle = 'dashboa
     //
     else
     {
-        $controller = $bundle . '::admin.' . $bundle . '@' . (($controller) ?: 'index');
+        /**
+         * @todo, remove. this is a temp experiement and 
+         * should call a method in the extnesions manager.
+         */
+        $parts = explode(':', $bundle);
+
+        $controller = $bundle . '::admin.' . array_get($parts, 1, array_get($parts, 0)) . '@' . (($controller) ?: 'index');
         $params     = explode('/', $action.$params);
     }
 
     print_r($controller);
-
-    die();
 
     // Execute the controller.
     //

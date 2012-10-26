@@ -265,6 +265,12 @@ class ExtensionsManager
      */
     public function get($extension)
     {
+        // Already an extension
+        if (is_array($extension) and count($extension) > 2)
+        {
+            return $extension;
+        }
+
         // Parse the extension
         $extension = $this->parse($extension);
         $unparsed  = $this->unparse($extension);
@@ -305,7 +311,8 @@ class ExtensionsManager
             // Get basic extension information to set in the object
             $installed          = $this->is_installed($extension);
             $_extension['info'] = array_merge($_extension['info'], $extension, array(
-                'installed'     => $installed,
+                'bundle_name' => $this->bundle_name($extension),
+                'installed'   => $installed,
             ));
 
             // Set the bundles if they do not exist
@@ -313,7 +320,7 @@ class ExtensionsManager
             {
                 $_extension['bundles'] = array(
                     'handles'  => $extension['slug'], // Vendor name is skipped from URL by default /* @todo this will come in to play with overridding */
-                    'location' => dirname($file),
+                    'location' => 'path: '.dirname($file),
                 );
             }
 
@@ -1050,6 +1057,26 @@ class ExtensionsManager
 
     /**
      * --------------------------------------------------------------------------
+     * Function: bundle_name()
+     * --------------------------------------------------------------------------
+     *
+     * Returns the Laravel bundle name appropriate for an extension. We cannot
+     * use '.' in Laravel Bundle names because of the way array_get() works -
+     * http://d.pr/i/l9gk (where you can't access they array key 'platform.dashboard')
+     * using array_get(), as it nests arrays using dot notation.
+     *
+     * @access   protected
+     * @return   array
+     */
+    protected function bundle_name($extension)
+    {
+        $extension = $this->unparse($extension);
+
+        return str_replace('.', ':', $extension);
+    }
+
+    /**
+     * --------------------------------------------------------------------------
      * Function: start_bundle()
      * --------------------------------------------------------------------------
      *
@@ -1062,18 +1089,18 @@ class ExtensionsManager
      */
     protected function start_bundle(array $extension)
     {
-        // Basic extension info, retrieve
-        // the whole extension
-        if (count($extension) === 2 or is_string($extension))
-        {
-            $extension = $this->get($extension);
-        }
+        // Make sure our extension is loaded in the
+        // right format
+        $extension = $this->get($extension);
 
-        $unparsed = $this->unparse(array($extension['info']['vendor'], $extension['info']['slug']));
+        if ( ! $bundle_name = array_get($extension, 'info.bundle_name'))
+        {
+            throw new Exception(Lang::line('extensions.invalid_extension', array('extension' => $this->unparse(array($extension['info']['vendor'], $extension['info']['slug'])))));
+        }
 
         // Check if this extension is already started.
         //
-        if (Bundle::started($unparsed))
+        if (Bundle::started($bundle_name))
         {
             return true;
         }
@@ -1081,11 +1108,11 @@ class ExtensionsManager
 
         // Register this extension with Laravel.
         //
-        Bundle::register($unparsed, $extension['bundles']);
+        Bundle::register($bundle_name, $extension['bundles']);
 
         // Start the extension.
         //
-        Bundle::start($unparsed);
+        Bundle::start($bundle_name);
 
         return true;
     }
