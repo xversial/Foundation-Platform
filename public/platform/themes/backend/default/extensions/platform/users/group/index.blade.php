@@ -5,9 +5,6 @@
 	{{ Lang::line('users::general.groups.title') }}
 @endsection
 
-<!-- Queue Styles -->
-{{ Theme::queue_asset('table', 'css/vendor/platform/table.css', 'style') }}
-
 <!-- Styles -->
 @section ('styles')
 @endsection
