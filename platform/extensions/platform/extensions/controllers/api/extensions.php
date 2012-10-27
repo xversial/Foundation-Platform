@@ -94,7 +94,7 @@ class Extensions_API_Extensions_Controller extends API_Controller
 
                         // Populate the array.
                         //
-                        $extensions[ $extension['info']['slug'] ] = $extension;
+                        $extensions[ $extension['info']['slug'] ][ $extension['info']['vendor'] ] = $extension;
                     }
 
                     // Return the extensions.
@@ -115,18 +115,22 @@ class Extensions_API_Extensions_Controller extends API_Controller
             {
                 // Spin through all the extensions.
                 //
-                foreach (Platform::extensions_manager()->all() as $extension)
+                foreach (Platform::extensions_manager()->all() as $vendor => $_extensions)
                 {
-                    // Remove callbacks as they're no use in JSON.
-                    //
-                    array_forget($extension, 'listeners');
-                    array_forget($extension, 'routes');
+                    foreach ( $_extensions as $extension)
+                    {
+                        // Remove callbacks as they're no use in JSON.
+                        //
+                        array_forget($extension, 'listeners');
+                        array_forget($extension, 'routes');
 
-                    // Populate the array.
-                    //
-                    $extensions[ $extension['info']['slug'] ] = $extension;
+                        // Populate the array.
+                        //
+                        $extensions[ $extension['info']['slug'] ][ $extension['info']['vendor'] ] = $extension;
+                    }
                 }
             }
+
 
             // Sort the extensions.
             //

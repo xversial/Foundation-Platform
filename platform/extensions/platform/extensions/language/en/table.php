@@ -26,6 +26,7 @@
  */
 return array(
     'id'          => 'ID',
+    'vendor'      => 'Vendor',
     'name'        => 'Name',
     'slug'        => 'Slug',
     'author'      => 'Author',
