@@ -110,13 +110,13 @@ class Dashboard_Admin_Dashboard_Controller extends Admin_Controller
 
 
             ################################################################
-            #echo '<pre>'; var_dump( $manager->all() ); echo '</pre>'; die;
+            #echo '<pre>'; var_dump( $manager->extensions() ); echo '</pre>'; die;
             ################################################################
 
             echo '<pre>';
 
 
-            /*
+            
             echo '<h1>Static Array</h1>';
             $extensions = array(
                 'default/test',
@@ -148,11 +148,13 @@ class Dashboard_Admin_Dashboard_Controller extends Admin_Controller
                 
                 echo '<br />============================<br />';
             }
-            */
+            
+            die;
+
             
 
             echo '<h1>Extensions</h1>';
-            $extensions = Platform::extensions_manager()->all();
+            $extensions = Platform::extensions_manager()->extensions();
             foreach($extensions as $slug => $vendors)
             {
                 echo $slug . '<i>( extension )</i>';
@@ -178,7 +180,11 @@ class Dashboard_Admin_Dashboard_Controller extends Admin_Controller
                     echo '  ' . $vendor . '<i>( vendor )</i> | Slug: ' . $full_slug;
                         echo '<pre>';
                             /**/
-                            echo '    Is Core        ? ' . ( $manager->is_core($full_slug) ? 'Yes' : 'No' );
+
+                            echo '    Dependencies: ' . implode(', ', $manager->dependencies($full_slug) );
+                            echo '<br />    Dependents: ' . implode(', ', $manager->dependents($full_slug) );
+                            
+                            echo '<br />    Is Core        ? ' . ( $manager->is_core($full_slug) ? 'Yes' : 'No' );
                             echo '<br />    Is Vendor Core ? ' . ( $manager->is_core_vendor($full_slug) ? 'Yes' : 'No' );
                             
                             // Is the extension installed ?
