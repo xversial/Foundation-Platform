@@ -31,15 +31,15 @@ return array(
      * -----------------------------------------
      */
     'info' => array(
-        'name'        => 'Test Extension',
+        'name'        => 'Pages',
         'author'      => 'Cartalyst LLC',
-        'description' => 'Test',
+        'description' => 'Pages extension',
         'version'     => '1.1',
     ),
 
     'dependencies' => array(
         'platform.menus',
         'platform.settings',
-        'platform.missing_extension'
+        #'platform.missing_extension'
     )
 );

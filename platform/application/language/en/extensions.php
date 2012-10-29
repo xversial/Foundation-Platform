@@ -31,8 +31,9 @@ return array(
      * -----------------------------------------
      */
     'install' => array(
-        'success' => 'Extension <b>:extension</b> was successfully installed.',
-        'fail'    => 'Extension <b>:extension</b> can\'t be installed.'
+        'success'   => 'Extension <b>:extension</b> was successfully installed.',
+        'fail'      => 'Extension <b>:extension</b> can\'t be installed.',
+        'installed' => 'Extension <b>:extension</b> is already installed !'
     ),
     'uninstall' => array(
         'success' => 'Extension <b>:extension</b> was successfully uninstalled.',
@@ -40,11 +41,13 @@ return array(
     ),
     'enable' => array(
         'success' => 'Extension <b>:extension</b> was successfully enabled.',
-        'fail'    => 'Extension <b>:extension</b> can\'t be enabled.'
+        'fail'    => 'Extension <b>:extension</b> can\'t be enabled.',
+        'enabled' => 'Extension <b>:extension</b> is already enabled !'
     ),
     'disable' => array(
-        'success' => 'Extension <b>:extension</b> was successfully disabled.',
-        'fail'    => 'Extension <b>:extension</b> can\'t be disabled.'
+        'success'  => 'Extension <b>:extension</b> was successfully disabled.',
+        'fail'     => 'Extension <b>:extension</b> can\'t be disabled.',
+        'disabled' => 'Extension <b>:extension</b> is not enabled !'
     ),
     'update' => array(
         'success' => 'Extension <b>:extension</b> was successfully updated.'
