@@ -294,7 +294,7 @@ class ExtensionsManager
      * @access   public
      * @return   array
      */
-    public function installed($condition = null)
+    public function installed()
     {
         // Do we have the extensions loaded already ?
         //
@@ -302,7 +302,7 @@ class ExtensionsManager
         {
             // Loop through the installed extensions.
             //
-            foreach (Extension::all($condition) as $extension)
+            foreach (Extension::all() as $extension)
             {
                 // Store the extension.
                 //
@@ -418,15 +418,11 @@ class ExtensionsManager
                     //
                     $slug = array_get($extension, 'info.slug');
 
-                    // Reverse the slug extension.
-                    //
-                    $reverse_slug = $this->reverse_slug($slug);
-
                     // Is this extension enabled ?
                     //
                     if ($this->is_enabled($slug))
                     {
-                        array_set($this->enabled, $reverse_slug, $this->get($slug));
+                        array_set($this->enabled, $this->reverse_slug($slug), $this->get($slug));
                     }
                 }
             }
@@ -473,15 +469,11 @@ class ExtensionsManager
                     //
                     $slug = array_get($extension, 'info.slug');
 
-                    // Reverse the slug extension.
-                    //
-                    $reverse_slug = $this->reverse_slug($slug);
-
                     // Is this extension disabled ?
                     //
                     if ($this->is_disabled($slug))
                     {
-                        array_set($this->disabled, $reverse_slug, $extension);
+                        array_set($this->disabled, $this->reverse_slug($slug), $extension);
                     }
                 }
             }
@@ -886,6 +878,13 @@ class ExtensionsManager
      */
     public function has_vendors($extension)
     {
+        // 
+        //
+        if (strpos($extension, '.'))
+        {
+            list($vendor, $extension) = explode('.', $extension);
+        }
+
         // Count how many vendors an extension has.
         //
         $vendors = count(array_get($this->extensions, $extension));
@@ -1045,51 +1044,186 @@ class ExtensionsManager
     }
 
 
+    /**
+     * --------------------------------------------------------------------------
+     * Function: install()
+     * --------------------------------------------------------------------------
+     *
+     * Installs an extension by the given slug.
+     *
+     * As an optional parameter, you can also enable the extension automatically.
+     *
+     * @access   public
+     * @param    string
+     * @param    boolean
+     * @return   boolean
+     */
+    public function install($slug, $enable = false)
+    {
+        
+    }
 
 
+    /**
+     * --------------------------------------------------------------------------
+     * Function: uninstall()
+     * --------------------------------------------------------------------------
+     *
+     * Uninstalls an extension by the given slug.
+     *
+     * @access   public
+     * @param    string
+     * @return   boolean
+     */
+    public function uninstall($slug)
+    {
+        
+    }
 
-    public function install($extension)
+
+    /**
+     * --------------------------------------------------------------------------
+     * Function: enable()
+     * --------------------------------------------------------------------------
+     *
+     * Enables an extension by the given slug.
+     *
+     * @access   public
+     * @param    string
+     * @return   boolean
+     */
+    public function enable($slug)
     {
-        
+        // Check if the extension is installed !
+        //
+        if (is_null($extension = Extension::find($slug)))
+        {
+            throw new Exception(Lang::line('extensions.not_found', array('extension' => $slug))->get());
+        }
+
+        // Check if this extension can be enabled.
+        //
+        if ( ! $this->can_enable($slug))
+        {
+            throw new Exception(Lang::line('extensions.enable.fail', array('extension' => $slug))->get());
+        }
+
+        // If this extension has vendors. 
+        //
+        if ($this->has_vendors($slug))
+        {
+            // We need to make sure all other vendors are disabled.
+            //
+            DB::table('extensions')->where('extension', '=', $extension->extension)->update(array('enabled' => 0));
+        }
+
+        // Enable all menus related to this extension.
+        //
+        try
+        {
+            $menus = API::get('menus/flat', array('extension' => $slug));
+            foreach ($menus as $menu)
+            {
+                API::put('menus/' . $menu['slug'], array('status' => 1));
+            }
+        }
+        catch (APIClientException $e)
+        {
+
+        }
+
+        // Enable the extension.
+        //
+        $extension->enabled = 1;
+        $extension->save();
+
+        // Extension enabled.
+        //
+        return true;
     }
-    public function uninstall($extension)
+
+
+    /**
+     * --------------------------------------------------------------------------
+     * Function: disable()
+     * --------------------------------------------------------------------------
+     *
+     * Disables an extension by the given slug.
+     *
+     * @access   public
+     * @param    string
+     * @return   boolean
+     */
+    public function disable($slug)
     {
-        
+        // Check if the extension is installed !
+        //
+        if (is_null($extension = Extension::find($slug)))
+        {
+            throw new Exception(Lang::line('extensions.not_found', array('extension' => $slug))->get());
+        }
+
+        // Check if this extension can be disabled.
+        //
+        if ( ! $this->can_disable($slug))
+        {
+            throw new Exception(Lang::line('extensions.disable.fail', array('extension' => $slug))->get());
+        }
+
+        // If this extension has vendors. 
+        //
+        if ($this->has_vendors($slug))
+        {
+            # Maybe i need to make this more dynamic, and check if the core vendor exists,
+            # if it doesn't, we enable the first vendor extension available that is installed !
+            # if none found, we give up =D
+
+            // Make sure we enable the core vendor extension, if it exists !
+            //
+            DB::table('extensions')->where('vendor', '=', static::CORE_VENDOR)->update(array('enabled' => 1));
+        }
+
+        // Disable all menus related to this extension.
+        //
+        try
+        {
+            $menus = API::get('menus/flat', array('extension' => $slug));
+            foreach ($menus as $menu)
+            {
+                API::put('menus/' . $menu['slug'], array('status' => 0));
+            }
+        }
+        catch (APIClientException $e)
+        {
+
+        }
+
+        // Disable the extension.
+        //
+        $extension->enabled = 0;
+        $extension->save();
+
+        // Extension disabled.
+        //
+        return true;
     }
-    public function enable($extension)
-    {
-        
-    }
-    public function disable($extension)
-    {
-        
-    }
+
+
+    /**
+     * --------------------------------------------------------------------------
+     * Function: update()
+     * --------------------------------------------------------------------------
+     *
+     * Updates an extension by the given slug.
+     *
+     * @access   public
+     * @param    string
+     * @return   boolean
+     */
     public function update($extension)
     {
         
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     /**
@@ -1307,7 +1441,9 @@ class ExtensionsManager
      * Function: reverse_slug()
      * --------------------------------------------------------------------------
      *
-     * 
+     * Reverses the order of an extension slug.
+     *
+     * For example, we convert:   platform.dashboard   to   dashboard.platform
      *
      * @access   protected
      * @param    string

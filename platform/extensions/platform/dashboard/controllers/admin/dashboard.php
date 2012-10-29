@@ -86,37 +86,32 @@ class Dashboard_Admin_Dashboard_Controller extends Admin_Controller
             $manager = Platform::extensions_manager();
 
 
-
-            // installer and uninstaller methods test !
+            /**/
+            // Methods test !
             //
-            // Just refresh pages to install and/or uninstall.
-            //
-            /*
-
-            if ($manager->is_installed('cartalyst.pages'))
+            $slug = 'cartalyst.pages';
+            if ($manager->is_enabled($slug))
             {
-                $manager->uninstall('cartalyst.pages');
+                echo 'Disable';
+                $manager->disable($slug);
             }
             else
             {
-                $manager->install('cartalyst.pages');
+                echo 'Enable';
+                $manager->enable($slug);
             }
-            
             die;
-            
-            */
-
-
+            /**/
 
 
             ################################################################
             #echo '<pre>'; var_dump( $manager->extensions() ); echo '</pre>'; die;
             ################################################################
 
+
             echo '<pre>';
 
-
-            
+            /*
             echo '<h1>Static Array</h1>';
             $extensions = array(
                 'default/test',
@@ -149,7 +144,7 @@ class Dashboard_Admin_Dashboard_Controller extends Admin_Controller
                 echo '<br />============================<br />';
             }
             
-            die;
+            die;*/
 
             
 
