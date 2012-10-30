@@ -70,7 +70,16 @@ abstract class Controller extends Laravel\Routing\Controller
 
         list($name, $method) = explode('@', $destination);
 
-        $controller = static::resolve($bundle, $name);
+        if (strpos($bundle, '/'))
+        {
+            list($vendor, $bundle_) = explode('/', $bundle);
+
+            $controller = self::resolve($bundle_, $name); 
+        } else {
+            $controller = self::resolve($bundle, $name);
+        }
+
+        #$controller = static::resolve($bundle, $name);
 
         // For convenience we will set the current controller and action on the
         // Request's route instance so they can be easily accessed from the

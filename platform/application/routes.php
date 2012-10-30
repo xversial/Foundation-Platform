@@ -52,13 +52,17 @@ Route::any(ADMIN . '/(:any?)/(:any?)/(:any?)(/.*)?', function($bundle = 'dashboa
          * @todo, remove. this is a temp experiement and 
          * should call a method in the extnesions manager.
          */
-        $parts = explode(':', $bundle);
+        $parts = explode('/', $bundle);
 
         $controller = $bundle . '::admin.' . array_get($parts, 1, array_get($parts, 0)) . '@' . (($controller) ?: 'index');
         $params     = explode('/', $action.$params);
+
+        /*$controller = $bundle . '::admin.' . $bundle . '@' . (($controller) ?: 'index');
+        $params     = explode('/', $action.$params);*/
     }
 
     #print_r($controller);
+    #die;
 
     // Execute the controller.
     //

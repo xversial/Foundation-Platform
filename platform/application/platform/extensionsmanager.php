@@ -886,7 +886,7 @@ class ExtensionsManager
 
         // List of vendors.
         //
-        $vendors = array_get($this->extensions, $slug);
+        return array_get($this->extensions, $slug, array());
 
         // Return the vendors if we did found any.
         //
@@ -1610,13 +1610,15 @@ class ExtensionsManager
      */
     protected function directories()
     {
+        $self = $this;
+
         // Get the extensions separated by vendor.
         //
         if (empty($this->vendors_directories))
         {
-            $this->vendors_directories = array_map(function($file)
+            $this->vendors_directories = array_map(function($file) use ($self)
             {
-                return $this->parse($file);
+                return $self->parse($file);
             }, (array) glob(path('extensions') . '*' . DS . '*' . DS . 'extension' . EXT, GLOB_NOSORT));
         }
 
@@ -1624,9 +1626,9 @@ class ExtensionsManager
         //
         if (empty($this->default_directories))
         {
-            $this->default_directories = array_map(function($file)
+            $this->default_directories = array_map(function($file) use ($self)
             {
-                return $this->parse($file);
+                return $self->parse($file);
             }, (array) glob(path('extensions') . '*' . DS . 'extension' . EXT, GLOB_NOSORT));
         }
 
@@ -1647,7 +1649,7 @@ class ExtensionsManager
      * @param    mixed
      * @return   array
      */
-    protected function parse($extension)
+    public function parse($extension)
     {
         // Lets separate the vendor and slug from the extension slug.
         //
@@ -1735,7 +1737,8 @@ class ExtensionsManager
     {
         // Extension slug.
         //
-        $slug = array_get($extension, 'info.extension');
+        #$slug = array_get($extension, 'info.extension');
+        $slug = str_replace('.', '/', array_get($extension, 'info.slug'));
 
         // Check if this extension is already started.
         //
