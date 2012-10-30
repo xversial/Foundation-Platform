@@ -41,7 +41,7 @@ use Platform\Menus\Menu;
  * @link       http://cartalyst.com
  * @version    1.1
  */
-class Dashboard_Admin_Dashboard_Controller extends Admin_Controller
+class Platform_Dashboard_Admin_Dashboard_Controller extends Admin_Controller
 {
     /**
      * --------------------------------------------------------------------------
@@ -81,7 +81,7 @@ class Dashboard_Admin_Dashboard_Controller extends Admin_Controller
 
         if($testing)
         {
-            // 
+            //
             //
             $manager = Platform::extensions_manager();
 
@@ -126,7 +126,7 @@ class Dashboard_Admin_Dashboard_Controller extends Admin_Controller
             {
                 echo '<br /><strong><u>' . $slug . '</u></strong><br /><br />';
                 if ($manager->exists($slug))
-                {            
+                {
                     echo '   Is core ? ' . ( $manager->is_core($slug) ? 'Yes' : 'No' ) . '<br />';
                     echo '   Is core vendor ? ' . ( $manager->is_core_vendor($slug) ? 'Yes' : 'No' ) . '<br />';
                     echo '   Is enabled ? ' . ( $manager->is_enabled($slug) ? 'Yes' : 'No' ) . '<br />';
@@ -140,13 +140,13 @@ class Dashboard_Admin_Dashboard_Controller extends Admin_Controller
                 {
                     echo '   This extension doesn\'t exist !<br />';
                 }
-                
+
                 echo '<br />============================<br />';
             }
-            
+
             die;*/
 
-            
+
 
             echo '<h1>Extensions</h1>';
             $extensions = Platform::extensions_manager()->extensions();
@@ -178,10 +178,10 @@ class Dashboard_Admin_Dashboard_Controller extends Admin_Controller
 
                             echo '    Dependencies: ' . implode(', ', $manager->dependencies($full_slug) );
                             echo '<br />    Dependents: ' . implode(', ', $manager->dependents($full_slug) );
-                            
+
                             echo '<br />    Is Core        ? ' . ( $manager->is_core($full_slug) ? 'Yes' : 'No' );
                             echo '<br />    Is Vendor Core ? ' . ( $manager->is_core_vendor($full_slug) ? 'Yes' : 'No' );
-                            
+
                             // Is the extension installed ?
                             //
                             if ($manager->is_installed($full_slug))
@@ -254,7 +254,7 @@ class Dashboard_Admin_Dashboard_Controller extends Admin_Controller
                             }
                             */
 
-                        echo '</pre>'; 
+                        echo '</pre>';
                     echo '</pre>';
                 }
                 echo '------------------------------------------------------------';

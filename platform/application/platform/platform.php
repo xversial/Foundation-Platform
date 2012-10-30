@@ -466,7 +466,7 @@ class Platform
         //
         $extension = array_shift($settings);
 
-        // 
+        //
         //
         if (count($settings) > 1)
         {
@@ -535,6 +535,9 @@ class Platform
      */
     public static function widget($name = null)
     {
+    	// echo '<pre>';
+    	// print_r(Bundle::$bundles);
+    	// exit;
         // Get the widget name.
         //
         $name = trim($name);
@@ -588,7 +591,7 @@ class Platform
         {
             // Check if the extension is initialized, if not, initiate it.
             //
-            ! Bundle::started($extension) and Bundle::start($extension);
+            ! ($extension == 'application') and ! Bundle::started($namespace.'/'.$extension) and Bundle::start($namespace.'/'.$extension);
 
             // Check if the plugin class exists.
             //

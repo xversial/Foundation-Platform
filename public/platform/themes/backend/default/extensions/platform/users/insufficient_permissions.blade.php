@@ -2,7 +2,7 @@
 
 <!-- Page Title -->
 @section('title')
-	{{ Lang::line('dashboard::general.title') }}
+	{{ Lang::line('platform/dashboard::general.title') }}
 @endsection
 
 <!-- Queue Styles | e.g Theme::queue_asset('name', 'path_to_css', 'dependency')-->
@@ -23,7 +23,7 @@
 
 	<div class="messages">
 		<div class="alert alert-error">
-			{{ lang::line('users::messages.insufficient_permissions') }}
+			{{ Lang::line('platform/users::messages.insufficient_permissions') }}
 		</div>
 	</div>
 

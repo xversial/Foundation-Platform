@@ -2,7 +2,7 @@
 
 <!-- Page Title -->
 @section('title')
-    {{ Lang::line('themes::general.title') }}
+    {{ Lang::line('platform/themes::general.title') }}
 @endsection
 
 <!-- Queue Styles -->
@@ -24,7 +24,7 @@
                     <span class="icon-reorder"></span>
                 </a>
 
-                <a class="brand" href="#">{{ Lang::line('themes::general.title') }}</a>
+                <a class="brand" href="#">{{ Lang::line('platform/themes::general.title') }}</a>
 
                 <!-- Everything you want hidden at 940px or less, place within here -->
                 <div id="tertiary-navigation" class="nav-collapse">
@@ -44,11 +44,11 @@
                     <img src="{{ $theme['thumbnail'] }}" title="{{ $theme['name'] }}">
                     <div class="caption">
                         <h5>{{ $theme['name'] }}</h5>
-                        
-                        <p class="version">{{ Lang::line('themes::general.version') }} {{ $theme['version'] }}</p>
-                        
-                        <p class="author">{{ Lang::line('themes::general.author') }}  {{ $theme['author'] }}</p>
-                        
+
+                        <p class="version">{{ Lang::line('platform/themes::general.version') }} {{ $theme['version'] }}</p>
+
+                        <p class="author">{{ Lang::line('platform/themes::general.author') }}  {{ $theme['author'] }}</p>
+
                         <p>{{ $theme['description'] }}</p>
                         @if ($theme['active'])
                         <a href="{{ URL::to_admin('themes/edit/' . $type . '/' . $theme['theme']) }}" class="btn" data-theme="{ $active['theme'] }}" data-type="backend">{{ Lang::line('button.edit') }}</a>

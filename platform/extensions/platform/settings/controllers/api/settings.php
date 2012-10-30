@@ -41,7 +41,7 @@ use Platform\Settings\Model\Setting;
  * @link       http://cartalyst.com
  * @version    1.1
  */
-class Settings_API_Settings_Controller extends API_Controller
+class Platform_Settings_API_Settings_Controller extends API_Controller
 {
     /**
      * --------------------------------------------------------------------------
@@ -89,7 +89,7 @@ class Settings_API_Settings_Controller extends API_Controller
         if ( ! $result)
         {
             return new Response(array(
-                'message' => Lang::line('settings::messages.errors.none_found')->get()
+                'message' => Lang::line('platform/settings::messages.errors.none_found')->get()
             ), API::STATUS_NOT_FOUND);
         }
 

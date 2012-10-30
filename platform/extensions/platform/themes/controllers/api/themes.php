@@ -32,7 +32,7 @@ use Theme\Theme as BundleTheme,
  * --------------------------------------------------------------------------
  * Themes > API Class
  * --------------------------------------------------------------------------
- * 
+ *
  * API class to manage themes.
  *
  * @package    Platform
@@ -42,7 +42,7 @@ use Theme\Theme as BundleTheme,
  * @link       http://cartalyst.com
  * @version    1.1
  */
-class Themes_API_Themes_Controller extends API_Controller
+class Platform_Themes_API_Themes_Controller extends API_Controller
 {
     /**
      * --------------------------------------------------------------------------
@@ -90,7 +90,7 @@ class Themes_API_Themes_Controller extends API_Controller
             // Theme was not found.
             //
             return new Response(array(
-                'message' => Lang::line('themes::messages.not_found', array('theme' => $name))->get()
+                'message' => Lang::line('platform/themes::messages.not_found', array('theme' => $name))->get()
             ), API::STATUS_NOT_FOUND);
         }
 
@@ -152,7 +152,7 @@ class Themes_API_Themes_Controller extends API_Controller
         // No themes were found.
         //
         return new Response(array(
-            'message' => Lang::line('themes::messages.no_themes_found')->get()
+            'message' => Lang::line('platform/themes::messages.no_themes_found')->get()
         ), API::STATUS_NOT_FOUND);
     }
 
@@ -207,7 +207,7 @@ class Themes_API_Themes_Controller extends API_Controller
             // Theme was not found.
             //
             return new Response(array(
-                'message' => Lang::line('themes::messages.not_found', array('theme' => $type . '\\' . $name))->get()
+                'message' => Lang::line('platform/themes::messages.not_found', array('theme' => $type . '\\' . $name))->get()
             ), API::STATUS_NOT_FOUND);
         }
 
@@ -218,7 +218,7 @@ class Themes_API_Themes_Controller extends API_Controller
             // Theme is already activated.
             //
             return new Response(array(
-                'message' => Lang::line('themes::messages.activate.already', array('theme' => $type . '\\' . $name))->get()
+                'message' => Lang::line('platform/themes::messages.activate.already', array('theme' => $type . '\\' . $name))->get()
             ), API::STATUS_BAD_REQUEST);
         }
 
@@ -246,7 +246,7 @@ class Themes_API_Themes_Controller extends API_Controller
             // Theme was activated with success.
             //
             return new Response(array(
-                'message' => Lang::line('themes::messages.activate.success', array('theme' => $type . '\\' . $name))->get()
+                'message' => Lang::line('platform/themes::messages.activate.success', array('theme' => $type . '\\' . $name))->get()
             ));
         }
         catch (Exception $e)
@@ -254,7 +254,7 @@ class Themes_API_Themes_Controller extends API_Controller
             // Theme was not activated.
             //
             return new Response(array(
-                'message' => Lang::line('themes::messages.activate.fail', array('theme' => $type . '\\' . $name))->get()
+                'message' => Lang::line('platform/themes::messages.activate.fail', array('theme' => $type . '\\' . $name))->get()
             ), API::STATUS_BAD_REQUEST);
         }
     }
@@ -284,7 +284,7 @@ class Themes_API_Themes_Controller extends API_Controller
         if ( ! $theme_info = Theme::fetch($type, $name))
         {
             return new Response(array(
-                'message' => Lang::line('themes::messages.not_found', array('theme' => $type . '\\' . $name))->get()
+                'message' => Lang::line('platform/themes::messages.not_found', array('theme' => $type . '\\' . $name))->get()
             ), API::STATUS_NOT_FOUND);
         }
 
@@ -339,7 +339,7 @@ class Themes_API_Themes_Controller extends API_Controller
             // Theme was not found.
             //
             return new Response(array(
-                'message' => Lang::line('themes::messages.not_found', array('theme' => $type . '\\' . $theme))->get()
+                'message' => Lang::line('platform/themes::messages.not_found', array('theme' => $type . '\\' . $theme))->get()
             ), API::STATUS_NOT_FOUND);
         }
 
@@ -380,7 +380,7 @@ class Themes_API_Themes_Controller extends API_Controller
         // An error ocurred while updating the theme.
         //
         return new Response(array(
-            'message' => Lang::line('themes::messages.update.fail', array('theme' => $type . '\\' . $theme))->get(),
+            'message' => Lang::line('platform/themes::messages.update.fail', array('theme' => $type . '\\' . $theme))->get(),
             'errors'  => ($theme_model->validation()->errors->has()) ? $theme_model->validation()->errors->all() : array()
         ), ($theme_model->validation()->errors->has()) ? API::STATUS_BAD_REQUEST : API::STATUS_UNPROCESSABLE_ENTITY);
     }
@@ -416,13 +416,13 @@ class Themes_API_Themes_Controller extends API_Controller
         //
         if($theme_model->delete())
         {
-           return new Response($theme, API::STATUS_OK); 
+           return new Response($theme, API::STATUS_OK);
         }
 
         // An error ocurred while updating the theme.
         //
         return new Response(array(
-            'message' => Lang::line('themes::messages.update.fail', array('theme' => $type . '\\' . $theme))->get(),
+            'message' => Lang::line('platform/themes::messages.update.fail', array('theme' => $type . '\\' . $theme))->get(),
             'errors'  => ($theme_model->validation()->errors->has()) ? $theme_model->validation()->errors->all() : array()
         ), ($theme_model->validation()->errors->has()) ? API::STATUS_BAD_REQUEST : API::STATUS_UNPROCESSABLE_ENTITY);
     }

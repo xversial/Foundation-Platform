@@ -20,7 +20,7 @@
 
 use Platform\Users\Group;
 
-class Users_API_Groups_Controller extends API_Controller
+class Platform_Users_API_Groups_Controller extends API_Controller
 {
 
 	/**
@@ -60,7 +60,7 @@ class Users_API_Groups_Controller extends API_Controller
 
 		if (empty($groups))
 		{
-			return new Response(Lang::line('users::messages.groups.does_not_exist')->get(), API::STATUS_NOT_FOUND);
+			return new Response(Lang::line('platform/users::messages.groups.does_not_exist')->get(), API::STATUS_NOT_FOUND);
 		}
 
 		$group = $groups[0];
@@ -92,7 +92,7 @@ class Users_API_Groups_Controller extends API_Controller
 			else
 			{
 				return new Response(array(
-					'message' => Lang::line('users::messages.create.error')->get(),
+					'message' => Lang::line('platform/users::messages.create.error')->get(),
 					'errors'  => ($group->validation()->errors->has()) ? $group->validation()->errors->all() : array(),
 					), ($group->validation()->errors->has()) ? API::STATUS_BAD_REQUEST : API::STATUS_UNPROCESSABLE_ENTITY);
 			}
@@ -177,7 +177,7 @@ class Users_API_Groups_Controller extends API_Controller
 			}
 
 			return new Response(array(
-				'message' => Lang::line('users::messages.groups.delete.error')->get(),
+				'message' => Lang::line('platform/users::messages.groups.delete.error')->get(),
 				'errors'  => ($group->validation()->errors->has()) ? $group->validation()->errors->all() : array(),
 			), ($group->validation()->errors->has()) ? API::STATUS_BAD_REQUEST : API::STATUS_UNPROCESSABLE_ENTITY);
 		}
@@ -199,8 +199,8 @@ class Users_API_Groups_Controller extends API_Controller
 	{
 		$defaults = array(
 			'select'    => array(
-				'groups.id'     => Lang::line('users::table.groups.id')->get(),
-				'name'          => Lang::line('users::table.groups.name')->get(),
+				'groups.id'     => Lang::line('platform/users::table.groups.id')->get(),
+				'name'          => Lang::line('platform/users::table.groups.name')->get(),
 			),
 			'alias'     => array(
 				'groups.id' => 'id',

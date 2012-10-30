@@ -49,7 +49,7 @@ Route::any(ADMIN . '/(:any?)/(:any?)/(:any?)(/.*)?', function($bundle = 'dashboa
     else
     {
         /**
-         * @todo, remove. this is a temp experiement and 
+         * @todo, remove. this is a temp experiement and
          * should call a method in the extnesions manager.
          */
         $parts = explode('/', $bundle);
@@ -83,7 +83,12 @@ Route::any(ADMIN . '/(:any?)/(:any?)/(:any?)(/.*)?', function($bundle = 'dashboa
  */
 Route::any(API . '/(:any)/(:num)', function($bundle = DEFAULT_BUNDLE, $id = null, $params = null)
 {
-    return Controller::call($bundle . '::api.' . $bundle . '@index', array($id));
+	if ( ! Bundle::exists($_bundle = Bundle::handles($bundle)))
+    {
+        return Response::error('404');
+    }
+
+    return Controller::call($_bundle . '::api.' . $bundle . '@index', array($id));
 });
 
 
@@ -100,7 +105,12 @@ Route::any(API . '/(:any)/(:num)', function($bundle = DEFAULT_BUNDLE, $id = null
  */
 Route::any(API . '/(:any)/(:any)/(:num)', function($bundle = DEFAULT_BUNDLE, $controller = null, $id = null, $params = null)
 {
-    return Controller::call($bundle . '::api.' . $controller . '@index', array($id));
+	if ( ! Bundle::exists($_bundle = Bundle::handles($bundle)))
+    {
+        return Response::error('404');
+    }
+
+    return Controller::call($_bundle . '::api.' . $controller . '@index', array($id));
 });
 
 
@@ -114,26 +124,31 @@ Route::any(API . '/(:any)/(:any)/(:num)', function($bundle = DEFAULT_BUNDLE, $co
  */
 Route::any(array(API . '/(:any?)/(:any?)/(:any?)(/.*)?', API . '/(:any?)/(:any?)(/.*)?', API . '/(:any?)(/.*)?'), function($bundle = 'dashboard', $controller = null, $action = null, $params = null)
 {
-    // Check if the extension exists.
-    //
-    if ( ! Bundle::exists($bundle))
+	if ( ! Bundle::exists($_bundle = Bundle::handles($bundle)))
     {
-        $bundle = DEFAULT_BUNDLE;
+        return Response::error('404');
     }
+
+    // // Check if the extension exists.
+    // //
+    // if ( ! Bundle::exists($bundle))
+    // {
+    //     $bundle = DEFAULT_BUNDLE;
+    // }
 
     // Check if the controller exists.
     //
-    if (Controller::resolve($bundle, $_controller = 'api.' . $controller))
+    if (Controller::resolve($_bundle, $_controller = 'api.' . $controller))
     {
-        $controller = $bundle . '::' . $_controller . '@' . (($action) ?: 'index');
+        $controller = $_bundle . '::' . $_controller . '@' . (($action) ?: 'index');
         $params     = explode('/', substr($params, 1));
     }
 
     // If it doesn't, default to the bundle name as a controller.
     //
-    elseif (Controller::resolve($bundle, $_controller = 'api.' . $bundle))
+    elseif (Controller::resolve($_bundle, $_controller = 'api.' . $bundle))
     {
-        $controller = $bundle . '::' . $_controller . '@' . (($controller) ?: 'index');
+        $controller = $_bundle . '::' . $_controller . '@' . (($controller) ?: 'index');
         $params     = explode('/', $action.$params);
     }
 
@@ -181,28 +196,28 @@ Event::listen('500', function(){ return Response::error('500'); });
  * --------------------------------------------------------------------------
  *  Route Filters
  * --------------------------------------------------------------------------
- * 
+ *
  *  Filters provide a convenient method for attaching functionality to your
  *  routes. The built-in before and after filters are called before and
  *  after every request to your application, and you may even create
  *  other filters that can be attached to individual routes.
- * 
+ *
  *  Let's walk through an example...
- * 
+ *
  *  First, define a filter:
- * 
+ *
  *         Route::filter('filter', function()
  *         {
  *             return 'Filtered!';
  *         });
- * 
+ *
  *  Next, attach the filter to a route:
- * 
+ *
  *         Router::register('GET /', array('before' => 'filter', function()
  *         {
  *             return 'Hello World!';
  *         }));
- * 
+ *
  */
 Route::filter('before', function(){});
 Route::filter('after', function($response){});

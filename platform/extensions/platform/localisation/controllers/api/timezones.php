@@ -31,7 +31,7 @@ use Platform\Localisation\Model\Timezone;
  * --------------------------------------------------------------------------
  * Localisation > Timezones > API Class
  * --------------------------------------------------------------------------
- * 
+ *
  * Manage the timezones.
  *
  * @package    Platform
@@ -41,7 +41,7 @@ use Platform\Localisation\Model\Timezone;
  * @link       http://cartalyst.com
  * @version    1.0
  */
-class Localisation_API__Timezones_Controller extends API_Controller
+class Platform_Localisation_API__Timezones_Controller extends API_Controller
 {
     /**
      * --------------------------------------------------------------------------

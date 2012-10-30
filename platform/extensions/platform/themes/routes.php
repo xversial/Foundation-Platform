@@ -36,7 +36,7 @@ $reserved = implode('|', Platform\Themes\Theme::types());
  *      /api/themes/backend/default => themes::themes.api.index(backend, default)
  *  </code>
  */
-Route::any(API . '/themes/(' . $reserved . ')/(:any?)', 'themes::api.themes@index');
+Route::any(API . '/themes/(' . $reserved . ')/(:any?)', 'platform/themes::api.themes@index');
 
 
 /**
@@ -46,7 +46,7 @@ Route::any(API . '/themes/(' . $reserved . ')/(:any?)', 'themes::api.themes@inde
  *      /api/themes/backend/default/options => themes::themes.api.options(backend, default)
  *  </code>
  */
-Route::any(API . '/themes/(' . $reserved . ')/(:any)/options', 'themes::api.themes@options');
+Route::any(API . '/themes/(' . $reserved . ')/(:any)/options', 'platform/themes::api.themes@options');
 
 
 /**
@@ -56,7 +56,7 @@ Route::any(API . '/themes/(' . $reserved . ')/(:any)/options', 'themes::api.them
  *      /api/themes/backend/default/reset => themes::themes.api.reset(backend, default)
  *  </code>
  */
-Route::any(API . '/themes/(' . $reserved . ')/(:any)/reset', 'themes::api.themes@reset');
+Route::any(API . '/themes/(' . $reserved . ')/(:any)/reset', 'platform/themes::api.themes@reset');
 
 
 /**
@@ -68,7 +68,7 @@ Route::any(API . '/themes/(' . $reserved . ')/(:any)/reset', 'themes::api.themes
  *      /admin/themes/backend/ => themes::themes.admin.index(backend)
  *  </code>
  */
-Route::any(ADMIN . '/themes/(' . $reserved . ')', 'themes::admin.themes@index');
+Route::any(ADMIN . '/themes/(' . $reserved . ')', 'platform/themes::admin.themes@index');
 
 
 /**
@@ -80,7 +80,7 @@ Route::any(ADMIN . '/themes/(' . $reserved . ')', 'themes::admin.themes@index');
  *      /api/themes/backend/edit/default => themes::themes.admin.edit(backend, default)
  *  </code>
  */
-Route::any(ADMIN . '/themes/(' . $reserved . ')/edit/(:any)', 'themes::admin.themes@edit');
+Route::any(ADMIN . '/themes/(' . $reserved . ')/edit/(:any)', 'platform/themes::admin.themes@edit');
 
 
 /*

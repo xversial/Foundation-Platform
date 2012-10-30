@@ -33,7 +33,7 @@
  * @link       http://cartalyst.com
  * @version    1.1
  */
-class Extensions_Admin_Extensions_Controller extends Admin_Controller
+class Platform_Extensions_Admin_Extensions_Controller extends Admin_Controller
 {
     /**
      * --------------------------------------------------------------------------
@@ -192,7 +192,7 @@ class Extensions_Admin_Extensions_Controller extends Admin_Controller
 
             // Set the success message.
             //
-            Platform::messages()->success(Lang::line('extensions.install.success', array('extension' => $slug))->get());
+            Platform::messages()->success(Lang::line('platform/extensions.install.success', array('extension' => $slug))->get());
         }
         catch (APIClientException $e)
         {
@@ -235,7 +235,7 @@ class Extensions_Admin_Extensions_Controller extends Admin_Controller
 
             // Set the success message.
             //
-            Platform::messages()->success(Lang::line('extensions.uninstall.success', array('extension' => $slug))->get());
+            Platform::messages()->success(Lang::line('platform/extensions.uninstall.success', array('extension' => $slug))->get());
         }
         catch (APIClientException $e)
         {
@@ -278,7 +278,7 @@ class Extensions_Admin_Extensions_Controller extends Admin_Controller
 
             // Set the success message.
             //
-            Platform::messages()->success(Lang::line('extensions.enable.success', array('extension' => $slug))->get());
+            Platform::messages()->success(Lang::line('platform/extensions.enable.success', array('extension' => $slug))->get());
         }
         catch (APIClientException $e)
         {
@@ -321,7 +321,7 @@ class Extensions_Admin_Extensions_Controller extends Admin_Controller
 
             // Set the success message.
             //
-            Platform::messages()->success(Lang::line('extensions.disable.success', array('extension' => $slug))->get());
+            Platform::messages()->success(Lang::line('platform/extensions.disable.success', array('extension' => $slug))->get());
         }
         catch (APIClientException $e)
         {
@@ -367,7 +367,7 @@ class Extensions_Admin_Extensions_Controller extends Admin_Controller
 
             // Set the success message.
             //
-            Platform::messages()->success(Lang::line('extensions.update.success', array('extension' => $slug))->get());
+            Platform::messages()->success(Lang::line('platform/extensions.update.success', array('extension' => $slug))->get());
         }
         catch (APIClientException $e)
         {

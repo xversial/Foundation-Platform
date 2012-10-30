@@ -2,7 +2,7 @@
 
 <!-- Page Title -->
 @section('title')
-	{{ Lang::line('menus::general.title') }}
+	{{ Lang::line('platform/menus::general.title') }}
 @endsection
 
 <!-- Queue Styles -->
@@ -182,8 +182,8 @@
 
 		<header class="clearfix">
 			<div class="pull-left">
-				<h1>{{ Lang::line('menus::general.update.title') }}</h1>
-				<p>{{ Lang::line('menus::general.update.description') }}</p>
+				<h1>{{ Lang::line('platform/menus::general.update.title') }}</h1>
+				<p>{{ Lang::line('platform/menus::general.update.description') }}</p>
 			</div>
 			<nav class="tertiary-navigation pull-right visible-desktop">
 				@widget('platform.menus::menus.nav', 2, 1, 'nav nav-pills', ADMIN)
@@ -197,11 +197,11 @@
 
 			<fieldset class="form-horizontal">
 
-				<legend>{{ Lang::line('menus::form.legend') }}</legend>
+				<legend>{{ Lang::line('platform/menus::form.legend') }}</legend>
 
 				<div class="control-group">
 					<label class="control-label" for="menu-name">
-						{{ Lang::line('menus::form.root.name') }}
+						{{ Lang::line('platform/menus::form.root.name') }}
 					</label>
 					<div class="controls">
 						<input type="text" name="name" id="menu-name" value="{{ array_get($menu, 'name') }}" {{ (array_key_exists('user_editable', $menu) and ( ! array_get($menu, 'user_editable'))) ? 'disabled' : 'required'}}>
@@ -210,7 +210,7 @@
 
 				<div class="control-group">
 					<label class="control-label" for="menu-slug">
-						{{ Lang::line('menus::form.root.slug') }}
+						{{ Lang::line('platform/menus::form.root.slug') }}
 					</label>
 					<div class="controls">
 						<input type="text" name="slug" id="menu-slug" value="{{ array_get($menu, 'slug') }}"  {{ (array_key_exists('user_editable', $menu) and ( ! array_get($menu, 'user_editable'))) ? 'disabled' : 'required'}}>
@@ -222,24 +222,24 @@
 			<div class="row-fluid">
 				<div class="span3" id="menu-new-child">
 					<fieldset>
-						<legend>{{ Lang::line('menus::form.create.child.legend') }}</legend>
+						<legend>{{ Lang::line('platform/menus::form.create.child.legend') }}</legend>
 
 						<!-- Item Name -->
 						<div class="control-group">
-							<input type="text" id="new-child-name" class="input-block-level" value="" placeholder="{{ Lang::line('menus::form.child.name') }}" required>
+							<input type="text" id="new-child-name" class="input-block-level" value="" placeholder="{{ Lang::line('platform/menus::form.child.name') }}" required>
 						</div>
 
 						<!-- Slug -->
 						<div class="control-group">
-							<input type="text" id="new-child-slug" class="input-block-level" value="" placeholder="{{ Lang::line('menus::form.child.slug') }}" required>
+							<input type="text" id="new-child-slug" class="input-block-level" value="" placeholder="{{ Lang::line('platform/menus::form.child.slug') }}" required>
 						</div>
 
-						<label>{{ Lang::line('menus::form.child.type.title') }}</label>
+						<label>{{ Lang::line('platform/menus::form.child.type.title') }}</label>
 
 						<select id="new-child-type" class="input-block-level">
-							<option value="{{ Platform\Menus\Menu::TYPE_STATIC }}" selected>{{ Lang::line('menus::form.child.type.static') }}</option>
+							<option value="{{ Platform\Menus\Menu::TYPE_STATIC }}" selected>{{ Lang::line('platform/menus::form.child.type.static') }}</option>
 							@if (count($pages) > 0)
-								<option value="{{ Platform\Menus\Menu::TYPE_PAGE }}">{{ Lang::line('menus::form.child.type.page') }}</option>
+								<option value="{{ Platform\Menus\Menu::TYPE_PAGE }}">{{ Lang::line('platform/menus::form.child.type.page') }}</option>
 							@endif
 						</select>
 
@@ -247,7 +247,7 @@
 
 							<!-- URI -->
 							<div class="control-group">
-								<input type="text" id="new-child-uri" class="input-block-level" value="" placeholder="{{ Lang::line('menus::form.child.uri') }}">
+								<input type="text" id="new-child-uri" class="input-block-level" value="" placeholder="{{ Lang::line('platform/menus::form.child.uri') }}">
 							</div>
 
 						</div>
@@ -270,41 +270,41 @@
 						<div class="control-group">
 							<label class="checkbox">
 								<input type="checkbox" value="1" id="new-child-secure" class="checkbox">
-								{{ Lang::line('menus::form.child.secure') }}
+								{{ Lang::line('platform/menus::form.child.secure') }}
 							</label>
 						</div>
 
 						<!-- Visibility -->
 						<div class="control-group">
-							<label for="new-child-visibility">{{ Lang::line('menus::form.child.visibility.title') }}</label>
+							<label for="new-child-visibility">{{ Lang::line('platform/menus::form.child.visibility.title') }}</label>
 							<select id="new-child-visibility" class="input-block-level">
-								<option value="{{ Platform\Menus\Menu::VISIBILITY_ALWAYS }}" selected>{{ Lang::line('menus::form.child.visibility.always') }}</option>
-								<option value="{{ Platform\Menus\Menu::VISIBILITY_LOGGED_IN }}">{{ Lang::line('menus::form.child.visibility.logged_in') }}</option>
-								<option value="{{ Platform\Menus\Menu::VISIBILITY_LOGGED_OUT }}">{{ Lang::line('menus::form.child.visibility.logged_out') }}</option>
-								<option value="{{ Platform\Menus\Menu::VISIBILITY_ADMIN }}">{{ Lang::line('menus::form.child.visibility.admin') }}</option>
+								<option value="{{ Platform\Menus\Menu::VISIBILITY_ALWAYS }}" selected>{{ Lang::line('platform/menus::form.child.visibility.always') }}</option>
+								<option value="{{ Platform\Menus\Menu::VISIBILITY_LOGGED_IN }}">{{ Lang::line('platform/menus::form.child.visibility.logged_in') }}</option>
+								<option value="{{ Platform\Menus\Menu::VISIBILITY_LOGGED_OUT }}">{{ Lang::line('platform/menus::form.child.visibility.logged_out') }}</option>
+								<option value="{{ Platform\Menus\Menu::VISIBILITY_ADMIN }}">{{ Lang::line('platform/menus::form.child.visibility.admin') }}</option>
 							</select>
 						</div>
 
 						<!-- Target -->
 						<div class="control-group">
-							<label>{{ Lang::line('menus::form.child.target.title') }}</label>
+							<label>{{ Lang::line('platform/menus::form.child.target.title') }}</label>
 							<select id="new-child-target" class="input-block-level">
-								<option value="{{ Platform\Menus\Menu::TARGET_SELF }}" selected>{{ Lang::line('menus::form.child.target.self') }}</option>
-								<option value="{{ Platform\Menus\Menu::TARGET_BLANK }}">{{ Lang::line('menus::form.child.target.blank') }}</option>
-								<option value="{{ Platform\Menus\Menu::TARGET_PARENT }}">{{ Lang::line('menus::form.child.target.parent') }}</option>
-								<option value="{{ Platform\Menus\Menu::TARGET_TOP }}">{{ Lang::line('menus::form.child.target.top') }}</option>
+								<option value="{{ Platform\Menus\Menu::TARGET_SELF }}" selected>{{ Lang::line('platform/menus::form.child.target.self') }}</option>
+								<option value="{{ Platform\Menus\Menu::TARGET_BLANK }}">{{ Lang::line('platform/menus::form.child.target.blank') }}</option>
+								<option value="{{ Platform\Menus\Menu::TARGET_PARENT }}">{{ Lang::line('platform/menus::form.child.target.parent') }}</option>
+								<option value="{{ Platform\Menus\Menu::TARGET_TOP }}">{{ Lang::line('platform/menus::form.child.target.top') }}</option>
 							</select>
 						</div>
 
 						<!-- CSS class -->
 						<div class="control-group">
-							<label for="new-child-class">{{ Lang::line('menus::form.child.class') }}</label>
-							<input type="text" id="new-child-class" class="input-block-level" value="" placeholder="{{ Lang::line('menus::form.child.class') }}">
+							<label for="new-child-class">{{ Lang::line('platform/menus::form.child.class') }}</label>
+							<input type="text" id="new-child-class" class="input-block-level" value="" placeholder="{{ Lang::line('platform/menus::form.child.class') }}">
 						</div>
 
 						<div class="form-actions">
 							<button type="button" class="btn btn-primary children-add-new">
-								{{ Lang::line('menus::button.add_child') }}
+								{{ Lang::line('platform/menus::button.add_child') }}
 							</button>
 						</div>
 

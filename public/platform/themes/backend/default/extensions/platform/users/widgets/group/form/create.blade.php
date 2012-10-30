@@ -5,13 +5,13 @@
 
 		<!-- Group Name -->
 		<div class="control-group">
-			<label class="control-label" for="name">{{ Lang::line('users::form.groups.create.name') }}</label>
+			<label class="control-label" for="name">{{ Lang::line('platform/users::form.groups.create.name') }}</label>
 			<div class="controls">
 				<div class="input-append">
 					<input type="text" id="name" name="name" value="{{ Input::old('name'); }}" required>
 					<span class="add-on"><i class="icon-group"></i></span>
 				</div>
-				<span class="help-block">{{ lang::line('users::form.groups.create.name_help') }}</span>
+				<span class="help-block">{{ Lang::line('platform/users::form.groups.create.name_help') }}</span>
 			</div>
 		</div>
 

@@ -42,7 +42,7 @@ use Platform\Menus\Menu,
  * @link       http://cartalyst.com
  * @version    1.1
  */
-class Settings_Admin_Settings_Controller extends Admin_Controller
+class Platform_Settings_Admin_Settings_Controller extends Admin_Controller
 {
     /**
      * --------------------------------------------------------------------------
@@ -215,7 +215,7 @@ class Settings_Admin_Settings_Controller extends Admin_Controller
                 {
                     // Set the success message.
                     //
-                    Platform::messages()->success(Lang::line('settings::message.success', array('setting' => $setting)));
+                    Platform::messages()->success(Lang::line('platform/settings::message.success', array('setting' => $setting)));
                 }
             }
 

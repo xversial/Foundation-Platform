@@ -2,7 +2,7 @@
 
 use Platform\Pages\Helper;
 
-class Pages_Pages_Controller extends Public_Controller
+class Platform_Pages_Pages_Controller extends Public_Controller
 {
 	public function get_page($slug = false)
 	{

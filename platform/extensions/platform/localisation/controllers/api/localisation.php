@@ -23,7 +23,7 @@
  * --------------------------------------------------------------------------
  * Localisation > API Class
  * --------------------------------------------------------------------------
- * 
+ *
  * This is basically an alias to get the countries, or a country information.
  *
  * @package    Platform
@@ -33,7 +33,7 @@
  * @link       http://cartalyst.com
  * @version    1.0
  */
-class Localisation_API_Localisation_Controller extends API_Controller
+class Platform_Localisation_API_Localisation_Controller extends API_Controller
 {
     /**
      * --------------------------------------------------------------------------

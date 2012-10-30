@@ -57,9 +57,9 @@ return array(
      * -----------------------------------------
      */
     'rules' => array(
-        'menus::admin.menus@index',
-        'menus::admin.menus@create',
-        'menus::admin.menus@edit',
-        'menus::admin.menus@delete'
+        'platform/menus::admin.menus@index',
+        'platform/menus::admin.menus@create',
+        'platform/menus::admin.menus@edit',
+        'platform/menus::admin.menus@delete'
     )
 );

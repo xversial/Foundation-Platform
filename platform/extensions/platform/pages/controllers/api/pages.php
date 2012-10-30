@@ -2,7 +2,7 @@
 
 use Platform\Pages\Model\Page;
 
-class Pages_Api_Pages_Controller extends API_Controller
+class Platform_Pages_Api_Pages_Controller extends API_Controller
 {
 	public function get_index($id = false)
 	{
@@ -28,11 +28,11 @@ class Pages_Api_Pages_Controller extends API_Controller
 				return new Response($content);
 			}
 
-			return new Response(Lang::line('pages::messages.pages.not_found')->get(), API::STATUS_NOT_FOUND);
+			return new Response(Lang::line('platform/pages::messages.pages.not_found')->get(), API::STATUS_NOT_FOUND);
 		}
 		catch (Exception $e)
 		{
-			return new Response(Lang::line('pages::messages.pages.not_found')->get(), API::STATUS_NOT_FOUND);
+			return new Response(Lang::line('platform/pages::messages.pages.not_found')->get(), API::STATUS_NOT_FOUND);
 		}
 	}
 
@@ -50,7 +50,7 @@ class Pages_Api_Pages_Controller extends API_Controller
 			}
 
 			return new Response(array(
-				'message' => Lang::line('pages::messages.pages.create.error')->get(),
+				'message' => Lang::line('platform/pages::messages.pages.create.error')->get(),
 				'errors'  => ($content->validation()->errors->has()) ? $content->validation()->errors->all() : array(),
 				), ($content->validation()->errors->has()) ? API::STATUS_BAD_REQUEST : API::STATUS_UNPROCESSABLE_ENTITY);
 		}
@@ -76,7 +76,7 @@ class Pages_Api_Pages_Controller extends API_Controller
 			}
 
 			return new Response(array(
-					'message' => Lang::line('pages::messages.pages.edit.error')->get(),
+					'message' => Lang::line('platform/pages::messages.pages.edit.error')->get(),
 					'errors'  => ($content->validation()->errors->has()) ? $content->validation()->errors->all() : array(),
 				), ($content->validation()->errors->has()) ? API::STATUS_BAD_REQUEST : API::STATUS_UNPROCESSABLE_ENTITY);
 		}
@@ -97,7 +97,7 @@ class Pages_Api_Pages_Controller extends API_Controller
 			if ($content === null)
 			{
 				return new Response(array(
-					'message' => Lang::line('pages::messages.pages.delete.error')->get()
+					'message' => Lang::line('platform/pages::messages.pages.delete.error')->get()
 				), API::STATUS_NOT_FOUND);
 			}
 
@@ -107,7 +107,7 @@ class Pages_Api_Pages_Controller extends API_Controller
 			}
 
 			return new Response(array(
-				'message' => Lang::line('pages::messages.pages.delete.error')->get(),
+				'message' => Lang::line('platform/pages::messages.pages.delete.error')->get(),
 				'errors'  => ($content->validation()->errors->has()) ? $content->validation()->errors->all() : array(),
 			), ($content->validation()->errors->has()) ? API::STATUS_BAD_REQUEST : API::STATUS_UNPROCESSABLE_ENTITY);
 		}
@@ -123,11 +123,11 @@ class Pages_Api_Pages_Controller extends API_Controller
 	{
 		$defaults = array(
 			'select'    => array(
-				'id'       => Lang::line('pages::table.pages.id')->get(),
-				'name'     => Lang::line('pages::table.pages.name')->get(),
-				'slug'     => Lang::line('pages::table.pages.slug')->get(),
-				'template' => Lang::line('pages::table.pages.template')->get(),
-				'status'   => Lang::line('pages::table.pages.status')->get(),
+				'id'       => Lang::line('platform/pages::table.pages.id')->get(),
+				'name'     => Lang::line('platform/pages::table.pages.name')->get(),
+				'slug'     => Lang::line('platform/pages::table.pages.slug')->get(),
+				'template' => Lang::line('platform/pages::table.pages.template')->get(),
+				'status'   => Lang::line('platform/pages::table.pages.status')->get(),
 			),
 			'alias'     => array(),
 			'where'     => array(),

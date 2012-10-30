@@ -2,7 +2,7 @@
 
 <!-- Page Title -->
 @section('title')
-	{{ Lang::line('users::general.users.update.title') }}
+	{{ Lang::line('platform/users::general.users.update.title') }}
 @endsection
 
 <!-- Queue Styles | e.g Theme::queue_asset('name', 'path_to_css', 'dependency')-->
@@ -53,7 +53,7 @@
 				<span class="icon-bar"></span>
             </a>
 
-            <a class="brand" href="#">{{ Lang::line('users::general.users.update.title') }}</a>
+            <a class="brand" href="#">{{ Lang::line('platform/users::general.users.update.title') }}</a>
 
             <!-- Everything you want hidden at 940px or less, place within here -->
             <div id="tertiary-navigation" class="nav-collapse">
@@ -67,8 +67,8 @@
     <!-- Quaternary Desktop Navigation -->
     <nav class="quaternary-navigation tabbable visible-desktop">
 	    <ul class="nav nav-tabs">
-			<li class="active"><a href="#general" data-toggle="tab">{{ Lang::line('users::general.tabs.general') }}</a></li>
-			<li><a href="#permissions" data-toggle="tab">{{ Lang::line('users::general.tabs.permissions') }}</a></li>
+			<li class="active"><a href="#general" data-toggle="tab">{{ Lang::line('platform/users::general.tabs.general') }}</a></li>
+			<li><a href="#permissions" data-toggle="tab">{{ Lang::line('platform/users::general.tabs.permissions') }}</a></li>
 		</ul>
     </nav>
 
@@ -76,8 +76,8 @@
          <!-- Quaternary Mobile Navigation -->
         <nav class="hidden-desktop">
 	        <ul class="nav nav-stacked nav-pills">
-				<li class="active"><a href="#general" data-toggle="tab">{{ Lang::line('users::general.tabs.general') }}</a></li>
-				<li><a href="#permissions" data-toggle="tab">{{ Lang::line('users::general.tabs.permissions') }}</a></li>
+				<li class="active"><a href="#general" data-toggle="tab">{{ Lang::line('platform/users::general.tabs.general') }}</a></li>
+				<li><a href="#permissions" data-toggle="tab">{{ Lang::line('platform/users::general.tabs.permissions') }}</a></li>
 			</ul>
         </nav>
 

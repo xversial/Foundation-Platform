@@ -56,19 +56,19 @@ return array(
      * -----------------------------------------
      */
     'rules' => array(
-        'localisation::admin.countries@index',
-        'localisation::admin.countries@view',
-        'localisation::admin.countries@create',
-        'localisation::admin.countries@delete',
+        'platform/localisation::admin.countries@index',
+        'platform/localisation::admin.countries@view',
+        'platform/localisation::admin.countries@create',
+        'platform/localisation::admin.countries@delete',
 
-        'localisation::admin.currencies@index',
-        'localisation::admin.currencies@view',
-        'localisation::admin.currencies@create',
-        'localisation::admin.currencies@delete',
+        'platform/localisation::admin.currencies@index',
+        'platform/localisation::admin.currencies@view',
+        'platform/localisation::admin.currencies@create',
+        'platform/localisation::admin.currencies@delete',
 
-        'localisation::admin.languages@index',
-        'localisation::admin.languages@view',
-        'localisation::admin.languages@create',
-        'localisation::admin.languages@delete'
+        'platform/localisation::admin.languages@index',
+        'platform/localisation::admin.languages@view',
+        'platform/localisation::admin.languages@create',
+        'platform/localisation::admin.languages@delete'
     )
 );

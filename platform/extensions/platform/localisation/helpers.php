@@ -168,9 +168,9 @@ function currencies_update_intervals()
 {
     return array(
         0       => Lang::line('general.disabled')->get(),
-        86400   => Lang::line('localisation::form.general.everyday')->get(),
-        604800  => Lang::line('localisation::form.general.once_week')->get(),
-        2592000 => Lang::line('localisation::form.general.once_month')->get()
+        86400   => Lang::line('platform/localisation::form.general.everyday')->get(),
+        604800  => Lang::line('platform/localisation::form.general.once_week')->get(),
+        2592000 => Lang::line('platform/localisation::form.general.once_month')->get()
     );
 }
 

@@ -2,7 +2,7 @@
 
 <!-- Page Title -->
 @section('title')
-	{{ Lang::line('users::general.groups.title') }}
+	{{ Lang::line('platform/users::general.groups.title') }}
 @endsection
 
 <!-- Queue Styles -->
@@ -36,7 +36,7 @@
 				<span class="icon-bar"></span>
 			</a>
 
-			<a class="brand" href="#">{{ Lang::line('users::general.groups.title') }}</a>
+			<a class="brand" href="#">{{ Lang::line('platform/users::general.groups.title') }}</a>
 
 			<!-- Everything you want hidden at 940px or less, place within here -->
 			<div id="tertiary-navigation" class="nav-collapse">

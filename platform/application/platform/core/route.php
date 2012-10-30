@@ -23,7 +23,7 @@
  * --------------------------------------------------------------------------
  * Platform > Core > Route Class
  * --------------------------------------------------------------------------
- * 
+ *
  * Let's extend Laravel Route class.
  *
  * @package    Platform
@@ -70,4 +70,5 @@ class Route extends Laravel\Routing\Route
         //
         return $response;
     }
+
 }

@@ -67,6 +67,6 @@ return array(
      * -----------------------------------------
      */
     'rules' => array(
-        'settings::admin.settings@general'
+        'platform/settings::admin.settings@index'
     )
 );

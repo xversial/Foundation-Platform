@@ -23,7 +23,7 @@
  * --------------------------------------------------------------------------
  * Extensions > API Class
  * --------------------------------------------------------------------------
- * 
+ *
  * API class to manage extensions.
  *
  * @package    Platform
@@ -33,7 +33,7 @@
  * @link       http://cartalyst.com
  * @version    1.1
  */
-class Extensions_API_Extensions_Controller extends API_Controller
+class Platform_Extensions_API_Extensions_Controller extends API_Controller
 {
     /**
      * --------------------------------------------------------------------------
@@ -109,7 +109,7 @@ class Extensions_API_Extensions_Controller extends API_Controller
                 // Invalid filter, return the message.
                 //
                 return new Response(array(
-                    'message' => Lang::line('extensions.invalid_filter')->get()
+                    'message' => Lang::line('platform/extensions.invalid_filter')->get()
                 ), API::STATUS_BAD_REQUEST);
             }
 
@@ -155,7 +155,7 @@ class Extensions_API_Extensions_Controller extends API_Controller
             // Extension doesn't exist.
             //
             return new Response(array(
-                'message' => Lang::line('extensions.not_found', array('extension' => $slug))->get()
+                'message' => Lang::line('platform/extensions.not_found', array('extension' => $slug))->get()
             ), API::STATUS_BAD_REQUEST);
         }
 
@@ -241,7 +241,7 @@ class Extensions_API_Extensions_Controller extends API_Controller
             // Extension doesn't exist.
             //
             return new Response(array(
-                'message' => Lang::line('extensions.not_found', array('extension' => $slug))->get()
+                'message' => Lang::line('platform/extensions.not_found', array('extension' => $slug))->get()
             ), API::STATUS_BAD_REQUEST);
         }
 

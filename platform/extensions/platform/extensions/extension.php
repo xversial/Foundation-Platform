@@ -55,12 +55,12 @@ return array(
      * -----------------------------------------
      */
     'rules' => array(
-        'extensions::admin.extensions@index',
-        'extensions::admin.extensions@view',
-        'extensions::admin.extensions@install',
-        'extensions::admin.extensions@uninstall',
-        'extensions::admin.extensions@enable',
-        'extensions::admin.extensions@disable',
-        'extensions::admin.extensions@update'
+        'platform/extensions::admin.extensions@index',
+        'platform/extensions::admin.extensions@view',
+        'platform/extensions::admin.extensions@install',
+        'platform/extensions::admin.extensions@uninstall',
+        'platform/extensions::admin.extensions@enable',
+        'platform/extensions::admin.extensions@disable',
+        'platform/extensions::admin.extensions@update'
     )
 );

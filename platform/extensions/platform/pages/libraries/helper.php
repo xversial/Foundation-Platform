@@ -25,7 +25,7 @@ class Helper
 				return static::renderContent($content['value']);
 			}
 
-			return Lang::line('pages::messages.content.not_found')->get();
+			return Lang::line('platform/pages::messages.content.not_found')->get();
 		}
 		catch(APIClientException $e)
 		{

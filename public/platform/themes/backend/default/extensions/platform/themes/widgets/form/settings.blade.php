@@ -9,7 +9,7 @@
 
 		<!-- Frontend Theme -->
     	<div class="control-group">
-			<label for="theme-frontend">{{ Lang::line('themes::form.settings.fields.frontend') }}</label>
+			<label for="theme-frontend">{{ Lang::line('platform/themes::form.settings.fields.frontend') }}</label>
 			<div class="controls">
 				<div class="input-append">
 					{{ Form::select('theme:frontend', $frontend_themes, array_get($settings, 'theme.frontend'), array('id' => 'theme-frontend')) }}
@@ -21,7 +21,7 @@
 
 		<!-- Backend Theme -->
     	<div class="control-group">
-			<label for="theme-backend">{{ Lang::line('themes::form.settings.fields.backend') }}</label>
+			<label for="theme-backend">{{ Lang::line('platform/themes::form.settings.fields.backend') }}</label>
 			<div class="controls">
 				<div class="input-append">
 					{{ Form::select('theme:backend', $backend_themes, array_get($settings, 'theme.backend'), array('id' => 'theme-backend')) }}

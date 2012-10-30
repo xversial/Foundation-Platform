@@ -18,7 +18,7 @@
  * @link       http://cartalyst.com
  */
 
-class Users_Admin_Groups_Controller extends Admin_Controller
+class Platform_Users_Admin_Groups_Controller extends Admin_Controller
 {
 
 	/**
@@ -169,7 +169,7 @@ class Users_Admin_Groups_Controller extends Admin_Controller
 	{
 		if ( ! $id)
 		{
-			Platform::messages()->error(Lang::line('users::messages.groups.id_required')->get());
+			Platform::messages()->error(Lang::line('platform/users::messages.groups.id_required')->get());
 			return Redirect::to_admin('users/groups');
 		}
 

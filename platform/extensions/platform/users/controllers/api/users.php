@@ -21,7 +21,7 @@
 use Platform\Users\User;
 use Sentry\SentryException;
 
-class Users_API_Users_Controller extends API_Controller
+class Platform_Users_API_Users_Controller extends API_Controller
 {
 
 	/**
@@ -68,7 +68,7 @@ class Users_API_Users_Controller extends API_Controller
 
 		if (empty($users))
 		{
-			return new Response(Lang::line('users::messages.users.errors.does_not_exist', array(
+			return new Response(Lang::line('platform/users::messages.users.errors.does_not_exist', array(
 				'id' => $id,
 			))->get(), API::STATUS_NOT_FOUND);
 		}
@@ -103,7 +103,7 @@ class Users_API_Users_Controller extends API_Controller
 			else
 			{
 				return new Response(array(
-					'message' => Lang::line('users::messages.users.create.error')->get(),
+					'message' => Lang::line('platform/users::messages.users.create.error')->get(),
 					'errors'  => ($user->validation()->errors->has()) ? $user->validation()->errors->all() : array(),
 					), ($user->validation()->errors->has()) ? API::STATUS_BAD_REQUEST : API::STATUS_UNPROCESSABLE_ENTITY);
 			}
@@ -145,7 +145,7 @@ class Users_API_Users_Controller extends API_Controller
 			else
 			{
 				return new Response(array(
-					'message' => Lang::line('users::messages.users.update.error')->get(),
+					'message' => Lang::line('platform/users::messages.users.update.error')->get(),
 					'errors'  => ($user->validation()->errors->has()) ? $user->validation()->errors->all() : array(),
 				), ($user->validation()->errors->has()) ? API::STATUS_BAD_REQUEST : API::STATUS_UNPROCESSABLE_ENTITY);
 			}
@@ -176,7 +176,7 @@ class Users_API_Users_Controller extends API_Controller
 		if ($user === null)
 		{
 			return new Response(array(
-				'message' => Lang::line('users::messages.users.general.does_not_exist')->get()
+				'message' => Lang::line('platform/users::messages.users.general.does_not_exist')->get()
 			), API::STATUS_NOT_FOUND);
 		}
 
@@ -210,12 +210,12 @@ class Users_API_Users_Controller extends API_Controller
 	{
 		$defaults = array(
 			'select'   => array(
-				'users.id'       => Lang::line('users::table.users.id')->get(),
-				'first_name'     => Lang::line('users::table.users.first_name')->get(),
-				'last_name'      => Lang::line('users::table.users.last_name')->get(),
-				'email'          => Lang::line('users::table.users.email')->get(),
-				'groups.name'    => Lang::line('users::table.users.groups')->get(),
-				'settings.name'  => Lang::line('users::table.users.status')->get(),
+				'users.id'       => Lang::line('platform/users::table.users.id')->get(),
+				'first_name'     => Lang::line('platform/users::table.users.first_name')->get(),
+				'last_name'      => Lang::line('platform/users::table.users.last_name')->get(),
+				'email'          => Lang::line('platform/users::table.users.email')->get(),
+				'groups.name'    => Lang::line('platform/users::table.users.groups')->get(),
+				'settings.name'  => Lang::line('platform/users::table.users.status')->get(),
 				'created_at'     => Lang::line('general.created_at')->get(),
 			),
 			'alias'    => array(
@@ -319,7 +319,7 @@ class Users_API_Users_Controller extends API_Controller
 				$body = preg_replace(array_keys($replacements), array_values($replacements), $body);
 
 				// Construct the message
-				$message = Swift_Message::newInstance(Platform::get('settings.site.title').Lang::line('users::messages.auth.activate_account')->get())
+				$message = Swift_Message::newInstance(Platform::get('settings.site.title').Lang::line('platform/users::messages.auth.activate_account')->get())
 				           ->setFrom(Platform::get('settings.site.email'), Platform::get('settings.site.title'))
 				           ->setTo(Input::get('email'))
 				           ->setBody($body,'text/html');
@@ -332,7 +332,7 @@ class Users_API_Users_Controller extends API_Controller
 			else
 			{
 				return new Response(array(
-					'message' => Lang::line('users::messages.users.create.error')->get(),
+					'message' => Lang::line('platform/users::messages.users.create.error')->get(),
 					'errors'  => ($user->validation()->errors->has()) ? $user->validation()->errors->all() : array(),
 				), ($user->validation()->errors->has()) ? API::STATUS_BAD_REQUEST : API::STATUS_UNPROCESSABLE_ENTITY);
 
@@ -372,7 +372,7 @@ class Users_API_Users_Controller extends API_Controller
 			}
 
 			return new Response(array(
-				'message' => Lang::line('users::message.auth.activate_error')->get(),
+				'message' => Lang::line('platform/users::message.auth.activate_error')->get(),
 			), API::STATUS_UNPROCESSABLE_ENTITY);
 		}
 		catch (Exception $e)
@@ -411,7 +411,7 @@ class Users_API_Users_Controller extends API_Controller
 			}
 
 			return new Response(array(
-				'message' => Lang::line('users::messages.auth.invalid_login')->get(),
+				'message' => Lang::line('platform/users::messages.auth.invalid_login')->get(),
 			), API::STATUS_UNAUTHORIZED);
 		}
 		catch (SentryException $e)
@@ -490,7 +490,7 @@ class Users_API_Users_Controller extends API_Controller
 			}
 
 			return new Response(array(
-				'message' => Lang::line('users::messages.auth.password_error')->get(),
+				'message' => Lang::line('platform/users::messages.auth.password_error')->get(),
 			), API::STATUS_BAD_REQUEST);
 		}
 		catch (Exception $e)
@@ -522,7 +522,7 @@ class Users_API_Users_Controller extends API_Controller
 		}
 
 		return new Response(array(
-			'message' => Lang::line('users::users.auth.password_confirm_error')->get(),
+			'message' => Lang::line('platform/users::users.auth.password_confirm_error')->get(),
 		), API::STATUS_UNPROCESSABLE_ENTITY);
 	}
 

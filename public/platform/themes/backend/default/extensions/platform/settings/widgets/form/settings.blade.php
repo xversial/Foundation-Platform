@@ -9,7 +9,7 @@
 
         <!-- Site Title -->
         <div class="control-group">
-            <label for="site-title">{{ Lang::line('settings::form.settings.fields.title') }}</label>
+            <label for="site-title">{{ Lang::line('platform/settings::form.settings.fields.title') }}</label>
             <div class="controls">
                 <div class="input-append">
                     <input type="text" id="site-title" name="site:title" value="{{ array_get($settings, 'site.title') }}" required />
@@ -21,7 +21,7 @@
 
         <!-- Site Tagline -->
         <div class="control-group">
-            <label for="site-tagline">{{ Lang::line('settings::form.settings.fields.tagline') }}</label>
+            <label for="site-tagline">{{ Lang::line('platform/settings::form.settings.fields.tagline') }}</label>
             <div class="controls">
                 <div class="input-append">
                     <input type="text" id="site-tagline" name="site:tagline" value="{{ array_get($settings, 'site.tagline') }}" required />
@@ -33,7 +33,7 @@
 
         <!-- Site Email Address -->
         <div class="control-group">
-            <label for="site-email">{{ Lang::line('settings::form.settings.fields.email') }}</label>
+            <label for="site-email">{{ Lang::line('platform/settings::form.settings.fields.email') }}</label>
             <div class="controls">
                 <div class="input-append">
                      <input type="email" id="site-email" name="site:email" value="{{ array_get($settings, 'site.email') }}" required />
@@ -51,7 +51,7 @@
 
         <!-- Frontend Fallback Message -->
         <div class="control-group">
-            <label for="filesysem-frontend-fallback-message">{{ Lang::line('settings::form.settings.fields.filesystem_fallback') }}</label>
+            <label for="filesysem-frontend-fallback-message">{{ Lang::line('platform/settings::form.settings.fields.filesystem_fallback') }}</label>
             <div class="controls">
                 <div class="input-append">
                     {{ Form::select('filesystem:frontend_fallback_message', $filesystem_options, $settings['filesystem']['frontend_fallback_message'], array('id' => 'frontend-fallback-message')) }}
@@ -63,7 +63,7 @@
 
         <!-- Frontend Failed Message -->
         <div class="control-group">
-            <label for="filesysem-frontend-failed-message">{{ Lang::line('settings::form.settings.fields.filesystem_failed') }}</label>
+            <label for="filesysem-frontend-failed-message">{{ Lang::line('platform/settings::form.settings.fields.filesystem_failed') }}</label>
             <div class="controls">
                 <div class="input-append">
                     {{ Form::select('filesystem:frontend_failed_message', $filesystem_options, $settings['filesystem']['frontend_failed_message'], array('id' => 'frontend-failed-message')) }}
@@ -81,7 +81,7 @@
 
         <!-- Backend Fallback Message -->
         <div class="control-group">
-            <label for="filesysem-backend-fallback-message">{{ Lang::line('settings::form.settings.fields.filesystem_fallback') }}</label>
+            <label for="filesysem-backend-fallback-message">{{ Lang::line('platform/settings::form.settings.fields.filesystem_fallback') }}</label>
             <div class="controls">
                 <div class="input-append">
                     {{ Form::select('filesystem:backend_fallback_message', $filesystem_options, $settings['filesystem']['backend_fallback_message'], array('id' => 'filesystem-fallback-message')) }}
@@ -93,7 +93,7 @@
 
         <!-- Backend Failed Message -->
         <div class="control-group">
-            <label for="filesysem-backend-failed-message">{{ Lang::line('settings::form.settings.fields.filesystem_failed') }}</label>
+            <label for="filesysem-backend-failed-message">{{ Lang::line('platform/settings::form.settings.fields.filesystem_failed') }}</label>
             <div class="controls">
                 <div class="input-append">
                     {{ Form::select('filesystem:backend_failed_message', $filesystem_options, $settings['filesystem']['backend_failed_message'], array('id' => 'filesystem-failed-message')) }}

@@ -24,7 +24,7 @@
  * Default routing for localisation.
  * --------------------------------------------------------------------------
  */
-Route::any(ADMIN . '/localisation', 'localisation::admin.languages@index');
+Route::any(ADMIN . '/localisation', 'platform/localisation::admin.languages@index');
 
 
 /**
@@ -34,7 +34,7 @@ Route::any(ADMIN . '/localisation', 'localisation::admin.languages@index');
  *      /api/localisation/countries/datatable => localisation::api.countries@datatable
  *  </code>
  */
-Route::any(API . '/localisation/(:any)/datatable', 'localisation::api.(:1)@datatable');
+Route::any(API . '/localisation/(:any)/datatable', 'platform/localisation::api.(:1)@datatable');
 
 
 /**
@@ -46,7 +46,7 @@ Route::any(API . '/localisation/(:any)/datatable', 'localisation::api.(:1)@datat
  */
 Route::any(API . '/localisation/(:any)/default/(:any)', function($local, $slug)
 {
-    return Controller::call('localisation::api.' . Str::plural($local) . '@default', array($slug));
+    return Controller::call('platform/localisation::api.' . Str::plural($local) . '@default', array($slug));
 });
 
 
@@ -59,7 +59,7 @@ Route::any(API . '/localisation/(:any)/default/(:any)', function($local, $slug)
  */
 Route::any(API . '/localisation/(:any)/(:any)', function($local, $slug)
 {
-    return Controller::call('localisation::api.' . Str::plural($local) . '@index', array($slug));
+    return Controller::call('platform/localisation::api.' . Str::plural($local) . '@index', array($slug));
 });
 
 
@@ -72,5 +72,5 @@ Route::any(API . '/localisation/(:any)/(:any)', function($local, $slug)
  */
 Route::any(API . '/localisation/(:any)', function($local)
 {
-    return Controller::call('localisation::api.' . Str::plural($local) . '@index');
+    return Controller::call('platform/localisation::api.' . Str::plural($local) . '@index');
 });

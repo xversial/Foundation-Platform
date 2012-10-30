@@ -31,7 +31,7 @@ use Platform\Localisation\Model\Language;
  * --------------------------------------------------------------------------
  * Localisation > Languages > API Class
  * --------------------------------------------------------------------------
- * 
+ *
  * Manage the languages.
  *
  * @package    Platform
@@ -41,7 +41,7 @@ use Platform\Localisation\Model\Language;
  * @link       http://cartalyst.com
  * @version    1.0
  */
-class Localisation_API_Languages_Controller extends API_Controller
+class Platform_Localisation_API_Languages_Controller extends API_Controller
 {
     /**
      * --------------------------------------------------------------------------
@@ -51,7 +51,7 @@ class Localisation_API_Languages_Controller extends API_Controller
      * Returns an array of all the languages.
      *
      * If you want to retrieve information about a specific language, you can
-     * pass the language abbreviation, the language id or the language slug as 
+     * pass the language abbreviation, the language id or the language slug as
      * the last parameter.
      *
      *  <code>
@@ -82,7 +82,7 @@ class Localisation_API_Languages_Controller extends API_Controller
                 // Language not found.
                 //
                 return new Response(array(
-                    'message' => Lang::line('localisation::languages/message.error.not_found', array('language' => $language_code))->get()
+                    'message' => Lang::line('platform/localisation::languages/message.error.not_found', array('language' => $language_code))->get()
                 ), API::STATUS_NOT_FOUND);
             }
 
@@ -138,7 +138,7 @@ class Localisation_API_Languages_Controller extends API_Controller
                 // Return a response.
                 //
                 return new Response(array(
-                    'message' => Lang::line('localisation::languages/message.create.success', array('language' => $language->name))->get(),
+                    'message' => Lang::line('platform/localisation::languages/message.create.success', array('language' => $language->name))->get(),
                     'slug'    => $language->slug
                 ), API::STATUS_CREATED);
             }
@@ -150,7 +150,7 @@ class Localisation_API_Languages_Controller extends API_Controller
                 // Return a response.
                 //
                 return new Response(array(
-                    'message' => Lang::line('localisation::languages/message.create.fail')->get(),
+                    'message' => Lang::line('platform/localisation::languages/message.create.fail')->get(),
                     'errors'  => ($language->validation()->errors->has()) ? $language->validation()->errors->all() : array()
                 ), ($language->validation()->errors->has()) ? API::STATUS_BAD_REQUEST : API::STATUS_UNPROCESSABLE_ENTITY);
             }
@@ -171,7 +171,7 @@ class Localisation_API_Languages_Controller extends API_Controller
      * Function: put_index()
      * --------------------------------------------------------------------------
      *
-     * Edits a given language using the provided language id, language abbreviation 
+     * Edits a given language using the provided language id, language abbreviation
      * or by using the language slug.
      *
      *  <code>
@@ -214,7 +214,7 @@ class Localisation_API_Languages_Controller extends API_Controller
                 //
                 return new Response(array(
                     'slug'    => $language->slug,
-                    'message' => Lang::line('localisation::languages/message.update.success', array('language' => $language['name']))->get()
+                    'message' => Lang::line('platform/localisation::languages/message.update.success', array('language' => $language['name']))->get()
                 ));
             }
             else
@@ -222,7 +222,7 @@ class Localisation_API_Languages_Controller extends API_Controller
                 // Return a response.
                 //
                 return new Response(array(
-                    'message' => Lang::line('localisation::languages/message.update.fail', array('language' => $language['name']))->get(),
+                    'message' => Lang::line('platform/localisation::languages/message.update.fail', array('language' => $language['name']))->get(),
                     'errors'  => ($language->validation()->errors->has()) ? $language->validation()->errors->all() : array()
                 ), ($language->validation()->errors->has()) ? API::STATUS_BAD_REQUEST : API::STATUS_UNPROCESSABLE_ENTITY);
             }
@@ -244,7 +244,7 @@ class Localisation_API_Languages_Controller extends API_Controller
      * Function: delete_index()
      * --------------------------------------------------------------------------
      *
-     * Deletes a given language using the provided language id, language abbreviation 
+     * Deletes a given language using the provided language id, language abbreviation
      * or by using the language slug.
      *
      *  <code>
@@ -270,7 +270,7 @@ class Localisation_API_Languages_Controller extends API_Controller
             // Return a response.
             //
             return new Response(array(
-                'message' => Lang::line('localisation::languages/message.error.not_found', array('language' => $language_code))->get()
+                'message' => Lang::line('platform/localisation::languages/message.error.not_found', array('language' => $language_code))->get()
             ), API::STATUS_NOT_FOUND);
         }
 
@@ -281,7 +281,7 @@ class Localisation_API_Languages_Controller extends API_Controller
             // Return a response.
             //
             return new Response( array(
-                'message' => Lang::line('localisation::languages/message.delete.single.being_used')->get()
+                'message' => Lang::line('platform/localisation::languages/message.delete.single.being_used')->get()
             ), API::STATUS_BAD_REQUEST);
         }
 
@@ -296,7 +296,7 @@ class Localisation_API_Languages_Controller extends API_Controller
             // Return a response.
             //
             return new Response(array(
-                'message' => Lang::line('localisation::languages/message.delete.single.success', array('language' => $language->name))->get()
+                'message' => Lang::line('platform/localisation::languages/message.delete.single.success', array('language' => $language->name))->get()
             ));
         }
         catch (Exception $e)
@@ -304,7 +304,7 @@ class Localisation_API_Languages_Controller extends API_Controller
             // Return a response.
             //
             return new Response( array(
-                'message' => Lang::line('localisation::languages/message.delete.single.fail', array('language' => $language->name))->get()
+                'message' => Lang::line('platform/localisation::languages/message.delete.single.fail', array('language' => $language->name))->get()
             ), API::STATUS_BAD_REQUEST);
         }
     }
@@ -410,7 +410,7 @@ class Localisation_API_Languages_Controller extends API_Controller
             // Return a response.
             //
             return new Response(array(
-                'message' => Lang::line('localisation::languages/message.error.not_found', array('language' => $language_code))->get()
+                'message' => Lang::line('platform/localisation::languages/message.error.not_found', array('language' => $language_code))->get()
             ), API::STATUS_NOT_FOUND);
         }
 
@@ -421,7 +421,7 @@ class Localisation_API_Languages_Controller extends API_Controller
             // Return a response.
             //
             return new Response(array(
-                'message' => Lang::line('localisation::languages/message.update.already_default', array('language' => $language['name']))->get()
+                'message' => Lang::line('platform/localisation::languages/message.update.already_default', array('language' => $language['name']))->get()
             ));
         }
 
@@ -442,7 +442,7 @@ class Localisation_API_Languages_Controller extends API_Controller
         // Return a response.
         //
         return new Response(array(
-            'message' => Lang::line('localisation::languages/message.update.default', array('language' => $language->name))->get()
+            'message' => Lang::line('platform/localisation::languages/message.update.default', array('language' => $language->name))->get()
         ));
     }
 }

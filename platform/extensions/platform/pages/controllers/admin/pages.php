@@ -2,7 +2,7 @@
 
 use Platform\Pages\Helper;
 
-class Pages_Admin_Pages_Controller extends Admin_Controller
+class Platform_Pages_Admin_Pages_Controller extends Admin_Controller
 {
 	public function before()
 	{
@@ -60,7 +60,7 @@ class Pages_Admin_Pages_Controller extends Admin_Controller
 			//
 			API::post('pages', $data);
 
-			Platform::messages()->success(Lang::line('pages::messages.pages.create.success')->get());
+			Platform::messages()->success(Lang::line('platform/pages::messages.pages.create.success')->get());
 
 			return Redirect::to_admin('pages');
 		}
@@ -102,7 +102,7 @@ class Pages_Admin_Pages_Controller extends Admin_Controller
 			//
 			API::put('pages/pages/'.$id, $data);
 
-			Platform::messages()->success(Lang::line('pages::messages.pages.edit.success')->get());
+			Platform::messages()->success(Lang::line('platform/pages::messages.pages.edit.success')->get());
 
 			return Redirect::to_admin('pages');
 		}

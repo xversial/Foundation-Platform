@@ -70,6 +70,7 @@ class Options
             // Get active theme custom options.
             //
             $options = API::get('themes/' . $type . '/' . $name . '/options');
+
         }
         catch (APIClientException $e)
         {

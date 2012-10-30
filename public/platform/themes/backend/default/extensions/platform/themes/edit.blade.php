@@ -2,7 +2,7 @@
 
 <!-- Page Title -->
 @section('title')
-    {{ Lang::line('themes::general.title') }}
+    {{ Lang::line('platform/themes::general.title') }}
 @endsection
 
 <!-- Queue Styles -->
@@ -41,10 +41,10 @@
             <fieldset>
                 <div class="control-group">
                     <legend>{{ $option['text'] }}</legend>
-                                
+
                     @foreach ($option['styles'] as $style => $value)
                     <label class="control-label" for="{{ $id }}_{{ $style }}"><kbd>{{ $style }}</kbd></label>
-                    
+
                     <div class="controls">
                         <input type="text" id="{{ $id }}_{{ $style }}" name="options[{{ $id }}][styles][{{ $style }}]" value="{{ $value }}">
                     </div>
@@ -63,7 +63,7 @@
         </form>
         @else
         <div class="unavailable">
-            {{ Lang::line('themes::messages.no_options') }}
+            {{ Lang::line('platform/themes::messages.no_options') }}
         </div>
         @endif
     </div>

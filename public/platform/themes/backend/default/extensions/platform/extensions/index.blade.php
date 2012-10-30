@@ -2,7 +2,7 @@
 
 <!-- Page Title -->
 @section('title')
-    {{ Lang::line('extensions::general.title') }}
+    {{ Lang::line('platform/extensions::general.title') }}
 @endsection
 
 <!-- Page Content -->
@@ -18,7 +18,7 @@
                     <span class="icon-reorder"></span>
                 </a>
 
-                <a class="brand" href="#">{{ Lang::line('extensions::general.title') }}</a>
+                <a class="brand" href="#">{{ Lang::line('platform/extensions::general.title') }}</a>
 
                 <!-- Everything you want hidden at 940px or less, place within here -->
                 <div id="tertiary-navigation" class="nav-collapse">
@@ -32,11 +32,11 @@
         <table id="extensions-table" class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th class="span2">{{ Lang::line('extensions::table.vendor') }}</th>
-                    <th class="span2">{{ Lang::line('extensions::table.name') }}</th>
-                    <th class="span1">{{ Lang::line('extensions::table.version') }}</th>
-                    <th class="span4">{{ Lang::line('extensions::table.description') }}</th>
-                    <th class="span3">{{ Lang::line('extensions::table.actions') }}</th>
+                    <th class="span2">{{ Lang::line('platform/extensions::table.vendor') }}</th>
+                    <th class="span2">{{ Lang::line('platform/extensions::table.name') }}</th>
+                    <th class="span1">{{ Lang::line('platform/extensions::table.version') }}</th>
+                    <th class="span4">{{ Lang::line('platform/extensions::table.description') }}</th>
+                    <th class="span3">{{ Lang::line('platform/extensions::table.actions') }}</th>
                 </tr>
             </thead>
             <tbody>
@@ -57,43 +57,43 @@
                             <span class="pull-right label label-warning">{{ Lang::line('general.required') }}: {{ implode(', ', Platform::extensions_manager()->required_extensions(array_get($extension, 'info.slug')) ) }}</span>
                         @endif
                         @if ( Platform::extensions_manager()->has_update(array_get($extension, 'info.slug')) )
-                            <span class="pull-right label label-info">{{ Lang::line('extensions::table.has_updates') }}</span>
+                            <span class="pull-right label label-info">{{ Lang::line('platform/extensions::table.has_updates') }}</span>
                         @endif
                     </td>
                     <td>
                         <div class="btn-group">
                             <a href="{{ URL::to_admin('extensions/view/' . array_get($extension, 'info.vendor') . '/' . array_get($extension, 'info.extension')) }}" class="btn btn-small">{{ Lang::line('button.details') }}</a>
-                            
+
                             @if ( Platform::extensions_manager()->is_installed(array_get($extension, 'info.slug')) )
-                                
+
                                 @if ( Platform::extensions_manager()->is_enabled(array_get($extension, 'info.slug')) )
                                     @if ( Platform::extensions_manager()->can_disable(array_get($extension, 'info.slug')) )
-                                        <a class="btn btn-small" href="{{ URL::to_admin('extensions/disable/' . array_get($extension, 'info.slug')) }}">{{ Lang::line('extensions::button.disable') }}</a>
+                                        <a class="btn btn-small" href="{{ URL::to_admin('extensions/disable/' . array_get($extension, 'info.slug')) }}">{{ Lang::line('platform/extensions::button.disable') }}</a>
                                     @else
-                                        <a class="btn btn-small disabled">{{ Lang::line('extensions::button.disable') }}</a>
+                                        <a class="btn btn-small disabled">{{ Lang::line('platform/extensions::button.disable') }}</a>
                                     @endif
                                 @else
                                     @if ( Platform::extensions_manager()->can_enable(array_get($extension, 'info.slug')) )
-                                        <a class="btn btn-small" href="{{ URL::to_admin('extensions/enable/' . array_get($extension, 'info.slug')) }}">{{ Lang::line('extensions::button.enable') }}</a>
+                                        <a class="btn btn-small" href="{{ URL::to_admin('extensions/enable/' . array_get($extension, 'info.slug')) }}">{{ Lang::line('platform/extensions::button.enable') }}</a>
                                     @else
-                                        <a class="btn btn-small disabled">{{ Lang::line('extensions::button.enable') }}</a>
+                                        <a class="btn btn-small disabled">{{ Lang::line('platform/extensions::button.enable') }}</a>
                                     @endif
                                 @endif
 
                                 @if ( Platform::extensions_manager()->can_uninstall(array_get($extension, 'info.slug')) )
-                                    <a class="btn btn-small btn-danger" href="{{ URL::to_admin('extensions/uninstall/' . array_get($extension, 'info.slug')) }}">{{ Lang::line('extensions::button.uninstall') }}</a>
+                                    <a class="btn btn-small btn-danger" href="{{ URL::to_admin('extensions/uninstall/' . array_get($extension, 'info.slug')) }}">{{ Lang::line('platform/extensions::button.uninstall') }}</a>
                                 @else
-                                    <a class="btn btn-small disabled">{{ Lang::line('extensions::button.uninstall') }}</a>
+                                    <a class="btn btn-small disabled">{{ Lang::line('platform/extensions::button.uninstall') }}</a>
                                 @endif
 
                                 @if ( Platform::extensions_manager()->has_update(array_get($extension, 'info.slug')))
-                                    <a class="btn btn-small" href="{{ URL::to_admin('extensions/update/' . array_get($extension, 'info.slug')) }}">{{ Lang::line('extensions::button.update') }}</a>
+                                    <a class="btn btn-small" href="{{ URL::to_admin('extensions/update/' . array_get($extension, 'info.slug')) }}">{{ Lang::line('platform/extensions::button.update') }}</a>
                                 @endif
                             @else
                                 @if ( Platform::extensions_manager()->can_install(array_get($extension, 'info.slug')) )
-                                    <a class="btn btn-small" href="{{ URL::to_admin('extensions/install/' . array_get($extension, 'info.slug')) }}">{{ Lang::line('extensions::button.install') }}</a>
+                                    <a class="btn btn-small" href="{{ URL::to_admin('extensions/install/' . array_get($extension, 'info.slug')) }}">{{ Lang::line('platform/extensions::button.install') }}</a>
                                 @else
-                                    <a class="btn btn-small disabled">{{ Lang::line('extensions::button.install') }}</a>
+                                    <a class="btn btn-small disabled">{{ Lang::line('platform/extensions::button.install') }}</a>
                                 @endif
                             @endif
                         </div>

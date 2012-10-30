@@ -23,7 +23,7 @@
  * --------------------------------------------------------------------------
  * Platform > Core > Controller Class
  * --------------------------------------------------------------------------
- * 
+ *
  * Let's extend Laravel Controller class, so we can make some magic happen !
  *
  * @package    Platform
@@ -74,7 +74,7 @@ abstract class Controller extends Laravel\Routing\Controller
         {
             list($vendor, $bundle_) = explode('/', $bundle);
 
-            $controller = self::resolve($bundle_, $name); 
+            $controller = self::resolve($vendor.'/'.$bundle_, $name);
         } else {
             $controller = self::resolve($bundle, $name);
         }
@@ -115,4 +115,22 @@ abstract class Controller extends Laravel\Routing\Controller
 
         return $response;
     }
+
+    /**
+	 * Format a bundle and controller identifier into the controller's class name.
+	 *
+	 * @param  string  $bundle
+	 * @param  string  $controller
+	 * @return string
+	 */
+	protected static function format($bundle, $controller)
+	{
+		$bundle = str_replace('/', '_', $bundle);
+		// if ( ( $pos = strpos($bundle, '/') ) !== false)
+		// {
+		// 	$bundle = substr($bundle, $pos+1);
+		// }
+
+		return Bundle::class_prefix($bundle).Str::classify($controller).'_Controller';
+	}
 }
