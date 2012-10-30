@@ -502,9 +502,9 @@ class ExtensionsManager
      * @param    string
      * @return   boolean
      */
-    public function is_installed($extension)
+    public function is_installed($slug)
     {
-        return (bool) array_get($this->installed, $this->reverse_slug($extension));
+        return (bool) array_get($this->installed, $this->reverse_slug($slug));
     }
 
 
@@ -519,9 +519,9 @@ class ExtensionsManager
      * @param    string
      * @return   boolean
      */
-    public function is_uninstalled($extension)
+    public function is_uninstalled($slug)
     {
-        return ( ! $this->is_installed($extension));
+        return ( ! $this->is_installed($slug));
     }
 
 
@@ -536,9 +536,9 @@ class ExtensionsManager
      * @param    string
      * @return   boolean
      */
-    public function is_enabled($extension)
+    public function is_enabled($slug)
     {
-        return (bool) array_get($this->installed, $this->reverse_slug($extension) . '.info.is_enabled');
+        return (bool) array_get($this->installed, $this->reverse_slug($slug) . '.info.is_enabled');
     }
 
 
@@ -553,9 +553,9 @@ class ExtensionsManager
      * @param    string
      * @return   boolean
      */
-    public function is_disabled($extension)
+    public function is_disabled($slug)
     {
-        return ( ! $this->is_enabled($extension));
+        return ( ! $this->is_enabled($slug));
     }
 
 
@@ -570,9 +570,9 @@ class ExtensionsManager
      * @param    string
      * @return   boolean
      */
-    public function is_core($extension)
+    public function is_core($slug)
     {
-        return (bool) array_get($this->extensions, $this->reverse_slug($extension) . '.info.is_core');
+        return (bool) array_get($this->extensions, $this->reverse_slug($slug) . '.info.is_core');
     }
 
 
@@ -590,9 +590,9 @@ class ExtensionsManager
      * @param    string
      * @return   boolean
      */
-    public function is_core_vendor($extension)
+    public function is_core_vendor($slug)
     {
-        return (bool) array_get($this->extensions, $this->reverse_slug($extension) . '.info.is_core') and ( array_get($this->extensions, $this->reverse_slug($extension) . '.info.vendor') == static::CORE_VENDOR);
+        return (bool) array_get($this->extensions, $this->reverse_slug($slug) . '.info.is_core') and ( array_get($this->extensions, $this->reverse_slug($slug) . '.info.vendor') == static::CORE_VENDOR);
     }
 
 
@@ -607,9 +607,9 @@ class ExtensionsManager
      * @param    string
      * @return   boolean
      */
-    public function exists($extension)
+    public function exists($slug)
     {
-        return (bool) array_get($this->extensions, $this->reverse_slug($extension));
+        return (bool) array_get($this->extensions, $this->reverse_slug($slug));
     }
 
 
@@ -624,7 +624,7 @@ class ExtensionsManager
      * @param    string
      * @return   boolean
      */
-    public function can_install($extension)
+    public function can_install($slug)
     {
         // Is the installer mode on ?
         //
@@ -637,14 +637,14 @@ class ExtensionsManager
 
         // Check if this extension exists.
         //
-        if ( ! $this->exists($extension))
+        if ( ! $this->exists($slug))
         {
             return false;
         }
 
         // If the extension is already installed, we can't install it again, obviously !
         //
-        if ($this->is_installed($extension))
+        if ($this->is_installed($slug))
         {
             // Extension can't be installed.
             //
@@ -653,7 +653,7 @@ class ExtensionsManager
 
         // Loop through this extension dependencies.
         //
-        foreach ($this->dependencies($extension) as $dependent)
+        foreach ($this->dependencies($slug) as $dependent)
         {
             // If this dependent is uninstalled and/or disabled we can't install the extension.
             //
@@ -682,11 +682,11 @@ class ExtensionsManager
      * @param    string
      * @return   boolean
      */
-    public function can_uninstall($extension)
+    public function can_uninstall($slug)
     {
         // Is this a core extension ?
         //
-        if ($this->is_core($extension))
+        if ($this->is_core($slug))
         {
             // Extension can't be uninstalled.
             //
@@ -695,7 +695,7 @@ class ExtensionsManager
 
         // If the extension is not installed, we can't uninstall, obviously !
         //
-        if ( ! $this->is_installed($extension))
+        if ( ! $this->is_installed($slug))
         {
             // Extension can't be uninstalled.
             //
@@ -704,7 +704,7 @@ class ExtensionsManager
 
         // Loop through this extension dependents.
         //
-        foreach ($this->dependents($extension) as $dependent)
+        foreach ($this->dependents($slug) as $dependent)
         {
             // If this dependent is installed we can't uninstall the extension.
             //
@@ -733,7 +733,7 @@ class ExtensionsManager
      * @param    string
      * @return   boolean
      */
-    public function can_enable($extension)
+    public function can_enable($slug)
     {
         // Is the installer mode on ?
         //
@@ -746,7 +746,7 @@ class ExtensionsManager
 
         // If the extension is not installed, we can't enable it, obviously !
         //
-        if ( ! $this->is_installed($extension))
+        if ( ! $this->is_installed($slug))
         {
             // Extension can't be uninstalled.
             //
@@ -755,7 +755,7 @@ class ExtensionsManager
 
         // If the extension is already enabled, we can't enable it again, obviously !
         //
-        if ($this->is_enabled($extension))
+        if ($this->is_enabled($slug))
         {
             // Extension can't be enabled.
             //
@@ -764,7 +764,7 @@ class ExtensionsManager
 
         // Loop through this extension dependencies.
         //
-        foreach ($this->dependencies($extension) as $dependent)
+        foreach ($this->dependencies($slug) as $dependent)
         {
             // If this dependent is uninstalled and/or disable we can't enable the extension.
             //
@@ -793,11 +793,11 @@ class ExtensionsManager
      * @param    string
      * @return   boolean
      */
-    public function can_disable($extension)
+    public function can_disable($slug)
     {
         // Is this a core extension ?
         //
-        if ($this->is_core($extension))
+        if ($this->is_core($slug))
         {
             // Core extensions can't be disabled !
             //
@@ -806,7 +806,7 @@ class ExtensionsManager
 
         // If the extension is not enabled, we can't disable it, obviously !
         //
-        if ( ! $this->is_enabled($extension))
+        if ( ! $this->is_enabled($slug))
         {
             // Extension can't be disabled.
             //
@@ -815,7 +815,7 @@ class ExtensionsManager
 
         // Loop through this extension dependents.
         //
-        foreach ($this->dependents($extension) as $dependent)
+        foreach ($this->dependents($slug) as $dependent)
         {
             // If this dependent is installed we can't disable the extension.
             //
@@ -844,7 +844,7 @@ class ExtensionsManager
      * @param    string
      * @return   boolean
      */
-    public function has_update($slug = null)
+    public function has_update($slug)
     {
         // Check if this extension is installed.
         //
@@ -876,22 +876,22 @@ class ExtensionsManager
      * @param    string
      * @return   mixed
      */
-    public function has_vendors($extension)
+    public function has_vendors($slug)
     {
-        // 
+        // Separate the vendor and the extension slug.
         //
-        if (strpos($extension, '.'))
+        if (strpos($slug, '.'))
         {
-            list($vendor, $extension) = explode('.', $extension);
+            list($vendor, $slug) = explode('.', $slug);
         }
 
-        // Count how many vendors an extension has.
+        // List of vendors.
         //
-        $vendors = count(array_get($this->extensions, $extension));
+        $vendors = array_get($this->extensions, $slug);
 
-        // Return the total of vendors.
+        // Return the vendors if we did found any.
         //
-        return ( $vendors > 1 ? $vendors : false );
+        return ( count($vendors) > 1 ? $vendors : false );
     }
 
 
@@ -906,9 +906,9 @@ class ExtensionsManager
      * @param    string
      * @return   mixed
      */
-    public function dependencies($extension)
+    public function dependencies($slug)
     {
-        return array_get($this->dependencies, $this->reverse_slug($extension), array());
+        return array_get($this->dependencies, $this->reverse_slug($slug), array());
     }
 
 
@@ -923,9 +923,9 @@ class ExtensionsManager
      * @param    string
      * @return   mixed
      */
-    public function dependents($extension)
+    public function dependents($slug)
     {
-        return array_get($this->dependents, $this->reverse_slug($extension), array());
+        return array_get($this->dependents, $this->reverse_slug($slug), array());
     }
 
 
@@ -944,11 +944,11 @@ class ExtensionsManager
      * @param    string
      * @return   array
      */
-    public function required_extensions($extension = null)
+    public function required_extensions($slug)
     {
         // Get this extension dependencies.
         //
-        if ( ! $dependencies = array_get($this->dependencies, $this->reverse_slug($extension)))
+        if ( ! $dependencies = array_get($this->dependencies, $this->reverse_slug($slug)))
         {
             return array();
         }
@@ -1077,7 +1077,148 @@ class ExtensionsManager
      */
     public function uninstall($slug)
     {
-        
+        // Get this extension information from the database.
+        //
+        if (is_null($model = Extension::find($slug)))
+        {
+            throw new Exception(Lang::line('extensions.not_found', array('extension' => $slug))->get());
+        }
+
+        // Check if this extension can be uninstalled.
+        //
+        if ( ! $this->can_uninstall($slug))
+        {
+            throw new Exception(Lang::line('extensions.uninstall.fail', array('extension' => $slug))->get());
+        }
+
+        // Get this extension information.
+        //
+        $extension = $this->get($slug);
+
+        // If this extension has vendors. 
+        //
+        if ($vendors = $this->has_vendors($slug))
+        {
+            // Get this extension migration files.
+            //
+            $migrations = glob(path('extensions') . array_get($extension, 'info.vendor') . DS . array_get($extension, 'info.extension') . DS . 'migrations' . DS . '*');
+            $migrations = array_reverse($migrations, true); # not sure about this yet !!
+
+            // Loop through the migration files.
+            //
+            foreach($migrations as $migration)
+            {
+                // Include the migration file.
+                //
+                require_once $migration;
+
+                // 
+                //
+                $migration = basename(str_replace(EXT, '', $migration));
+
+                // 
+                //
+                DB::table('laravel_migrations')->where('name', '=', $migration)->delete();
+
+                // Prepare the class name.
+                //
+                $class = Bundle::class_prefix(array_get($extension, 'info.extension')) . \Laravel\Str::classify(substr($migration, 18));
+
+                // Initiate the migration class.
+                //
+                $migration = new $class;
+
+                // Run down the migration.
+                //
+                $migration->down();
+            }
+
+            // Check if we have a core vendor.
+            //
+            if (array_key_exists(static::CORE_VENDOR, $vendors))
+            {
+                // Enable the core vendor extension.
+                //
+                DB::table('extensions')->where('vendor', '=', static::CORE_VENDOR)->update(array('enabled' => 1));
+            }
+
+            // No core vendor.
+            //
+            else
+            {
+                // Remove the current vendor from the list.
+                //
+                unset($vendors[$extension->vendor]);
+
+                // Loop through the vendors till we find a valid one !
+                //
+                foreach ($vendors as $vendor => $info)
+                {
+                    // Check if this vendor is installed !
+                    //
+                    if ($this->is_installed(array_get($info, 'info.slug')))
+                    {
+                        // Enable this vendor.
+                        //
+                        DB::table('extensions')->where('vendor', '=', $vendor)->update(array('enabled' => 1));
+
+                        // Break the loop !
+                        //
+                        break;
+                    }
+                }
+            }
+        }
+
+        // No vendors.
+        //
+        else
+        {
+            // Resolves core tasks.
+            //
+            require_once path('sys') . 'cli/dependencies' . EXT;
+
+            // Start the extension so we can find it's bundle path.
+            //
+            $this->start($slug);
+
+            // Get the migrations of this extension that were executed.
+            //
+            $migrations = DB::table('laravel_migrations')->where('bundle', '=', array_get($extension, 'info.extension'))->order_by('name', 'DESC')->get();
+
+            // Loop through the installed migrations.
+            //
+            foreach ($migrations as $migration)
+            {
+                // Include the migration file.
+                //
+                require_once Bundle::path($slug) . 'migrations' . DS . $migration->name . EXT;
+
+                // Prepare the class name.
+                //
+                $class = Bundle::class_prefix($slug) . \Laravel\Str::classify( substr( $migration->name, 18 ) );
+
+                // Initiate the migration class.
+                //
+                $migration = new $class;
+
+                // Run down the migration.
+                //
+                $migration->down();
+            }
+
+            // Remove the entry from the migrations table.
+            //
+            DB::table('laravel_migrations')->where('bundle', '=', $slug)->delete();
+        }
+
+        // Delete the extension reference from the database.
+        //
+        $model->delete();
+
+        // Extension uninstalled.
+        //
+        return true;
     }
 
 
@@ -1172,15 +1313,43 @@ class ExtensionsManager
 
         // If this extension has vendors. 
         //
-        if ($this->has_vendors($slug))
+        if ($vendors = $this->has_vendors($slug))
         {
-            # Maybe i need to make this more dynamic, and check if the core vendor exists,
-            # if it doesn't, we enable the first vendor extension available that is installed !
-            # if none found, we give up =D
-
-            // Make sure we enable the core vendor extension, if it exists !
+            // Check if we have a core vendor.
             //
-            DB::table('extensions')->where('vendor', '=', static::CORE_VENDOR)->update(array('enabled' => 1));
+            if (array_key_exists(static::CORE_VENDOR, $vendors))
+            {
+                // Enable the core vendor extension.
+                //
+                DB::table('extensions')->where('vendor', '=', static::CORE_VENDOR)->update(array('enabled' => 1));
+            }
+
+            // No core vendor.
+            //
+            else
+            {
+                // Remove the current vendor from the list.
+                //
+                unset($vendors[$extension->vendor]);
+
+                // Loop through the vendors till we find a valid one !
+                //
+                foreach ($vendors as $vendor => $info)
+                {
+                    // Check if this vendor is installed !
+                    //
+                    if ($this->is_installed(array_get($info, 'info.slug')))
+                    {
+                        // Enable this vendor.
+                        //
+                        DB::table('extensions')->where('vendor', '=', $vendor)->update(array('enabled' => 1));
+
+                        // Break the loop !
+                        //
+                        break;
+                    }
+                }
+            }
         }
 
         // Disable all menus related to this extension.

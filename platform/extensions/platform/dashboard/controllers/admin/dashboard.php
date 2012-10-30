@@ -90,15 +90,15 @@ class Dashboard_Admin_Dashboard_Controller extends Admin_Controller
             // Methods test !
             //
             $slug = 'cartalyst.pages';
-            if ($manager->is_enabled($slug))
+            if ($manager->is_installed($slug))
             {
-                echo 'Disable';
-                $manager->disable($slug);
+                echo 'Uninstalled';
+                $manager->uninstall($slug);
             }
             else
             {
-                echo 'Enable';
-                $manager->enable($slug);
+                echo 'Installed';
+                $manager->install($slug);
             }
             die;
             /**/
@@ -158,7 +158,7 @@ class Dashboard_Admin_Dashboard_Controller extends Admin_Controller
                 //
                 if ( $manager->has_vendors($slug) )
                 {
-                    echo '<br />  How many vendors? ' . $manager->has_vendors($slug);
+                    echo '<br />  How many vendors? ' . count($manager->has_vendors($slug));
                 }
                 else
                 {
