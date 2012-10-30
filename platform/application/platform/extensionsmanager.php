@@ -275,7 +275,6 @@ class ExtensionsManager
             {
                 ksort($vendor);
             });
-            
         }
 
         // Return the extensions.
@@ -867,7 +866,7 @@ class ExtensionsManager
 
     /**
      * --------------------------------------------------------------------------
-     * Function: has_vendors()
+     * Function: vendors()
      * --------------------------------------------------------------------------
      *
      * Returns the total of vendors an extension has.
@@ -876,7 +875,7 @@ class ExtensionsManager
      * @param    string
      * @return   mixed
      */
-    public function has_vendors($slug)
+    public function vendors($slug)
     {
         // Separate the vendor and the extension slug.
         //
@@ -1060,7 +1059,81 @@ class ExtensionsManager
      */
     public function install($slug, $enable = false)
     {
-        
+        // Check if this extension is already installed.
+        //
+        if (Extension::find($slug))
+        {
+            throw new Exception(Lang::line('extensions.install.installed', array('extension' => $slug))->get());
+        }
+
+        // Check if this extension can be installed.
+        //
+        if ( ! $this->can_install($slug))
+        {
+            throw new Exception(Lang::line('extensions.install.fail', array('extension' => $slug))->get());
+        }
+
+        // Get this extension information.
+        //
+        $extension = $this->get($slug);
+
+        // If this extension has vendors. 
+        //
+        if ($vendors = $this->vendors($slug))
+        {
+            // Disable all other installed vendors of this extension.
+            //
+            DB::table('extensions')->where('extension', '=', array_get($extension, 'info.extension'))->update(array('enabled' => 0));
+
+            // Make sure the extension get's enabled !
+            //
+            $enable = 1;
+        }
+
+        // Create the new vendor extension instance.
+        //
+        $model = new Extension(array(
+            'slug'      => array_get($extension, 'info.slug'),
+            'vendor'    => array_get($extension, 'info.vendor'),
+            'extension' => array_get($extension, 'info.extension'),
+            'version'   => array_get($extension, 'info.version'),
+            'enabled'   => (int) ( $is_core = array_get($extension, 'info.is_core') ? 1 : $enable)
+        ));
+        $model->save();
+
+        // Start the extension.
+        //
+        $this->start($slug);
+
+        // Resolves core tasks.
+        //
+        require_once path('sys') . 'cli/dependencies' . EXT;
+
+        // Run this extension migrations.
+        //
+        Command::run(array('migrate', array_get($extension, 'bundles.handles', $slug)));
+
+        // Disable menus related to this extension, if the extension is disabled by default.
+        //
+        if ( ! $is_core and ! $enable)
+        {
+            try
+            {
+                $menus = API::get('menus/flat', array('extension' => $slug));
+                foreach ($menus as $menu)
+                {
+                    API::put('menus/' . $menu['slug'], array('status' => 0));
+                }
+            }
+            catch (APIClientException $e)
+            {
+
+            }
+        }
+
+        // Extension installed.
+        //
+        return true;
     }
 
 
@@ -1077,7 +1150,7 @@ class ExtensionsManager
      */
     public function uninstall($slug)
     {
-        // Get this extension information from the database.
+        // Check if this extension is installed.
         //
         if (is_null($model = Extension::find($slug)))
         {
@@ -1097,12 +1170,12 @@ class ExtensionsManager
 
         // If this extension has vendors. 
         //
-        if ($vendors = $this->has_vendors($slug))
+        if ($vendors = $this->vendors($slug))
         {
             // Get this extension migration files.
             //
             $migrations = glob(path('extensions') . array_get($extension, 'info.vendor') . DS . array_get($extension, 'info.extension') . DS . 'migrations' . DS . '*');
-            $migrations = array_reverse($migrations, true); # not sure about this yet !!
+            $migrations = array_reverse($migrations, true);
 
             // Loop through the migration files.
             //
@@ -1251,7 +1324,7 @@ class ExtensionsManager
 
         // If this extension has vendors. 
         //
-        if ($this->has_vendors($slug))
+        if ($this->vendors($slug))
         {
             // We need to make sure all other vendors are disabled.
             //
@@ -1313,7 +1386,7 @@ class ExtensionsManager
 
         // If this extension has vendors. 
         //
-        if ($vendors = $this->has_vendors($slug))
+        if ($vendors = $this->vendors($slug))
         {
             // Check if we have a core vendor.
             //

@@ -156,9 +156,9 @@ class Dashboard_Admin_Dashboard_Controller extends Admin_Controller
 
                 // Check if we have more than one vendor for this extension.
                 //
-                if ( $manager->has_vendors($slug) )
+                if ( $vendors = $manager->vendors($slug) )
                 {
-                    echo '<br />  How many vendors? ' . count($manager->has_vendors($slug));
+                    echo '<br />  How many vendors? ' . count($vendors);
                 }
                 else
                 {
