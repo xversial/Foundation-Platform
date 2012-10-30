@@ -56,8 +56,8 @@ return array(
      * Other messages.
      * -----------------------------------------
      */
-    'not_found'         => 'Extension <b>:extension</b> was not found !',
-    'missing_files'     => 'Extension <b>:extension</b> required files are missing !',
+    'not_found'         => 'Extension <b>:extension</b> was not found!',
+    'missing_files'     => 'Extension <b>:extension</b> required files are missing!',
     'invalid_file'      => 'Extension <b>:extension</b> doesn\'t have a valid extension.php file',
     'invalid_routes'    => 'Extension <b>:extension</b> "routes" must be a function / closure',
     'invalid_listeners' => 'Extension <b>:extension</b> "listeners" must be a function / closure',
