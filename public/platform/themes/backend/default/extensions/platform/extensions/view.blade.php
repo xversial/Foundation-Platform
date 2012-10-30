@@ -61,7 +61,7 @@
         {{ Form::open() }}
             {{ Form::token() }}
 
-            @if ( $dependencies = Platform::extensions_manager()->has_dependencies(array_get($extension, 'info.slug')) )
+            @if ( $dependencies = Platform::extensions_manager()->dependencies(array_get($extension, 'info.slug')) )
             <h5>{{ Lang::line('extensions::general.heading.view.dependencies') }}</h5>
 
             <table class="table table-bordered">
@@ -110,7 +110,7 @@
             </table>
             @endif
 
-            @if ( $dependents = Platform::extensions_manager()->has_dependents(array_get($extension, 'info.slug')) )
+            @if ( $dependents = Platform::extensions_manager()->dependents(array_get($extension, 'info.slug')) )
             <h5>{{ Lang::line('extensions::general.heading.view.dependents') }}</h5>
 
             <table class="table table-bordered">

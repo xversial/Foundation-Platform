@@ -65,7 +65,7 @@ class Extensions_API_Extensions_Controller extends API_Controller
      * @param    string
      * @return   Response
      */
-    public function get_index($slug = false)
+    public function get_index($vendor = false, $slug = false)
     {
         // No slug ? Return all the extensions.
         //
@@ -115,7 +115,7 @@ class Extensions_API_Extensions_Controller extends API_Controller
             {
                 // Spin through all the extensions.
                 //
-                foreach (Platform::extensions_manager()->all() as $vendor => $_extensions)
+                foreach (Platform::extensions_manager()->extensions() as $_extensions)
                 {
                     foreach ( $_extensions as $extension)
                     {
@@ -126,24 +126,30 @@ class Extensions_API_Extensions_Controller extends API_Controller
 
                         // Populate the array.
                         //
-                        $extensions[ $extension['info']['slug'] ][ $extension['info']['vendor'] ] = $extension;
+                        $extensions[ $extension['info']['extension'] ][ $extension['info']['vendor'] ] = $extension;
                     }
                 }
             }
 
-
             // Sort the extensions.
             //
             ksort($extensions);
+            array_walk($extensions, function(&$vendor)
+            {
+                ksort($vendor);
+            });
 
             // Return the extensions.
             //
             return new Response($extensions);
         }
 
+        $manager = Platform::extensions_manager();
+
+
         // Check if this extension exists.
         //
-        if ( ! Platform::extensions_manager()->exists($slug))
+        if ( ! $manager->exists( $vendor . '.' . $slug ))
         {
             // Extension doesn't exist.
             //
@@ -156,7 +162,7 @@ class Extensions_API_Extensions_Controller extends API_Controller
         {
             // Get this extension information.
             //
-            $extension = Platform::extensions_manager()->get($slug);
+            $extension = $manager->get( $vendor . '.' . $slug );
 
             // Remove callbacks as they're no use in JSON.
             //

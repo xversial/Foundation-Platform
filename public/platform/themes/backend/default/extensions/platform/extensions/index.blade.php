@@ -62,7 +62,7 @@
                     </td>
                     <td>
                         <div class="btn-group">
-                            <a href="{{ URL::to_admin('extensions/view/' . array_get($extension, 'info.slug')) }}" class="btn btn-small">{{ Lang::line('button.details') }}</a>
+                            <a href="{{ URL::to_admin('extensions/view/' . array_get($extension, 'info.vendor') . '/' . array_get($extension, 'info.extension')) }}" class="btn btn-small">{{ Lang::line('button.details') }}</a>
                             
                             @if ( Platform::extensions_manager()->is_installed(array_get($extension, 'info.slug')) )
                                 

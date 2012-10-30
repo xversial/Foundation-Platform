@@ -26,4 +26,4 @@
  *      /api/extensions/users => extensions::extensions.api@index(users)
  *  </code>
  */
-Route::any(API . '/extensions/(:any)', 'extensions::api.extensions@index');
+Route::any(API . '/extensions/(:any)/(:any?)', 'extensions::api.extensions@index');

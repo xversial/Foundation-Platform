@@ -400,19 +400,20 @@ class Extensions_Admin_Extensions_Controller extends Admin_Controller
      * @param    string
      * @return   mixed
      */
-    public function get_view($slug)
+    public function get_view($vendor, $slug = null)
     {
         // Check if the extension exists.
         //
         try
         {
-            $extension  = API::get('extensions/' . $slug);
+            $extension  = API::get('extensions/' . $vendor . '/' . $slug);
             $extensions = API::get('extensions');
         }
         catch (APIClientException $e)
         {
             // Set the error message.
             //
+            echo $e->getMessage();
             Platform::messages()->error($e->getMessage());
 
             // Set the other error messages.

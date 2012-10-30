@@ -1085,6 +1085,14 @@ class ExtensionsManager
             //
             DB::table('extensions')->where('extension', '=', array_get($extension, 'info.extension'))->update(array('enabled' => 0));
 
+            #########################################################
+            # ugly fix for the moment
+            if(($key = array_search(array_get($extension, 'info.extension'), \Bundle::$started)) !== false)
+            {
+                unset(\Bundle::$started[$key]);
+            }
+            #########################################################
+
             // Make sure the extension get's enabled !
             //
             $enable = 1;
