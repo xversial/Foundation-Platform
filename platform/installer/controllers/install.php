@@ -329,6 +329,7 @@ class Installer_Install_Controller extends Installer_Base_Controller
             // Use admin email as default
             $settings[] = array(
                 'extension'  => 'settings',
+                'vendor'     => 'platform',
                 'type'       => 'site',
                 'name'       => 'email',
                 'value'      => $user['email']
