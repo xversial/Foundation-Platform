@@ -67,8 +67,6 @@ class Resolver extends lResolver
 			// Replace Platform vendor namespaces
 			$class = str_replace(ExtensionsManager::VENDOR_SEPARATOR, '_', $prefix.\Laravel\Str::classify(substr($name, 18)));
 
-			// die($class);
-
 			$migration = new $class;
 
 			// When adding to the array of instances, we will actually
