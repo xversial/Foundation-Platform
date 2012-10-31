@@ -60,11 +60,10 @@ return array(
      * -----------------------------------------
      */
     'not_found'         => 'Extension <b>:extension</b> was not found !',
-    'invalid_slug'      => 'Invalid extension slug passed.',
     'invalid_extension' => 'Invalid extension properties passed.',
-    'invalid_dependent' => 'Invalid extension dependency <b>:dependency</b> for extension <b>:extension',
+    #'invalid_dependent' => 'Invalid extension dependency <b>:dependency</b> for extension <b>:extension',
     'missing_files'     => 'Extension <b>:extension</b> required files are missing',
-    'invalid_directory' => 'Extension in directory <b>:directory</b> contains illegal characters',
+    #'invalid_directory' => 'Extension in directory <b>:directory</b> contains illegal characters',
     'invalid_file'      => 'Extension <b>:extension</b> doesn\'t have a valid extension.php file',
     'invalid_routes'    => 'Extension <b>:extension</b> "routes" must be a function / closure',
     'invalid_listeners' => 'Extension <b>:extension</b> "listeners" must be a function / closure',

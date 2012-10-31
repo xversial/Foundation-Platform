@@ -161,7 +161,7 @@
                     @if ( Platform::extensions_manager()->has_update(array_get($extension, 'info.slug')) )
                         <button class="btn" type="submit" name="update" value="{{ array_get($extension, 'info.slug') }}">{{ Lang::line('platform/extensions::button.update') }}</button>
                     @else
-                        <span class="label label-important">{{ Lang::line('platform/extensions.is_core') }}</span>
+                        <span class="label label-important">{{ Lang::line('extensions.is_core') }}</span>
                     @endif
                 @else
                     @if ( Platform::extensions_manager()->can_uninstall(array_get($extension, 'info.slug')) )
@@ -177,12 +177,12 @@
 
                         <button class="btn btn-danger" type="submit" name="uninstall" value="{{ array_get($extension, 'info.slug') }}">{{ Lang::line('platform/extensions::button.uninstall') }}</button>
                     @else
-                        <span class="label label-info">{{ Lang::line('platform/extensions.required') }}</span>
+                        <span class="label label-info">{{ Lang::line('extensions.required') }}</span>
                     @endif
                 @endif
             @else
                 @if ( ! Platform::extensions_manager()->can_install(array_get($extension, 'info.slug')) )
-                    <span class="label label-warning">{{ Lang::line('platform/extensions.requires') }}</span>
+                    <span class="label label-warning">{{ Lang::line('extensions.requires') }}</span>
                 @else
                     <div class="btn-group">
                         <button class="btn" type="submit" name="install" value="{{ array_get($extension, 'info.slug') }}">{{ Lang::line('platform/extensions::button.install') }}</button>

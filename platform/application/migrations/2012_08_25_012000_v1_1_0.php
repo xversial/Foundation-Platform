@@ -71,9 +71,8 @@ class v1_1_0
 
         // Create the extensions table.
         //
-    	Schema::create('extensions', function($table){
+        Schema::create('extensions', function($table){
             $table->increments('id');
-            $table->string('slug', 150);
             $table->string('vendor', 150);
             $table->string('extension', 150);
             $table->string('version', 10);

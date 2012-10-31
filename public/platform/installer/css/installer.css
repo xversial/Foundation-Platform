@@ -20,7 +20,7 @@
 
 /* #Layout
 ================================================== */
-body {background:#eee;}
+body {background:#f7f7f7;}
 
 html, body {
 	height: 100%;
@@ -250,4 +250,11 @@ form select.valid + .add-on > i {
 
 	#installer .agree {
 		text-align: center;
+	}
+
+	#installer .tabbable > ul {
+
+	}
+	#installer .tab-content {
+
 	}
