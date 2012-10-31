@@ -201,16 +201,6 @@ class ExtensionsManager
             //
             foreach ($extensions as $extension)
             {
-                /*
-                // Core platform extensions
-                #if (array_get($extension, 'info.vendor') === self::CORE_VENDOR)
-                if ($this->is_core_vendor(array_get($extension, 'info.slug')))
-                {
-                    $extensions_flat[array_get($extension, 'info.slug')] = $extension;
-                    continue;
-                }
-                */
-
                 // Store the extension.
                 //
                 $extensions_flat[array_get($extension, 'info.slug')] = $extension;
@@ -237,14 +227,24 @@ class ExtensionsManager
         //
         foreach ($sorted_slugs as $slug)
         {
-            // Check if the extension was started with success.
-            //
-            if ( ! $this->start(array_get(($extension = $extensions_flat[$slug]), 'info.slug')))
+            try
             {
-                // Set the warning message.
+                // Check if the extension was started with success.
                 //
-                Platform::messages()->warning(Lang::line('extensions.missing_files', array('extension' => array_get($extension, 'info.slug'))));
+                if ($this->start($slug))
+                {
+                    continue;
+                }
             }
+            catch (Exception $e)
+            {
+                // Silent fail, user gets a message below.
+                //
+            }
+
+            // Set the warning message.
+            //
+            Platform::messages()->warning(Lang::line('extensions.missing_files', array('extension' => $slug)));
         }
     }
 
@@ -264,7 +264,10 @@ class ExtensionsManager
     {
         // Get this extension information.
         //
-        $extension = $this->get($slug);
+        if ( ! $extension = $this->get($slug))
+        {
+            return false;
+        }
  
         // Start the bundle.
         //
@@ -1604,7 +1607,6 @@ class ExtensionsManager
             $extension['info']['slug']         = $slug;
             $extension['info']['vendor']       = $vendor;
             $extension['info']['extension']    = $ext;
-            $extension['info']['bundleized']   = $this->convert_slug($slug);
             $extension['info']['is_core']      = (bool) ( array_get($extension, 'info.is_core') ?: false );
             $extension['info']['is_enabled']   = $this->is_enabled($slug);
             $extension['info']['is_installed'] = $this->is_installed($slug);

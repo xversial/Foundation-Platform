@@ -140,7 +140,7 @@ class Dependencies
 
         // Return the sorted dependencies.
         //
-        return $sorted;
+        return array_filter($sorted);
     }
 
 
