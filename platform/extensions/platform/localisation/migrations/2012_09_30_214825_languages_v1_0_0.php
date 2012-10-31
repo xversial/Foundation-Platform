@@ -41,7 +41,7 @@ use Platform\Menus\Menu;
  * @link       http://cartalyst.com
  * @version    1.0
  */
-class Localisation_Languages_v1_0_0
+class Platform_Localisation_Languages_v1_0_0
 {
     /**
      * --------------------------------------------------------------------------
@@ -125,6 +125,7 @@ class Localisation_Languages_v1_0_0
             // Default language.
             //
             array(
+                'vendor'    => 'platform',
                 'extension' => 'localisation',
                 'type'      => 'site',
                 'name'      => 'language',
@@ -134,6 +135,7 @@ class Localisation_Languages_v1_0_0
             // Default language locale.
             //
             array(
+                'vendor'    => 'platform',
                 'extension' => 'localisation',
                 'type'      => 'site',
                 'name'      => 'language_locale',

@@ -34,7 +34,7 @@ use Platform\Menus\Menu;
  * @link       http://cartalyst.com
  * @version    1.1
  */
-class Menus_Admin_Menus_Controller extends Admin_Controller
+class Platform_Menus_Admin_Menus_Controller extends Admin_Controller
 {
     /**
      * --------------------------------------------------------------------------
@@ -237,6 +237,7 @@ class Menus_Admin_Menus_Controller extends Admin_Controller
             'root_slug'       => array_get($menu, 'slug', false),
             'persisted_slugs' => $persisted_slugs,
             'pages'           => $pages,
+            'page_type'       => ( ! $slug) ? 'create' : 'update',
         );
 
         // Show the page.
@@ -278,13 +279,13 @@ class Menus_Admin_Menus_Controller extends Admin_Controller
             if (Request::ajax())
             {
                 return new Response(array(
-                    'message' => Lang::line('menus::messages.update.no_children')->get()
+                    'message' => Lang::line('platform/menus::messages.update.no_children')->get()
                 ), API::STATUS_BAD_REQUEST);
             }
 
             // Set the error message.
             //
-            Platform::messages()->error(Lang::line('menus::messages.update.no_children')->get());
+            Platform::messages()->error(Lang::line('platform/menus::messages.update.no_children')->get());
 
             // Redirect to the menus page.
             //
@@ -374,7 +375,7 @@ class Menus_Admin_Menus_Controller extends Admin_Controller
 
         // Set the success message.
         //
-        Platform::messages()->success(Lang::line('menus::messages.update.success', array('menu' => $slug))->get());
+        Platform::messages()->success(Lang::line('platform/menus::messages.update.success', array('menu' => $slug))->get());
 
         // Redirect to the menu page.
         //
@@ -403,7 +404,7 @@ class Menus_Admin_Menus_Controller extends Admin_Controller
 
             // Set the success message.
             //
-            Platform::messages()->success( Lang::line('menus::messages.delete.success')->get() );
+            Platform::messages()->success( Lang::line('platform/menus::messasges.delete.success')->get() );
         }
         catch ( APIClientException $e )
         {

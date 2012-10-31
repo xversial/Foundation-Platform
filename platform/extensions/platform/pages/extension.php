@@ -44,8 +44,8 @@ return array(
      * -----------------------------------------
      */
     'dependencies' => array(
-        'menus',
-        'settings'
+        'platform.menus',
+        'platform.settings'
     ),
 
 
@@ -55,17 +55,19 @@ return array(
      * Extension routes.
      * -----------------------------------------
      */
-	'routes' => function(){
-		Route::any('/', function() {
-			return Controller::call('pages::pages@page');
+	'routes' => function()
+	{
+		Route::any('/', function()
+		{
+			return Controller::call('platform/pages::pages@page');
 		});
 
-		Route::any('(:any)', function($page = 'index') {
-
-			// check if the page is a bundle
+		Route::any('(:any)', function($page = 'index')
+		{
+			// Check if the page is a bundle
 			if ( ! Bundle::exists($page))
 			{
-				return Controller::call('pages::pages@page', array($page));
+				return Controller::call('platform/pages::pages@page', array($page));
 			}
 		});
 	},
@@ -76,14 +78,14 @@ return array(
      * -----------------------------------------
      */
 	'rules' => array(
-		'pages::admin.pages@index',
-		'pages::admin.pages@create',
-		'pages::admin.pages@edit',
-		'pages::admin.pages@delete',
-		'pages::admin.content@index',
-		'pages::admin.content@create',
-		'pages::admin.content@edit',
-		'pages::admin.content@delete'
+		'platform/pages::admin.pages@index',
+		'platform/pages::admin.pages@create',
+		'platform/pages::admin.pages@edit',
+		'platform/pages::admin.pages@delete',
+		'platform/pages::admin.content@index',
+		'platform/pages::admin.content@create',
+		'platform/pages::admin.content@edit',
+		'platform/pages::admin.content@delete'
 	),
 
 );

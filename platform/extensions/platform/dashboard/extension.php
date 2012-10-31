@@ -25,6 +25,7 @@
  * --------------------------------------------------------------------------
  */
 return array(
+
     /*
      * -----------------------------------------
      * Extension information.
@@ -45,8 +46,8 @@ return array(
      * -----------------------------------------
      */
     'dependencies' => array(
-        'menus',
-        'users',
-        'settings'
-    )
+        'platform.menus',
+        'platform.users',
+        'platform.settings'
+    ),
 );

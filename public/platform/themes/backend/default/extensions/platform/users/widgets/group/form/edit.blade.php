@@ -7,13 +7,13 @@
 
 		<!-- Group Name -->
 		<div class="control-group">
-			<label class="control-label" for="name">{{ Lang::line('users::form.groups.edit.name') }}</label>
+			<label class="control-label" for="name">{{ Lang::line('platform/users::form.groups.edit.name') }}</label>
 			<div class="controls">
 				<div class="input-append">
 					<input type="text" id="name" name="name" value="{{ Input::old('name', $group['name']); }}" required>
 					<span class="add-on"><i class="icon-group"></i></span>
 				</div>
-				<span class="help-block">{{ lang::line('users::form.groups.edit.name_help') }}</span>
+				<span class="help-block">{{ Lang::line('platform/users::form.groups.edit.name_help') }}</span>
 			</div>
 		</div>
 

@@ -41,7 +41,7 @@ use Platform\Menus\Menu;
  * @link       http://cartalyst.com
  * @version    1.1
  */
-class Dashboard_Admin_Dashboard_Controller extends Admin_Controller
+class Platform_Dashboard_Admin_Dashboard_Controller extends Admin_Controller
 {
     /**
      * --------------------------------------------------------------------------

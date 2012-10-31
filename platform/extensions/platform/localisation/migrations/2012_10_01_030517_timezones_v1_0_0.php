@@ -41,7 +41,7 @@ use Platform\Menus\Menu;
  * @link       http://cartalyst.com
  * @version    1.0
  */
-class Localisation_Timezones_v1_0_0
+class Platform_Localisation_Timezones_v1_0_0
 {
     /**
      * --------------------------------------------------------------------------
@@ -61,6 +61,7 @@ class Localisation_Timezones_v1_0_0
          * --------------------------------------------------------------------------
          */
         DB::table('settings')->insert(array(
+            'vendor'    => 'platform',
             'extension' => 'localisation',
             'type'      => 'site',
             'name'      => 'timezone',

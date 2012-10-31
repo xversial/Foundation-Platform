@@ -21,7 +21,7 @@
 
 use Platform\Menus\Menu;
 
-class Menus_API_Menus_Controller extends API_Controller
+class Platform_Menus_API_Menus_Controller extends API_Controller
 {
 
 	/**
@@ -194,7 +194,7 @@ class Menus_API_Menus_Controller extends API_Controller
 			if ( ! $menu->save())
 			{
 				return new Response(array(
-					'message' => Lang::line('menus::messages.update.error')->get(),
+					'message' => Lang::line('platform/menus::messages.update.error')->get(),
 					'errors'  => ($menu->validation()->errors->has()) ? $menu->validation()->errors->all() : array(),
 				), ($menu->validation()->errors->has()) ? API::STATUS_BAD_REQUEST : API::STATUS_UNPROCESSABLE_ENTITY);
 			}

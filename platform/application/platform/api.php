@@ -32,7 +32,7 @@ use Symfony\Component\HttpFoundation\LaravelRequest as RequestFoundation,
  * --------------------------------------------------------------------------
  * API Class
  * --------------------------------------------------------------------------
- * 
+ *
  * This Api class acts as the base for basically the entire application.
  *
  * @package    Platform
@@ -159,7 +159,7 @@ class API
     /**
      * Unprocessable Entity
      *
-     * You have provided the right type of data (thus avoiding a 400) 
+     * You have provided the right type of data (thus avoiding a 400)
      * but validation failed.
      *
      * @constant
@@ -372,7 +372,7 @@ class API
 
         // Get the response from the request.
         //
-        $response = Route::forward($method, $uri);
+        $response = Router::route($method, $uri)->call();
 
         // Set the internal request back to false.
         //
@@ -382,7 +382,7 @@ class API
         //
         Request::$foundation = $main_request;
 
-        // Reverse the action of the API_Controller class so we get native 
+        // Reverse the action of the API_Controller class so we get native
         // data back for internal API requests.
         //
         switch ($format)
@@ -513,7 +513,7 @@ class API
  * --------------------------------------------------------------------------
  * APIException Class
  * --------------------------------------------------------------------------
- * 
+ *
  * The main API Exception Class.
  *
  * @package    Platform
@@ -565,8 +565,8 @@ class APIException extends Exception
  * --------------------------------------------------------------------------
  * API Exception Class's
  * --------------------------------------------------------------------------
- * 
- * When we have an exception that comes from the API we shall use one of 
+ *
+ * When we have an exception that comes from the API we shall use one of
  * these class's.
  *
  * @package    Platform

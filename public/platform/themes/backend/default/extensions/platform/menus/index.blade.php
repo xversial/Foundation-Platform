@@ -2,7 +2,7 @@
 
 <!-- Page Title -->
 @section('title')
-	{{ Lang::line('menus::general.title') }}
+	{{ Lang::line('platform/menus::general.title') }}
 @endsection
 
 <!-- Queue Styles -->
@@ -32,7 +32,7 @@
 				<span class="icon-reorder"></span>
 			</a>
 
-			<a class="brand" href="#">{{ Lang::line('menus::general.title') }}</a>
+			<a class="brand" href="#">{{ Lang::line('platform/menus::general.title') }}</a>
 
 			<!-- Everything you want hidden at 940px or less, place within here -->
 			<div id="tertiary-navigation" class="nav-collapse">
@@ -56,9 +56,9 @@
 			<table class="table table-bordered">
 				<thead>
 					<tr>
-						<th>{{ Lang::line('menus::table.name') }}</th>
-						<th>{{ Lang::line('menus::table.slug') }}</th>
-						<th>{{ Lang::line('menus::table.children_count') }}</th>
+						<th>{{ Lang::line('platform/menus::table.name') }}</th>
+						<th>{{ Lang::line('platform/menus::table.slug') }}</th>
+						<th>{{ Lang::line('platform/menus::table.children_count') }}</th>
 						<th></th>
 					</tr>
 				</thead>
@@ -72,7 +72,7 @@
 								{{ $menu['slug'] }}
 							</td>
 							<td>
-								{{ Lang::line('menus::table.children', array('count' => $menu[Platform\Menus\Menu::nesty_col('right')] / 2 - 1)) }}
+								{{ Lang::line('platform/menus::table.children', array('count' => $menu[Platform\Menus\Menu::nesty_col('right')] / 2 - 1)) }}
 							</td>
 							<td class="span2">
 								<div class="btn-group">

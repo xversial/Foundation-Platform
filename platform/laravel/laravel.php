@@ -160,7 +160,7 @@ URI::$uri = $uri;
 |
 */
 
-Request::$route = Routing\Router::route(Request::method(), $uri);
+Request::$route = \Router::route(Request::method(), $uri);
 
 $response = Request::$route->call();
 

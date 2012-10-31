@@ -80,6 +80,7 @@ return array(
 		'password_error'           => 'Unable to reset your password, please make sure both Email and Password are set and you are using a registered email address.',
 		'password_success'         => 'Your password has been reset, please check your email to confirm.',
 		'redirect'                 => 'Redirecting...',
+		'registered'               => 'Registration Successfull',
 		'success'                  => 'Succesfully logged in',
 		'wait'                     => 'Please wait...',
 	),

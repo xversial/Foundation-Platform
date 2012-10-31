@@ -2,7 +2,7 @@
 
 <!-- Page Title -->
 @section('title')
-    {{ Lang::line('localisation::languages/general.title') }}
+    {{ Lang::line('platform/localisation::languages/general.title') }}
 @endsection
 
 <!-- Page Content -->
@@ -18,7 +18,7 @@
                     <span class="icon-reorder"></span>
                 </a>
 
-                <a class="brand" href="{{ URL::to_admin('localisation/languages') }}">{{ Lang::line('localisation::languages/general.title') }}</a>
+                <a class="brand" href="{{ URL::to_admin('localisation/languages') }}">{{ Lang::line('platform/localisation::languages/general.title') }}</a>
 
                 <!-- Everything you want hidden at 940px or less, place within here -->
                 <div id="tertiary-navigation" class="nav-collapse">
@@ -33,34 +33,34 @@
             <input type="hidden" name="{{ Session::csrf_token }}" value="{{ Session::token() }}">
 
             <fieldset>
-                <legend>{{ Lang::line('localisation::languages/general.description.edit', array('language' => $language['name'])) }}</legend>
+                <legend>{{ Lang::line('platform/localisation::languages/general.description.edit', array('language' => $language['name'])) }}</legend>
 
                 <div class="control-group">
-                    <label class="control-label" for="name">{{ Lang::line('localisation::languages/form.name') }}</label>
+                    <label class="control-label" for="name">{{ Lang::line('platform/localisation::languages/form.name') }}</label>
                     <div class="controls">
                         <input type="text" name="name" id="name" value="{{ Input::old('name', $language['name']); }}" required />
-                        <span class="help-block">{{ Lang::line('localisation::languages/form.name_help') }}</span>
+                        <span class="help-block">{{ Lang::line('platform/localisation::languages/form.name_help') }}</span>
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="abbreviation">{{ Lang::line('localisation::languages/form.abbreviation') }}</label>
+                    <label class="control-label" for="abbreviation">{{ Lang::line('platform/localisation::languages/form.abbreviation') }}</label>
                     <div class="controls">
                         <input type="text" name="abbreviation" id="abbreviation" value="{{ Input::old('abbreviation', $language['abbreviation']); }}" required />
-                        <span class="help-block">{{ Lang::line('localisation::languages/form.abbreviation_help') }}</span>
+                        <span class="help-block">{{ Lang::line('platform/localisation::languages/form.abbreviation_help') }}</span>
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="locale">{{ Lang::line('localisation::languages/form.locale') }}</label>
+                    <label class="control-label" for="locale">{{ Lang::line('platform/localisation::languages/form.locale') }}</label>
                     <div class="controls">
                         <input type="text" name="locale" id="locale" value="{{ Input::old('locale', $language['locale']); }}" required />
-                        <span class="help-block">{{ Lang::line('localisation::languages/form.locale_help') }}</span>
+                        <span class="help-block">{{ Lang::line('platform/localisation::languages/form.locale_help') }}</span>
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="status">{{ Lang::line('localisation::languages/form.status') }}</label>
+                    <label class="control-label" for="status">{{ Lang::line('platform/localisation::languages/form.status') }}</label>
                     <div class="controls">
                         {{ Form::select('status', general_statuses(), $language['status']); }}
-                        <span class="help-block">{{ Lang::line('localisation::languages/form.status_help') }}</span>
+                        <span class="help-block">{{ Lang::line('platform/localisation::languages/form.status_help') }}</span>
                     </div>
                 </div>
             </fieldset>

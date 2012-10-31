@@ -2,41 +2,41 @@
 	<input type="hidden" name="{{ Session::csrf_token }}" value="{{ Session::token() }}">
 
 	<fieldset>
-		<legend>{{ lang::line('pages::form.pages.create.legend') }}</legend>
+		<legend>{{ Lang::line('platform/pages::form.pages.create.legend') }}</legend>
 
 		<!-- Name -->
 		<div class="control-group">
-			<label class="control-label" for="name">{{ lang::line('pages::form.pages.create.name') }}:</label>
+			<label class="control-label" for="name">{{ Lang::line('platform/pages::form.pages.create.name') }}:</label>
 			<div class="controls">
 				<input type="text" name="name" id="name" value="{{ Input::old('name') }}" placeholder="Name" required>
-				<span class="help-block">{{ lang::line('pages::form.pages.create.name_help') }}</span>
+				<span class="help-block">{{ Lang::line('platform/pages::form.pages.create.name_help') }}</span>
 			</div>
 		</div>
 
 		<!-- Slug -->
 		<div class="control-group">
-			<label class="control-label" for="slug">{{ lang::line('pages::form.pages.create.slug') }}:</label>
+			<label class="control-label" for="slug">{{ Lang::line('platform/pages::form.pages.create.slug') }}:</label>
 			<div class="controls">
 				<input type="text" name="slug" id="slug" value="{{ Input::old('slug') }}" placeholder="Slug" required>
-				<span class="help-block">{{ lang::line('pages::form.pages.create.slug_help') }}</span>
+				<span class="help-block">{{ Lang::line('platform/pages::form.pages.create.slug_help') }}</span>
 			</div>
 		</div>
 
 		<!-- Templates -->
 		<div class="control-group">
-			<label for="template" class="control-label">{{ lang::line('pages::form.pages.create.template') }}:</label>
+			<label for="template" class="control-label">{{ Lang::line('platform/pages::form.pages.create.template') }}:</label>
 			<div class="controls">
 				{{ Form::select('templates', $templates, $template) }}
-				<span class="help-block">{{ lang::line('pages::form.pages.create.template_help') }}</span>
+				<span class="help-block">{{ Lang::line('platform/pages::form.pages.create.template_help') }}</span>
 			</div>
 		</div>
 
 		<!-- Value -->
 		<div class="control-group">
-			<label class="control-label" for="value">{{ lang::line('pages::form.pages.create.value') }}:</label>
+			<label class="control-label" for="value">{{ Lang::line('platform/pages::form.pages.create.value') }}:</label>
 			<div class="controls">
 				<textarea rows="10" name="value" id="value" placeholder="content" required>{{ Input::old('value') }}</textarea>
-				<span class="help-block">{{ lang::line('pages::form.pages.create.value_help') }}</span>
+				<span class="help-block">{{ Lang::line('platform/pages::form.pages.create.value_help') }}</span>
 			</div>
 		</div>
 

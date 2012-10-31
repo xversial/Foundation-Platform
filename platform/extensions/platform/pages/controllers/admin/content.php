@@ -1,6 +1,6 @@
 <?php
 
-class Pages_Admin_Content_Controller extends Admin_Controller
+class Platform_Pages_Admin_Content_Controller extends Admin_Controller
 {
 	public function before()
 	{
@@ -57,7 +57,7 @@ class Pages_Admin_Content_Controller extends Admin_Controller
 			//
 			API::post('pages/content', $data);
 
-			Platform::messages()->success(Lang::line('pages::messages.content.create.success')->get());
+			Platform::messages()->success(Lang::line('platform/pages::messages.content.create.success')->get());
 
 			return Redirect::to_admin('pages/content');
 		}
@@ -97,7 +97,7 @@ class Pages_Admin_Content_Controller extends Admin_Controller
 			//
 			API::put('pages/content/'.$id, $data);
 
-			Platform::messages()->success(Lang::line('pages::messages.content.edit.success')->get());
+			Platform::messages()->success(Lang::line('platform/pages::messages.content.edit.success')->get());
 
 			return Redirect::to_admin('pages/content');
 		}

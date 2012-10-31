@@ -23,7 +23,7 @@
  * --------------------------------------------------------------------------
  * Extensions > API Class
  * --------------------------------------------------------------------------
- * 
+ *
  * API class to manage extensions.
  *
  * @package    Platform
@@ -33,7 +33,7 @@
  * @link       http://cartalyst.com
  * @version    1.1
  */
-class Extensions_API_Extensions_Controller extends API_Controller
+class Platform_Extensions_API_Extensions_Controller extends API_Controller
 {
     /**
      * --------------------------------------------------------------------------
@@ -54,22 +54,26 @@ class Extensions_API_Extensions_Controller extends API_Controller
      *
      *  <code>
      *      $all         = API::get('extensions');
-     *      $enabled     = API::get('extensions', array( 'filter' => 'enabled' ));
-     *      $disabled    = API::get('extensions', array( 'filter' => 'disabled' ));
-     *      $installed   = API::get('extensions', array( 'filter' => 'installed' ));
-     *      $uninstalled = API::get('extensions', array( 'filter' => 'uninstalled' ));
-     *      $users       = API::get('extensions/users');
+     *      $enabled     = API::get('extensions', array('filter' => 'enabled'));
+     *      $disabled    = API::get('extensions', array('filter' => 'disabled'));
+     *      $installed   = API::get('extensions', array('filter' => 'installed'));
+     *      $uninstalled = API::get('extensions', array('filter' => 'uninstalled'));
+     *      $users       = API::get('extensions/platform/users');
      *  </code>
      *
      * @access   public
      * @param    string
      * @return   Response
      */
-    public function get_index($slug = false)
+    public function get_index($vendor = false, $slug = false)
     {
+        // Initiate our Extension Manager.
+        //
+        $manager = Platform::extensions_manager();
+
         // No slug ? Return all the extensions.
         //
-        if ($slug == false)
+        if ($vendor == false && $slug == false)
         {
             // Initiate an empty array.
             //
@@ -85,7 +89,7 @@ class Extensions_API_Extensions_Controller extends API_Controller
                 {
                     // Get the extensions.
                     //
-                    foreach (Platform::extensions_manager()->$filter() as $extension)
+                    foreach ($manager->$filter() as $extension)
                     {
                         // Remove callbacks as they're no use in JSON.
                         //
@@ -94,7 +98,7 @@ class Extensions_API_Extensions_Controller extends API_Controller
 
                         // Populate the array.
                         //
-                        $extensions[ $extension['info']['slug'] ] = $extension;
+                        $extensions[ $extension['info']['slug'] ][ $extension['info']['vendor'] ] = $extension;
                     }
 
                     // Return the extensions.
@@ -105,7 +109,7 @@ class Extensions_API_Extensions_Controller extends API_Controller
                 // Invalid filter, return the message.
                 //
                 return new Response(array(
-                    'message' => Lang::line('extensions.invalid_filter')->get()
+                    'message' => Lang::line('platform/extensions.invalid_filter')->get()
                 ), API::STATUS_BAD_REQUEST);
             }
 
@@ -115,22 +119,29 @@ class Extensions_API_Extensions_Controller extends API_Controller
             {
                 // Spin through all the extensions.
                 //
-                foreach (Platform::extensions_manager()->all() as $extension)
+                foreach ($manager->extensions() as $_extensions)
                 {
-                    // Remove callbacks as they're no use in JSON.
-                    //
-                    array_forget($extension, 'listeners');
-                    array_forget($extension, 'routes');
+                    foreach ( $_extensions as $extension)
+                    {
+                        // Remove callbacks as they're no use in JSON.
+                        //
+                        array_forget($extension, 'listeners');
+                        array_forget($extension, 'routes');
 
-                    // Populate the array.
-                    //
-                    $extensions[ $extension['info']['slug'] ] = $extension;
+                        // Populate the array.
+                        //
+                        $extensions[ $extension['info']['extension'] ][ $extension['info']['vendor'] ] = $extension;
+                    }
                 }
             }
 
             // Sort the extensions.
             //
             ksort($extensions);
+            array_walk($extensions, function(&$vendor)
+            {
+                ksort($vendor);
+            });
 
             // Return the extensions.
             //
@@ -139,12 +150,12 @@ class Extensions_API_Extensions_Controller extends API_Controller
 
         // Check if this extension exists.
         //
-        if ( ! Platform::extensions_manager()->exists($slug))
+        if ( ! $manager->exists($vendor . '.' . $slug))
         {
             // Extension doesn't exist.
             //
             return new Response(array(
-                'message' => Lang::line('extensions.not_found', array('extension' => $slug))->get()
+                'message' => Lang::line('platform/extensions.not_found', array('extension' => $slug))->get()
             ), API::STATUS_BAD_REQUEST);
         }
 
@@ -152,7 +163,7 @@ class Extensions_API_Extensions_Controller extends API_Controller
         {
             // Get this extension information.
             //
-            $extension = Platform::extensions_manager()->get($slug);
+            $extension = $manager->get( $vendor . '.' . $slug );
 
             // Remove callbacks as they're no use in JSON.
             //
@@ -184,49 +195,57 @@ class Extensions_API_Extensions_Controller extends API_Controller
      *  <code>
      *      # This installs an extension.
      *      #
-     *      API::put('extensions/users', array( 'install'     => true ));
-     *      API::put('extensions/users', array( 'installed'   => true ));
-     *      API::put('extensions/users', array( 'uninstalled' => false ));
+     *      API::put('extensions/platform/users', array('install'     => true));
+     *      API::put('extensions/platform/users', array('installed'   => true));
+     *      API::put('extensions/platform/users', array('uninstalled' => false));
      *
      *      # This uninstalls an extension.
      *      #
-     *      API::put('extensions/users', array( 'uninstall'   => true ));
-     *      API::put('extensions/users', array( 'installed'   => false ));
-     *      API::put('extensions/users', array( 'uninstalled' => true ));
+     *      API::put('extensions/platform/users', array('uninstall'   => true));
+     *      API::put('extensions/platform/users', array('installed'   => false));
+     *      API::put('extensions/platform/users', array('uninstalled' => true));
      *
      *      # This enables an extension.
      *      #
-     *      API::put('extensions/users', array( 'enable'   => true ));
-     *      API::put('extensions/users', array( 'enabled'  => true ));
-     *      API::put('extensions/users', array( 'disabled' => false ));
-     *      API::put('extensions/users', array( 'installed' => true, 'enable'   => true ));
-     *      API::put('extensions/users', array( 'installed' => true, 'enabled'  => true ));
-     *      API::put('extensions/users', array( 'installed' => true, 'disabled' => false ));
+     *      API::put('extensions/platform/users', array('enable'   => true));
+     *      API::put('extensions/platform/users', array( enabled'  => true));
+     *      API::put('extensions/platform/users', array('disabled' => false));
+     *      API::put('extensions/platform/users', array('installed' => true, 'enable'   => true));
+     *      API::put('extensions/platform/users', array('installed' => true, 'enabled'  => true));
+     *      API::put('extensions/platform/users', array('installed' => true, 'disabled' => false));
      *
      *      # This disables an extension.
      *      #
-     *      API::put('extensions/users', array( 'disable'  => true ));
-     *      API::put('extensions/users', array( 'enabled'  => false ));
-     *      API::put('extensions/users', array( 'disabled' => true ));
-     *      API::put('extensions/users', array( 'installed' => true, 'disable'  => true ));
-     *      API::put('extensions/users', array( 'installed' => true, 'enabled'  => false ));
-     *      API::put('extensions/users', array( 'installed' => true, 'disabled' => true ));
+     *      API::put('extensions/platform/users', array('disable'  => true));
+     *      API::put('extensions/platform/users', array('enabled'  => false));
+     *      API::put('extensions/platform/users', array('disabled' => true));
+     *      API::put('extensions/platform/users', array('installed' => true, 'disable'  => true));
+     *      API::put('extensions/platform/users', array('installed' => true, 'enabled'  => false));
+     *      API::put('extensions/platform/users', array('installed' => true, 'disabled' => true));
      *  </code>
      *
      * @access   public
      * @param    string
      * @return   Response
      */
-    public function put_index($slug = null)
+    public function put_index($vendor = null, $extension = null)
     {
+        // Initiate our Extension Manager.
+        //
+        $manager = Platform::extensions_manager();
+
+        // Build a slug up for the extension
+        //
+        $slug = $vendor.'.'.$extension;
+
         // Check if the extension exists.
         //
-        if( ! $extension = Platform::extensions_manager()->get($slug))
+        if( ! $extension = $manager->get($slug))
         {
             // Extension doesn't exist.
             //
             return new Response(array(
-                'message' => Lang::line('extensions.not_found', array('extension' => $slug))->get()
+                'message' => Lang::line('platform/extensions.not_found', array('extension' => $slug))->get()
             ), API::STATUS_BAD_REQUEST);
         }
 
@@ -257,7 +276,7 @@ class Extensions_API_Extensions_Controller extends API_Controller
             {
                 // Install the extension.
                 //
-                $extension = Platform::extensions_manager()->install($slug);
+                $extension = $manager->install($slug);
             }
 
             // If we want the extension to be uninstalled.
@@ -266,25 +285,25 @@ class Extensions_API_Extensions_Controller extends API_Controller
             {
                 // Uninstall the extension.
                 //
-                $extension = Platform::extensions_manager()->uninstall($slug);
+                $extension = $manager->uninstall($slug);
             }
 
             // If the module is installed, we do some more checks.
             //
-            if (Platform::extensions_manager()->is_installed($slug))
+            if ($manager->is_installed($slug))
             {
                 // If we want the module to be enabled or not.
                 //
                 if ( ! is_null($enabled))
                 {
                     $method = ( $enabled === true ) ? 'enable' : 'disable';
-                    $module = Platform::extensions_manager()->$method($slug);
+                    $module = $manager->$method($slug);
                 }
                 // If we want the module to be updated.
                 //
                 if ($update = Input::get('update'))
                 {
-                    $module = Platform::extensions_manager()->update($slug);
+                    $module = $manager->update($slug);
                 }
             }
         }

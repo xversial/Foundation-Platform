@@ -118,6 +118,10 @@ class Platform
             return true;
         }
 
+        // Register IoC
+        //
+        static::register_ioc();
+
         // Check if Platform is installed.
         //
         if ( ! static::is_installed() or static::has_update())
@@ -446,6 +450,36 @@ class Platform
 
     /**
      * --------------------------------------------------------------------------
+     * Function: register_ioc()
+     * --------------------------------------------------------------------------
+     *
+     * Register Platform's inversion of control overrides with Laravel.
+     *
+     * @access   protected
+     * @return   void
+     */
+    protected static function register_ioc()
+    {
+        IoC::register('task: migrate', function()
+        {
+            $database = new Laravel\CLI\Tasks\Migrate\Database;
+
+            // Register our override of the tasks resolver
+            // which allows for Platform extensions
+            $resolver = new Tasks\Migrate\Resolver($database);
+
+            return new Laravel\CLI\Tasks\Migrate\Migrator($resolver, $database);
+        });
+
+        IoC::singleton('task: key', function()
+        {
+            return new Laravel\CLI\Tasks\Key;
+        });
+    }
+
+
+    /**
+     * --------------------------------------------------------------------------
      * Function: get()
      * --------------------------------------------------------------------------
      *
@@ -466,7 +500,7 @@ class Platform
         //
         $extension = array_shift($settings);
 
-        // 
+        //
         //
         if (count($settings) > 1)
         {
@@ -535,6 +569,9 @@ class Platform
      */
     public static function widget($name = null)
     {
+    	// echo '<pre>';
+    	// print_r(Bundle::$bundles);
+    	// exit;
         // Get the widget name.
         //
         $name = trim($name);
@@ -588,7 +625,7 @@ class Platform
         {
             // Check if the extension is initialized, if not, initiate it.
             //
-            ! Bundle::started($extension) and Bundle::start($extension);
+            ! ($extension == 'application') and ! Bundle::started($namespace.'/'.$extension) and Bundle::start($namespace.'/'.$extension);
 
             // Check if the plugin class exists.
             //
@@ -785,11 +822,7 @@ class Platform
     {
         // Disable the checking.
         //
-        static::extensions_manager()->checking(false);
-
-        // Resolves core tasks.
-        //
-        require_once path('sys') . 'cli/dependencies' . EXT;
+        static::extensions_manager()->installer_mode(true);
 
         // Check for the migrations table.
         //
@@ -804,7 +837,7 @@ class Platform
 
         // Now, run the core migrations.
         //
-        Command::run(array('migrate'));
+        Command::run(array('migrate', DEFAULT_BUNDLE));
 
         // Start the extensions, just in case the install process got interrupted.
         //

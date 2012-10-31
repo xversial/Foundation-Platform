@@ -6,7 +6,6 @@ use API;
 use APIClientException;
 use Filesystem;
 use Platform;
-use Theme;
 
 class Helper
 {
@@ -26,7 +25,7 @@ class Helper
 				return static::renderContent($content['value']);
 			}
 
-			return Lang::line('pages::messages.content.not_found')->get();
+			return Lang::line('platform/pages::messages.content.not_found')->get();
 		}
 		catch(APIClientException $e)
 		{
@@ -59,7 +58,7 @@ class Helper
 		$templates = array();
 		foreach ($themes as $theme => $name)
 		{
-			$path = Theme::directory() . DS . 'frontend'. DS . $name . DS . Theme::$bundle_directory . DS . 'platform' . DS . 'pages' . DS . 'templates';
+			$path = path('public') . 'platform' . DS . 'themes' . DS . 'frontend'. DS . $name . DS . 'extensions' . DS . 'platform' . DS . 'pages' . DS . 'templates';
 
 			$files = glob($path.DS.'*.blade.php');
 

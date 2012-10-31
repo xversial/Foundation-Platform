@@ -42,7 +42,7 @@ return array(
     // Create Menu.
     //
     'create' => array(
-        'title'       => 'Create User',
+        'title'       => 'Create Menu',
         'description' => 'Please supply the following information.'
     ),
 

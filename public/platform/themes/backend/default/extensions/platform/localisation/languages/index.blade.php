@@ -2,7 +2,7 @@
 
 <!-- Page Title -->
 @section('title')
-    {{ Lang::line('localisation::languages/general.title') }}
+    {{ Lang::line('platform/localisation::languages/general.title') }}
 @endsection
 
 <!-- Queue Scripts -->
@@ -22,7 +22,7 @@
                     <span class="icon-reorder"></span>
                 </a>
 
-                <a class="brand" href="#">{{ Lang::line('localisation::languages/general.title') }}</a>
+                <a class="brand" href="#">{{ Lang::line('platform/localisation::languages/general.title') }}</a>
 
                 <!-- Everything you want hidden at 940px or less, place within here -->
                 <div id="tertiary-navigation" class="nav-collapse">
@@ -52,8 +52,8 @@
                     <table id="languages-table" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th data-table-key="name" class="span4">{{ Lang::line('localisation::languages/table.name') }}</th>
-                                <th data-table-key="abbreviation"class="span2">{{ Lang::line('localisation::languages/table.abbreviation') }}</th>
+                                <th data-table-key="name" class="span4">{{ Lang::line('platform/localisation::languages/table.name') }}</th>
+                                <th data-table-key="abbreviation"class="span2">{{ Lang::line('platform/localisation::languages/table.abbreviation') }}</th>
                                 <th class="span2"></th>
                             </tr>
                         <thead>

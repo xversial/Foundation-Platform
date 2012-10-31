@@ -33,7 +33,7 @@
  * @link       http://cartalyst.com
  * @version    1.1
  */
-class Extensions_Admin_Extensions_Controller extends Admin_Controller
+class Platform_Extensions_Admin_Extensions_Controller extends Admin_Controller
 {
     /**
      * --------------------------------------------------------------------------
@@ -134,35 +134,35 @@ class Extensions_Admin_Extensions_Controller extends Admin_Controller
         //
         if ($slug = Input::get('install'))
         {
-            $this->get_install($slug);
+            $this->get_install($vendor, $slug);
         }
 
         // Are we uninstalling an extension ?
         //
         elseif ($slug = Input::get('uninstall'))
         {
-            $this->get_uninstall($slug);
+            $this->get_uninstall($vendor, $slug);
         }
 
         // Are we enabling an extension ?
         //
         elseif ($slug = Input::get('enable'))
         {
-            $this->get_enable($slug);
+            $this->get_enable($vendor, $slug);
         }
 
         // Are we disabling an extension ?
         //
         elseif ($slug = Input::get('disable'))
         {
-            $this->get_disable($slug);
+            $this->get_disable($vendor, $slug);
         }
 
         // Are we updating an extension ?
         //
         elseif ($slug = Input::get('update'))
         {
-            $this->get_update($slug);
+            $this->get_update($vendor, $slug);
         }
 
         // Redirect to the extensions page.
@@ -182,20 +182,21 @@ class Extensions_Admin_Extensions_Controller extends Admin_Controller
      * @param    string
      * @return   Redirect
      */
-    public function get_install($slug)
+    public function get_install($vendor, $slug)
     {
         try
         {
             // Make the request.
             //
-            API::put('extensions/' . $slug, array('install' => true));
+            API::put('extensions/' . $vendor . '/' . $slug, array('install' => true));
 
             // Set the success message.
             //
-            Platform::messages()->success(Lang::line('extensions.install.success', array('extension' => $slug))->get());
+            Platform::messages()->success(Lang::line('platform/extensions.install.success', array('extension' => $slug))->get());
         }
         catch (APIClientException $e)
         {
+            throw $e;
             // Set the error message.
             //
             Platform::messages()->error($e->getMessage());
@@ -225,17 +226,17 @@ class Extensions_Admin_Extensions_Controller extends Admin_Controller
      * @param    string
      * @return   Redirect
      */
-    public function get_uninstall($slug)
+    public function get_uninstall($vendor, $slug)
     {
         try
         {
             // Make the request.
             //
-            API::put('extensions/' . $slug, array('uninstall' => true));
+            API::put('extensions/' . $vendor . '/' . $slug, array('uninstall' => true));
 
             // Set the success message.
             //
-            Platform::messages()->success(Lang::line('extensions.uninstall.success', array('extension' => $slug))->get());
+            Platform::messages()->success(Lang::line('platform/extensions.uninstall.success', array('extension' => $slug))->get());
         }
         catch (APIClientException $e)
         {
@@ -268,17 +269,17 @@ class Extensions_Admin_Extensions_Controller extends Admin_Controller
      * @param    string
      * @return   Redirect
      */
-    public function get_enable($slug)
+    public function get_enable($vendor, $slug)
     {
         try
         {
             // Make tue request.
             //
-            API::put('extensions/' . $slug, array('enable' => true));
+            API::put('extensions/' . $vendor . '/' . $slug, array('enable' => true));
 
             // Set the success message.
             //
-            Platform::messages()->success(Lang::line('extensions.enable.success', array('extension' => $slug))->get());
+            Platform::messages()->success(Lang::line('platform/extensions.enable.success', array('extension' => $slug))->get());
         }
         catch (APIClientException $e)
         {
@@ -311,17 +312,17 @@ class Extensions_Admin_Extensions_Controller extends Admin_Controller
      * @param    string
      * @return   Redirect
      */
-    public function get_disable($slug)
+    public function get_disable($vendor, $slug)
     {
         try
         {
             // Make tue request.
             //
-            API::put('extensions/' . $slug, array('disable' => true));
+            API::put('extensions/' . $vendor . '/' . $slug, array('disable' => true));
 
             // Set the success message.
             //
-            Platform::messages()->success(Lang::line('extensions.disable.success', array('extension' => $slug))->get());
+            Platform::messages()->success(Lang::line('platform/extensions.disable.success', array('extension' => $slug))->get());
         }
         catch (APIClientException $e)
         {
@@ -355,19 +356,19 @@ class Extensions_Admin_Extensions_Controller extends Admin_Controller
      * @param    string
      * @return   Redirect
      */
-    public function get_update($slug)
+    public function get_update($vendor, $slug)
     {
         try
         {
             // Make the request.
             //
-            API::put('extensions/' . $slug, array(
+            API::put('extensions/' . $vendor . '/' . $slug, array(
                 'update' => true
             ));
 
             // Set the success message.
             //
-            Platform::messages()->success(Lang::line('extensions.update.success', array('extension' => $slug))->get());
+            Platform::messages()->success(Lang::line('platform/extensions.update.success', array('extension' => $slug))->get());
         }
         catch (APIClientException $e)
         {
@@ -400,19 +401,20 @@ class Extensions_Admin_Extensions_Controller extends Admin_Controller
      * @param    string
      * @return   mixed
      */
-    public function get_view($slug)
+    public function get_view($vendor, $slug = null)
     {
         // Check if the extension exists.
         //
         try
         {
-            $extension  = API::get('extensions/' . $slug);
+            $extension  = API::get('extensions/' . $vendor . '/' . $slug);
             $extensions = API::get('extensions');
         }
         catch (APIClientException $e)
         {
             // Set the error message.
             //
+            echo $e->getMessage();
             Platform::messages()->error($e->getMessage());
 
             // Set the other error messages.
@@ -444,59 +446,59 @@ class Extensions_Admin_Extensions_Controller extends Admin_Controller
      * @param    string
      * @return   mixed
      */
-    public function post_view($slug)
+    public function post_view($vendor, $slug)
     {
         // If we are installing a required extension.
         //
         if ($required = Input::get('install_required'))
         {
-            $this->get_install($required);
+            $this->get_install($vendor, $required);
         }
 
         // If we are enabling a required extension.
         //
         elseif ($required = Input::get('enable_required'))
         {
-            $this->get_enable($required);
+            $this->get_enable($vendor, $required);
         }
 
         // If we are installing the extension.
         //
         elseif (Input::get('install'))
         {
-            $this->get_install($slug);
+            $this->get_install($vendor, $slug);
         }
 
         // If we are uninstalling the extension.
         //
         elseif (Input::get('uninstall'))
         {
-            $this->get_uninstall($slug);
+            $this->get_uninstall($vendor, $slug);
         }
 
         // If we are enabling the extension.
         //
         elseif (Input::get('enable'))
         {
-            $this->get_enable($slug);
+            $this->get_enable($vendor, $slug);
         }
 
         // If we are disabling the extension.
         //
         elseif (Input::get('disable'))
         {
-            $this->get_disable($slug);
+            $this->get_disable($vendor, $slug);
         }
 
         // If we are updating the extension.
         //
         elseif (Input::get('update'))
         {
-            $this->get_update($slug);
+            $this->get_update($vendor, $slug);
         }
 
         // Redirect to the extension page.
         //
-        return Redirect::to_admin('extensions/view/' . $slug);
+        return Redirect::to_admin('extensions/view/' . $vendor . '/' . $slug);
     }
 }

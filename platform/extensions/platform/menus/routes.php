@@ -36,7 +36,7 @@ $reserved = implode('|', array(
  *     /api/menus/admin/children/flat => menus::menus.api@children
  *  </code>
  */
-Route::any(array(API . '/menus/((?!' . $reserved .').*)/children/flat', API . '/menus/flat'), 'menus::api.menus@flat');
+Route::any(array(API . '/menus/((?!' . $reserved .').*)/children/flat', API . '/menus/flat'), 'platform/menus::api.menus@flat');
 
 
 /**
@@ -46,7 +46,7 @@ Route::any(array(API . '/menus/((?!' . $reserved .').*)/children/flat', API . '/
  *     /api/menus/admin/children => menus::menus.api@children(admin)
  *  </code>
  */
-Route::any(API . '/menus/((?!' . $reserved . ').*)/children', 'menus::api.menus@children');
+Route::any(API . '/menus/((?!' . $reserved . ').*)/children', 'platform/menus::api.menus@children');
 
 
 /**
@@ -56,7 +56,7 @@ Route::any(API . '/menus/((?!' . $reserved . ').*)/children', 'menus::api.menus@
  *     /api/menus/admin => menus::menus.api@index(admin)
  *  </code>
  */
-Route::any(API . '/menus/((?!' . $reserved . ').*)', 'menus::api.menus@index');
+Route::any(API . '/menus/((?!' . $reserved . ').*)', 'platform/menus::api.menus@index');
 
 
 /*

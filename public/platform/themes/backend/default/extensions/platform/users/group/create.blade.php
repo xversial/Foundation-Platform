@@ -2,7 +2,7 @@
 
 <!-- Page Title -->
 @section('title')
-	{{ Lang::line('users::general.groups.create.title') }}
+	{{ Lang::line('platform/users::general.groups.create.title') }}
 @endsection
 
 <!-- Queue Styles | e.g Theme::queue_asset('name', 'path_to_css', 'dependency')-->
@@ -33,7 +33,7 @@
 					<span class="icon-bar"></span>
 				</a>
 
-				<a class="brand" href="#">{{ Lang::line('users::general.groups.create.title') }}</a>
+				<a class="brand" href="#">{{ Lang::line('platform/users::general.groups.create.title') }}</a>
 
 				<!-- Everything you want hidden at 940px or less, place within here -->
 				<div id="tertiary-navigation" class="nav-collapse">

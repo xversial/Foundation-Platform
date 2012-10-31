@@ -33,7 +33,7 @@
  * @link       http://cartalyst.com
  * @version    1.1
  */
-class Themes_Admin_Themes_Controller extends Admin_Controller
+class Platform_Themes_Admin_Themes_Controller extends Admin_Controller
 {
     /**
      * --------------------------------------------------------------------------
@@ -207,7 +207,7 @@ class Themes_Admin_Themes_Controller extends Admin_Controller
 
             // Set the success message.
             //
-            Platform::messages()->success(Lang::line('themes::messages.update.success', array('theme' => $type . '\\' . $name))->get());
+            Platform::messages()->success(Lang::line('platform/themes::messages.update.success', array('theme' => $type . '\\' . $name))->get());
         }
         catch (APIClientException $e)
         {
@@ -269,7 +269,7 @@ class Themes_Admin_Themes_Controller extends Admin_Controller
 
             // Set the success message.
             //
-            Platform::messages()->success(Lang::line('themes::messages.activate.success', array('theme' => $type . '\\' . $theme))->get());
+            Platform::messages()->success(Lang::line('platform/themes::messages.activate.success', array('theme' => $type . '\\' . $theme))->get());
         }
         catch (APIClientException $e)
         {

@@ -32,7 +32,7 @@ use Platform\Menus\Menu;
  * --------------------------------------------------------------------------
  * Install Class v1.0.0
  * --------------------------------------------------------------------------
- * 
+ *
  * Menus installation.
  *
  * @package    Platform
@@ -41,7 +41,7 @@ use Platform\Menus\Menu;
  * @license    BSD License (3-clause)
  * @link       http://cartalyst.com
  */
-class Menus_v1_0_0
+class Platform_Menus_v1_0_0
 {
     /**
      * --------------------------------------------------------------------------
@@ -109,7 +109,7 @@ class Menus_v1_0_0
             'user_editable' => 0,
             'status'        => 1
         ));
-        $menus->last_child_of($system);
+        $menus->last_child_of($admin);
 
         // Create the main link.
         //

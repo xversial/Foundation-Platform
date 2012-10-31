@@ -325,6 +325,17 @@ class Installer_Install_Controller extends Installer_Base_Controller
             // Create the admin user.
             //
             API::post('users', $user);
+
+            // Use admin email as default
+            $settings[] = array(
+                'extension'  => 'settings',
+                'vendor'     => 'platform',
+                'type'       => 'site',
+                'name'       => 'email',
+                'value'      => $user['email']
+            );
+
+            API::put('settings', array('settings' => $settings));
         }
         catch (APIClientException $e)
         {

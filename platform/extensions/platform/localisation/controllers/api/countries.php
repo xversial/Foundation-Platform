@@ -31,7 +31,7 @@ use Platform\Localisation\Model\Country;
  * --------------------------------------------------------------------------
  * Localisation > Countries > API Class
  * --------------------------------------------------------------------------
- * 
+ *
  * Manage the countries.
  *
  * @package    Platform
@@ -41,7 +41,7 @@ use Platform\Localisation\Model\Country;
  * @link       http://cartalyst.com
  * @version    1.0
  */
-class Localisation_API_Countries_Controller extends API_Controller
+class Platform_Localisation_API_Countries_Controller extends API_Controller
 {
     /**
      * --------------------------------------------------------------------------
@@ -85,7 +85,7 @@ class Localisation_API_Countries_Controller extends API_Controller
                 // Country not found.
                 //
                 return new Response(array(
-                    'message' => Lang::line('localisation::countries/message.error.not_found', array('country' => $country_code))->get()
+                    'message' => Lang::line('platform/localisation::countries/message.error.not_found', array('country' => $country_code))->get()
                 ), API::STATUS_NOT_FOUND);
             }
 
@@ -154,7 +154,7 @@ class Localisation_API_Countries_Controller extends API_Controller
                 // Return a response.
                 //
                 return new Response(array(
-                    'message' => Lang::line('localisation::countries/message.create.success', array('country' => $country->name))->get(),
+                    'message' => Lang::line('platform/localisation::countries/message.create.success', array('country' => $country->name))->get(),
                     'slug'    => $country->slug
                 ), API::STATUS_CREATED);
             }
@@ -166,7 +166,7 @@ class Localisation_API_Countries_Controller extends API_Controller
                 // Return a response.
                 //
                 return new Response(array(
-                    'message' => Lang::line('localisation::countries/message.create.fail')->get(),
+                    'message' => Lang::line('platform/localisation::countries/message.create.fail')->get(),
                     'errors'  => ($country->validation()->errors->has()) ? $country->validation()->errors->all() : array()
                 ), ($country->validation()->errors->has()) ? API::STATUS_BAD_REQUEST : API::STATUS_UNPROCESSABLE_ENTITY);
             }
@@ -187,7 +187,7 @@ class Localisation_API_Countries_Controller extends API_Controller
      * Function: put_index()
      * --------------------------------------------------------------------------
      *
-     * Edits a given country using the provided country id, country code 
+     * Edits a given country using the provided country id, country code
      * or by using the country slug.
      *
      *  <code>
@@ -236,7 +236,7 @@ class Localisation_API_Countries_Controller extends API_Controller
                 //
                 return new Response(array(
                     'slug'    => $country->slug,
-                    'message' => Lang::line('localisation::countries/message.update.success', array('country' => $country['name']))->get()
+                    'message' => Lang::line('platform/localisation::countries/message.update.success', array('country' => $country['name']))->get()
                 ));
             }
             else
@@ -244,7 +244,7 @@ class Localisation_API_Countries_Controller extends API_Controller
                 // Return a response.
                 //
                 return new Response(array(
-                    'message' => Lang::line('localisation::countries/message.update.fail', array('country' => $country['name']))->get(),
+                    'message' => Lang::line('platform/localisation::countries/message.update.fail', array('country' => $country['name']))->get(),
                     'errors'  => ($country->validation()->errors->has()) ? $country->validation()->errors->all() : array()
                 ), ($country->validation()->errors->has()) ? API::STATUS_BAD_REQUEST : API::STATUS_UNPROCESSABLE_ENTITY);
             }
@@ -266,7 +266,7 @@ class Localisation_API_Countries_Controller extends API_Controller
      * Function: delete_index()
      * --------------------------------------------------------------------------
      *
-     * Deletes a given country using the provided country id, country code 
+     * Deletes a given country using the provided country id, country code
      * or by using the country slug.
      *
      *  <code>
@@ -292,7 +292,7 @@ class Localisation_API_Countries_Controller extends API_Controller
             // Return a response.
             //
             return new Response(array(
-                'message' => Lang::line('localisation::countries/message.error.not_found', array('country' => $country_code))->get()
+                'message' => Lang::line('platform/localisation::countries/message.error.not_found', array('country' => $country_code))->get()
             ), API::STATUS_NOT_FOUND);
         }
 
@@ -303,7 +303,7 @@ class Localisation_API_Countries_Controller extends API_Controller
             // Return a response.
             //
             return new Response( array(
-                'message' => Lang::line('localisation::countries/message.delete.single.being_used')->get()
+                'message' => Lang::line('platform/localisation::countries/message.delete.single.being_used')->get()
             ), API::STATUS_BAD_REQUEST);
         }
 
@@ -318,7 +318,7 @@ class Localisation_API_Countries_Controller extends API_Controller
             // Return a response.
             //
             return new Response(array(
-                'message' => Lang::line('localisation::countries/message.delete.single.success', array('country' => $country->name))->get()
+                'message' => Lang::line('platform/localisation::countries/message.delete.single.success', array('country' => $country->name))->get()
             ));
         }
         catch (Exception $e)
@@ -326,7 +326,7 @@ class Localisation_API_Countries_Controller extends API_Controller
             // Return a response.
             //
             return new Response( array(
-                'message' => Lang::line('localisation::countries/message.delete.single.fail', array('country' => $country->name))->get()
+                'message' => Lang::line('platform/localisation::countries/message.delete.single.fail', array('country' => $country->name))->get()
             ), API::STATUS_BAD_REQUEST);
         }
     }
@@ -433,7 +433,7 @@ class Localisation_API_Countries_Controller extends API_Controller
             // Return a response.
             //
             return new Response(array(
-                'message' => Lang::line('localisation::countries/message.error.not_found', array('country' => $country_code))->get()
+                'message' => Lang::line('platform/localisation::countries/message.error.not_found', array('country' => $country_code))->get()
             ), API::STATUS_NOT_FOUND);
         }
 
@@ -444,7 +444,7 @@ class Localisation_API_Countries_Controller extends API_Controller
             // Return a response.
             //
             return new Response(array(
-                'message' => Lang::line('localisation::countries/message.update.already_default', array('country' => $country['name']))->get()
+                'message' => Lang::line('platform/localisation::countries/message.update.already_default', array('country' => $country['name']))->get()
             ));
         }
 
@@ -459,7 +459,7 @@ class Localisation_API_Countries_Controller extends API_Controller
         // Return a response.
         //
         return new Response(array(
-            'message' => Lang::line('localisation::countries/message.update.default', array('country' => $country->name))->get()
+            'message' => Lang::line('platform/localisation::countries/message.update.default', array('country' => $country->name))->get()
         ));
     }
 }

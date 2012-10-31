@@ -207,7 +207,7 @@ class Router {
 			}
 
 			$uri = ltrim(str_replace('(:bundle)', static::$bundle, $uri), '/');
-			
+
 			if($uri == '')
 			{
 				$uri = '/';
@@ -237,7 +237,7 @@ class Router {
 			{
 				$routes[$method][$uri] = static::action($action);
 			}
-			
+
 			// If a group is being registered, we'll merge all of the group
 			// options into the action, giving preference to the action
 			// for options that are specified in both.

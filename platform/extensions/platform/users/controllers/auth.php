@@ -18,7 +18,7 @@
  * @link       http://cartalyst.com
  */
 
-class Users_Auth_Controller extends Public_Controller
+class Platform_Users_Auth_Controller extends Public_Controller
 {
 
 	/**
@@ -150,7 +150,7 @@ class Users_Auth_Controller extends Public_Controller
 			}
 
 			// Success message
-			$response['message'] = Lang::line('users::messages.auth.success')->get();
+			$response['message'] = Lang::line('platform/users::messages.auth.success')->get();
 		}
 		catch (APIClientException $e)
 		{
@@ -232,13 +232,13 @@ class Users_Auth_Controller extends Public_Controller
 
 			if ( ! Request::ajax())
 			{
-				Platform::messages()->success(Lang::line('users::messages.auth.password_success')->get());
+				Platform::messages()->success(Lang::line('platform/users::messages.auth.password_success')->get());
 
 				return Redirect::to_secure('login');
 			}
 			else
 			{
-				$response['message'] = Lang::line('users::messages.auth.password_success')->get();
+				$response['message'] = Lang::line('platform/users::messages.auth.password_success')->get();
 			}
 		}
 		catch (APIClientException $e)
@@ -281,7 +281,7 @@ class Users_Auth_Controller extends Public_Controller
 				'password' => $password,
 			));
 
-			Platform::messages()->success(Lang::line('users::messages.auth.password_confirm_success')->get());
+			Platform::messages()->success(Lang::line('platform/users::messages.auth.password_confirm_success')->get());
 
 			return Redirect::to_secure('login');
 		}

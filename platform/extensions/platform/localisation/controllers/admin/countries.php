@@ -33,7 +33,7 @@
  * @link       http://cartalyst.com
  * @version    1.0
  */
-class Localisation_Admin_Countries_Controller extends Admin_Controller
+class Platform_Localisation_Admin_Countries_Controller extends Admin_Controller
 {
     /**
      * --------------------------------------------------------------------------

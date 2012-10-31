@@ -23,7 +23,7 @@
  * --------------------------------------------------------------------------
  * Platform > Core > Router Class
  * --------------------------------------------------------------------------
- * 
+ *
  * Platform > Core > Router Class
  *
  * @package    Platform
@@ -96,7 +96,7 @@ class Router extends Laravel\Routing\Router
             $route = new Route($method, $uri, $action);
 
             static::add_to_queue($route);
-            
+
             return new Route($method, $uri, $action);
         }
 

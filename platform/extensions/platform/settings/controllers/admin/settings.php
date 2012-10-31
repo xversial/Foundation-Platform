@@ -42,7 +42,7 @@ use Platform\Menus\Menu,
  * @link       http://cartalyst.com
  * @version    1.1
  */
-class Settings_Admin_Settings_Controller extends Admin_Controller
+class Platform_Settings_Admin_Settings_Controller extends Admin_Controller
 {
     /**
      * --------------------------------------------------------------------------
@@ -102,24 +102,27 @@ class Settings_Admin_Settings_Controller extends Admin_Controller
 
         // Get all the settings from the database.
         //
-        foreach (API::get('settings', array('organize' => true)) as $extension => $extension_settings)
+        foreach (API::get('settings', array('organize' => true)) as $extension => $vendors)
         {
-            // Make sure this extension settings widget exists.
-            //
-            if( ! class_exists('Platform\\' . ucfirst($extension) . '\\Widgets\\Settings'))
+            foreach ($vendors as $vendor => $extension_settings)
             {
-                continue;
-            }
-
-            // Loop through all this extension settings
-            //
-            foreach ($extension_settings as $type => $setting)
-            {
-                // Populate the array.
+                // Make sure this extension settings widget exists.
                 //
-                foreach($setting as $data)
+                if( ! class_exists(ucfirst($vendor) . '\\' . ucfirst($extension) . '\\Widgets\\Settings'))
                 {
-                    $settings[ $extension ][ $type ][ $data['name'] ] = $data['value'];
+                    continue;
+                }
+
+                // Loop through all this extension settings
+                //
+                foreach ($extension_settings as $type => $setting)
+                {
+                    // Populate the array.
+                    //
+                    foreach($setting as $data)
+                    {
+                        $settings[ $vendor . '/' . $extension ][ $type ][ $data['name'] ] = $data['value'];
+                    }
                 }
             }
         }
@@ -172,6 +175,7 @@ class Settings_Admin_Settings_Controller extends Admin_Controller
 
             // Get this extension name.
             //
+            $vendor = Input::get('vendor', 'platform');
             $extension = Input::get('extension', 'settings');
 
             // Set validation if the field doesn't exist.
@@ -191,6 +195,7 @@ class Settings_Admin_Settings_Controller extends Admin_Controller
             // Set the values.
             //
             $settings[] = array(
+                'vendor'     => $vendor,
                 'extension'  => $extension,
                 'type'       => $type,
                 'name'       => $name,
@@ -215,7 +220,7 @@ class Settings_Admin_Settings_Controller extends Admin_Controller
                 {
                     // Set the success message.
                     //
-                    Platform::messages()->success(Lang::line('settings::message.success', array('setting' => $setting)));
+                    Platform::messages()->success(Lang::line('platform/settings::message.success', array('setting' => $setting)));
                 }
             }
 

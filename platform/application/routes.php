@@ -27,34 +27,47 @@
  * We can use this for the administration extensions.
  *
  */
-Route::any(ADMIN . '/(:any?)/(:any?)/(:any?)(/.*)?', function($bundle = 'dashboard', $controller = null, $action = null, $params = null)
+Route::any(ADMIN . '/(:any?)/(:any?)/(:any?)(/.*)?', function($handle = 'dashboard', $controller = null, $action = null, $params = null)
 {
     // Check if the extension exists.
     //
-    if ( ! Bundle::exists($bundle))
+    if ( ! Bundle::exists($bundle = Bundle::handles($handle)))
     {
         return Response::error('404');
     }
 
     // Check if the controller exists.
     //
-    if (Controller::resolve($bundle, 'admin.' . $controller))
+    if ($controller_instance = Platform::extensions_manager()->resolve_controller($bundle, 'admin.' . $controller))
     {
-        $controller = $bundle . '::admin.' . $controller . '@' . (($action) ?: 'index');
-        $params     = explode('/', substr($params, 1));
+        $method          = (($action) ?: 'index');
+        $params          = explode('/', substr($params, 1));
+        $name            = 'admin.' . $controller;
     }
-
-    // If it doesn't, default to the bundle name as a controller.
-    //
+    elseif ($controller_instance = Platform::extensions_manager()->resolve_controller($bundle, 'admin.' . $handle))
+    {
+        $method          = (($controller) ?: 'index');
+        $params          = explode('/', $action.$params);
+        $name            = 'admin.' . $handle;
+    }
     else
     {
-        $controller = $bundle . '::admin.' . $bundle . '@' . (($controller) ?: 'index');
-        $params     = explode('/', $action.$params);
+        return Response::error('404');
     }
 
-    // Execute the controller.
-    //
-    return Controller::call($controller, $params);
+    // For convenience we will set the current controller and action on the
+    // Request's route instance so they can be easily accessed from the
+    // application. This is sometimes useful for dynamic situations.
+    if ( ! is_null($route = Request::route()))
+    {
+    	$route->bundle = $bundle;
+
+        $route->controller = $name;
+
+        $route->controller_action = $method;
+    }
+
+    return $controller_instance->execute($method, $params);
 });
 
 
@@ -69,9 +82,31 @@ Route::any(ADMIN . '/(:any?)/(:any?)/(:any?)(/.*)?', function($bundle = 'dashboa
  *      /api/users/1 => users::api.users@index(1)
  *  </code>
  */
-Route::any(API . '/(:any)/(:num)', function($bundle = DEFAULT_BUNDLE, $id = null, $params = null)
+Route::any(API . '/(:any)/(:num)', function($handle = DEFAULT_BUNDLE, $id = null, $params = null)
 {
-    return Controller::call($bundle . '::api.' . $bundle . '@index', array($id));
+    if ( ! Bundle::exists($bundle = Bundle::handles($handle)))
+    {
+        return Controller::call('api@no_route');
+    }
+
+    // Check if the controller exists.
+    //
+    if ( ! $controller_instance = Platform::extensions_manager()->resolve_controller($bundle, 'api.' . $handle))
+    {
+        return Controller::call('api@no_route');
+    }
+
+    // For convenience we will set the current controller and action on the
+    // Request's route instance so they can be easily accessed from the
+    // application. This is sometimes useful for dynamic situations.
+    if ( ! is_null($route = Request::route()))
+    {
+        $route->controller = $controller_instance;
+
+        $route->controller_action = 'index';
+    }
+
+    return $controller_instance->execute('index', array($id));
 });
 
 
@@ -86,9 +121,31 @@ Route::any(API . '/(:any)/(:num)', function($bundle = DEFAULT_BUNDLE, $id = null
  *      /api/users/groups/1 => users::api.users.groups@index(1)
  *  </code>
  */
-Route::any(API . '/(:any)/(:any)/(:num)', function($bundle = DEFAULT_BUNDLE, $controller = null, $id = null, $params = null)
+Route::any(API . '/(:any)/(:any)/(:num)', function($handle = DEFAULT_BUNDLE, $controller = null, $id = null, $params = null)
 {
-    return Controller::call($bundle . '::api.' . $controller . '@index', array($id));
+	if ( ! Bundle::exists($bundle = Bundle::handles($handle)))
+    {
+        return Controller::call('api@no_route');
+    }
+
+    // Check if the controller exists.
+    //
+    if ( ! $controller_instance = Platform::extensions_manager()->resolve_controller($bundle, 'api.' . $controller))
+    {
+        return Controller::call('api@no_route');
+    }
+
+    // For convenience we will set the current controller and action on the
+    // Request's route instance so they can be easily accessed from the
+    // application. This is sometimes useful for dynamic situations.
+    if ( ! is_null($route = Request::route()))
+    {
+        $route->controller = $controller_instance;
+
+        $route->controller_action = 'index';
+    }
+
+    return $controller_instance->execute('index', array($id));
 });
 
 
@@ -100,42 +157,43 @@ Route::any(API . '/(:any)/(:any)/(:num)', function($bundle = DEFAULT_BUNDLE, $co
  * Re-route api controllers.
  *
  */
-Route::any(array(API . '/(:any?)/(:any?)/(:any?)(/.*)?', API . '/(:any?)/(:any?)(/.*)?', API . '/(:any?)(/.*)?'), function($bundle = 'dashboard', $controller = null, $action = null, $params = null)
+Route::any(array(API . '/(:any?)/(:any?)/(:any?)(/.*)?', API . '/(:any?)/(:any?)(/.*)?', API . '/(:any?)(/.*)?'), function($handle = 'dashboard', $controller = null, $action = null, $params = null)
 {
     // Check if the extension exists.
     //
-    if ( ! Bundle::exists($bundle))
+    if ( ! Bundle::exists($bundle = Bundle::handles($handle)))
     {
-        $bundle = DEFAULT_BUNDLE;
+        return Controller::call('api@no_route');
     }
 
     // Check if the controller exists.
     //
-    if (Controller::resolve($bundle, $_controller = 'api.' . $controller))
+    if ($controller_instance = Platform::extensions_manager()->resolve_controller($bundle, 'api.' . $controller))
     {
-        $controller = $bundle . '::' . $_controller . '@' . (($action) ?: 'index');
-        $params     = explode('/', substr($params, 1));
+        $method          = (($action) ?: 'index');
+        $params          = explode('/', substr($params, 1));
     }
-
-    // If it doesn't, default to the bundle name as a controller.
-    //
-    elseif (Controller::resolve($bundle, $_controller = 'api.' . $bundle))
+    elseif ($controller_instance = Platform::extensions_manager()->resolve_controller($bundle, 'api.' . $handle))
     {
-        $controller = $bundle . '::' . $_controller . '@' . (($controller) ?: 'index');
-        $params     = explode('/', $action.$params);
+        $method          = (($controller) ?: 'index');
+        $params          = explode('/', $action.$params);
     }
-
-    // Fallback to API controller.
-    //
     else
     {
-        $controller = 'api@no_route';
-        $params     = array();
+        return Controller::call('api@no_route');
     }
 
-    // Execute the controller.
-    //
-    return Controller::call($controller, $params);
+    // For convenience we will set the current controller and action on the
+    // Request's route instance so they can be easily accessed from the
+    // application. This is sometimes useful for dynamic situations.
+    if ( ! is_null($route = Request::route()))
+    {
+        $route->controller = $controller_instance;
+
+        $route->controller_action = $method;
+    }
+
+    return $controller_instance->execute($method, $params);
 });
 
 
@@ -169,28 +227,28 @@ Event::listen('500', function(){ return Response::error('500'); });
  * --------------------------------------------------------------------------
  *  Route Filters
  * --------------------------------------------------------------------------
- * 
+ *
  *  Filters provide a convenient method for attaching functionality to your
  *  routes. The built-in before and after filters are called before and
  *  after every request to your application, and you may even create
  *  other filters that can be attached to individual routes.
- * 
+ *
  *  Let's walk through an example...
- * 
+ *
  *  First, define a filter:
- * 
+ *
  *         Route::filter('filter', function()
  *         {
  *             return 'Filtered!';
  *         });
- * 
+ *
  *  Next, attach the filter to a route:
- * 
+ *
  *         Router::register('GET /', array('before' => 'filter', function()
  *         {
  *             return 'Hello World!';
  *         }));
- * 
+ *
  */
 Route::filter('before', function(){});
 Route::filter('after', function($response){});

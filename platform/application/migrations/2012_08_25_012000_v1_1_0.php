@@ -18,7 +18,6 @@
  * @link       http://cartalyst.com
  */
 
-
 /**
  * --------------------------------------------------------------------------
  * Install Class v1.1.0
@@ -62,7 +61,7 @@ class v1_1_0
                 $extensions[] = (array) $extension;
             }
 
-            // And drop the table.
+            // Drop the extensions table.
             //
             Schema::drop('extensions');
         }
@@ -75,7 +74,7 @@ class v1_1_0
         Schema::create('extensions', function($table){
             $table->increments('id');
             $table->string('vendor', 150);
-            $table->string('slug', 150);
+            $table->string('extension', 150);
             $table->string('version', 10);
             $table->boolean('enabled')->default(0);
         });
@@ -103,6 +102,6 @@ class v1_1_0
      */
     public function down()
     {
-        // No need to revert.
+
     }
 }

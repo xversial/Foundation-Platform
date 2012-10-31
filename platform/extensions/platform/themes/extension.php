@@ -45,8 +45,8 @@ return array(
      * -----------------------------------------
      */
     'dependencies' => array(
-        'menus',
-        'settings'
+        'platform.menus',
+        'platform.settings'
     ),
 
 
@@ -68,9 +68,9 @@ return array(
      * -----------------------------------------
      */
     'rules' => array(
-        'themes::admin.themes@frontend',
-        'themes::admin.themes@backend',
-        'themes::admin.themes@edit',
-        'themes::admin.themes@activate'
+        'platform/themes::admin.themes@frontend',
+        'platform/themes::admin.themes@backend',
+        'platform/themes::admin.themes@edit',
+        'platform/themes::admin.themes@activate'
     )
 );

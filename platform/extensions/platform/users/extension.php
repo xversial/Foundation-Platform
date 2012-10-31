@@ -25,6 +25,7 @@
  * --------------------------------------------------------------------------
  */
 return array(
+
     /*
      * -----------------------------------------
      * Extension information.
@@ -45,8 +46,8 @@ return array(
      * -----------------------------------------
      */
     'dependencies' => array(
-        'menus',
-        'settings'
+        'platform.menus',
+        'platform.settings'
     ),
 
 
@@ -71,14 +72,14 @@ return array(
      * -----------------------------------------
      */
     'routes' => function() {
-        Route::any(ADMIN.'/insufficient_permissions', 'users::admin.users@insufficient_permissions');
+        Route::any(ADMIN.'/insufficient_permissions', 'platform/users::admin.users@insufficient_permissions');
 
-        Route::any('register', 'users::auth@register');
-        Route::any('activate/(:any)/(:any)', 'users::auth@activate');
-        Route::any('login', 'users::auth@login');
-        Route::any('logout', 'users::auth@logout');
-        Route::any('reset_password', 'users::auth@reset_password');
-        Route::any('reset_password_confirm/(:any)/(:any)', 'users::auth@reset_password_confirm');
+        Route::any('register', 'platform/users::auth@register');
+        Route::any('activate/(:any)/(:any)', 'platform/users::auth@activate');
+        Route::any('login', 'platform/users::auth@login');
+        Route::any('logout', 'platform/users::auth@logout');
+        Route::any('reset_password', 'platform/users::auth@reset_password');
+        Route::any('reset_password_confirm/(:any)/(:any)', 'platform/users::auth@reset_password_confirm');
     },
 
 
@@ -88,13 +89,13 @@ return array(
      * -----------------------------------------
      */
     'rules' => array(
-        'users::admin.users@index',
-        'users::admin.users@create',
-        'users::admin.users@edit',
-        'users::admin.users@delete',
-        'users::admin.groups@index',
-        'users::admin.groups@create',
-        'users::admin.groups@edit',
-        'users::admin.groups@delete'
+        'platform/users::admin.users@index',
+        'platform/users::admin.users@create',
+        'platform/users::admin.users@edit',
+        'platform/users::admin.users@delete',
+        'platform/users::admin.groups@index',
+        'platform/users::admin.groups@create',
+        'platform/users::admin.groups@edit',
+        'platform/users::admin.groups@delete'
     )
 );
