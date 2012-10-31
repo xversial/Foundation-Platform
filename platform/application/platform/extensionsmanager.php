@@ -1623,11 +1623,37 @@ class ExtensionsManager
             $extension['info']['is_installed'] = $this->is_installed($slug);
 
             // Bundles array, so we can register the extension as a bundle in Laravel.
+            // 
+            /**
+            // @todo, Bruno, this is needed to add a custom handle for an extnesion!
+            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
+            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
+            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
+            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
+            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
+            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
+            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
+            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
+            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
+            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
+            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
+            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
+            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
+            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
+            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
+            */
             //
-            $extension['bundles'] = array(
-                'handles'  => $ext,
-                'location' => 'path: ' . dirname($file)
-            );
+            if ( ! isset($extension['bundles']['handles']))
+            {
+                $extension['bundles']['handles'] = $ext;
+            }
+
+            $extension['bundles']['location'] = 'path: ' . dirname($file);
+
+            // $extension['bundles'] = array(
+            //     'handles'  => $ext,
+            //     'location' => 'path: ' . dirname($file)
+            // );
 
             // Sort this extension info array.
             //
