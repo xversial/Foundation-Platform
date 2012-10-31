@@ -37,7 +37,49 @@
     <hr>
 
     <div class="quaternary page">
-        Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vestibulum id ligula porta felis euismod semper. Vestibulum id ligula porta felis euismod semper.
+
+    	<form action="{{ URL::to_admin('developers/creator') }}" method="POST" class="form-horizontal">
+    		<input type="hidden" name="{{ Session::csrf_token }}" value="{{ Session::token() }}">
+
+    		<fieldset>
+    			<legend>1. Required</legend>
+
+    			<div class="control-group">
+    				<label class="control-label">Vendor</label>
+    				<div class="controls">
+    					<input type="text" name="vendor" required>
+    				</div>
+    			</div>
+
+
+    		</fieldset>
+
+    		<fieldset>
+    			<legend>2. Optional</legend>
+
+    			<div class="control-group">
+    				<label class="control-label">Vendor</label>
+    				<div class="controls">
+    					<input type="text" name="vendor" required>
+    				</div>
+    			</div>
+
+    			<div class="control-group">
+    				<div class="controls">
+	    				<div class="btn-group">
+	    					<button type="submit" class="btn btn-primary">
+	    						Create
+	    					</button>
+	    					<button type="reset" class="btn">
+	    						Reset
+	    					</button>
+	    				</div>
+    				</div>
+    			</div>
+    		</fieldset>
+
+    	</form>
+
     </div>
 </section>
 @endsection
