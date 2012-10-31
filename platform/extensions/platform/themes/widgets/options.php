@@ -59,6 +59,7 @@ class Options
      */
     public function css()
     {
+        return;
         // Get the active theme type and name.
         //
         $active_parts = explode(DS, ltrim(rtrim(Theme::active(), DS), DS));

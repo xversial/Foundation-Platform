@@ -1,7 +1,8 @@
 <form action="{{ URL::to_admin('settings') }}" id="general-form" class="" method="POST" accept-char="UTF-8">
     <input type="hidden" name="{{ Session::csrf_token }}" value="{{ Session::token() }}">
 
-    {{ Form::hidden('extension', 'settings') }}
+    <input type="hidden" name="extension" value="platform">
+    <input type="hidden" name="extension" value="settings">
 
     <fieldset>
 

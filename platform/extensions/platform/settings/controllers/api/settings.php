@@ -105,7 +105,8 @@ class Platform_Settings_API_Settings_Controller extends API_Controller
             //
             foreach ($result as $setting)
             {
-                $settings[ $setting['extension'] ][ $setting['type'] ][ $setting['name'] ] = $setting;
+                #$settings[ $setting['extension'] ][ $setting['type'] ][ $setting['name'] ] = $setting;
+                $settings[ $setting['extension'] ][ $setting['vendor'] ][ $setting['type'] ][ $setting['name'] ] = $setting;
             }
 
             // Save the settings in our result variable.
@@ -163,6 +164,7 @@ class Platform_Settings_API_Settings_Controller extends API_Controller
 
             // Lets make sure the values are set.
             //
+            $setting['vendor']    = array_get($setting, 'vendor') ?: '';
             $setting['extension'] = array_get($setting, 'extension') ?: '';
             $setting['type']      = array_get($setting, 'type')      ?: '';
             $setting['name']      = array_get($setting, 'name')      ?: '';
@@ -188,6 +190,7 @@ class Platform_Settings_API_Settings_Controller extends API_Controller
                 }
 
                 return $query
+                    ->where('vendor', '=', $setting['vendor'])
                     ->where('extension', '=', $setting['extension'])
                     ->where('type', '=', $setting['type'])
                     ->where('name', '=', $setting['name']);
@@ -205,6 +208,7 @@ class Platform_Settings_API_Settings_Controller extends API_Controller
             //
             else
             {
+                $setting_model->vendor    = $setting['vendor'];
                 $setting_model->extension = $setting['extension'];
                 $setting_model->type      = $setting['type'];
                 $setting_model->name      = $setting['name'];
