@@ -163,22 +163,38 @@ class ExtensionsManager
         //
         $this->extensions();
 
+        // Flattened extensions
+        $extensions_flat = array();
+
         // Now get the enabled extensions, and start them !
         //
         foreach ($this->enabled() as $extensions)
         {
-            // Loop through this vendor extensions.
-            //
             foreach ($extensions as $extension)
             {
-                // Check if the extension was started with success.
-                //
-                if ( ! $this->start(array_get($extension, 'info.slug')))
+                // Core platform extensions
+                if (array_get($extension, 'info.vendor') === self::CORE_VENDOR)
                 {
-                    // Set the warning message.
-                    //
-                    Platform::messages()->warning(Lang::line('extensions.missing_files', array('extension' => array_get($extension, 'info.slug'))));
+                    $extensions_flat[array_get($extension, 'info.slug')] = $extension;
+                    continue;
                 }
+
+                // Loop through this vendor extensions.
+                //
+                $extensions_flat[array_get($extension, 'info.slug')] = $extension;
+            }
+        }
+
+        // Start extensions by their sorted dependencies
+        foreach (Dependencies::sort($extensions_flat) as $slug)
+        {
+            // Check if the extension was started with success.
+            //
+            if ( ! $this->start(array_get(($extension = $extensions_flat[$slug]), 'info.slug')))
+            {
+                // Set the warning message.
+                //
+                Platform::messages()->warning(Lang::line('extensions.missing_files', array('extension' => array_get($extension, 'info.slug'))));
             }
         }
     }
