@@ -1722,7 +1722,19 @@ class ExtensionsManager
         }
     }
 
-    public function bundleize($slug)
+    /**
+     * --------------------------------------------------------------------------
+     * Function: bundleize()
+     * --------------------------------------------------------------------------
+     *
+     * Turns an extnesion slug into something that can be used by Laravel's
+     * bundle system.
+     *
+     * @access   protected
+     * @param    string
+     * @return   string
+     */
+    protected function bundleize($slug)
     {
         return str_replace('.', self::VENDOR_SEPARATOR, $slug);
     }
