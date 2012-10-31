@@ -63,7 +63,7 @@ class Dependencies
      * @param    array
      * @return   array
      */
-    public static function sort($items = null)
+    public static function sort($items = null, $key = 'dependencies')
     {
         // Make sure we have items.
         //
@@ -82,7 +82,7 @@ class Dependencies
 
             // Get this item dependencies.
             //
-            $dependencies = ( (isset($data['dependencies']) and is_array($data['dependencies']) and ! empty($data['dependencies'])) ? $data['dependencies'] : array() );
+            $dependencies = ( (isset($data[$key]) and is_array($data[$key]) and ! empty($data[$key])) ? $data[$key] : array() );
 
             // Store this item dependencies.
             //

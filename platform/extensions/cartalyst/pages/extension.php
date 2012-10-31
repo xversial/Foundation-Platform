@@ -40,7 +40,10 @@ return array(
     'dependencies' => array(
         'platform.menus',
         'platform.settings',
-        'platform.pages',
         #'platform.missing_extension'
-    )
+    ),
+
+    'extends' => array(
+        'platform.pages',
+    ),
 );

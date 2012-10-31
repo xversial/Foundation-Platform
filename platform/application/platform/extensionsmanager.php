@@ -185,8 +185,18 @@ class ExtensionsManager
             }
         }
 
+        // Dependency sort based on the 'extends' key
+        // of an extension
+        //
+        $sorted_slugs = Dependencies::sort($extensions_flat, 'extends');
+
+        // The slugs are currently in order from most
+        // extended to least extended. Let's reverse that.
+        //
+        $sorted_slugs = array_reverse($sorted_slugs);
+
         // Start extensions by their sorted dependencies
-        foreach (Dependencies::sort($extensions_flat) as $slug)
+        foreach ($sorted_slugs as $slug)
         {
             // Check if the extension was started with success.
             //
@@ -1747,6 +1757,18 @@ class ExtensionsManager
         return str_replace('.', self::VENDOR_SEPARATOR, $slug);
     }
 
+    protected $started_handles = array();
+
+    protected function allowed_handles($extension)
+    {
+        if ( ! in_array(($handle = array_get($extension, 'bundles.handles')), $this->started_handles))
+        {
+            return $this->started_handles[] = $handle;
+        }
+
+        return array_get($extension, 'info.slug');
+    }
+
     /**
      * --------------------------------------------------------------------------
      * Function: start_bundle()
@@ -1768,9 +1790,12 @@ class ExtensionsManager
             return true;
         }
 
+        $bundle_config = array_get($extension, 'bundles');
+        $bundle_config['handles'] = $this->allowed_handles($extension);
+
         // Register this extension with Laravel.
         //
-        Bundle::register($slug, array_get($extension, 'bundles'));
+        Bundle::register($slug, $bundle_config);
 
         // Start the extension.
         //

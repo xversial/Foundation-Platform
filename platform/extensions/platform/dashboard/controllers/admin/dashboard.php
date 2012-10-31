@@ -77,7 +77,7 @@ class Platform_Dashboard_Admin_Dashboard_Controller extends Admin_Controller
      */
     public function get_index()
     {
-        $testing = true;
+        $testing = false;
 
         if($testing)
         {
