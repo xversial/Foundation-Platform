@@ -2,7 +2,7 @@
 
     <input type="hidden" name="{{ Session::csrf_token }}" value="{{ Session::token() }}">
 
-    <input type="hidden" name="extension" value="platform">
+    <input type="hidden" name="vendor" value="platform">
     <input type="hidden" name="extension" value="localisation">
 
     <fieldset>
