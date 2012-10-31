@@ -818,10 +818,6 @@ class Platform
         //
         static::extensions_manager()->installer_mode(true);
 
-        // Resolves core tasks.
-        //
-        require_once path('sys') . 'cli/dependencies' . EXT;
-
         // Check for the migrations table.
         //
         try

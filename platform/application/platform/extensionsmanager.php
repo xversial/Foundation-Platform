@@ -1112,10 +1112,6 @@ class ExtensionsManager
         //
         $this->start($slug);
 
-        // Resolves core tasks.
-        //
-        require_once path('sys') . 'cli/dependencies' . EXT;
-
         // Run this extension migrations.
         //
         Command::run(array('migrate', $this->bundleize($slug)));
@@ -1257,10 +1253,6 @@ class ExtensionsManager
         //
         else
         {
-            // Resolves core tasks.
-            //
-            require_once path('sys') . 'cli/dependencies' . EXT;
-
             // Start the extension so we can find it's bundle path.
             //
             $this->start($slug);
