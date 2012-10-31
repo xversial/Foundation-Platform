@@ -153,9 +153,9 @@ class ExtensionsManager
     protected $overridden = array();
 
     /**
-     * Array of started handles. This way only
-     * one extension gets a URL handle. This
-     * is controlled through overrides.
+     * Array of started handles.
+     * This way only one extension gets a URL handle.
+     * This is controlled through overrides.
      *
      * @access   protected
      * @var      array
@@ -189,45 +189,52 @@ class ExtensionsManager
         //
         $this->extensions();
 
-        // Flattened extensions
+        // Initiate an empty array, so we can have a flattened extensions array.
+        //
         $extensions_flat = array();
 
-        // Now get the enabled extensions, and start them !
+        // Now get the enabled extensions.
         //
         foreach ($this->enabled() as $extensions)
         {
+            // Loop through the enabled extensions.
+            //
             foreach ($extensions as $extension)
             {
+                /*
                 // Core platform extensions
-                if (array_get($extension, 'info.vendor') === self::CORE_VENDOR)
+                #if (array_get($extension, 'info.vendor') === self::CORE_VENDOR)
+                if ($this->is_core_vendor(array_get($extension, 'info.slug')))
                 {
                     $extensions_flat[array_get($extension, 'info.slug')] = $extension;
                     continue;
                 }
+                */
 
-                // Loop through this vendor extensions.
+                // Store the extension.
                 //
                 $extensions_flat[array_get($extension, 'info.slug')] = $extension;
             }
         }
 
-        // No extensions
-        if ( ! $extensions_flat)
+        // No extensions available!
+        //
+        if (empty($extensions_flat))
         {
             return;
         }
 
-        // Dependency sort based on the 'overrides' key
-        // of an extension
+        // Dependency sort based on the 'overrides' key of an extension.
         //
         $sorted_slugs = Dependencies::sort($extensions_flat, 'overrides');
 
-        // The slugs are currently in order from most
-        // overridden to least overridden. Let's reverse that.
+        // The slugs are currently in order from most overridden to least overridden.
+        // Let's reverse that.
         //
         $sorted_slugs = array_reverse($sorted_slugs);
 
-        // Start extensions by their sorted dependencies
+        // Start extensions by their sorted dependencies.
+        //
         foreach ($sorted_slugs as $slug)
         {
             // Check if the extension was started with success.
@@ -368,13 +375,21 @@ class ExtensionsManager
             //
             foreach (Extension::all() as $extension)
             {
+                // Extension vendor.
+                //
+                $vendor = $extension->vendor ?: self::DEFAULT_VENDOR;
+
+                // Generate this extension slug.
+                //
+                $slug = $this->generate_slug(array($extension->vendor, $extension->extension));
+
                 // Store the extension.
                 //
-                array_set($this->installed, $this->reverse_slug($extension->slug), 
+                array_set($this->installed, $this->reverse_slug($slug), 
                     array(
                         'info' => array(
-                            'slug'       => $extension->slug,
-                            'vendor'     => $extension->vendor ?: static::DEFAULT_VENDOR,
+                            'slug'       => $slug,
+                            'vendor'     => $vendor,
                             'extension'  => $extension->extension,
                             'is_enabled' => (bool) $extension->enabled,
                             'version'    => $extension->version
@@ -411,6 +426,7 @@ class ExtensionsManager
      * @access   public
      * @return   array
      */
+    # DONE, but maybe needs some changes !!
     public function uninstalled()
     {
         // Do we have the extensions loaded already ?
@@ -923,7 +939,7 @@ class ExtensionsManager
             return ( version_compare(array_get($extension, 'info.version'), $this->current_version($slug)) > 0 );
         }
 
-        // The extension is not installed.
+        // The extension is not installed, so, no updates available !
         //
         return false;
     }
@@ -949,13 +965,9 @@ class ExtensionsManager
             list($vendor, $slug) = explode('.', $slug);
         }
 
-        // List of vendors.
+        // Return the of vendors.
         //
         return array_get($this->extensions, $slug, array());
-
-        // Return the vendors if we did found any.
-        //
-        return ( count($vendors) > 1 ? $vendors : false );
     }
 
 
@@ -1178,16 +1190,9 @@ class ExtensionsManager
 
         // If this extension has vendors. 
         //
-        if ($vendors = $this->vendors($slug))
+        $vendors = $this->vendors($slug);
+        if ( ! empty($vendors))
         {
-            // Not needed now as we can have as many extensions that overide
-            // each other all enabled. Who gets loaded first is sorted by dependencies
-            // the same way normal dependencies are.
-            //
-            // // Disable all other installed vendors of this extension.
-            // //
-            // DB::table('extensions')->where('extension', '=', array_get($extension, 'info.extension'))->update(array('enabled' => 0));
-
             // Make sure the extension get's enabled !
             //
             $enable = 1;
@@ -1196,7 +1201,6 @@ class ExtensionsManager
         // Create the new vendor extension instance.
         //
         $model = new Extension(array(
-            'slug'      => array_get($extension, 'info.slug'),
             'vendor'    => array_get($extension, 'info.vendor'),
             'extension' => array_get($extension, 'info.extension'),
             'version'   => array_get($extension, 'info.version'),
@@ -1210,7 +1214,7 @@ class ExtensionsManager
 
         // Run this extension migrations.
         //
-        Command::run(array('migrate', $this->bundleize($slug)));
+        Command::run(array('migrate', $this->convert_slug($slug)));
 
         // Disable menus related to this extension, if the extension is disabled by default.
         //
@@ -1420,15 +1424,6 @@ class ExtensionsManager
             throw new Exception(Lang::line('extensions.enable.fail', array('extension' => $slug))->get());
         }
 
-        // If this extension has vendors. 
-        //
-        if ($this->vendors($slug))
-        {
-            // We need to make sure all other vendors are disabled.
-            //
-            DB::table('extensions')->where('extension', '=', $extension->extension)->update(array('enabled' => 0));
-        }
-
         // Enable all menus related to this extension.
         //
         try
@@ -1482,47 +1477,6 @@ class ExtensionsManager
             throw new Exception(Lang::line('extensions.disable.fail', array('extension' => $slug))->get());
         }
 
-        // If this extension has vendors. 
-        //
-        if ($vendors = $this->vendors($slug))
-        {
-            // Check if we have a core vendor.
-            //
-            if (array_key_exists(static::CORE_VENDOR, $vendors))
-            {
-                // Enable the core vendor extension.
-                //
-                DB::table('extensions')->where('vendor', '=', static::CORE_VENDOR)->update(array('enabled' => 1));
-            }
-
-            // No core vendor.
-            //
-            else
-            {
-                // Remove the current vendor from the list.
-                //
-                unset($vendors[$extension->vendor]);
-
-                // Loop through the vendors till we find a valid one !
-                //
-                foreach ($vendors as $vendor => $info)
-                {
-                    // Check if this vendor is installed !
-                    //
-                    if ($this->is_installed(array_get($info, 'info.slug')))
-                    {
-                        // Enable this vendor.
-                        //
-                        DB::table('extensions')->where('vendor', '=', $vendor)->update(array('enabled' => 1));
-
-                        // Break the loop !
-                        //
-                        break;
-                    }
-                }
-            }
-        }
-
         // Disable all menus related to this extension.
         //
         try
@@ -1560,9 +1514,42 @@ class ExtensionsManager
      * @param    string
      * @return   boolean
      */
-    public function update($extension)
+    public function update($slug)
     {
-        
+        // Get this extension information.
+        //
+        if (is_null($extension = Extension::find($slug)))
+        {
+            throw new Exception(Lang::line('extensions.not_found', array('extension' => $slug))->get());
+        }
+
+        // Check if this extension has an update.
+        //
+        if ( ! $this->has_update($slug))
+        {
+            throw new Exception(Lang::line('extensions.not_found', array('extension' => $slug))->get());
+        }
+
+        // Get this extension information.
+        //
+        $info = $this->get($slug);
+
+        // Update extension.
+        //
+        $extension->version = $info['info']['version'];
+        $extension->save();
+
+        // Start the extension.
+        //
+        $this->start($slug);
+
+        // Run this extension migrations.
+        //
+        Command::run(array('migrate', $this->convert_slug($slug)));
+
+        // extension was updated.
+        //
+        return true;
     }
 
 
@@ -1579,16 +1566,16 @@ class ExtensionsManager
      */
     public function get($slug)
     {
-        $parts = explode('.', $slug);
-
-        if ( ! isset($parts[1]))
+        // Check if we have a valid slug passed on.
+        //
+        if ( ! strpos($slug, '.'))
         {
             throw new Exception(Lang::line('extensions.invalid_slug')->get());
         }
 
         // Separate the vendor and extension from the slug.
         //
-        list($vendor, $ext) = $parts;
+        list($vendor, $ext) = explode('.', $slug);
 
         // Check if the extension is already in the array.
         //
@@ -1616,44 +1603,19 @@ class ExtensionsManager
             //
             $extension['info']['slug']         = $slug;
             $extension['info']['vendor']       = $vendor;
-            $extension['info']['bundleized']   = str_replace('.', self::VENDOR_SEPARATOR, $slug);
             $extension['info']['extension']    = $ext;
+            $extension['info']['bundleized']   = $this->convert_slug($slug);
             $extension['info']['is_core']      = (bool) ( array_get($extension, 'info.is_core') ?: false );
             $extension['info']['is_enabled']   = $this->is_enabled($slug);
             $extension['info']['is_installed'] = $this->is_installed($slug);
 
             // Bundles array, so we can register the extension as a bundle in Laravel.
             // 
-            /**
-            // @todo, Bruno, this is needed to add a custom handle for an extnesion!
-            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
-            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
-            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
-            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
-            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
-            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
-            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
-            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
-            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
-            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
-            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
-            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
-            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
-            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
-            // ()#$*@#()%U@*(%Y*(@#$Y%*(@Y*(%Y@#*(%Y*(@#YU*($U#@*($U#@*($U*(@#U(*$U(#))))))))))))
-            */
-            //
             if ( ! isset($extension['bundles']['handles']))
             {
                 $extension['bundles']['handles'] = $ext;
             }
-
             $extension['bundles']['location'] = 'path: ' . dirname($file);
-
-            // $extension['bundles'] = array(
-            //     'handles'  => $ext,
-            //     'location' => 'path: ' . dirname($file)
-            // );
 
             // Sort this extension info array.
             //
@@ -1831,6 +1793,66 @@ class ExtensionsManager
 
     /**
      * --------------------------------------------------------------------------
+     * Function: generate_slug()
+     * --------------------------------------------------------------------------
+     *
+     * Generates an extension slug.
+     *
+     * @access   protected
+     * @param    array
+     * @return   string
+     */
+    protected function generate_slug($extension)
+    {
+        // If we have array keys.
+        //
+        if (is_array($extension) and $vendor = array_get($extension, 'vendor') and $slug = array_get($extension, 'slug'))
+        {
+            $extension = array($vendor, $slug);
+        }
+
+        // Returns the slug.
+        //
+        return implode('.', $extension);
+    }
+
+
+    /**
+     * --------------------------------------------------------------------------
+     * Function: convert_slug()
+     * --------------------------------------------------------------------------
+     *
+     * Turns an extension slug into something that can be used by Laravel's
+     * bundle system, and it can revert it back.
+     *
+     * @access   protected
+     * @param    string
+     * @return   string
+     */
+    protected function convert_slug($slug)
+    {
+        // Dot separated slug?
+        //
+        if (strpos($slug, '.'))
+        {
+            return str_replace('.', self::VENDOR_SEPARATOR, $slug);
+        }
+
+        // Maybe we have a vendor separator slug?
+        //
+        elseif (strpos($slug, self::VENDOR_SEPARATOR))
+        {
+            return str_replace(self::VENDOR_SEPARATOR, '.', $slug);
+        }
+
+        // None found, return the slug as it is!
+        //
+        return $slug;
+    }
+
+
+    /**
+     * --------------------------------------------------------------------------
      * Function: reverse_slug()
      * --------------------------------------------------------------------------
      *
@@ -1861,38 +1883,6 @@ class ExtensionsManager
         }
     }
 
-    /**
-     * --------------------------------------------------------------------------
-     * Function: bundleize()
-     * --------------------------------------------------------------------------
-     *
-     * Turns an extnesion slug into something that can be used by Laravel's
-     * bundle system.
-     *
-     * @access   protected
-     * @param    string
-     * @return   string
-     */
-    public function bundleize($slug)
-    {
-        return str_replace('.', self::VENDOR_SEPARATOR, $slug);
-    }
-
-    /**
-     * --------------------------------------------------------------------------
-     * Function: unbundleize()
-     * --------------------------------------------------------------------------
-     *
-     * Reverses bundleize()
-     *
-     * @access   protected
-     * @param    string
-     * @return   string
-     */
-    public function unbundleize($slug)
-    {
-        return str_replace(self::VENDOR_SEPARATOR, '.', $slug);
-    }
 
     /**
      * --------------------------------------------------------------------------
@@ -1910,7 +1900,7 @@ class ExtensionsManager
     {
         // Check if this extension is already started.
         //
-        if (Bundle::started($slug = $this->bundleize(array_get($extension, 'info.slug'))))
+        if (Bundle::started($slug = $this->convert_slug(array_get($extension, 'info.slug'))))
         {
             return true;
         }
@@ -1936,12 +1926,15 @@ class ExtensionsManager
         return true;
     }
 
+
+
+
     public function resolve_controller($bundle, $controller)
     {
         // We load in all controllers for the overriden
         // extensions, because most likely this extension's
         // controllers extend it.
-        $this->load_overridden_controllers_recursively($this->get($this->unbundleize($bundle)));
+        $this->load_overridden_controllers_recursively($this->get($this->convert_slug($bundle)));
 
         // Traditional resolve
         if ($resolve = Controller::resolve($bundle, $controller))
@@ -1950,7 +1943,7 @@ class ExtensionsManager
         }
 
         // Grab the extension
-        if ( ! $extension = $this->unbundleize($bundle))
+        if ( ! $extension = $this->convert_slug($bundle))
         {
             return false;
         }
@@ -1999,7 +1992,7 @@ class ExtensionsManager
             }
 
             // Get the bundle name for the overridden bundle
-            $overridden_bundle = $this->bundleize(array_get($overridden_extension, 'info.slug'));
+            $overridden_bundle = $this->convert_slug(array_get($overridden_extension, 'info.slug'));
 
             // Let's detect all controllers in that extension
             Controller::detect($overridden_bundle);
@@ -2051,7 +2044,7 @@ class ExtensionsManager
             }
 
             // Get the bundle name for the overridden bundle
-            $overridden_bundle = $this->bundleize(array_get($overridden_extension, 'info.slug'));
+            $overridden_bundle = $this->convert_slug(array_get($overridden_extension, 'info.slug'));
 
             // Let's detect all controllers in that extension
             foreach (Controller::detect($overridden_bundle) as $controller)
@@ -2070,5 +2063,4 @@ class ExtensionsManager
             $this->load_overridden_controllers_recursively($overridden_extension, $level++);
         }
     }
-
 }

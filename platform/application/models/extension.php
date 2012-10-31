@@ -57,16 +57,20 @@ class Extension extends Crud
         {
             return parent::find(function($query) use ($condition)
             {
+                if (strpos($condition, '/'))
+                {
+                    list($vendor, $extension) = explode('/', $condition);
+                }
 
-                /*if (strpos($condition, '.'))
+                else if (strpos($condition, '.'))
                 {
                     list($vendor, $extension) = explode('.', $condition);
+                }
 
-                           $query->where('vendor', '=', $vendor);
-                    return $query->where('extension', '=', $extension);
-                }*/
+                $query->where('vendor', '=', $vendor);
+                return $query->where('extension', '=', $extension);
 
-                return $query->where('slug', '=', $condition);
+                #return $query->where('slug', '=', $condition);
             }, $columns, $events);
         }
 
