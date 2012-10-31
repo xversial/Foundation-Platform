@@ -47,4 +47,15 @@ class Developers_Admin_Developers_Controller extends Admin_Controller
 
 		return Theme::make('platform.developers::creator');
 	}
+
+	public function post_creator()
+	{
+		echo '<pre>';
+
+
+		print_r(Input::get());
+
+		die();
+	}
+
 }
