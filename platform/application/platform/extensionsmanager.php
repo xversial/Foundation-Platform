@@ -58,6 +58,13 @@ class ExtensionsManager
     const CORE_VENDOR = 'platform';
 
     /**
+     * Vendor separator
+     *
+     * @constant
+     */
+    const VENDOR_SEPARATOR = '/';
+
+    /**
      * Array of vendors extensions directories.
      *
      * @access   protected
@@ -1111,8 +1118,7 @@ class ExtensionsManager
 
         // Run this extension migrations.
         //
-        #Command::run(array('migrate', array_get($extension, 'bundles.handles', $slug)));
-        Command::run(array('migrate', str_replace('.', '/', $slug)));
+        Command::run(array('migrate', $this->bundleize($slug)));
 
         // Disable menus related to this extension, if the extension is disabled by default.
         //
@@ -1196,7 +1202,10 @@ class ExtensionsManager
 
                 // Prepare the class name.
                 //
-                $class = Bundle::class_prefix(array_get($extension, 'info.extension')) . \Laravel\Str::classify(substr($migration, 18));
+                $class = Bundle::class_prefix(array_get($extension, 'info.slug')) . \Laravel\Str::classify(substr($migration, 18));
+
+                // Change the vendor separator to a class separator
+                $class = str_replace(self::VENDOR_SEPARATOR, '_', $class);
 
                 // Initiate the migration class.
                 //
@@ -1709,10 +1718,14 @@ class ExtensionsManager
         //
         else
         {
-            return static::DEFAULT_VENDOR . '.' . $slug;
+            return self::DEFAULT_VENDOR . '.' . $slug;
         }
     }
 
+    public function bundleize($slug)
+    {
+        return str_replace('.', self::VENDOR_SEPARATOR, $slug);
+    }
 
     /**
      * --------------------------------------------------------------------------
@@ -1728,13 +1741,9 @@ class ExtensionsManager
      */
     protected function start_bundle($extension)
     {
-        // Extension slug.
-        //
-        $slug = str_replace('.', '/', array_get($extension, 'info.slug'));
-
         // Check if this extension is already started.
         //
-        if (Bundle::started($slug))
+        if (Bundle::started($slug = $this->bundleize(array_get($extension, 'info.slug'))))
         {
             return true;
         }

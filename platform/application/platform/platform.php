@@ -139,6 +139,10 @@ class Platform
             //
             static::register_blade_extensions();
 
+            // Register IoC
+            //
+            static::register_ioc();
+
             // Start the extensions.
             //
             static::extensions_manager()->start_extensions();
@@ -440,6 +444,30 @@ class Platform
             );
 
             return preg_replace(array_keys($replacements), array_values($replacements), $view);
+        });
+    }
+
+    /**
+     * --------------------------------------------------------------------------
+     * Function: register_ioc()
+     * --------------------------------------------------------------------------
+     *
+     * Register Platform's inversion of control overrides with Laravel.
+     *
+     * @access   protected
+     * @return   void
+     */
+    protected static function register_ioc()
+    {
+        IoC::register('task: migrate', function()
+        {
+            $database = new Laravel\Cli\Tasks\Migrate\Database;
+
+            // Register our override of the tasks resolver
+            // which allows for Platform extensions
+            $resolver = new Tasks\Migrate\Resolver($database);
+
+            return new Laravel\Cli\Tasks\Migrate\Migrator($resolver, $database);
         });
     }
 
@@ -788,7 +816,7 @@ class Platform
     {
         // Disable the checking.
         //
-        static::extensions_manager()->checking(false);
+        static::extensions_manager()->installer_mode(true);
 
         // Resolves core tasks.
         //
@@ -807,7 +835,7 @@ class Platform
 
         // Now, run the core migrations.
         //
-        Command::run(array('migrate'));
+        Command::run(array('migrate', DEFAULT_BUNDLE));
 
         // Start the extensions, just in case the install process got interrupted.
         //

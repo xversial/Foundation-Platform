@@ -1,6 +1,6 @@
 <?php
 
-class Pages_v1_0_1
+class Cartalyst_Pages_v1_0_1
 {
     public function up()
     {

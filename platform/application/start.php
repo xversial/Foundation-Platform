@@ -108,7 +108,8 @@ Autoloader::directories(array(
  * --------------------------------------------------------------------------
  */
 Autoloader::namespaces(array(
-    'Platform\\Application\\Widgets' => __DIR__ . DS . 'widgets'
+    'Platform\\Application\\Widgets' => __DIR__ . DS . 'widgets',
+    'Tasks'                          => __DIR__ . DS . 'platform' . DS . 'tasks'
 ));
 
 

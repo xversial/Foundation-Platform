@@ -191,7 +191,6 @@ return array(
         'Schema'     => 'Laravel\\Database\\Schema',
         'Section'    => 'Laravel\\Section',
         'Session'    => 'Laravel\\Session',
-        'Str'        => 'Laravel\\Str',
         'Task'       => 'Laravel\\CLI\\Tasks\\Task',
         'URI'        => 'Laravel\\URI',
         'Validator'  => 'Laravel\\Validator',
