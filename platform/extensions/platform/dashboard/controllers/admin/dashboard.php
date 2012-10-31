@@ -77,7 +77,7 @@ class Platform_Dashboard_Admin_Dashboard_Controller extends Admin_Controller
      */
     public function get_index()
     {
-        $testing = false;
+        $testing = true;
 
         if($testing)
         {
@@ -86,7 +86,7 @@ class Platform_Dashboard_Admin_Dashboard_Controller extends Admin_Controller
             $manager = Platform::extensions_manager();
 
 
-            /**
+            /**/
             // Methods test !
             //
             $slug = 'cartalyst.pages';
@@ -101,7 +101,7 @@ class Platform_Dashboard_Admin_Dashboard_Controller extends Admin_Controller
                 $manager->install($slug);
             }
             die;
-            **/
+            /**/
 
 
             ################################################################

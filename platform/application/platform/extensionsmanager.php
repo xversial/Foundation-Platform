@@ -1085,14 +1085,6 @@ class ExtensionsManager
             //
             DB::table('extensions')->where('extension', '=', array_get($extension, 'info.extension'))->update(array('enabled' => 0));
 
-            #########################################################
-            # ugly fix for the moment
-            if(($key = array_search(array_get($extension, 'info.extension'), \Bundle::$started)) !== false)
-            {
-                unset(\Bundle::$started[$key]);
-            }
-            #########################################################
-
             // Make sure the extension get's enabled !
             //
             $enable = 1;
@@ -1119,7 +1111,8 @@ class ExtensionsManager
 
         // Run this extension migrations.
         //
-        Command::run(array('migrate', array_get($extension, 'bundles.handles', $slug)));
+        #Command::run(array('migrate', array_get($extension, 'bundles.handles', $slug)));
+        Command::run(array('migrate', str_replace('.', '/', $slug)));
 
         // Disable menus related to this extension, if the extension is disabled by default.
         //
@@ -1737,7 +1730,6 @@ class ExtensionsManager
     {
         // Extension slug.
         //
-        #$slug = array_get($extension, 'info.extension');
         $slug = str_replace('.', '/', array_get($extension, 'info.slug'));
 
         // Check if this extension is already started.
