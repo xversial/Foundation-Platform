@@ -24,7 +24,7 @@
                     <span class="icon-reorder"></span>
                 </a>
 
-                <a class="brand" href="#">{{ Lang::line('developers::general.creator.title') }}</a>
+                <a class="brand" href="#">{{ Lang::line('platform/developers::general.creator.title') }}</a>
 
                 <!-- Everything you want hidden at 940px or less, place within here -->
                 <div id="tertiary-navigation" class="nav-collapse">

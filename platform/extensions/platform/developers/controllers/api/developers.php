@@ -18,7 +18,7 @@
  * @link       http://cartalyst.com
  */
 
-class Developers_API_Developers_Controller extends API_Controller
+class Platform_Developers_API_Developers_Controller extends API_Controller
 {
 
 	public function post_create()

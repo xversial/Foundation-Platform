@@ -32,7 +32,7 @@
  * @link       http://cartalyst.com
  * @version    1.1
  */
-class Developers_Admin_Developers_Controller extends Admin_Controller
+class Platform_Developers_Admin_Developers_Controller extends Admin_Controller
 {
 	public function get_index()
 	{
