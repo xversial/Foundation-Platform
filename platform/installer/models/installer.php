@@ -32,6 +32,7 @@ use Bundle,
     Dependencies,
     File,
     Exception,
+    ExtensionsManager,
     Laravel\CLI\Command,
     Platform,
     Session,
@@ -326,21 +327,43 @@ class Installer
         //
         Platform::install_update();
 
-        // Get all the uninstalled extensions and sort the dependencies.
-        //
-        $extensions = Dependencies::sort(Platform::extensions_manager()->uninstalled());
+        // Flattened extensions
+        $extensions_flat = array();
 
-        // Spin through all the extensions.
+        // Now get the enabled extensions, and start them !
         //
-        foreach ($extensions as $extension)
+        foreach (Platform::extensions_manager()->uninstalled() as $extensions)
+        {
+            foreach ($extensions as $extension)
+            {
+                // Core platform extensions
+                if (array_get($extension, 'info.vendor') === ExtensionsManager::CORE_VENDOR)
+                {
+                    $extensions_flat[array_get($extension, 'info.slug')] = $extension;
+                    continue;
+                }
+
+                // Loop through this vendor extensions.
+                //
+                $extensions_flat[array_get($extension, 'info.slug')] = $extension;
+            }
+        }
+
+        // Dependency sort based on the 'overrides' key
+        // of an extension
+        //
+        $sorted_slugs = Dependencies::sort($extensions_flat);
+
+        // Start extensions by their sorted dependencies
+        foreach ($sorted_slugs as $slug)
         {
             // Check if this is a core extension.
             //
-            if (Platform::extensions_manager()->is_core($extension))
+            if (Platform::extensions_manager()->is_core($slug))
             {
                 // Install the extension and enable it aswell.
                 //
-                Platform::extensions_manager()->install($extension, true);
+                Platform::extensions_manager()->install($slug, true);
             }
         }
     }
@@ -358,10 +381,6 @@ class Installer
      */
     public static function generate_key()
     {
-        // Resolves core tasks.
-        //
-        require_once path('sys') . 'cli/dependencies'.EXT;
-
         // Generate the application key.
         //
         Command::run(array('key:generate'));

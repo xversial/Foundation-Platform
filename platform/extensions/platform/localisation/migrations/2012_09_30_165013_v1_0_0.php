@@ -41,7 +41,7 @@ use Platform\Menus\Menu;
  * @link       http://cartalyst.com
  * @version    1.0
  */
-class Localisation_v1_0_0
+class Platform_Localisation_v1_0_0
 {
     /**
      * --------------------------------------------------------------------------

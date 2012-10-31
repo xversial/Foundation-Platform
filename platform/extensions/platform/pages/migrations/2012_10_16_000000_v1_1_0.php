@@ -40,7 +40,7 @@ use Platform\Menus\Menu;
  * @license    BSD License (3-clause)
  * @link       http://cartalyst.com
  */
-class Pages_v1_1_0
+class Platform_Pages_v1_1_0
 {
     /**
      * --------------------------------------------------------------------------
@@ -102,6 +102,7 @@ class Pages_v1_1_0
             'uri'           => 'pages',
             'user_editable' => 0,
             'status'        => 1,
+            'class'         => 'icon-file',
         ));
 
         if (is_null($system))

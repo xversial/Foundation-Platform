@@ -40,7 +40,7 @@ use Platform\Menus\Menu;
  * @license    BSD License (3-clause)
  * @link       http://cartalyst.com
  */
-class Themes_v1_0_0
+class Platform_Themes_v1_0_0
 {
     /**
      * --------------------------------------------------------------------------

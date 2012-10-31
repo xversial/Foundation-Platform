@@ -118,6 +118,10 @@ class Platform
             return true;
         }
 
+        // Register IoC
+        //
+        static::register_ioc();
+
         // Check if Platform is installed.
         //
         if ( ! static::is_installed() or static::has_update())
@@ -138,10 +142,6 @@ class Platform
             // Register blade extensions.
             //
             static::register_blade_extensions();
-
-            // Register IoC
-            //
-            static::register_ioc();
 
             // Start the extensions.
             //
@@ -461,13 +461,18 @@ class Platform
     {
         IoC::register('task: migrate', function()
         {
-            $database = new Laravel\Cli\Tasks\Migrate\Database;
+            $database = new Laravel\CLI\Tasks\Migrate\Database;
 
             // Register our override of the tasks resolver
             // which allows for Platform extensions
             $resolver = new Tasks\Migrate\Resolver($database);
 
-            return new Laravel\Cli\Tasks\Migrate\Migrator($resolver, $database);
+            return new Laravel\CLI\Tasks\Migrate\Migrator($resolver, $database);
+        });
+
+        IoC::singleton('task: key', function()
+        {
+            return new Laravel\CLI\Tasks\Key;
         });
     }
 

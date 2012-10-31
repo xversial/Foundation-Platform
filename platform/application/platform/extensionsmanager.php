@@ -211,6 +211,12 @@ class ExtensionsManager
             }
         }
 
+        // No extensions
+        if ( ! $extensions_flat)
+        {
+            return;
+        }
+
         // Dependency sort based on the 'overrides' key
         // of an extension
         //

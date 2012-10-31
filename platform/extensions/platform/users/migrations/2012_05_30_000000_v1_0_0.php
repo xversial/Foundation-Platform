@@ -41,7 +41,7 @@ use Laravel\CLI\Command,
  * @license    BSD License (3-clause)
  * @link       http://cartalyst.com
  */
-class Users_v1_0_0
+class Platform_Users_v1_0_0
 {
     /**
      * --------------------------------------------------------------------------

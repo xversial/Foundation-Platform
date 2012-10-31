@@ -41,7 +41,7 @@ use Platform\Menus\Menu;
  * @license    BSD License (3-clause)
  * @link       http://cartalyst.com
  */
-class Menus_v1_1_0
+class Platform_Menus_v1_1_0
 {
     /**
      * --------------------------------------------------------------------------
