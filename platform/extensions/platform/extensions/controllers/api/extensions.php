@@ -228,15 +228,19 @@ class Platform_Extensions_API_Extensions_Controller extends API_Controller
      * @param    string
      * @return   Response
      */
-    public function put_index($vendor = null, $slug = null)
+    public function put_index($vendor = null, $extension = null)
     {
         // Initiate our Extension Manager.
         //
         $manager = Platform::extensions_manager();
 
+        // Build a slug up for the extension
+        //
+        $slug = $vendor.'.'.$extension;
+
         // Check if the extension exists.
         //
-        if( ! $extension = $manager->get($vendor . '.' . $slug))
+        if( ! $extension = $manager->get($slug))
         {
             // Extension doesn't exist.
             //

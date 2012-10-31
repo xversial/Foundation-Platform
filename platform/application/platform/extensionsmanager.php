@@ -1180,9 +1180,13 @@ class ExtensionsManager
         //
         if ($vendors = $this->vendors($slug))
         {
-            // Disable all other installed vendors of this extension.
+            // Not needed now as we can have as many extensions that overide
+            // each other all enabled. Who gets loaded first is sorted by dependencies
+            // the same way normal dependencies are.
             //
-            DB::table('extensions')->where('extension', '=', array_get($extension, 'info.extension'))->update(array('enabled' => 0));
+            // // Disable all other installed vendors of this extension.
+            // //
+            // DB::table('extensions')->where('extension', '=', array_get($extension, 'info.extension'))->update(array('enabled' => 0));
 
             // Make sure the extension get's enabled !
             //
@@ -1612,6 +1616,7 @@ class ExtensionsManager
             //
             $extension['info']['slug']         = $slug;
             $extension['info']['vendor']       = $vendor;
+            $extension['info']['bundleized']   = str_replace('.', self::VENDOR_SEPARATOR, $slug);
             $extension['info']['extension']    = $ext;
             $extension['info']['is_core']      = (bool) ( array_get($extension, 'info.is_core') ?: false );
             $extension['info']['is_enabled']   = $this->is_enabled($slug);

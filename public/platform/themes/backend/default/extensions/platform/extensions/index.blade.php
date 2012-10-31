@@ -68,30 +68,30 @@
 
                                 @if ( Platform::extensions_manager()->is_enabled(array_get($extension, 'info.slug')) )
                                     @if ( Platform::extensions_manager()->can_disable(array_get($extension, 'info.slug')) )
-                                        <a class="btn btn-small" href="{{ URL::to_admin('extensions/disable/' . array_get($extension, 'info.slug')) }}">{{ Lang::line('platform/extensions::button.disable') }}</a>
+                                        <a class="btn btn-small" href="{{ URL::to_admin('extensions/disable/' . array_get($extension, 'info.vendor') . '/' . array_get($extension, 'info.extension')) }}">{{ Lang::line('platform/extensions::button.disable') }}</a>
                                     @else
                                         <a class="btn btn-small disabled">{{ Lang::line('platform/extensions::button.disable') }}</a>
                                     @endif
                                 @else
                                     @if ( Platform::extensions_manager()->can_enable(array_get($extension, 'info.slug')) )
-                                        <a class="btn btn-small" href="{{ URL::to_admin('extensions/enable/' . array_get($extension, 'info.slug')) }}">{{ Lang::line('platform/extensions::button.enable') }}</a>
+                                        <a class="btn btn-small" href="{{ URL::to_admin('extensions/enable/' . array_get($extension, 'info.vendor') . '/' . array_get($extension, 'info.extension')) }}">{{ Lang::line('platform/extensions::button.enable') }}</a>
                                     @else
                                         <a class="btn btn-small disabled">{{ Lang::line('platform/extensions::button.enable') }}</a>
                                     @endif
                                 @endif
 
                                 @if ( Platform::extensions_manager()->can_uninstall(array_get($extension, 'info.slug')) )
-                                    <a class="btn btn-small btn-danger" href="{{ URL::to_admin('extensions/uninstall/' . array_get($extension, 'info.slug')) }}">{{ Lang::line('platform/extensions::button.uninstall') }}</a>
+                                    <a class="btn btn-small btn-danger" href="{{ URL::to_admin('extensions/uninstall/' . array_get($extension, 'info.vendor') . '/' . array_get($extension, 'info.extension')) }}">{{ Lang::line('platform/extensions::button.uninstall') }}</a>
                                 @else
                                     <a class="btn btn-small disabled">{{ Lang::line('platform/extensions::button.uninstall') }}</a>
                                 @endif
 
                                 @if ( Platform::extensions_manager()->has_update(array_get($extension, 'info.slug')))
-                                    <a class="btn btn-small" href="{{ URL::to_admin('extensions/update/' . array_get($extension, 'info.slug')) }}">{{ Lang::line('platform/extensions::button.update') }}</a>
+                                    <a class="btn btn-small" href="{{ URL::to_admin('extensions/update/' . array_get($extension, 'info.vendor') . '/' . array_get($extension, 'info.extension')) }}">{{ Lang::line('platform/extensions::button.update') }}</a>
                                 @endif
                             @else
                                 @if ( Platform::extensions_manager()->can_install(array_get($extension, 'info.slug')) )
-                                    <a class="btn btn-small" href="{{ URL::to_admin('extensions/install/' . array_get($extension, 'info.slug')) }}">{{ Lang::line('platform/extensions::button.install') }}</a>
+                                    <a class="btn btn-small" href="{{ URL::to_admin('extensions/install/' . array_get($extension, 'info.vendor') . '/' . array_get($extension, 'info.extension')) }}">{{ Lang::line('platform/extensions::button.install') }}</a>
                                 @else
                                     <a class="btn btn-small disabled">{{ Lang::line('platform/extensions::button.install') }}</a>
                                 @endif
