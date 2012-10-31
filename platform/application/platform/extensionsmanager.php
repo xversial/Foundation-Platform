@@ -1788,7 +1788,7 @@ class ExtensionsManager
      * @param    string
      * @return   string
      */
-    protected function reverse_slug($slug)
+    public function reverse_slug($slug)
     {
         // Make sure we have a vendor.
         //
@@ -1819,22 +1819,28 @@ class ExtensionsManager
      * @param    string
      * @return   string
      */
-    protected function bundleize($slug)
+    public function bundleize($slug)
     {
         return str_replace('.', self::VENDOR_SEPARATOR, $slug);
     }
 
-    protected $started_handles = array();
-
-    protected function allowed_handles($extension)
+    /**
+     * --------------------------------------------------------------------------
+     * Function: unbundleize()
+     * --------------------------------------------------------------------------
+     *
+     * Reverses bundleize()
+     *
+     * @access   protected
+     * @param    string
+     * @return   string
+     */
+    public function unbundleize($slug)
     {
-        if ( ! in_array(($handle = array_get($extension, 'bundles.handles')), $this->started_handles))
-        {
-            return $this->started_handles[] = $handle;
-        }
-
-        return array_get($extension, 'info.slug');
+        return str_replace(self::VENDOR_SEPARATOR, '.', $slug);
     }
+
+    protected $started_handles = array();
 
     /**
      * --------------------------------------------------------------------------
@@ -1858,7 +1864,12 @@ class ExtensionsManager
         }
 
         $bundle_config = array_get($extension, 'bundles');
-        $bundle_config['handles'] = $this->allowed_handles($extension);
+
+        // Only the first bundle for a handle can be active. Cannot access other bundles
+        if (in_array(($handle = array_get($extension, 'bundles.handles')), $this->started_handles))
+        {
+            $bundle_config['handles'] = null;
+        }
 
         // Register this extension with Laravel.
         //
@@ -1871,5 +1882,66 @@ class ExtensionsManager
         // Extension started with success.
         //
         return true;
+    }
+
+    public function resolve_controller($bundle, $controller)
+    {
+        // Traditional resolve
+        if ($resolve = Controller::resolve($bundle, $controller))
+        {
+            return $resolve;
+        }
+
+        // Grab the extension
+        if ( ! $extension = $this->unbundleize($bundle))
+        {
+            return false;
+        }
+
+        // Recursively look through extension overrides
+        return $this->resolve_controllers_recursive($this->get($extension), $controller);
+    }
+
+    protected function resolve_controllers_recursive(array $extension, $controller, &$level = 0)
+    {
+        // Check that somebody hasn't put a override loop
+        if ($level > 100)
+        {
+            return false;
+        }
+
+        // Check for overrides options
+        if ( ! $overrides = $this->overrides(array_get($extension, 'info.slug')))
+        {
+            return false;
+        }
+
+        // Loop through overrides
+        foreach ($overrides as $slug)
+        {
+            // No extension? Skip
+            if ( ! $overridden_extension = $this->get($slug))
+            {
+                continue;
+            }
+
+            // Get the bundle name for the overridden bundle
+            $overridden_bundle = $this->bundleize(array_get($overridden_extension, 'info.slug'));
+
+            // Let's detect all controllers in that extension
+            Controller::detect($overridden_bundle);
+
+            // If we have resolved it, return it
+            if ($overridden_resolve = Controller::resolve($overridden_bundle, $controller))
+            {
+                return $overridden_resolve;
+            }
+
+            // Recursive, baby!
+            $this->resolve_controllers_recursive($overridden_extension, $controller, $level++);
+        }
+
+        // Got nowhere? Return false
+        return false;
     }
 }

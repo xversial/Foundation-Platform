@@ -27,11 +27,11 @@
  * We can use this for the administration extensions.
  *
  */
-Route::any(ADMIN . '/(:any?)/(:any?)/(:any?)(/.*)?', function($bundle = 'dashboard', $controller = null, $action = null, $params = null)
+Route::any(ADMIN . '/(:any?)/(:any?)/(:any?)(/.*)?', function($handle = 'dashboard', $controller = null, $action = null, $params = null)
 {
     // Check if the extension exists.
     //
-    if ( ! Bundle::exists($bundle = Bundle::handles($bundle)))
+    if ( ! Bundle::exists($bundle = Bundle::handles($handle)))
     {
         return Response::error('404');
     }
@@ -40,33 +40,46 @@ Route::any(ADMIN . '/(:any?)/(:any?)/(:any?)(/.*)?', function($bundle = 'dashboa
     //
     if (Controller::resolve($bundle, 'admin.' . $controller))
     {
-        $controller = $bundle . '::admin.' . $controller . '@' . (($action) ?: 'index');
+        $controller = 'admin.' . $controller;
+        $method     = (($action) ?: 'index');
         $params     = explode('/', substr($params, 1));
     }
 
-    // If it doesn't, default to the bundle name as a controller.
+    // If it doesn't, default to the handle name as a controller.
     //
     else
     {
-        /**
-         * @todo, remove. this is a temp experiement and
-         * should call a method in the extnesions manager.
-         */
-        $parts = explode('/', $bundle);
-
-        $controller = $bundle . '::admin.' . array_get($parts, 1, array_get($parts, 0)) . '@' . (($controller) ?: 'index');
+        $controller = 'admin.' . $handle;
+        $method     = (($handle) ?: 'index');
         $params     = explode('/', $action.$params);
-
-        /*$controller = $bundle . '::admin.' . $bundle . '@' . (($controller) ?: 'index');
-        $params     = explode('/', $action.$params);*/
     }
 
-    #print_r($controller);
-    #die;
+    // This will look at the extension responsible and all
+    // the extensions it overrides.
+    if ( ! $controller_instance = Platform::extensions_manager()->resolve_controller($bundle, $controller))
+    {
+        return Response::error('404');
+    }
 
-    // Execute the controller.
-    //
-    return Controller::call($controller, $params);
+    // For convenience we will set the current controller and action on the
+    // Request's route instance so they can be easily accessed from the
+    // application. This is sometimes useful for dynamic situations.
+    if ( ! is_null($route = Request::route()))
+    {
+        $route->controller = $controller;
+
+        $route->controller_action = $method;
+    }
+
+    // If the controller could not be resolved, we're out of options and
+    // will return the 404 error response. If we found the controller,
+    // we can execute the requested method on the instance.
+    if (is_null($controller))
+    {
+        return Event::first('404');
+    }
+
+    return $controller_instance->execute($method, $params);
 });
 
 
