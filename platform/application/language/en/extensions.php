@@ -60,6 +60,7 @@ return array(
      * -----------------------------------------
      */
     'not_found'         => 'Extension <b>:extension</b> was not found !',
+    'invalid_slug'      => 'Invalid extension slug passed.',
     'invalid_extension' => 'Invalid extension properties passed.',
     'invalid_dependent' => 'Invalid extension dependency <b>:dependency</b> for extension <b>:extension',
     'missing_files'     => 'Extension <b>:extension</b> required files are missing',
