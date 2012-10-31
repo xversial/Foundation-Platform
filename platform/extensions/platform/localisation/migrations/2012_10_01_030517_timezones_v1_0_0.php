@@ -61,6 +61,7 @@ class Platform_Localisation_Timezones_v1_0_0
          * --------------------------------------------------------------------------
          */
         DB::table('settings')->insert(array(
+            'vendor'    => 'platform',
             'extension' => 'localisation',
             'type'      => 'site',
             'name'      => 'timezone',

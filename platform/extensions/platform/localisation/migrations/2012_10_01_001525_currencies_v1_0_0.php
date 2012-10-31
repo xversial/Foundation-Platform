@@ -128,6 +128,7 @@ class Platform_Localisation_Currencies_v1_0_0
             // Default currency.
             //
             array(
+                'vendor'    => 'platform',
                 'extension' => 'localisation',
                 'type'      => 'site',
                 'name'      => 'currency',
@@ -137,6 +138,7 @@ class Platform_Localisation_Currencies_v1_0_0
             // Set the interval time for every rate update.
             //
             array(
+                'vendor'    => 'platform',
                 'extension' => 'localisation',
                 'type'      => 'site',
                 'name'      => 'currency_auto_update',
@@ -146,6 +148,7 @@ class Platform_Localisation_Currencies_v1_0_0
             // Default API Key for Openexchangerates.org
             //
             array(
+                'vendor'    => 'platform',
                 'extension' => 'localisation',
                 'type'      => 'site',
                 'name'      => 'currency_api_key',
