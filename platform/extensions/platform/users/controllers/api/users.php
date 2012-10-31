@@ -308,7 +308,7 @@ class Platform_Users_API_Users_Controller extends API_Controller
 
 				// Get email
 				$filesystem = Filesystem::make('native');
-				$filesystem->file()->contents(path('public').'platform' . DS . 'emails'.DS.'register.html');
+				$filesystem->file()->contents(path('public').'platform' . DS . 'emails'.DS.'activation.html');
 
 				// Replacements
 				$replacements = array(
@@ -367,6 +367,30 @@ class Platform_Users_API_Users_Controller extends API_Controller
 			if ($user = Sentry::activate_user(Input::get('email'), Input::get('code')))
 			{
 				$user = User::find($user->id);
+
+				// Get the Swift Mailer instance
+				Bundle::start('swiftmailer');
+				$mailer = IoC::resolve('mailer');
+
+				// Get email
+				$filesystem = Filesystem::make('native');
+				$filesystem->file()->contents(path('public').'platform' . DS . 'emails'.DS.'registered.html');
+
+				// Replacements
+				$replacements = array(
+					'/{{SITE_TITLE}}/' => Platform::get('settings.site.title'),
+				);
+
+				$body = preg_replace(array_keys($replacements), array_values($replacements), $body);
+
+				// Construct the message
+				$message = Swift_Message::newInstance(Platform::get('settings.site.title').Lang::line('platform/users::messages.auth.registered')->get())
+				           ->setFrom(Platform::get('settings.site.email'), Platform::get('settings.site.title'))
+				           ->setTo($user->email)
+				           ->setBody($body,'text/html');
+
+				// Send the email
+				$mailer->send($message);
 
 				return new Response($user);
 			}
