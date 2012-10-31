@@ -156,6 +156,7 @@ class Platform_Pages_v1_1_0
             // Status Enabled
             //
             array(
+                'vendor'    => 'platform',
                 'extension' => 'pages',
                 'type'      => 'status',
                 'name'      => 'enabled',
@@ -165,6 +166,7 @@ class Platform_Pages_v1_1_0
             // default page (/index)
             //
             array(
+                'vendor'    => 'platform',
                 'extension' => 'pages',
                 'type'      => 'default',
                 'name'      => 'page',
@@ -174,6 +176,7 @@ class Platform_Pages_v1_1_0
             // default template (default)
             //
             array(
+                'vendor'    => 'platform',
                 'extension' => 'pages',
                 'type'      => 'default',
                 'name'      => 'template',
