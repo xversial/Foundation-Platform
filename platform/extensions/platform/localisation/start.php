@@ -43,7 +43,7 @@ require_once __DIR__ . DS . 'helpers.php';
  * Check if the extension is enabled !
  * --------------------------------------------------------------------------
  */
-if (Platform::extensions_manager()->is_enabled('localisation'))
+if (Platform::extensions_manager()->is_enabled('platform.localisation'))
 {
     // Get all the localisation settings.
     //

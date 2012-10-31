@@ -42,11 +42,13 @@ Route::any(ADMIN . '/(:any?)/(:any?)/(:any?)(/.*)?', function($handle = 'dashboa
     {
         $method          = (($action) ?: 'index');
         $params          = explode('/', substr($params, 1));
+        $name            = 'admin.' . $controller;
     }
     elseif ($controller_instance = Platform::extensions_manager()->resolve_controller($bundle, 'admin.' . $handle))
     {
         $method          = (($controller) ?: 'index');
         $params          = explode('/', $action.$params);
+        $name            = 'admin.' . $handle;
     }
     else
     {
@@ -58,7 +60,9 @@ Route::any(ADMIN . '/(:any?)/(:any?)/(:any?)(/.*)?', function($handle = 'dashboa
     // application. This is sometimes useful for dynamic situations.
     if ( ! is_null($route = Request::route()))
     {
-        $route->controller = $controller_instance;
+    	$route->bundle = $bundle;
+
+        $route->controller = $name;
 
         $route->controller_action = $method;
     }

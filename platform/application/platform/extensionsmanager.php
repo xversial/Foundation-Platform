@@ -384,7 +384,7 @@ class ExtensionsManager
 
                 // Generate this extension slug.
                 //
-                $slug = $this->generate_slug(array($extension->vendor, $extension->extension));
+                $slug = $this->generate_slug(array($vendor, $extension->extension));
 
                 // Store the extension.
                 //
@@ -1177,14 +1177,14 @@ class ExtensionsManager
         //
         if (Extension::find($slug))
         {
-            throw new Exception(Lang::line('extensions.install.installed', array('extension' => $slug))->get());
+            throw new Exception(Lang::line('extensions.install.installed', array('extension' => $slug)));
         }
 
         // Check if this extension can be installed.
         //
         if ( ! $this->can_install($slug))
         {
-            throw new Exception(Lang::line('extensions.install.fail', array('extension' => $slug))->get());
+            throw new Exception(Lang::line('extensions.install.fail', array('extension' => $slug)));
         }
 
         // Get this extension information.
@@ -1260,14 +1260,14 @@ class ExtensionsManager
         //
         if (is_null($model = Extension::find($slug)))
         {
-            throw new Exception(Lang::line('extensions.not_found', array('extension' => $slug))->get());
+            throw new Exception(Lang::line('extensions.not_found', array('extension' => $slug)));
         }
 
         // Check if this extension can be uninstalled.
         //
         if ( ! $this->can_uninstall($slug))
         {
-            throw new Exception(Lang::line('extensions.uninstall.fail', array('extension' => $slug))->get());
+            throw new Exception(Lang::line('extensions.uninstall.fail', array('extension' => $slug)));
         }
 
         // Get this extension information.
@@ -1362,7 +1362,7 @@ class ExtensionsManager
 
             // Get the migrations of this extension that were executed.
             //
-            $migrations = DB::table('laravel_migrations')->where('bundle', '=', array_get($extension, 'info.extension'))->order_by('name', 'DESC')->get();
+            $migrations = DB::table('laravel_migrations')->where('bundle', '=', array_get($extension, 'info.extension'))->order_by('name', 'DESC');
 
             // Loop through the installed migrations.
             //
@@ -1417,14 +1417,14 @@ class ExtensionsManager
         //
         if (is_null($extension = Extension::find($slug)))
         {
-            throw new Exception(Lang::line('extensions.not_found', array('extension' => $slug))->get());
+            throw new Exception(Lang::line('extensions.not_found', array('extension' => $slug)));
         }
 
         // Check if this extension can be enabled.
         //
         if ( ! $this->can_enable($slug))
         {
-            throw new Exception(Lang::line('extensions.enable.fail', array('extension' => $slug))->get());
+            throw new Exception(Lang::line('extensions.enable.fail', array('extension' => $slug)));
         }
 
         // Enable all menus related to this extension.
@@ -1470,14 +1470,14 @@ class ExtensionsManager
         //
         if (is_null($extension = Extension::find($slug)))
         {
-            throw new Exception(Lang::line('extensions.not_found', array('extension' => $slug))->get());
+            throw new Exception(Lang::line('extensions.not_found', array('extension' => $slug)));
         }
 
         // Check if this extension can be disabled.
         //
         if ( ! $this->can_disable($slug))
         {
-            throw new Exception(Lang::line('extensions.disable.fail', array('extension' => $slug))->get());
+            throw new Exception(Lang::line('extensions.disable.fail', array('extension' => $slug)));
         }
 
         // Disable all menus related to this extension.
@@ -1523,14 +1523,14 @@ class ExtensionsManager
         //
         if (is_null($extension = Extension::find($slug)))
         {
-            throw new Exception(Lang::line('extensions.not_found', array('extension' => $slug))->get());
+            throw new Exception(Lang::line('extensions.not_found', array('extension' => $slug)));
         }
 
         // Check if this extension has an update.
         //
         if ( ! $this->has_update($slug))
         {
-            throw new Exception(Lang::line('extensions.not_found', array('extension' => $slug))->get());
+            throw new Exception(Lang::line('extensions.not_found', array('extension' => $slug)));
         }
 
         // Get this extension information.
@@ -1573,7 +1573,7 @@ class ExtensionsManager
         //
         if ( ! strpos($slug, '.'))
         {
-            throw new Exception(Lang::line('extensions.invalid_slug')->get());
+            throw new Exception(Lang::line('extensions.invalid_slug'));
         }
 
         // Separate the vendor and extension from the slug.
@@ -1599,7 +1599,7 @@ class ExtensionsManager
             //
             if ( ! is_array($extension) or ! array_get($extension, 'info.name') or ! array_get($extension, 'info.version'))
             {
-                throw new Exception(Lang::line('extensions.invalid_file', array('extension' => $extension_slug))->get());
+                throw new Exception(Lang::line('extensions.invalid_file', array('extension' => $extension_slug)));
             }
         
             // Combine the data.

@@ -11,7 +11,7 @@
  * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
  *
  * @package    Platform
- * @version    1.1.0
+ * @version    1.0.3
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
  * @copyright  (c) 2011 - 2012, Cartalyst LLC
@@ -29,19 +29,18 @@ use Platform\Menus\Menu;
 
 /**
  * --------------------------------------------------------------------------
- * Localisation Install Class v1.0.0
+ * Install Class v1.1.0
  * --------------------------------------------------------------------------
  * 
- * Localisation installation.
+ * Updates the vendor column.
  *
  * @package    Platform
  * @author     Cartalyst LLC
  * @copyright  (c) 2011 - 2012, Cartalyst LLC
  * @license    BSD License (3-clause)
  * @link       http://cartalyst.com
- * @version    1.0
  */
-class Platform_Localisation_v1_0_0
+class Platform_Themes_v1_1_0
 {
     /**
      * --------------------------------------------------------------------------
@@ -57,51 +56,10 @@ class Platform_Localisation_v1_0_0
     {
         /*
          * --------------------------------------------------------------------------
-         * # 1) Create the menus.
+         * # 1) Update the configuration settings
          * --------------------------------------------------------------------------
          */
-        // Admin > System > Localisation
-        //
-        $system_menu = Menu::find('admin-system');
-        $localisation = new Menu(array(
-            'name'          => 'Localisation',
-            'extension'     => 'localisation',
-            'slug'          => 'admin-localisation',
-            'uri'           => 'localisation',
-            'user_editable' => 0,
-            'status'        => 1,
-            'class'         => 'icon-plane'
-        ));
-        $localisation->last_child_of($system_menu);
-
-
-        /*
-         * --------------------------------------------------------------------------
-         * # 2) Configuration settings.
-         * --------------------------------------------------------------------------
-         */
-        $settings = array(
-            // Default date format.
-            //
-            array(
-                'vendor'    => 'platform',
-                'extension' => 'localisation',
-                'type'      => 'site',
-                'name'      => 'date_format',
-                'value'     => '%Y-%m-%d'
-            ),
-
-            // Default time format.
-            //
-            array(
-                'vendor'    => 'platform',
-                'extension' => 'localisation',
-                'type'      => 'site',
-                'name'      => 'time_format',
-                'value'     => '%H:%M:%S'
-            )
-        );
-        DB::table('settings')->insert($settings);
+        DB::table('settings')->where('extension', '=', 'themes')->update(array('vendor' => 'platform'));
     }
 
 
@@ -119,20 +77,9 @@ class Platform_Localisation_v1_0_0
     {
         /*
          * --------------------------------------------------------------------------
-         * # 1) Delete the menus.
+         * # 1) Update the configuration settings
          * --------------------------------------------------------------------------
          */
-        if ($menu = Menu::find('admin-localisation'))
-        {
-            $menu->delete();
-        }
-
-
-        /*
-         * --------------------------------------------------------------------------
-         * # 2) Delete configuration settings.
-         * --------------------------------------------------------------------------
-         */
-        DB::table('settings')->where('extension', '=', 'localisation')->where('name', 'LIKE', '%_format')->delete();
+        DB::table('settings')->where('extension', '=', 'users')->update(array('vendor' => ''));
     }
 }
