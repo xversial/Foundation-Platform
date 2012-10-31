@@ -178,19 +178,34 @@
 @endsection
 
 @section('content')
-	<section id="menus-edit">
+<section id="menus-edit">
 
-		<header class="clearfix">
-			<div class="pull-left">
-				<h1>{{ Lang::line('platform/menus::general.update.title') }}</h1>
-				<p>{{ Lang::line('platform/menus::general.update.description') }}</p>
-			</div>
-			<nav class="tertiary-navigation pull-right visible-desktop">
+	<!-- Tertiary Navigation & Actions -->
+	<header class="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+
+			<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+			<a class="btn btn-navbar" data-toggle="collapse" data-target="#tertiary-navigation">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+
+			<a class="brand" href="#">{{ Lang::line('platform/menus::general.' . $page_type . '.title') }}</a>
+
+			<!-- Everything you want hidden at 940px or less, place within here -->
+			<div id="tertiary-navigation" class="nav-collapse">
 				@widget('platform.menus::menus.nav', 2, 1, 'nav nav-pills', ADMIN)
-			</nav>
-		</header>
+			</div>
 
-		<hr>
+			</div>
+		</div>
+	</header>
+
+	<hr>
+
+	<div class="quaternary page">
 
 		<form method="POST" method="POST" accept-char="UTF-8" autocomplete="off" id="menu">
 			{{ Form::token() }}
@@ -342,8 +357,8 @@
 
 		</form>
 
+	</div>
 
-
-	</section>
+</section>
 
 @endsection

@@ -237,6 +237,7 @@ class Platform_Menus_Admin_Menus_Controller extends Admin_Controller
             'root_slug'       => array_get($menu, 'slug', false),
             'persisted_slugs' => $persisted_slugs,
             'pages'           => $pages,
+            'page_type'       => ( ! $slug) ? 'create' : 'update',
         );
 
         // Show the page.
