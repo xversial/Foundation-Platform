@@ -137,6 +137,22 @@ class ExtensionsManager
     protected $dependents = array();
 
     /**
+     * Stores each extension overrides.
+     *
+     * @access   protected
+     * @var      array
+     */
+    protected $overrides = array();
+
+    /**
+     * Stores each extension overridden.
+     *
+     * @access   protected
+     * @var      array
+     */
+    protected $overridden = array();
+
+    /**
      * Flag for whether we're running installer mode or not.
      *
      * Installer mode gives more privileges. 
@@ -185,13 +201,13 @@ class ExtensionsManager
             }
         }
 
-        // Dependency sort based on the 'extends' key
+        // Dependency sort based on the 'overrides' key
         // of an extension
         //
-        $sorted_slugs = Dependencies::sort($extensions_flat, 'extends');
+        $sorted_slugs = Dependencies::sort($extensions_flat, 'overrides');
 
         // The slugs are currently in order from most
-        // extended to least extended. Let's reverse that.
+        // overridden to least overridden. Let's reverse that.
         //
         $sorted_slugs = array_reverse($sorted_slugs);
 
@@ -963,6 +979,40 @@ class ExtensionsManager
 
     /**
      * --------------------------------------------------------------------------
+     * Function: overrides()
+     * --------------------------------------------------------------------------
+     *
+     * Checks if an extension has overrides.
+     *
+     * @access   public
+     * @param    string
+     * @return   mixed
+     */
+    public function overrides($slug)
+    {
+        return array_get($this->overrides, $this->reverse_slug($slug), array());
+    }
+
+
+    /**
+     * --------------------------------------------------------------------------
+     * Function: overridden()
+     * --------------------------------------------------------------------------
+     *
+     * Checks if an extension has overridden.
+     *
+     * @access   public
+     * @param    string
+     * @return   mixed
+     */
+    public function overridden($slug)
+    {
+        return array_get($this->overridden, $this->reverse_slug($slug), array());
+    }
+
+
+    /**
+     * --------------------------------------------------------------------------
      * Function: required_extensions()
      * --------------------------------------------------------------------------
      *
@@ -1570,6 +1620,23 @@ class ExtensionsManager
                     //
                     $this->dependencies[ $ext ][ $vendor ][] = $dependent;
                     $this->dependents[ $dep_slug ][ $dep_vendor ][] = $slug;
+                }
+            }
+
+            // Check if this extension has overrides.
+            //
+            if ($overrides = array_get($extension, 'overrides'))
+            {
+                foreach ($overrides as $overridden)
+                {
+                    // Get this overrides vendor and slug.
+                    //
+                    list($dep_vendor, $dep_slug) = explode('.', $overridden);
+
+                    // Store both dependencies and dependents.
+                    //
+                    $this->overrides[ $ext ][ $vendor ][] = $overridden;
+                    $this->overridden[ $dep_slug ][ $dep_vendor ][] = $slug;
                 }
             }
         }

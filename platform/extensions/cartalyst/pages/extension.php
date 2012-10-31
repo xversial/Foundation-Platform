@@ -43,7 +43,7 @@ return array(
         #'platform.missing_extension'
     ),
 
-    'extends' => array(
+    'overrides' => array(
         'platform.pages',
     ),
 );
