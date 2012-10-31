@@ -55,7 +55,7 @@
     <nav class="quaternary-navigation tabbable visible-desktop">
         <ul class="nav nav-tabs">
             @foreach ( $settings as $extension => $data )
-            <li{{ ( $extension === 'settings' ? ' class="active"' : '' ) }}><a href="#tab_{{ $extension }}" data-toggle="tab">{{ Lang::line($extension . '::form.settings.legend') }}</a></li>
+            <li{{ ( $extension === 'platform/settings' ? ' class="active"' : '' ) }}><a href="#tab_{{ str_replace('/', '_', $extension) }}" data-toggle="tab">{{ Lang::line($extension . '::form.settings.legend') }}</a></li>
             @endforeach
         </ul>
     </nav>
@@ -65,15 +65,15 @@
         <nav class="hidden-desktop">
             <ul class="nav nav-stacked nav-pills">
                 @foreach ( $settings as $extension => $data )
-                <li{{ ( $extension === 'settings' ? ' class="active"' : '' ) }}><a href="#tab_{{ $extension }}" data-toggle="tab">{{ Lang::line($extension . '::form.settings.legend') }}</a></li>
+                <li{{ ( $extension === 'platform/settings' ? ' class="active"' : '' ) }}><a href="#tab_{{ str_replace('/', '_', $extension) }}" data-toggle="tab">{{ Lang::line($extension . '::form.settings.legend') }}</a></li>
                 @endforeach
             </ul>
         </nav>
 
         <div class="tab-content">
             @foreach ( $settings as $extension => $data )
-            <div class="tab-pane{{ ( $extension === 'settings' ? ' active' : '' ) }}" id="tab_{{ $extension }}">
-                @widget('platform.' . $extension . '::settings.index', $data)
+            <div class="tab-pane{{ ( $extension === 'platform/settings' ? ' active' : '' ) }}" id="tab_{{ str_replace('/', '_', $extension) }}">
+                @widget(str_replace('/', '.', $extension) . '::settings.index', $data)
             </div>
             @endforeach
         </div>
