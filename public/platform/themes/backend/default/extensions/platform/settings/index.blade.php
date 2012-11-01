@@ -76,7 +76,7 @@
             @foreach ($tabs as $tab => $extension)
             <div class="tab-pane{{ ( $extension === 'platform/settings' ? ' active' : '' ) }}" id="tab_{{ $tab }}">
                 @foreach ($settings[ $extension ] as $setting)
-                    @widget(str_replace('/', '.', $extension) . '::settings.index', $setting)
+                    @widget($extension . '::settings.index', $setting)
                 @endforeach
             </div>
             @endforeach
@@ -84,7 +84,7 @@
             ?>
             @foreach ( $settings as $extension => $data )
             <div class="tab-pane{{ ( $extension === 'platform/settings' ? ' active' : '' ) }}" id="tab_{{ str_replace('/', '_', $extension) }}">
-                @widget(str_replace('/', '.', $extension) . '::settings.index', $data)
+                @widget($extension . '::settings.index', $data)
             </div>
             @endforeach
         </div>
