@@ -29,8 +29,8 @@ return array(
         'extensions' => array(
             '_title_'   => 'Admin Extensions',
 
-            'index'     => 'View',
-            'view'      => 'Edit',
+            'index'     => 'Listing',
+            'view'      => 'View',
             'install'   => 'Install',
             'uninstall' => 'Uninstall',
             'enable'    => 'Enable',

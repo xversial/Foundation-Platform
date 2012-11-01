@@ -57,6 +57,6 @@ return array(
             'view'    => 'View / Edit',
             'create'  => 'Create',
             'delete'  => 'Delete',
-        ),
+        )
     )
 );

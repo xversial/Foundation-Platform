@@ -113,7 +113,9 @@ class Platform_Extensions_Admin_Extensions_Controller extends Admin_Controller
 
         // Show the page.
         //
-        return Theme::make('platform.extensions::index')->with('extensions', $extensions);
+        return Theme::make('platform.extensions::index')
+            ->with('manager', Platform::extensions_manager())
+            ->with('extensions', $extensions);
     }
 
 
@@ -450,7 +452,10 @@ class Platform_Extensions_Admin_Extensions_Controller extends Admin_Controller
 
         // Show the page.
         //
-        return Theme::make('platform.extensions::view')->with('extension', $extension)->with('extensions', $extensions);
+        return Theme::make('platform.extensions::view')
+            ->with('manager', Platform::extensions_manager())
+            ->with('extension', $extension)
+            ->with('extensions', $extensions);
     }
 
 
@@ -471,14 +476,16 @@ class Platform_Extensions_Admin_Extensions_Controller extends Admin_Controller
         //
         if ($required = Input::get('install_required'))
         {
-            $this->get_install($vendor, $required);
+            list($req_vendor, $req_slug) = explode('/', $required);
+            $this->get_install($req_vendor, $req_slug);
         }
 
         // If we are enabling a required extension.
         //
         elseif ($required = Input::get('enable_required'))
         {
-            $this->get_enable($vendor, $required);
+            list($req_vendor, $req_slug) = explode('/', $required);
+            $this->get_enable($req_vendor, $req_slug);
         }
 
         // If we are installing the extension.

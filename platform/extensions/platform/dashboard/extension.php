@@ -25,7 +25,6 @@
  * --------------------------------------------------------------------------
  */
 return array(
-
     /*
      * -----------------------------------------
      * Extension information.
@@ -49,5 +48,5 @@ return array(
         'platform.menus',
         'platform.users',
         'platform.settings'
-    ),
+    )
 );

@@ -1194,9 +1194,9 @@ class ExtensionsManager
         // If this extension has vendors.
         //
         $vendors = $this->vendors($slug);
-        if ( ! empty($vendors))
+        if ( ! empty($vendors) and count($vendors) > 1)
         {
-            // Make sure the extension get's enabled !
+            // Since it is a vendor extension, let's make sure the extension get's enabled!
             //
             $enable = 1;
         }

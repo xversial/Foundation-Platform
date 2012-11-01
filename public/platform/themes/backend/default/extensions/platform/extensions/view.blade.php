@@ -40,7 +40,11 @@
                     </tr>
                     <tr>
                         <td>{{ Lang::line('platform/extensions::table.slug') }}</td>
-                        <td>{{ array_get($extension, 'info.slug') }}</td>
+                        <td>{{ array_get($extension, 'info.formatted_slug') }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ Lang::line('platform/extensions::table.is_core') }}</td>
+                        <td>{{ ( array_get($extension, 'info.is_core') ? Lang::line('general.yes') : Lang::line('general.no') ) }}</td>
                     </tr>
                     <tr>
                         <td>{{ Lang::line('platform/extensions::table.version') }}</td>
@@ -58,10 +62,12 @@
             </table>
         </div>
 
-        {{ Form::open() }}
-            {{ Form::token() }}
+        <form action="{{ URL::to_admin('extensions/view/' . array_get($extension, 'info.formatted_slug')) }}" id="languages-create-form" class="form-horizontal" method="POST" accept-char="UTF-8">
+            <input type="hidden" name="{{ Session::csrf_token }}" value="{{ Session::token() }}">
 
-            @if ( $dependencies = Platform::extensions_manager()->dependencies(array_get($extension, 'info.slug')) )
+
+
+            @if ($dependencies = $manager->dependencies(array_get($extension, 'info.slug')))
             <h5>{{ Lang::line('platform/extensions::general.heading.view.dependencies') }}</h5>
 
             <table class="table table-bordered">
@@ -73,15 +79,16 @@
                     </tr>
                 <thead>
                 <tbody>
-                    @foreach ( $dependencies as $dependent )
+                    @foreach ($dependencies as $dependent)
+                    <?php $dependent_slug = $manager->reverse_slug($dependent); ?>
                     <tr>
-                        <td><a href="{{ URL::to_admin('extensions/view/' . array_get($extensions, $dependent . '.info.slug')) }}">{{ array_get($extensions, $dependent . '.info.name', $dependent) }}</a></td>
-                        <td>{{ $dependent }}</td>
+                        <td><a href="{{ URL::to_admin('extensions/view/' . array_get($extensions, $dependent_slug . '.info.formatted_slug')) }}">{{ array_get($extensions, $dependent_slug . '.info.name') }}</a></td>
+                        <td>{{ array_get($extensions, $dependent_slug . '.info.formatted_slug') }}</td>
                         <td>
-                            @if ( Platform::extensions_manager()->is_installed($dependent) )
+                            @if ($manager->is_installed(array_get($extensions, $dependent_slug . '.info.slug')))
                                 <span class="label label-success">{{ Lang::line('platform/extensions::table.installed') }}</span>
 
-                                @if ( Platform::extensions_manager()->is_disabled($dependent) )
+                                @if ($manager->is_disabled(array_get($extensions, $dependent_slug . '.info.slug')))
                                     <span class="label label-warning">{{ Lang::line('platform/extensions::table.disabled') }}</span>
                                     <span class="pull-right">
                                         <button class="btn btn-small" type="submit" name="enable_required" value="{{ $dependent }}">{{ Lang::line('platform/extensions::button.enable') }}</button>
@@ -89,17 +96,17 @@
                                 @else
                                     <span class="label label-success">{{ Lang::line('platform/extensions::table.enabled') }}</span>
                                 @endif
-                            @elseif( Platform::extensions_manager()->is_uninstalled($dependent) )
-                                @if ( Platform::extensions_manager()->can_install($dependent) )
+                            @elseif ($manager->is_uninstalled(array_get($extensions, $dependent_slug . '.info.slug')))
+                                @if ($manager->can_install(array_get($extensions, $dependent_slug . '.info.slug')))
                                     <span class="label label-warning">{{ Lang::line('platform/extensions::table.uninstalled') }}</span>
                                     <span class="pull-right">
                                         <button class="btn btn-small" type="submit" name="install_required" value="{{ $dependent }}">{{ Lang::line('platform/extensions::button.install') }}</button>
                                     </span>
                                 @else
-                                    @if ( Platform::extensions_manager()->exists($dependent) )
-                                    <span class="label label-important">{{ Lang::line('platform/extensions::messages.error.dependencies') }}</span>
+                                    @if ($manager->exists(array_get($extensions, $dependent_slug . '.info.slug')))
+                                    <span class="label label-important">{{ Lang::line('extensions.dependencies') }}</span>
                                     @else
-                                    <span class="label label-important">{{ Lang::line('platform/extensions::messages.error.not_found', array('extension' => $dependent)) }}</span>
+                                    <span class="label label-important">{{ Lang::line('extensions.not_found', array('extension' => $dependent)) }}</span>
                                     @endif
                                 @endif
                             @endif
@@ -110,7 +117,7 @@
             </table>
             @endif
 
-            @if ( $dependents = Platform::extensions_manager()->dependents(array_get($extension, 'info.slug')) )
+            @if ($dependents = $manager->dependents(array_get($extension, 'info.slug')))
             <h5>{{ Lang::line('platform/extensions::general.heading.view.dependents') }}</h5>
 
             <table class="table table-bordered">
@@ -122,27 +129,28 @@
                     </tr>
                 <thead>
                 <tbody>
-                    @foreach ( $dependents as $dependent )
+                    @foreach ($dependents as $dependent)
+                    <?php $dependent_slug = $manager->reverse_slug($dependent); ?>
                     <tr>
-                        <td><a href="{{ URL::to_admin('extensions/view/' . array_get($extensions, $dependent . '.info.slug')) }}">{{ array_get($extensions, $dependent . '.info.name') }}</a></td>
-                        <td>{{ $dependent }}</td>
+                        <td><a href="{{ URL::to_admin('extensions/view/' . array_get($extensions, $dependent_slug . '.info.formatted_slug')) }}">{{ array_get($extensions, $dependent_slug . '.info.name') }}</a></td>
+                        <td>{{ array_get($extensions, $dependent_slug . '.info.formatted_slug') }}</td>
                         <td>
-                            @if ( Platform::extensions_manager()->is_installed($dependent) )
+                            @if ($manager->is_installed(array_get($extensions, $dependent_slug . '.info.slug')))
                                 <span class="label label-success">{{ Lang::line('platform/extensions::table.installed') }}</span>
 
-                                @if ( Platform::extensions_manager()->is_disabled($dependent) )
+                                @if ($manager->is_disabled(array_get($extensions, $dependent_slug . '.info.slug')))
                                     <span class="label label-warning">{{ Lang::line('platform/extensions::table.disabled') }}</span>
                                     <span class="pull-right">
-                                        <button class="btn btn-small" type="submit" name="enable_required" value="{{ $dependent }}">{{ Lang::line('platform/extensions::buttons.enable') }}</button>
+                                        <button class="btn btn-small" type="submit" name="enable_required" value="{{ array_get($extensions, $dependent_slug . '.info.formatted_slug') }}">{{ Lang::line('platform/extensions::button.enable') }}</button>
                                     </span>
                                 @else
                                     <span class="label label-success">{{ Lang::line('platform/extensions::table.enabled') }}</span>
                                 @endif
-                            @elseif( Platform::extensions_manager()->is_uninstalled($dependent) )
-                                <span class="label label-{{ ( Platform::extensions_manager()->can_install($dependent) ? 'warning' : 'important' ) }}">{{ Lang::line('platform/extensions::table.uninstalled') }}</span>
-                                @if( Platform::extensions_manager()->can_install($dependent) )
+                            @elseif ($manager->is_uninstalled(array_get($extensions, $dependent_slug . '.info.slug')))
+                                <span class="label label-{{ ( $manager->can_install(array_get($extensions, $dependent_slug . '.info.slug')) ? 'warning' : 'important' ) }}">{{ Lang::line('platform/extensions::table.uninstalled') }}</span>
+                                @if ($manager->can_install(array_get($extensions, $dependent_slug . '.info.slug')))
                                     <span class="pull-right">
-                                        <button class="btn btn-small" type="submit" name="install_required" value="{{ $dependent }}">{{ Lang::line('platform/extensions::button.install') }}</button>
+                                        <button class="btn btn-small" type="submit" name="install_required" value="{{ array_get($extensions, $dependent_slug . '.info.formatted_slug') }}">{{ Lang::line('platform/extensions::button.install') }}</button>
                                     </span>
                                 @endif
                             @endif
@@ -156,22 +164,22 @@
 
             <h5>{{ Lang::line('platform/extensions::general.heading.view.actions') }}</h5>
 
-            @if ( Platform::extensions_manager()->is_installed(array_get($extension, 'info.slug')) )
-                @if ( Platform::extensions_manager()->is_core(array_get($extension, 'info.slug')) )
-                    @if ( Platform::extensions_manager()->has_update(array_get($extension, 'info.slug')) )
+            @if ( $manager->is_installed(array_get($extension, 'info.slug')) )
+                @if ( $manager->is_core(array_get($extension, 'info.slug')) )
+                    @if ( $manager->has_update(array_get($extension, 'info.slug')) )
                         <button class="btn" type="submit" name="update" value="{{ array_get($extension, 'info.slug') }}">{{ Lang::line('platform/extensions::button.update') }}</button>
                     @else
                         <span class="label label-important">{{ Lang::line('extensions.is_core') }}</span>
                     @endif
                 @else
-                    @if ( Platform::extensions_manager()->can_uninstall(array_get($extension, 'info.slug')) )
-                        @if ( Platform::extensions_manager()->is_enabled(array_get($extension, 'info.slug')) )
+                    @if ( $manager->can_uninstall(array_get($extension, 'info.slug')) )
+                        @if ( $manager->is_enabled(array_get($extension, 'info.slug')) )
                             <button class="btn" type="submit" name="disable" value="{{ array_get($extension, 'info.slug') }}">{{ Lang::line('platform/extensions::button.disable') }}</button>
                         @else
                             <button class="btn" type="submit" name="enable" value="{{ array_get($extension, 'info.slug') }}">{{ Lang::line('platform/extensions::button.enable') }}</button>
                         @endif
 
-                        @if ( Platform::extensions_manager()->has_update(array_get($extension, 'info.slug')) )
+                        @if ( $manager->has_update(array_get($extension, 'info.slug')) )
                             <button class="btn" type="submit" name="update" value="{{ array_get($extension, 'info.slug') }}">{{ Lang::line('platform/extensions::button.update') }}</button>
                         @endif
 
@@ -181,15 +189,15 @@
                     @endif
                 @endif
             @else
-                @if ( ! Platform::extensions_manager()->can_install(array_get($extension, 'info.slug')) )
+                @if ( ! $manager->can_install(array_get($extension, 'info.slug')) )
                     <span class="label label-warning">{{ Lang::line('extensions.requires') }}</span>
                 @else
                     <div class="btn-group">
-                        <button class="btn" type="submit" name="install" value="{{ array_get($extension, 'info.slug') }}">{{ Lang::line('platform/extensions::button.install') }}</button>
+                        <button class="btn btn-info" type="submit" name="install" value="{{ array_get($extension, 'info.slug') }}">{{ Lang::line('platform/extensions::button.install') }}</button>
                     </div>
                 @endif
             @endif
-        {{ Form::close() }}
+        </form>
     </div>
 </section>
 @endsection
