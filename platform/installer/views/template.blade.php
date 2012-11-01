@@ -13,8 +13,8 @@
 
 	<meta name="description" content="an ecommerce engine">
 	<meta name="author" content="Cartalyst LLC">
-	<meta name="base_url" content="{{ url() }}">
-	<meta name="admin_url" content="{{ url(ADMIN) }}">
+	<meta name="base_url" content="{{ URL::to() }}">
+	<meta name="admin_url" content="{{ URL::to_admin() }}">
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>

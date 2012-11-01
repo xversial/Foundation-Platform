@@ -1,7 +1,7 @@
 @layout('installer::template')
 
 @section('title')
-{{ Lang::line('installer::generall.title') }} | {{ Lang::line('installer::install.step_3.title')->get() }}
+{{ Lang::line('installer::general.title') }} | {{ Lang::line('installer::install.step_3.title') }}
 @endsection
 
 @section('scripts')
