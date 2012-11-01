@@ -104,6 +104,7 @@ class Installer
             // Stub (template file) directories
             //
             Bundle::path('installer') . 'stubs',
+            path('bundle') . 'filesystem' . DS . 'config',
             path('extensions') . 'platform' . DS . 'developers' . DS . 'stubs',
 
             // Themes.
