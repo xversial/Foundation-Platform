@@ -423,7 +423,7 @@ class Platform
          */
         Blade::extend(function($view)
         {
-            $pattern = "/@get\.([^\s\"<]*)/";
+            $pattern = "/@get\('(.*?)'\)/";
 
             return preg_replace($pattern, '<?php echo Platform::get(\'$1\'); ?>', $view);
         });
@@ -492,33 +492,24 @@ class Platform
      */
     public static function get($setting = null, $default = null)
     {
-        echo '<pre>';
+        $info = static::parse_extension_string($setting);
 
-        print_R(func_get_args());
-
-        die();
-        // Separate the settings.
+        // Let's elegently grab the information we need
+        // from the info determined.
         //
-        $settings = explode('.', $setting);
-
-        // Get the extension.
-        //
-        $extension = array_shift($settings);
-
-        //
-        //
-        if (count($settings) > 1)
+        try
         {
-            $type = array_shift($settings);
-            $name = array_shift($settings);
+            $vendor    = array_get($info, 'vendor', function() { throw new Exception(''); });
+            $extension = array_get($info, 'extension', function() { throw new Exception(''); });
+            $type      = array_get($info, 'path_segments.0', function() { throw new Exception(''); });
+            $name      = array_get($info, 'path_segments.1', function() { throw new Exception(''); });
         }
-        else
+        catch (Exception $e)
         {
-            $type = $extension;
-            $name = array_shift($settings);
+            return false;
         }
 
-        // Do we have settings stored ?
+        // Do we have settings stored?
         //
         if(empty(static::$settings))
         {
@@ -527,39 +518,56 @@ class Platform
             static::$settings = API::get('settings', array('organize' => true));
         }
 
-        // If an extension settings does not exist.
-        //
-        if ( ! array_key_exists($extension, static::$settings))
-        {
-            try
-            {
-                // Find all the settings for the requested extension.
-                //
-                static::$settings[ $extension ] = API::get('settings', array(
-                    'where' => array(
-                        array('extension', '=', $extension)
-                    ),
-                    'organize' => true
-                ));
-            }
-            catch (APIClientException $e)
-            {
-                static::$settings[ $extension ] = array();
-            }
-        }
-
-        // Check if the setting value exists.
-        //
-        if ($setting = array_get(static::$settings, $extension . '.' . $type . '.' . $name))
-        {
-            return $setting['value'];
-        }
-
-        // Return the default value.
-        //
-        return value($default);
+        return array_get(static::$settings, $extension.'.'.$vendor.'.'.$type.'.'.$name.'.value', $default);
     }
 
+    public static function parse_extension_string($string)
+    {
+        // Array of parts to send through
+        $parts = array(
+            'vendor'        => null,
+            'extension'     => null,
+            'path'          => '',
+            'path_segments' => array(),
+        );
+
+        $string_parts       = explode('::', $string);
+        $string_parts_count = count($string_parts);
+
+        // Can only ever be one separator
+        if ($string_parts_count > 2)
+        {
+            return false;
+        }
+
+        // We have a vendor/extension component
+        elseif ($string_parts_count === 2)
+        {
+            $extension_parts = explode(ExtensionsManager::VENDOR_SEPARATOR, $string_parts[0]);
+
+            if (count($extension_parts) === 2)
+            {
+                $parts['vendor']    = $extension_parts[0];
+                $parts['extension'] = $extension_parts[1];
+            }
+            else
+            {
+                $parts['vendor']    = ExtensionsManager::DEFAULT_VENDOR;
+                $parts['extension'] = $extension_parts[0];
+            }
+
+            $parts['path']          = $string_parts[1];
+            $parts['path_segments'] = explode('.', $string_parts[1]);
+        }
+        else
+        {
+            $parts['extension']     = DEFAULT_BUNDLE;
+            $parts['path']          = $string_parts[0];
+            $parts['path_segments'] = explode('.', $string_parts[0]);
+        }
+
+        return $parts;
+    }
 
     /**
      * --------------------------------------------------------------------------
