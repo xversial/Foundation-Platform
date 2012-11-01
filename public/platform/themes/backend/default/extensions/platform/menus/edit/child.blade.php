@@ -44,9 +44,9 @@
 					</div>
 
 					@if (array_get($child, 'type', Platform\Menus\Menu::TYPE_STATIC) == Platform\Menus\Menu::TYPE_STATIC)
-						@render('platform.menus::edit.child.static', array('child' => $child))
+						@render('platform/menus::edit.child.static', array('child' => $child))
 					@elseif (array_get($child, 'type', Platform\Menus\Menu::TYPE_STATIC) == Platform\Menus\Menu::TYPE_PAGE)
-						@render('platform.menus::edit.child.page', array('child' => $child, 'pages' => $pages))
+						@render('platform/menus::edit.child.page', array('child' => $child, 'pages' => $pages))
 					@endif
 				@else
 					<div class="hide">
@@ -54,10 +54,10 @@
 					</div>
 
 					[? if raw.type == '{{ Platform\Menus\Menu::TYPE_STATIC }}' ?]
-						@render('platform.menus::edit.child.static', array('child' => $child))
+						@render('platform/menus::edit.child.static', array('child' => $child))
 					[? endif ?]
 					[? if raw.type == '{{ Platform\Menus\Menu::TYPE_PAGE }}' ?]
-						@render('platform.menus::edit.child.page', array('child' => $child, 'pages' => $pages))
+						@render('platform/menus::edit.child.page', array('child' => $child, 'pages' => $pages))
 					[? endif ?]
 				@endif
 
@@ -121,7 +121,7 @@
 	@if (isset($child['children']) and is_array($child['children']) and count($child['children']) > 0)
 		<ol>
 			@foreach ($child['children'] as $grand_child)
-				@render('platform.menus::edit.child', array('child' => $grand_child, 'pages' => $pages))
+				@render('platform/menus::edit.child', array('child' => $grand_child, 'pages' => $pages))
 			@endforeach
 		</ol>
 	@endif

@@ -22,7 +22,7 @@
 	@if ($item['children'])
 		<ul>
 			@foreach ($item['children'] as $child)
-				@render('platform.menus::widgets.nav.item', array('item' => $child, 'active_path' => $active_path, 'before_uri' => $before_uri))
+				@render('platform/menus::widgets.nav.item', array('item' => $child, 'active_path' => $active_path, 'before_uri' => $before_uri))
 			@endforeach
 		</ul>
 	@endif

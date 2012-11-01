@@ -333,14 +333,14 @@
 					<ol class="menu-children">
 						@if (isset($menu['children']))
 							@foreach ($menu['children'] as $child)
-								@render('platform.menus::edit.child', array('child' => $child, 'pages' => $pages))
+								@render('platform/menus::edit.child', array('child' => $child, 'pages' => $pages))
 							@endforeach
 						@endif
 					</ol>
 
 					<div class="new-child-template-container hide">
 						<ul class="new-child-template">
-							@render('platform.menus::edit.child', array('child' => array(), 'pages' => $pages, 'template' => true))
+							@render('platform/menus::edit.child', array('child' => array(), 'pages' => $pages, 'template' => true))
 						</ul>
 					</div>
 
