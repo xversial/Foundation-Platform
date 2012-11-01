@@ -104,6 +104,8 @@ class Platform_Settings_Admin_Settings_Controller extends Admin_Controller
         //
         foreach (API::get('settings', array('organize' => true)) as $extension => $vendors)
         {
+            // 
+            //
             foreach ($vendors as $vendor => $extension_settings)
             {
                 // Make sure this extension settings widget exists.
@@ -121,6 +123,7 @@ class Platform_Settings_Admin_Settings_Controller extends Admin_Controller
                     //
                     foreach($setting as $data)
                     {
+                        $tabs[ $vendor . '_' . $extension] = $vendor . '/' . $extension;
                         $settings[ $vendor . '/' . $extension ][ $type ][ $data['name'] ] = $data['value'];
                     }
                 }
@@ -129,7 +132,9 @@ class Platform_Settings_Admin_Settings_Controller extends Admin_Controller
 
         // Show the page.
         //
-        return Theme::make('platform.settings::index')->with('settings', $settings);
+        return Theme::make('platform.settings::index')
+            ->with('tabs', $tabs)
+            ->with('settings', $settings);
     }
 
 
