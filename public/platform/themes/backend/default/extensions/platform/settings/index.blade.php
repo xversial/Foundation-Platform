@@ -71,17 +71,6 @@
         </nav>
 
         <div class="tab-content">
-            <?php
-            /*
-            @foreach ($tabs as $tab => $extension)
-            <div class="tab-pane{{ ( $extension === 'platform/settings' ? ' active' : '' ) }}" id="tab_{{ $tab }}">
-                @foreach ($settings[ $extension ] as $setting)
-                    @widget($extension . '::settings.index', $setting)
-                @endforeach
-            </div>
-            @endforeach
-            */
-            ?>
             @foreach ( $settings as $extension => $data )
             <div class="tab-pane{{ ( $extension === 'platform/settings' ? ' active' : '' ) }}" id="tab_{{ str_replace('/', '_', $extension) }}">
                 @widget($extension . '::settings.index', $data)
