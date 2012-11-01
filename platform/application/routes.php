@@ -38,7 +38,7 @@ Route::any(ADMIN . '/(:any?)/(:any?)/(:any?)(/.*)?', function($handle = 'dashboa
 
     // Check if the controller exists.
     //
-    if ($controller_instance = Platform::extensions_manager()->resolve_controller($bundle, 'admin.' . $controller))
+    if ($controller and ($controller_instance = Platform::extensions_manager()->resolve_controller($bundle, 'admin.' . $controller)))
     {
         $method          = (($action) ?: 'index');
         $params          = explode('/', substr($params, 1));
