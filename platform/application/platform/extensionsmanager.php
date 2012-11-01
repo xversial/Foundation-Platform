@@ -165,7 +165,7 @@ class ExtensionsManager
     /**
      * Flag for whether we're running installer mode or not.
      *
-     * Installer mode gives more privileges. 
+     * Installer mode gives more privileges.
      *
      * @access   protected
      * @var      boolean
@@ -268,7 +268,7 @@ class ExtensionsManager
         {
             return false;
         }
- 
+
         // Start the bundle.
         //
         $this->start_bundle($extension);
@@ -388,7 +388,7 @@ class ExtensionsManager
 
                 // Store the extension.
                 //
-                array_set($this->installed, $this->reverse_slug($slug), 
+                array_set($this->installed, $this->reverse_slug($slug),
                     array(
                         'info' => array(
                             'slug'       => $slug,
@@ -1191,7 +1191,7 @@ class ExtensionsManager
         //
         $extension = $this->get($slug);
 
-        // If this extension has vendors. 
+        // If this extension has vendors.
         //
         $vendors = $this->vendors($slug);
         if ( ! empty($vendors))
@@ -1274,7 +1274,7 @@ class ExtensionsManager
         //
         $extension = $this->get($slug);
 
-        // If this extension has vendors. 
+        // If this extension has vendors.
         //
         if ($vendors = $this->vendors($slug))
         {
@@ -1291,11 +1291,11 @@ class ExtensionsManager
                 //
                 require_once $migration;
 
-                // 
+                //
                 //
                 $migration = basename(str_replace(EXT, '', $migration));
 
-                // 
+                //
                 //
                 DB::table('laravel_migrations')->where('name', '=', $migration)->delete();
 
@@ -1330,7 +1330,7 @@ class ExtensionsManager
             {
                 // Remove the current vendor from the list.
                 //
-                unset($vendors[$extension->vendor]);
+                unset($vendors[array_get($extension, 'info.vendor')]);
 
                 // Loop through the vendors till we find a valid one !
                 //
@@ -1601,7 +1601,7 @@ class ExtensionsManager
             {
                 throw new Exception(Lang::line('extensions.invalid_file', array('extension' => $extension_slug)));
             }
-        
+
             // Combine the data.
             //
             $extension['info']['slug']         = $slug;
@@ -1612,7 +1612,7 @@ class ExtensionsManager
             $extension['info']['is_installed'] = $this->is_installed($slug);
 
             // Bundles array, so we can register the extension as a bundle in Laravel.
-            // 
+            //
             if ( ! isset($extension['bundles']['handles']))
             {
                 $extension['bundles']['handles'] = $ext;
