@@ -37,7 +37,7 @@
 	@yield('styles')
 
 	<!-- Apply Style Options -->
-	@widget('platform.themes::options.css')
+	@widget('platform/themes::options.css')
 
 	<link rel="shortcut icon" href="{{ Theme::asset('img/favicon.png') }}">
 	<link rel="apple-touch-icon-precomposed" href="{{ Theme::asset('img/apple-touch-icon-precomposed.png') }}">

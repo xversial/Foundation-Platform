@@ -73,17 +73,19 @@ class Platform_Developers_API_Developers_Controller extends API_Controller
 		switch (Input::get('encoding', 'base64'))
 		{
 			case 'utf-8':
-				$return = utf8_encode($file->contents($zip_location));
+				$encoded = utf8_encode($file->contents($zip_location));
 				break;
 			
 			default:
-				$return =base64_encode($file->contents($zip_location));
+				$encoded = base64_encode($file->contents($zip_location));
 				break;
 		}
 
 		// Now, remove the directory
 		$directory->delete($root_directory);
 		$file->delete($zip_location);
+
+		return new Response($encoded);
 	}
 
 	public function create_zip($root_directory, $zip_name)

@@ -22,7 +22,7 @@
 
                 <!-- Everything you want hidden at 940px or less, place within here -->
                 <div id="tertiary-navigation" class="nav-collapse">
-                    @widget('platform.menus::menus.nav', 2, 1, 'nav pull-right', ADMIN)
+                    @widget('platform/menus::menus.nav', 2, 1, 'nav pull-right', ADMIN)
                 </div>
             </div>
         </div>

@@ -37,7 +37,7 @@
 
 				<!-- Everything you want hidden at 940px or less, place within here -->
 				<div id="tertiary-navigation" class="nav-collapse">
-					@widget('platform.menus::menus.nav', 2, 1, 'nav nav-pills', ADMIN)
+					@widget('platform/menus::menus.nav', 2, 1, 'nav nav-pills', ADMIN)
 				</div>
 
 			</div>
@@ -47,7 +47,7 @@
 	<hr>
 
 	<div class="quaternary page">
-		@widget('platform.users::admin.group.form.create')
+		@widget('platform/users::admin.group.form.create')
 	</div>
 
 </section>

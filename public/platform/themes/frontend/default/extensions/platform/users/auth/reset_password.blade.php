@@ -27,6 +27,6 @@
 <!-- Content -->
 @section('content')
 	<section id="reset" class="well">
-		@widget('platform.users::form.reset')
+		@widget('platform/users::form.reset')
 	</section>
 @endsection

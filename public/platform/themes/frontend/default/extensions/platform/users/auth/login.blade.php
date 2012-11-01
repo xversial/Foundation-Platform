@@ -27,6 +27,6 @@
 <!-- Content -->
 @section('content')
 	<section id="login" class="well">
-		@widget('platform.users::form.login')
+		@widget('platform/users::form.login')
 	</section>
 @endsection

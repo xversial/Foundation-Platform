@@ -569,9 +569,6 @@ class Platform
      */
     public static function widget($name = null)
     {
-    	// echo '<pre>';
-    	// print_r(Bundle::$bundles);
-    	// exit;
         // Get the widget name.
         //
         $name = trim($name);
@@ -593,14 +590,14 @@ class Platform
 
         // See if there is a namespace present.
         //
-        if (strpos($bundle_path, '.') !== false)
+        if (strpos($bundle_path, '/') !== false)
         {
-            list ($namespace, $extension) = explode('.', $bundle_path);
+            list ($vendor, $extension) = explode('/', $bundle_path);
         }
         else
         {
             $extension = $bundle_path;
-            $namespace = '';
+            $vendor = '';
         }
 
         // Some needed variables.
@@ -610,7 +607,7 @@ class Platform
 
         // Prepare the widget class.
         //
-        $class = ucfirst($namespace) . '\\' . ucfirst($extension) . '\\Widgets\\' . ucfirst(implode('_', $path));
+        $class = ucfirst($vendor) . '\\' . ucfirst($extension) . '\\Widgets\\' . ucfirst(implode('_', $path));
 
         // Check if this widget is already initialized.
         //
@@ -625,7 +622,7 @@ class Platform
         {
             // Check if the extension is initialized, if not, initiate it.
             //
-            ! ($extension == 'application') and ! Bundle::started($namespace.'/'.$extension) and Bundle::start($namespace.'/'.$extension);
+            ! ($extension == 'application') and ! Bundle::started($vendor.'/'.$extension) and Bundle::start($vendor.'/'.$extension);
 
             // Check if the plugin class exists.
             //

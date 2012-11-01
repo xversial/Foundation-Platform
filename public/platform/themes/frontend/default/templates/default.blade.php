@@ -21,7 +21,7 @@
 		@yield('styles')
 
 		<!-- Apply Style Options -->
-        @widget('platform.themes::options.css')
+        @widget('platform/themes::options.css')
 
         <!-- Modernizr -->
 		{{ Theme::queue_asset('modernizr', 'js/vendor/modernizr-2.6.1-respond-1.1.0.min.js') }}
@@ -48,7 +48,7 @@
 					</a>
 					<a class="brand" href="{{ URL::to('') }}">@get.settings.site.title</a>
 					<div class="nav-collapse collapse">
-						@widget('platform.menus::menus.nav', 'main', 1, 'nav')
+						@widget('platform/menus::menus.nav', 'main', 1, 'nav')
 					</div><!--/.nav-collapse -->
 				</div>
 			</div>
@@ -56,7 +56,7 @@
 
 		<div class="container">
 
-			@widget('platform.application::messages.all')
+			@widget('platform/application::messages.all')
 			@yield('content')
 
 			<hr>

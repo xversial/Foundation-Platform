@@ -52,6 +52,6 @@
 <!-- Content -->
 @section('content')
 	<section id="register" class="well">
-		@widget('platform.users::form.register')
+		@widget('platform/users::form.register')
 	</section>
 @endsection

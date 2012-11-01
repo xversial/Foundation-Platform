@@ -57,7 +57,7 @@
 
             <!-- Everything you want hidden at 940px or less, place within here -->
             <div id="tertiary-navigation" class="nav-collapse">
-                @widget('platform.menus::menus.nav', 2, 1, 'nav nav-pills', ADMIN)
+                @widget('platform/menus::menus.nav', 2, 1, 'nav nav-pills', ADMIN)
             </div>
 
             </div>
@@ -83,10 +83,10 @@
 
         <div class="tab-content">
 	        <div class="tab-pane active" id="general">
-				@widget('platform.users::admin.user.form.edit', $id)
+				@widget('platform/users::admin.user.form.edit', $id)
 			</div>
 			<div class="tab-pane" id="permissions">
-				@widget('platform.users::admin.user.form.permissions', $id)
+				@widget('platform/users::admin.user.form.permissions', $id)
 			</div>
 	    </div>
     </div>

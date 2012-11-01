@@ -60,7 +60,7 @@ class Platform_Developers_Admin_Developers_Controller extends Admin_Controller
 			'Cache-Control'             => 'public',
 			'Content-Description'       => 'File Transfer',
 			'Content-Disposition'       => sprintf('attachment; filename=%s-%s.zip', Input::get('vendor'), Input::get('extension')),
-			'Content-Type'              => 'application/zip',
+			'Content-Type'              => 'application/x-zip',
 			'Content-Transfer-Encoding' => 'binary',
 		));
 	}

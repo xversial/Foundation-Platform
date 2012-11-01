@@ -23,7 +23,7 @@
 		@yield('styles')
 
 		<!-- Apply Style Options -->
-        @widget('platform.themes::options.css')
+        @widget('platform/themes::options.css')
 
         <!-- Modernizr -->
 		{{ Theme::queue_asset('modernizr', 'js/vendor/modernizr/modernizr-2.6.1-respond-1.1.0.min.js') }}
@@ -68,7 +68,7 @@
 							<li class="divider-vertical"></li>
 						</ul>
 						<div id="primary-navigation" class="nav-collapse collapse">
-							@widget('platform.menus::menus.nav', 'admin', 1, 'nav', ADMIN)
+							@widget('platform/menus::menus.nav', 'admin', 1, 'nav', ADMIN)
 						</div><!--/.nav-collapse -->
 					</div>
 				</div>
@@ -79,17 +79,17 @@
 				<div class="row-fluid hidden-desktop">
 					<div class="span12">
 						<nav class="secondary-navigation">
-							@widget('platform.menus::menus.nav', 1, 1, 'nav nav-stacked nav-pills', ADMIN)
+							@widget('platform/menus::menus.nav', 1, 1, 'nav nav-stacked nav-pills', ADMIN)
 						</nav>
 					</div>
 				</div>
 
 				<div class="tabbable tabs-left">
 
-					@widget('platform.menus::menus.nav', 1, 1, 'secondary-navigation nav nav-tabs visible-desktop', ADMIN)
+					@widget('platform/menus::menus.nav', 1, 1, 'secondary-navigation nav nav-tabs visible-desktop', ADMIN)
 
 					<div class="secondary page tab-content">
-						@widget('platform.application::messages.all')
+						@widget('platform/application::messages.all')
 						@yield('content')
 					</div>
   				</div>
