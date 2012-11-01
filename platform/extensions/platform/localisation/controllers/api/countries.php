@@ -96,7 +96,7 @@ class Platform_Localisation_API_Countries_Controller extends API_Controller
 
             // Check if this country is being used by the system.
             //
-            $country['default'] = ( $country['iso_code_2'] === strtoupper(Platform::get('localisation.site.country')) ? true : false );
+            $country['default'] = ( $country['iso_code_2'] === strtoupper(Platform::get('platform/localisation::site.country')) ? true : false );
 
             // Add the regions to the country array.
             //
@@ -224,7 +224,7 @@ class Platform_Localisation_API_Countries_Controller extends API_Controller
         $country->region             = ( Input::get('region') ?: $country['region'] );
         $country->subregion          = ( Input::get('subregion') ?: $country['subregion'] );
         $country->currency           = ( Input::get('currency') ?: $country['currency'] );
-        $country->status             = ( $country['iso_code_2'] === Platform::get('localisation.site.country') ? 1 : Input::get('status') );
+        $country->status             = ( $country['iso_code_2'] === Platform::get('platform/localisation::site.country') ? 1 : Input::get('status') );
 
         try
         {
@@ -298,7 +298,7 @@ class Platform_Localisation_API_Countries_Controller extends API_Controller
 
         // Check if this is a default country.
         //
-        if ($country['iso_code_2'] === Platform::get('localisation.site.country'))
+        if ($country['iso_code_2'] === Platform::get('platform/localisation::site.country'))
         {
             // Return a response.
             //
@@ -351,7 +351,7 @@ class Platform_Localisation_API_Countries_Controller extends API_Controller
     {
         // Get the default country.
         //
-        $default_country = strtoupper(Platform::get('localisation.site.country'));
+        $default_country = strtoupper(Platform::get('platform/localisation::site.country'));
 
 
         $defaults = array(
@@ -439,7 +439,7 @@ class Platform_Localisation_API_Countries_Controller extends API_Controller
 
         // Is this country the default already ?
         //
-        if ($country['iso_code_2'] === Platform::get('localisation.site.country'))
+        if ($country['iso_code_2'] === Platform::get('platform/localisation::site.country'))
         {
             // Return a response.
             //

@@ -178,7 +178,7 @@ class Platform_Themes_API_Themes_Controller extends API_Controller
      */
     public function get_active($type, $default = 'default')
     {
-        return new Response(Platform::get('themes.theme.' . $type, $default));
+        return new Response(Platform::get('platform/themes::theme.' . $type, $default));
     }
 
 

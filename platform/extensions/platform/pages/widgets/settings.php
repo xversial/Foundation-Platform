@@ -24,8 +24,8 @@ class Settings
     {
     	// default page & template
     	//
-    	$page = Platform::get('pages.default.page');
-    	$template = Platform::get('pages.default.template');
+    	$page = Platform::get('platform/pages::default.page');
+    	$template = Platform::get('platform/pages::default.template');
 
     	// page list
     	//

@@ -88,7 +88,7 @@ class Platform_Localisation_API_Currencies_Controller extends API_Controller
 
             // Check if this currency is being used by the system.
             //
-            $currency['default'] = ( $currency['code'] === Platform::get('localisation.site.currency') ? true : false );
+            $currency['default'] = ( $currency['code'] === Platform::get('platform/localisation::site.currency') ? true : false );
 
             // Return the currency information.
             //
@@ -208,7 +208,7 @@ class Platform_Localisation_API_Currencies_Controller extends API_Controller
         $currency->symbol_right  = Input::get('symbol_right');
         $currency->decimal_place = Input::get('decimal_place');
         $currency->rate          = Input::get('rate');
-        $currency->status        = ( $currency['code'] === Platform::get('localisation.site.currency') ? 1 : Input::get('status') );
+        $currency->status        = ( $currency['code'] === Platform::get('platform/localisation::site.currency') ? 1 : Input::get('status') );
 
         try
         {
@@ -282,7 +282,7 @@ class Platform_Localisation_API_Currencies_Controller extends API_Controller
 
         // Check if this is a default currency.
         //
-        if ($currency['code'] === Platform::get('localisation.site.currency'))
+        if ($currency['code'] === Platform::get('platform/localisation::site.currency'))
         {
             // Return a response.
             //
@@ -335,7 +335,7 @@ class Platform_Localisation_API_Currencies_Controller extends API_Controller
     {
         // Get the default currency.
         //
-        $default_currency = strtoupper(Platform::get('localisation.site.currency'));
+        $default_currency = strtoupper(Platform::get('platform/localisation::site.currency'));
 
 
         $defaults = array(
@@ -422,7 +422,7 @@ class Platform_Localisation_API_Currencies_Controller extends API_Controller
 
         // Is this currency the default already ?
         //
-        if ($currency['code'] === Platform::get('localisation.site.currency'))
+        if ($currency['code'] === Platform::get('platform/localisation::site.currency'))
         {
             // Return a response.
             //

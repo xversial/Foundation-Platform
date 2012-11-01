@@ -49,7 +49,7 @@ class Public_Controller extends Base_Controller
     {
         // Set the active theme.
         //
-        Theme::active('frontend' . DS . Platform::get('themes.theme.frontend'));
+        Theme::active('frontend' . DS . Platform::get('platform/themes::theme.frontend'));
 
         // Set the fallback theme.
         //

@@ -166,7 +166,7 @@ class Menus
                     // Grab the first match for the page
                     if (is_array($page = reset($pages)) and array_key_exists('id', $page))
                     {
-                        $item['page_uri'] = ($page['id'] != Platform::get('pages.default.page')) ? $page['slug'] : '';;
+                        $item['page_uri'] = ($page['id'] != Platform::get('platform/pages::default.page')) ? $page['slug'] : '';;
                     }
 
                     break;

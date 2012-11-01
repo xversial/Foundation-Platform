@@ -88,7 +88,7 @@ class Platform_Localisation_API_Languages_Controller extends API_Controller
 
             // Check if this language is being used by the system.
             //
-            $language['default'] = ( $language['abbreviation'] === Platform::get('localisation.site.language') ? true : false );
+            $language['default'] = ( $language['abbreviation'] === Platform::get('platform/localisation::site.language') ? true : false );
 
             // Return the language information.
             //
@@ -202,7 +202,7 @@ class Platform_Localisation_API_Languages_Controller extends API_Controller
         $language->slug         = \Str::slug(Input::get('name'));
         $language->abbreviation = Input::get('abbreviation');
         $language->locale       = Input::get('locale');
-        $language->status       = ( $language['abbreviation'] === Platform::get('localisation.site.language') ? 1 : Input::get('status') );
+        $language->status       = ( $language['abbreviation'] === Platform::get('platform/localisation::site.language') ? 1 : Input::get('status') );
 
         try
         {
@@ -276,7 +276,7 @@ class Platform_Localisation_API_Languages_Controller extends API_Controller
 
         // Check if this is a default language.
         //
-        if ($language['abbreviation'] === Platform::get('localisation.site.language'))
+        if ($language['abbreviation'] === Platform::get('platform/localisation::site.language'))
         {
             // Return a response.
             //
@@ -329,7 +329,7 @@ class Platform_Localisation_API_Languages_Controller extends API_Controller
     {
         // Get the default language.
         //
-        $default_language = Platform::get('localisation.site.language');
+        $default_language = Platform::get('platform/localisation::site.language');
 
 
         $defaults = array(
@@ -416,7 +416,7 @@ class Platform_Localisation_API_Languages_Controller extends API_Controller
 
         // Is this language the default already ?
         //
-        if ($language['abbreviation'] === Platform::get('localisation.site.language'))
+        if ($language['abbreviation'] === Platform::get('platform/localisation::site.language'))
         {
             // Return a response.
             //

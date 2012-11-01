@@ -242,7 +242,7 @@ class Theme extends Crud
 
         // Get the current active theme for this theme type.
         //
-        $active = Platform::get('themes.theme.' . $type);
+        $active = Platform::get('platform/themes::theme.' . $type);
 
         // Returning one theme ?
         //

@@ -492,6 +492,11 @@ class Platform
      */
     public static function get($setting = null, $default = null)
     {
+        echo '<pre>';
+
+        print_R(func_get_args());
+
+        die();
         // Separate the settings.
         //
         $settings = explode('.', $setting);

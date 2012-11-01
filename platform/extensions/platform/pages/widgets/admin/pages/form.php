@@ -37,7 +37,7 @@ class Admin_Pages_Form
 	{
 		// default template
 		//
-		$template = Platform::get('pages.default.template');
+		$template = Platform::get('platform/pages::default.template');
 
 		// retrieve templates
 		//

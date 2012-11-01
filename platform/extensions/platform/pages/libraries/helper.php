@@ -46,7 +46,7 @@ class Helper
 	{
 		// Find current active and fallback themes for the frontend;
 		//
-		$themes['active'] = Platform::get('themes.theme.frontend');
+		$themes['active'] = Platform::get('platform/themes::theme.frontend');
 
 		// Set the fallback if the theme is not on default
 		//

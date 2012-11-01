@@ -41,11 +41,11 @@ Event::listen(Config::get('filesystem::filesystem.event.fallback'), function($me
     //
     if (URI::segment(1) === ADMIN)
     {
-        $message_type = Platform::get('settings.filesystem.backend_fallback_message');
+        $message_type = Platform::get('platform/settings::filesystem.backend_fallback_message');
     }
     else
     {
-        $message_type = Platform::get('settings.filesystem.frontend_fallback_message');
+        $message_type = Platform::get('platform/settings::filesystem.frontend_fallback_message');
     }
 
     if (in_array($message_type, array('error', 'info', 'success', 'warning')))
@@ -60,11 +60,11 @@ Event::listen(Config::get('filesystem::filesystem.event.failed'), function($mess
     //
     if (URI::segment(1) === ADMIN)
     {
-        $message_type = Platform::get('settings.filesystem.backend_failed_message');
+        $message_type = Platform::get('platform/settings::filesystem.backend_failed_message');
     }
     else
     {
-        $message_type = Platform::get('settings.filesystem.frontend_failed_message');
+        $message_type = Platform::get('platform/settings::filesystem.frontend_failed_message');
     }
 
     if (in_array($message_type, array('error', 'info', 'success', 'warning')))

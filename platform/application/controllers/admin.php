@@ -87,7 +87,7 @@ class Admin_Controller extends Authorized_Controller
 
         // Set the active theme.
         //
-        Theme::active('backend' . DS . Platform::get('themes.theme.backend'));
+        Theme::active('backend' . DS . Platform::get('platform/themes::theme.backend'));
 
         // Set the fallback theme.
         //

@@ -6,7 +6,7 @@ class Platform_Pages_Pages_Controller extends Public_Controller
 {
 	public function get_page($slug = false)
 	{
-		$slug = ($slug) ?: Platform::get('pages.default.page');
+		$slug = ($slug) ?: Platform::get('platform/pages::default.page');
 
 		try
 		{

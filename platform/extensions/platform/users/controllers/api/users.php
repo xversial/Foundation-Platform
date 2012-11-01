@@ -312,15 +312,15 @@ class Platform_Users_API_Users_Controller extends API_Controller
 
 				// Replacements
 				$replacements = array(
-					'/{{SITE_TITLE}}/'      => Platform::get('settings.site.title'),
+					'/{{SITE_TITLE}}/'      => Platform::get('platform/settings::site.title'),
 					'/{{ACTIVATION_LINK}}/' => URL::to_secure('activate/'.$hash),
 				);
 
 				$body = preg_replace(array_keys($replacements), array_values($replacements), $body);
 
 				// Construct the message
-				$message = Swift_Message::newInstance(Platform::get('settings.site.title').Lang::line('platform/users::messages.auth.activate_account')->get())
-				           ->setFrom(Platform::get('settings.site.email'), Platform::get('settings.site.title'))
+				$message = Swift_Message::newInstance(Platform::get('platform/settings::site.title').Lang::line('platform/users::messages.auth.activate_account')->get())
+				           ->setFrom(Platform::get('platform/settings::site.email'), Platform::get('platform/settings::site.title'))
 				           ->setTo(Input::get('email'))
 				           ->setBody($body,'text/html');
 
@@ -378,14 +378,14 @@ class Platform_Users_API_Users_Controller extends API_Controller
 
 				// Replacements
 				$replacements = array(
-					'/{{SITE_TITLE}}/' => Platform::get('settings.site.title'),
+					'/{{SITE_TITLE}}/' => Platform::get('platform/settings::site.title'),
 				);
 
 				$body = preg_replace(array_keys($replacements), array_values($replacements), $body);
 
 				// Construct the message
-				$message = Swift_Message::newInstance(Platform::get('settings.site.title').Lang::line('platform/users::messages.auth.registered')->get())
-				           ->setFrom(Platform::get('settings.site.email'), Platform::get('settings.site.title'))
+				$message = Swift_Message::newInstance(Platform::get('platform/settings::site.title').Lang::line('platform/users::messages.auth.registered')->get())
+				           ->setFrom(Platform::get('platform/settings::site.email'), Platform::get('platform/settings::site.title'))
 				           ->setTo($user->email)
 				           ->setBody($body,'text/html');
 
@@ -494,7 +494,7 @@ class Platform_Users_API_Users_Controller extends API_Controller
 
 				// Replacements
 				$replacements = array(
-					'/{{SITE_TITLE}}/' => Platform::get('settings.site.title'),
+					'/{{SITE_TITLE}}/' => Platform::get('platform/settings::site.title'),
 					'/{{RESET_LINK}}/' => $link,
 				);
 
@@ -502,8 +502,8 @@ class Platform_Users_API_Users_Controller extends API_Controller
 
 				// Construct the message
 				$message = Swift_Message::newInstance()
-				         ->setSubject(Platform::get('settings.site.title').' - Password Reset')
-				         ->setFrom(Platform::get('settings.site.email'), Platform::get('settings.site.title'))
+				         ->setSubject(Platform::get('platform/settings::site.title').' - Password Reset')
+				         ->setFrom(Platform::get('platform/settings::site.email'), Platform::get('platform/settings::site.title'))
 				         ->setTo(Input::get('email'))
 				         ->setBody($body,'text/html');
 
