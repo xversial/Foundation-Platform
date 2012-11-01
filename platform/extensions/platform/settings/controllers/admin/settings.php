@@ -104,7 +104,7 @@ class Platform_Settings_Admin_Settings_Controller extends Admin_Controller
         //
         foreach (API::get('settings', array('organize' => true)) as $extension => $vendors)
         {
-            // 
+            // Loop through the vendors.
             //
             foreach ($vendors as $vendor => $extension_settings)
             {
@@ -123,8 +123,16 @@ class Platform_Settings_Admin_Settings_Controller extends Admin_Controller
                     //
                     foreach($setting as $data)
                     {
-                        $tabs[ $vendor . '_' . $extension] = $vendor . '/' . $extension;
-                        $settings[ $vendor . '/' . $extension ][ $type ][ $data['name'] ] = $data['value'];
+                        // One tab per extension, only !
+                        //
+                        if ( ! isset($tabs[ $extension ]))
+                        {
+                            $tabs[ $extension ] = $vendor . '/' . $extension;
+                        }
+
+                        // Store the settings.
+                        //
+                        $settings[ $extension ][ $vendor ][ $type ][ $data['name'] ] = $data['value'];
                     }
                 }
             }
@@ -132,9 +140,7 @@ class Platform_Settings_Admin_Settings_Controller extends Admin_Controller
 
         // Show the page.
         //
-        return Theme::make('platform.settings::index')
-            ->with('tabs', $tabs)
-            ->with('settings', $settings);
+        return Theme::make('platform.settings::index')->with('tabs', $tabs)->with('settings', $settings);
     }
 
 
@@ -180,8 +186,18 @@ class Platform_Settings_Admin_Settings_Controller extends Admin_Controller
 
             // Get this extension name.
             //
-            $vendor = Input::get('vendor', 'platform');
-            $extension = Input::get('extension', 'settings');
+            $extension = Input::get('extension', 'platform/settings');
+
+            // Make sure we have the proper vendor.
+            //
+            if (strpos($extension, '/'))
+            {
+                list($vendor, $extension) = explode('/', $extension);
+            }
+            else
+            {
+                $vendor = ExtensionsManager::DEFAULT_VENDOR;
+            }
 
             // Set validation if the field doesn't exist.
             //
@@ -189,7 +205,7 @@ class Platform_Settings_Admin_Settings_Controller extends Admin_Controller
 
             // Check if this widget has validation rules.
             //
-            $widget = 'Platform\\' . ucfirst($extension) . '\\Widgets\\Settings';
+            $widget = ucfirst($vendor) . '\\' . ucfirst($extension) . '\\Widgets\\Settings';
             if (isset($widget::$validation) and array_key_exists($name, $widget::$validation))
             {
                 // Get the rules.

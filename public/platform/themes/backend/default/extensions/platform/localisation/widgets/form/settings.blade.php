@@ -1,10 +1,3 @@
-<form method="POST" accept-char="UTF-8" autocomplete="off" id="localisation_settings_form">
-
-    <input type="hidden" name="{{ Session::csrf_token }}" value="{{ Session::token() }}">
-
-    <input type="hidden" name="vendor" value="platform">
-    <input type="hidden" name="extension" value="localisation">
-
     <fieldset>
         <div>
             <label for="site-country">{{ Lang::line('platform/localisation::form.settings.fields.country') }}</label>
@@ -54,10 +47,3 @@
             <span class="help"></span>
         </div>
     </fieldset>
-
-    <hr>
-
-    <div class="actions">
-        <button class="btn btn-large btn-primary" type="submit">{{ Lang::line('button.update') }}</button>
-    </div>
-</form>

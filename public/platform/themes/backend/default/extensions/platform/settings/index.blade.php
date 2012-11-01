@@ -71,9 +71,23 @@
         </nav>
 
         <div class="tab-content">
-            @foreach ( $settings as $extension => $data )
-            <div class="tab-pane{{ ( $extension === 'platform/settings' ? ' active' : '' ) }}" id="tab_{{ str_replace('/', '_', $extension) }}">
-                @widget($extension . '::settings.index', $data)
+            @foreach ($tabs as $tab => $extension)
+            <div class="tab-pane{{ ( $extension === 'platform/settings' ? ' active' : '' ) }}" id="tab_{{ $tab }}">
+                <form method="POST" accept-char="UTF-8" autocomplete="off" id="{{ $tab }}_form">
+                    <input type="hidden" name="{{ Session::csrf_token }}" value="{{ Session::token() }}">
+
+                    <input type="hidden" name="extension" value="{{ $extension }}">
+
+                    @foreach ($settings[ $tab ] as $vendor => $data)
+                        <div>@widget($extension . '::settings.index', $data)</div>
+                    @endforeach
+
+                    <hr>
+
+                    <div class="actions">
+                        <button class="btn btn-large btn-primary" type="submit">{{ Lang::line('button.update') }}</button>
+                    </div>
+                </form>
             </div>
             @endforeach
         </div>
