@@ -687,14 +687,14 @@ class Platform
 
         // See if there is a namespace present.
         //
-        if (strpos($bundle_path, '.') !== false)
+        if (strpos($bundle_path, '/') !== false)
         {
-            list($namespace, $extension) = explode('.', $bundle_path);
+            list($vendor, $extension) = explode('/', $bundle_path);
         }
         else
         {
             $extension = $bundle_path;
-            $namespace = '';
+            $vendor = '';
         }
 
         // Some needed variables.
@@ -704,7 +704,7 @@ class Platform
 
         // Prepare the plugin class.
         //
-        $class = ucfirst($namespace) . '\\' . ucfirst($extension) . '\\Plugins\\' . ucfirst(implode('_', $path));
+        $class = ucfirst($vendor) . '\\' . ucfirst($extension) . '\\Plugins\\' . ucfirst(implode('_', $path));
 
         // Check if this plugin is already initialized.
         //
