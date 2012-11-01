@@ -23,8 +23,8 @@
  * --------------------------------------------------------------------------
  * Authorized Controller Class
  * --------------------------------------------------------------------------
- * 
- * 
+ *
+ *
  *
  * @package    Platform
  * @author     Cartalyst LLC
@@ -33,7 +33,7 @@
  * @link       http://cartalyst.com
  * @version    1.0
  */
-class Authorized_Controller extends Base_Controller
+class Authorized_Controller extends Public_Controller
 {
     /**
      * Whitelisted auth routes.
