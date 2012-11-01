@@ -100,6 +100,12 @@ class Installer
             //
             path('app') . 'config',
 
+
+            // Stub (template file) directories
+            //
+            Bundle::path('installer') . 'stubs',
+            path('extensions') . 'platform' . DS . 'developers' . DS . 'stubs',
+
             // Themes.
             //
             Theme::compile_directory()
@@ -117,6 +123,11 @@ class Installer
         //
         foreach ($directories as $directory)
         {
+            if ( ! is_dir($directory))
+            {
+                continue;
+            }
+
             // Check this directory permissions.
             //
             $permissions[ ( is_dir($directory) and is_writable($directory) ) ? 'pass' : 'fail' ][] = $directory;
