@@ -73,7 +73,7 @@
         <div class="tab-content">
             @foreach ( $settings as $extension => $data )
             <div class="tab-pane{{ ( $extension === 'platform/settings' ? ' active' : '' ) }}" id="tab_{{ str_replace('/', '_', $extension) }}">
-                @widget(str_replace('/', '.', $extension) . '::settings.index', $data)
+                @widget($extension . '::settings.index', $data)
             </div>
             @endforeach
         </div>
