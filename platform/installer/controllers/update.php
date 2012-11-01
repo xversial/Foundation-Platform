@@ -68,6 +68,7 @@ class Installer_Update_Controller extends Installer_Base_Controller
         }
     }
 
+
     /**
      * --------------------------------------------------------------------------
      * Function: get_step_1()
@@ -106,6 +107,7 @@ class Installer_Update_Controller extends Installer_Base_Controller
         return Redirect::to('installer/update/update');
     }
 
+
     /**
      * --------------------------------------------------------------------------
      * Function: get_update()
@@ -122,6 +124,7 @@ class Installer_Update_Controller extends Installer_Base_Controller
 
         return Redirect::to('installer/update/step_2');
     }
+
 
     /**
      * --------------------------------------------------------------------------

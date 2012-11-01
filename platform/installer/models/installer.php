@@ -100,7 +100,6 @@ class Installer
             //
             path('app') . 'config',
 
-
             // Stub (template file) directories
             //
             Bundle::path('installer') . 'stubs',
@@ -117,7 +116,7 @@ class Installer
         $files = array(
             path('app') . 'config' . DS . 'application' . EXT,
             path('app') . 'config' . DS . 'database' . EXT,
-            path('app') . 'config' . DS . 'platform' . EXT,
+            path('app') . 'config' . DS . 'platform' . EXT
         );
 
         // Loop through the directories.
@@ -181,6 +180,7 @@ class Installer
         );
     }
 
+
     /**
      * --------------------------------------------------------------------------
      * Function: create_filesystem_config()
@@ -194,41 +194,42 @@ class Installer
      */
     public static function create_filesystem_config($config = array())
     {
-    	$config['ftp_timeout'] = 90;
+        $config['ftp_timeout'] = 90;
 
-    	// get config stub
-    	$string = file_get_contents(path('base') . 'installer' . DS . 'stubs' . DS . 'filesystem' . EXT);
+        // get config stub
+        $string = file_get_contents(path('base') . 'installer' . DS . 'stubs' . DS . 'filesystem' . EXT);
 
-    	if (array_key_exists('ftp_enable', $config) and $config['ftp_enable'] == 1)
-    	{
-    		unset($config['ftp_enable']);
-    		$string = str_replace('{{driver}}', 'ftp', $string);
+        if (array_key_exists('ftp_enable', $config) and $config['ftp_enable'] == 1)
+        {
+            unset($config['ftp_enable']);
+            $string = str_replace('{{driver}}', 'ftp', $string);
 
-    		$filesystem = \Filesystem::make('ftp', array(
-				'server'   => $config['ftp_server'],
-				'user'     => $config['ftp_user'],
-				'password' => $config['ftp_password'],
-				'port'     => $config['ftp_port'],
-				'timeout'  => $config['ftp_timeout'],
-			));
-    	}
-    	else
-    	{
-    		$string = str_replace('{{driver}}', 'native', $string);
+            $filesystem = \Filesystem::make('ftp', array(
+                'server'   => $config['ftp_server'],
+                'user'     => $config['ftp_user'],
+                'password' => $config['ftp_password'],
+                'port'     => $config['ftp_port'],
+                'timeout'  => $config['ftp_timeout'],
+            ));
+        }
+        else
+        {
+            $string = str_replace('{{driver}}', 'native', $string);
 
-    		$filesystem = \Filesystem::make('native');
-    	}
+            $filesystem = \Filesystem::make('native');
+        }
 
-    	$replacements = array();
-		foreach ($config as $key => $value)
-		{
-			$replacements['{{' . $key . '}}'] = $value;
-		}
+        $replacements = array();
+        foreach ($config as $key => $value)
+        {
+            $replacements['{{' . $key . '}}'] = $value;
+        }
 
-		$string = str_replace(array_keys($replacements), array_values($replacements), $string);
+        $string = str_replace(array_keys($replacements), array_values($replacements), $string);
 
-		$filesystem->file()->write(\Bundle::path('filesystem') . DS . 'config' . DS . 'filesystem.php', $string);
+        $filesystem->file()->write(\Bundle::path('filesystem') . DS . 'config' . DS . 'filesystem.php', $string);
     }
+
 
     /**
      * --------------------------------------------------------------------------
@@ -246,12 +247,12 @@ class Installer
         // Load config file stub.
         //
         $filesystem = \Filesystem::make();
-    	$string = $filesystem->file()->contents(path('base') . 'installer' . DS . 'stubs' . DS . 'database' . DS . $config['driver'] . EXT);
+        $string = $filesystem->file()->contents(path('base') . 'installer' . DS . 'stubs' . DS . 'database' . DS . $config['driver'] . EXT);
 
-    	if ( ! $string)
-    	{
-    		$string = $filesystem->file()->contents(path('base') . 'installer' . DS . 'stubs' . DS . 'database' . EXT);
-    	}
+        if ( ! $string)
+        {
+            $string = $filesystem->file()->contents(path('base') . 'installer' . DS . 'stubs' . DS . 'database' . EXT);
+        }
 
         // Determine replacements.
         //
@@ -312,7 +313,7 @@ class Installer
         //
         $connection = new \Laravel\Database\Connection($driver->connect($config), $config);
 
-        // If no credentials are provided, we need to try get contents of a table.
+        // If no credentials are provided, we need to try to get contents of a table.
         // Use a random table name so that it doesn't actually exist.
         //
         $connection->table(Str::random(10, 'alpha'))->get();
@@ -339,34 +340,41 @@ class Installer
         //
         Platform::install_update();
 
-        // Flattened extensions
+        // Flattened extensions.
+        //
         $extensions_flat = array();
 
         // Now get the enabled extensions, and start them !
         //
         foreach (Platform::extensions_manager()->uninstalled() as $extensions)
         {
+            // Loop through the extensions.
             foreach ($extensions as $extension)
             {
-                // Core platform extensions
-                if (array_get($extension, 'info.vendor') === ExtensionsManager::CORE_VENDOR)
+                // Extension slug.
+                //
+                $slug = array_get($extension, 'info.slug');
+
+                // Check if this is a a core extension.
+                //
+                if (Platform::extensions_manager()->is_core($slug))
                 {
-                    $extensions_flat[array_get($extension, 'info.slug')] = $extension;
+                    $extensions_flat[ $slug ] = $extension;
                     continue;
                 }
 
                 // Loop through this vendor extensions.
                 //
-                $extensions_flat[array_get($extension, 'info.slug')] = $extension;
+                $extensions_flat[ $slug ] = $extension;
             }
         }
 
-        // Dependency sort based on the 'overrides' key
-        // of an extension
+        // Dependency sort based on the 'overrides' key of an extension.
         //
         $sorted_slugs = Dependencies::sort($extensions_flat);
 
-        // Start extensions by their sorted dependencies
+        // Install extensions.
+        //
         foreach ($sorted_slugs as $slug)
         {
             // Check if this is a core extension.
@@ -460,6 +468,7 @@ class Installer
         return (bool) ( count( $permissions['fail'] ) === 0 );
     }
 
+
     /**
      * --------------------------------------------------------------------------
      * Function: update()
@@ -474,7 +483,7 @@ class Installer
     {
         $result = Platform::install_update();
 
-        $path     = path('app').'config/platform'.EXT;
+        $path     = path('app') . 'config' . DS . 'platform' . EXT;
         $contents = File::get($path);
 
         // Look for the version declaration and update it.

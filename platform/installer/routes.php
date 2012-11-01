@@ -32,13 +32,3 @@ Route::get('installer', function()
 });
 
 Route::controller(Controller::detect('installer'));
-
-// /*
-//  * --------------------------------------------------------------------------
-//  * Remove /index/ out of the installer routes.
-//  * --------------------------------------------------------------------------
-//  */
-// Route::any('installer/(:any?)', function($action = 'index')
-// {
-//     return Controller::call('installer::index@' . $action);
-// });

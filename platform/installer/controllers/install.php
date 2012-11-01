@@ -94,37 +94,48 @@ class Installer_Install_Controller extends Installer_Base_Controller
         //
         Installer::prepare();
 
+        // Default drivers.
+        //
         $drivers = array(
-        	'Native',
-        	'Ftp'
+            'Native',
+            'Ftp'
         );
 
         // Show the page.
         //
         return View::make('installer::install.step_1')
-        	->with('drivers', $drivers)
-        	->with('permissions', Installer::permissions());
+            ->with('drivers', $drivers)
+            ->with('permissions', Installer::permissions());
     }
+
 
     /**
      * -----------------------------------------
      * Function: post_ftp_test()
      * -----------------------------------------
      *
-     * Used to test FTP credentials
+     * Used to test FTP credentials.
+     *
+     * @access   public
+     * @return   object
      */
     public function post_ftp_test()
     {
-    	// connect to ftp server
-    	$connection_id = @ftp_connect(Input::get('ftp_server'), Input::get('ftp_port'), 90);
+        // Connect to ftp server.
+        //
+        $connection_id = @ftp_connect(Input::get('ftp_server'), Input::get('ftp_port'), 90);
 
-		// and now login
-		$response = @ftp_login($connection_id, Input::get('ftp_user'), Input::get('ftp_password'));
+        // Now login.
+        //
+        $response = @ftp_login($connection_id, Input::get('ftp_user'), Input::get('ftp_password'));
 
-		return json_encode(array(
-			'connected' => ($response) ? true : false,
-		));
+        // Send the response back to the client.
+        //
+        return json_encode(array(
+            'connected' => ($response) ? true : false
+        ));
     }
+
 
     /**
      * --------------------------------------------------------------------------
@@ -139,7 +150,7 @@ class Installer_Install_Controller extends Installer_Base_Controller
      */
     public function post_step_1()
     {
-    	// Save the data.
+        // Save the data.
         //
         Installer::remember_step_data(1, Input::get());
 
@@ -263,12 +274,12 @@ class Installer_Install_Controller extends Installer_Base_Controller
      */
     public function get_install()
     {
-    	// Create the Filesystem Config first so we can use for other file creations
-    	//
-    	Installer::create_filesystem_config(Installer::get_step_data(1, function() {
-    		Redirect::to('installer/install/step_1')->send();
-    		exit;
-    	}));
+        // Create the Filesystem Config first so we can use for other file creations
+        //
+        Installer::create_filesystem_config(Installer::get_step_data(1, function() {
+            Redirect::to('installer/install/step_1')->send();
+            exit;
+        }));
 
         // 1) Create the database config file.
         //
@@ -280,7 +291,7 @@ class Installer_Install_Controller extends Installer_Base_Controller
         // 1.1) Update config for this request instance.
         //
         $step2_data = Installer::get_step_data(2);
-        Config::set('database.connections.'.$step2_data['driver'], array(
+        Config::set('database.connections.' . $step2_data['driver'], array(
             'driver'   => $step2_data['driver'],
             'host'     => $step2_data['host'],
             'database' => $step2_data['database'],
@@ -326,15 +337,18 @@ class Installer_Install_Controller extends Installer_Base_Controller
             //
             API::post('users', $user);
 
-            // Use admin email as default
-            $settings[] = array(
-                'extension'  => 'settings',
+            // Use admin email as default.
+            //
+            $settings = array(
                 'vendor'     => 'platform',
+                'extension'  => 'settings',
                 'type'       => 'site',
                 'name'       => 'email',
                 'value'      => $user['email']
             );
 
+            // Update the settings.
+            //
             API::put('settings', array('settings' => $settings));
         }
         catch (APIClientException $e)
@@ -364,7 +378,7 @@ class Installer_Install_Controller extends Installer_Base_Controller
     {
         //
         //
-        Session::forget('installer');
+        Session::forget(Config::get('installer::installer.session_key', 'installer'));
 
         // Show the page.
         //

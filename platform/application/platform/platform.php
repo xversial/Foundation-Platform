@@ -492,24 +492,25 @@ class Platform
      */
     public static function get($setting = null, $default = null)
     {
-        $info = static::parse_extension_string($setting);
+        // Parse the passed setting.
+        //
+        $setting = static::parse_extension_string($setting);
 
-        // Let's elegently grab the information we need
-        // from the info determined.
+        // Let's elegently grab the information we need from the info determined.
         //
         try
         {
-            $vendor    = array_get($info, 'vendor', function() { throw new Exception(''); });
-            $extension = array_get($info, 'extension', function() { throw new Exception(''); });
-            $type      = array_get($info, 'path_segments.0', function() { throw new Exception(''); });
-            $name      = array_get($info, 'path_segments.1', function() { throw new Exception(''); });
+            $vendor    = array_get($setting, 'vendor', function() { throw new Exception(''); });
+            $extension = array_get($setting, 'extension', function() { throw new Exception(''); });
+            $type      = array_get($setting, 'path_segments.0', function() { throw new Exception(''); });
+            $name      = array_get($setting, 'path_segments.1', function() { throw new Exception(''); });
         }
         catch (Exception $e)
         {
             return false;
         }
 
-        // Do we have settings stored?
+        // Do we have settings already stored?
         //
         if(empty(static::$settings))
         {
@@ -518,56 +519,11 @@ class Platform
             static::$settings = API::get('settings', array('organize' => true));
         }
 
-        return array_get(static::$settings, $extension.'.'.$vendor.'.'.$type.'.'.$name.'.value', $default);
+        // Return the setting.
+        //
+        return array_get(static::$settings, implode('.', array($extension, $vendor, $type, $name)) . '.value', $default);
     }
 
-    public static function parse_extension_string($string)
-    {
-        // Array of parts to send through
-        $parts = array(
-            'vendor'        => null,
-            'extension'     => null,
-            'path'          => '',
-            'path_segments' => array(),
-        );
-
-        $string_parts       = explode('::', $string);
-        $string_parts_count = count($string_parts);
-
-        // Can only ever be one separator
-        if ($string_parts_count > 2)
-        {
-            return false;
-        }
-
-        // We have a vendor/extension component
-        elseif ($string_parts_count === 2)
-        {
-            $extension_parts = explode(ExtensionsManager::VENDOR_SEPARATOR, $string_parts[0]);
-
-            if (count($extension_parts) === 2)
-            {
-                $parts['vendor']    = $extension_parts[0];
-                $parts['extension'] = $extension_parts[1];
-            }
-            else
-            {
-                $parts['vendor']    = ExtensionsManager::DEFAULT_VENDOR;
-                $parts['extension'] = $extension_parts[0];
-            }
-
-            $parts['path']          = $string_parts[1];
-            $parts['path_segments'] = explode('.', $string_parts[1]);
-        }
-        else
-        {
-            $parts['extension']     = DEFAULT_BUNDLE;
-            $parts['path']          = $string_parts[0];
-            $parts['path_segments'] = explode('.', $string_parts[0]);
-        }
-
-        return $parts;
-    }
 
     /**
      * --------------------------------------------------------------------------
@@ -852,5 +808,54 @@ class Platform
         // Start the extensions, just in case the install process got interrupted.
         //
         Platform::extensions_manager()->start_extensions();
+    }
+
+
+    public static function parse_extension_string($string)
+    {
+        // Array of parts to send through
+        $parts = array(
+            'vendor'        => null,
+            'extension'     => null,
+            'path'          => '',
+            'path_segments' => array(),
+        );
+
+        $string_parts       = explode('::', $string);
+        $string_parts_count = count($string_parts);
+
+        // Can only ever be one separator
+        if ($string_parts_count > 2)
+        {
+            return false;
+        }
+
+        // We have a vendor/extension component
+        elseif ($string_parts_count === 2)
+        {
+            $extension_parts = explode(ExtensionsManager::VENDOR_SEPARATOR, $string_parts[0]);
+
+            if (count($extension_parts) === 2)
+            {
+                $parts['vendor']    = $extension_parts[0];
+                $parts['extension'] = $extension_parts[1];
+            }
+            else
+            {
+                $parts['vendor']    = ExtensionsManager::DEFAULT_VENDOR;
+                $parts['extension'] = $extension_parts[0];
+            }
+
+            $parts['path']          = $string_parts[1];
+            $parts['path_segments'] = explode('.', $string_parts[1]);
+        }
+        else
+        {
+            $parts['extension']     = DEFAULT_BUNDLE;
+            $parts['path']          = $string_parts[0];
+            $parts['path_segments'] = explode('.', $string_parts[0]);
+        }
+
+        return $parts;
     }
 }

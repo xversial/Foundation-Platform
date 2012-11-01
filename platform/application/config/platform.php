@@ -24,17 +24,15 @@
  * Return the configuration.
  * --------------------------------------------------------------------------
  */
-
 return array(
-
-	// *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-	//
-	// The installed version of Platform. This is automagically
-	// updated when you install platform.
-	//
-	// Do not touch this under Any circumstances as it will break updating your
-	// app. You have been warned
-	// 
-	// *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-	'installed_version' => '1.1',
+    // *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+    //
+    // The installed version of Platform. This is automagically
+    // updated when you install platform.
+    //
+    // Do not touch this under Any circumstances as it will break updating your
+    // app. You have been warned
+    // 
+    // *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+    'installed_version' => '1.1'
 );
