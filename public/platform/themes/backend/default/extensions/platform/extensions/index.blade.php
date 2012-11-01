@@ -88,7 +88,7 @@
                                 @endif
                             @else
                                 @if ( Platform::extensions_manager()->can_install(array_get($extension, 'info.slug')) )
-                                    <a class="btn btn-small" href="{{ URL::to_admin('extensions/install/' . array_get($extension, 'info.formatted_slug')) }}">{{ Lang::line('platform/extensions::button.install') }}</a>
+                                    <a class="btn btn-small btn-info" href="{{ URL::to_admin('extensions/install/' . array_get($extension, 'info.formatted_slug')) }}">{{ Lang::line('platform/extensions::button.install') }}</a>
                                 @else
                                     <a class="btn btn-small disabled">{{ Lang::line('platform/extensions::button.install') }}</a>
                                 @endif
