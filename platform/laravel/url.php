@@ -1,4 +1,4 @@
-<?php namespace Laravel; use Router, Laravel\Routing\Route;
+<?php namespace Laravel; use Laravel\Routing\Router, Laravel\Routing\Route;
 
 class URL {
 
