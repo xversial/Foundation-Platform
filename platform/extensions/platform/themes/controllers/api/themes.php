@@ -230,6 +230,7 @@ class Platform_Themes_API_Themes_Controller extends API_Controller
                 'settings' => array(
                     // Values
                     //
+                    'vendor'    => 'platform',
                     'extension' => 'themes',
                     'type'      => 'theme',
                     'name'      => $type,

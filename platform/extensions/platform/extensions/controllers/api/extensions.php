@@ -109,7 +109,7 @@ class Platform_Extensions_API_Extensions_Controller extends API_Controller
                 // Invalid filter, return the message.
                 //
                 return new Response(array(
-                    'message' => Lang::line('platform/extensions.invalid_filter')->get()
+                    'message' => Lang::line('extensions.invalid_filter')->get()
                 ), API::STATUS_BAD_REQUEST);
             }
 
@@ -148,14 +148,18 @@ class Platform_Extensions_API_Extensions_Controller extends API_Controller
             return new Response($extensions);
         }
 
+        // Extension slug.
+        //
+        $slug = $vendor . '.' . $slug;
+
         // Check if this extension exists.
         //
-        if ( ! $manager->exists($vendor . '.' . $slug))
+        if ( ! $manager->exists($slug))
         {
             // Extension doesn't exist.
             //
             return new Response(array(
-                'message' => Lang::line('platform/extensions.not_found', array('extension' => $slug))->get()
+                'message' => Lang::line('extensions.not_found', array('extension' => $slug))->get()
             ), API::STATUS_BAD_REQUEST);
         }
 
@@ -163,7 +167,7 @@ class Platform_Extensions_API_Extensions_Controller extends API_Controller
         {
             // Get this extension information.
             //
-            $extension = $manager->get( $vendor . '.' . $slug );
+            $extension = $manager->get($slug);
 
             // Remove callbacks as they're no use in JSON.
             //
@@ -245,7 +249,7 @@ class Platform_Extensions_API_Extensions_Controller extends API_Controller
             // Extension doesn't exist.
             //
             return new Response(array(
-                'message' => Lang::line('platform/extensions.not_found', array('extension' => $slug))->get()
+                'message' => Lang::line('extensions.not_found', array('extension' => $slug))->get()
             ), API::STATUS_BAD_REQUEST);
         }
 

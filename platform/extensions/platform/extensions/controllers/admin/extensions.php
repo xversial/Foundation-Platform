@@ -184,15 +184,19 @@ class Platform_Extensions_Admin_Extensions_Controller extends Admin_Controller
      */
     public function get_install($vendor, $slug)
     {
+        // Extension slug.
+        //
+        $slug = $vendor . '/' . $slug;
+
         try
         {
             // Make the request.
             //
-            API::put('extensions/' . $vendor . '/' . $slug, array('install' => true));
+            API::put('extensions/' . $slug, array('install' => true));
 
             // Set the success message.
             //
-            Platform::messages()->success(Lang::line('platform/extensions.install.success', array('extension' => $slug))->get());
+            Platform::messages()->success(Lang::line('extensions.install.success', array('extension' => $slug)));
         }
         catch (APIClientException $e)
         {
@@ -228,15 +232,19 @@ class Platform_Extensions_Admin_Extensions_Controller extends Admin_Controller
      */
     public function get_uninstall($vendor, $slug)
     {
+        // Extension slug.
+        //
+        $slug = $vendor . '/' . $slug;
+
         try
         {
             // Make the request.
             //
-            API::put('extensions/' . $vendor . '/' . $slug, array('uninstall' => true));
+            API::put('extensions/' . $slug, array('uninstall' => true));
 
             // Set the success message.
             //
-            Platform::messages()->success(Lang::line('platform/extensions.uninstall.success', array('extension' => $slug))->get());
+            Platform::messages()->success(Lang::line('extensions.uninstall.success', array('extension' => $slug)));
         }
         catch (APIClientException $e)
         {
@@ -271,15 +279,19 @@ class Platform_Extensions_Admin_Extensions_Controller extends Admin_Controller
      */
     public function get_enable($vendor, $slug)
     {
+        // Extension slug.
+        //
+        $slug = $vendor . '/' . $slug;
+
         try
         {
             // Make tue request.
             //
-            API::put('extensions/' . $vendor . '/' . $slug, array('enable' => true));
+            API::put('extensions/' .  $slug, array('enable' => true));
 
             // Set the success message.
             //
-            Platform::messages()->success(Lang::line('platform/extensions.enable.success', array('extension' => $slug))->get());
+            Platform::messages()->success(Lang::line('extensions.enable.success', array('extension' => $slug)));
         }
         catch (APIClientException $e)
         {
@@ -314,15 +326,19 @@ class Platform_Extensions_Admin_Extensions_Controller extends Admin_Controller
      */
     public function get_disable($vendor, $slug)
     {
+        // Extension slug.
+        //
+        $slug = $vendor . '/' . $slug;
+
         try
         {
             // Make tue request.
             //
-            API::put('extensions/' . $vendor . '/' . $slug, array('disable' => true));
+            API::put('extensions/' . $slug, array('disable' => true));
 
             // Set the success message.
             //
-            Platform::messages()->success(Lang::line('platform/extensions.disable.success', array('extension' => $slug))->get());
+            Platform::messages()->success(Lang::line('extensions.disable.success', array('extension' => $slug)));
         }
         catch (APIClientException $e)
         {
@@ -358,17 +374,21 @@ class Platform_Extensions_Admin_Extensions_Controller extends Admin_Controller
      */
     public function get_update($vendor, $slug)
     {
+        // Extension slug.
+        //
+        $slug = $vendor . '/' . $slug;
+
         try
         {
             // Make the request.
             //
-            API::put('extensions/' . $vendor . '/' . $slug, array(
+            API::put('extensions/' . $slug, array(
                 'update' => true
             ));
 
             // Set the success message.
             //
-            Platform::messages()->success(Lang::line('platform/extensions.update.success', array('extension' => $slug))->get());
+            Platform::messages()->success(Lang::line('extensions.update.success', array('extension' => $slug)));
         }
         catch (APIClientException $e)
         {
@@ -414,7 +434,6 @@ class Platform_Extensions_Admin_Extensions_Controller extends Admin_Controller
         {
             // Set the error message.
             //
-            echo $e->getMessage();
             Platform::messages()->error($e->getMessage());
 
             // Set the other error messages.

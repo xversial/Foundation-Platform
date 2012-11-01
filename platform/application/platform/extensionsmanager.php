@@ -165,7 +165,7 @@ class ExtensionsManager
     /**
      * Flag for whether we're running installer mode or not.
      *
-     * Installer mode gives more privileges. 
+     * Installer mode gives more privileges.
      *
      * @access   protected
      * @var      boolean
@@ -268,7 +268,7 @@ class ExtensionsManager
         {
             return false;
         }
- 
+
         // Start the bundle.
         //
         $this->start_bundle($extension);
@@ -388,7 +388,7 @@ class ExtensionsManager
 
                 // Store the extension.
                 //
-                array_set($this->installed, $this->reverse_slug($slug), 
+                array_set($this->installed, $this->reverse_slug($slug),
                     array(
                         'info' => array(
                             'slug'       => $slug,
@@ -1191,7 +1191,7 @@ class ExtensionsManager
         //
         $extension = $this->get($slug);
 
-        // If this extension has vendors. 
+        // If this extension has vendors.
         //
         $vendors = $this->vendors($slug);
         if ( ! empty($vendors))
@@ -1274,7 +1274,7 @@ class ExtensionsManager
         //
         $extension = $this->get($slug);
 
-        // If this extension has vendors. 
+        // If this extension has vendors.
         //
         if ($vendors = $this->vendors($slug))
         {
@@ -1291,11 +1291,11 @@ class ExtensionsManager
                 //
                 require_once $migration;
 
-                // 
+                //
                 //
                 $migration = basename(str_replace(EXT, '', $migration));
 
-                // 
+                //
                 //
                 DB::table('laravel_migrations')->where('name', '=', $migration)->delete();
 
@@ -1315,39 +1315,25 @@ class ExtensionsManager
                 $migration->down();
             }
 
-            // Check if we have a core vendor.
+            // Remove the current vendor from the list.
             //
-            if (array_key_exists(static::CORE_VENDOR, $vendors))
-            {
-                // Enable the core vendor extension.
-                //
-                DB::table('extensions')->where('vendor', '=', static::CORE_VENDOR)->update(array('enabled' => 1));
-            }
+            unset($vendors[array_get($extension, 'info.vendor')]);
 
-            // No core vendor.
+            // Loop through the vendors till we find a valid one !
             //
-            else
+            foreach ($vendors as $vendor => $info)
             {
-                // Remove the current vendor from the list.
+                // Check if this vendor is installed !
                 //
-                unset($vendors[$extension->vendor]);
-
-                // Loop through the vendors till we find a valid one !
-                //
-                foreach ($vendors as $vendor => $info)
+                if ($this->is_installed(array_get($info, 'info.slug')))
                 {
-                    // Check if this vendor is installed !
+                    // Enable this vendor.
                     //
-                    if ($this->is_installed(array_get($info, 'info.slug')))
-                    {
-                        // Enable this vendor.
-                        //
-                        DB::table('extensions')->where('vendor', '=', $vendor)->update(array('enabled' => 1));
+                    DB::table('extensions')->where('vendor', '=', $vendor)->update(array('enabled' => 1));
 
-                        // Break the loop !
-                        //
-                        break;
-                    }
+                    // Break the loop !
+                    //
+                    break;
                 }
             }
         }
@@ -1601,18 +1587,19 @@ class ExtensionsManager
             {
                 throw new Exception(Lang::line('extensions.invalid_file', array('extension' => $extension_slug)));
             }
-        
+
             // Combine the data.
             //
-            $extension['info']['slug']         = $slug;
-            $extension['info']['vendor']       = $vendor;
-            $extension['info']['extension']    = $ext;
-            $extension['info']['is_core']      = (bool) ( array_get($extension, 'info.is_core') ?: false );
-            $extension['info']['is_enabled']   = $this->is_enabled($slug);
-            $extension['info']['is_installed'] = $this->is_installed($slug);
+            $extension['info']['formatted_slug'] = $this->convert_slug($slug);
+            $extension['info']['slug']           = $slug;
+            $extension['info']['vendor']         = $vendor;
+            $extension['info']['extension']      = $ext;
+            $extension['info']['is_core']        = (bool) ( array_get($extension, 'info.is_core') ?: false );
+            $extension['info']['is_enabled']     = $this->is_enabled($slug);
+            $extension['info']['is_installed']   = $this->is_installed($slug);
 
             // Bundles array, so we can register the extension as a bundle in Laravel.
-            // 
+            //
             if ( ! isset($extension['bundles']['handles']))
             {
                 $extension['bundles']['handles'] = $ext;
