@@ -6,26 +6,65 @@ class Platform_Pages_Api_Pages_Controller extends API_Controller
 {
 	public function get_index($id = false)
 	{
+		$config = Input::get() + array(
+			'where' => array(),
+		);
+
 		try
 		{
 			if ($id == false)
 			{
-				$content = Page::all();
-			}
-			elseif (is_numeric($id))
-			{
-				$content = Page::find($id);
+				$page = Page::all(function($query) use ($config) {
+
+					if ( ! empty($config['where']))
+					{
+						if (is_array($config['where'][0]))
+						{
+							foreach ($config['where'] as $where)
+							{
+								$query = $query->where($where[0], $where[1], $where[2]);
+							}
+						}
+						else
+						{
+							$where = $config['where'];
+							$query = $query->where($where[0], $where[1], $where[2]);
+						}
+					}
+
+					return $query;
+
+				});
 			}
 			else
 			{
-				$content = Page::find(function($query) use ($id) {
-					return $query->where('slug', '=', $id);
+				$page = Page::find(function($query) use ($id, $config) {
+
+					if ( ! empty($config['where']))
+					{
+						if (is_array($config['where'][0]))
+						{
+							foreach ($config['where'] as $where)
+							{
+								$query = $query->where($where[0], $where[1], $where[2]);
+							}
+						}
+						else
+						{
+							$where = $config['where'];
+							$query = $query->where($where[0], $where[1], $where[2]);
+						}
+					}
+
+					$field = ( is_numeric($id)) ? 'id' : 'slug';
+
+					return $query->where($field, '=', $id);
 				});
 			}
 
-			if ($content)
+			if ($page)
 			{
-				return new Response($content);
+				return new Response($page);
 			}
 
 			return new Response(Lang::line('platform/pages::messages.pages.not_found')->get(), API::STATUS_NOT_FOUND);
@@ -40,19 +79,19 @@ class Platform_Pages_Api_Pages_Controller extends API_Controller
 	{
 		// Get the Post Data
 		//
-		$content = new Page(Input::get());
+		$page = new Page(Input::get());
 
 		try
 		{
-			if ($content->save())
+			if ($page->save())
 			{
-				return new Response($content, API::STATUS_CREATED);
+				return new Response($page, API::STATUS_CREATED);
 			}
 
 			return new Response(array(
 				'message' => Lang::line('platform/pages::messages.pages.create.error')->get(),
-				'errors'  => ($content->validation()->errors->has()) ? $content->validation()->errors->all() : array(),
-				), ($content->validation()->errors->has()) ? API::STATUS_BAD_REQUEST : API::STATUS_UNPROCESSABLE_ENTITY);
+				'errors'  => ($page->validation()->errors->has()) ? $page->validation()->errors->all() : array(),
+				), ($page->validation()->errors->has()) ? API::STATUS_BAD_REQUEST : API::STATUS_UNPROCESSABLE_ENTITY);
 		}
 		catch (Exception $e)
 		{
@@ -64,21 +103,30 @@ class Platform_Pages_Api_Pages_Controller extends API_Controller
 
 	public function put_index($id)
 	{
-		$content = new Page(array_merge(
+		$page = new Page(array_merge(
 			array('id' => $id), Input::get()
 		));
 
+		// make sure they arne't disabling the default page
+		//
+		if ($page->id == Platform::get('platform/pages::default.page') and $page->status == 0)
+		{
+			return new Response(array(
+					'message' => Lang::line('platform/pages::messages.pages.edit.error_default_page')->get(),
+				), API::STATUS_BAD_REQUEST);
+		}
+
 		try
 		{
-			if ($content->save())
+			if ($page->save())
 			{
-				return new Response($content);
+				return new Response($page);
 			}
 
 			return new Response(array(
 					'message' => Lang::line('platform/pages::messages.pages.edit.error')->get(),
-					'errors'  => ($content->validation()->errors->has()) ? $content->validation()->errors->all() : array(),
-				), ($content->validation()->errors->has()) ? API::STATUS_BAD_REQUEST : API::STATUS_UNPROCESSABLE_ENTITY);
+					'errors'  => ($page->validation()->errors->has()) ? $page->validation()->errors->all() : array(),
+				), ($page->validation()->errors->has()) ? API::STATUS_BAD_REQUEST : API::STATUS_UNPROCESSABLE_ENTITY);
 		}
 		catch (Exception $e)
 		{
@@ -92,24 +140,24 @@ class Platform_Pages_Api_Pages_Controller extends API_Controller
 	{
 		try
 		{
-			$content = Page::find($id);
+			$page = Page::find($id);
 
-			if ($content === null)
+			if ($page === null)
 			{
 				return new Response(array(
 					'message' => Lang::line('platform/pages::messages.pages.delete.error')->get()
 				), API::STATUS_NOT_FOUND);
 			}
 
-			if ($content->delete())
+			if ($page->delete())
 			{
 				return new Response(null, API::STATUS_NO_CONTENT);
 			}
 
 			return new Response(array(
 				'message' => Lang::line('platform/pages::messages.pages.delete.error')->get(),
-				'errors'  => ($content->validation()->errors->has()) ? $content->validation()->errors->all() : array(),
-			), ($content->validation()->errors->has()) ? API::STATUS_BAD_REQUEST : API::STATUS_UNPROCESSABLE_ENTITY);
+				'errors'  => ($page->validation()->errors->has()) ? $page->validation()->errors->all() : array(),
+			), ($page->validation()->errors->has()) ? API::STATUS_BAD_REQUEST : API::STATUS_UNPROCESSABLE_ENTITY);
 		}
 		catch (Exception $e)
 		{

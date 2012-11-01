@@ -10,7 +10,11 @@ class Platform_Pages_Pages_Controller extends Public_Controller
 
 		try
 		{
-			$page = API::get('pages/'.$slug);
+			$page = API::get('pages/'.$slug, array(
+				'where' => array(
+					array('status', '=', 1)
+				)
+			));
 
 			if ( ! $page)
 			{

@@ -31,7 +31,11 @@ class Settings
     	//
     	try
     	{
-    		$pages_response = API::get('pages');
+    		$pages_response = API::get('pages', array(
+    			'where' => array(
+    				array('status', '=', 1)
+    			)
+    		));
 
     		$pages = array();
     		foreach ($pages_response as $_page)

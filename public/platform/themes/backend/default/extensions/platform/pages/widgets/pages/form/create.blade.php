@@ -22,6 +22,15 @@
 			</div>
 		</div>
 
+		<!-- Status -->
+		<div class="control-group">
+			<label for="status" class="control-label">{{ Lang::line('platform/pages::form.pages.create.status') }}</label>
+			<div class="controls">
+				{{ Form::select('status', $status) }}
+				<span class="help-block">{{ Lang::line('platform/pages::form.pages.create.status_help') }}</span>
+			</div>
+		</div>
+
 		<!-- Templates -->
 		<div class="control-group">
 			<label for="template" class="control-label">{{ Lang::line('platform/pages::form.pages.create.template') }}:</label>

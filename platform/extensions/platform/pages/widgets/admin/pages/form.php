@@ -28,6 +28,13 @@ use Theme;
 
 class Admin_Pages_Form
 {
+	// status'
+	//
+	public $status = array(
+			1 => 'enabled',
+			0 => 'disabled',
+	);
+
 	/**
 	 * Create Content Form
 	 *
@@ -44,6 +51,7 @@ class Admin_Pages_Form
 		$templates = Helper::findTemplates();
 
 		return Theme::make('platform.pages::widgets.pages.form.create')
+			->with('status', $this->status)
 			->with('template', $template)
 			->with('templates', $templates);
 	}
@@ -71,7 +79,9 @@ class Admin_Pages_Form
 		//
 		$templates = Helper::findTemplates();
 
-		return Theme::make('platform.pages::widgets.pages.form.edit', $data)->with('templates', $templates);;
+		return Theme::make('platform.pages::widgets.pages.form.edit', $data)
+			->with('status', $this->status)
+			->with('templates', $templates);
 	}
 
 }

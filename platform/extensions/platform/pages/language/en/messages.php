@@ -10,8 +10,9 @@ return array(
 		),
 
 		'edit' => array(
-			'success' => 'Page updated successfully.',
-			'error'   => 'Page was not updated, please try again',
+			'success'            => 'Page updated successfully.',
+			'error'              => 'Page was not updated, please try again',
+			'error_default_page' => 'You may not disable the default page.',
 		),
 
 		'delete' => array(
