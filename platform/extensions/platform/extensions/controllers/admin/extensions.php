@@ -113,7 +113,7 @@ class Platform_Extensions_Admin_Extensions_Controller extends Admin_Controller
 
         // Show the page.
         //
-        return Theme::make('platform.extensions::index')
+        return Theme::make('platform/extensions::index')
             ->with('manager', Platform::extensions_manager())
             ->with('extensions', $extensions);
     }
@@ -452,7 +452,7 @@ class Platform_Extensions_Admin_Extensions_Controller extends Admin_Controller
 
         // Show the page.
         //
-        return Theme::make('platform.extensions::view')
+        return Theme::make('platform/extensions::view')
             ->with('manager', Platform::extensions_manager())
             ->with('extension', $extension)
             ->with('extensions', $extensions);

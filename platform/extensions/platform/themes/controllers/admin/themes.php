@@ -99,7 +99,7 @@ class Platform_Themes_Admin_Themes_Controller extends Admin_Controller
 
         // Show the page.
         //
-        return Theme::make('platform.themes::index')->with('type', $type)->with('themes', $themes);
+        return Theme::make('platform/themes::index')->with('type', $type)->with('themes', $themes);
     }
 
 
@@ -160,7 +160,7 @@ class Platform_Themes_Admin_Themes_Controller extends Admin_Controller
 
         // Show the page.
         //
-        return Theme::make('platform.themes::edit', $data);
+        return Theme::make('platform/themes::edit', $data);
     }
 
 

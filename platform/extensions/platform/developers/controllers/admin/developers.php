@@ -45,7 +45,7 @@ class Platform_Developers_Admin_Developers_Controller extends Admin_Controller
 	{
 		$this->active_menu('admin-developers-creator');
 
-		return Theme::make('platform.developers::creator');
+		return Theme::make('platform/developers::creator');
 	}
 
 	public function post_creator()

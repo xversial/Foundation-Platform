@@ -33,7 +33,7 @@ class Admin_Content_Form
 	 */
 	public function create()
 	{
-		return Theme::make('platform.pages::widgets.content.form.create');
+		return Theme::make('platform/pages::widgets.content.form.create');
 	}
 
 	/**
@@ -55,7 +55,7 @@ class Admin_Content_Form
 			return \Redirect::to_admin('pages/content');
 		}
 
-		return Theme::make('platform.pages::widgets.content.form.edit', $data);
+		return Theme::make('platform/pages::widgets.content.form.edit', $data);
 	}
 
 }

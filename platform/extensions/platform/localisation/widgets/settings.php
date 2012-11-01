@@ -74,6 +74,6 @@ class Settings
     {
         // Show the form.
         //
-        return Theme::make('platform.localisation::widgets.form.settings')->with('settings', $settings);
+        return Theme::make('platform/localisation::widgets.form.settings')->with('settings', $settings);
     }
 }

@@ -68,7 +68,7 @@ class Settings
 
         // Show the form page.
         //
-        return Theme::make('platform.themes::widgets.form.settings')
+        return Theme::make('platform/themes::widgets.form.settings')
                 ->with('settings', $settings)
                 ->with('frontend_themes', $frontend)
                 ->with('backend_themes', $backend);

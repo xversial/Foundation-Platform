@@ -175,7 +175,7 @@ class Menus
 
         // Return the widget view.
         //
-        return Theme::make('platform.menus::widgets.nav')
+        return Theme::make('platform/menus::widgets.nav')
                     ->with('items', $items)
                     ->with('active_path', $active_path)
                     ->with('class', $class)

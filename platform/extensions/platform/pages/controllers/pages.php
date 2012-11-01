@@ -28,7 +28,7 @@ class Platform_Pages_Pages_Controller extends Public_Controller
 
 		$content = Helper::renderContent($page['value']);
 
-		return Theme::make('platform.pages::templates.'.$page['template'])
+		return Theme::make('platform/pages::templates.'.$page['template'])
 			->with('name', $page['name'])
 			->with('slug', $page['slug'])
 			->with('content', $content);

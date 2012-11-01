@@ -50,7 +50,7 @@ class Settings
     		$pages = array();
     	}
 
-    	return Theme::make('platform.pages::widgets.settings.form.settings')
+    	return Theme::make('platform/pages::widgets.settings.form.settings')
     		->with('page', $page)
     		->with('pages', $pages)
     		->with('template', $template)

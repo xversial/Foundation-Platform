@@ -27,17 +27,17 @@ class Form
 
 	public function login()
 	{
-		return Theme::make('platform.users::widgets.login');
+		return Theme::make('platform/users::widgets.login');
 	}
 
 	public function register()
 	{
-		return Theme::make('platform.users::widgets.register');
+		return Theme::make('platform/users::widgets.register');
 	}
 
 	public function reset()
 	{
-		return Theme::make('platform.users::widgets.reset');
+		return Theme::make('platform/users::widgets.reset');
 	}
 
 }

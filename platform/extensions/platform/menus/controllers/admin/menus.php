@@ -96,7 +96,7 @@ class Platform_Menus_Admin_Menus_Controller extends Admin_Controller
 
         // Show the page.
         //
-        return Theme::make('platform.menus::index')->with('menus', $menus);
+        return Theme::make('platform/menus::index')->with('menus', $menus);
     }
 
 
@@ -242,7 +242,7 @@ class Platform_Menus_Admin_Menus_Controller extends Admin_Controller
 
         // Show the page.
         //
-        return Theme::make('platform.menus::edit', $data);
+        return Theme::make('platform/menus::edit', $data);
     }
 
 

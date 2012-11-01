@@ -93,6 +93,6 @@ class Options
 
         // Show the page.
         //
-        return Theme::make('platform.themes::widgets.theme_options_css')->with('status', $status);
+        return Theme::make('platform/themes::widgets.theme_options_css')->with('status', $status);
     }
 }

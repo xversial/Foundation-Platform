@@ -103,7 +103,7 @@ class Platform_Localisation_Admin_Countries_Controller extends Admin_Controller
         if (Request::ajax())
         {
             return json_encode(array(
-                'content'        => Theme::make('platform.localisation::countries.partials.table', $data)->render(),
+                'content'        => Theme::make('platform/localisation::countries.partials.table', $data)->render(),
                 'count'          => $datatable['count'],
                 'count_filtered' => $datatable['count_filtered'],
                 'paging'         => $datatable['paging']
@@ -112,7 +112,7 @@ class Platform_Localisation_Admin_Countries_Controller extends Admin_Controller
 
         // Show the page.
         //
-        return Theme::make('platform.localisation::countries.index', $data);
+        return Theme::make('platform/localisation::countries.index', $data);
     }
 
 
@@ -130,7 +130,7 @@ class Platform_Localisation_Admin_Countries_Controller extends Admin_Controller
     {
         // Show the page.
         //
-        return Theme::make('platform.localisation::countries.create');
+        return Theme::make('platform/localisation::countries.create');
     }
 
 
@@ -189,7 +189,7 @@ class Platform_Localisation_Admin_Countries_Controller extends Admin_Controller
 
         // Show the page.
         //
-        return Theme::make('platform.localisation::countries.edit')->with('country', $country);
+        return Theme::make('platform/localisation::countries.edit')->with('country', $country);
     }
 
 
@@ -308,7 +308,7 @@ class Platform_Localisation_Admin_Countries_Controller extends Admin_Controller
 
         // Show the page.
         //
-        return Theme::make('platform.localisation::countries.delete')->with('country', $country);
+        return Theme::make('platform/localisation::countries.delete')->with('country', $country);
     }
 
 

@@ -79,6 +79,6 @@ class Platform_Dashboard_Admin_Dashboard_Controller extends Admin_Controller
     {
         // Show the page.
         //
-        return Theme::make('platform.dashboard::index');
+        return Theme::make('platform/dashboard::index');
     }
 }
