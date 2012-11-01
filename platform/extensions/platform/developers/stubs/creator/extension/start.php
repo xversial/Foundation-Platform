@@ -25,5 +25,5 @@
  * --------------------------------------------------------------------------
  */
 Autoloader::namespaces(array(
-    'Platform\\Developers' => __DIR__ . DS . 'models'
+    '[[extension]]' => __DIR__ . DS . 'models'
 ));

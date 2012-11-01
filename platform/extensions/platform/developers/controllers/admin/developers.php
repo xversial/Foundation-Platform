@@ -50,12 +50,19 @@ class Platform_Developers_Admin_Developers_Controller extends Admin_Controller
 
 	public function post_creator()
 	{
-		echo '<pre>';
+		$zip = API::post('developers/create', array(
+			'vendor'    => Input::get('vendor'),
+			'extension' => Input::get('extension'),
+			'encoding'  => 'base64',
+		));
 
-
-		print_r(Input::get());
-
-		die();
+		return new Response(base64_decode($zip), 200, array(
+			'Cache-Control'             => 'public',
+			'Content-Description'       => 'File Transfer',
+			'Content-Disposition'       => sprintf('attachment; filename=%s-%s.zip', Input::get('vendor'), Input::get('extension')),
+			'Content-Type'              => 'application/zip',
+			'Content-Transfer-Encoding' => 'binary',
+		));
 	}
 
 }

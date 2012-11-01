@@ -11,7 +11,7 @@
  * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
  *
  * @package    Platform
- * @version    1.0.3
+ * @version    1.1.0
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
  * @copyright  (c) 2011 - 2012, Cartalyst LLC
@@ -21,9 +21,20 @@
 
 /*
  * --------------------------------------------------------------------------
- * Register some namespaces.
+ * Return the extension data.
  * --------------------------------------------------------------------------
  */
-Autoloader::namespaces(array(
-    'Platform\\Developers' => __DIR__ . DS . 'models'
-));
+return array(
+
+    /*
+     * -----------------------------------------
+     * Extension information.
+     * -----------------------------------------
+     */
+    'info' => array(
+        'name'        => '[[extension]]',
+        'author'      => '[[vendor]]',
+        'description' => '[[description]]',
+        'version'     => '1.0',
+    ),
+);
