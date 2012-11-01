@@ -18,9 +18,9 @@
 @section('scripts')
 
 <script>
-	$(document).ready(function() {
-		Validate.setup($("#general-form"), $("#login-form"), $("#login-form"));
-	});
+    $(document).ready(function() {
+        Validate.setup($("#general-form"), $("#login-form"), $("#login-form"));
+    });
 </script>
 
 @endsection
@@ -36,8 +36,8 @@
             <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
             <a class="btn btn-navbar" data-toggle="collapse" data-target="#tertiary-navigation">
                 <span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
             </a>
 
             <a class="brand" href="#">{{ Lang::line('platform/settings::general.title') }}</a>
@@ -54,8 +54,8 @@
     <!-- Quaternary Desktop Navigation -->
     <nav class="quaternary-navigation tabbable visible-desktop">
         <ul class="nav nav-tabs">
-            @foreach ( $settings as $extension => $data )
-            <li{{ ( $extension === 'platform/settings' ? ' class="active"' : '' ) }}><a href="#tab_{{ str_replace('/', '_', $extension) }}" data-toggle="tab">{{ Lang::line($extension . '::form.settings.legend') }}</a></li>
+            @foreach ($tabs as $tab => $extension)
+            <li{{ ( $extension === 'platform/settings' ? ' class="active"' : '' ) }}><a href="#tab_{{ $tab }}" data-toggle="tab">{{ Lang::line($extension . '::form.settings.legend') }}</a></li>
             @endforeach
         </ul>
     </nav>
@@ -64,13 +64,24 @@
          <!-- Quaternary Mobile Navigation -->
         <nav class="hidden-desktop">
             <ul class="nav nav-stacked nav-pills">
-                @foreach ( $settings as $extension => $data )
-                <li{{ ( $extension === 'platform/settings' ? ' class="active"' : '' ) }}><a href="#tab_{{ str_replace('/', '_', $extension) }}" data-toggle="tab">{{ Lang::line($extension . '::form.settings.legend') }}</a></li>
+                @foreach ($tabs as $tab => $extension)
+                <li{{ ( $extension === 'platform/settings' ? ' class="active"' : '' ) }}><a href="#tab_{{ $tab }}" data-toggle="tab">{{ Lang::line($extension . '::form.settings.legend') }}</a></li>
                 @endforeach
             </ul>
         </nav>
 
         <div class="tab-content">
+            <?php
+            /*
+            @foreach ($tabs as $tab => $extension)
+            <div class="tab-pane{{ ( $extension === 'platform/settings' ? ' active' : '' ) }}" id="tab_{{ $tab }}">
+                @foreach ($settings[ $extension ] as $setting)
+                    @widget($extension . '::settings.index', $setting)
+                @endforeach
+            </div>
+            @endforeach
+            */
+            ?>
             @foreach ( $settings as $extension => $data )
             <div class="tab-pane{{ ( $extension === 'platform/settings' ? ' active' : '' ) }}" id="tab_{{ str_replace('/', '_', $extension) }}">
                 @widget($extension . '::settings.index', $data)
@@ -78,6 +89,5 @@
             @endforeach
         </div>
     </div>
-
 </section>
 @endsection
