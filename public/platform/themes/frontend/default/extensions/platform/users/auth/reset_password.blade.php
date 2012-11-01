@@ -2,7 +2,7 @@
 
 <!-- Title -->
 @section('title')
-	@get.settings.site.title - {{ Lang::line('platform/users::form.auth.reset.legend') }}
+	@get('platform/settings::site.title') - {{ Lang::line('platform/users::form.auth.reset.legend') }}
 @endsection
 
 <!-- Queue Styles | e.g Theme::queue_asset('name', 'path_to_css', 'dependency') -->

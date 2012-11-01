@@ -26,7 +26,7 @@
 
         <div>
             <label for="site-currency_api_key">{{ Lang::line('platform/localisation::form.settings.fields.currency_api_key') }}</label>
-            <input type="text" name="site:currency_api_key" id="site-currency_api_key" value="@get.localisation.site.currency_api_key">
+            <input type="text" name="site:currency_api_key" id="site-currency_api_key" value="@get('platform/localisation::site.currency_api_key')">
             <span class="help"></span>
         </div>
 

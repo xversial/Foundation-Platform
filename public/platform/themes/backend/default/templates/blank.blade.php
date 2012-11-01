@@ -10,7 +10,7 @@
 	<!-- Basic Page Needs -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="description" content="@get.settings.site.tagline">
+	<meta name="description" content="@get('platform/settings::site.tagline')">
 	<meta name="author" content="Cartalyst LLC">
 	<meta name="base_url" content="{{ Platform::url() }}">
 	<meta name="admin_url" content="{{ Platform::url(ADMIN) }}">

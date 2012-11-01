@@ -46,7 +46,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</a>
-					<a class="brand" href="{{ URL::to('') }}">@get.settings.site.title</a>
+					<a class="brand" href="{{ URL::to('') }}">@get('platform/settings::site.title')</a>
 					<div class="nav-collapse collapse">
 						@widget('platform/menus::menus.nav', 'main', 1, 'nav')
 					</div><!--/.nav-collapse -->

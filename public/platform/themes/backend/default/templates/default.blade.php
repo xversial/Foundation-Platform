@@ -7,8 +7,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>@yield('title')</title>
-        <meta name="description" content="@get.settings.site.tagline">
-		<meta name="author" content="@get.settings.site.title">
+        <meta name="description" content="@get('platform/settings::site.tagline')">
+		<meta name="author" content="@get('platform/settings::site.title')">
         <meta name="viewport" content="width=device-width">
         <meta name="base_url" content="{{ URL::to() }}">
         <meta name="admin_url" content="{{ URL::to_admin() }}">
@@ -50,7 +50,7 @@
 							<span class="icon-bar"></span>
 						</a>
 
-						<a class="brand" href="{{ URL::to_admin() }}">@get.settings.site.title</a>
+						<a class="brand" href="{{ URL::to_admin() }}">@get('platform/settings::site.title')</a>
 
 						<ul class="nav pull-right">
 							<li class="divider-vertical"></li>

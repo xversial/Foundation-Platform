@@ -2,7 +2,7 @@
 
 <!-- Title -->
 @section('title')
-	@get.settings.site.title
+	@get('platform/settings::site.title')
 @endsection
 
 <!-- Queue Styles | e.g Theme::queue_asset('name', 'path_to_css', 'dependency') -->
@@ -23,7 +23,7 @@
 
 	<!-- Main hero unit for a primary marketing message or call to action -->
 	<div class="introduction hero-unit">
-		<h1>@get.settings.site.title</h1>
+		<h1>@get('platform/settings::site.title')</h1>
 		<p>An application bootstrap for Laravel. The fundamentals + a few essentials included. It's well documented, feature awesome, open source, and always free.</p>
 		<p><a href="http://www.getplatform.com" class="btn btn-primary btn-large" target="_blank">Learn more &raquo;</a></p>
 	</div>
