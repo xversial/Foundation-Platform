@@ -308,7 +308,7 @@ class Platform_Users_API_Users_Controller extends API_Controller
 
 				// Get email
 				$filesystem = Filesystem::make('native');
-				$filesystem->file()->contents(path('public').'platform' . DS . 'emails'.DS.'activation.html');
+				$body = $filesystem->file()->contents(path('public').'platform' . DS . 'emails'.DS.'activation.html');
 
 				// Replacements
 				$replacements = array(
@@ -374,7 +374,7 @@ class Platform_Users_API_Users_Controller extends API_Controller
 
 				// Get email
 				$filesystem = Filesystem::make('native');
-				$filesystem->file()->contents(path('public').'platform' . DS . 'emails'.DS.'registered.html');
+				$body = $filesystem->file()->contents(path('public').'platform' . DS . 'emails'.DS.'registered.html');
 
 				// Replacements
 				$replacements = array(
@@ -490,7 +490,7 @@ class Platform_Users_API_Users_Controller extends API_Controller
 
 				// Get email
 				$filesystem = Filesystem::make('native');
-				$filesystem->file()->contents(path('public').'platform'.DS.'emails'.DS.'reset_password.html');
+				$body = $filesystem->file()->contents(path('public').'platform'.DS.'emails'.DS.'reset_password.html');
 
 				// Replacements
 				$replacements = array(
