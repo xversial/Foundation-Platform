@@ -100,7 +100,7 @@ class Platform_Settings_Admin_Settings_Controller extends Admin_Controller
         //
         $settings = array();
 
-        // Get all the settings from the database.
+		// Get all the settings from the database.
         //
         foreach (API::get('settings', array('organize' => true)) as $extension => $vendors)
         {
