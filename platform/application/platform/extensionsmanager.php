@@ -1225,7 +1225,10 @@ class ExtensionsManager
         {
             try
             {
-                $menus = API::get('menus/flat', array('extension' => $slug));
+                $menus = API::get('menus/flat', array(
+                    'vendor'    => array_get($extension, 'info.vendor'),
+                    'extension' => array_get($extension, 'info.extension')
+                ));
                 foreach ($menus as $menu)
                 {
                     API::put('menus/' . $menu['slug'], array('status' => 0));
@@ -1401,7 +1404,7 @@ class ExtensionsManager
     {
         // Check if the extension is installed !
         //
-        if (is_null($extension = Extension::find($slug)))
+        if (is_null($model = Extension::find($slug)))
         {
             throw new Exception(Lang::line('extensions.not_found', array('extension' => $slug)));
         }
@@ -1413,11 +1416,18 @@ class ExtensionsManager
             throw new Exception(Lang::line('extensions.enable.fail', array('extension' => $slug)));
         }
 
+        // Get this extension information.
+        //
+        $extension = $this->get($slug);
+
         // Enable all menus related to this extension.
         //
         try
         {
-            $menus = API::get('menus/flat', array('extension' => $slug));
+            $menus = API::get('menus/flat', array(
+                'vendor'    => array_get($extension, 'info.vendor'),
+                'extension' => array_get($extension, 'info.extension')
+            ));
             foreach ($menus as $menu)
             {
                 API::put('menus/' . $menu['slug'], array('status' => 1));
@@ -1430,8 +1440,8 @@ class ExtensionsManager
 
         // Enable the extension.
         //
-        $extension->enabled = 1;
-        $extension->save();
+        $model->enabled = 1;
+        $model->save();
 
         // Extension enabled.
         //
@@ -1454,7 +1464,7 @@ class ExtensionsManager
     {
         // Check if the extension is installed !
         //
-        if (is_null($extension = Extension::find($slug)))
+        if (is_null($model = Extension::find($slug)))
         {
             throw new Exception(Lang::line('extensions.not_found', array('extension' => $slug)));
         }
@@ -1466,11 +1476,18 @@ class ExtensionsManager
             throw new Exception(Lang::line('extensions.disable.fail', array('extension' => $slug)));
         }
 
+        // Get this extension information.
+        //
+        $extension = $this->get($slug);
+
         // Disable all menus related to this extension.
         //
         try
         {
-            $menus = API::get('menus/flat', array('extension' => $slug));
+            $menus = API::get('menus/flat', array(
+                'vendor'    => array_get($extension, 'info.vendor'),
+                'extension' => array_get($extension, 'info.extension')
+            ));
             foreach ($menus as $menu)
             {
                 API::put('menus/' . $menu['slug'], array('status' => 0));
@@ -1483,8 +1500,8 @@ class ExtensionsManager
 
         // Disable the extension.
         //
-        $extension->enabled = 0;
-        $extension->save();
+        $model->enabled = 0;
+        $model->save();
 
         // Extension disabled.
         //

@@ -180,6 +180,18 @@ class Platform_Settings_v1_1_0
         // Insert the settings into the database.
         //
         DB::table('settings')->insert($settings);
+
+
+        /*
+         * --------------------------------------------------------------------------
+         * # 3) Update the menu.
+         * --------------------------------------------------------------------------
+         */
+        if ($menu = Menu::find('admin-settings'))
+        {
+            $menu->vendor = 'platform';
+            $menu->save();
+        }
     }
 
 
@@ -212,5 +224,17 @@ class Platform_Settings_v1_1_0
          * --------------------------------------------------------------------------
          */
         DB::table('settings')->where('extension', '=', 'settings')->where('type', '=', 'filesystem')->delete();
+
+
+        /*
+         * --------------------------------------------------------------------------
+         * # 3) Update the menu.
+         * --------------------------------------------------------------------------
+         */
+        if ($menu = Menu::find('admin-settings'))
+        {
+            $menu->vendor = '';
+            $menu->save();
+        }
     }
 }

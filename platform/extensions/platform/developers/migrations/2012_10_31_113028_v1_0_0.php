@@ -69,6 +69,7 @@ class Platform_Developers_v1_0_0
         //
         $developers = new Menu(array(
             'name'          => 'Developers',
+            'vendor'        => 'platform',
             'extension'     => 'developers',
             'slug'          => 'admin-developers',
             'uri'           => 'developers',
@@ -81,6 +82,7 @@ class Platform_Developers_v1_0_0
 
         $developers_creator = new Menu(array(
             'name'          => 'Extension Creator',
+            'vendor'        => 'platform',
             'extension'     => 'developers-creator',
             'slug'          => 'admin-developers-creator',
             'uri'           => 'developers/creator',

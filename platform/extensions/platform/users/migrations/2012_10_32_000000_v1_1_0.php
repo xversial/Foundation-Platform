@@ -60,6 +60,26 @@ class Platform_Users_v1_1_0
          * --------------------------------------------------------------------------
          */
         DB::table('settings')->where('extension', '=', 'users')->update(array('vendor' => 'platform'));
+
+
+        /*
+         * --------------------------------------------------------------------------
+         * # 2) Update the menu.
+         * --------------------------------------------------------------------------
+         */
+        $menus = array(
+            'admin-users',
+            'admin-users-list',
+            'admin-groups-list'
+        );
+        foreach ($menus as $slug)
+        {
+            if ($menu = Menu::find($slug))
+            {
+                $menu->vendor = 'platform';
+                $menu->save();
+            }
+        }
     }
 
 
@@ -81,5 +101,25 @@ class Platform_Users_v1_1_0
          * --------------------------------------------------------------------------
          */
         DB::table('settings')->where('extension', '=', 'users')->update(array('vendor' => ''));
+
+
+        /*
+         * --------------------------------------------------------------------------
+         * # 2) Update the menu.
+         * --------------------------------------------------------------------------
+         */
+        $menus = array(
+            'admin-users',
+            'admin-users-list',
+            'admin-groups-list'
+        );
+        foreach ($menus as $slug)
+        {
+            if ($menu = Menu::find($slug))
+            {
+                $menu->vendor = '';
+                $menu->save();
+            }
+        }
     }
 }

@@ -60,6 +60,26 @@ class Platform_Themes_v1_1_0
          * --------------------------------------------------------------------------
          */
         DB::table('settings')->where('extension', '=', 'themes')->update(array('vendor' => 'platform'));
+
+
+        /*
+         * --------------------------------------------------------------------------
+         * # 2) Update the menu.
+         * --------------------------------------------------------------------------
+         */
+        $menus = array(
+            'admin-themes',
+            'admin-frontend',
+            'admin-backend'
+        );
+        foreach ($menus as $slug)
+        {
+            if ($menu = Menu::find($slug))
+            {
+                $menu->vendor = 'platform';
+                $menu->save();
+            }
+        }
     }
 
 
@@ -81,5 +101,25 @@ class Platform_Themes_v1_1_0
          * --------------------------------------------------------------------------
          */
         DB::table('settings')->where('extension', '=', 'users')->update(array('vendor' => ''));
+
+
+        /*
+         * --------------------------------------------------------------------------
+         * # 2) Update the menu.
+         * --------------------------------------------------------------------------
+         */
+        $menus = array(
+            'admin-themes',
+            'admin-frontend',
+            'admin-backend'
+        );
+        foreach ($menus as $slug)
+        {
+            if ($menu = Menu::find($slug))
+            {
+                $menu->vendor = '';
+                $menu->save();
+            }
+        }
     }
 }

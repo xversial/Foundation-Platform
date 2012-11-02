@@ -168,6 +168,7 @@ class Platform_Localisation_Currencies_v1_0_0
         $localisation_menu = Menu::find('admin-localisation');
         $currencies_menu = new Menu(array(
             'name'          => 'Currencies',
+            'vendor'        => 'platform',
             'extension'     => 'currencies',
             'slug'          => 'admin-currencies',
             'uri'           => 'localisation/currencies',
