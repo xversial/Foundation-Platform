@@ -138,7 +138,6 @@ class Platform_Settings_Admin_Settings_Controller extends Admin_Controller
             }
         }
 
-
         // Show the page.
         //
         return Theme::make('platform/settings::index')->with('tabs', $tabs)->with('settings', $settings);
