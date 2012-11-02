@@ -105,7 +105,15 @@ class Platform_Settings_API_Settings_Controller extends API_Controller
             //
             foreach ($result as $setting)
             {
-                #$settings[ $setting['extension'] ][ $setting['type'] ][ $setting['name'] ] = $setting;
+                // Make sure we have a vendor.
+                //
+                if ( ! $setting['vendor'])
+                {
+                    $setting['vendor'] = ExtensionsManager::DEFAULT_VENDOR;
+                }
+
+                // Store the settings.
+                //
                 $settings[ $setting['extension'] ][ $setting['vendor'] ][ $setting['type'] ][ $setting['name'] ] = $setting;
             }
 
