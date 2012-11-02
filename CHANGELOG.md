@@ -1,8 +1,9 @@
-1.1.1 Changelog
+1.1.0 Changelog
 ----------
 
 **General:**
 
+  * All 'bundle::' type calls have been changed to '{vendor}/bundle::' for controllers, settings, permissions, language, config, views, widgets and assets.
   * Moved the Platform::is_installed() from application/start.php to application/platform/platform.php
   * Cleaned a bit the application/platform/platform.php
   * Extended Laravel URL and Redirect core classes.
@@ -10,21 +11,29 @@
   * Added method to return the current Platform version.
   * Added in new Filesystem Bundle to allow for FTP usage to get around apache user permission issues if desired.
 
-**Extensions Manager:**
-
-  * Refactored the extensions manager
-
 **Installer:**
 
   * Fixed installer issues on some MySQL versions.
   * Added a new dependencies manager for the installer.
   * Added in optional FTP fields for the new filesystem bundle.
 
+**Extensions Manager:**
+
+  * Refactored the extensions manager. Extensions are now much more modular and easily extendable/overridable.
+
+**Pages**
+
+  * Pages has been completely refactored to be a basic dynamic CMS system with content and page sections.
+
 **Settings:**
 
   * Bug fixes.
   * Settings are now modular.
   * Added in filesystem message configurations to the general settings admin form.
+
+**Themes:**
+
+  * Theme directory structure has been modified in the extension folder
 
 1.0.2 Changelog
 ----------
