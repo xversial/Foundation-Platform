@@ -25,10 +25,10 @@
  * --------------------------------------------------------------------------
  */
 return array(
-	'crud',
-	'nesty' => array('auto' => true),
-	'sentry' => array('auto' => true),
-	'swiftmailer',
-	'theme' => array('auto' => true),
-	'filesystem' => array('auto' => true),
+    'crud',
+    'swiftmailer',
+    'nesty'      => array('auto' => true),
+    'sentry'     => array('auto' => true),
+    'theme'      => array('auto' => true),
+    'filesystem' => array('auto' => true)
 );

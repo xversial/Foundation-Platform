@@ -95,6 +95,7 @@ class Platform_Pages_v1_1_0
         //
         $pages = new Menu(array(
             'name'          => 'Pages',
+            'vendor'        => 'platform',
             'extension'     => 'pages',
             'slug'          => 'admin-pages',
             'uri'           => 'pages',
@@ -116,6 +117,7 @@ class Platform_Pages_v1_1_0
         //
         $pages_pages = new Menu(array(
             'name'          => 'Pages',
+            'vendor'        => 'platform',
             'extension'     => 'pages',
             'slug'          => 'admin-pages-pages',
             'uri'           => 'pages',
@@ -128,7 +130,8 @@ class Platform_Pages_v1_1_0
         //
         $pages_content = new Menu(array(
             'name'          => 'Content',
-            'extension'     => 'content',
+            'vendor'        => 'platform',
+            'extension'     => 'pages',
             'slug'          => 'admin-pages-content',
             'uri'           => 'pages/content',
             'user_editable' => 0,

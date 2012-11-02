@@ -46,9 +46,9 @@
 
 					<div class="navbar">
 						<div class="navbar-inner">
-							<a class="brand" href="#">Enable FTP (optional)</a>
+							<a class="brand">Enable FTP (optional)</a>
 							<div class="pull-right">
-								<a class="btn" href="#" data-toggle="collapse" data-target="#ftp"><i class="icon-upload-alt"></i></a>
+								<a class="btn" data-toggle="collapse" data-target="#ftp"><i class="icon-upload-alt"></i></a>
 							</div>
 						</div>
 					</div>

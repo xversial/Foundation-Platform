@@ -24,7 +24,7 @@
  * Install Class v1.1.0
  * --------------------------------------------------------------------------
  * 
- * Installs the base tables for Platform
+ * Installs the base tables for Platform.
  *
  * @package    Platform
  * @author     Cartalyst LLC

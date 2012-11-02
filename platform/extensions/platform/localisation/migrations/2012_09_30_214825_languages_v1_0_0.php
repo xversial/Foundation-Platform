@@ -155,6 +155,7 @@ class Platform_Localisation_Languages_v1_0_0
         $localisation_menu = Menu::find('admin-localisation');
         $languages_menu = new Menu(array(
             'name'          => 'Languages',
+            'vendor'        => 'platform',
             'extension'     => 'languages',
             'slug'          => 'admin-languages',
             'uri'           => 'localisation/languages',

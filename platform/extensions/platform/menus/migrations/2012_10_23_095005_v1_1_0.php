@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Part of the Platform application.
  *
@@ -33,7 +32,7 @@ use Platform\Menus\Menu;
  * Install Class v1.1.0
  * --------------------------------------------------------------------------
  * 
- * Adds a class column to menus.
+ * 
  *
  * @package    Platform
  * @author     Cartalyst LLC
@@ -69,28 +68,30 @@ class Platform_Menus_v1_1_0
          */
 		Schema::table('menus', function($table)
 		{
-            // Remove the old columns as their column types are
-            // not consistent.
+            // Remove the old columns as their column types are not consistent.
+            //
             $table->drop_column('target');
             $table->drop_column('visibility');
 		});
 
         Schema::table('menus', function($table)
         {
-            // Add menu type column
-            $table->integer('type')
-                  ->default(Menu::TYPE_STATIC);
+            // Add menu type column.
+            //
+            $table->integer('type')->default(Menu::TYPE_STATIC);
 
-            // Re-add columns
-            $table->integer('target')
-                  ->default(Menu::TARGET_SELF);
-            $table->integer('visibility')
-                  ->default(Menu::VISIBILITY_ALWAYS);
+            // Re-add columns.
+            //
+            $table->integer('target')->default(Menu::TARGET_SELF);
+            $table->integer('visibility')->default(Menu::VISIBILITY_ALWAYS);
 
             // We're now supporting "page" types.
-            $table->integer('page_id')
-                  ->unsigned()
-                  ->nullable();
+            //
+            $table->integer('page_id')->unsigned()->nullable();
+
+            // Vendor column.
+            //
+            $table->string('vendor')->nullable();
         });
 
 
@@ -99,7 +100,6 @@ class Platform_Menus_v1_1_0
          * # 2) Update the menu items.
          * --------------------------------------------------------------------------
          */
-
 		foreach ($menus as $menu)
 		{
 			if ( ! $menu->is_root())
@@ -110,6 +110,26 @@ class Platform_Menus_v1_1_0
             // Save all menu items to update the columns
 			$menu->save();
 		}
+
+
+        /*
+         * --------------------------------------------------------------------------
+         * # 2) Update the menu.
+         * --------------------------------------------------------------------------
+         */
+        $menus = array(
+            'admin',
+            'admin-system',
+            'admin-menus'
+        );
+        foreach ($menus as $slug)
+        {
+            if ($menu = Menu::find($slug))
+            {
+                $menu->vendor = 'platform';
+                $menu->save();
+            }
+        }
 	}
 
 
@@ -135,8 +155,25 @@ class Platform_Menus_v1_1_0
 			$table->drop_column('type');
 			$table->drop_column('page_id');
 		});
+
+
+        /*
+         * --------------------------------------------------------------------------
+         * # 2) Update the menu.
+         * --------------------------------------------------------------------------
+         */
+        $menus = array(
+            'admin',
+            'admin-system',
+            'admin-menus'
+        );
+        foreach ($menus as $slug)
+        {
+            if ($menu = Menu::find($slug))
+            {
+                $menu->vendor = '';
+                $menu->save();
+            }
+        }
 	}
 }
-
-/* End of file 2012_09_07_103640_add_class_column.php */
-/* Location: ./platform/extensions/platform/menus/migrations/2012_09_07_103640_add_class_column.php */

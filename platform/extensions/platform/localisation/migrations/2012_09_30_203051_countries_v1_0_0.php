@@ -149,6 +149,7 @@ class Platform_Localisation_Countries_v1_0_0
         $localisation_menu = Menu::find('admin-localisation');
         $countries_menu = new Menu(array(
             'name'          => 'Countries',
+            'vendor'        => 'platform',
             'extension'     => 'countries',
             'slug'          => 'admin-countries',
             'uri'           => 'localisation/countries',

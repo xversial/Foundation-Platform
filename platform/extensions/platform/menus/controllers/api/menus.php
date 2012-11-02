@@ -263,11 +263,11 @@ class Platform_Menus_API_Menus_Controller extends API_Controller
 			// Condition to pass to query
 			$condition = null;
 
-			if (($extension = Input::get('extension')) !== null)
+			if (($vendor = Input::get('vendor')) !== null and ($extension = Input::get('extension')) !== null)
 			{
 				try
 				{
-					API::get('extensions/'.$extension);
+					API::get('extensions/'.$vendor.'/'.$extension);
 				}
 				catch (APIClientException $e)
 				{
@@ -276,8 +276,9 @@ class Platform_Menus_API_Menus_Controller extends API_Controller
 					), $e->getCode());
 				}
 
-				$menus = Menu::all(function($query) use ($extension)
+				$menus = Menu::all(function($query) use ($vendor, $extension)
 				{
+					$query->where('vendor', '=', $vendor);
 					return $query->where('extension', '=', $extension);
 				});
 			}
