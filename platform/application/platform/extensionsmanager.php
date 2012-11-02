@@ -1280,7 +1280,7 @@ class ExtensionsManager
         {
             // Get this extension migration files.
             //
-            $migrations = glob(path('extensions') . array_get($extension, 'info.vendor') . DS . array_get($extension, 'info.extension') . DS . 'migrations' . DS . '*');
+            $migrations = glob(path('extensions') . str_replace(self::DEFAULT_VENDOR . DS, '', array_get($extension, 'info.vendor') . DS) . array_get($extension, 'info.extension') . DS . 'migrations' . DS . '*.php');
             $migrations = array_reverse($migrations, true);
 
             // Loop through the migration files.
@@ -1291,11 +1291,11 @@ class ExtensionsManager
                 //
                 require_once $migration;
 
-                //
+                // Work the migration name.
                 //
                 $migration = basename(str_replace(EXT, '', $migration));
 
-                //
+                // Remove the entry from the migrations table.
                 //
                 DB::table('laravel_migrations')->where('name', '=', $migration)->delete();
 
