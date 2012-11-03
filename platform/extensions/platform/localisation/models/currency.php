@@ -52,10 +52,11 @@ class Currency extends Crud
      * @param    array
      */
     public static $_rules = array(
-        'name'          => 'required',
-        'code'          => 'required|size:3|unique:currencies,code',
-        'decimal_place' => 'required',
-        'status'        => 'required'
+        'name'   => 'required',
+        'code'   => 'required|size:3|unique:currencies,code',
+        'rate'   => 'required',
+        'sign'   => 'required',
+        'status' => 'required'
     );
 
 
@@ -154,7 +155,7 @@ class Currency extends Crud
 
     /**
      * --------------------------------------------------------------------------
-     * Function: update_currencies()
+     * Function: rates_updater()
      * --------------------------------------------------------------------------
      *
      * Updates the currencies rates.
@@ -163,7 +164,7 @@ class Currency extends Crud
      * @param    boolean
      * @return   boolean
      */
-    public static function update_currencies($force = false)
+    public static function rates_updater($force = false)
     {
         // First of all, check if we have the API Key for Openexchangerates.org set.
         //
@@ -174,7 +175,7 @@ class Currency extends Crud
 
         // Check the log file to see when we ran the updater for the last time.
         //
-        if (file_exists($file = \Bundle::path('localisation') . 'currencies.json') and $force === false)
+        if (file_exists($file = \Bundle::path('platform/localisation') . 'currencies.json') and $force === false)
         {
             // Check if we need to update currencies or not.
             //
@@ -200,19 +201,25 @@ class Currency extends Crud
             //
             $json = json_decode($response);
 
+            // Convert the rates into an array.
+            //
+            $rates = (array) $json->rates;
+
             // Loop through the currencies, so we can update their rates.
             //
             foreach(static::all() as $currency)
             {
+                // Get this currency code.
+                //
                 $code = $currency['code'];
-                $update = array(
-                    'code' => $code,
-                    //'rate' => $json->rates->$code
-                );
+
+                // Get the updated exchange rate.
+                //
+                $rate = array_get($rates, $code, $currency['rate']);
 
                 // Update this currency.
                 //
-                \DB::table('currencies')->where('code', '=', $code)->update($update);
+                \DB::table('currencies')->where('code', '=', $code)->update(array('rate' => $rate));
             }
 
             // Update the currencies file.

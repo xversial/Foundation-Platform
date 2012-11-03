@@ -87,21 +87,21 @@ class Platform_Localisation_Admin_Countries_Controller extends Admin_Controller
      */
     public function get_index()
     {
-        // Grab the datatable.
-        //
-        $datatable = API::get('localisation/countries/datatable', Input::get());
-
-        // Prepare the array.
-        //
-        $data = array(
-            'rows'            => $datatable['rows'],
-            'default_country' => $datatable['default_country']
-        );
-
         // If this is an ajax request, only return the body of the datatable.
         //
         if (Request::ajax())
         {
+            // Grab the datatable.
+            //
+            $datatable = API::get('localisation/countries/datatable', Input::get());
+
+            // Prepare the array.
+            //
+            $data = array(
+                'rows'            => $datatable['rows'],
+                'default_country' => $datatable['default_country']
+            );
+
             return json_encode(array(
                 'content'        => Theme::make('platform/localisation::countries.partials.table', $data)->render(),
                 'count'          => $datatable['count'],
@@ -112,7 +112,7 @@ class Platform_Localisation_Admin_Countries_Controller extends Admin_Controller
 
         // Show the page.
         //
-        return Theme::make('platform/localisation::countries.index', $data);
+        return Theme::make('platform/localisation::countries.index');
     }
 
 
@@ -357,22 +357,22 @@ class Platform_Localisation_Admin_Countries_Controller extends Admin_Controller
 
     /**
      * --------------------------------------------------------------------------
-     * Function: get_default()
+     * Function: get_primary()
      * --------------------------------------------------------------------------
      *
-     * Makes a country the default country by the system.
+     * Makes a country the primary country.
      *
      * @access   public
      * @param    mixed
      * @return   mixed
      */
-    public function get_default($country_code)
+    public function get_primary($country_code)
     {
         try
         {
             // Make the request.
             //
-            $request = API::put('localisation/country/default/' . $country_code);
+            $request = API::put('localisation/country/primary/' . $country_code);
 
             // Set the success message.
             //

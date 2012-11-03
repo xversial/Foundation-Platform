@@ -87,21 +87,21 @@ class Platform_Localisation_Admin_Languages_Controller extends Admin_Controller
      */
     public function get_index()
     {
-        // Grab the datatable.
-        //
-        $datatable = API::get('localisation/languages/datatable', Input::get());
-
-        // Prepare the array.
-        //
-        $data = array(
-            'rows'             => $datatable['rows'],
-            'default_language' => $datatable['default_language']
-        );
-
         // If this is an ajax request, only return the body of the datatable.
         //
         if (Request::ajax())
         {
+            // Grab the datatable.
+            //
+            $datatable = API::get('localisation/languages/datatable', Input::get());
+
+            // Prepare the array.
+            //
+            $data = array(
+                'rows'             => $datatable['rows'],
+                'default_language' => $datatable['default_language']
+            );
+
             return json_encode(array(
                 'content'        => Theme::make('platform/localisation::languages.partials.table', $data)->render(),
                 'count'          => $datatable['count'],
@@ -112,7 +112,7 @@ class Platform_Localisation_Admin_Languages_Controller extends Admin_Controller
 
         // Show the page.
         //
-        return Theme::make('platform/localisation::languages.index', $data);
+        return Theme::make('platform/localisation::languages.index');
     }
 
 
@@ -357,22 +357,22 @@ class Platform_Localisation_Admin_Languages_Controller extends Admin_Controller
 
     /**
      * --------------------------------------------------------------------------
-     * Function: get_default()
+     * Function: get_primary()
      * --------------------------------------------------------------------------
      *
-     * Makes a language the default language by the system.
+     * Makes a language the primary language.
      *
      * @access   public
      * @param    mixed
      * @return   mixed
      */
-    public function get_default($language_code)
+    public function get_primary($language_code)
     {
         try
         {
             // Make the request.
             //
-            $request = API::put('localisation/language/default/' . $language_code);
+            $request = API::put('localisation/language/primary/' . $language_code);
 
             // Set the success message.
             //

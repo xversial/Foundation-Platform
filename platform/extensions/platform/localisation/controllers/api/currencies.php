@@ -65,7 +65,7 @@ class Platform_Localisation_API_Currencies_Controller extends API_Controller
      * @param    mixed
      * @return   Response
      */
-    public function get_index($currency_code)
+    public function get_index($currency_code = false)
     {
         // If we have the currency code, we return the information about that currency.
         //
@@ -82,7 +82,7 @@ class Platform_Localisation_API_Currencies_Controller extends API_Controller
                 // Currency not found.
                 //
                 return new Response(array(
-                    'message' => Lang::line('platform/localisation::currencies/message.error.not_found', array('currency' => $currency_code))->get()
+                    'message' => Lang::line('platform/localisation::currencies/message.not_found', array('currency' => $currency_code))->get()
                 ), API::STATUS_NOT_FOUND);
             }
 
@@ -126,9 +126,11 @@ class Platform_Localisation_API_Currencies_Controller extends API_Controller
         $currency->name          = Input::get('name');
         $currency->slug          = \Str::slug(Input::get('name'));
         $currency->code          = strtoupper(Input::get('code'));
-        $currency->symbol_left   = Input::get('symbol_left');
-        $currency->symbol_right  = Input::get('symbol_right');
-        $currency->decimal_place = Input::get('decimal_place');
+        $currency->sign          = Input::get('sign');
+        $currency->after_price   = Input::get('after_price');
+        $currency->ths_sign      = Input::get('ths_sign');
+        $currency->decimal_sign  = Input::get('decimal_sign');
+        $currency->decimals      = Input::get('decimals');
         $currency->rate          = Input::get('rate');
         $currency->status        = Input::get('status');
 
@@ -204,11 +206,13 @@ class Platform_Localisation_API_Currencies_Controller extends API_Controller
         $currency->name          = Input::get('name');
         $currency->slug          = \Str::slug(Input::get('name'));
         $currency->code          = strtoupper(Input::get('code'));
-        $currency->symbol_left   = Input::get('symbol_left');
-        $currency->symbol_right  = Input::get('symbol_right');
-        $currency->decimal_place = Input::get('decimal_place');
+        $currency->sign          = Input::get('sign');
+        $currency->after_price   = Input::get('after_price');
+        $currency->ths_sign      = Input::get('ths_sign');
+        $currency->decimal_sign  = Input::get('decimal_sign');
+        $currency->decimals      = Input::get('decimals');
         $currency->rate          = Input::get('rate');
-        $currency->status        = ( $currency['code'] === Platform::get('platform/localisation::site.currency') ? 1 : Input::get('status') );
+        $currency->status        = ( strtoupper($currency['code']) === Platform::get('platform/localisation::site.currency') ? 1 : Input::get('status') );
 
         try
         {
@@ -276,7 +280,7 @@ class Platform_Localisation_API_Currencies_Controller extends API_Controller
             // Return a response.
             //
             return new Response(array(
-                'message' => Lang::line('platform/localisation::currencies/message.error.not_found', array('currency' => $currency_code))->get()
+                'message' => Lang::line('platform/localisation::currencies/message.not_found', array('currency' => $currency_code))->get()
             ), API::STATUS_NOT_FOUND);
         }
 
@@ -287,7 +291,7 @@ class Platform_Localisation_API_Currencies_Controller extends API_Controller
             // Return a response.
             //
             return new Response( array(
-                'message' => Lang::line('platform/localisation::currencies/message.delete.single.being_used')->get()
+                'message' => Lang::line('platform/localisation::currencies/message.delete.being_used')->get()
             ), API::STATUS_BAD_REQUEST);
         }
 
@@ -302,7 +306,7 @@ class Platform_Localisation_API_Currencies_Controller extends API_Controller
             // Return a response.
             //
             return new Response(array(
-                'message' => Lang::line('platform/localisation::currencies/message.delete.single.success', array('currency' => $currency->name))->get()
+                'message' => Lang::line('platform/localisation::currencies/message.delete.success', array('currency' => $currency->name))->get()
             ));
         }
         catch (Exception $e)
@@ -310,7 +314,7 @@ class Platform_Localisation_API_Currencies_Controller extends API_Controller
             // Return a response.
             //
             return new Response( array(
-                'message' => Lang::line('platform/localisation::currencies/message.delete.single.fail', array('currency' => $currency->name))->get()
+                'message' => Lang::line('platform/localisation::currencies/message.delete.fail', array('currency' => $currency->name))->get()
             ), API::STATUS_BAD_REQUEST);
         }
     }
@@ -388,22 +392,22 @@ class Platform_Localisation_API_Currencies_Controller extends API_Controller
 
     /**
      * --------------------------------------------------------------------------
-     * Function: put_default()
+     * Function: put_primary()
      * --------------------------------------------------------------------------
      *
-     * Makes a currency the default currency on the system.
+     * Makes a currency the primary currency.
      *
      *  <code>
-     *      $currency = API::put('localisation/currency/1');
-     *      $currency = API::put('localisation/currency/usd');
-     *      $currency = API::put('localisation/currency/us-dollar');
+     *      $currency = API::put('localisation/currency/primary/1');
+     *      $currency = API::put('localisation/currency/primary/usd');
+     *      $currency = API::put('localisation/currency/primary/us-dollar');
      *  </code>
      *
      * @access   public
      * @param    mixed
      * @return   Response
      */
-    public function put_default($currency_code)
+    public function put_primary($currency_code)
     {
         // Get this currency information.
         //
@@ -416,7 +420,7 @@ class Platform_Localisation_API_Currencies_Controller extends API_Controller
             // Return a response.
             //
             return new Response(array(
-                'message' => Lang::line('platform/localisation::currencies/message.error.not_found', array('currency' => $currency_code))->get()
+                'message' => Lang::line('platform/localisation::currencies/message.not_found', array('currency' => $currency_code))->get()
             ), API::STATUS_NOT_FOUND);
         }
 
@@ -427,7 +431,7 @@ class Platform_Localisation_API_Currencies_Controller extends API_Controller
             // Return a response.
             //
             return new Response(array(
-                'message' => Lang::line('platform/localisation::currencies/message.update.already_default', array('currency' => $currency['name']))->get()
+                'message' => Lang::line('platform/localisation::currencies/message.update.already_primary', array('currency' => $currency['name']))->get()
             ));
         }
 
@@ -442,7 +446,7 @@ class Platform_Localisation_API_Currencies_Controller extends API_Controller
         // Return a response.
         //
         return new Response(array(
-            'message' => Lang::line('platform/localisation::currencies/message.update.default', array('currency' => $currency->name))->get()
+            'message' => Lang::line('platform/localisation::currencies/message.update.primary', array('currency' => $currency->name))->get()
         ));
     }
 }

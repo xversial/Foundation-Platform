@@ -27,7 +27,7 @@
 return array(
     // Currency Name
     //
-    'name'      => 'Currency name',
+    'name'      => 'Name',
     'name_help' => 'The short name of the currency in English.',
 
     // Currency Code
@@ -35,28 +35,38 @@ return array(
     'code'      => 'Code',
     'code_help' => 'The three alpha character currency code as defined by the ISO 3166-1 Standard.',
 
-    // Symbol Left
+    // Sign
     //
-    'symbol_left'      => 'Symbol Left',
-    'symbol_left_help' => 'The symbol that should appear on the left of the currency value.',
+    'sign'      => 'Sign',
+    'sign_help' => 'The currency symbol that appears before or after the price.',
 
-    // Symbol Right
+    // After Price
     //
-    'symbol_right'      => 'Symbol Right',
-    'symbol_right_help' => 'The symbol that should appear on the right of the currency value.',
+    'after_price'      => 'After Price',
+    'after_price_help' => 'If checked, the currency symbol appears after the price.',
 
-    // Decimal Place
+    // Thousands sign
     //
-    'decimal_place'      => 'Decimal Place',
-    'decimal_place_help' => 'Number of digits after the decimal point.',
+    'ths_sign'      => 'Thousands sign',
+    'ths_sign_help' => 'Symbol for the thousands separator.',
+
+    // Decimal sign
+    //
+    'decimal_sign'      => 'Decimal sign',
+    'decimal_sign_help' => 'Symbol for the decimal separator.',
+
+    // Decimals
+    //
+    'decimals'      => 'Decimals',
+    'decimals_help' => 'Number of digits after the decimal sign.',
 
     // Exchange Rate
     //
-    'rate'      => 'Exchange Rate',
-    'rate_help' => 'This currency exchange rate value.',
+    'rate'      => 'Rate',
+    'rate_help' => 'The exchange rate to convert store prices and costs.',
 
     // Currency Status
     //
-    'status'      => 'Currency Status',
+    'status'      => 'Status',
     'status_help' => 'The currency status.'
 );

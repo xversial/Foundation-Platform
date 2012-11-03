@@ -37,9 +37,9 @@
             <h3>{{ Lang::line('general.warning') }}</h3>
 
             @if ( $country['default'] )
-            <p>{{ Lang::line('platform/localisation::countries/message.delete.single.being_used', array('country' => $country['name'])) }}</p>
+            <p>{{ Lang::line('platform/localisation::countries/message.delete.being_used', array('country' => $country['name'])) }}</p>
             @else
-            <p>{{ Lang::line('platform/localisation::countries/message.delete.single.confirm', array('country' => $country['name'])) }}</p>
+            <p>{{ Lang::line('platform/localisation::countries/message.delete.confirm', array('country' => $country['name'])) }}</p>
 
             <button class="btn btn-danger"><i class="icon-ok icon-white"></i> Delete</button>
             <a href="{{ URL::to_admin('localisation/countries') }}" class="btn btn-success"><i class="icon-remove icon-white"></i> {{ Lang::line('button.cancel') }}</a>

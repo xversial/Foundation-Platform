@@ -37,9 +37,9 @@
             <h3>{{ Lang::line('general.warning')->get() }}</h3>
 
             @if ( $currency['default'] )
-            <p>{{ Lang::line('platform/localisation::currencies/message.delete.single.being_used', array('currency' => $currency['name']))->get() }}</p>
+            <p>{{ Lang::line('platform/localisation::currencies/message.delete.being_used', array('currency' => $currency['name']))->get() }}</p>
             @else
-            <p>{{ Lang::line('platform/localisation::currencies/message.delete.single.confirm', array('currency' => $currency['name']))->get() }}</p>
+            <p>{{ Lang::line('platform/localisation::currencies/message.delete.confirm', array('currency' => $currency['name']))->get() }}</p>
 
             <button class="btn btn-danger"><i class="icon-ok icon-white"></i> Delete</button>
             <a href="{{ URL::to_admin('localisation/currencies') }}" class="btn btn-success"><i class="icon-remove icon-white"></i> {{ Lang::line('button.cancel')->get() }}</a>

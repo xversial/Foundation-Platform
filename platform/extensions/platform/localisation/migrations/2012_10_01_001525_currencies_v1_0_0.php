@@ -65,12 +65,14 @@ class Platform_Localisation_Currencies_v1_0_0
             $table->string('name');
             $table->string('slug');
             $table->string('code', 5);
-            $table->string('symbol_left', 5)->nullable();
-            $table->string('symbol_right', 5)->nullable();
-            $table->string('decimal_place', 1)->nullable();
+            $table->string('sign');
+            $table->string('after_price');
+            $table->string('ths_sign', 1)->nullable();
+            $table->string('decimal_sign', 1)->nullable();
+            $table->string('decimals', 1)->nullable();
             $table->decimal('rate', 15, 8)->nullable();
-            $table->integer('cdh_id')->nullable();
             $table->integer('status')->default(1);
+            $table->integer('cdh_id')->nullable();
             $table->timestamps();
         });
 
@@ -80,9 +82,9 @@ class Platform_Localisation_Currencies_v1_0_0
          * # 2) Insert the currencies.
          * --------------------------------------------------------------------------
          */
-        // Define a default currency, just in case.
+        // Define a primary currency, just in case.
         //
-        $default = 'usd';
+        $primary = 'USD';
 
         // Read the json file.
         //
@@ -97,20 +99,22 @@ class Platform_Localisation_Currencies_v1_0_0
                 'name'          => $currency['name'],
                 'slug'          => \Str::slug($currency['name']),
                 'code'          => strtoupper($currency['code']),
-                'symbol_left'   => ( isset($currency['symbol_left']) ? $currency['symbol_left'] : '' ),
-                'symbol_right'  => ( isset($currency['symbol_right']) ? $currency['symbol_right'] : '' ),
-                'decimal_place' => ( isset($currency['decimal_place']) ? $currency['decimal_place'] : 2 ),
+                'sign'          => $currency['sign'],
+                'after_price'   => ( isset($currency['after_price']) ? $currency['after_price'] : '' ),
+                'ths_sign'      => ( isset($currency['ths_sign']) ? $currency['ths_sign'] : ',' ),
+                'decimal_sign'  => ( isset($currency['decimal_sign']) ? $currency['decimal_sign'] : '.' ),
+                'decimals'      => ( isset($currency['decimals']) ? $currency['decimals'] : 2 ),
                 'rate'          => ( isset($currency['rate']) ? $currency['rate'] : '' ),
                 'status'        => ( isset($currency['status']) ? $currency['status'] : 1 ),
                 'created_at'    => new \DateTime,
                 'updated_at'    => new \DateTime
             );
 
-            // Is this a default currency ?
+            // Is this a primary currency ?
             //
-            if (isset($currency['default']))
+            if (isset($currency['primary']))
             {
-                $default = $currency['code'];
+                $primary = $currency['code'];
             }
         }
 
@@ -125,14 +129,14 @@ class Platform_Localisation_Currencies_v1_0_0
          * --------------------------------------------------------------------------
          */
         $settings = array(
-            // Default currency.
+            // Primary currency.
             //
             array(
                 'vendor'    => 'platform',
                 'extension' => 'localisation',
                 'type'      => 'site',
                 'name'      => 'currency',
-                'value'     => strtoupper($default)
+                'value'     => strtoupper($primary)
             ),
 
             // Set the interval time for every rate update.
@@ -204,7 +208,7 @@ class Platform_Localisation_Currencies_v1_0_0
          * # 2) Delete configuration settings.
          * --------------------------------------------------------------------------
          */
-        DB::table('settings')->where('extension', '=', 'localisation')->where('name', 'LIKE', '%currency%')->delete();
+        DB::table('settings')->where('extension', '=', 'localisation')->where('name', 'LIKE', 'currency%')->delete();
 
 
         /*

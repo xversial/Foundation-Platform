@@ -31,39 +31,30 @@ return array(
      * -----------------------------------------
      */
     'create' => array(
-        'success' => 'Currency :currency was successfully created.',
-        'fail'    => 'An error occurred while creating the currency !'
+        'success' => 'Currency <strong>:currency</strong> successfully created.',
+        'fail'    => 'An error occurred while creating the currency!'
     ),
 
     'update' => array(
-        'success'         => 'Currency :currency was successfully updated.',
-        'fail'            => 'An error occurred while updating the currency :currency !',
-        'disable_error'   => 'You cannot disable a default currency !',
-        'default'         => 'Currency :currency is now the current default system currency.',
-        'already_default' => 'Currency :currency is already the default currency.'
+        'success'         => 'Currency <strong>:currency</strong> successfully updated.',
+        'fail'            => 'An error occurred while updating the currency :currency!',
+        'disable_error'   => 'You cannot disable a primary currency!',
+        'primary'         => 'Currency <strong>:currency</strong> is now the primary currency.',
+        'already_primary' => 'Currency <strong>:currency</strong> is already the primary currency.'
     ),
 
     'delete' => array(
-        'single' => array(
-            'confirm'    => 'Are you sure you want to delete the currency :currency ?',
-            'success'    => 'Currency :currency was successfully deleted.',
-            'fail'       => 'An error occurred while deleting the currency :currency.',
-            'being_used' => 'You cannot remove a currency that is being used by the system.'
-        ),
-        'multi' => array(
-            'confirm' => 'Are you sure you want to delete these currencies ?',
-            'success' => 'The currencies selected were succesfully deleted.',
-            'fail'    => 'An error occurred while trying to delete the selected currencies'
-        )
+        'confirm'    => 'Are you sure you want to delete the currency :currency?',
+        'success'    => 'Currency <strong>:currency</strong> successfully deleted.',
+        'fail'       => 'An error occurred while deleting the currency :currency.',
+        'being_used' => 'You cannot remove a primary currency!'
     ),
 
 
     /*
      * -----------------------------------------
-     * Error messages.
+     * Other messages.
      * -----------------------------------------
      */
-    'error' => array(
-        'not_found' => 'The currency #:currency was not found !'
-    )
+    'not_found' => 'The currency <strong>#:currency</strong> not found!'
 );

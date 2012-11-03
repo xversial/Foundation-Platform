@@ -28,25 +28,40 @@ Route::any(ADMIN . '/localisation', 'platform/localisation::admin.languages@inde
 
 
 /**
+ * Route /admin/localisation/:local/:method/:code
+ *
+ *  <code>
+ *      /admin/localisation/country/create    => localisation::admin.countries@edit
+ *      /admin/localisation/country/edit/gb   => localisation::admin.countries@edit(gb)
+ *      /admin/localisation/country/delete/gb => localisation::admin.countries@delete(gb)
+ *  </code>
+ */
+Route::get(ADMIN . '/localisation/(:any)/(:any)/(:any?)', function($local, $method, $code = null)
+{
+    return Controller::call('platform/localisation::admin.' . Str::plural($local) . '@' . $method, array($code));
+});
+
+
+/**
  * Route /api/localisation/:local/datatable
  *
  *  <code>
  *      /api/localisation/countries/datatable => localisation::api.countries@datatable
  *  </code>
  */
-Route::any(API . '/localisation/(:any)/datatable', 'platform/localisation::api.(:1)@datatable');
+Route::get(API . '/localisation/(:any)/datatable', 'platform/localisation::api.(:1)@datatable');
 
 
 /**
- * Route /api/localisation/:local/default/:code
+ * Route /api/localisation/:local/primary/:code
  *
  *  <code>
- *      /api/localisation/countries/default/gb => localisation::api.countries@default(gb)
+ *      /api/localisation/country/primary/gb => localisation::api.countries@primary(gb)
  *  </code>
  */
-Route::any(API . '/localisation/(:any)/default/(:any)', function($local, $slug)
+Route::put(API . '/localisation/(:any)/primary/(:any)', function($local, $code)
 {
-    return Controller::call('platform/localisation::api.' . Str::plural($local) . '@default', array($slug));
+    return Controller::call('platform/localisation::api.' . Str::plural($local) . '@primary', array($code));
 });
 
 
@@ -57,9 +72,9 @@ Route::any(API . '/localisation/(:any)/default/(:any)', function($local, $slug)
  *      /api/localisation/country/gb => localisation::api.countries@index(gb)
  *  </code>
  */
-Route::any(API . '/localisation/(:any)/(:any)', function($local, $slug)
+Route::any(API . '/localisation/(:any)/(:any)', function($local, $code)
 {
-    return Controller::call('platform/localisation::api.' . Str::plural($local) . '@index', array($slug));
+    return Controller::call('platform/localisation::api.' . Str::plural($local) . '@index', array($code));
 });
 
 
@@ -70,7 +85,7 @@ Route::any(API . '/localisation/(:any)/(:any)', function($local, $slug)
  *      /api/localisation/country => localisation::api.countries@index
  *  </code>
  */
-Route::any(API . '/localisation/(:any)', function($local)
+Route::post(API . '/localisation/(:any)', function($local)
 {
     return Controller::call('platform/localisation::api.' . Str::plural($local) . '@index');
 });

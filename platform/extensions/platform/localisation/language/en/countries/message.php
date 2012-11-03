@@ -31,39 +31,30 @@ return array(
      * -----------------------------------------
      */
     'create' => array(
-        'success' => 'Country :country was successfully created.',
-        'fail'    => 'An error occurred while creating the country !'
+        'success' => 'Country <strong>:country</strong> successfully created.',
+        'fail'    => 'An error occurred while creating the country!'
     ),
 
     'update' => array(
-        'success'         => 'Country :country was successfully updated.',
-        'fail'            => 'An error occurred while updating the country :country !',
-        'disable_error'   => 'You cannot disable a default country !',
-        'default'         => 'Country :country is now the current default system country.',
-        'already_default' => 'Country :country is already the default country.'
+        'success'         => 'Country <strong>:country</strong> successfully updated.',
+        'fail'            => 'An error occurred while updating the country :country!',
+        'disable_error'   => 'You cannot disable a default country!',
+        'primary'         => 'Country <strong>:country</strong> is now the primary country.',
+        'already_primary' => 'Country <strong>:country</strong> is already the primary country.'
     ),
 
     'delete' => array(
-        'single' => array(
-            'confirm'    => 'Are you sure you want to delete the country :country ?',
-            'success'    => 'Country :country was successfully deleted.',
-            'fail'       => 'An error occurred while deleting the country :country.',
-            'being_used' => 'You cannot remove a country that is being used by the system.'
-        ),
-        'multi' => array(
-            'confirm' => 'Are you sure you want to delete these countries ?',
-            'success' => 'The countries selected were succesfully deleted.',
-            'fail'    => 'An error occurred while trying to delete the selected countries'
-        )
+        'confirm'    => 'Are you sure you want to delete the country :country?',
+        'success'    => 'Country <strong>:country</strong> successfully deleted.',
+        'fail'       => 'An error occurred while deleting the country :country.',
+        'being_used' => 'You cannot remove a primary country!'
     ),
 
 
     /*
      * -----------------------------------------
-     * Error messages.
+     * Other messages.
      * -----------------------------------------
      */
-    'error' => array(
-        'not_found' => 'The country #:country was not found !'
-    )
+     'not_found' => 'The country <strong>#:country</strong> not found!'
 );

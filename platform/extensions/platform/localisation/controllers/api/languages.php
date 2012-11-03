@@ -65,7 +65,7 @@ class Platform_Localisation_API_Languages_Controller extends API_Controller
      * @param    mixed
      * @return   Response
      */
-    public function get_index($language_code)
+    public function get_index($language_code = false)
     {
         // If we have the language code, we return the information about that language.
         //
@@ -82,7 +82,7 @@ class Platform_Localisation_API_Languages_Controller extends API_Controller
                 // Language not found.
                 //
                 return new Response(array(
-                    'message' => Lang::line('platform/localisation::languages/message.error.not_found', array('language' => $language_code))->get()
+                    'message' => Lang::line('platform/localisation::languages/message.not_found', array('language' => $language_code))->get()
                 ), API::STATUS_NOT_FOUND);
             }
 
@@ -270,7 +270,7 @@ class Platform_Localisation_API_Languages_Controller extends API_Controller
             // Return a response.
             //
             return new Response(array(
-                'message' => Lang::line('platform/localisation::languages/message.error.not_found', array('language' => $language_code))->get()
+                'message' => Lang::line('platform/localisation::languages/message.not_found', array('language' => $language_code))->get()
             ), API::STATUS_NOT_FOUND);
         }
 
@@ -281,7 +281,7 @@ class Platform_Localisation_API_Languages_Controller extends API_Controller
             // Return a response.
             //
             return new Response( array(
-                'message' => Lang::line('platform/localisation::languages/message.delete.single.being_used')->get()
+                'message' => Lang::line('platform/localisation::languages/message.delete.being_used')->get()
             ), API::STATUS_BAD_REQUEST);
         }
 
@@ -296,7 +296,7 @@ class Platform_Localisation_API_Languages_Controller extends API_Controller
             // Return a response.
             //
             return new Response(array(
-                'message' => Lang::line('platform/localisation::languages/message.delete.single.success', array('language' => $language->name))->get()
+                'message' => Lang::line('platform/localisation::languages/message.delete.success', array('language' => $language->name))->get()
             ));
         }
         catch (Exception $e)
@@ -304,7 +304,7 @@ class Platform_Localisation_API_Languages_Controller extends API_Controller
             // Return a response.
             //
             return new Response( array(
-                'message' => Lang::line('platform/localisation::languages/message.delete.single.fail', array('language' => $language->name))->get()
+                'message' => Lang::line('platform/localisation::languages/message.delete.fail', array('language' => $language->name))->get()
             ), API::STATUS_BAD_REQUEST);
         }
     }
@@ -382,22 +382,22 @@ class Platform_Localisation_API_Languages_Controller extends API_Controller
 
     /**
      * --------------------------------------------------------------------------
-     * Function: put_default()
+     * Function: put_primary()
      * --------------------------------------------------------------------------
      *
-     * Makes a language the default language on the system.
+     * Makes a language the primary language.
      *
      *  <code>
-     *      $language = API::put('localisation/language/default/1');
-     *      $language = API::put('localisation/language/default/en');
-     *      $language = API::put('localisation/language/default/english');
+     *      $language = API::put('localisation/language/primary/1');
+     *      $language = API::put('localisation/language/primary/en');
+     *      $language = API::put('localisation/language/primary/english');
      *  </code>
      *
      * @access   public
      * @param    mixed
      * @return   Response
      */
-    public function put_default($language_code)
+    public function put_primary($language_code)
     {
         // Get this language information.
         //
@@ -410,7 +410,7 @@ class Platform_Localisation_API_Languages_Controller extends API_Controller
             // Return a response.
             //
             return new Response(array(
-                'message' => Lang::line('platform/localisation::languages/message.error.not_found', array('language' => $language_code))->get()
+                'message' => Lang::line('platform/localisation::languages/message.not_found', array('language' => $language_code))->get()
             ), API::STATUS_NOT_FOUND);
         }
 
@@ -421,7 +421,7 @@ class Platform_Localisation_API_Languages_Controller extends API_Controller
             // Return a response.
             //
             return new Response(array(
-                'message' => Lang::line('platform/localisation::languages/message.update.already_default', array('language' => $language['name']))->get()
+                'message' => Lang::line('platform/localisation::languages/message.update.already_primary', array('language' => $language['name']))->get()
             ));
         }
 
@@ -442,7 +442,7 @@ class Platform_Localisation_API_Languages_Controller extends API_Controller
         // Return a response.
         //
         return new Response(array(
-            'message' => Lang::line('platform/localisation::languages/message.update.default', array('language' => $language->name))->get()
+            'message' => Lang::line('platform/localisation::languages/message.update.primary', array('language' => $language->name))->get()
         ));
     }
 }

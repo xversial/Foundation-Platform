@@ -208,22 +208,74 @@ function time_formats()
 function date_formats()
 {
     return array(
-        '%d-%m-%Y' => strftime('%d-%m-%Y', time()), # 20-10-2012
-        '%d-%b-%Y' => strftime('%d-%b-%Y', time()), # 20-Oct-2012
-        '%Y-%m-%d' => strftime('%Y-%m-%d', time()), # 2012-10-20
-        '%Y-%b-%d' => strftime('%Y-%b-%d', time()), # 2012-Oct-20
+        '%d-%m-%Y'     => strftime('%d-%m-%Y', time()),     # 20-10-2012
+        '%d-%b-%Y'     => strftime('%d-%b-%Y', time()),     # 20-Oct-2012
+        '%Y-%m-%d'     => strftime('%Y-%m-%d', time()),     # 2012-10-20
+        '%Y-%b-%d'     => strftime('%Y-%b-%d', time()),     # 2012-Oct-20
 
-        '%d.%m.%Y' => strftime('%d.%m.%Y', time()), # 20.10.2012
-        '%d.%b.%Y' => strftime('%d.%b.%Y', time()), # 20.Oct.2012
-        '%Y.%m.%d' => strftime('%Y.%m.%d', time()), # 2012.10.20
-        '%Y.%b.%d' => strftime('%Y.%b.%d', time()), # 2012.Oct.20
+        '%d.%m.%Y'     => strftime('%d.%m.%Y', time()),     # 20.10.2012
+        '%d.%b.%Y'     => strftime('%d.%b.%Y', time()),         # 20.Oct.2012
+        '%Y.%m.%d'     => strftime('%Y.%m.%d', time()),     # 2012.10.20
+        '%Y.%b.%d'     => strftime('%Y.%b.%d', time()),     # 2012.Oct.20
 
-        '%d/%m/%Y' => strftime('%d/%m/%Y', time()), # 20/10/2012
-        '%d/%b/%Y' => strftime('%d/%b/%Y', time()), # 20/Oct/2012
-        '%Y/%m/%d' => strftime('%Y/%m/%d', time()), # 2012/10/20
-        '%Y/%b/%d' => strftime('%Y/%b/%d', time()), # 2012/Oct/20
+        '%d/%m/%Y'     => strftime('%d/%m/%Y', time()),     # 20/10/2012
+        '%d/%b/%Y'     => strftime('%d/%b/%Y', time()),     # 20/Oct/2012
+        '%Y/%m/%d'     => strftime('%Y/%m/%d', time()),     # 2012/10/20
+        '%Y/%b/%d'     => strftime('%Y/%b/%d', time()),     # 2012/Oct/20
 
         '%A, %d %B %Y' => strftime('%A, %d %B %Y', time()), # Saturday, 20 October 2012
         '%d %B %Y'     => strftime('%d %B %Y', time())      # 20 October 2012
     );
+}
+
+
+/**
+ * --------------------------------------------------------------------------
+ * Function: format_date()
+ * --------------------------------------------------------------------------
+ *
+ * Format's a timestamp into a human redable date format.
+ *
+ * @param    integer
+ * @param    string
+ * @return   string
+ */
+function format_date($timestamp = null, $format = null)
+{
+    // Custom formats.
+    //
+    $formats = array(
+        'datetime' => '%Y-%m-%d %H:%M:%S', // 2012-10-20 20:41:25
+        'date'     => '%Y-%m-%d',          // 2012-10-20
+        'time'     => '%H:%M:%S'           // 20:41:25
+    );
+
+    // No timestamp passed?
+    //
+    if (is_null($timestamp))
+    {
+        // Use the current time!
+        //
+        $timestamp = time();
+    }
+
+    // No format passed?
+    //
+    if (is_null($format) or $format === '')
+    {
+        // Use the default formatting.
+        //
+        $format = Config::get('application.date_format') . ' ' . Config::get('application.time_format');
+    }
+
+    // We want to use a custom format?
+    //
+    elseif (array_key_exists($format, $formats))
+    {
+        $format = $formats[ $format ];
+    }
+
+    // Return the formatted timestamp.
+    //
+    return strftime($format, $timestamp);
 }

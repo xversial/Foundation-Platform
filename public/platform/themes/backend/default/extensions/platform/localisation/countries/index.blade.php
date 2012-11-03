@@ -38,7 +38,7 @@
                 <div id="table-filters" class="form-inline pull-left"></div>
                 <div class="processing pull-left"></div>
                 <div class="pull-right">
-                    <a class="btn btn-large btn-primary" href="{{ URL::to_admin('localisation/countries/create') }}">{{ Lang::line('button.create') }}</a>
+                    <a class="btn btn-large btn-primary" href="{{ URL::to_admin('localisation/country/create') }}">{{ Lang::line('button.create') }}</a>
                 </div>
             </div>
 

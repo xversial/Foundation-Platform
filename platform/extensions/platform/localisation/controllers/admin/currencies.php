@@ -87,21 +87,21 @@ class Platform_Localisation_Admin_Currencies_Controller extends Admin_Controller
      */
     public function get_index()
     {
-        // Grab the datatable.
-        //
-        $datatable = API::get('localisation/currencies/datatable', Input::get());
-
-        // Prepare the array.
-        //
-        $data = array(
-            'rows'             => $datatable['rows'],
-            'default_currency' => $datatable['default_currency']
-        );
-
         // If this is an ajax request, only return the body of the datatable.
         //
         if (Request::ajax())
         {
+            // Grab the datatable.
+            //
+            $datatable = API::get('localisation/currencies/datatable', Input::get());
+
+            // Prepare the array.
+            //
+            $data = array(
+                'rows'             => $datatable['rows'],
+                'default_currency' => $datatable['default_currency']
+            );
+
             return json_encode(array(
                 'content'        => Theme::make('platform/localisation::currencies.partials.table', $data)->render(),
                 'count'          => $datatable['count'],
@@ -112,7 +112,7 @@ class Platform_Localisation_Admin_Currencies_Controller extends Admin_Controller
 
         // Show the page.
         //
-        return Theme::make('platform/localisation::currencies.index', $data);
+        return Theme::make('platform/localisation::currencies.index');
     }
 
 
@@ -357,22 +357,22 @@ class Platform_Localisation_Admin_Currencies_Controller extends Admin_Controller
 
     /**
      * --------------------------------------------------------------------------
-     * Function: get_default()
+     * Function: get_primary()
      * --------------------------------------------------------------------------
      *
-     * Makes a currency the default currency by the system.
+     * Makes a currency the primary currency.
      *
      * @access   public
      * @param    mixed
      * @return   mixed
      */
-    public function get_default($currency_code)
+    public function get_primary($currency_code)
     {
         try
         {
             // Make the request.
             //
-            $request = API::put('localisation/currency/default/' . $currency_code);
+            $request = API::put('localisation/currency/primary/' . $currency_code);
 
             // Set the success message.
             //

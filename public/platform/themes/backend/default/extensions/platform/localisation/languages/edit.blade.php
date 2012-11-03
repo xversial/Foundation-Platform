@@ -68,7 +68,6 @@
             <div class="form-actions">
                 <a class="btn btn-large" href="{{ URL::to_admin('localisation/languages') }}">{{ Lang::line('button.cancel') }}</a>
                 <button class="btn btn-large btn-primary" type="submit" name="save" id="save" value="1">{{ Lang::line('button.update') }}</button>
-                <button class="btn btn-large btn-primary" type="submit" name="save_exit" id="save_exit" value="1">{{ Lang::line('button.update_exit') }}</button>
                 @if ( ! $language['default'])
                 <a class="btn btn-large btn-danger" href="{{ URL::to_admin('localisation/languages/delete/' . $language['slug']) }}">{{ Lang::line('button.delete') }}</a>
             	@endif

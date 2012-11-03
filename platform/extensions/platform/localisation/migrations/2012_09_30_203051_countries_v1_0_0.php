@@ -81,9 +81,9 @@ class Platform_Localisation_Countries_v1_0_0
          * # 2) Populate the countries table.
          * --------------------------------------------------------------------------
          */
-        // Define a default country, just in case.
+        // Define a primary country, just in case.
         //
-        $default = 'gb';
+        $primary = 'gb';
 
         // Read the countries from the CSV file.
         //
@@ -110,13 +110,11 @@ class Platform_Localisation_Countries_v1_0_0
                 'updated_at'         => new \DateTime
             );
 
-            // Is this a default country ?
+            // Is this a primary country ?
             //
-            if (isset($country['default']))
+            if (isset($country['primary']))
             {
-                // Mark it as the default then.
-                //
-                $default = $country['iso_code_2'];
+                $primary = $country['iso_code_2'];
             }
         }
 
@@ -135,7 +133,7 @@ class Platform_Localisation_Countries_v1_0_0
             'extension' => 'localisation',
             'type'      => 'site',
             'name'      => 'country',
-            'value'     => $default
+            'value'     => $primary
         ));
 
 

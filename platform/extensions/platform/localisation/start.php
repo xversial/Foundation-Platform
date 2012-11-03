@@ -93,6 +93,6 @@ if (Platform::extensions_manager()->is_enabled('platform.localisation'))
 
         // Proceed with the update.
         //
-        Platform\Localisation\Model\Currency::update_currencies();
+        Platform\Localisation\Model\Currency::rates_updater();
     }
 }

@@ -45,42 +45,56 @@
                 <div class="control-group">
                     <label class="control-label" for="code">{{ Lang::line('platform/localisation::currencies/form.code') }}</label>
                     <div class="controls">
-                        <input type="text" name="code" id="code" value="{{ Input::old('code', $currency['code']); }}" required />
+                        <input type="text" name="code" id="code" value="{{ Input::old('code', $currency['code']); }}" required="required" />
                         <span class="help-block">{{ Lang::line('platform/localisation::currencies/form.code_help') }}</span>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="symbol_left">{{ Lang::line('platform/localisation::currencies/form.symbol_left') }}</label>
-                    <div class="controls">
-                        <input type="text" name="symbol_left" id="symbol_left" value="{{ Input::old('symbol_left', $currency['symbol_left']); }}" />
-                        <span class="help-block">{{ Lang::line('platform/localisation::currencies/form.symbol_left_help') }}</span>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="symbol_right">{{ Lang::line('platform/localisation::currencies/form.symbol_right') }}</label>
-                    <div class="controls">
-                        <input type="text" name="symbol_right" id="symbol_right" value="{{ Input::old('symbol_right', $currency['symbol_right']); }}" />
-                        <span class="help-block">{{ Lang::line('platform/localisation::currencies/form.symbol_right_help') }}</span>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="decimal_place">{{ Lang::line('platform/localisation::currencies/form.decimal_place') }}</label>
-                    <div class="controls">
-                        <input type="text" name="decimal_place" id="decimal_place" value="{{ Input::old('decimal_place', $currency['decimal_place']); }}" required />
-                        <span class="help-block">{{ Lang::line('platform/localisation::currencies/form.decimal_place_help') }}</span>
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="rate">{{ Lang::line('platform/localisation::currencies/form.rate') }}</label>
                     <div class="controls">
-                        <input type="text" name="rate" id="rate" value="{{ Input::old('rate', $currency['rate']); }}" required />
+                        <input type="text" name="rate" id="rate" value="{{ Input::old('rate', $currency['rate']); }}" required="required" />
                         <span class="help-block">{{ Lang::line('platform/localisation::currencies/form.rate_help') }}</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="sign">{{ Lang::line('platform/localisation::currencies/form.sign') }}</label>
+                    <div class="controls">
+                        <input type="text" name="sign" id="sign" value="{{ Input::old('sign', $currency['sign']); }}" required="required" />
+                        <span class="help-block">{{ Lang::line('platform/localisation::currencies/form.sign_help') }}</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="after_price">{{ Lang::line('platform/localisation::currencies/form.after_price') }}</label>
+                    <div class="controls">
+                        <input type="checkbox" name="after_price" id="after_price" value="1"{{ ( Input::old('after_price', $currency['after_price']) ? ' checked' : '' ) }} />
+                        <span class="help-block">{{ Lang::line('platform/localisation::currencies/form.after_price_help') }}</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="ths_sign">{{ Lang::line('platform/localisation::currencies/form.ths_sign') }}</label>
+                    <div class="controls">
+                        <input type="text" name="ths_sign" id="ths_sign" value="{{ Input::old('ths_sign', $currency['ths_sign']); }}" />
+                        <span class="help-block">{{ Lang::line('platform/localisation::currencies/form.ths_sign_help') }}</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="decimal_sign">{{ Lang::line('platform/localisation::currencies/form.decimal_sign') }}</label>
+                    <div class="controls">
+                        <input type="text" name="decimal_sign" id="decimal_sign" value="{{ Input::old('decimal_sign', $currency['decimal_sign']); }}" />
+                        <span class="help-block">{{ Lang::line('platform/localisation::currencies/form.decimal_sign_help') }}</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="decimals">{{ Lang::line('platform/localisation::currencies/form.decimals') }}</label>
+                    <div class="controls">
+                        <input type="text" name="decimals" id="decimals" value="{{ Input::old('decimals', $currency['decimals']); }}" />
+                        <span class="help-block">{{ Lang::line('platform/localisation::currencies/form.decimals_help') }}</span>
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="status">{{ Lang::line('platform/localisation::currencies/form.status') }}</label>
                     <div class="controls">
-                        {{ Form::select('status', general_statuses(), $currency['status']); }}
+                        {{ Form::select('status', general_statuses(), $currency['status'], array('required')); }}
                         <span class="help-block">{{ Lang::line('platform/localisation::currencies/form.status_help') }}</span>
                     </div>
                 </div>
@@ -89,7 +103,6 @@
             <div class="form-actions">
                 <a class="btn btn-large" href="{{ URL::to_admin('localisation/currencies') }}">{{ Lang::line('button.cancel') }}</a>
                 <button class="btn btn-large btn-primary" type="submit" name="save" id="save" value="1">{{ Lang::line('button.update') }}</button>
-                <button class="btn btn-large btn-primary" type="submit" name="save_exit" id="save_exit" value="1">{{ Lang::line('button.update_exit') }}</button>
                 @if ( ! $currency['default'])
                 <a class="btn btn-large btn-danger" href="{{ URL::to_admin('localisation/currencies/delete/' . $currency['slug']) }}">{{ Lang::line('button.delete') }}</a>
                 @endif

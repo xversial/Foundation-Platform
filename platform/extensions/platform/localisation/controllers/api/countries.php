@@ -54,11 +54,7 @@ class Platform_Localisation_API_Countries_Controller extends API_Controller
      * pass the country iso code 2 or the country slug as the last parameter.
      *
      *  <code>
-     *      $all_countries = API::get('localisation');
      *      $all_countries = API::get('localisation/countries');
-     *      $gb_country    = API::get('localisation/232');
-     *      $gb_country    = API::get('localisation/gb');
-     *      $gb_country    = API::get('localisation/united-kingdom');
      *      $gb_country    = API::get('localisation/country/232');
      *      $gb_country    = API::get('localisation/country/gb');
      *      $gb_country    = API::get('localisation/country/united-kingdom');
@@ -68,7 +64,7 @@ class Platform_Localisation_API_Countries_Controller extends API_Controller
      * @param    mixed
      * @return   Response
      */
-    public function get_index($country_code)
+    public function get_index($country_code = false)
     {
         // If we have the country code, we return the information about that country.
         //
@@ -85,7 +81,7 @@ class Platform_Localisation_API_Countries_Controller extends API_Controller
                 // Country not found.
                 //
                 return new Response(array(
-                    'message' => Lang::line('platform/localisation::countries/message.error.not_found', array('country' => $country_code))->get()
+                    'message' => Lang::line('platform/localisation::countries/message.not_found', array('country' => $country_code))->get()
                 ), API::STATUS_NOT_FOUND);
             }
 
@@ -292,7 +288,7 @@ class Platform_Localisation_API_Countries_Controller extends API_Controller
             // Return a response.
             //
             return new Response(array(
-                'message' => Lang::line('platform/localisation::countries/message.error.not_found', array('country' => $country_code))->get()
+                'message' => Lang::line('platform/localisation::countries/message.not_found', array('country' => $country_code))->get()
             ), API::STATUS_NOT_FOUND);
         }
 
@@ -303,7 +299,7 @@ class Platform_Localisation_API_Countries_Controller extends API_Controller
             // Return a response.
             //
             return new Response( array(
-                'message' => Lang::line('platform/localisation::countries/message.delete.single.being_used')->get()
+                'message' => Lang::line('platform/localisation::countries/message.delete.being_used')->get()
             ), API::STATUS_BAD_REQUEST);
         }
 
@@ -318,7 +314,7 @@ class Platform_Localisation_API_Countries_Controller extends API_Controller
             // Return a response.
             //
             return new Response(array(
-                'message' => Lang::line('platform/localisation::countries/message.delete.single.success', array('country' => $country->name))->get()
+                'message' => Lang::line('platform/localisation::countries/message.delete.success', array('country' => $country->name))->get()
             ));
         }
         catch (Exception $e)
@@ -326,7 +322,7 @@ class Platform_Localisation_API_Countries_Controller extends API_Controller
             // Return a response.
             //
             return new Response( array(
-                'message' => Lang::line('platform/localisation::countries/message.delete.single.fail', array('country' => $country->name))->get()
+                'message' => Lang::line('platform/localisation::countries/message.delete.fail', array('country' => $country->name))->get()
             ), API::STATUS_BAD_REQUEST);
         }
     }
@@ -405,22 +401,22 @@ class Platform_Localisation_API_Countries_Controller extends API_Controller
 
     /**
      * --------------------------------------------------------------------------
-     * Function: put_default()
+     * Function: put_primary()
      * --------------------------------------------------------------------------
      *
-     * Makes a country the default country on the system.
+     * Makes a country the primary country.
      *
      *  <code>
-     *      $country = API::put('localisation/country/default/232');
-     *      $country = API::put('localisation/country/default/gb');
-     *      $country = API::put('localisation/country/default/united-kingdom');
+     *      $country = API::put('localisation/country/primary/232');
+     *      $country = API::put('localisation/country/primary/gb');
+     *      $country = API::put('localisation/country/primary/united-kingdom');
      *  </code>
      *
      * @access   public
      * @param    mixed
      * @return   Response
      */
-    public function put_default($country_code)
+    public function put_primary($country_code)
     {
         // Get this country information.
         //
@@ -433,7 +429,7 @@ class Platform_Localisation_API_Countries_Controller extends API_Controller
             // Return a response.
             //
             return new Response(array(
-                'message' => Lang::line('platform/localisation::countries/message.error.not_found', array('country' => $country_code))->get()
+                'message' => Lang::line('platform/localisation::countries/message.not_found', array('country' => $country_code))->get()
             ), API::STATUS_NOT_FOUND);
         }
 
@@ -444,7 +440,7 @@ class Platform_Localisation_API_Countries_Controller extends API_Controller
             // Return a response.
             //
             return new Response(array(
-                'message' => Lang::line('platform/localisation::countries/message.update.already_default', array('country' => $country['name']))->get()
+                'message' => Lang::line('platform/localisation::countries/message.update.already_primary', array('country' => $country['name']))->get()
             ));
         }
 
@@ -459,7 +455,7 @@ class Platform_Localisation_API_Countries_Controller extends API_Controller
         // Return a response.
         //
         return new Response(array(
-            'message' => Lang::line('platform/localisation::countries/message.update.default', array('country' => $country->name))->get()
+            'message' => Lang::line('platform/localisation::countries/message.update.primary', array('country' => $country->name))->get()
         ));
     }
 }

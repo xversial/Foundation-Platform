@@ -31,30 +31,23 @@ return array(
      * -----------------------------------------
      */
     'create' => array(
-        'success' => 'Language :language was successfully created.',
-        'fail'    => 'An error occurred while creating the language !'
+        'success' => 'Language <strong>:language</strong> successfully created.',
+        'fail'    => 'An error occurred while creating the language!'
     ),
 
     'update' => array(
-        'success'         => 'Language :language was successfully updated.',
-        'fail'            => 'An error occurred while updating the language :language !',
-        'disable_error'   => 'You cannot disable a default language !',
-        'default'         => 'Language :language is now the current default system language.',
-        'already_default' => 'Language :language is already the default language.'
+        'success'         => 'Language <strong>:language</strong> successfully updated.',
+        'fail'            => 'An error occurred while updating the language :language!',
+        'disable_error'   => 'You cannot disable a primary language!',
+        'primary'         => 'Language <strong>:language</strong> is now the primary language.',
+        'already_primary' => 'Language <strong>:language</strong> is already the primary language.'
     ),
 
     'delete' => array(
-        'single' => array(
-            'confirm'    => 'Are you sure you want to delete the language :language ?',
-            'success'    => 'Language :language was successfully deleted.',
-            'fail'       => 'An error occurred while deleting the language :language.',
-            'being_used' => 'You cannot remove a language that is being used by the system.'
-        ),
-        'multi' => array(
-            'confirm' => 'Are you sure you want to delete these languages ?',
-            'success' => 'The languages selected were succesfully deleted.',
-            'fail'    => 'An error occurred while trying to delete the selected languages'
-        )
+        'confirm'    => 'Are you sure you want to delete the language :language?',
+        'success'    => 'Language <strong>:language</strong> successfully deleted.',
+        'fail'       => 'An error occurred while deleting the language :language.',
+        'being_used' => 'You cannot remove a primary language!'
     ),
 
 
@@ -63,7 +56,5 @@ return array(
      * Error messages.
      * -----------------------------------------
      */
-    'error' => array(
-        'not_found' => 'The language #:language was not found !'
-    )
+    'not_found' => 'The language <strong>#:language</strong> not found!'
 );
