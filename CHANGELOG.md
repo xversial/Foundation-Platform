@@ -35,6 +35,10 @@
 
   * Theme directory structure has been modified in the extension folder
 
+**Localisation:**
+
+  * New core extension to manage system languages, countries and currencies.
+
 1.0.2 Changelog
 ----------
 
