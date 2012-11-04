@@ -43,9 +43,23 @@ class Platform_Developers_Admin_Developers_Controller extends Admin_Controller
 
 	public function get_creator()
 	{
+		// Set the active menu item
 		$this->active_menu('admin-developers-creator');
 
-		return Theme::make('platform/developers::creator');
+		// Data
+		$data = array(
+
+			// Reserved vendors
+			'reserved_vendors' => array(ExtensionsManager::CORE_VENDOR),
+
+			// Default vendor
+			'default_vendor' => ExtensionsManager::DEFAULT_VENDOR,
+
+			// Existing extensions
+			'extensions' => API::get('extensions'),
+		);
+
+		return Theme::make('platform/developers::creator', $data);
 	}
 
 	public function post_creator()
@@ -56,13 +70,35 @@ class Platform_Developers_Admin_Developers_Controller extends Admin_Controller
 			'encoding'  => 'base64',
 		));
 
-		return new Response(base64_decode($zip), 200, array(
-			'Cache-Control'             => 'public',
+		if (($contents = base64_decode($zip)) === false)
+		{
+			Platform::message()->error(Lang::line('platform/developers::messages.creator.decode_fail'));
+
+			return Redirect::to_admin('developers/create');
+		}
+
+		// The name the ZIP should get
+		$name = 'extension.zip';
+
+		// Let's build some headers up
+		$headers = array(
 			'Content-Description'       => 'File Transfer',
-			'Content-Disposition'       => sprintf('attachment; filename=%s-%s.zip', Input::get('vendor'), Input::get('extension')),
-			'Content-Type'              => 'application/x-zip',
+			'Content-Type'              => File::mime('zip'),
 			'Content-Transfer-Encoding' => 'binary',
-		));
+			'Expires'                   => 0,
+			'Cache-Control'             => 'must-revalidate, post-check=0, pre-check=0',
+			'Pragma'                    => 'public',
+			'Content-Length'            => Str::length($contents),
+		);
+
+		// Once we create the response, we need to set the content disposition
+		// header on the response based on the file's name. We'll pass this
+		// off to the HttpFoundation and let it create the header text.
+		$response = new Response($contents, 200, $headers);
+
+		$d = $response->disposition($name);
+
+		return $response->header('Content-Disposition', $d);
 	}
 
 }

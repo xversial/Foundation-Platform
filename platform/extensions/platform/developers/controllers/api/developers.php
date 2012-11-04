@@ -26,8 +26,6 @@ class Platform_Developers_API_Developers_Controller extends API_Controller
 
 	public function post_create()
 	{
-		echo '<pre>';
-
 		// Filesystem
 		$filesystem = Filesystem::make('native');
 		$file       = $filesystem->file();
