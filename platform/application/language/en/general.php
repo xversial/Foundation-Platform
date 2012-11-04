@@ -31,8 +31,6 @@ return array(
     'created_at' => 'Created At',
     'status'     => 'Status',
     'required'   => 'Required',
-
     'yes'        => 'Yes',
     'no'         => 'No'
 );
-

@@ -31,26 +31,26 @@ return array(
      * -----------------------------------------
      */
     'install' => array(
-        'success'   => 'Extension <b>:extension</b> was successfully installed.',
-        'fail'      => 'Extension <b>:extension</b> can\'t be installed.',
-        'installed' => 'Extension <b>:extension</b> is already installed!'
+        'success'   => 'Extension <strong>:extension</strong> was successfully installed.',
+        'fail'      => 'Extension <strong>:extension</strong> can\'t be installed.',
+        'installed' => 'Extension <strong>:extension</strong> is already installed!'
     ),
     'uninstall' => array(
-        'success' => 'Extension <b>:extension</b> was successfully uninstalled.',
-        'fail'    => 'Extension <b>:extension</b> can\'t be uninstalled.'
+        'success' => 'Extension <strong>:extension</strong> was successfully uninstalled.',
+        'fail'    => 'Extension <strong>:extension</strong> can\'t be uninstalled.'
     ),
     'enable' => array(
-        'success' => 'Extension <b>:extension</b> was successfully enabled.',
-        'fail'    => 'Extension <b>:extension</b> can\'t be enabled.',
-        'enabled' => 'Extension <b>:extension</b> is already enabled!'
+        'success' => 'Extension <strong>:extension</strong> was successfully enabled.',
+        'fail'    => 'Extension <strong>:extension</strong> can\'t be enabled.',
+        'enabled' => 'Extension <strong>:extension</strong> is already enabled!'
     ),
     'disable' => array(
-        'success'  => 'Extension <b>:extension</b> was successfully disabled.',
-        'fail'     => 'Extension <b>:extension</b> can\'t be disabled.',
-        'disabled' => 'Extension <b>:extension</b> is not enabled!'
+        'success'  => 'Extension <strong>:extension</strong> was successfully disabled.',
+        'fail'     => 'Extension <strong>:extension</strong> can\'t be disabled.',
+        'disabled' => 'Extension <strong>:extension</strong> is not enabled!'
     ),
     'update' => array(
-        'success' => 'Extension <b>:extension</b> was successfully updated.'
+        'success' => 'Extension <strong>:extension</strong> was successfully updated.'
     ),
 
 
@@ -59,13 +59,13 @@ return array(
      * Other messages.
      * -----------------------------------------
      */
-    'not_found'         => 'Extension <b>:extension</b> was not found!',
+    'not_found'         => 'Extension <strong>:extension</strong> was not found!',
     'invalid_slug'      => 'Invalid slug passed.',
     'invalid_extension' => 'Invalid extension properties passed.',
-    'missing_files'     => 'Extension <b>:extension</b> required files are missing',
-    'invalid_file'      => 'Extension <b>:extension</b> doesn\'t have a valid extension.php file',
-    'invalid_routes'    => 'Extension <b>:extension</b> "routes" must be a function / closure',
-    'invalid_listeners' => 'Extension <b>:extension</b> "listeners" must be a function / closure',
+    'missing_files'     => 'Extension <strong>:extension</strong> required files are missing',
+    'invalid_file'      => 'Extension <strong>:extension</strong> doesn\'t have a valid extension.php file',
+    'invalid_routes'    => 'Extension <strong>:extension</strong> "routes" must be a function / closure',
+    'invalid_listeners' => 'Extension <strong>:extension</strong> "listeners" must be a function / closure',
     'invalid_filter'    => 'Invalid extension filter provided.',
     'dependencies'      => 'There is an error with this extension dependencies!',
     'is_core'           => 'This is a core extension, therefore you can\'t do any changes to it',

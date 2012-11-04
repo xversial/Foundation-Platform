@@ -25,29 +25,26 @@
  * --------------------------------------------------------------------------
  */
 return array(
-    'back'        => 'Back',
-    'create'      => 'Create',
-    'create_exit' => 'Create & Exit',
-    'update'      => 'Save Changes',
-    'update_exit' => 'Save Changes & Exit',
-    'cancel'      => 'Cancel',
-    'delete'      => 'Delete',
-    'enable'      => 'Enable',
-    'disable'     => 'Disable',
-    'done'        => 'Done',
-    'edit'        => 'Edit',
-    'finished'    => 'Finished',
-    'view'        => 'View',
-
-    'login'          => 'Sign In',
-    'register'       => 'Join Platform',
-    'reset_password' => 'Reset',
-
+    'back'           => 'Back',
+    'create'         => 'Create',
+    'update'         => 'Save Changes',
+    'cancel'         => 'Cancel',
+    'delete'         => 'Delete',
+    'enable'         => 'Enable',
+    'disable'        => 'Disable',
+    'edit'           => 'Edit',
+    'view'           => 'View',
+    'details'        => 'Details',
+    'reset_changes'  => 'Reset Changes',
+    'done'           => 'Done',
     'loading'        => 'Loading...',
     'complete'       => 'Complete',
+    'finished'       => 'Finished',
     'saved'          => 'Saved',
     'deleted'        => 'Deleted',
     'updated'        => 'Updated',
-    'details'        => 'Details',
-    'reset_changes'  => 'Reset Changes'
+
+    #'login'          => 'Sign In',
+    #'register'       => 'Join Platform',
+    #'reset_password' => 'Reset'
 );

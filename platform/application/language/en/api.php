@@ -25,7 +25,7 @@
  * --------------------------------------------------------------------------
  */
 return array(
-    // When an invalid URI was provided to the API.
+    // When an invalid URI is provided to the API.
     //
     'invalid_uri' => 'An invalid URI [:uri] was provided to the API',
 
