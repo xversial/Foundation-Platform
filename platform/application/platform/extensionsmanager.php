@@ -1940,7 +1940,13 @@ class ExtensionsManager
         // We load in all controllers for the overriden
         // extensions, because most likely this extension's
         // controllers extend it.
-        $this->load_overridden_controllers_recursively($this->get($this->convert_slug($bundle)));
+        try
+        {
+            $this->load_overridden_controllers_recursively($this->get($this->convert_slug($bundle)));
+        } catch (Exception $e)
+        {
+            return false;
+        }
 
         // Traditional resolve
         if ($resolve = Controller::resolve($bundle, $controller))

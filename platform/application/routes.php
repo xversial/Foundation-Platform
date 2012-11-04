@@ -40,15 +40,15 @@ Route::any(ADMIN . '/(:any?)/(:any?)/(:any?)(/.*)?', function($handle = 'dashboa
     //
     if ($controller and ($controller_instance = Platform::extensions_manager()->resolve_controller($bundle, 'admin.' . $controller)))
     {
-        $method          = (($action) ?: 'index');
-        $params          = explode('/', substr($params, 1));
-        $name            = 'admin.' . $controller;
+        $method = (($action) ?: 'index');
+        $params = explode('/', substr($params, 1));
+        $name   = 'admin.' . $controller;
     }
     elseif ($controller_instance = Platform::extensions_manager()->resolve_controller($bundle, 'admin.' . $handle))
     {
-        $method          = (($controller) ?: 'index');
-        $params          = explode('/', $action.$params);
-        $name            = 'admin.' . $handle;
+        $method = (($controller) ?: 'index');
+        $params = explode('/', $action.$params);
+        $name   = 'admin.' . $handle;
     }
     else
     {
