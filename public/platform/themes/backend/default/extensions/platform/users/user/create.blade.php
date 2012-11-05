@@ -5,6 +5,12 @@
     {{ Lang::line('platform/users::general.users.create.title') }}
 @endsection
 
+<!-- Queue Styles | e.g Theme::queue_asset('name', 'path_to_css', 'dependency')-->
+
+<!-- Styles -->
+@section('styles')
+@endsection
+
 <!-- Queue Scripts -->
 {{ Theme::queue_asset('validate', 'js/vendor/platform/validate.js', 'jquery') }}
 

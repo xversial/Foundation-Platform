@@ -8,8 +8,16 @@
 <!-- Queue Styles -->
 {{ Theme::queue_asset('themes','platform/themes::css/themes.less', 'style') }}
 
+<!-- Styles -->
+@section('styles')
+@endsection
+
 <!-- Queue Scripts -->
 {{ Theme::queue_asset('themes','platform/themes::js/themes.js', 'jquery') }}
+
+<!-- Scripts -->      
+@section('scripts')      
+@endsection
 
 <!-- Page Content -->
 @section('content')
