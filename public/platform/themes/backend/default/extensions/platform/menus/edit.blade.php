@@ -9,7 +9,7 @@
 {{ Theme::queue_asset('menus', 'platform/menus::css/menus.less', 'style') }}
 
 <!-- Styles -->
-@section ('styles')
+@section('styles')
 @endsection
 
 <!-- Queue Scripts -->

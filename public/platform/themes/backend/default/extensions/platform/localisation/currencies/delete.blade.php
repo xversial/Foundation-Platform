@@ -2,7 +2,19 @@
 
 <!-- Page Title -->
 @section('title')
-    {{ Lang::line('platform/localisation::currencies/general.title')->get() }}
+    {{ Lang::line('platform/localisation::currencies/general.title') }}
+@endsection
+
+<!-- Queue Styles | e.g Theme::queue_asset('name', 'path_to_css', 'dependency')-->
+
+<!-- Styles -->
+@section('styles')
+@endsection
+
+<!-- Queue Scripts | e.g. Theme::queue_asset('name', 'path_to_js', 'dependency')-->
+
+<!-- Scripts -->      
+@section('scripts')      
 @endsection
 
 <!-- Page Content -->
@@ -34,15 +46,15 @@
         <input type="hidden" name="{{ Session::csrf_token }}" value="{{ Session::token() }}">
 
         <div class="alert alert-error">
-            <h3>{{ Lang::line('general.warning')->get() }}</h3>
+            <h3>{{ Lang::line('general.warning') }}</h3>
 
             @if ( $currency['default'] )
-            <p>{{ Lang::line('platform/localisation::currencies/message.delete.being_used', array('currency' => $currency['name']))->get() }}</p>
+            <p>{{ Lang::line('platform/localisation::currencies/message.delete.being_used', array('currency' => $currency['name'])) }}</p>
             @else
-            <p>{{ Lang::line('platform/localisation::currencies/message.delete.confirm', array('currency' => $currency['name']))->get() }}</p>
+            <p>{{ Lang::line('platform/localisation::currencies/message.delete.confirm', array('currency' => $currency['name'])) }}</p>
 
             <button class="btn btn-danger"><i class="icon-ok icon-white"></i> Delete</button>
-            <a href="{{ URL::to_admin('localisation/currencies') }}" class="btn btn-success"><i class="icon-remove icon-white"></i> {{ Lang::line('button.cancel')->get() }}</a>
+            <a href="{{ URL::to_admin('localisation/currencies') }}" class="btn btn-success"><i class="icon-remove icon-white"></i> {{ Lang::line('button.cancel') }}</a>
             @endif
         </div>
     </form>

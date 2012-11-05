@@ -5,9 +5,19 @@
     {{ Lang::line('platform/localisation::languages/general.title') }}
 @endsection
 
+<!-- Queue Styles | e.g Theme::queue_asset('name', 'path_to_css', 'dependency')-->
+
+<!-- Styles -->
+@section('styles')
+@endsection
+
 <!-- Queue Scripts -->
 {{ Theme::queue_asset('table', 'js/vendor/platform/table.js', 'jquery') }}
 {{ Theme::queue_asset('languages', 'platform/localisation::js/languages.js', 'jquery') }}
+
+<!-- Scripts -->      
+@section('scripts')      
+@endsection
 
 <!-- Page Content -->
 @section('content')
