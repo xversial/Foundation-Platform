@@ -11,20 +11,21 @@
  * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
  *
  * @package    Platform
- * @version    1.0.3
+ * @version    1.1.0
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
  * @copyright  (c) 2011 - 2012, Cartalyst LLC
  * @link       http://cartalyst.com
  */
 
+class [[namespace_underscore]]_[[extension_classified]]_Controller extends Public_Controller
+{
+	/**
+	 * Index view, responds to the main public route for
+	 * the extension.
+	 */
+	public function get_index()
+	{
 
-/*
- * --------------------------------------------------------------------------
- * Register some namespaces.
- * --------------------------------------------------------------------------
- */
-Autoloader::namespaces(array(
-	'[[namespace]]'          => __DIR__ . DS . 'models'
-	'[[namespace]]\\Widgets' => __DIR__ . DS . 'widgets'
-));
+	}
+}

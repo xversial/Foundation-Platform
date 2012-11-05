@@ -32,8 +32,15 @@ class Platform_Developers_API_Developers_Controller extends API_Controller
 		$directory  = $filesystem->directory();
 
 		// Properties
-		$vendor    = Input::get('vendor');
-		$extension = Input::get('extension');
+		$name         = Input::get('name');
+		$author       = Input::get('author');
+		$description  = Input::get('description', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.');
+		$version      = Input::get('version', '1.0');
+		$vendor       = Input::get('vendor');
+		$extension    = Input::get('extension');
+		$handles      = Input::get('handles', $extension);
+		$dependencies = Input::get('dependencies', array());
+		$overrides    = Input::get('overrides', array());
 
 		// Get root directory for created extension cache
 		$root_directory = $this->create_root_directory();
@@ -46,6 +53,18 @@ class Platform_Developers_API_Developers_Controller extends API_Controller
 
 		// We'll copy it over to the real directory
 		$this->copy_contents($extension_stub_directory, $extension_directory);
+
+		// Now, let's move the admin controller to the right filename
+		if ($file->exists($admin_controller = $extension_directory.DS.'controllers'.DS.'admin'.DS.'admin.php'))
+		{
+			$file->move($admin_controller, dirname($admin_controller).DS.$extension.'.php');
+		}
+
+		// And the same with the public controller
+		if ($file->exists($public_controller = $extension_directory.DS.'controllers'.DS.'public.php'))
+		{
+			$file->move($public_controller, dirname($public_controller).DS.$extension.'.php');
+		}
 
 		// Now, the theme working directory
 		$theme_backend_directory  = $this->create_theme_backend_directory($root_directory, $vendor, $extension);
@@ -61,8 +80,39 @@ class Platform_Developers_API_Developers_Controller extends API_Controller
 
 		// Right, now we have the root directory, we need to recursively write out the variables
 		$this->write_variables_recursively($root_directory, array(
-			'vendor'    => $vendor,
-			'extension' => $extension,
+			'name'                 => $name,
+			'author'               => $author,
+			'description'          => $description,
+			'version'              => $version,
+			'vendor'               => $vendor,
+			'extension'            => $extension,
+			'extension_classified' => Str::classify($extension),
+			'namespace'            => str_replace('_', '\\', Str::classify($vendor.'_'.$extension)),
+			'namespace_underscore' => Str::classify($vendor.'_'.$extension),
+			'slug_code'            => $vendor.'.'.$extension,
+			'slug_designer'        => $vendor.ExtensionsManager::VENDOR_SEPARATOR.$extension,
+			'handles'              => $handles,
+			'dependencies'         => ($dependencies) ?
+
+				// Have dependencies?
+				'array('.implode(', ', array_map(function($override)
+				{
+					return '\''.$override.'\'';
+				}, $dependencies)).')' :
+
+				// Don't have dependencies
+				'array()',
+
+			'overrides'            => ($overrides) ?
+
+				// Have overrides?
+				'array('.implode(', ', array_map(function($override)
+				{
+					return '\''.$override.'\'';
+				}, $overrides)).')' :
+
+				// Don't have overrides
+				'array()',
 		));
 
 		// Create the zip
@@ -145,33 +195,37 @@ class Platform_Developers_API_Developers_Controller extends API_Controller
 
 	public function write_variables_recursively($root_directory, array $variables)
 	{
-		$items = new FilesystemIterator($root_directory, FilesystemIterator::SKIP_DOTS);
+		// Prepare data
+		$items              = new FilesystemIterator($root_directory, FilesystemIterator::SKIP_DOTS);
+		$file               = Filesystem::make('native')->file();
+		$prepared_variables = array();
+		$variable_start     = $this->variable_start;
+		$variable_end       = $this->variable_end;
+
+		foreach ($variables as $name => $value)
+		{
+			$prepared_variables[$variable_start.$name.$variable_end] = $value;
+		}
 
 		foreach ($items as $item)
 		{
+			$real_path = $item->getRealPath();
+
 			if ($item->isDir())
 			{
-				$this->write_variables_recursively($item->getRealPath(), $variables);
+				$this->write_variables_recursively($real_path, $variables);
 			}
 			else
 			{
-				$tmp_variables = array_flip($variables);
+				// // Load the view
+				// $view     = View::make('path: '.$real_path, $variables);
+				// $compiled = Blade::compile($view);
 
-				$variable_start = $this->variable_start;
-				$variable_end   = $this->variable_end;
+				// Filesystem::make('native')->file()->write($real_path, $compiled);
 
-				$tmp_variables = array_map(function($value) use ($variable_start, $variable_end)
-				{
-					return $variable_start.$value.$variable_end;
-				}, $tmp_variables);
-
-				// Save the array_flip, we reverse our replacements
-				$result = str_replace(array_values($tmp_variables), array_keys($tmp_variables), File::get($item->getRealPath()));
-
-				if ($result)
-				{
-					File::put($item->getRealPath(), $result);
-				}
+				// Do our replacements
+				$result = str_replace(array_keys($prepared_variables), array_values($prepared_variables), $file->contents($real_path));
+				$file->write($real_path, $result);
 			}
 		}
 	}

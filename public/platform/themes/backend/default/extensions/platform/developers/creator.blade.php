@@ -6,10 +6,10 @@
 @endsection
 
 <!-- Queue Styles -->
-{{ Theme::queue_asset('themes','platform/themes::css/themes.less', 'style') }}
 
 <!-- Queue Scripts -->
-{{ Theme::queue_asset('themes','platform/themes::js/themes.js', 'jquery') }}
+{{ Theme::queue_asset('jquery-helpers', 'js/vendor/platform/helpers.js', 'jquery') }}
+{{ Theme::queue_asset('creator','platform/developers::js/creator.js', array('jquery', 'jquery-helpers')) }}
 
 <!-- Page Content -->
 @section('content')
@@ -49,25 +49,61 @@
                 </p>
 
                 <div class="control-group">
-                    <label class="control-label" for="form-extension">Name</label>
+                    <label class="control-label" for="form-name">Name</label>
                     <div class="controls">
                         <div class="input-append">
-                            <input type="text" name="extension" id="form-extension" required>
+                            <input type="text" name="name" id="form-name" required>
                             <span class="add-on">
                                 <i class="icon-font"></i>
                             </span>
+                        </div>
+                        <div class="help-block">
+                            A user friendly name describing the extension.
                         </div>
                     </div>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label" for="form-extension">Author</label>
+                    <label class="control-label" for="form-author">Author</label>
                     <div class="controls">
                         <div class="input-append">
-                            <input type="text" name="extension" id="form-extension" required>
+                            <input type="text" name="author" id="form-author" required>
                             <span class="add-on">
-                                <i class="icon-font"></i>
+                                <i class="icon-user"></i>
                             </span>
+                        </div>
+                        <div class="help-block">
+                            Who gets credit for this extension?
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="form-description">Description</label>
+                    <div class="controls">
+                        <div class="input-append">
+                            <input type="text" name="description" id="form-description">
+                            <span class="add-on">
+                                <i class="icon-align-left"></i>
+                            </span>
+                        </div>
+                        <div class="help-block">
+                            A short, one or two sentence description identifying your extension.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="form-version">Version</label>
+                    <div class="controls">
+                        <div class="input-append">
+                            <input type="text" name="version" id="form-version" required pattern="^(\d{1,2})(\.)?(\d{1,2})?(\.)?(\d{1,2})?$">
+                            <span class="add-on">
+                                <i class="icon-align-left"></i>
+                            </span>
+                        </div>
+                        <div class="help-block">
+                            We use <a href="http://php.net/manual/en/function.version-compare.php" target="_blank"><kbd>version_compare()</kbd></a> when dealing with your extensions. We suggest 1.0 is a good starting version.
                         </div>
                     </div>
                 </div>
@@ -133,6 +169,49 @@
                                     </span>&nbsp;
                                 @endforeach
                             </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="form-dependencies">Dependencies</label>
+                    <div class="controls">
+                        <div class="input-append">
+                            <textarea name="dependencies" id="form-dependencies" class="input-large" rows="4" placeholder="No dependencies"></textarea>
+                            <!-- <select name="dependencies" id="form-dependencies" class="input-xlarge" size="{{ count($extensions) * 2 }}" multiple>
+                                @foreach ($extensions as $extension_name => $vendors)
+                                    <optgroup label="{{ $extension_name }}">
+                                        @foreach ($vendors as $vendor_name => $extension)
+                                            <option value="{{ array_get($extension, 'info.slug') }}">
+                                                {{ array_get($extension, 'info.slug') }}
+                                            </option>
+                                        @endforeach
+                                    </optgroup>
+                                @endforeach
+                            </select> -->
+                        </div>
+                        <div class="help-block">
+                            When installing this extension, you can specify any dependences it has. This will ensure those extensions are ready to go when you install this extension. We refer to extensions as a combination of their extension / slug. In code, the syntax for an extension is <kbd>vendor.extension</kbd>. <span id="created-slug" class="hide">This means yours is <strong id="created-slug-vendor"></strong>.<strong id="created-slug-extension"></strong>.</span> Please enter one extension per line. The following extensions are in your Platform installation (though not necessarily installed and enabled):
+                            <br>
+                            @foreach ($extensions as $extension_name => $vendors)
+                                @foreach ($vendors as $vendor_name => $extension)
+                                    <span class="label">
+                                        <kbd>{{ array_get($extension, 'info.slug') }}</kbd>
+                                    </span>&nbsp;
+                                @endforeach
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="form-overrides">Overrides</label>
+                    <div class="controls">
+                        <div class="input-append">
+                            <textarea name="overrides" id="form-overrides" class="input-large" rows="4" placeholder="No overrides"></textarea>
+                        </div>
+                        <div class="help-block">
+                            When creating an extension, you may wish to override another extension. Overrides work on the URL / API level (because this level isn't concerend with who makes an extension). For example, if your extension is <kbd>users</kbd>, you may wish to override <kbd>platform.users</kbd> so that your extension gets the <kbd>/users</kbd> URL and API routes. This is cascading, so that if your extension does not contain the required controller for a route, it will fallback to the extension you override. Additionally you are not required to override an extension with the same name, you may override any extension(s) you would like. Please enter one extension per line.
                         </div>
                     </div>
                 </div>

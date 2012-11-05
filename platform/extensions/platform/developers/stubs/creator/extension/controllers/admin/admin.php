@@ -11,20 +11,25 @@
  * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
  *
  * @package    Platform
- * @version    1.0.3
+ * @version    1.1.0
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
  * @copyright  (c) 2011 - 2012, Cartalyst LLC
  * @link       http://cartalyst.com
  */
 
+class [[namespace_underscore]]_Admin_[[extension_classified]]_Controller extends Admin_Controller
+{
+	/**
+	 * Index view, responds to the main admin route for
+	 * the extension.
+	 */
+	public function get_index()
+	{
+		$data = array(
+			'unique_id' => uniqid(),
+		);
 
-/*
- * --------------------------------------------------------------------------
- * Register some namespaces.
- * --------------------------------------------------------------------------
- */
-Autoloader::namespaces(array(
-	'[[namespace]]'          => __DIR__ . DS . 'models'
-	'[[namespace]]\\Widgets' => __DIR__ . DS . 'widgets'
-));
+		return View::make('[[slug_designer]]::index', $data);
+	}
+}

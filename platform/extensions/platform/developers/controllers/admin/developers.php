@@ -65,11 +65,30 @@ class Platform_Developers_Admin_Developers_Controller extends Admin_Controller
 	public function post_creator()
 	{
 		$zip = API::post('developers/create', array(
-			'vendor'    => Input::get('vendor'),
-			'extension' => Input::get('extension'),
+
+			// Send through properties of the extension
+			'name'         => Input::get('name'),
+			'author'       => Input::get('author'),
+			'description'  => Input::get('description'),
+			'version'      => Input::get('version'),
+			'vendor'       => Input::get('vendor'),
+			'extension'    => Input::get('extension'),
+			'dependencies' => array_map(function($dependency)
+				{
+					return trim($dependency);
+				}, explode(PHP_EOL, Input::get('dependencies'))),
+			'overrides' => array_map(function($override)
+				{
+					return trim($override);
+				}, explode(PHP_EOL, Input::get('overrides'))),
+
+			// Tell the API how we want our extension
+			// returned to us. We can either base64 encode
+			// or utf-8 encode the ZIP contents.
 			'encoding'  => 'base64',
 		));
 
+		// Check we have valid contents
 		if (($contents = base64_decode($zip)) === false)
 		{
 			Platform::message()->error(Lang::line('platform/developers::messages.creator.decode_fail'));
@@ -78,9 +97,9 @@ class Platform_Developers_Admin_Developers_Controller extends Admin_Controller
 		}
 
 		// The name the ZIP should get
-		$name = 'extension.zip';
+		$name = sprintf('%s-%s.zip', Input::get('vendor', 'vendor'), Input::get('extension', 'extension'));
 
-		// Let's build some headers up
+		// Let's build some headers up to allow us to stream the file
 		$headers = array(
 			'Content-Description'       => 'File Transfer',
 			'Content-Type'              => File::mime('zip'),
