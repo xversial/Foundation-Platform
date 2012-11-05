@@ -62,6 +62,11 @@ if (platform == undefined)
 			// hide overlay and processing block
 			self.$process.css('display', 'none');
 
+			if ( ! data.content)
+			{
+				data.content = '<tr><td colspan="'+self.$elem.find('th').length+'">No Data Found</td></tr>';
+			}
+
 			self.$elemBody.html(data.content);
 			self.buildPaging(data.paging, data.count_filtered);
 		},
