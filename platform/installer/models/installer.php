@@ -103,7 +103,6 @@ class Installer
             // Stub (template file) directories
             //
             Bundle::path('installer') . 'stubs',
-            path('bundle') . 'filesystem' . DS . 'config',
             path('extensions') . 'platform' . DS . 'developers' . DS . 'stubs',
 
             // Themes.
@@ -116,7 +115,8 @@ class Installer
         $files = array(
             path('app') . 'config' . DS . 'application' . EXT,
             path('app') . 'config' . DS . 'database' . EXT,
-            path('app') . 'config' . DS . 'platform' . EXT
+            path('app') . 'config' . DS . 'platform' . EXT,
+            path('bundle') . 'filesystem' . DS . 'config' . DS . 'filesystem' . EXT
         );
 
         // Loop through the directories.
