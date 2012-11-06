@@ -8,9 +8,6 @@
 		if ( ! $().nestySortable) {
 			$.error('$.menuSortable requires $.nestySortable');
 		}
-		if ( ! $().slugify) {
-			$.error('$.menuSortable requires $.slugify');
-		}
 
 		var that = this;
 
@@ -38,6 +35,7 @@
 				rootSelector : '#menu-slug',
 
 				// Root value
+				_root: null,
 				get root() {
 					if (this._root === null) {
 						var value = $(this.rootSelector).val();
@@ -49,7 +47,6 @@
 				set root(value) {
 					this._root = value;
 				},
-				_root         : null,
 
 				// New selector
 				get newSelector() {
@@ -251,11 +248,9 @@
 
 				if (value) {
 					var slug,
-					    prepend,
 					    uriSeparator = '/';
-					if ((slug = slugify(value, uriSeparator)) && (prepend = slugPrepend())) {
-						prepend = prepend.replace(separator, uriSeparator);
-						$(that.options.nestySortable.fields.uri.newSelector).val(prepend+slug)
+					if (slug = slugify(value, uriSeparator)) {
+						$(that.options.nestySortable.fields.uri.newSelector).val(slug)
 						    .trigger('blur')
 					}
 				}
