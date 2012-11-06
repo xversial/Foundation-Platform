@@ -107,6 +107,25 @@ class Platform_Menus_v1_1_0
                 $menu->type = Menu::TYPE_STATIC;
 			}
 
+            switch ($menu->slug)
+            {
+                case 'main-login':
+                    $menu->class = 'icon-signin';
+                    break;
+                case 'main-logout':
+                    $menu->class = 'icon-signout';
+                    break;
+                case 'main-admin-dashboard':
+                    $menu->class = 'icon-cog';
+                    break;
+                case 'main-register':
+                    $menu->class = 'icon-pencil';
+                    break;
+                case 'main-home':
+                    $menu->class = 'icon-home';
+                    break;
+            }
+
             // Save all menu items to update the columns
 			$menu->save();
 		}
