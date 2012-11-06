@@ -71,18 +71,14 @@ class Platform_Menus_v1_0_1
          * # 2) Update the menu items.
          * --------------------------------------------------------------------------
          */
+
 		// Get the admin menu.
 		//
 		$admin_menu    = Menu::admin_menu();
-		$admin_menu_id = $admin_menu->{Menu::nesty_col('tree')};
 
 		// Update the system class.
 		//
-		$system = Menu::find(function($query) use ($admin_menu_id)
-		{
-			return $query->where('slug', '=', 'admin-system')
-			             ->where(Menu::nesty_col('tree'), '=', $admin_menu_id);
-		});
+		$system = Menu::find('admin-system');
 
 		if ($system)
 		{
@@ -92,11 +88,7 @@ class Platform_Menus_v1_0_1
 
 		// Update the menus class.
 		//
-		$menus = Menu::find(function($query) use ($admin_menu_id)
-		{
-			return $query->where('slug', '=', 'admin-menus')
-			             ->where(Menu::nesty_col('tree'), '=', $admin_menu_id);
-		});
+		$menus = Menu::find('admin-menus');
 
 		if ($menus)
 		{
