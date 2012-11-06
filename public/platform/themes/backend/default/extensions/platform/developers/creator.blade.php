@@ -84,7 +84,7 @@
                         <div class="input-append">
                             <input type="text" name="description" id="form-description">
                             <span class="add-on">
-                                <i class="icon-align-left"></i>
+                                <i class="icon-info-sign"></i>
                             </span>
                         </div>
                         <div class="help-block">
@@ -99,7 +99,7 @@
                         <div class="input-append">
                             <input type="text" name="version" id="form-version" required pattern="^(\d{1,2})(\.)?(\d{1,2})?(\.)?(\d{1,2})?$">
                             <span class="add-on">
-                                <i class="icon-align-left"></i>
+                                <i class="icon-leaf"></i>
                             </span>
                         </div>
                         <div class="help-block">
