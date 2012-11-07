@@ -31,8 +31,8 @@ use Platform\Menus\Menu;
  * --------------------------------------------------------------------------
  * Install Class v1.1.0
  * --------------------------------------------------------------------------
- * 
- * 
+ *
+ *
  *
  * @package    Platform
  * @author     Cartalyst LLC
@@ -121,9 +121,6 @@ class Platform_Menus_v1_1_0
                 case 'main-register':
                     $menu->class = 'icon-pencil';
                     break;
-                case 'main-home':
-                    $menu->class = 'icon-home';
-                    break;
             }
 
             // Save all menu items to update the columns
@@ -139,7 +136,13 @@ class Platform_Menus_v1_1_0
         $menus = array(
             'admin',
             'admin-system',
-            'admin-menus'
+            'admin-menus',
+            'main',
+            'main-login',
+            'main-logout',
+            'main-register',
+            'main-home',
+            'main-admin-dashboard'
         );
         foreach ($menus as $slug)
         {
@@ -184,7 +187,13 @@ class Platform_Menus_v1_1_0
         $menus = array(
             'admin',
             'admin-system',
-            'admin-menus'
+            'admin-menus',
+            'main',
+            'main-login',
+            'main-logout',
+            'main-register',
+            'main-home',
+            'main-admin-dashboard'
         );
         foreach ($menus as $slug)
         {

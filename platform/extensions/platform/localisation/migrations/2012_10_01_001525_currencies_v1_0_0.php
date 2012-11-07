@@ -31,7 +31,7 @@ use Platform\Menus\Menu;
  * --------------------------------------------------------------------------
  * Currencies Install Class v1.0.0
  * --------------------------------------------------------------------------
- * 
+ *
  * Currencies installation.
  *
  * @package    Platform
@@ -177,7 +177,8 @@ class Platform_Localisation_Currencies_v1_0_0
             'slug'          => 'admin-currencies',
             'uri'           => 'localisation/currencies',
             'user_editable' => 0,
-            'status'        => 1
+            'status'        => 1,
+            'class'         => 'icon-money'
         ));
         $currencies_menu->last_child_of($localisation_menu);
     }
