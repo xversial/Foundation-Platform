@@ -208,14 +208,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>2. Optional</legend>
-
-                <div class="control-group">
-                    <label class="control-label">Vendor</label>
-                    <div class="controls">
-                        <input type="text" name="a" required>
-                    </div>
-                </div>
+                <br>
 
                 <div class="control-group">
                     <div class="controls">
