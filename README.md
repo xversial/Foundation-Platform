@@ -6,7 +6,7 @@ Platform is an application base, a bootstrap for Laravel. The fundamentals + a f
 
 
 * Fully featured authentication & authorization
-* Twitter Bootstrap 2.1.0 Ready
+* Twitter Bootstrap 2.1.* Ready w/ HTML5boilerplate & Font Awesome icons.
 * Public/Admin views ready w/navigation
 * Included Extensions
   * User/Group management + permissions
@@ -15,11 +15,14 @@ Platform is an application base, a bootstrap for Laravel. The fundamentals + a f
   * Themes manager
   * Dashboard
   * Extension manager
+  * Localisation
+  * Developer Tools - Extension Creator
+  * Pages (content management system)
 * Powerful Extension System
 * widgets
 * plugins
 * Awesome API
-* Laravel 3.2.3
+* Laravel 3.2.11
 
 [Official website & documentation](http://www.getplatform.com)
 
