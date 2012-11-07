@@ -150,17 +150,22 @@ class Platform_Developers_API_Developers_Controller extends API_Controller
 			RecursiveIteratorIterator::SELF_FIRST
 		);
 
+		$replacements = array(
+			$root_directory.DS => '',
+			DS                 => '/', // Zips don't like \ on Windows.
+		);
+
 		foreach ($iterator as $item)
 		{
 			$path = $item->getRealPath();
 
 			if ($item->isDir())
 			{
-				$zip->addEmptyDir(str_replace($root_directory.DS, '', $path));
+				$zip->addEmptyDir(str_replace(array_keys($replacements), array_values($replacements), $path));
 			}
 			else
 			{
-				$zip->addFile($path, str_replace($root_directory.DS, '', $path));
+				$zip->addFile($path, str_replace(array_keys($replacements), array_values($replacements), $path));
 			}
 		}
 

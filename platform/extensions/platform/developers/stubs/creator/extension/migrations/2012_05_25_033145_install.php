@@ -49,7 +49,7 @@ class [[namespace_underscore]]_Install
         $[[extension]] = new Menu(array(
 
             // The name as it appears
-            'name'          => 'Users',
+            'name'          => '[[name]]',
 
             // The extension that owns it
             'extension'     => '[[extension]]',
