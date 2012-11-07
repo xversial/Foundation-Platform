@@ -159,23 +159,40 @@ class Platform_Menus_API_Menus_Controller extends API_Controller
 
 			try
 			{
-				$menu = Menu::from_hierarchy_array($menu['id'], $children, function($root_item) use ($name, $slug)
+				// Let's determine if the children are just slugs, or are indeed
+				// arrays. If they're arrays, the entire child is being updated.
+				// If not, we're just setting the order.
+				$first_child = reset($children);
+
+				// Updating entire child.
+				if (is_array($first_child))
 				{
-					if ($name and ($root_item->user_editable))
+					$menu = Menu::from_hierarchy_array($menu['id'], $children, function($root_item) use ($name, $slug)
 					{
-						$root_item->name = $name;
-					}
+						if ($name and ($root_item->user_editable))
+						{
+							$root_item->name = $name;
+						}
 
-					if ($slug and ($root_item->user_editable))
-					{
-						$root_item->slug = $slug;
-					}
+						if ($slug and ($root_item->user_editable))
+						{
+							$root_item->slug = $slug;
+						}
 
-					return $root_item;
-				});
+						return $root_item;
+					});
 
-				// Load in children
-				$menu->children();
+					// Load in children
+					$menu->children();
+				}
+
+				// Just updating the order of children.
+				else
+				{
+					echo 'Reording';
+					die();
+					Menu::reorder($children);
+				}
 			}
 			catch (Exception $e)
 			{

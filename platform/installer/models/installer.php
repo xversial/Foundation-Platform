@@ -409,6 +409,28 @@ class Installer
 
     /**
      * --------------------------------------------------------------------------
+     * Function: order_menu()
+     * --------------------------------------------------------------------------
+     *
+     * Orders a menu based on the array passed. The API
+     * isnt' working so this is a workaround.
+     *
+     * @todo     Work out why we can't use API::put('menus/admin')
+     * @access   public
+     * @param    array
+     * @return   boolean
+     */
+    public static function order_menu(array $children)
+    {
+        if (class_exists('Platform\\Menus\\Menu'))
+        {
+            return Platform\Menus\Menu::reorder($children);
+        }
+    }
+
+
+    /**
+     * --------------------------------------------------------------------------
      * Function: remember_step()
      * --------------------------------------------------------------------------
      *

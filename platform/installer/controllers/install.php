@@ -350,6 +350,29 @@ class Installer_Install_Controller extends Installer_Base_Controller
             // Update the settings.
             //
             API::put('settings', array('settings' => $settings));
+
+            // Now everything is installed, let's
+            // arrange the menu items how we need them.
+            $desired_order = array(
+                'admin-dashboard',
+                'admin-pages',
+                'admin-users',
+                'admin-menus',
+                'admin-system' => array(
+                    'admin-settings',
+                    'admin-extensions',
+                    'admin-themes',
+                    'admin-localisation',
+                    'admin-developers',
+                ),
+            );
+
+            /**
+             * Update the menus order.
+             *
+             * @todo     Work out why we can't use API::put('menus/admin')
+             */
+            Installer::order_menu($desired_order);
         }
         catch (APIClientException $e)
         {

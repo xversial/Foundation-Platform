@@ -274,6 +274,107 @@ class Menu extends Nesty
         return $this->children;
     }
 
+    /**
+     * --------------------------------------------------------------------------
+     * Function: reorder_children()
+     * --------------------------------------------------------------------------
+     *
+     * Re-orders menu children based on the array of slugs passed. The slugs
+     * can be of any depth in any menu, however all items must belong to the
+     * same menu. Any children not passed through will be left in their same order,
+     * but put after the re-ordered children.
+     *
+     *  <code>
+     *      Menu::reorder(array(
+     *          'admin-dashboard',
+     *          'admin-pages',
+     *          'admin-users',
+     *          'admin-menus',
+     *          'admin-system' => array(
+     *              'admin-settings',
+     *              'admin-extensions',
+     *              'admin-themes',
+     *              'admin-localisation',
+     *              'admin-developers',
+     *          ),
+     *      ));
+     *  </code>
+     *
+     * @access   public
+     * @param    array  $children
+     * @return   void
+     */
+    public static function reorder(array $children)
+    {
+        // Counter for processed children
+        $i = 0;
+
+        // Last procesed child (we use this in
+        // case a child slug passed doesn't match
+        // a real menu item)
+        $last_processed_child = null;
+
+        // Menu ID
+        $menu_id_attribute = Menu::nesty_col('tree');
+        $menu_id           = null;
+
+        // Parent object
+        $parent = null;
+
+        foreach ($children as $key => $_child)
+        {
+            // Grab the slug
+            $slug = (is_array($_child)) ? $key : $_child;
+
+            // Grab the child
+            if ( ! $child = Menu::find($slug))
+            {
+                continue;
+            }
+
+            // First child? Let's get some
+            // information from the parent object
+            // for our menu
+            if ($i === 0)
+            {
+                $parent  = $child->parent();
+                $menu_id = $parent->{$menu_id_attribute};
+            }
+
+            // Make sure our child is actually from the same menu!
+            if ($child->{$menu_id_attribute} !== $menu_id)
+            {
+                continue;
+            }
+
+            // Right, if we're the first child to be arranged,
+            // let's set this child as the first child of the parent.
+            if ($i === 0)
+            {
+                // echo 'Adding '. $child->slug . ' as first child of '. $parent->slug . '<br>';
+                $child->first_child_of($parent);
+                $last_processed_child = $child;
+            }
+
+            // Otherwise, let's set it as the next sibling of
+            // the last processed child.
+            elseif ($last_processed_child !== null)
+            {
+                // echo 'Adding '. $child->slug . ' as next sibling of '. $last_processed_child->slug . '<br>';
+                $child->next_sibling_of($last_processed_child);
+                $last_processed_child = $child;
+            }
+
+            $i++;
+
+            // Recursive, baby!
+            if (is_array($_child))
+            {
+                static::reorder($_child);
+            }
+        }
+    }
+
 
     /**
      * --------------------------------------------------------------------------
