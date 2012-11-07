@@ -34,6 +34,10 @@
 **Themes:**
 
   * Theme directory structure has been modified in the extension folder
+  * New default themes HTML5boilerplate
+  * Upgraded Twitter Bootstrap 2.1.*
+  * Fixed integration of Font Awesome with Twitter Bootsrap
+  
 
 **Localisation:**
 
