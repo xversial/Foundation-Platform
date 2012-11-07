@@ -31,7 +31,7 @@ use Platform\Menus\Menu;
  * --------------------------------------------------------------------------
  * Countries Install Class v1.0.0
  * --------------------------------------------------------------------------
- * 
+ *
  * Countries installation.
  *
  * @package    Platform
@@ -152,7 +152,8 @@ class Platform_Localisation_Countries_v1_0_0
             'slug'          => 'admin-countries',
             'uri'           => 'localisation/countries',
             'user_editable' => 0,
-            'status'        => 1
+            'status'        => 1,
+            'class'         => 'icon-flag'
         ));
         $countries_menu->last_child_of($localisation_menu);
     }
