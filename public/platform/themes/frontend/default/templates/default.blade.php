@@ -24,7 +24,7 @@
         @widget('platform/themes::options.css')
 
         <!-- Modernizr -->
-		{{ Theme::queue_asset('modernizr', 'js/vendor/modernizr-2.6.1-respond-1.1.0.min.js') }}
+		{{ Theme::queue_asset('modernizr', 'js/vendor/modernizr/modernizr-2.6.1-respond-1.1.0.min.js') }}
 
 		<link rel="shortcut icon" href="{{ Theme::asset('img/favicon.png') }}">
 		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ Theme::asset('img/apple-touch-icon-144x144-precomposed.png') }}">
@@ -68,8 +68,8 @@
 		</div> <!-- /container -->
 
 	<!-- Queue Global Scripts -->
-	{{ Theme::queue_asset('jquery', 'js/vendor/jquery-1.8.2.min.js') }}
-	{{ Theme::queue_asset('platform-url', 'js/vendor/platform-url.js', 'jquery') }}
+	{{ Theme::queue_asset('jquery', 'js/vendor/jquery/jquery-1.8.2.min.js') }}
+	{{ Theme::queue_asset('platform-url', 'js/vendor/platform/url.js', 'jquery') }}
 	{{ Theme::queue_asset('bootstrap-transition', 'js/bootstrap/transition.js', 'jquery') }}
 	{{ Theme::queue_asset('bootstrap-collapse', 'js/bootstrap/collapse.js', 'jquery') }}
 

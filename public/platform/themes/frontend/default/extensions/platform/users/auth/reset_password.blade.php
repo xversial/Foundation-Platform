@@ -12,7 +12,7 @@
 @endsection
 
 <!-- Queue Scripts | e.g. Theme::queue_asset('name', 'path_to_js', 'dependency') -->
-{{ Theme::queue_asset('platform-validate', 'js/vendor/platform-validate.js', 'jquery') }}
+{{ Theme::queue_asset('platform-validate', 'js/vendor/platform/validate.js', 'jquery') }}
 {{ Theme::queue_asset('reset_password', 'users::js/reset_password.js', 'jquery') }}
 
 <!-- Scripts -->
