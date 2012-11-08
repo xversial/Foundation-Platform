@@ -23,7 +23,7 @@
  * --------------------------------------------------------------------------
  * Base Controller Class
  * --------------------------------------------------------------------------
- * 
+ *
  * Base controller.
  *
  * @package    Platform
@@ -43,6 +43,14 @@ class Base_Controller extends Controller
      */
     public $restful = true;
 
+    /**
+     * Whitelisted csrf routes.
+     *
+     * @access    protected
+     * @var       array
+     */
+    protected $whitelist_csrf = array();
+
 
     /**
      * --------------------------------------------------------------------------
@@ -58,7 +66,7 @@ class Base_Controller extends Controller
     {
         // CSRF Protection.
         //
-        $this->filter('before', 'csrf')->on('post');
+        $this->filter('before', 'csrf')->on('post')->except($this->whitelist_csrf);
     }
 
 
