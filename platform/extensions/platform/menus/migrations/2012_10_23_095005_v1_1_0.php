@@ -31,8 +31,8 @@ use Platform\Menus\Menu;
  * --------------------------------------------------------------------------
  * Install Class v1.1.0
  * --------------------------------------------------------------------------
- * 
- * 
+ *
+ *
  *
  * @package    Platform
  * @author     Cartalyst LLC
@@ -107,6 +107,22 @@ class Platform_Menus_v1_1_0
                 $menu->type = Menu::TYPE_STATIC;
 			}
 
+            switch ($menu->slug)
+            {
+                case 'main-login':
+                    $menu->class = 'icon-signin';
+                    break;
+                case 'main-logout':
+                    $menu->class = 'icon-signout';
+                    break;
+                case 'main-admin-dashboard':
+                    $menu->class = 'icon-cog';
+                    break;
+                case 'main-register':
+                    $menu->class = 'icon-pencil';
+                    break;
+            }
+
             // Save all menu items to update the columns
 			$menu->save();
 		}
@@ -120,7 +136,13 @@ class Platform_Menus_v1_1_0
         $menus = array(
             'admin',
             'admin-system',
-            'admin-menus'
+            'admin-menus',
+            'main',
+            'main-login',
+            'main-logout',
+            'main-register',
+            'main-home',
+            'main-admin-dashboard'
         );
         foreach ($menus as $slug)
         {
@@ -165,7 +187,13 @@ class Platform_Menus_v1_1_0
         $menus = array(
             'admin',
             'admin-system',
-            'admin-menus'
+            'admin-menus',
+            'main',
+            'main-login',
+            'main-logout',
+            'main-register',
+            'main-home',
+            'main-admin-dashboard'
         );
         foreach ($menus as $slug)
         {

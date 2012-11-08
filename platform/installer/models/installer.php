@@ -103,7 +103,6 @@ class Installer
             // Stub (template file) directories
             //
             Bundle::path('installer') . 'stubs',
-            path('bundle') . 'filesystem' . DS . 'config',
             path('extensions') . 'platform' . DS . 'developers' . DS . 'stubs',
 
             // Themes.
@@ -116,7 +115,8 @@ class Installer
         $files = array(
             path('app') . 'config' . DS . 'application' . EXT,
             path('app') . 'config' . DS . 'database' . EXT,
-            path('app') . 'config' . DS . 'platform' . EXT
+            path('app') . 'config' . DS . 'platform' . EXT,
+            path('bundle') . 'filesystem' . DS . 'config' . DS . 'filesystem' . EXT
         );
 
         // Loop through the directories.
@@ -404,6 +404,28 @@ class Installer
         // Generate the application key.
         //
         Command::run(array('key:generate'));
+    }
+
+
+    /**
+     * --------------------------------------------------------------------------
+     * Function: order_menu()
+     * --------------------------------------------------------------------------
+     *
+     * Orders a menu based on the array passed. The API
+     * isnt' working so this is a workaround.
+     *
+     * @todo     Work out why we can't use API::put('menus/admin')
+     * @access   public
+     * @param    array
+     * @return   boolean
+     */
+    public static function order_menu(array $children)
+    {
+        if (class_exists('Platform\\Menus\\Menu'))
+        {
+            return Platform\Menus\Menu::reorder($children);
+        }
     }
 
 

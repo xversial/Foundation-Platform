@@ -91,7 +91,7 @@ class Platform_Menus_v1_0_0
         //
         $system = new Menu(array(
             'name'          => 'System',
-            'extension'     => '',
+            'extension'     => 'menus',
             'slug'          => 'admin-system',
             'uri'           => 'settings',
             'user_editable' => 0,
@@ -119,7 +119,7 @@ class Platform_Menus_v1_0_0
         //
         $login = new Menu(array(
             'name'          => 'Login',
-            'extension'     => '',
+            'extension'     => 'menus',
             'slug'          => 'main-login',
             'uri'           => 'login',
             'visibility'    => 2,
@@ -132,7 +132,7 @@ class Platform_Menus_v1_0_0
         //
         $logout = new Menu(array(
             'name'          => 'Logout',
-            'extension'     => '',
+            'extension'     => 'menus',
             'slug'          => 'main-logout',
             'uri'           => 'logout',
             'visibility'    => 1,
@@ -145,7 +145,7 @@ class Platform_Menus_v1_0_0
         //
         $register = new Menu(array(
             'name'          => 'Register',
-            'extension'     => '',
+            'extension'     => 'menus',
             'slug'          => 'main-register',
             'uri'           => 'register',
             'visibility'    => 2,
@@ -158,7 +158,7 @@ class Platform_Menus_v1_0_0
         //
         $register = new Menu(array(
             'name'          => 'Admin Dashboard',
-            'extension'     => '',
+            'extension'     => 'menus',
             'slug'          => 'main-admin-dashboard',
             'uri'           => 'dashboard',
             'visibility'    => 3,

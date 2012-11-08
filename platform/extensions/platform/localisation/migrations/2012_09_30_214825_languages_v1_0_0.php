@@ -31,7 +31,7 @@ use Platform\Menus\Menu;
  * --------------------------------------------------------------------------
  * Languages Install Class v1.0.0
  * --------------------------------------------------------------------------
- * 
+ *
  * Languages installation.
  *
  * @package    Platform
@@ -160,7 +160,8 @@ class Platform_Localisation_Languages_v1_0_0
             'slug'          => 'admin-languages',
             'uri'           => 'localisation/languages',
             'user_editable' => 0,
-            'status'        => 1
+            'status'        => 1,
+            'class'         => 'icon-bullhorn'
         ));
         $languages_menu->last_child_of($localisation_menu);
     }

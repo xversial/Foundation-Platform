@@ -84,7 +84,7 @@
                         <div class="input-append">
                             <input type="text" name="description" id="form-description">
                             <span class="add-on">
-                                <i class="icon-align-left"></i>
+                                <i class="icon-info-sign"></i>
                             </span>
                         </div>
                         <div class="help-block">
@@ -99,7 +99,7 @@
                         <div class="input-append">
                             <input type="text" name="version" id="form-version" required pattern="^(\d{1,2})(\.)?(\d{1,2})?(\.)?(\d{1,2})?$">
                             <span class="add-on">
-                                <i class="icon-align-left"></i>
+                                <i class="icon-leaf"></i>
                             </span>
                         </div>
                         <div class="help-block">
@@ -178,17 +178,6 @@
                     <div class="controls">
                         <div class="input-append">
                             <textarea name="dependencies" id="form-dependencies" class="input-large" rows="4" placeholder="No dependencies"></textarea>
-                            <!-- <select name="dependencies" id="form-dependencies" class="input-xlarge" size="{{ count($extensions) * 2 }}" multiple>
-                                @foreach ($extensions as $extension_name => $vendors)
-                                    <optgroup label="{{ $extension_name }}">
-                                        @foreach ($vendors as $vendor_name => $extension)
-                                            <option value="{{ array_get($extension, 'info.slug') }}">
-                                                {{ array_get($extension, 'info.slug') }}
-                                            </option>
-                                        @endforeach
-                                    </optgroup>
-                                @endforeach
-                            </select> -->
                         </div>
                         <div class="help-block">
                             When installing this extension, you can specify any dependences it has. This will ensure those extensions are ready to go when you install this extension. We refer to extensions as a combination of their extension / slug. In code, the syntax for an extension is <kbd>vendor.extension</kbd>. <span id="created-slug" class="hide">This means yours is <strong id="created-slug-vendor"></strong>.<strong id="created-slug-extension"></strong>.</span> Please enter one extension per line. The following extensions are in your Platform installation (though not necessarily installed and enabled):
@@ -219,14 +208,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>2. Optional</legend>
-
-                <div class="control-group">
-                    <label class="control-label">Vendor</label>
-                    <div class="controls">
-                        <input type="text" name="a" required>
-                    </div>
-                </div>
+                <br>
 
                 <div class="control-group">
                     <div class="controls">

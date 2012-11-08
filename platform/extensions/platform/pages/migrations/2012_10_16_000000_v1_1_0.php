@@ -123,6 +123,7 @@ class Platform_Pages_v1_1_0
             'uri'           => 'pages',
             'user_editable' => 0,
             'status'        => 1,
+            'class'         => 'icon-file'
         ));
         $pages_pages->last_child_of($pages);
 
@@ -136,6 +137,7 @@ class Platform_Pages_v1_1_0
             'uri'           => 'pages/content',
             'user_editable' => 0,
             'status'        => 1,
+            'class'         => 'icon-briefcase'
         ));
         $pages_content->last_child_of($pages);
 
@@ -217,13 +219,16 @@ class Platform_Pages_v1_1_0
         //
         $home = new Menu(array(
             'name'          => 'Home',
-            'extension'     => '',
+            'extension'     => 'menus',
             'slug'          => 'main-home',
             'visibility'    => 0,
             'user_editable' => 1,
             'status'        => 1,
+            'class'         => 'icon-home',
             'type'          => Menu::TYPE_PAGE,
             'page_id'       => $welcome_page_id,
+            'vendor'        => 'platform'
+
         ));
         $home->first_child_of($main);
 

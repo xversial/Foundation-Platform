@@ -13,7 +13,6 @@
 @endsection
 
 <!-- Queue Scripts -->
-{{ Theme::queue_asset('jquery-helpers', 'js/vendor/platform/helpers.js', 'jquery') }}
 {{ Theme::queue_asset('bootstrap-tab', 'js/bootstrap/tab.js', 'jquery') }}
 {{ Theme::queue_asset('bootstrap-toggle', 'js/bootstrap/toggle.js', 'jquery') }}
 {{ Theme::queue_asset('bootstrap-button', 'js/bootstrap/button.js', 'jquery') }}

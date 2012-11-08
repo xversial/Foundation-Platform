@@ -31,7 +31,7 @@ use Platform\Menus\Menu;
  * --------------------------------------------------------------------------
  * Install Class v1.0.1
  * --------------------------------------------------------------------------
- * 
+ *
  * Adds a class to menu items.
  *
  * @package    Platform
@@ -102,7 +102,7 @@ class Platform_Users_v1_0_1
 
         if ($groups_list)
         {
-            $groups_list->class = 'icon-user';
+            $groups_list->class = 'icon-group';
             $groups_list->save();
         }
     }
