@@ -36,7 +36,7 @@ class Directory extends \Filesystem\Driver\Directory
 	 */
 	public function make($path)
 	{
-		return ( ! is_dir($path)) ? mkdir($path, 0777, true) : true;
+		return ( ! is_dir($path)) ? mkdir($path, 0755, true) : true;
 	}
 
 	/**

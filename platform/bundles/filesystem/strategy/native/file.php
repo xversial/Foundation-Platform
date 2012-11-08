@@ -38,7 +38,7 @@ class File extends \Filesystem\Driver\File
 
 		if ( ! is_dir($dir))
 		{
-			mkdir($dir, 0777, true);
+			mkdir($dir, 0755, true);
 		}
 
 		// if contents were passed, add contents and reset pointer
