@@ -228,4 +228,17 @@ Bundle::start('crud');
  * needs to be installed.
  *
  */
-Platform::start();
+try
+{
+    Platform::start();
+}
+catch (Exception $e)
+{
+    Bundle::start('theme');
+
+    $response = new Response(View::make('error.503'), 503);
+    $response->send_headers();
+
+    echo $response;
+    exit;
+}

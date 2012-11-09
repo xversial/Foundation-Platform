@@ -26,7 +26,6 @@
  */
 use Laravel\CLI\Command;
 
-
 /**
  * --------------------------------------------------------------------------
  * Platform Class
@@ -126,6 +125,15 @@ class Platform
         //
         if ( ! static::is_installed() or static::has_update())
         {
+            // If Platform appears to not be installed (because it
+            // can't find any core files / database info) but the
+            // configuration exists, the DB server has probably done
+            // a runner. Let's show a 503
+            if (static::has_config_files())
+            {
+                throw new Exception(Lang::line('platform.failed_configuration')->get(), 503);
+            }
+
             // Start the installer.
             //
             static::start_installer();
@@ -149,18 +157,7 @@ class Platform
         }
     }
 
-
-    /**
-     * --------------------------------------------------------------------------
-     * Function: is_installed()
-     * --------------------------------------------------------------------------
-     *
-     * Determines if Platform has been installed or not.
-     *
-     * @access   public
-     * @return   boolean
-     */
-    public static function is_installed()
+    public static function has_config_files()
     {
         // Check for the database config file.
         //
@@ -176,6 +173,22 @@ class Platform
             }
         }
 
+        return true;
+    }
+
+
+    /**
+     * --------------------------------------------------------------------------
+     * Function: is_installed()
+     * --------------------------------------------------------------------------
+     *
+     * Determines if Platform has been installed or not.
+     *
+     * @access   public
+     * @return   boolean
+     */
+    public static function is_installed()
+    {
         // Check the platform configuration has the version number.
         //
         if ( ! ($version = Config::get('platform.installed_version')))
