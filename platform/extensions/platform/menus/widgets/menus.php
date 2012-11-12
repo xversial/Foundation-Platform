@@ -147,10 +147,6 @@ class Menus
             }
         }
 
-        // Grab the pages.
-        //
-        $pages = $this->pages();
-
         // Now loop through items and take actions based
         // on the item type.
         foreach ($items as &$item)
@@ -161,11 +157,20 @@ class Menus
 
                     // Fallback page URI
                     $item['page_uri'] = '';
-                    
+
+                    // Set Page ID
+                    $page_id = $item['page_id'];
+
+                    // Grab pages
+                    $pages = array_filter($this->pages(), function($page) use ($page_id)
+                    {
+                        return $page['id'] == $page_id;
+                    });
+
                     // Grab the first match for the page
                     if (is_array($page = reset($pages)) and array_key_exists('id', $page))
                     {
-                        $item['page_uri'] = ($page['id'] != Platform::get('platform/pages::default.page')) ? $page['slug'] : '';
+                        $item['page_uri'] = ($page['id'] != Platform::get('platform/pages::default.page')) ? $page['slug'] : '';;
                     }
 
                     break;
