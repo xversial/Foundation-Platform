@@ -14,9 +14,10 @@
 <!-- Queue Scripts -->
 {{ Theme::queue_asset('table', 'js/vendor/platform/table.js', 'jquery') }}
 {{ Theme::queue_asset('countries', 'platform/localisation::js/countries.js', 'jquery') }}
+{{ Theme::queue_asset('bootstrap-modal', 'js/bootstrap/modal.js', 'jquery') }}
 
-<!-- Scripts -->      
-@section('scripts')      
+<!-- Scripts -->
+@section('scripts')
 @endsection
 
 <!-- Page Content -->
@@ -74,4 +75,7 @@
         </div>
     </div>
 </section>
+
+@widget('platform/application::modal.confirm')
+
 @endsection

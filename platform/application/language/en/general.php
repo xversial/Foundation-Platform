@@ -32,5 +32,8 @@ return array(
     'status'     => 'Status',
     'required'   => 'Required',
     'yes'        => 'Yes',
-    'no'         => 'No'
+    'no'         => 'No',
+    'messages'    => array(
+        'delete' => 'You are about to delete this record, Continue?'
+    ),
 );
