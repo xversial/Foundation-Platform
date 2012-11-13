@@ -54,7 +54,7 @@ class Currency extends Crud
     public static $_rules = array(
         'name'   => 'required',
         'code'   => 'required|size:3|unique:currencies,code',
-        'rate'   => 'required',
+        'rate'   => 'required|numeric',
         'sign'   => 'required',
         'status' => 'required'
     );
