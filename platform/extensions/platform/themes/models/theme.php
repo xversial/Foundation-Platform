@@ -255,6 +255,15 @@ class Theme extends Crud
                 return false;
             }
 
+            // Find theme info
+            //
+            $theme_info = BundleTheme::info($type . DS . $name);
+
+            if (empty($theme_info))
+            {
+            	throw new \Exception('Could not decode theme.info file properly in '.$type.DS.$name.'.');
+            }
+
             // Return the theme information.
             //
             return array_merge(array(
@@ -264,7 +273,7 @@ class Theme extends Crud
                 'author'      => null,
                 'version'     => '1.0',
                 'active'      => ( $active === $name ? true : false )
-            ), BundleTheme::info($type . DS . $name));
+            ), $theme_info);
         }
 
         // Initiate an empty array.
@@ -275,6 +284,15 @@ class Theme extends Crud
         //
         foreach ($theme_list as $theme)
         {
+        	// Find theme info
+            //
+            $theme_info = BundleTheme::info($type . DS . $theme);
+
+            if (empty($theme_info))
+            {
+            	throw new \Exception('Could not decode theme.info file properly in '.$type.DS.$theme.'.');
+            }
+
             $themes[ $theme ] = array_merge(array(
                 'theme'       => $theme,
                 'name'        => Str::title($theme),
@@ -282,7 +300,7 @@ class Theme extends Crud
                 'author'      => null,
                 'version'     => '1.0',
                 'active'      => ( $active === $theme ? true : false )
-            ), BundleTheme::info($type . DS . $theme));
+            ), $theme_info);
         }
 
         // Return the themes.

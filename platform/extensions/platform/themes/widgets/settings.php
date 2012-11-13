@@ -27,6 +27,8 @@ namespace Platform\Themes\Widgets;
  * --------------------------------------------------------------------------
  */
 use API,
+	APIClientException,
+	Platform,
     Theme;
 
 
@@ -58,13 +60,29 @@ class Settings
      */
     public function index($settings = null)
     {
-        // Get all themes for the frontend.
-        //
-        $frontend = API::get('themes/frontend', array('organize' => true));
+    	try
+    	{
+	        // Get all themes for the frontend.
+	        //
+	        $frontend = API::get('themes/frontend', array('organize' => true));
+    	}
+    	catch (APIClientException $e)
+    	{
+    		$frontend = array();
+    		Platform::messages()->error($e->getMessage());
+    	}
 
-        // Get all themes for the backend.
-        //
-        $backend = API::get('themes/backend', array('organize' => true));
+    	try
+    	{
+	        // Get all themes for the backend.
+	        //
+	        $backend = API::get('themes/backend', array('organize' => true));
+    	}
+    	catch (APIClientException $e)
+    	{
+    		$backend = array();
+    		Platform::messages()->error($e->getMessage());
+    	}
 
         // Show the form page.
         //

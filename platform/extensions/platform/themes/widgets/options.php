@@ -28,6 +28,7 @@ namespace Platform\Themes\Widgets;
  */
 use API,
     APIClientException,
+    Platform,
     Theme;
 
 
