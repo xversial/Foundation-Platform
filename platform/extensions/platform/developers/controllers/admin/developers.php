@@ -11,7 +11,7 @@
  * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
  *
  * @package    Platform
- * @version    1.0.3
+ * @version    1.1.0
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
  * @copyright  (c) 2011 - 2012, Cartalyst LLC
@@ -38,10 +38,10 @@ class Platform_Developers_Admin_Developers_Controller extends Admin_Controller
 	{
 		// Coming soon is more developer tools. For now,
 		// we'll just go straight to the module creator
-		return Redirect::to_admin('developers/creator');
+		return Redirect::to_admin('developers/extension_creator');
 	}
 
-	public function get_creator()
+	public function get_extension_creator()
 	{
 		// Set the active menu item
 		$this->active_menu('admin-developers-creator');
