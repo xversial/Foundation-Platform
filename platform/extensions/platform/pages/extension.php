@@ -34,7 +34,7 @@ return array(
 		'name'        => 'Pages',
 		'author'      => 'Cartalyst LLC',
 		'description' => 'An extension to manage pages and content.',
-		'version'     => '1.1',
+		'version'     => '1.1.1',
 		'is_core'     => true,
 	),
 

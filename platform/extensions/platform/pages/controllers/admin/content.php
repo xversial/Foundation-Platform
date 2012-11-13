@@ -49,6 +49,7 @@ class Platform_Pages_Admin_Content_Controller extends Admin_Controller
 			'name'    => Input::get('name'),
 			'slug'    => Input::get('slug'),
 			'value'   => Input::get('value'),
+			'status'  => Input::get('status', 1),
 		);
 
 		try
@@ -89,6 +90,7 @@ class Platform_Pages_Admin_Content_Controller extends Admin_Controller
 			'name'    => Input::get('name'),
 			'slug'    => Input::get('slug'),
 			'value'   => Input::get('value'),
+			'status'  => Input::get('status', 1),
 		);
 
 		try

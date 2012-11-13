@@ -6,20 +6,59 @@ class Platform_Pages_Api_Content_Controller extends API_Controller
 {
 	public function get_index($id = false)
 	{
+		$config = Input::get() + array(
+			'where' => array(),
+		);
+
 		try
 		{
 			if ($id == false)
 			{
-				$content = Content::all();
-			}
-			elseif (is_numeric($id))
-			{
-				$content = Content::find($id);
+				$content = Content::all(function($query) use ($config) {
+
+					if ( ! empty($config['where']))
+					{
+						if (is_array($config['where'][0]))
+						{
+							foreach ($config['where'] as $where)
+							{
+								$query = $query->where($where[0], $where[1], $where[2]);
+							}
+						}
+						else
+						{
+							$where = $config['where'];
+							$query = $query->where($where[0], $where[1], $where[2]);
+						}
+					}
+
+					return $query;
+
+				});
 			}
 			else
 			{
-				$content = Content::find(function($query) use ($id) {
-					return $query->where('slug', '=', $id);
+				$content = Content::find(function($query) use ($id, $config) {
+
+					if ( ! empty($config['where']))
+					{
+						if (is_array($config['where'][0]))
+						{
+							foreach ($config['where'] as $where)
+							{
+								$query = $query->where($where[0], $where[1], $where[2]);
+							}
+						}
+						else
+						{
+							$where = $config['where'];
+							$query = $query->where($where[0], $where[1], $where[2]);
+						}
+					}
+
+					$field = ( is_numeric($id)) ? 'id' : 'slug';
+
+					return $query->where($field, '=', $id);
 				});
 			}
 
