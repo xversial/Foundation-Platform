@@ -284,49 +284,6 @@ class Platform_Localisation_Admin_Countries_Controller extends Admin_Controller
     {
         try
         {
-            // Get this country information.
-            //
-            $country = API::get('localisation/country/' . $country_code);
-        }
-        catch (APIClientException $e)
-        {
-            // Set the error message.
-            //
-            Platform::messages()->error($e->getMessage());
-
-            // Set the other error messages.
-            //
-            foreach ($e->errors() as $error)
-            {
-                Platform::messages()->error($error);
-            }
-
-            // Redirect to the countries page.
-            //
-            return Redirect::to_admin('localisation/countries');
-        }
-
-        // Show the page.
-        //
-        return Theme::make('platform/localisation::countries.delete')->with('country', $country);
-    }
-
-
-    /**
-     * --------------------------------------------------------------------------
-     * Function: post_delete()
-     * --------------------------------------------------------------------------
-     *
-     * Country deletion form processing page.
-     *
-     * @access   public
-     * @param    string
-     * @return   mixed
-     */
-    public function post_delete($country_code)
-    {
-        try
-        {
             // Make the request.
             //
             $request = API::delete('localisation/country/' . $country_code);

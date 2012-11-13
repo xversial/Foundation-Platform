@@ -284,49 +284,6 @@ class Platform_Localisation_Admin_Languages_Controller extends Admin_Controller
     {
         try
         {
-            // Get this language information.
-            //
-            $language = API::get('localisation/language/' . $language_code);
-        }
-        catch (APIClientException $e)
-        {
-            // Set the error message.
-            //
-            Platform::messages()->error($e->getMessage());
-
-            // Set the other error messages.
-            //
-            foreach ($e->errors() as $error)
-            {
-                Platform::messages()->error($error);
-            }
-
-            // Redirect to the languages page.
-            //
-            return Redirect::to_admin('localisation/languages');
-        }
-
-        // Show the page.
-        //
-        return Theme::make('platform/localisation::languages.delete')->with('language', $language);
-    }
-
-
-    /**
-     * --------------------------------------------------------------------------
-     * Function: post_delete()
-     * --------------------------------------------------------------------------
-     *
-     * Language deletion form processing page.
-     *
-     * @access   public
-     * @param    string
-     * @return   mixed
-     */
-    public function post_delete($language_code)
-    {
-        try
-        {
             // Make the request.
             //
             $request = API::delete('localisation/language/' . $language_code);

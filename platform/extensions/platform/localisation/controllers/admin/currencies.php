@@ -282,50 +282,7 @@ class Platform_Localisation_Admin_Currencies_Controller extends Admin_Controller
      */
     public function get_delete($currency_code)
     {
-        try
-        {
-            // Get this currency information.
-            //
-            $currency = API::get('localisation/currency/' . $currency_code);
-        }
-        catch (APIClientException $e)
-        {
-            // Set the error message.
-            //
-            Platform::messages()->error($e->getMessage());
-
-            // Set the other error messages.
-            //
-            foreach ($e->errors() as $error)
-            {
-                Platform::messages()->error($error);
-            }
-
-            // Redirect to the currencies page.
-            //
-            return Redirect::to_admin('localisation/currencies');
-        }
-
-        // Show the page.
-        //
-        return Theme::make('platform/localisation::currencies.delete')->with('currency', $currency);
-    }
-
-
-    /**
-     * --------------------------------------------------------------------------
-     * Function: post_delete()
-     * --------------------------------------------------------------------------
-     *
-     * Language deletion form processing page.
-     *
-     * @access   public
-     * @param    string
-     * @return   mixed
-     */
-    public function post_delete($currency_code)
-    {
-        try
+       try
         {
             // Make the request.
             //

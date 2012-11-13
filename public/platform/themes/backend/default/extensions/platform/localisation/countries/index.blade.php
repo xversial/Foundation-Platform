@@ -14,7 +14,6 @@
 <!-- Queue Scripts -->
 {{ Theme::queue_asset('table', 'js/vendor/platform/table.js', 'jquery') }}
 {{ Theme::queue_asset('countries', 'platform/localisation::js/countries.js', 'jquery') }}
-{{ Theme::queue_asset('bootstrap-modal', 'js/bootstrap/modal.js', 'jquery') }}
 
 <!-- Scripts -->
 @section('scripts')
