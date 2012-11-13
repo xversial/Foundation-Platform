@@ -1,5 +1,6 @@
 
-{{ Theme::queue_asset('platform-helpers', 'js/vendor/platform/helpers.js', 'jquery') }}
+{{ Theme::queue_asset('bootstrap-modal', 'js/bootstrap/modal.js', 'jquery') }}
+{{ Theme::queue_asset('platform-helpers', 'js/vendor/platform/helpers.js', 'bootstrap-modal') }}
 
 <div id="platform-modal-confirm" class="modal hide fade in">
 		<div class="modal-header">
