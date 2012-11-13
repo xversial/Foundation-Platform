@@ -107,7 +107,7 @@ class Platform_Pages_Api_Pages_Controller extends API_Controller
 			array('id' => $id), Input::get()
 		));
 
-		// make sure they arne't disabling the default page
+		// make sure they aren't disabling the default page
 		//
 		if ($page->id == Platform::get('platform/pages::default.page') and $page->status == 0)
 		{
@@ -147,6 +147,15 @@ class Platform_Pages_Api_Pages_Controller extends API_Controller
 				return new Response(array(
 					'message' => Lang::line('platform/pages::messages.pages.delete.error')->get()
 				), API::STATUS_NOT_FOUND);
+			}
+
+			// make sure they aren't deleting the default page
+			//
+			if ($page->id == Platform::get('platform/pages::default.page'))
+			{
+				return new Response(array(
+						'message' => Lang::line('platform/pages::messages.pages.delete.error_default_page')->get(),
+					), API::STATUS_BAD_REQUEST);
 			}
 
 			if ($page->delete())
