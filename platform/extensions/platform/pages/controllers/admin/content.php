@@ -126,6 +126,8 @@ class Platform_Pages_Admin_Content_Controller extends Admin_Controller
 			// Delete content
 			//
 			API::delete('pages/content/'.$id);
+
+			Platform::messages()->success(Lang::line('platform/pages::messages.content.delete.success')->get());
 		}
 		catch (APIClientException $e)
 		{

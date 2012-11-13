@@ -129,6 +129,8 @@ class Platform_Pages_Admin_Pages_Controller extends Admin_Controller
 		try
 		{
 			API::delete('pages/'.$id);
+
+			Platform::messages()->success(Lang::line('platform/pages::messages.pages.delete.success')->get());
 		}
 		catch (APIClientException $e)
 		{
