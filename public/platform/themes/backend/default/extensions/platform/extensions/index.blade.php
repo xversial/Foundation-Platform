@@ -58,7 +58,7 @@
                 <tr>
                     <td>{{ array_get($extension, 'info.name') }}</td>
                     <td>{{ array_get($extension, 'info.vendor') }}</td>
-                    <td>{{ array_get($extension, 'info.version') }}</td>
+                    <td>{{ $manager->current_version(array_get($extension, 'info.slug')) }}</td>
                     <td>
                         {{ array_get($extension, 'info.description') }}
 
