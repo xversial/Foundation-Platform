@@ -84,4 +84,32 @@ class Admin_Pages_Form
 			->with('templates', $templates);
 	}
 
+	/**
+	 * Copy Content Form
+	 *
+	 * @return  View
+	 */
+	public function copy($id)
+	{
+		// find pages
+		//
+		try
+		{
+			$data['page'] = API::get('pages/'.$id);
+		}
+		catch(APIClientException $e)
+		{
+			\Platform::messages()->error($e->getMessage());
+			return \Redirect::to_admin('pages');
+		}
+
+		// retrieve templates
+		//
+		$templates = Helper::findTemplates();
+
+		return Theme::make('platform/pages::widgets.pages.form.copy', $data)
+			->with('status', $this->status)
+			->with('templates', $templates);
+	}
+
 }

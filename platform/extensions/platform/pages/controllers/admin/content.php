@@ -77,6 +77,11 @@ class Platform_Pages_Admin_Content_Controller extends Admin_Controller
 		}
 	}
 
+	public function get_copy($id)
+	{
+		return Theme::make('platform/pages::content.copy')->with('id', $id);
+	}
+
 	public function get_edit($id)
 	{
 		return Theme::make('platform/pages::content.edit')->with('id', $id);

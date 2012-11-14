@@ -68,4 +68,28 @@ class Admin_Content_Form
 			->with('content', $content);
 	}
 
+	/**
+	 * Clone Content Form
+	 *
+	 * @return view
+	 */
+	public function copy($id)
+	{
+		// find content
+		//
+		try
+		{
+			$content = API::get('pages/content/'.$id);
+		}
+		catch(APIClientException $e)
+		{
+			\Platform::messages()->error($e->getMessage());
+			return \Redirect::to_admin('pages/content');
+		}
+
+		return Theme::make('platform/pages::widgets.content.form.copy')
+			->with('status', $this->status)
+			->with('content', $content);
+	}
+
 }
