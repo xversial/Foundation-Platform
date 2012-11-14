@@ -1126,7 +1126,13 @@ class ExtensionsManager
      */
     public function current_version($extension)
     {
-        return array_get($this->installed, $this->reverse_slug($extension) . '.info.version');
+        // Reverse the slug.
+        //
+        $slug = $this->reverse_slug($extension);
+
+        // If the extension is installed, return that version, otherwise return the version on file !
+        //
+        return array_get($this->installed, $slug . '.info.version', array_get($this->extensions, $slug . '.info.version'));
     }
 
 
