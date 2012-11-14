@@ -11,9 +11,10 @@ return array(
 	),
 
 	'content' => array(
-		'id'   => 'Id',
-		'name' => 'Name',
-		'slug' => 'Slug',
+		'id'     => 'Id',
+		'name'   => 'Name',
+		'slug'   => 'Slug',
+		'status' => 'Status'
 	),
 
 );

@@ -13,8 +13,8 @@
 
 <!-- Queue Scripts | e.g. Theme::queue_asset('name', 'path_to_js', 'dependency')-->
 
-<!-- Scripts -->      
-@section('scripts')      
+<!-- Scripts -->
+@section('scripts')
 @endsection
 
 <!-- Page Content -->
@@ -115,9 +115,6 @@
             <div class="form-actions">
                 <a class="btn btn-large" href="{{ URL::to_admin('localisation/currencies') }}">{{ Lang::line('button.cancel') }}</a>
                 <button class="btn btn-large btn-primary" type="submit" name="save" id="save" value="1">{{ Lang::line('button.update') }}</button>
-                @if ( ! $currency['default'])
-                <a class="btn btn-large btn-danger" href="{{ URL::to_admin('localisation/currencies/delete/' . $currency['slug']) }}">{{ Lang::line('button.delete') }}</a>
-                @endif
             </div>
         </form>
     </div>

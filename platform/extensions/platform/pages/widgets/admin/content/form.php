@@ -11,7 +11,7 @@
  * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
  *
  * @package    Platform
- * @version    1.0.3
+ * @version    1.1.1
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
  * @copyright  (c) 2011 - 2012, Cartalyst LLC
@@ -26,6 +26,13 @@ use Theme;
 
 class Admin_Content_Form
 {
+	// status'
+	//
+	public $status = array(
+			1 => 'enabled',
+			0 => 'disabled',
+	);
+
 	/**
 	 * Create Content Form
 	 *
@@ -33,7 +40,8 @@ class Admin_Content_Form
 	 */
 	public function create()
 	{
-		return Theme::make('platform/pages::widgets.content.form.create');
+		return Theme::make('platform/pages::widgets.content.form.create')
+			->with('status', $this->status);
 	}
 
 	/**
@@ -47,7 +55,7 @@ class Admin_Content_Form
 		//
 		try
 		{
-			$data['content'] = API::get('pages/content/'.$id);
+			$content = API::get('pages/content/'.$id);
 		}
 		catch(APIClientException $e)
 		{
@@ -55,7 +63,33 @@ class Admin_Content_Form
 			return \Redirect::to_admin('pages/content');
 		}
 
-		return Theme::make('platform/pages::widgets.content.form.edit', $data);
+		return Theme::make('platform/pages::widgets.content.form.edit')
+			->with('status', $this->status)
+			->with('content', $content);
+	}
+
+	/**
+	 * Clone Content Form
+	 *
+	 * @return view
+	 */
+	public function copy($id)
+	{
+		// find content
+		//
+		try
+		{
+			$content = API::get('pages/content/'.$id);
+		}
+		catch(APIClientException $e)
+		{
+			\Platform::messages()->error($e->getMessage());
+			return \Redirect::to_admin('pages/content');
+		}
+
+		return Theme::make('platform/pages::widgets.content.form.copy')
+			->with('status', $this->status)
+			->with('content', $content);
 	}
 
 }

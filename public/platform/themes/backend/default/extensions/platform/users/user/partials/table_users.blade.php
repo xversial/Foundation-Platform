@@ -10,7 +10,7 @@
         <td class="span2">
             <div class="btn-group">
                 <a class="btn btn-mini" href="{{ URL::to_admin('users/edit/' . $row['id']) }}">{{ Lang::line('button.edit') }}</a>
-                <a class="btn btn-mini btn-danger" href="{{ URL::to_admin('users/delete/' . $row['id']) }}">{{ Lang::line('button.delete') }}</a>
+                <a id="modal-confirm" class="btn btn-mini btn-danger" href="{{ URL::to_admin('users/delete/' . $row['id']) }}">{{ Lang::line('button.delete') }}</a>
             </div>
         </td>
     </tr>

@@ -49,6 +49,7 @@ class Platform_Pages_Admin_Content_Controller extends Admin_Controller
 			'name'    => Input::get('name'),
 			'slug'    => Input::get('slug'),
 			'value'   => Input::get('value'),
+			'status'  => Input::get('status', 1),
 		);
 
 		try
@@ -76,6 +77,11 @@ class Platform_Pages_Admin_Content_Controller extends Admin_Controller
 		}
 	}
 
+	public function get_copy($id)
+	{
+		return Theme::make('platform/pages::content.copy')->with('id', $id);
+	}
+
 	public function get_edit($id)
 	{
 		return Theme::make('platform/pages::content.edit')->with('id', $id);
@@ -89,6 +95,7 @@ class Platform_Pages_Admin_Content_Controller extends Admin_Controller
 			'name'    => Input::get('name'),
 			'slug'    => Input::get('slug'),
 			'value'   => Input::get('value'),
+			'status'  => Input::get('status', 1),
 		);
 
 		try
@@ -126,6 +133,8 @@ class Platform_Pages_Admin_Content_Controller extends Admin_Controller
 			// Delete content
 			//
 			API::delete('pages/content/'.$id);
+
+			Platform::messages()->success(Lang::line('platform/pages::messages.content.delete.success')->get());
 		}
 		catch (APIClientException $e)
 		{

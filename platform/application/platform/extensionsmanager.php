@@ -11,7 +11,7 @@
  * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
  *
  * @package    Platform
- * @version    1.1.0
+ * @version    1.1.1
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
  * @copyright  (c) 2011 - 2012, Cartalyst LLC
@@ -1126,7 +1126,13 @@ class ExtensionsManager
      */
     public function current_version($extension)
     {
-        return array_get($this->installed, $this->reverse_slug($extension) . '.info.version');
+        // Reverse the slug.
+        //
+        $slug = $this->reverse_slug($extension);
+
+        // If the extension is installed, return that version, otherwise return the version on file !
+        //
+        return array_get($this->installed, $slug . '.info.version', array_get($this->extensions, $slug . '.info.version'));
     }
 
 

@@ -1,3 +1,31 @@
+1.1.1 Changelog
+----------
+
+**General:**
+
+  * Updated to latest Laravel Version 3.2.12
+  * upgraded bootstrap to 2.2.1.
+  * consolidated url.js into helpers.js.
+  * new global modal widget for delete confirmations on tables.
+
+**Pages**
+
+  * Added enable/disable options for content.
+  * Added copy functionality for pages and content.
+  * Added enable/disable information to tables on index pages.
+
+**Settings:**
+
+  * Fixed an bug on language files with permissions.
+
+**Extensions Manager:**
+
+  * Fixed bug that it was not showing the correct version if an extension was not installed or had an update available and updated the index view.
+
+**Localisation:**
+
+  * Fixed bug when adding new currencies.
+
 1.1.0 Changelog
 ----------
 
@@ -37,7 +65,7 @@
   * New default themes HTML5boilerplate
   * Upgraded Twitter Bootstrap 2.1.*
   * Fixed integration of Font Awesome with Twitter Bootsrap
-  
+
 
 **Localisation:**
 

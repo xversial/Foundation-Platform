@@ -16,8 +16,9 @@ return array(
 		),
 
 		'delete' => array(
-			'success' => 'Page was deleted successfully',
-			'error'   => 'Page was not deleted, please try again',
+			'success'            => 'Page was deleted successfully',
+			'error'              => 'Page was not deleted, please try again',
+			'error_default_page' => 'You may not delete the default page.',
 		),
 
 		'not_found' => 'Page not found.',

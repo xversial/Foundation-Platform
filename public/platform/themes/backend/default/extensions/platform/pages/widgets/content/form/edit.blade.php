@@ -22,6 +22,15 @@
 			</div>
 		</div>
 
+		<!-- Status -->
+		<div class="control-group">
+			<label for="status" class="control-label">{{ Lang::line('platform/pages::form.content.create.status') }}</label>
+			<div class="controls">
+				{{ Form::select('status', $status, Input::old('status', $content['status'], array('id' => 'status'))) }}
+				<span class="help-block">{{ Lang::line('platform/pages::form.content.create.status_help') }}</span>
+			</div>
+		</div>
+
 		<!-- Value -->
 		<div class="control-group">
 			<label class="control-label" for="value">{{ Lang::line('platform/pages::form.content.edit.value') }}:</label>

@@ -79,6 +79,11 @@ class Platform_Pages_Admin_Pages_Controller extends Admin_Controller
 		}
 	}
 
+	public function get_copy($id)
+	{
+		return Theme::make('platform/pages::pages.copy')->with('id', $id);
+	}
+
 	public function get_edit($id)
 	{
 		return Theme::make('platform/pages::pages.edit')->with('id', $id);
@@ -129,6 +134,8 @@ class Platform_Pages_Admin_Pages_Controller extends Admin_Controller
 		try
 		{
 			API::delete('pages/'.$id);
+
+			Platform::messages()->success(Lang::line('platform/pages::messages.pages.delete.success')->get());
 		}
 		catch (APIClientException $e)
 		{

@@ -11,7 +11,7 @@
  * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
  *
  * @package    Platform
- * @version    1.0.3
+ * @version    1.1.1
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
  * @copyright  (c) 2011 - 2012, Cartalyst LLC
@@ -78,29 +78,48 @@ class Platform_Themes_API_Themes_Controller extends API_Controller
         //
         if ($type != false && $name != false)
         {
-            // Try to find this theme.
-            //
-            if ($theme = Theme::fetch($type, $name) and is_array($theme))
-            {
-                // We found it !
-                //
-                return new Response($theme);
-            }
+        	try
+        	{
+        		// Try to find this theme.
+	            //
+	            if ($theme = Theme::fetch($type, $name) and is_array($theme))
+	            {
+	                // We found it !
+	                //
+	                return new Response($theme);
+	            }
 
-            // Theme was not found.
-            //
-            return new Response(array(
-                'message' => Lang::line('platform/themes::messages.not_found', array('theme' => $name))->get()
-            ), API::STATUS_NOT_FOUND);
+	            // Theme was not found.
+	            //
+	            return new Response(array(
+	                'message' => Lang::line('platform/themes::messages.not_found', array('theme' => $name))->get()
+	            ), API::STATUS_NOT_FOUND);
+        	}
+        	catch (Exception $e)
+        	{
+        		return new Response(array(
+	                'message' => $e->getMessage()
+	            ), API::STATUS_NOT_FOUND);
+        	}
+
         }
 
         // We want all the themes based on a particular theme type ?
         //
         if ($type != false)
         {
-            // Get all the themes for this theme type.
-            //
-            $themes = Theme::fetch($type);
+        	try
+        	{
+            	// Get all the themes for this theme type.
+            	//
+            	$themes = Theme::fetch($type);
+        	}
+        	catch (Exception $e)
+        	{
+        		return new Response(array(
+	                'message' => $e->getMessage()
+	            ), API::STATUS_NOT_FOUND);
+        	}
         }
 
         // We want to return all the themes.
@@ -111,12 +130,21 @@ class Platform_Themes_API_Themes_Controller extends API_Controller
             //
             foreach (Theme::types() as $type)
             {
-                // Get all the themes from this type.
-                //
-                if ($theme = Theme::fetch($type))
-                {
-                    $themes[ $type ] = $theme;
-                }
+            	try
+            	{
+                	// Get all the themes from this type.
+                	//
+                	if ($theme = Theme::fetch($type))
+                	{
+                		$themes[ $type ] = $theme;
+                	}
+            	}
+            	catch (Exception $e)
+	        	{
+	        		return new Response(array(
+		                'message' => $e->getMessage()
+		            ), API::STATUS_NOT_FOUND);
+	        	}
             }
         }
 
@@ -200,16 +228,25 @@ class Platform_Themes_API_Themes_Controller extends API_Controller
      */
     public function put_activate($type, $name)
     {
-        // Check if the theme exists.
-        //
-        if ( ! $theme_info = Theme::fetch($type, $name))
-        {
-            // Theme was not found.
-            //
-            return new Response(array(
-                'message' => Lang::line('platform/themes::messages.not_found', array('theme' => $type . '\\' . $name))->get()
+    	try
+    	{
+        	// Check if the theme exists.
+        	//
+        	if ( ! $theme_info = Theme::fetch($type, $name))
+        	{
+        	    // Theme was not found.
+        	    //
+        	    return new Response(array(
+        	        'message' => Lang::line('platform/themes::messages.not_found', array('theme' => $type . '\\' . $name))->get()
+        	    ), API::STATUS_NOT_FOUND);
+        	}
+    	}
+    	catch (Exception $e)
+    	{
+    		return new Response(array(
+                'message' => $e->getMessage()
             ), API::STATUS_NOT_FOUND);
-        }
+    	}
 
         // Is this the current active theme ?
         //
@@ -280,14 +317,23 @@ class Platform_Themes_API_Themes_Controller extends API_Controller
      */
     public function get_options($type, $name)
     {
-        // Check if the theme exists.
-        //
-        if ( ! $theme_info = Theme::fetch($type, $name))
-        {
-            return new Response(array(
-                'message' => Lang::line('platform/themes::messages.not_found', array('theme' => $type . '\\' . $name))->get()
+    	try
+    	{
+        	// Check if the theme exists.
+        	//
+        	if ( ! $theme_info = Theme::fetch($type, $name))
+        	{
+        	    return new Response(array(
+        	        'message' => Lang::line('platform/themes::messages.not_found', array('theme' => $type . '\\' . $name))->get()
+        	    ), API::STATUS_NOT_FOUND);
+        	}
+    	}
+    	catch (Exception $e)
+    	{
+    		return new Response(array(
+                'message' => $e->getMessage()
             ), API::STATUS_NOT_FOUND);
-        }
+    	}
 
         // Get this theme options.
         //
@@ -333,16 +379,25 @@ class Platform_Themes_API_Themes_Controller extends API_Controller
      */
     public function put_options($type, $theme)
     {
-        // Check if the theme exists.
-        //
-        if ( ! $theme_info = Theme::fetch($type, $theme))
-        {
-            // Theme was not found.
-            //
-            return new Response(array(
-                'message' => Lang::line('platform/themes::messages.not_found', array('theme' => $type . '\\' . $theme))->get()
+    	try
+    	{
+        	// Check if the theme exists.
+        	//
+        	if ( ! $theme_info = Theme::fetch($type, $theme))
+        	{
+        	    // Theme was not found.
+        	    //
+        	    return new Response(array(
+        	        'message' => Lang::line('platform/themes::messages.not_found', array('theme' => $type . '\\' . $theme))->get()
+        	    ), API::STATUS_NOT_FOUND);
+        	}
+    	}
+    	catch (Exception $e)
+    	{
+    		return new Response(array(
+                'message' => $e->getMessage()
             ), API::STATUS_NOT_FOUND);
-        }
+    	}
 
         // Flag we'll use later for the API status.
         //

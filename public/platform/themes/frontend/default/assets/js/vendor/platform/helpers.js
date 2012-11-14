@@ -1,3 +1,4 @@
+// A URL helper for Platform
 // Just incase the files get loaded out of order
 if (platform == undefined)
 {
