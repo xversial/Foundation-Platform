@@ -2,7 +2,7 @@
 
 use Laravel\URI;
 use Laravel\Request;
-use Laravel\Routing\Router;
+use Router;
 
 class Route extends Task {
 

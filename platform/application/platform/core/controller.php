@@ -126,10 +126,6 @@ abstract class Controller extends Laravel\Routing\Controller
 	protected static function format($bundle, $controller)
 	{
 		$bundle = str_replace('/', '_', $bundle);
-		// if ( ( $pos = strpos($bundle, '/') ) !== false)
-		// {
-		// 	$bundle = substr($bundle, $pos+1);
-		// }
 
 		return Bundle::class_prefix($bundle).Str::classify($controller).'_Controller';
 	}

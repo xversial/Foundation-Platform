@@ -1,6 +1,6 @@
 <?php namespace Laravel; defined('DS') or die('No direct script access.');
 
-use Laravel\Routing\Router;
+use Router;
 use FilesystemIterator as fIterator;
 
 class Bundle {
