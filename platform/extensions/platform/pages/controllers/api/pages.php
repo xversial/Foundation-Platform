@@ -180,13 +180,17 @@ class Platform_Pages_Api_Pages_Controller extends API_Controller
 	{
 		$defaults = array(
 			'select'    => array(
-				'id'       => Lang::line('platform/pages::table.pages.id')->get(),
-				'name'     => Lang::line('platform/pages::table.pages.name')->get(),
-				'slug'     => Lang::line('platform/pages::table.pages.slug')->get(),
-				'template' => Lang::line('platform/pages::table.pages.template')->get(),
-				'status'   => Lang::line('platform/pages::table.pages.status')->get(),
+				'pages.id'      => Lang::line('platform/pages::table.pages.id')->get(),
+				'pages.name'    => Lang::line('platform/pages::table.pages.name')->get(),
+				'slug'          => Lang::line('platform/pages::table.pages.slug')->get(),
+				'template'      => Lang::line('platform/pages::table.pages.template')->get(),
+				'settings.name' => Lang::line('platform/pages::table.pages.status')->get(),
 			),
-			'alias'     => array(),
+			'alias'     => array(
+				'pages.id'    => 'id',
+				'pages.name'  => 'name',
+				'settings.name' => 'status',
+			),
 			'where'     => array(),
 			'order_by'  => array('id' => 'desc'),
 		);
@@ -201,7 +205,11 @@ class Platform_Pages_Api_Pages_Controller extends API_Controller
 			// sets the where clause from passed settings
 			$query = Table::count($query, $defaults);
 
-			return $query;
+			return $query
+				->join('settings', 'settings.value', '=', 'pages.status')
+				->where('settings.vendor', '=', 'platform')
+				->where('settings.extension', '=', 'pages')
+				->where('settings.type', '=', 'status');
 		});
 
 		// set paging
@@ -212,7 +220,11 @@ class Platform_Pages_Api_Pages_Controller extends API_Controller
 			list($query, $columns) = Table::query($query, $defaults, $paging);
 
 			return $query
-				->select($columns);
+				->select($columns)
+				->join('settings', 'settings.value', '=', 'pages.status')
+				->where('settings.vendor', '=', 'platform')
+				->where('settings.extension', '=', 'pages')
+				->where('settings.type', '=', 'status');
 
 		});
 

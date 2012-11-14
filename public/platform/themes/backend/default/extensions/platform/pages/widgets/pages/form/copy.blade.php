@@ -1,4 +1,4 @@
-<form action="{{ URL::to_admin('pages/create/'.$page['id']) }}" id="copy-form" class="form-horizontal" method="POST" accept-char="UTF-8">
+<form action="{{ URL::to_admin('pages/create') }}" id="copy-form" class="form-horizontal" method="POST" accept-char="UTF-8">
 	<input type="hidden" name="{{ Session::csrf_token }}" value="{{ Session::token() }}">
 
 	<fieldset>

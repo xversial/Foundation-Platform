@@ -3,6 +3,7 @@
 		<td class="span1">{{ $row['id'] }}</td>
 		<td class="span2">{{ $row['name'] }}</td>
 		<td class="span2">{{ $row['slug'] }}</td>
+		<td class="span2">{{ $row['status'] }}</td>
 		<td class="span2">
 			<div class="btn-group">
 			<a class="btn btn-mini" href="{{ URL::to_admin('pages/content/edit/'.$row['id']) }}">{{ Lang::line('button.edit') }}</a>

@@ -162,26 +162,34 @@ class Platform_Pages_Api_Content_Controller extends API_Controller
 	{
 		$defaults = array(
 			'select'    => array(
-				'id'   => Lang::line('platform/pages::table.content.id')->get(),
-				'name' => Lang::line('platform/pages::table.content.name')->get(),
-				'slug' => Lang::line('platform/pages::table.content.slug')->get(),
+				'content.id'    => Lang::line('platform/pages::table.content.id')->get(),
+				'content.name'  => Lang::line('platform/pages::table.content.name')->get(),
+				'slug'          => Lang::line('platform/pages::table.content.slug')->get(),
+				'settings.name' => Lang::line('platform/pages::table.content.status')->get(),
 			),
-			'alias'     => array(),
+			'alias'     => array(
+				'content.id'    => 'id',
+				'content.name'  => 'name',
+				'settings.name' => 'status',
+			),
 			'where'     => array(),
-			'order_by'  => array('id' => 'desc'),
+			'order_by'  => array('content.id' => 'desc'),
 		);
 
 		// lets get to total user count
 		$count_total = Content::count();
 
 		// get the filtered count
-		// we set to distinct because a user can be in multiple groups
-		$count_filtered = Content::count('id', false, function($query) use ($defaults)
+		$count_filtered = Content::count('content.id', function($query) use ($defaults)
 		{
 			// sets the where clause from passed settings
 			$query = Table::count($query, $defaults);
 
-			return $query;
+			return $query
+				->join('settings', 'settings.value', '=', 'content.status')
+				->where('settings.vendor', '=', 'platform')
+				->where('settings.extension', '=', 'pages')
+				->where('settings.type', '=', 'status');
 		});
 
 		// set paging
@@ -192,7 +200,11 @@ class Platform_Pages_Api_Content_Controller extends API_Controller
 			list($query, $columns) = Table::query($query, $defaults, $paging);
 
 			return $query
-				->select($columns);
+				->select($columns)
+				->join('settings', 'settings.value', '=', 'content.status')
+				->where('settings.vendor', '=', 'platform')
+				->where('settings.extension', '=', 'pages')
+				->where('settings.type', '=', 'status');
 
 		});
 
