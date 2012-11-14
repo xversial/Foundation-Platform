@@ -18,6 +18,14 @@
 
   * Fixed an bug on language files with permissions.
 
+**Extensions Manager:**
+
+  * Fixed bug that it was not showing the correct version if an extension was not installed or had an update available and updated the index view.
+
+**Localisation:**
+
+  * Fixed bug when adding new currencies.
+
 1.1.0 Changelog
 ----------
 
