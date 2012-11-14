@@ -11,7 +11,8 @@
  * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
  *
  * @package    Platform
- * @version    1.1.0
+ * @package    Platform
+ * @version    1.1.1
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
  * @copyright  (c) 2011 - 2012, Cartalyst LLC
@@ -83,7 +84,7 @@ class Platform_Settings_v1_1_0
             $table->text('value');
         });
 
-        // List of directories of the extensions! 
+        // List of directories of the extensions!
         //
         $vendors_directories = array_map(function($file)
         {

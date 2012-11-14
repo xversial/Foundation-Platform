@@ -11,7 +11,8 @@
  * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
  *
  * @package    Platform
- * @version    1.1.0
+ * @package    Platform
+ * @version    1.1.1
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
  * @copyright  (c) 2011 - 2012, Cartalyst LLC
@@ -25,7 +26,7 @@ namespace Platform\Localisation\Model;
  * --------------------------------------------------------------------------
  * Timezone model Class
  * --------------------------------------------------------------------------
- * 
+ *
  * Model to manage timezones.
  *
  * @package    Platform

@@ -11,7 +11,8 @@
  * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
  *
  * @package    Platform
- * @version    1.1.0
+ * @package    Platform
+ * @version    1.1.1
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
  * @copyright  (c) 2011 - 2012, Cartalyst LLC
@@ -31,7 +32,7 @@ use Symfony\Component\HttpFoundation\Response as ResponseFoundation;
  * --------------------------------------------------------------------------
  * API Controller Class
  * --------------------------------------------------------------------------
- * 
+ *
  * Interal API Controller.
  *
  * @package    Platform
@@ -53,7 +54,7 @@ class API_Controller extends Base_Controller
 
     /**
      * Flag for whether we can hide the API controller.
-     * 
+     *
      * If left ´null´ or ´not set´, it will be automatically determined
      * based off user access and whether the request is ´internal´ or ´external´.
      *
@@ -124,7 +125,7 @@ class API_Controller extends Base_Controller
      *
      * Returns whether the current method should be restricted from showing.
      *
-     * This is usually because it's a protected API method and the user 
+     * This is usually because it's a protected API method and the user
      * isn't authenticated.
      *
      * @todo Split this into three methods, one
