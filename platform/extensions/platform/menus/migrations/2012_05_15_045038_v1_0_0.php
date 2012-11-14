@@ -12,7 +12,6 @@
  * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
  *
  * @package    Platform
- * @package    Platform
  * @version    1.1.1
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
