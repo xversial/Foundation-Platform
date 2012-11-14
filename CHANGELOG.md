@@ -3,13 +3,13 @@
 
 **General:**
 
-*upgraded bootstrap to 2.2.1.
-*consolidated url.js into helpers.js.
-*new global modal widget for delete confirmations.
+* upgraded bootstrap to 2.2.1.
+* consolidated url.js into helpers.js.
+* new global modal widget for delete confirmations.
 
 **Pages**
 
-*added copy command for content & pages
+* added copy command for content & pages
 
 1.1.0 Changelog
 ----------
