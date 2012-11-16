@@ -34,11 +34,11 @@ class File
 	 */
 	public function __construct($strategy, $fallback = null)
 	{
-		$class = '\\Filesystem\\Strategy\\'.$strategy->getDriver().'\\File';
+		$class = 'Filesystem\\Strategy\\'.$strategy->getDriver().'\\File';
 
 		if ($fallback)
 		{
-			$fallback_class = '\\Filesystem\\Strategy\\'.$fallback->getDriver().'\\File';
+			$fallback_class = 'Filesystem\\Strategy\\'.$fallback->getDriver().'\\File';
 			$this->fallback = new $fallback_class($fallback);
 		}
 
