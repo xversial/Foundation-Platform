@@ -92,7 +92,7 @@ class Platform_Developers_API_Developers_Controller extends API_Controller
 			'slug_code'            => $vendor.'.'.$extension,
 			'slug_designer'        => $vendor.ExtensionsManager::VENDOR_SEPARATOR.$extension,
 			'handles'              => $handles,
-			'dependencies'         => ($dependencies) ?
+			'dependencies'         => ($dependencies[0] != '') ?
 
 				// Have dependencies?
 				'array('.implode(', ', array_map(function($override)
@@ -103,7 +103,7 @@ class Platform_Developers_API_Developers_Controller extends API_Controller
 				// Don't have dependencies
 				'array()',
 
-			'overrides'            => ($overrides) ?
+			'overrides'            => ($overrides[0] != '') ?
 
 				// Have overrides?
 				'array('.implode(', ', array_map(function($override)
