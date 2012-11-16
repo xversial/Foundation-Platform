@@ -25,6 +25,6 @@
  * --------------------------------------------------------------------------
  */
 Autoloader::namespaces(array(
-	'[[namespace]]'          => __DIR__ . DS . 'models'
+	'[[namespace]]'          => __DIR__ . DS . 'models',
 	'[[namespace]]\\Widgets' => __DIR__ . DS . 'widgets'
 ));
