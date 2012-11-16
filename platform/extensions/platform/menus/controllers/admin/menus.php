@@ -404,7 +404,7 @@ class Platform_Menus_Admin_Menus_Controller extends Admin_Controller
 
             // Set the success message.
             //
-            Platform::messages()->success( Lang::line('platform/menus::messasges.delete.success')->get() );
+            Platform::messages()->success( Lang::line('platform/menus::messages.delete.success')->get() );
         }
         catch ( APIClientException $e )
         {
