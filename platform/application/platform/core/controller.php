@@ -11,7 +11,7 @@
  * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
  *
  * @package    Platform
- * @version    1.1.0
+ * @version    1.1.1
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
  * @copyright  (c) 2011 - 2012, Cartalyst LLC
@@ -126,10 +126,6 @@ abstract class Controller extends Laravel\Routing\Controller
 	protected static function format($bundle, $controller)
 	{
 		$bundle = str_replace('/', '_', $bundle);
-		// if ( ( $pos = strpos($bundle, '/') ) !== false)
-		// {
-		// 	$bundle = substr($bundle, $pos+1);
-		// }
 
 		return Bundle::class_prefix($bundle).Str::classify($controller).'_Controller';
 	}

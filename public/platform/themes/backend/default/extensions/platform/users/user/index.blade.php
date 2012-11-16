@@ -75,4 +75,7 @@
         </div>
     </div>
 </section>
+
+@widget('platform/application::modal.confirm')
+
 @endsection

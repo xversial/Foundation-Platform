@@ -1,6 +1,8 @@
-/*! Validate - v1.0.0 - 2012-07-18
-* https://github.com/ryanseddon/Validate/
+/*! H5F - v1.0.0 - 2012-07-18
+* https://github.com/ryanseddon/H5F/
 * Copyright (c) 2012 Ryan Seddon; Licensed MIT */
+
+/* slight name modification by @cartalyst for expressivness only */
 
 var Validate = Validate || {};
 
@@ -51,6 +53,7 @@ var Validate = Validate || {};
         listen(form,"input",checkField,true);
         listen(form,"keyup",checkField,true);
         listen(form,"focus",checkField,true);
+        listen(form,"change",checkField,true);
 
         listen(form,"submit",function(e){
             isSubmit = true;
@@ -106,15 +109,19 @@ var Validate = Validate || {};
     };
     checkField = function (e) {
         var el = getTarget(e) || e, // checkValidity method passes element not event
-            events = /^(input|keyup|focusin|focus)$/i,
+            events = /^(input|keyup|focusin|focus|change)$/i,
             ignoredTypes = /^(submit|image|button|reset)$/i,
+            specialTypes = /^(checkbox|radio)$/i,
             checkForm = true;
 
         if(nodes.test(el.nodeName) && !(ignoredTypes.test(el.type) || ignoredTypes.test(el.nodeName))) {
             curEvt = e.type;
-            if(!support()) { validity(el); }
 
-            if(el.validity.valid && el.value !== "" || el.value !== el.getAttribute("placeholder") && el.validity.valid) {
+            if(!support()) {
+                validity(el);
+            }
+
+            if(el.validity.valid && (el.value !== "" || specialTypes.test(el.type)) || (el.value !== el.getAttribute("placeholder") && el.validity.valid)) {
                 removeClass(el,[args.invalidClass,args.requiredClass]);
                 addClass(el,args.validClass);
             } else if(!events.test(curEvt)) {
@@ -305,8 +312,7 @@ var Validate = Validate || {};
         if (e.className) {
             if (e.className === c) {
                 e.className = '';
-            }
-            else {
+            } else {
                 while(arr--) {
                     re = new RegExp('(^|\\s)' + ((len > 1) ? c[arr] : c) + '(\\s|$)');
                     m = e.className.match(re);

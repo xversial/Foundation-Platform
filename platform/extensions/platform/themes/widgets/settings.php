@@ -11,7 +11,7 @@
  * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
  *
  * @package    Platform
- * @version    1.1.0
+ * @version    1.1.1
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
  * @copyright  (c) 2011 - 2012, Cartalyst LLC
@@ -27,6 +27,8 @@ namespace Platform\Themes\Widgets;
  * --------------------------------------------------------------------------
  */
 use API,
+	APIClientException,
+	Platform,
     Theme;
 
 
@@ -58,13 +60,29 @@ class Settings
      */
     public function index($settings = null)
     {
-        // Get all themes for the frontend.
-        //
-        $frontend = API::get('themes/frontend', array('organize' => true));
+    	try
+    	{
+	        // Get all themes for the frontend.
+	        //
+	        $frontend = API::get('themes/frontend', array('organize' => true));
+    	}
+    	catch (APIClientException $e)
+    	{
+    		$frontend = array();
+    		Platform::messages()->error($e->getMessage());
+    	}
 
-        // Get all themes for the backend.
-        //
-        $backend = API::get('themes/backend', array('organize' => true));
+    	try
+    	{
+	        // Get all themes for the backend.
+	        //
+	        $backend = API::get('themes/backend', array('organize' => true));
+    	}
+    	catch (APIClientException $e)
+    	{
+    		$backend = array();
+    		Platform::messages()->error($e->getMessage());
+    	}
 
         // Show the form page.
         //

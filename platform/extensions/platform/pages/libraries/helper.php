@@ -18,7 +18,11 @@ class Helper
 
 		try
 		{
-			$content = API::get('pages/content/'.$slug);
+			$content = API::get('pages/content/'.$slug, array(
+				'where' => array(
+					array('status', '=', 1)
+				)
+			));
 
 			if ($content)
 			{
@@ -29,7 +33,7 @@ class Helper
 		}
 		catch(APIClientException $e)
 		{
-			return $e->getMessage();
+			return null;
 		}
 	}
 

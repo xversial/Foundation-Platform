@@ -15,8 +15,8 @@
 {{ Theme::queue_asset('table', 'js/vendor/platform/table.js', 'jquery') }}
 {{ Theme::queue_asset('languages', 'platform/localisation::js/languages.js', 'jquery') }}
 
-<!-- Scripts -->      
-@section('scripts')      
+<!-- Scripts -->
+@section('scripts')
 @endsection
 
 <!-- Page Content -->
@@ -74,4 +74,7 @@
         </div>
     </div>
 </section>
+
+@widget('platform/application::modal.confirm')
+
 @endsection

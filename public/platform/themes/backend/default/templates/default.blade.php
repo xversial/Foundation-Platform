@@ -107,7 +107,7 @@
 
 	<!-- Queue Global Scripts -->
 	{{ Theme::queue_asset('jquery', 'js/vendor/jquery/jquery-1.8.2.min.js') }}
-	{{ Theme::queue_asset('platform-url', 'js/vendor/platform/url.js', 'jquery') }}
+	{{ Theme::queue_asset('platform-url', 'js/vendor/platform/helpers.js', 'jquery') }}
 	{{ Theme::queue_asset('bootstrap-transition', 'js/bootstrap/transition.js', 'jquery') }}
 	{{ Theme::queue_asset('bootstrap-collapse', 'js/bootstrap/collapse.js', 'jquery') }}
 

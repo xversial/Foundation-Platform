@@ -11,7 +11,7 @@
  * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
  *
  * @package    Platform
- * @version    1.1.0
+ * @version    1.1.1
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
  * @copyright  (c) 2011 - 2012, Cartalyst LLC
@@ -80,6 +80,34 @@ class Admin_Pages_Form
 		$templates = Helper::findTemplates();
 
 		return Theme::make('platform/pages::widgets.pages.form.edit', $data)
+			->with('status', $this->status)
+			->with('templates', $templates);
+	}
+
+	/**
+	 * Copy Content Form
+	 *
+	 * @return  View
+	 */
+	public function copy($id)
+	{
+		// find pages
+		//
+		try
+		{
+			$data['page'] = API::get('pages/'.$id);
+		}
+		catch(APIClientException $e)
+		{
+			\Platform::messages()->error($e->getMessage());
+			return \Redirect::to_admin('pages');
+		}
+
+		// retrieve templates
+		//
+		$templates = Helper::findTemplates();
+
+		return Theme::make('platform/pages::widgets.pages.form.copy', $data)
 			->with('status', $this->status)
 			->with('templates', $templates);
 	}
