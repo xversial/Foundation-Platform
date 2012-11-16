@@ -34,11 +34,11 @@ class Directory
 	 */
 	public function __construct($strategy, $fallback = null)
 	{
-		$class = '\\Filesystem\\Strategy\\'.$strategy->getDriver().'\\Directory';
+		$class = 'Filesystem\\Strategy\\'.$strategy->getDriver().'\\Directory';
 
 		if ($fallback)
 		{
-			$fallback_class = '\\Filesystem\\Strategy\\'.$fallback->getDriver().'\\Directory';
+			$fallback_class = 'Filesystem\\Strategy\\'.$fallback->getDriver().'\\Directory';
 			$this->fallback = new $fallback_class($fallback);
 		}
 
