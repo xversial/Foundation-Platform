@@ -36,38 +36,21 @@ Route::any(ADMIN . '/(:any?)/(:any?)/(:any?)(/.*)?', function($handle = 'dashboa
         return Response::error('404');
     }
 
-    // Check if the controller exists.
-    //
-    if ($controller and ($controller_instance = Platform::extensions_manager()->resolve_controller($bundle, 'admin.' . $controller)))
-    {
-        $method = (($action) ?: 'index');
-        $params = explode('/', substr($params, 1));
-        $name   = 'admin.' . $controller;
-    }
-    elseif ($controller_instance = Platform::extensions_manager()->resolve_controller($bundle, 'admin.' . $handle))
-    {
-        $method = (($controller) ?: 'index');
-        $params = explode('/', $action.$params);
-        $name   = 'admin.' . $handle;
-    }
-    else
-    {
-        return Response::error('404');
-    }
+    // Check if the controller exists
+	if (Controller::resolve($bundle, 'admin.'.$controller))
+	{
+		$controller = $bundle.'::admin.'.$controller.'@'.(($action) ?: 'index');
+		$params     = explode('/', substr($params, 1));
+	}
 
-    // For convenience we will set the current controller and action on the
-    // Request's route instance so they can be easily accessed from the
-    // application. This is sometimes useful for dynamic situations.
-    if ( ! is_null($route = Request::route()))
-    {
-    	$route->bundle = $bundle;
+	// If it doesn't, default to to handle (bundle) name as a controller
+	else
+	{
+		$controller = $bundle.'::admin.'.$handle.'@'.(($controller) ?: 'index');
+		$params     = explode('/', $action.$params);
+	}
 
-        $route->controller = $name;
-
-        $route->controller_action = $method;
-    }
-
-    return $controller_instance->execute($method, $params);
+	return Controller::call($controller, $params);
 });
 
 
@@ -89,24 +72,7 @@ Route::any(API . '/(:any)/(:num)', function($handle = DEFAULT_BUNDLE, $id = null
         return Controller::call('api@no_route');
     }
 
-    // Check if the controller exists.
-    //
-    if ( ! $controller_instance = Platform::extensions_manager()->resolve_controller($bundle, 'api.' . $handle))
-    {
-        return Controller::call('api@no_route');
-    }
-
-    // For convenience we will set the current controller and action on the
-    // Request's route instance so they can be easily accessed from the
-    // application. This is sometimes useful for dynamic situations.
-    if ( ! is_null($route = Request::route()))
-    {
-        $route->controller = $controller_instance;
-
-        $route->controller_action = 'index';
-    }
-
-    return $controller_instance->execute('index', array($id));
+    return Controller::call($bundle.'::api.'.$handle.'@index', array($id));
 });
 
 
@@ -128,24 +94,7 @@ Route::any(API . '/(:any)/(:any)/(:num)', function($handle = DEFAULT_BUNDLE, $co
         return Controller::call('api@no_route');
     }
 
-    // Check if the controller exists.
-    //
-    if ( ! $controller_instance = Platform::extensions_manager()->resolve_controller($bundle, 'api.' . $controller))
-    {
-        return Controller::call('api@no_route');
-    }
-
-    // For convenience we will set the current controller and action on the
-    // Request's route instance so they can be easily accessed from the
-    // application. This is sometimes useful for dynamic situations.
-    if ( ! is_null($route = Request::route()))
-    {
-        $route->controller = $controller_instance;
-
-        $route->controller_action = 'index';
-    }
-
-    return $controller_instance->execute('index', array($id));
+    return Controller::call($bundle.'::api.'.$controller.'@index', array($id));
 });
 
 
@@ -159,6 +108,7 @@ Route::any(API . '/(:any)/(:any)/(:num)', function($handle = DEFAULT_BUNDLE, $co
  */
 Route::any(array(API . '/(:any?)/(:any?)/(:any?)(/.*)?', API . '/(:any?)/(:any?)(/.*)?', API . '/(:any?)(/.*)?'), function($handle = 'dashboard', $controller = null, $action = null, $params = null)
 {
+
     // Check if the extension exists.
     //
     if ( ! Bundle::exists($bundle = Bundle::handles($handle)))
@@ -166,34 +116,28 @@ Route::any(array(API . '/(:any?)/(:any?)/(:any?)(/.*)?', API . '/(:any?)/(:any?)
         return Controller::call('api@no_route');
     }
 
-    // Check if the controller exists.
-    //
-    if ($controller_instance = Platform::extensions_manager()->resolve_controller($bundle, 'api.' . $controller))
-    {
-        $method          = (($action) ?: 'index');
-        $params          = explode('/', substr($params, 1));
-    }
-    elseif ($controller_instance = Platform::extensions_manager()->resolve_controller($bundle, 'api.' . $handle))
-    {
-        $method          = (($controller) ?: 'index');
-        $params          = explode('/', $action.$params);
-    }
-    else
-    {
-        return Controller::call('api@no_route');
-    }
+    // Check if the controller exists
+	if (Controller::resolve($bundle, $_controller = 'api.'.$controller))
+	{
+		$controller = $bundle.'::'.$_controller.'@'.(($action) ?: 'index');
+		$params     = explode('/', substr($params, 1));
+	}
 
-    // For convenience we will set the current controller and action on the
-    // Request's route instance so they can be easily accessed from the
-    // application. This is sometimes useful for dynamic situations.
-    if ( ! is_null($route = Request::route()))
-    {
-        $route->controller = $controller_instance;
+	// If it doesn't, default to to bundle name as a controller
+	elseif (Controller::resolve($bundle, $_controller = 'api.'.$handle))
+	{
+		$controller = $bundle.'::'.$_controller.'@'.(($controller) ?: 'index');
+		$params     = explode('/', $action.$params);
+	}
 
-        $route->controller_action = $method;
-    }
+	// Fallback to API controller
+	else
+	{
+		$controller = 'api@no_route';
+		$params     = array();
+	}
 
-    return $controller_instance->execute($method, $params);
+	return Controller::call($controller, $params);
 });
 
 

@@ -218,6 +218,28 @@ class ExtensionsManager
         //
         $sorted_slugs = Dependencies::sort($extensions_flat, 'overrides');
 
+        foreach ($sorted_slugs as $slug)
+        {
+        	if ( ! $extension = $this->get($slug))
+	        {
+	            Platform::messages()->warning(Lang::line('extensions.missing_files', array('extension' => $slug)));
+	        }
+
+        	if ($routes = array_get($extension, 'routes'))
+	        {
+	            // Check if we've been given a closure.
+	            //
+	            if ( ! $routes instanceof Closure)
+	            {
+	                throw new Exception(Lang::line('extensions.invalid_routes', array('extension' => $slug)));
+	            }
+
+	            // Register the routes.
+	            //
+	            $routes();
+	        }
+        }
+
         // The slugs are currently in order from most overridden to least overridden.
         // Let's reverse that.
         //
@@ -246,6 +268,7 @@ class ExtensionsManager
             //
             Platform::messages()->warning(Lang::line('extensions.missing_files', array('extension' => $slug)));
         }
+
     }
 
 
@@ -275,19 +298,19 @@ class ExtensionsManager
 
         // Register this extension routes.
         //
-        if ($routes = array_get($extension, 'routes'))
-        {
-            // Check if we've been given a closure.
-            //
-            if ( ! $routes instanceof Closure)
-            {
-                throw new Exception(Lang::line('extensions.invalid_routes', array('extension' => $slug)));
-            }
+        // if ($routes = array_get($extension, 'routes'))
+        // {
+        //     // Check if we've been given a closure.
+        //     //
+        //     if ( ! $routes instanceof Closure)
+        //     {
+        //         throw new Exception(Lang::line('extensions.invalid_routes', array('extension' => $slug)));
+        //     }
 
-            // Register the routes.
-            //
-            $routes();
-        }
+        //     // Register the routes.
+        //     //
+        //     $routes();
+        // }
 
         // Register this extension listeners.
         //
@@ -1948,7 +1971,7 @@ class ExtensionsManager
         // controllers extend it.
         try
         {
-            $this->load_overridden_controllers_recursively($this->get($this->convert_slug($bundle)));
+            $this->load_controller_overrides($bundle, $controller);
         } catch (Exception $e)
         {
             return false;
@@ -1960,41 +1983,39 @@ class ExtensionsManager
             return $resolve;
         }
 
-        // Grab the extension
-        if ( ! $extension = $this->convert_slug($bundle))
-        {
-            return false;
-        }
+        // // Grab the extension
+        // if ( ! $extension = $this->convert_slug($bundle))
+        // {
+        //     return false;
+        // }
 
-        try
-        {
-            // Recursively look through extension overrides
-            return $this->resolve_controllers_recursive($this->get($extension), $controller);
-        }
-        catch (Exception $e)
-        {
-            return false;
-        }
+        // try
+        // {
+        //     // Recursively look through extension overrides
+        //     return $this->resolve_controllers_recursive($this->get($extension), $controller);
+        // }
+        // catch (Exception $e)
+        // {
+        //     return false;
+        // }
     }
 
-    protected function resolve_controllers_recursive(array $extension, $controller, $level = 0)
+    public function load_controller_overrides($extension, $controller, $level = 0)
     {
-        // Check that somebody hasn't put a override loop
+    	// Check that somebody hasn't put a override loop
         if ($level > 100)
         {
             return false;
         }
 
-        // Check for overrides options
-        if ( ! $overrides = $this->overrides(array_get($extension, 'info.slug')))
-        {
-            return false;
-        }
+    	if ( ! $overrides = $this->overrides($this->convert_slug($extension)))
+    	{
+    		return false;
+    	}
 
-        // Loop through overrides
-        foreach ($overrides as $slug)
-        {
-            // No extension? Skip
+    	foreach ($overrides as $slug)
+    	{
+    		// No extension? Skip
             try
             {
                 // Probably don't need this if statement if
@@ -2013,59 +2034,10 @@ class ExtensionsManager
             $overridden_bundle = $this->convert_slug(array_get($overridden_extension, 'info.slug'));
 
             // Let's detect all controllers in that extension
-            Controller::detect($overridden_bundle);
-
-            // If we have resolved it, return it
-            if ($overridden_resolve = Controller::resolve($overridden_bundle, $controller))
-            {
-                return $overridden_resolve;
-            }
-
-            // Recursive, baby!
-            $this->resolve_controllers_recursive($overridden_extension, $controller, $level++);
-        }
-
-        // Got nowhere? Return false
-        return false;
-    }
-
-    protected function load_overridden_controllers_recursively(array $extension, $level = 0)
-    {
-        // Check that somebody hasn't put a override loop
-        if ($level > 100)
-        {
-            return;
-        }
-
-        // Check for overrides options
-        if ( ! $overrides = $this->overrides(array_get($extension, 'info.slug')))
-        {
-            return;
-        }
-
-        // Loop through overrides
-        foreach ($overrides as $slug)
-        {
-            // No extension? Skip
-            try
-            {
-                // Probably don't need this if statement if
-                // an exception is alwasy thrown...
-                if ( ! $overridden_extension = $this->get($slug))
-                {
-                    continue;
-                }
-            }
-            catch (Exception $e)
-            {
-                continue;
-            }
-
-            // Get the bundle name for the overridden bundle
-            $overridden_bundle = $this->convert_slug(array_get($overridden_extension, 'info.slug'));
+            $controllers = Controller::detect($overridden_bundle);
 
             // Let's detect all controllers in that extension
-            foreach (Controller::detect($overridden_bundle) as $controller)
+            foreach ($controllers as $controller)
             {
                 $parts      = Bundle::parse($controller);
                 $controller = array_get($parts, 1, array_get($parts, 0));
@@ -2077,8 +2049,131 @@ class ExtensionsManager
                 }
             }
 
+            $extension = array_get($overridden_extension, 'info.formatted_slug');
+
             // Recursive, baby!
-            $this->load_overridden_controllers_recursively($overridden_extension, $level++);
-        }
+            $this->load_controller_overrides($extension, $controller, $level++);
+    	}
     }
+
+    public function find_overridden_extension($extension, $controller)
+    {
+    	$overriden_extensions = $this->overrides($this->convert_slug($extension));
+
+    	foreach ($overriden_extensions as $_extension)
+    	{
+    		if (class_exists(Controller::format($_extension, $controller)))
+    		{
+    			return $_extension;
+    		}
+    	}
+
+    	return false;
+    }
+
+    // protected function resolve_controllers_recursive(array $extension, $controller, $level = 0)
+    // {
+    //     // Check that somebody hasn't put a override loop
+    //     if ($level > 100)
+    //     {
+    //         return false;
+    //     }
+
+    //     // Check for overrides options
+    //     if ( ! $overrides = $this->overrides(array_get($extension, 'info.slug')))
+    //     {
+    //         return false;
+    //     }
+
+    //     // Loop through overrides
+    //     foreach ($overrides as $slug)
+    //     {
+    //         // No extension? Skip
+    //         try
+    //         {
+    //             // Probably don't need this if statement if
+    //             // an exception is alwasy thrown...
+    //             if ( ! $overridden_extension = $this->get($slug))
+    //             {
+    //                 continue;
+    //             }
+    //         }
+    //         catch (Exception $e)
+    //         {
+    //             continue;
+    //         }
+
+    //         // Get the bundle name for the overridden bundle
+    //         $overridden_bundle = $this->convert_slug(array_get($overridden_extension, 'info.slug'));
+
+    //         // Let's detect all controllers in that extension
+    //         Controller::detect($overridden_bundle);
+
+    //         // If we have resolved it, return it
+    //         if ($overridden_resolve = Controller::resolve($overridden_bundle, $controller))
+    //         {
+    //             return $overridden_resolve;
+    //         }
+
+    //         // Recursive, baby!
+    //         $this->resolve_controllers_recursive($overridden_extension, $controller, $level++);
+    //     }
+
+    //     // Got nowhere? Return false
+    //     return false;
+    // }
+
+    // protected function load_overridden_controllers_recursively(array $extension, $level = 0)
+    // {
+    //     // Check that somebody hasn't put a override loop
+    //     if ($level > 100)
+    //     {
+    //         return;
+    //     }
+
+    //     // Check for overrides options
+    //     if ( ! $overrides = $this->overrides(array_get($extension, 'info.slug')))
+    //     {
+    //         return;
+    //     }
+
+    //     // Loop through overrides
+    //     foreach ($overrides as $slug)
+    //     {
+    //         // No extension? Skip
+    //         try
+    //         {
+    //             // Probably don't need this if statement if
+    //             // an exception is alwasy thrown...
+    //             if ( ! $overridden_extension = $this->get($slug))
+    //             {
+    //                 continue;
+    //             }
+    //         }
+    //         catch (Exception $e)
+    //         {
+    //             continue;
+    //         }
+
+    //         // Get the bundle name for the overridden bundle
+    //         $overridden_bundle = $this->convert_slug(array_get($overridden_extension, 'info.slug'));
+
+
+    //         // Let's detect all controllers in that extension
+    //         foreach (Controller::detect($overridden_bundle) as $controller)
+    //         {
+    //             $parts      = Bundle::parse($controller);
+    //             $controller = array_get($parts, 1, array_get($parts, 0));
+    //             $controller = strtolower(str_replace('.', '/', $controller));
+
+    //             if (file_exists($path = Bundle::path($overridden_bundle).'controllers/'.$controller.EXT))
+    //             {
+    //                 require_once $path;
+    //             }
+    //         }
+
+    //         // Recursive, baby!
+    //         $this->load_overridden_controllers_recursively($overridden_extension, $level++);
+    //     }
+    // }
 }
