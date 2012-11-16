@@ -96,6 +96,7 @@ class Platform_Developers_Admin_Developers_Controller extends Admin_Controller
 			return Redirect::to_admin('developers/create');
 		}
 
+/*
 		// The name the ZIP should get
 		$name = sprintf('%s-%s.zip', Input::get('vendor', 'vendor'), Input::get('extension', 'extension'));
 
@@ -118,6 +119,7 @@ class Platform_Developers_Admin_Developers_Controller extends Admin_Controller
 		$d = $response->disposition($name);
 
 		return $response->header('Content-Disposition', $d);
+*/
 	}
 
 	public function get_theme_creator()

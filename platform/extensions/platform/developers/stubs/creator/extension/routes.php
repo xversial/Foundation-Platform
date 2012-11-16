@@ -18,14 +18,11 @@
  * @link       http://cartalyst.com
  */
 
-class [[namespace_underscore]]_[[extension_classified]]_Controller extends Public_Controller
-{
-	/**
-	 * Index view, responds to the main public route for
-	 * the extension.
-	 */
-	public function get_index()
-	{
-		return Theme::make('[[slug_designer]]::index');
-	}
-}
+
+/*
+ * --------------------------------------------------------------------------
+ * Routes
+ * --------------------------------------------------------------------------
+ */
+
+Route::any('/[[handles]]', '[[slug_designer]]::[[handles]]@index');

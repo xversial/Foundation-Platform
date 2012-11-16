@@ -117,13 +117,60 @@ abstract class Controller extends Laravel\Routing\Controller
     }
 
     /**
+	 * Resolve a bundle and controller name to a controller instance.
+	 *
+	 * @param  string      $bundle
+	 * @param  string      $controller
+	 * @return Controller
+	 */
+	public static function resolve($bundle, $controller)
+	{
+		\Platform::extensions_manager()->load_controller_overrides($bundle, $controller);
+
+		static::load($bundle, $controller);
+
+		if ( ! static::load($bundle, $controller))
+		{
+			$bundle = \Platform::extensions_manager()->find_overridden_extension($bundle, $controller);
+
+			if ( ! $bundle) return;
+		}
+
+		$identifier = Bundle::identifier($bundle, $controller);
+
+		// If the controller is registered in the IoC container, we will resolve
+		// it out of the container. Using constructor injection on controllers
+		// via the container allows more flexible applications.
+		$resolver = 'controller: '.$identifier;
+
+		if (IoC::registered($resolver))
+		{
+			return IoC::resolve($resolver);
+		}
+
+		$controller = static::format($bundle, $controller);
+
+		// If we couldn't resolve the controller out of the IoC container we'll
+		// format the controller name into its proper class name and load it
+		// by convention out of the bundle's controller directory.
+		if (Event::listeners(static::factory))
+		{
+			return Event::first(static::factory, $controller);
+		}
+		else
+		{
+			return new $controller;
+		}
+	}
+
+    /**
 	 * Format a bundle and controller identifier into the controller's class name.
 	 *
 	 * @param  string  $bundle
 	 * @param  string  $controller
 	 * @return string
 	 */
-	protected static function format($bundle, $controller)
+	public static function format($bundle, $controller)
 	{
 		$bundle = str_replace('/', '_', $bundle);
 
