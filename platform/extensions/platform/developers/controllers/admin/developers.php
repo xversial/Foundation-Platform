@@ -44,7 +44,7 @@ class Platform_Developers_Admin_Developers_Controller extends Admin_Controller
 	public function get_extension_creator()
 	{
 		// Set the active menu item
-		$this->active_menu('admin-developers-creator');
+		$this->active_menu('admin-developers-extension-creator');
 
 		// Data
 		$data = array(
@@ -59,10 +59,10 @@ class Platform_Developers_Admin_Developers_Controller extends Admin_Controller
 			'extensions' => API::get('extensions'),
 		);
 
-		return Theme::make('platform/developers::creator', $data);
+		return Theme::make('platform/developers::extension.creator', $data);
 	}
 
-	public function post_creator()
+	public function post_extension_creator()
 	{
 		$zip = API::post('developers/create', array(
 
@@ -118,6 +118,19 @@ class Platform_Developers_Admin_Developers_Controller extends Admin_Controller
 		$d = $response->disposition($name);
 
 		return $response->header('Content-Disposition', $d);
+	}
+
+	public function get_theme_creator()
+	{
+		// Set the active menu item
+		$this->active_menu('admin-developers-theme-creator');
+
+		return Theme::make('platform/developers::theme.creator');
+	}
+
+	public function post_theme_creator()
+	{
+		dd(Input::get());
 	}
 
 }

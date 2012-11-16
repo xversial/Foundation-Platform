@@ -34,7 +34,7 @@ return array(
         'name'        => 'Developers',
         'author'      => 'Cartalyst LLC',
         'description' => 'Developer tools extension for Platform.',
-        'version'     => '1.0',
+        'version'     => '1.0.1',
         'is_core'     => true
     ),
 

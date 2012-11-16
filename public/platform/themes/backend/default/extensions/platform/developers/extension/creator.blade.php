@@ -2,14 +2,14 @@
 
 <!-- Page Title -->
 @section('title')
-    {{ Lang::line('platform/developers::general.creator.title') }}
+    {{ Lang::line('platform/developers::general.extension.creator.title') }}
 @endsection
 
 <!-- Queue Styles -->
 
 <!-- Queue Scripts -->
 {{ Theme::queue_asset('jquery-helpers', 'js/vendor/platform/helpers.js', 'jquery') }}
-{{ Theme::queue_asset('creator','platform/developers::js/creator.js', array('jquery', 'jquery-helpers')) }}
+{{ Theme::queue_asset('creator','platform/developers::js/extension/creator.js', array('jquery', 'jquery-helpers')) }}
 
 <!-- Page Content -->
 @section('content')
@@ -24,7 +24,7 @@
                     <span class="icon-reorder"></span>
                 </a>
 
-                <a class="brand" href="#">{{ Lang::line('platform/developers::general.creator.title') }}</a>
+                <a class="brand" href="#">{{ Lang::line('platform/developers::general.extension.creator.title') }}</a>
 
                 <!-- Everything you want hidden at 940px or less, place within here -->
                 <div id="tertiary-navigation" class="nav-collapse">
@@ -38,7 +38,7 @@
 
     <div class="quaternary page">
 
-        <form action="{{ URL::to_admin('developers/creator') }}" method="POST" class="form-horizontal">
+        <form action="{{ URL::to_admin('developers/extension_creator') }}" method="POST" class="form-horizontal">
             <input type="hidden" name="{{ Session::csrf_token }}" value="{{ Session::token() }}">
 
             <fieldset>
@@ -97,7 +97,7 @@
                     <label class="control-label" for="form-version">Version</label>
                     <div class="controls">
                         <div class="input-append">
-                            <input type="text" name="version" id="form-version" required pattern="^(\d{1,2})(\.)?(\d{1,2})?(\.)?(\d{1,2})?$">
+                            <input type="text" name="version" id="form-version" required pattern="^\d{1,2}(?:\.\d{1,2})?(?:\.\d{1,2})?$">
                             <span class="add-on">
                                 <i class="icon-leaf"></i>
                             </span>
