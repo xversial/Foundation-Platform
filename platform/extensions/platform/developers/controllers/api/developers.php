@@ -92,7 +92,7 @@ class Platform_Developers_API_Developers_Controller extends API_Controller
 			'slug_code'            => $vendor.'.'.$extension,
 			'slug_designer'        => $vendor.ExtensionsManager::VENDOR_SEPARATOR.$extension,
 			'handles'              => $handles,
-			'dependencies'         => ($dependencies) ?
+			'dependencies'         => ($dependencies[0] != '') ?
 
 				// Have dependencies?
 				'array('.implode(', ', array_map(function($override)
@@ -103,7 +103,7 @@ class Platform_Developers_API_Developers_Controller extends API_Controller
 				// Don't have dependencies
 				'array()',
 
-			'overrides'            => ($overrides) ?
+			'overrides'            => ($overrides[0] != '') ?
 
 				// Have overrides?
 				'array('.implode(', ', array_map(function($override)
@@ -115,8 +115,12 @@ class Platform_Developers_API_Developers_Controller extends API_Controller
 				'array()',
 		));
 
+		// Generate the zip name.
+		$zip_name = $vendor . '-' . $extension . '.zip';
+		$temp_zip_name = time() . '-' . $zip_name;
+
 		// Create the zip
-		$zip_location = $this->create_zip($root_directory, time().'-'.$vendor.'-'.$extension.'.zip');
+		$zip_location = $this->create_zip($root_directory, $temp_zip_name);
 
 		switch (Input::get('encoding', 'base64'))
 		{
@@ -131,6 +135,20 @@ class Platform_Developers_API_Developers_Controller extends API_Controller
 
 		// Now, remove the directory
 		$directory->delete($root_directory);
+
+		header('Pragma: public');
+		header('Expires: 0');
+		header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+		header('Cache-Control: public');
+		header('Content-Description: File Transfer');
+		header('Content-type: application/octet-stream');
+		header('Content-Disposition: attachment; filename="' . $zip_name . '"');
+		header('Content-Transfer-Encoding: binary');
+		header('Content-Length: ' . filesize($zip_location));
+		ob_end_flush();
+		@readfile($zip_location);
+
+		// Remove the file.
 		$file->delete($zip_location);
 
 		return new Response($encoded);
