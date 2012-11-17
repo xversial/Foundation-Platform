@@ -25,9 +25,7 @@
  * --------------------------------------------------------------------------
  */
 return array(
-
     'creator' => array(
-        'title' => 'Extension Creator',
-    ),
-
+        'title' => 'Extension Creator'
+    )
 );

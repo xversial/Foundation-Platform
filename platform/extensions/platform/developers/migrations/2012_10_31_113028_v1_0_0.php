@@ -33,7 +33,7 @@ use Platform\Menus\Menu;
  * Install Class v1.0.0
  * --------------------------------------------------------------------------
  *
- * Menus installation.
+ * Developers installation.
  *
  * @package    Platform
  * @author     Cartalyst LLC
@@ -57,15 +57,14 @@ class Platform_Developers_v1_0_0
     {
         /*
          * --------------------------------------------------------------------------
-         * # 1) Create the menu items.
+         * # 1) Create the menus.
          * --------------------------------------------------------------------------
          */
-
         // Get the System menu.
         //
         $system = Menu::find('admin-system');
 
-        // Create the menus link.
+        // Admin > System > Developers
         //
         $developers = new Menu(array(
             'name'          => 'Developers',
@@ -80,6 +79,8 @@ class Platform_Developers_v1_0_0
         $developers->last_child_of($system);
         $developers->reload();
 
+        // Admin > System > Developers > Extension Creator
+        //
         $developers_creator = new Menu(array(
             'name'          => 'Extension Creator',
             'vendor'        => 'platform',
@@ -107,11 +108,16 @@ class Platform_Developers_v1_0_0
      */
     public function down()
     {
-        if ($developers = Menu::find('admin-developer'))
+        /*
+         * --------------------------------------------------------------------------
+         * # 1) Delete the menus.
+         * --------------------------------------------------------------------------
+         */
+        if ($developers = Menu::find('admin-developers'))
         {
             $developers->delete();
         }
-        if ($developers_creator = Menu::find('admin-developer-creator'))
+        if ($developers_creator = Menu::find('admin-developers-creator'))
         {
             $developers_creator->delete();
         }

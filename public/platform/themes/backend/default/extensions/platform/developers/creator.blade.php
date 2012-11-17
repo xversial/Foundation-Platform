@@ -38,7 +38,7 @@
 
     <div class="quaternary page">
 
-        <form action="{{ URL::to_admin('developers/creator') }}" method="POST" class="form-horizontal">
+        <form action="{{ URL::to_admin('developers/extension_creator') }}" method="POST" class="form-horizontal">
             <input type="hidden" name="{{ Session::csrf_token }}" value="{{ Session::token() }}">
 
             <fieldset>

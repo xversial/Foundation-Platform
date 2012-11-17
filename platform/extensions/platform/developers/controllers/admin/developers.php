@@ -18,6 +18,7 @@
  * @link       http://cartalyst.com
  */
 
+
 /**
  * --------------------------------------------------------------------------
  * Developers > Admin Class
@@ -34,92 +35,21 @@
  */
 class Platform_Developers_Admin_Developers_Controller extends Admin_Controller
 {
-	public function get_index()
-	{
-		// Coming soon is more developer tools. For now,
-		// we'll just go straight to the module creator
-		return Redirect::to_admin('developers/extension_creator');
-	}
-
-	public function get_extension_creator()
-	{
-		// Set the active menu item
-		$this->active_menu('admin-developers-creator');
-
-		// Data
-		$data = array(
-
-			// Reserved vendors
-			'reserved_vendors' => array(ExtensionsManager::CORE_VENDOR),
-
-			// Default vendor
-			'default_vendor' => ExtensionsManager::DEFAULT_VENDOR,
-
-			// Existing extensions
-			'extensions' => API::get('extensions'),
-		);
-
-		return Theme::make('platform/developers::creator', $data);
-	}
-
-	public function post_creator()
-	{
-		$zip = API::post('developers/create', array(
-
-			// Send through properties of the extension
-			'name'         => Input::get('name'),
-			'author'       => Input::get('author'),
-			'description'  => Input::get('description'),
-			'version'      => Input::get('version'),
-			'vendor'       => Input::get('vendor'),
-			'extension'    => Input::get('extension'),
-			'dependencies' => array_map(function($dependency)
-				{
-					return trim($dependency);
-				}, explode(PHP_EOL, Input::get('dependencies'))),
-			'overrides' => array_map(function($override)
-				{
-					return trim($override);
-				}, explode(PHP_EOL, Input::get('overrides'))),
-
-			// Tell the API how we want our extension
-			// returned to us. We can either base64 encode
-			// or utf-8 encode the ZIP contents.
-			'encoding'  => 'base64',
-		));
-
-		// Check we have valid contents
-		if (($contents = base64_decode($zip)) === false)
-		{
-			Platform::message()->error(Lang::line('platform/developers::messages.creator.decode_fail'));
-
-			return Redirect::to_admin('developers/create');
-		}
-
-/*
-		// The name the ZIP should get
-		$name = sprintf('%s-%s.zip', Input::get('vendor', 'vendor'), Input::get('extension', 'extension'));
-
-		// Let's build some headers up to allow us to stream the file
-		$headers = array(
-			'Content-Description'       => 'File Transfer',
-			'Content-Type'              => File::mime('zip'),
-			'Content-Transfer-Encoding' => 'binary',
-			'Expires'                   => 0,
-			'Cache-Control'             => 'must-revalidate, post-check=0, pre-check=0',
-			'Pragma'                    => 'public',
-			'Content-Length'            => Str::length($contents),
-		);
-
-		// Once we create the response, we need to set the content disposition
-		// header on the response based on the file's name. We'll pass this
-		// off to the HttpFoundation and let it create the header text.
-		$response = new Response($contents, 200, $headers);
-
-		$d = $response->disposition($name);
-
-		return $response->header('Content-Disposition', $d);
-*/
-	}
-
+    /**
+     * --------------------------------------------------------------------------
+     * Function: get_index()
+     * --------------------------------------------------------------------------
+     *
+     * Show the developers dashboard page.
+     *
+     * @access   public
+     * @return   View
+     */
+    public function get_index()
+    {
+        // Soon there will be more developer tools.
+        // For now, we'll just go straight to the extension creator.
+        //
+        return Redirect::to_admin('developers/extension_creator');
+    }
 }

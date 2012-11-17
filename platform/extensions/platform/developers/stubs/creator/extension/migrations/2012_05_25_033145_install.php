@@ -20,23 +20,40 @@
 
 use Platform\Menus\Menu;
 
+
+/**
+ * --------------------------------------------------------------------------
+ * Install Class v1.0.0
+ * --------------------------------------------------------------------------
+ *
+ * [[name]] installation.
+ *
+ * @package    Platform
+ * @author     Cartalyst LLC
+ * @copyright  (c) 2011 - 2012, Cartalyst LLC
+ * @license    BSD License (3-clause)
+ * @link       http://cartalyst.com
+ */
 class [[namespace_underscore]]_Install
 {
-
-	/**
-	 * Make changes to the database.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
-		/*
+    /**
+     * --------------------------------------------------------------------------
+     * Function: up()
+     * --------------------------------------------------------------------------
+     *
+     * Make changes to the database.
+     *
+     * @access   public
+     * @return   void
+     */
+    public function up()
+    {
+        /*
          * --------------------------------------------------------------------------
-         * # 2) Create the menus.
+         * # 1) Create the menus.
          * --------------------------------------------------------------------------
          */
-
-		// Get the Admin menu.
+        // Get the Admin menu.
         //
         $admin = Menu::admin_menu();
 
@@ -70,7 +87,8 @@ class [[namespace_underscore]]_Install
             'status'        => 1,
         ));
 
-        // Doulbe check we have the system menu
+        // Check if we have the system menu.
+        //
         if (is_null($system))
         {
             $[[extension]]->last_child_of($admin);
@@ -79,21 +97,29 @@ class [[namespace_underscore]]_Install
         {
             $[[extension]]->previous_sibling_of($system);
         }
-	}
+    }
 
-	/**
-	 * Revert the changes to the database.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
-        $[[extension]] = Menu::find('admin-[[extension]]');
 
-        if ($[[extension]])
+    /**
+     * --------------------------------------------------------------------------
+     * Function: down()
+     * --------------------------------------------------------------------------
+     *
+     * Revert the changes to the database.
+     *
+     * @access   public
+     * @return   void
+     */
+    public function down()
+    {
+        /*
+         * --------------------------------------------------------------------------
+         * # 1) Delete the menus.
+         * --------------------------------------------------------------------------
+         */
+        if ($[[extension]] = Menu::find('admin-[[extension]]'))
         {
             $[[extension]]->delete();
         }
-	}
-
+    }
 }

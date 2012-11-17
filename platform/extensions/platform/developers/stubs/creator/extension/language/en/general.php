@@ -18,6 +18,12 @@
  * @link       http://cartalyst.com
  */
 
+
+/*
+ * --------------------------------------------------------------------------
+ * Return the language lines.
+ * --------------------------------------------------------------------------
+ */
 return array(
-	'title' => '[[ name ]] Administration',
+    'title' => '[[ name ]] Administration',
 );

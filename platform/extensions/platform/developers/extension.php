@@ -46,5 +46,5 @@ return array(
      */
     'dependencies' => array(
         'platform.menus'
-    ),
+    )
 );

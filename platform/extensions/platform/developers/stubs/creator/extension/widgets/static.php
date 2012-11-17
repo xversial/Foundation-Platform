@@ -22,17 +22,17 @@ namespace [[namespace]]\\Widgets;
 
 class Static
 {
-	public function test()
-	{
-		return 'Hello from '.__FILE__;
-	}
+    public function test()
+    {
+        return 'Hello from '.__FILE__;
+    }
 
-	public function test2()
-	{
-		$data = array(
-			'extensions' => API::get('extensions'),
-		);
+    public function test2()
+    {
+        $data = array(
+            'extensions' => API::get('extensions'),
+        );
 
-		return Theme::make('[[slug_designer]]::widgets.static.test2');
-	}
+        return Theme::make('[[slug_designer]]::widgets.static.test2', $data);
+    }
 }
