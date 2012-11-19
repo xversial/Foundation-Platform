@@ -49,7 +49,7 @@
             @foreach ($themes as $theme)
             <div class="active span3">
                 <div class="thumbnail">
-                    <img src="{{ $theme['thumbnail'] }}" title="{{ $theme['name'] }}">
+                    <img src="{{ Theme::asset($theme['thumbnail']) }}" title="{{ $theme['name'] }}">
                     <div class="caption">
                         <h5>{{ $theme['name'] }}</h5>
 
