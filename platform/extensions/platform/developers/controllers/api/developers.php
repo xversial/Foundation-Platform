@@ -165,6 +165,7 @@ class Platform_Developers_API_Developers_Controller extends API_Controller
 
 		// Properties
 		$name        = Input::get('name');
+		$slug        = Input::get('slug');
 		$author      = Input::get('author');
 		$description = Input::get('description', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.');
 		$version     = Input::get('version', '1.0');
@@ -176,7 +177,7 @@ class Platform_Developers_API_Developers_Controller extends API_Controller
 		// Get theme stub directories
 		$theme_stub_directory = Bundle::path('platform/developers').'stubs'.DS.'creator'.DS.'theme';
 
-		$theme_directory = $this->{'create_theme_'.$area.'_directory'}($root_directory);
+		$theme_directory = $this->{'create_theme_'.$area.'_directory'}($root_directory, $slug);
 
 		// We'll copy it over to the real directory
 		$this->copy_contents($theme_stub_directory, $theme_directory);
@@ -338,18 +339,18 @@ class Platform_Developers_API_Developers_Controller extends API_Controller
 		return $theme_directory;
 	}
 
-	protected function create_theme_backend_directory($root_directory)
+	protected function create_theme_backend_directory($root_directory, $slug)
 	{
-		$theme_directory = $root_directory.DS.'public'.DS.'platform'.DS.'themes'.DS.'frontend'.DS.'default';
+		$theme_directory = $root_directory.DS.'public'.DS.'platform'.DS.'themes'.DS.'frontend'.DS.$slug;
 
 		Filesystem::make('native')->directory()->make($theme_directory);
 
 		return $theme_directory;
 	}
 
-	protected function create_theme_frontend_directory($root_directory)
+	protected function create_theme_frontend_directory($root_directory, $slug)
 	{
-		$theme_directory = $root_directory.DS.'public'.DS.'platform'.DS.'themes'.DS.'frontend'.DS.'default';
+		$theme_directory = $root_directory.DS.'public'.DS.'platform'.DS.'themes'.DS.'frontend'.DS.$slug;
 
 		Filesystem::make('native')->directory()->make($theme_directory);
 

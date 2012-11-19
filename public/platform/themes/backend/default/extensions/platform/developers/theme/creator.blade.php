@@ -47,6 +47,23 @@
                 </p>
 
                 <div class="control-group">
+                    <label class="control-label" for="form-vendor">Slug</label>
+                    <div class="controls">
+                        <div class="input-append">
+                            <input type="text" name="slug" id="form-slug" required pattern="(?!^default$).*">
+                            <span class="add-on">
+                                <i class="icon-folder-open"></i>
+                            </span>
+                        </div>
+                        <div class="help-block">
+                            <p>
+                                Your theme needs a slug, this must be unique among themes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group">
                     <label class="control-label" for="form-name">Name</label>
                     <div class="controls">
                         <div class="input-append">

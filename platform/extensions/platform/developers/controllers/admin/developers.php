@@ -136,6 +136,7 @@ class Platform_Developers_Admin_Developers_Controller extends Admin_Controller
 
 			// Send through properties of the extension
 			'name'        => Input::get('name'),
+			'slug'        => Input::get('slug'),
 			'author'      => Input::get('author'),
 			'description' => Input::get('description'),
 			'version'     => Input::get('version'),
