@@ -26,6 +26,8 @@ class [[namespace_underscore]]_[[extension_classified]]_Controller extends Publi
      */
     public function get_index()
     {
+        // Show the page.
+        //
         return Theme::make('[[slug_designer]]::index');
     }
 }

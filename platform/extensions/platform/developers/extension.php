@@ -34,7 +34,7 @@ return array(
         'name'        => 'Developers',
         'author'      => 'Cartalyst LLC',
         'description' => 'Developer tools extension for Platform.',
-        'version'     => '1.0',
+        'version'     => '1.1',
         'is_core'     => true
     ),
 
@@ -46,5 +46,16 @@ return array(
      */
     'dependencies' => array(
         'platform.menus'
-    )
+    ),
+
+
+    /*
+     * -----------------------------------------
+     * Extension routes.
+     * -----------------------------------------
+     */
+    'routes' => function()
+    {
+        Route::get(ADMIN . '/developers', 'platform/developers::admin.extension_creator@index');
+    }
 );

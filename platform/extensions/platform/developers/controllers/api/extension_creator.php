@@ -19,6 +19,20 @@
  */
 
 
+/**
+ * --------------------------------------------------------------------------
+ * Developers > API > Extension Creator
+ * --------------------------------------------------------------------------
+ *
+ * Extension creator API.
+ *
+ * @package    Platform
+ * @author     Cartalyst LLC
+ * @copyright  (c) 2011 - 2012, Cartalyst LLC
+ * @license    BSD License (3-clause)
+ * @link       http://cartalyst.com
+ * @version    1.1
+ */
 class Platform_Developers_API_Extension_Creator_Controller extends API_Controller
 {
     /**
@@ -61,42 +75,35 @@ class Platform_Developers_API_Extension_Creator_Controller extends API_Controlle
 
         // Stubs directory.
         //
-        $stubs_directory = Bundle::path('platform/developers') . 'stubs' . DS . 'creator';
+        $stubs_directory = get_stubs_directory('creator');
 
-        // Get root directory for created extension cache.
+        // Create a temporary extension directory.
         //
-        $root_directory = create_root_directory('creator');
+        $temporary_directory = create_temporary_directory('creator' . DS . 'extension'); 
 
         // Create the extension directory based on the vendor and extension name.
         //
-        $extension_directory = create_extension_directory($root_directory, $vendor, $extension);
+        $extension_directory = create_extension_directory($temporary_directory, $vendor, $extension);
 
-        // Create the themes directories.
+        // Create the default themes directories based on the vendor and extension name.
         //
-        $theme_backend_directory  = create_theme_directory($root_directory, 'backend', $vendor, $extension);
-        $theme_frontend_directory = create_theme_directory($root_directory, 'frontend', $vendor, $extension);
+        $theme_backend_directory  = create_extension_theme_directory($temporary_directory, 'backend', $vendor, $extension);
+        $theme_frontend_directory = create_extension_theme_directory($temporary_directory, 'frontend', $vendor, $extension);
 
-        // Grab the stubs.
-        //
-        # Extension stubs.
-        #
-        $extension_stub_directory = $stubs_directory . DS . 'extension';
-
-        # Theme stubs.
-        #
-        $theme_backend_stub_directory  = $stubs_directory . DS . 'theme' . DS . 'backend';
-        $theme_frontend_stub_directory = $stubs_directory . DS . 'theme' . DS . 'frontend';
-
-        // Copy the stubs to the temporary extension directory.
+        // Grab and copy the stubs to the temporary directory.
         //
         # Extension stubs.
         #
-        copy_contents($extension_stub_directory, $extension_directory);
+        $extension_stubs = $stubs_directory . DS . 'extension';
+        copy_contents($extension_stubs, $extension_directory);
 
         # Theme stubs.
         #
-        copy_contents($theme_backend_stub_directory, $theme_backend_directory);
-        copy_contents($theme_frontend_stub_directory, $theme_frontend_directory);
+        $theme_backend_stubs  = $stubs_directory . DS . 'theme' . DS . 'backend';
+        copy_contents($theme_backend_stubs, $theme_backend_directory);
+
+        $theme_frontend_stubs = $stubs_directory . DS . 'theme' . DS . 'frontend';
+        copy_contents($theme_frontend_stubs, $theme_frontend_directory);
 
         // Update the admin controller file name.
         //
@@ -114,7 +121,7 @@ class Platform_Developers_API_Extension_Creator_Controller extends API_Controlle
 
         // Replace the stubs variables recursively.
         //
-        stubs_replacer($root_directory, array(
+        stubs_replacer($temporary_directory, array(
             'name'                 => $name,
             'author'               => $author,
             'description'          => $description,
@@ -133,15 +140,14 @@ class Platform_Developers_API_Extension_Creator_Controller extends API_Controlle
 
         // Generate the zip name.
         //
-        $zip_name = $vendor . '-' . $extension . '.zip';
+        $zip_name = sprintf('%s-%s.zip', $vendor, $extension);
 
         // Create the temporary zip file.
         //
-        $zip_location = create_zip($root_directory, time() . '-' . $zip_name);
+        $zip_location = create_zip($temporary_directory, time() . '-' . $zip_name);
 
-
-        # maybe we will not need this anymore ?!
-        #
+        // 
+        //
         switch (Input::get('encoding', 'base64'))
         {
             case 'utf-8':
@@ -152,10 +158,9 @@ class Platform_Developers_API_Extension_Creator_Controller extends API_Controlle
                 $encoded = base64_encode($file->contents($zip_location));
                 break;
         }
-        ########
 
-        # temporary fix ?!?!
-        #
+        // Temporary fix for PHP on windows messing up the contents of the
+        // ZIP when JSON encoded / decoded.
         header('Pragma: public');
         header('Expires: 0');
         header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
@@ -167,11 +172,10 @@ class Platform_Developers_API_Extension_Creator_Controller extends API_Controlle
         header('Content-Length: ' . filesize($zip_location));
         ob_end_flush();
         @readfile($zip_location);
-        ########
 
         // Remove both temporary directory and the zip file.
         //
-        $directory->delete($root_directory);
+        $directory->delete($temporary_directory);
         $file->delete($zip_location);
 
         // 
@@ -191,32 +195,4 @@ class Platform_Developers_API_Extension_Creator_Controller extends API_Controlle
 
         return 'array(' . ($data[0] != '' ? implode(', ', array_map(function($override){ return '\'' . trim($override) . '\''; }, $data)) : '' ) . ')';
     }
-
-
-
-    /*
-    public function list_all_file_paths($root_directory)
-    {
-        $iterator = new RecursiveIteratorIterator(
-            new RecursiveDirectoryIterator(
-                $root_directory,
-                RecursiveDirectoryIterator::SKIP_DOTS
-            ),
-            RecursiveIteratorIterator::SELF_FIRST
-        );
-
-        foreach ($iterator as $item)
-        {
-            if ($item->isDir())
-            {
-                // mkdir($destination.DS.$iterator->getSubPathName());
-            }
-            else
-            {
-                echo $item->getRealPath() . '<br>';
-                // copy($item, $destination.DS.$iterator->getSubPathName());
-            }
-        }
-    }
-    */
 }

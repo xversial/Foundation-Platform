@@ -2,14 +2,14 @@
 
 <!-- Page Title -->
 @section('title')
-    {{ Lang::line('platform/developers::general.creator.title') }}
+    {{ Lang::line('platform/developers::general.extension.creator.title') }}
 @endsection
 
 <!-- Queue Styles -->
 
 <!-- Queue Scripts -->
 {{ Theme::queue_asset('jquery-helpers', 'js/vendor/platform/helpers.js', 'jquery') }}
-{{ Theme::queue_asset('creator','platform/developers::js/creator.js', array('jquery', 'jquery-helpers')) }}
+{{ Theme::queue_asset('extension_creator','platform/developers::js/creator.js', array('jquery', 'jquery-helpers')) }}
 
 <!-- Page Content -->
 @section('content')
@@ -24,7 +24,7 @@
                     <span class="icon-reorder"></span>
                 </a>
 
-                <a class="brand" href="#">{{ Lang::line('platform/developers::general.creator.title') }}</a>
+                <a class="brand" href="#">{{ Lang::line('platform/developers::general.extension.creator.title') }}</a>
 
                 <!-- Everything you want hidden at 940px or less, place within here -->
                 <div id="tertiary-navigation" class="nav-collapse">

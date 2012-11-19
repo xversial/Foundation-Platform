@@ -21,7 +21,23 @@
 
 /**
  * --------------------------------------------------------------------------
- * Function: create_root_directory()
+ * Function: get_stubs_directory()
+ * --------------------------------------------------------------------------
+ *
+ * Returns the full path to the developers stubs directory.
+ * 
+ * @param    string
+ * @return   string
+ */
+function get_stubs_directory($directory = 'creator')
+{
+    return Bundle::path('platform/developers') . 'stubs' . DS . $directory;
+}
+
+
+/**
+ * --------------------------------------------------------------------------
+ * Function: create_temporary_directory()
  * --------------------------------------------------------------------------
  *
  * Creates a temporary directory.
@@ -29,19 +45,19 @@
  * @param    string
  * @return   string
  */
-function create_root_directory($directory)
+function create_temporary_directory($directory)
 {
     // Prepare the directory.
     //
-    $root_directory = path('storage') . 'work' . DS . 'developers' . DS . $directory . DS . 'cache' . DS . time();
+    $temporary_directory = path('storage') . 'work' . DS . 'developers' . DS . $directory . DS . 'cache' . DS . time();
 
     // Create the directory.
     //
-    Filesystem::make('native')->directory()->make($root_directory);
+    Filesystem::make('native')->directory()->make($temporary_directory);
 
     // Return the directory path.
     //
-    return $root_directory;
+    return $temporary_directory;
 }
 
 
@@ -57,11 +73,11 @@ function create_root_directory($directory)
  * @param    string
  * @return   string
  */
-function create_extension_directory($root_directory, $vendor, $extension)
+function create_extension_directory($temporary_directory, $vendor, $extension)
 {
     // Prepare the directory.
     //
-    $extension_directory = $root_directory . DS . 'platform' . DS . 'extensions' . DS . $vendor . DS . $extension;
+    $extension_directory = $temporary_directory . DS . 'platform' . DS . 'extensions' . DS . $vendor . DS . $extension;
 
     // Create the directory.
     //
@@ -75,10 +91,10 @@ function create_extension_directory($root_directory, $vendor, $extension)
 
 /**
  * --------------------------------------------------------------------------
- * Function: create_theme_directory()
+ * Function: create_extension_theme_directory()
  * --------------------------------------------------------------------------
  *
- * Creates the default vendor/extension theme view files.
+ * Creates the vendor/extension theme directory.
  *
  * @param    string
  * @param    string
@@ -86,11 +102,39 @@ function create_extension_directory($root_directory, $vendor, $extension)
  * @param    string
  * @return   string
  */
-function create_theme_directory($root_directory, $type, $vendor, $extension)
+function create_extension_theme_directory($temporary_directory, $type, $vendor, $extension)
 {
     // Prepare the directory.
     //
-    $theme_directory = $root_directory . DS . 'public' . DS . 'platform' . DS . 'themes' . DS . $type . DS . 'default' . DS . 'extensions' . DS . $vendor . DS . $extension;
+    $theme_directory = $temporary_directory . DS . 'public' . DS . 'platform' . DS . 'themes' . DS . $type . DS . 'default' . DS . 'extensions' . DS . $vendor . DS . $extension;
+
+    // Create the directory.
+    //
+    Filesystem::make('native')->directory()->make($theme_directory);
+
+    // Return the directory path.
+    //
+    return $theme_directory;
+}
+
+
+/**
+ * --------------------------------------------------------------------------
+ * Function: create_theme_directory()
+ * --------------------------------------------------------------------------
+ *
+ * Creates the theme directory.
+ *
+ * @param    string
+ * @param    string
+ * @param    string
+ * @return   string
+ */
+function create_theme_directory($temporary_directory, $type, $slug)
+{
+    // Prepare the directory.
+    //
+    $theme_directory = $temporary_directory . DS . 'public' . DS . 'platform' . DS . 'themes' . DS . $type . DS . $slug;
 
     // Create the directory.
     //
@@ -107,7 +151,7 @@ function create_theme_directory($root_directory, $type, $vendor, $extension)
  * Function: copy_contents()
  * --------------------------------------------------------------------------
  *
- * 
+ * Copies the contents from a directory to another.
  *
  * @param    string
  * @param    string
@@ -115,6 +159,8 @@ function create_theme_directory($root_directory, $type, $vendor, $extension)
  */
 function copy_contents($source, $destination)
 {
+    // Recursive get a list of files/directories.
+    //
     $iterator = new RecursiveIteratorIterator(
         new RecursiveDirectoryIterator(
             $source,
@@ -123,15 +169,26 @@ function copy_contents($source, $destination)
         RecursiveIteratorIterator::SELF_FIRST
     );
 
+    // Loop through the files/directories.
+    //
     foreach ($iterator as $item)
     {
+        // Is this a directory?
+        //
         if ($item->isDir())
         {
+            // Create the directory.
+            //
             mkdir($destination.DS.$iterator->getSubPathName());
         }
+
+        // We must be a file.
+        //
         else
         {
-            copy($item, $destination.DS.$iterator->getSubPathName());
+            // Copy the file.
+            //
+            copy($item, $destination . DS . $iterator->getSubPathName());
         }
     }
 }
@@ -142,51 +199,75 @@ function copy_contents($source, $destination)
  * Function: create_zip()
  * --------------------------------------------------------------------------
  *
- * 
+ * Creates the zip file.
  *
  * @param    string
  * @param    string
  * @return   string
  */
-function create_zip($root_directory, $zip_name)
+function create_zip($temporary_directory, $zip_name)
 {
-    $zip_name = dirname($root_directory).DS.$zip_name;
+    // Work the zip name.
+    //
+    $zip_name = dirname($temporary_directory) . DS . $zip_name;
+
+    // Open a new zip archive.
+    //
     $zip = new ZipArchive();
     $zip->open($zip_name, ZipArchive::CREATE);
 
-    $iterator = new RecursiveIteratorIterator(
+    // Prepare the replacements array.
+    //
+    $replacements = array(
+        $temporary_directory . DS => '',
+        DS                        => '/' // Zips don't like \ on Windows.
+    );
+
+    // Recursive get a list of files/directories.
+    //
+    $items = new RecursiveIteratorIterator(
         new RecursiveDirectoryIterator(
-            $root_directory,
+            $temporary_directory,
             RecursiveDirectoryIterator::SKIP_DOTS
         ),
         RecursiveIteratorIterator::SELF_FIRST
     );
 
-    $replacements = array(
-        $root_directory.DS => '',
-        DS                 => '/', // Zips don't like \ on Windows.
-    );
-
-    foreach ($iterator as $item)
+    // Loop through the files/directories.
+    //
+    foreach ($items as $item)
     {
+        // Get the complete path of this item.
+        //
         $path = $item->getRealPath();
 
+        // Is this a directory?
+        //
         if ($item->isDir())
         {
+            // Create the directory.
+            //
             $zip->addEmptyDir(str_replace(array_keys($replacements), array_values($replacements), $path));
         }
+
+        // We must be a file.
+        //
         else
         {
+            // Add the file.
+            //
             $zip->addFile($path, str_replace(array_keys($replacements), array_values($replacements), $path));
         }
     }
 
+    // Close the zip archive.
+    //
     $zip->close();
 
+    // Return the zip name.
+    //
     return $zip_name;
 }
-
-
 
 
 /**
@@ -200,41 +281,51 @@ function create_zip($root_directory, $zip_name)
  * @param    string
  * @return   void
  */
-function stubs_replacer($root_directory, array $variables)
+function stubs_replacer($temporary_directory, array $variables)
 {
-    # 
+    // Stubs replacer variables.
+    //
     $variable_start = '[[';
     $variable_end   = ']]';
 
-    // Prepare data
-    $items              = new FilesystemIterator($root_directory, FilesystemIterator::SKIP_DOTS);
+    // Prepare data.
+    //
+    $items              = new FilesystemIterator($temporary_directory, FilesystemIterator::SKIP_DOTS);
     $file               = Filesystem::make('native')->file();
     $prepared_variables = array();
     $variable_start     = $variable_start;
     $variable_end       = $variable_end;
 
+    // Loop through the variables.
+    //
     foreach ($variables as $name => $value)
     {
-        $prepared_variables[$variable_start . $name . $variable_end] = $value;
+        // Store the variables.
+        //
+        $prepared_variables[ $variable_start . $name . $variable_end ] = $value;
     }
 
+    // Loop through the files/directories.
+    //
     foreach ($items as $item)
     {
+        // Get the complete path of this item.
+        // 
         $real_path = $item->getRealPath();
 
+        // Is this a directory?
+        //
         if ($item->isDir())
         {
             stubs_replacer($real_path, $variables);
         }
+
+        // We must be a file.
+        //
         else
         {
-            // // Load the view
-            // $view     = View::make('path: '.$real_path, $variables);
-            // $compiled = Blade::compile($view);
-
-            // Filesystem::make('native')->file()->write($real_path, $compiled);
-
-            // Do our replacements
+            // Do the replacements.
+            //
             $result = str_replace(array_keys($prepared_variables), array_values($prepared_variables), $file->contents($real_path));
             $file->write($real_path, $result);
         }

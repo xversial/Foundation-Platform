@@ -30,6 +30,8 @@ class [[namespace_underscore]]_Admin_[[extension_classified]]_Controller extends
             'unique_id' => uniqid(),
         );
 
+        // Show the page.
+        //
         return View::make('[[slug_designer]]::index', $data);
     }
 }

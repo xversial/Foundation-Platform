@@ -24,15 +24,19 @@ class Static
 {
     public function test()
     {
-        return 'Hello from '.__FILE__;
+        return 'Hello from ' . __FILE__;
     }
 
     public function test2()
     {
+        // Initiate a data array.
+        // 
         $data = array(
-            'extensions' => API::get('extensions'),
+            'extensions' => API::get('extensions')
         );
 
+        // Show the page.
+        //
         return Theme::make('[[slug_designer]]::widgets.static.test2', $data);
     }
 }

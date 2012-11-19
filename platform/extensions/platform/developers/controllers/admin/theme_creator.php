@@ -21,10 +21,10 @@
 
 /**
  * --------------------------------------------------------------------------
- * Developers > Admin > Extension Creator
+ * Developers > Admin > Theme Creator
  * --------------------------------------------------------------------------
  *
- * Extension creator.
+ * Theme creator.
  *
  * @package    Platform
  * @author     Cartalyst LLC
@@ -33,7 +33,7 @@
  * @link       http://cartalyst.com
  * @version    1.1
  */
-class Platform_Developers_Admin_Extension_Creator_Controller extends Admin_Controller
+class Platform_Developers_Admin_Theme_Creator_Controller extends Admin_Controller
 {
     /**
      * --------------------------------------------------------------------------
@@ -53,7 +53,7 @@ class Platform_Developers_Admin_Extension_Creator_Controller extends Admin_Contr
 
         // Set the active menu.
         //
-        $this->active_menu('admin-developers-extension-creator');
+        $this->active_menu('admin-developers-theme-creator');
     }
 
 
@@ -62,32 +62,16 @@ class Platform_Developers_Admin_Extension_Creator_Controller extends Admin_Contr
      * Function: get_index()
      * --------------------------------------------------------------------------
      *
-     * Show the extension creator main page.
+     * Show the theme creator main page.
      *
      * @access   public
      * @return   View
      */
     public function get_index()
     {
-        // Initiate an array with data to send to the page.
-        //
-        $data = array(
-            // Reserved vendors.
-            //
-            'reserved_vendors' => array(ExtensionsManager::CORE_VENDOR),
-
-            // Default vendor.
-            //
-            'default_vendor' => ExtensionsManager::DEFAULT_VENDOR,
-
-            // Installed extensions.
-            //
-            'extensions' => API::get('extensions')
-        );
-
         // Show the page.
         //
-        return Theme::make('platform/developers::extension.creator', $data);
+        return Theme::make('platform/developers::theme.creator');
     }
 
 
@@ -105,17 +89,13 @@ class Platform_Developers_Admin_Extension_Creator_Controller extends Admin_Contr
     {
         // Make the API request.
         //
-        $request = API::post('developers/extension_creator', array(
-            // Send properties of the extension.
-            //
-            'name'         => Input::get('name'),
-            'author'       => Input::get('author'),
-            'description'  => Input::get('description'),
-            'version'      => Input::get('version'),
-            'vendor'       => Input::get('vendor'),
-            'extension'    => Input::get('extension'),
-            'dependencies' => Input::get('dependencies', array()),
-            'overrides'    => Input::get('overrides', array()),
+        $request = API::post('developers/theme_creator', array(
+            'name'        => Input::get('name'),
+            'slug'        => Input::get('slug'),
+            'author'      => Input::get('author'),
+            'description' => Input::get('description'),
+            'version'     => Input::get('version'),
+            'area'        => Input::get('area'),
 
             // Tell the API how we want our extension returned to us.
             // We can either base64 encode or utf-8 encode the ZIP contents.
@@ -129,7 +109,7 @@ class Platform_Developers_Admin_Extension_Creator_Controller extends Admin_Contr
         {
             Platform::message()->error(Lang::line('platform/developers::messages.creator.decode_fail'));
 
-            return Redirect::to_admin('developers/extension_creator');
+            return Redirect::to_admin('developers/theme_creator');
         }
     }
 }

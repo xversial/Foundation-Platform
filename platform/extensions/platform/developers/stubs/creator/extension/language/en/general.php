@@ -25,5 +25,5 @@
  * --------------------------------------------------------------------------
  */
 return array(
-    'title' => '[[ name ]] Administration',
+    'title' => '[[ name ]] Administration'
 );
