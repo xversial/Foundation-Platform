@@ -103,6 +103,23 @@
                     </div>
                 </div>
 
+                <div class="control-group">
+                    <label class="control-label">Area</label>
+                    <div class="controls">
+                        <label class="radio">
+                            <input type="radio" name="area" value="backend">
+                            Admin
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="area" value="frontend">
+                            Front
+                        </label>
+                        <div class="help-block">
+                            Where do you want your theme to sit within Platform?
+                        </div>
+                    </div>
+                </div>
+
             </fieldset>
 
             <fieldset>

@@ -64,7 +64,7 @@ class Platform_Developers_Admin_Developers_Controller extends Admin_Controller
 
 	public function post_extension_creator()
 	{
-		$zip = API::post('developers/create', array(
+		$zip = API::post('developers/create_extension', array(
 
 			// Send through properties of the extension
 			'name'         => Input::get('name'),
@@ -132,7 +132,53 @@ class Platform_Developers_Admin_Developers_Controller extends Admin_Controller
 
 	public function post_theme_creator()
 	{
-		dd(Input::get());
+		$zip = API::post('developers/create_theme', array(
+
+			// Send through properties of the extension
+			'name'        => Input::get('name'),
+			'author'      => Input::get('author'),
+			'description' => Input::get('description'),
+			'version'     => Input::get('version'),
+			'area'        => Input::get('area'),
+
+			// Tell the API how we want our extension
+			// returned to us. We can either base64 encode
+			// or utf-8 encode the ZIP contents.
+			'encoding'  => 'base64',
+		));
+
+		// Check we have valid contents
+		if (($contents = base64_decode($zip)) === false)
+		{
+			Platform::message()->error(Lang::line('platform/developers::messages.creator.decode_fail'));
+
+			return Redirect::to_admin('developers/create');
+		}
+
+/*
+		// The name the ZIP should get
+		$name = sprintf('%s-%s.zip', Input::get('vendor', 'vendor'), Input::get('extension', 'extension'));
+
+		// Let's build some headers up to allow us to stream the file
+		$headers = array(
+			'Content-Description'       => 'File Transfer',
+			'Content-Type'              => File::mime('zip'),
+			'Content-Transfer-Encoding' => 'binary',
+			'Expires'                   => 0,
+			'Cache-Control'             => 'must-revalidate, post-check=0, pre-check=0',
+			'Pragma'                    => 'public',
+			'Content-Length'            => Str::length($contents),
+		);
+
+		// Once we create the response, we need to set the content disposition
+		// header on the response based on the file's name. We'll pass this
+		// off to the HttpFoundation and let it create the header text.
+		$response = new Response($contents, 200, $headers);
+
+		$d = $response->disposition($name);
+
+		return $response->header('Content-Disposition', $d);
+*/
 	}
 
 }
