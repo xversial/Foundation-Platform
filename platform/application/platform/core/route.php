@@ -71,4 +71,35 @@ class Route extends Laravel\Routing\Route
         return $response;
     }
 
+    /**
+     * Override just fixed namespace issue with controller
+	 * Execute the route action and return the response.
+	 *
+	 * Unlike the "call" method, none of the attached filters will be run.
+	 *
+	 * @return mixed
+	 */
+	public function response()
+	{
+		// If the action is a string, it is pointing the route to a controller
+		// action, and we can just call the action and return its response.
+		// We'll just pass the action off to the Controller class.
+		$delegate = $this->delegate();
+
+		if ( ! is_null($delegate))
+		{
+			return \Controller::call($delegate, $this->parameters);
+		}
+
+		// If the route does not have a delegate, then it must be a Closure
+		// instance or have a Closure in its action array, so we will try
+		// to locate the Closure and call it directly.
+		$handler = $this->handler();
+
+		if ( ! is_null($handler))
+		{
+			return call_user_func_array($handler, $this->parameters);
+		}
+	}
+
 }

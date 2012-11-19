@@ -97,7 +97,7 @@ class Router extends Laravel\Routing\Router
 
             static::add_to_queue($route);
 
-            return new Route($method, $uri, $action);
+            return $route;
         }
 
         // If we can't find a literal match we'll iterate through all of the
