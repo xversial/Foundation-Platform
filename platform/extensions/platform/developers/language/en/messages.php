@@ -25,11 +25,7 @@
  * --------------------------------------------------------------------------
  */
 return array(
-
-	'creator' => array(
-
-		'decode_fail' => 'Could not decode ZIP to stream to client.',
-
-	),
-
+    'creator' => array(
+        'decode_fail' => 'Could not decode ZIP to stream to client.'
+    )
 );

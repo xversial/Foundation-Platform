@@ -25,17 +25,15 @@
  * --------------------------------------------------------------------------
  */
 return array(
-
-	'extension' => array(
-    	'creator' => array(
-	        'title' => 'Extension Creator',
-	    ),
+    'extension' => array(
+        'creator' => array(
+            'title' => 'Extension Creator'
+        )
     ),
 
     'theme' => array(
-    	'creator' => array(
-	        'title' => 'Theme Creator',
-	    ),
-    ),
-
+        'creator' => array(
+            'title' => 'Theme Creator'
+        )
+    )
 );

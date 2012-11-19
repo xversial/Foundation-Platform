@@ -9,7 +9,7 @@
 
 <!-- Queue Scripts -->
 {{ Theme::queue_asset('jquery-helpers', 'js/vendor/platform/helpers.js', 'jquery') }}
-{{ Theme::queue_asset('creator','platform/developers::js/extension/creator.js', array('jquery', 'jquery-helpers')) }}
+{{ Theme::queue_asset('extension_creator','platform/developers::js/creator.js', array('jquery', 'jquery-helpers')) }}
 
 <!-- Page Content -->
 @section('content')
@@ -97,7 +97,7 @@
                     <label class="control-label" for="form-version">Version</label>
                     <div class="controls">
                         <div class="input-append">
-                            <input type="text" name="version" id="form-version" required pattern="^\d{1,2}(?:\.\d{1,2})?(?:\.\d{1,2})?$">
+                            <input type="text" name="version" id="form-version" required pattern="^(\d{1,2})(\.)?(\d{1,2})?(\.)?(\d{1,2})?$">
                             <span class="add-on">
                                 <i class="icon-leaf"></i>
                             </span>
