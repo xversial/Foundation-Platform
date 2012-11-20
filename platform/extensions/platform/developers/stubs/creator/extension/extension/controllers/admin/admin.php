@@ -18,14 +18,20 @@
  * @link       http://cartalyst.com
  */
 
-class [[namespace_underscore]]_[[extension_classified]]_Controller extends Public_Controller
+class [[namespace_underscore]]_Admin_[[extension_classified]]_Controller extends Admin_Controller
 {
-	/**
-	 * Index view, responds to the main public route for
-	 * the extension.
-	 */
-	public function get_index()
-	{
+    /**
+     * Index view, responds to the main admin route for
+     * the extension.
+     */
+    public function get_index()
+    {
+        $data = array(
+            'unique_id' => uniqid(),
+        );
 
-	}
+        // Show the page.
+        //
+        return View::make('[[slug_designer]]::index', $data);
+    }
 }

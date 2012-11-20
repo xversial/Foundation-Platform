@@ -18,6 +18,13 @@
  * @link       http://cartalyst.com
  */
 
-return array(
-	'title' => '[[ name ]] Administration',
-);
+
+/*
+ * --------------------------------------------------------------------------
+ * Register some namespaces.
+ * --------------------------------------------------------------------------
+ */
+Autoloader::namespaces(array(
+    '[[namespace]]'          => __DIR__ . DS . 'models',
+    '[[namespace]]\\Widgets' => __DIR__ . DS . 'widgets'
+));

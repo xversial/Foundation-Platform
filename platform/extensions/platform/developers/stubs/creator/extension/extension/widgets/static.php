@@ -18,13 +18,25 @@
  * @link       http://cartalyst.com
  */
 
+namespace [[namespace]]\\Widgets;
 
-/*
- * --------------------------------------------------------------------------
- * Register some namespaces.
- * --------------------------------------------------------------------------
- */
-Autoloader::namespaces(array(
-	'[[namespace]]'          => __DIR__ . DS . 'models'
-	'[[namespace]]\\Widgets' => __DIR__ . DS . 'widgets'
-));
+class Static
+{
+    public function test()
+    {
+        return 'Hello from ' . __FILE__;
+    }
+
+    public function test2()
+    {
+        // Initiate a data array.
+        // 
+        $data = array(
+            'extensions' => API::get('extensions')
+        );
+
+        // Show the page.
+        //
+        return Theme::make('[[slug_designer]]::widgets.static.test2', $data);
+    }
+}

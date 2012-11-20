@@ -35,7 +35,7 @@
 		<div class="control-group">
 			<label for="template" class="control-label">{{ Lang::line('platform/pages::form.pages.create.template') }}:</label>
 			<div class="controls">
-				{{ Form::select('templates', $templates, $template) }}
+				{{ Form::select('templates', $templates, Input::old('template')) }}
 				<span class="help-block">{{ Lang::line('platform/pages::form.pages.create.template_help') }}</span>
 			</div>
 		</div>

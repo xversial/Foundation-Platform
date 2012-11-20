@@ -27,3 +27,11 @@
 Autoloader::namespaces(array(
     'Platform\\Developers' => __DIR__ . DS . 'models'
 ));
+
+
+/*
+ * --------------------------------------------------------------------------
+ * Include our helpers file.
+ * --------------------------------------------------------------------------
+ */
+require_once __DIR__ . DS . 'helpers.php';

@@ -12,7 +12,7 @@
  * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
  *
  * @package    Platform
- * @version    1.1.1
+ * @version    1.1.0
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
  * @copyright  (c) 2011 - 2012, Cartalyst LLC
@@ -32,8 +32,8 @@ use Platform\Menus\Menu;
  * --------------------------------------------------------------------------
  * Install Class v1.0.0
  * --------------------------------------------------------------------------
- *
- * Developers installation.
+ * 
+ * Menus installation.
  *
  * @package    Platform
  * @author     Cartalyst LLC
@@ -41,7 +41,7 @@ use Platform\Menus\Menu;
  * @license    BSD License (3-clause)
  * @link       http://cartalyst.com
  */
-class Platform_Developers_v1_0_0
+class Platform_Developers_v1_0_1
 {
     /**
      * --------------------------------------------------------------------------
@@ -57,41 +57,36 @@ class Platform_Developers_v1_0_0
     {
         /*
          * --------------------------------------------------------------------------
-         * # 1) Create the menus.
+         * # 1) Create the menu items.
          * --------------------------------------------------------------------------
          */
-        // Get the System menu.
-        //
-        $system = Menu::find('admin-system');
 
-        // Admin > System > Developers
-        //
-        $developers = new Menu(array(
-            'name'          => 'Developers',
+        // Grab the developers extension
+        $developers = Menu::find('admin-developers');
+
+        // Update the extension creator menu item as we're adding a theme
+        // creator.
+        if ($developers_creator = Menu::find('admin-developers-creator'))
+        {
+            $developers_creator->slug      = 'admin-developers-extension-creator';
+            $developers_creator->uri       = 'developers/extension_creator';
+            $developers_creator->extension = 'developers';
+            $developers_creator->save();
+        }
+
+        $developers_theme_creator = new Menu(array(
+            'name'          => 'Theme Creator',
             'vendor'        => 'platform',
             'extension'     => 'developers',
-            'slug'          => 'admin-developers',
-            'uri'           => 'developers',
+            'slug'          => 'admin-developers-theme-creator',
+            'uri'           => 'developers/theme_creator',
             'user_editable' => 0,
             'status'        => 1,
-            'class'         => 'icon-github'
+            'class'         => 'icon-eye-open'
         ));
-        $developers->last_child_of($system);
-        $developers->reload();
 
-        // Admin > System > Developers > Extension Creator
-        //
-        $extension_creator = new Menu(array(
-            'name'          => 'Extension Creator',
-            'vendor'        => 'platform',
-            'extension'     => 'developers-creator',
-            'slug'          => 'admin-developers-creator',
-            'uri'           => 'developers/creator',
-            'user_editable' => 0,
-            'status'        => 1,
-            'class'         => 'icon-magic'
-        ));
-        $extension_creator->last_child_of($developers);
+        $developers_theme_creator->last_child_of($developers);
+
     }
 
 
@@ -107,18 +102,15 @@ class Platform_Developers_v1_0_0
      */
     public function down()
     {
-        /*
-         * --------------------------------------------------------------------------
-         * # 1) Delete the menus.
-         * --------------------------------------------------------------------------
-         */
-        if ($developers = Menu::find('admin-developers'))
+        if ($developers_extension_creator = Menu::find('admin-developer-extension-creator'))
         {
-            $developers->delete();
-        }
-        if ($developers_creator = Menu::find('admin-developers-creator'))
-        {
-            $developers_creator->delete();
+            $developers_extension_creator->slug      = 'admin-developer-creator';
+            $developers_extension_creator->uri       = 'developers/creator';
+
+            // Note, don't reintroduce bug with the incorrect extension,
+            // just revert features.
+
+            $developers_extension_creator->save();
         }
     }
 }

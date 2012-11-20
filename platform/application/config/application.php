@@ -75,7 +75,7 @@ return array(
      * characters of random gibberish.
      *
      */
-    'key' => 'YourSecretKeyGoesHere!',
+    'key' => '',
 
 
     /*

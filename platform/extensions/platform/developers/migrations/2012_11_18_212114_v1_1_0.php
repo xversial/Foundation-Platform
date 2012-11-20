@@ -30,7 +30,7 @@ use Platform\Menus\Menu;
 
 /**
  * --------------------------------------------------------------------------
- * Install Class v1.0.0
+ * Install Class v1.1.0
  * --------------------------------------------------------------------------
  *
  * Developers installation.
@@ -41,7 +41,7 @@ use Platform\Menus\Menu;
  * @license    BSD License (3-clause)
  * @link       http://cartalyst.com
  */
-class Platform_Developers_v1_0_0
+class Platform_Developers_v1_1_0
 {
     /**
      * --------------------------------------------------------------------------
@@ -57,41 +57,40 @@ class Platform_Developers_v1_0_0
     {
         /*
          * --------------------------------------------------------------------------
-         * # 1) Create the menus.
+         * # 1) Update the extension creator menu.
          * --------------------------------------------------------------------------
          */
-        // Get the System menu.
-        //
-        $system = Menu::find('admin-system');
+        if($menu = Menu::find('admin-developers-creator'))
+        {
+            $menu->extension = 'developers';
+            $menu->slug      = 'admin-developers-extension-creator';
+            $menu->uri       = 'developers/extension_creator';
+            $menu->save();
+        }
 
-        // Admin > System > Developers
+
+        /*
+         * --------------------------------------------------------------------------
+         * # 2) Create the theme creator menu.
+         * --------------------------------------------------------------------------
+         */
+        // Get the developers menu.
         //
-        $developers = new Menu(array(
-            'name'          => 'Developers',
+        $developers = Menu::find('admin-developers');
+
+        // Admin > System > Developers > Theme Creator
+        //
+        $developers_theme_creator = new Menu(array(
+            'name'          => 'Theme Creator',
             'vendor'        => 'platform',
             'extension'     => 'developers',
-            'slug'          => 'admin-developers',
-            'uri'           => 'developers',
+            'slug'          => 'admin-developers-theme-creator',
+            'uri'           => 'developers/theme_creator',
             'user_editable' => 0,
             'status'        => 1,
-            'class'         => 'icon-github'
+            'class'         => 'icon-eye-open'
         ));
-        $developers->last_child_of($system);
-        $developers->reload();
-
-        // Admin > System > Developers > Extension Creator
-        //
-        $extension_creator = new Menu(array(
-            'name'          => 'Extension Creator',
-            'vendor'        => 'platform',
-            'extension'     => 'developers-creator',
-            'slug'          => 'admin-developers-creator',
-            'uri'           => 'developers/creator',
-            'user_editable' => 0,
-            'status'        => 1,
-            'class'         => 'icon-magic'
-        ));
-        $extension_creator->last_child_of($developers);
+        $developers_theme_creator->last_child_of($developers);
     }
 
 
@@ -109,16 +108,12 @@ class Platform_Developers_v1_0_0
     {
         /*
          * --------------------------------------------------------------------------
-         * # 1) Delete the menus.
+         * # 1) Delete the theme creator menu.
          * --------------------------------------------------------------------------
          */
-        if ($developers = Menu::find('admin-developers'))
+        if ($menu = Menu::find('admin-developers-theme-creator'))
         {
-            $developers->delete();
-        }
-        if ($developers_creator = Menu::find('admin-developers-creator'))
-        {
-            $developers_creator->delete();
+            $menu->delete();
         }
     }
 }

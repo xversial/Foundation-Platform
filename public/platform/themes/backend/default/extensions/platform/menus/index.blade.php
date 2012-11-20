@@ -79,7 +79,7 @@
 									{{ HTML::link_to_secure(ADMIN.'/menus/edit/'.$menu['slug'], 'Edit', array('class' => 'btn btn-mini')) }}
 
 									@if ($menu['user_editable'])
-										{{ HTML::link_to_secure(ADMIN.'/menus/delete/'.$menu['slug'], 'Delete', array('class' => 'btn btn-mini btn-danger', 'onclick' => 'return confirm(\'Are you sure you want to delete this menu? This cannot be undone.\');')) }}
+										{{ HTML::link_to_secure(ADMIN.'/menus/delete/'.$menu['slug'], 'Delete', array('class' => 'btn btn-mini btn-danger', 'id' => 'modal-confirm')) }}
 									@endif
 								</div>
 							</td>
@@ -97,5 +97,7 @@
 		</div>
 	</div>
 </section>
+
+@widget('platform/application::modal.confirm')
 
 @endsection

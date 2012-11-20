@@ -18,21 +18,10 @@
  * @link       http://cartalyst.com
  */
 
-namespace [[namespace]]\\Widgets;
 
-class Static
-{
-	public function test()
-	{
-		return 'Hello from '.__FILE__;
-	}
-
-	public function test2()
-	{
-		$data = array(
-			'extensions' => API::get('extensions'),
-		);
-
-		return Theme::make('[[slug_designer]]::widgets.static.test2');
-	}
-}
+/*
+ * --------------------------------------------------------------------------
+ * Routes
+ * --------------------------------------------------------------------------
+ */
+Route::any('/[[handles]]', '[[slug_designer]]::[[handles]]@index');
