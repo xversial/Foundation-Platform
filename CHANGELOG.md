@@ -1,3 +1,30 @@
+1.1.2 Changelog
+----------
+
+**General:**
+
+  * Application key reset.
+  * Various bug fixes across a few extensions
+
+**Extension Manager:**
+
+  * Fixed issue with routes and extending frontend controllers.
+
+**Developer Tools:**
+
+  * Fixed the zip files being corrupted on windows.
+  * Fixed missing comma in
+  * New tool: Theme Creator
+
+**Menus:**
+
+  * Fixed menu delete and lang call spelling error.
+
+**Filesystem:**
+
+  * Fixed namespace issues on PHP 5.3.2
+
+
 1.1.1 Changelog
 ----------
 
