@@ -13,7 +13,7 @@
 **Developer Tools:**
 
   * Fixed the zip files being corrupted on windows.
-  * Fixed missing comma in
+  * Fixed missing comma in stubs
   * New tool: Theme Creator
 
 **Menus:**
