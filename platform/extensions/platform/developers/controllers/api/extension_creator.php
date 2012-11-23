@@ -99,7 +99,7 @@ class Platform_Developers_API_Extension_Creator_Controller extends API_Controlle
         copy_contents($theme_backend_stubs, $theme_backend_directory);
 
         $theme_frontend_stubs = get_stubs_directory('creator' . DS . 'extension' . DS . 'theme' . DS . 'frontend');
-        copy_contents($theme_frontend_stubs, $theme_backend_directory);
+        copy_contents($theme_frontend_stubs, $theme_frontend_directory);
 
         // Update the admin controller file name.
         //
