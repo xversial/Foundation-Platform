@@ -115,6 +115,13 @@ class Platform_Developers_API_Extension_Creator_Controller extends API_Controlle
             $file->move($public_controller, dirname($public_controller) . DS . $extension . '.php');
         }
 
+        // Update the migration file name.
+        //
+        if ($file->exists($migration = $extension_directory . DS . 'migrations' . DS . 'migration.php'))
+        {
+            $file->move($migration, dirname($migration) . DS . date('Y_m_d_His') . '_v' . Str::classify($version) . '.php');
+        }
+
         // Replace the stubs variables recursively.
         //
         stubs_replacer($temporary_directory, array(
@@ -122,6 +129,7 @@ class Platform_Developers_API_Extension_Creator_Controller extends API_Controlle
             'author'               => $author,
             'description'          => $description,
             'version'              => $version,
+            'version_classified'   => Str::classify($version),
             'vendor'               => $vendor,
             'extension'            => $extension,
             'extension_classified' => Str::classify($extension),
