@@ -28,7 +28,8 @@ namespace Platform\Menus\Widgets;
  */
 use API,
     APIClientException,
-    Input,
+    Laravel\Input,
+    Laravel\URI,
     Platform,
     Platform\Menus\Menu,
     Sentry,
@@ -113,6 +114,10 @@ class Menus
             }
         }
 
+        // Get the default page id.
+        //
+        $default_page_id = Platform::get('platform/pages::default.page');
+
         try
         {
             $active_path = API::get('menus/active_path');
@@ -147,8 +152,26 @@ class Menus
             }
         }
 
-        // Now loop through items and take actions based
-        // on the item type.
+        // Loop through the pages.
+        //
+        foreach ($this->pages() as $page)
+        {
+            // Loop through the items.
+            //
+            foreach ($items as &$item)
+            {
+                // Check if the first uri segment is a page, and
+                //
+                if (URI::segment(1) == $page['slug'] or URI::segment(1) == '' and $item['page_id'] == $default_page_id)
+                {
+                    API::post('menus/active', array('slug' => $item['slug']));
+                    $active_path = API::get('menus/active_path');
+                }
+            }
+        }
+
+        // Now loop through items and take actions based on the item type.
+        //
         foreach ($items as &$item)
         {
             switch ($item['type'])
@@ -170,7 +193,7 @@ class Menus
                     // Grab the first match for the page
                     if (is_array($page = reset($pages)) and array_key_exists('id', $page))
                     {
-                        $item['page_uri'] = ($page['id'] != Platform::get('platform/pages::default.page')) ? $page['slug'] : '';;
+                        $item['page_uri'] = ($page['id'] != $default_page_id) ? $page['slug'] : '';
                     }
 
                     break;
