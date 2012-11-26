@@ -81,58 +81,12 @@ class Menus
      */
     public function nav($start = 0, $children_depth = 0, $class = null, $before_uri = null)
     {
-        // Do we have a menu slug ?
+        // Le'ts get menus according to the start depth and what is the active menu.
         //
-        if ( ! is_numeric($start))
-        {
-            // Make sure we have a slug
-            //
-            if ( ! strlen($start))
-            {
-                return '';
-            }
-
-            try
-            {
-                $items = API::get('menus/' . $start . '/children', array(
-
-                    // Only enabled
-                    'enabled' => true,
-
-                    // Pass through the children depth
-                    'limit' => $children_depth ?: false,
-
-                    // We want to automatically filter
-                    // what items show (according to Session)
-                    // data
-                    'filter_visibility' => 'automatic'
-                ));
-            }
-            catch (APIClientException $e)
-            {
-                return '';
-            }
-        }
-
-        // Get the default page id.
-        //
-        $default_page_id = Platform::get('platform/pages::default.page');
-
-        try
-        {
-            $active_path = API::get('menus/active_path');
-        }
-        catch (APIClientException $e)
-        {
-            // Empty active path
-            $active_path = array();
-        }
-
-        // Le'ts get menus according to the
-        // start depth and what is the active menu.
         if (is_numeric($start))
         {
-            // Check the start depth exists
+            // Check the start depth exists.
+            //
             if ( ! isset($active_path[(int) $start]))
             {
                 return '';
@@ -152,39 +106,98 @@ class Menus
             }
         }
 
-        // Loop through the pages.
+        // Do we have a menu slug ?
+        //
+        else
+        {
+            // Make sure we have a slug
+            //
+            if ( ! strlen($start))
+            {
+                return '';
+            }
+
+            try
+            {
+                $flat_array = API::get('menus/flat', array('enabled' => true));
+
+                $items = API::get('menus/' . $start . '/children', array(
+                    'enabled'           => true,
+                    'limit'             => $children_depth ?: false,
+                    'filter_visibility' => 'automatic'
+                ));
+            }
+            catch (APIClientException $e)
+            {
+                return '';
+            }
+        }
+
+        // Get the default page id.
+        //
+        $default_page_id = Platform::get('platform/pages::default.page');
+
+        // Loop trough the pages.
         //
         foreach ($this->pages() as $page)
         {
-            // Loop through the items.
+            // Is this a page ?
             //
-            foreach ($items as &$item)
+            if (URI::segment(1) == $page['slug'])
             {
-                // Check if the first uri segment is a page, and
-                //
-                if (URI::segment(1) == $page['slug'] or URI::segment(1) == '' and $item['page_id'] == $default_page_id)
+                foreach ($flat_array as $item)
                 {
-                    API::post('menus/active', array('slug' => $item['slug']));
-                    $active_path = API::get('menus/active_path');
+                    if ($item['page_id'] == $page['id'])
+                    {
+                        API::post('menus/active', array('slug' => $item['slug']));
+                    }
                 }
             }
+
+            //
+            //
+            elseif (URI::segment(1) == '')
+            {
+                foreach ($flat_array as $item)
+                {
+                    if ($item['page_id'] == $default_page_id)
+                    {
+                        API::post('menus/active', array('slug' => $item['slug']));
+                    }
+                }
+            }
+        }
+
+        try
+        {
+            $active_path = API::get('menus/active_path');
+        }
+        catch (APIClientException $e)
+        {
+            $active_path = array();
         }
 
         // Now loop through items and take actions based on the item type.
         //
         foreach ($items as &$item)
         {
+            //
+            //
             switch ($item['type'])
             {
+                //
+                //
                 case Menu::TYPE_PAGE:
-
-                    // Fallback page URI
+                    // Fallback page URI.
+                    //
                     $item['page_uri'] = '';
 
-                    // Set Page ID
+                    // Get the Page ID.
+                    //
                     $page_id = $item['page_id'];
 
-                    // Grab pages
+                    // Grab pages.
+                    //
                     $pages = array_filter($this->pages(), function($page) use ($page_id)
                     {
                         return $page['id'] == $page_id;
@@ -195,8 +208,7 @@ class Menus
                     {
                         $item['page_uri'] = ($page['id'] != $default_page_id) ? $page['slug'] : '';
                     }
-
-                    break;
+                break;
             }
         }
 
