@@ -81,44 +81,9 @@ class Menus
      */
     public function nav($start = 0, $children_depth = 0, $class = null, $before_uri = null)
     {
-        try
-        {
-            $active_path = API::get('menus/active_path');
-        }
-        catch (APIClientException $e)
-        {
-            $active_path = array();
-        }
-
-        // Let's get menus according to the start depth and what is the active menu.
-        //
-        if (is_numeric($start))
-        {
-            // Check the start depth exists.
-            //
-            if ( ! isset($active_path[(int) $start]))
-            {
-                return '';
-            }
-
-            try
-            {
-                $flat_array = API::get('menus/flat', array('enabled' => true));
-
-                $items = API::get('menus/' . $active_path[(int) $start] . '/children', array(
-                    'enabled' => true,
-                    'limit'   => $children_depth ?: false
-                ));
-            }
-            catch (APIClientException $e)
-            {
-                return '';
-            }
-        }
-
         // Do we have a menu slug ?
         //
-        else
+        if ( ! is_numeric($start))
         {
             // Make sure we have a slug
             //
@@ -185,6 +150,30 @@ class Menus
         catch (APIClientException $e)
         {
             $active_path = array();
+        }
+
+        // Let's get menus according to the start depth and what is the active menu.
+        //
+        if (is_numeric($start))
+        {
+            // Check the start depth exists.
+            //
+            if ( ! isset($active_path[(int) $start]))
+            {
+                return '';
+            }
+
+            try
+            {
+                $items = API::get('menus/' . $active_path[(int) $start] . '/children', array(
+                    'enabled' => true,
+                    'limit'   => $children_depth ?: false
+                ));
+            }
+            catch (APIClientException $e)
+            {
+                return '';
+            }
         }
 
         // Now loop through items and take actions based on the item type.
