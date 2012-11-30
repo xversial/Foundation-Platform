@@ -61,6 +61,7 @@ class Dependencies
      *
      * @access   public
      * @param    array
+     * @param    string
      * @return   array
      */
     public static function sort($items = null, $key = 'dependencies')

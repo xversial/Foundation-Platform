@@ -157,6 +157,17 @@ class Platform
         }
     }
 
+
+    /**
+     * --------------------------------------------------------------------------
+     * Function: has_config_files()
+     * --------------------------------------------------------------------------
+     *
+     * Checks if the necessary files exists.
+     *
+     * @access   public
+     * @return   boolean
+     */
     public static function has_config_files()
     {
         // Check for the database config file.
@@ -167,12 +178,12 @@ class Platform
             {
                 return false;
             }
-            else
-            {
-                throw new Exception('No database file exists in application/config');
-            }
+
+            throw new Exception('No database file exists in application/config');
         }
 
+        // All the necessary files exists.
+        //
         return true;
     }
 
@@ -206,10 +217,8 @@ class Platform
                 {
                     return false;
                 }
-                else
-                {
-                    throw new Exception('No Platform tables exist');
-                }
+
+                throw new Exception('No Platform tables exist');
             }
         }
         catch (Exception $e)
@@ -232,10 +241,8 @@ class Platform
                 {
                     return false;
                 }
-                else
-                {
-                    throw new Exception('No Platform users exist');
-                }
+
+                throw new Exception('No Platform users exist');
             }
         }
         catch (Exception $e)
@@ -244,10 +251,8 @@ class Platform
             {
                 return false;
             }
-            else
-            {
-                throw new Exception('No Platform users exist');
-            }
+
+            throw new Exception('No Platform users exist');
         }
 
         // Check if the install directory still exists.
@@ -501,18 +506,18 @@ class Platform
      * @access   public
      * @param    string
      * @param    string
-     * @return   mixed
+     * @return   string
      */
     public static function get($setting = null, $default = null)
     {
-        // Parse the passed setting.
-        //
-        $setting = static::parse_extension_string($setting);
-
-        // Let's elegently grab the information we need from the info determined.
-        //
         try
         {
+            // Parse the passed setting.
+            //
+            $setting = static::parse_extension_string($setting);
+
+            // Let's elegantly grab the information we need from the info determined.
+            //
             $vendor    = array_get($setting, 'vendor', function() { throw new Exception(''); });
             $extension = array_get($setting, 'extension', function() { throw new Exception(''); });
             $type      = array_get($setting, 'path_segments.0', function() { throw new Exception(''); });
@@ -520,7 +525,7 @@ class Platform
         }
         catch (Exception $e)
         {
-            return false;
+            return $default;
         }
 
         // Do we have settings already stored?
