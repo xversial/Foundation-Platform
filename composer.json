@@ -8,7 +8,11 @@
 			"app/models",
 			"app/database/migrations",
 			"app/tests/TestCase.php"
-		]
+		],
+		"psr-0": {
+			"Platform\\Extensions": "platform/extensions/src",
+			"Platform\\Foundation": "platform/foundation/src"
+		}
 	},
 	"minimum-stability": "dev"
 }

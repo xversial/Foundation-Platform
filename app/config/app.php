@@ -103,6 +103,8 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 
+		'Platform\Foundation\PlatformServiceProvider',
+
 	),
 
 	/*
@@ -137,6 +139,7 @@ return array(
 		'Log'        => 'Illuminate\Foundation\Facades\Log',
 		'Mail'       => 'Illuminate\Foundation\Facades\Mail',
 		'Paginator'  => 'Illuminate\Foundation\Facades\Paginator',
+		'Platform'   => 'Platform\Foundation\Facades\Platform',
 		'Redirect'   => 'Illuminate\Foundation\Facades\Redirect',
 		'Redis'      => 'Illuminate\Foundation\Facades\Redis',
 		'Request'    => 'Illuminate\Foundation\Facades\Request',
