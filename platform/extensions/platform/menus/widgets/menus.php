@@ -26,14 +26,15 @@ namespace Platform\Menus\Widgets;
  * What we can use in this class.
  * --------------------------------------------------------------------------
  */
-use API,
-    APIClientException,
-    Laravel\Input,
-    Laravel\URI,
-    Platform,
-    Platform\Menus\Menu,
-    Sentry,
-    Theme;
+use API;
+use APIClientException;
+use Laravel\Input;
+use Laravel\URI;
+use Laravel\URL;
+use Platform;
+use Platform\Menus\Menu;
+use Sentry;
+use Theme;
 
 
 /**
@@ -73,7 +74,7 @@ class Menus
      * irrespective of active item.
      *
      * @access   public
-     * @param    integer
+     * @param    mixed
      * @param    integer
      * @param    string
      * @param    string
@@ -180,17 +181,22 @@ class Menus
         //
         foreach ($items as &$item)
         {
-            //
+            // Switch through the item types.
             //
             switch ($item['type'])
             {
+                // Static entry.
                 //
+                case Menu::TYPE_STATIC:
+                    if ( ! URL::valid($item['uri']))
+                    {
+                       $item['uri'] = URL::to(($before_uri ? $before_uri . '/' : null) . $item['uri'], $item['secure']);
+                    }
+                break;
+
+                // Page entry.
                 //
                 case Menu::TYPE_PAGE:
-                    // Fallback page URI.
-                    //
-                    $item['page_uri'] = '';
-
                     // Get the Page ID.
                     //
                     $page_id = $item['page_id'];
@@ -202,13 +208,18 @@ class Menus
                         return $page['id'] == $page_id;
                     });
 
-                    // Grab the first match for the page
+                    // Grab the first match for the page.
+                    //
                     if (is_array($page = reset($pages)) and array_key_exists('id', $page))
                     {
-                        $item['page_uri'] = ($page['id'] != $default_page_id) ? $page['slug'] : '';
+                        $item['uri'] = URL::to(($page['id'] != $default_page_id ? $page['slug'] : ''));
                     }
                 break;
             }
+
+            // The menu link target.
+            //
+            $item['target'] = ($item['target'] == 0 ? '_self' : '_blank');
         }
 
         // Return the widget view.
@@ -222,20 +233,39 @@ class Menus
                     ->with('child_depth', $children_depth);
     }
 
-    public function pages()
+
+    /**
+     * --------------------------------------------------------------------------
+     * Function: pages()
+     * --------------------------------------------------------------------------
+     *
+     * Returns all the pages.
+     *
+     * @access   protected
+     * @return   array
+     */
+    protected function pages()
     {
-        if ($this->pages === null)
+        // Do we have the pages loaded?
+        //
+        if (is_null($this->pages))
         {
             try
             {
+                // Get the pages and store them.
+                //
                 $this->pages = API::get('pages');
             }
             catch (APIClientException $e)
             {
+                // Fallback pages array.
+                //
                 $this->pages = array();
             }
         }
 
+        // Return the pages.
+        //
         return $this->pages;
     }
 }
