@@ -27,6 +27,13 @@ use Symfony\Component\Console\Output\NullOutput;
 class Extension implements ArrayAccess {
 
 	/**
+	 * Flag for whether the extension has been started.
+	 *
+	 * @var bool
+	 */
+	protected $started = false;
+
+	/**
 	 * The Extension's attributes.
 	 *
 	 * @var array
@@ -55,6 +62,13 @@ class Extension implements ArrayAccess {
 	protected $databasePresence;
 
 	/**
+	 * The autoloader associated with the extension.
+	 *
+	 * @var Composer\Autoload\ClassLoader
+	 */
+	protected $autoloader;
+
+	/**
 	 * Create a new Platform extension instance.
 	 *
 	 * @param  Illuminate\Validation\Factory  $validation
@@ -63,6 +77,160 @@ class Extension implements ArrayAccess {
 	public function __construct(ValidationFactory $validation)
 	{
 		$this->validation = $validation;
+	}
+
+	/**
+	 * Starts the extension.
+	 *
+	 * @return void
+	 */
+	public function start()
+	{
+		if ( ! $this->isEnabled())
+		{
+			throw new \RuntimeException("Cannot start Extension [{$this->slug}] because it is not enabled.");
+		}
+
+		// Check we haven't already tried to start
+		// the extension
+		if ($this->started)
+		{
+			return;
+		}
+
+		// Prepare the extension for autoloading
+		$this->prepareAutoloading();
+
+		// Very simple to start an extension now. Extension
+		// files are always autoloaded (because of Composer)
+		// so we don't need to register anything. We simply need
+		// to call the start method.
+		if (isset($this->start) and $this->start instanceof Closure)
+		{
+			call_user_func_array($this->start, array($this));
+		}
+
+		// @todo, allow a hook system so people can register
+		// handlers for extension attributes. Example, the settings
+		// extension will want to handle the 'settings' key for
+		// every extension.php file.
+
+		// We've started the extension
+		$this->started = true;
+	}
+
+	/**
+	 * Prepares the extension for autoloading, by either 
+	 */
+	public function prepareAutoloading()
+	{
+		// Either no autoloading (maybe not an extension that
+		// has a file precense?) or autoloading is taken care
+		// of by Composer, we won't touch it.
+		if ( ! isset($this->autoload) or $this->autoload === 'composer')
+		{
+			return;
+		}
+
+		// Create an autoloader object
+		$autoloader = new ClassLoader;
+
+		// Platform default autoloading
+		if ($this->autoload === 'platform')
+		{
+			$this->registerPlatformAutoloading($autoloader);
+		}
+
+		// Custom autoloading logic
+		elseif ($this->autoload instanceof closure)
+		{
+			call_user_func_array($this->autoload, array($autoloader, $this));
+		}
+
+		// Activate the autoloader
+		$autoloader->register();
+
+		// To enable searching the include path (eg. for PEAR packages)
+		$autoloader->setUseIncludePath(true);
+
+		// Set the autoloader for the Extension
+		$this->setAutoloader($autoloader);
+	}
+
+	/**
+	 * Register the default autoloading logic for this
+	 * Extension as determined by Platform convention.
+	 *
+	 * @param  Composer\Autoload\ClassLoader  $autoloader
+	 * @return void
+	 */
+	public function registerPlatformAutoloading(ClassLoader $loader)
+	{
+		// Check we actually have a file presence
+		if ( ! $this->filePresence)
+		{
+			throw new \RuntimeException("Default Platform autoloading for an extension requires that extension has a File Presence, none found for [{$this->slug}].");
+		}
+
+		// Let's create the default namespace, which is just
+		// an inversion of the slug
+		$namespace = str_replace(' ', '\\', ucwords(str_replace('/', ' ', $this->slug)));
+
+		// First thing, let's add the 'models' directory
+		$loader->add($namespace, $this->filePresence->directory.'/models');
+
+		// We can't really do a simple classmap easily. That involves
+		// a lot of code, which is SLOW! If you aren't using composer,
+		// you can use PSR-0 to load classes. See
+		// https://github.com/composer/composer/blob/master/src/Composer/Autoload/ClassMapGenerator.php
+		// Alternatively, if the person wants to include PSR fallbacks
+		// with actual manual classmaps, they can do it in their callback
+		// as this model instance is provided to that closure:
+		//
+		// 'autoload' => function($loader, $extension)
+		// {
+		//  	$extension->registerPlatformAutoloading($loader);
+		//  
+		//  	$loader->map(array(
+		//  		'FooBarRoofl' => __DIR__.'/some/weird/classmap.php',
+		//  	));
+		// },
+		$loader->add($namespace, $this->directory.'/controllers');
+
+		dd($loader);
+	}
+
+	/**
+	 * Prepares an extension for migrations. Basically, just registers
+	 * the "package" that matches this' slug with Laravel. Is done typically
+	 * when installing Laravel and when running on CLI. This means migrations
+	 * can be made for a particular extension.
+	 *
+	 * @return  void
+	 */
+	public function prepareForMigrations()
+	{
+		// If there is no migrations path for the extension, we may as well
+		// save on overhead.
+		if ( ! file_exists($migrationsPath = $this->getMigrationsPath()))
+		{
+			return;
+		}
+
+		// Grab config instance
+		$config = $this->app['config'];
+
+		// Grab the original config paths
+		$paths = $config->get('database.migration.paths');
+
+		// When we merge, we merge our paths in first. This allows
+		// the user to overide our migration paths easily for whatever
+		// reason.
+		$paths = array_merge(array(
+			$this->slug => $migrationsPath
+		), $paths);
+
+		$config->set('database.migration.paths', $paths);
 	}
 
 	/**
@@ -153,6 +321,27 @@ class Extension implements ArrayAccess {
 	}
 
 	/**
+	 * Sets the autoloader associated with this extension.
+	 *
+	 * @param  Composer\Autoload\ClassLoader  $autoloader
+	 * @return void
+	 */
+	public function setAutoloader(ClassLoader $autoloader)
+	{
+		$this->autoloader = $autoloader;
+	}
+
+	/**
+	 * Gets the autoloader associated with this extension.
+	 *
+	 * @return Composer\Autoload\ClassLoader
+	 */
+	public function getAutoloader()
+	{
+		return $this->autoloader;
+	}
+
+	/**
 	 * Get an attribute from the model.
 	 *
 	 * @param  string  $key
@@ -202,6 +391,35 @@ class Extension implements ArrayAccess {
 	}
 
 	/**
+	 * Returns if an attribute is set or not.
+	 *
+	 * @param  string  $key
+	 * @return bool
+	 */
+	public function attributeIsset($key)
+	{
+		if (isset($this->attribute))
+		{
+			return true;
+		}
+
+		// Check our file presence for the attribute.
+		if ($this->filePresence and isset($this->filePresence->$key))
+		{
+			return true;
+		}
+
+		// Now, we'll check our database presence to see if
+		// the attribute is present there.
+		if ($this->databasePresence and isset($this->databasePresence->$key))
+		{
+			return true;
+		}
+
+		return true;
+	}
+
+	/**
 	 * Determine if a get mutator exists for an attribute.
 	 *
 	 * @param  string  $key
@@ -220,7 +438,7 @@ class Extension implements ArrayAccess {
 	 */
 	public function offsetExists($key)
 	{
-		return isset($this->attributes[$key]);
+		return $this->attributeIsset($key);
 	}
 
 	/**
@@ -288,7 +506,7 @@ class Extension implements ArrayAccess {
 	 */
 	public function __isset($key)
 	{
-		return isset($this->attributes[$key]);
+		return $this->attributeIsset($key);
 	}
 
 	/**

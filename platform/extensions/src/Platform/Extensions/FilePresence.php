@@ -30,15 +30,23 @@ class FilePresence implements ArrayAccess {
 	protected $attributes = array();
 
 	/**
+	 * The directory for this file presence.
+	 *
+	 * @var string
+	 */
+	public $directory;
+
+	/**
 	 * The actual file path for this file presence.
 	 *
 	 * @var string
 	 */
-	protected $file;
+	public $file;
 
 	public function __construct($file)
 	{
-		$this->file = $file;
+		$this->file      = $file;
+		$this->directory = dirname($file);
 		$this->updateFromFile();
 	}
 
