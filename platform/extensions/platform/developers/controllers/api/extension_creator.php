@@ -73,13 +73,9 @@ class Platform_Developers_API_Extension_Creator_Controller extends API_Controlle
         //
         $overrides = $this->prepare_array($overrides);
 
-        // Stubs directory.
-        //
-        $stubs_directory = get_stubs_directory('creator');
-
         // Create a temporary extension directory.
         //
-        $temporary_directory = create_temporary_directory('creator' . DS . 'extension'); 
+        $temporary_directory = create_temporary_directory('creator' . DS . 'extension');
 
         // Create the extension directory based on the vendor and extension name.
         //
@@ -94,15 +90,15 @@ class Platform_Developers_API_Extension_Creator_Controller extends API_Controlle
         //
         # Extension stubs.
         #
-        $extension_stubs = $stubs_directory . DS . 'extension';
+        $extension_stubs = get_stubs_directory('creator' . DS . 'extension' . DS . 'extension');
         copy_contents($extension_stubs, $extension_directory);
 
         # Theme stubs.
         #
-        $theme_backend_stubs  = $stubs_directory . DS . 'theme' . DS . 'backend';
+        $theme_backend_stubs = get_stubs_directory('creator' . DS . 'extension' . DS . 'theme' . DS . 'backend');
         copy_contents($theme_backend_stubs, $theme_backend_directory);
 
-        $theme_frontend_stubs = $stubs_directory . DS . 'theme' . DS . 'frontend';
+        $theme_frontend_stubs = get_stubs_directory('creator' . DS . 'extension' . DS . 'theme' . DS . 'frontend');
         copy_contents($theme_frontend_stubs, $theme_frontend_directory);
 
         // Update the admin controller file name.
@@ -119,6 +115,13 @@ class Platform_Developers_API_Extension_Creator_Controller extends API_Controlle
             $file->move($public_controller, dirname($public_controller) . DS . $extension . '.php');
         }
 
+        // Update the migration file name.
+        //
+        if ($file->exists($migration = $extension_directory . DS . 'migrations' . DS . 'migration.php'))
+        {
+            $file->move($migration, dirname($migration) . DS . date('Y_m_d_His') . '_v' . Str::classify($version) . '.php');
+        }
+
         // Replace the stubs variables recursively.
         //
         stubs_replacer($temporary_directory, array(
@@ -126,6 +129,7 @@ class Platform_Developers_API_Extension_Creator_Controller extends API_Controlle
             'author'               => $author,
             'description'          => $description,
             'version'              => $version,
+            'version_classified'   => Str::classify($version),
             'vendor'               => $vendor,
             'extension'            => $extension,
             'extension_classified' => Str::classify($extension),
@@ -146,7 +150,7 @@ class Platform_Developers_API_Extension_Creator_Controller extends API_Controlle
         //
         $zip_location = create_zip($temporary_directory, time() . '-' . $zip_name);
 
-        // 
+        //
         //
         switch (Input::get('encoding', 'base64'))
         {
@@ -178,7 +182,7 @@ class Platform_Developers_API_Extension_Creator_Controller extends API_Controlle
         $directory->delete($temporary_directory);
         $file->delete($zip_location);
 
-        // 
+        //
         //
         return new Response($encoded);
     }
@@ -191,7 +195,7 @@ class Platform_Developers_API_Extension_Creator_Controller extends API_Controlle
         {
             return trim($override);
         }, explode(PHP_EOL, $data));
-        
+
 
         return 'array(' . ($data[0] != '' ? implode(', ', array_map(function($override){ return '\'' . trim($override) . '\''; }, $data)) : '' ) . ')';
     }

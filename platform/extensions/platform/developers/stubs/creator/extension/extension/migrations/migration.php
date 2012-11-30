@@ -23,7 +23,7 @@ use Platform\Menus\Menu;
 
 /**
  * --------------------------------------------------------------------------
- * Install Class v1.0.0
+ * Install Class v[[version]]
  * --------------------------------------------------------------------------
  *
  * [[name]] installation.
@@ -34,7 +34,7 @@ use Platform\Menus\Menu;
  * @license    BSD License (3-clause)
  * @link       http://cartalyst.com
  */
-class [[namespace_underscore]]_Install
+class [[namespace_underscore]]_v[[version_classified]]
 {
     /**
      * --------------------------------------------------------------------------

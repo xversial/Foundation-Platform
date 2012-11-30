@@ -273,7 +273,7 @@ class Installer_Install_Controller extends Installer_Base_Controller
      * @return   void
      */
     public function get_install()
-    {Log::test(print_r(Session::get('installer'),1));
+    {
         // Create the Filesystem Config first so we can use for other file creations
         //
         Installer::create_filesystem_config(Installer::get_step_data(1, function() {

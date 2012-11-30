@@ -26,13 +26,15 @@ namespace Platform\Menus\Widgets;
  * What we can use in this class.
  * --------------------------------------------------------------------------
  */
-use API,
-    APIClientException,
-    Input,
-    Platform,
-    Platform\Menus\Menu,
-    Sentry,
-    Theme;
+use API;
+use APIClientException;
+use Laravel\Input;
+use Laravel\URI;
+use Laravel\URL;
+use Platform;
+use Platform\Menus\Menu;
+use Sentry;
+use Theme;
 
 
 /**
@@ -72,7 +74,7 @@ class Menus
      * irrespective of active item.
      *
      * @access   public
-     * @param    integer
+     * @param    mixed
      * @param    integer
      * @param    string
      * @param    string
@@ -93,17 +95,11 @@ class Menus
 
             try
             {
+                $flat_array = API::get('menus/flat', array('enabled' => true));
+
                 $items = API::get('menus/' . $start . '/children', array(
-
-                    // Only enabled
-                    'enabled' => true,
-
-                    // Pass through the children depth
-                    'limit' => $children_depth ?: false,
-
-                    // We want to automatically filter
-                    // what items show (according to Session)
-                    // data
+                    'enabled'           => true,
+                    'limit'             => $children_depth ?: false,
                     'filter_visibility' => 'automatic'
                 ));
             }
@@ -113,27 +109,61 @@ class Menus
             }
         }
 
+        // Get the default page id.
+        //
+        $default_page_id = Platform::get('platform/pages::default.page');
+
+        // Loop trough the pages.
+        //
+        foreach ($this->pages() as $page)
+        {
+            // Is this a page ?
+            //
+            if (URI::segment(1) == $page['slug'])
+            {
+                foreach ($flat_array as $item)
+                {
+                    if ($item['page_id'] == $page['id'])
+                    {
+                        API::post('menus/active', array('slug' => $item['slug']));
+                    }
+                }
+            }
+
+            //
+            //
+            elseif (URI::segment(1) == '')
+            {
+                foreach ($flat_array as $item)
+                {
+                    if ($item['page_id'] == $default_page_id)
+                    {
+                        API::post('menus/active', array('slug' => $item['slug']));
+                    }
+                }
+            }
+        }
+
         try
         {
             $active_path = API::get('menus/active_path');
         }
         catch (APIClientException $e)
         {
-            // Empty active path
             $active_path = array();
         }
 
-        // Le'ts get menus according to the
-        // start depth and what is the active menu.
+        // Let's get menus according to the start depth and what is the active menu.
+        //
         if (is_numeric($start))
         {
-            // Check the start depth exists
+            // Check the start depth exists.
+            //
             if ( ! isset($active_path[(int) $start]))
             {
                 return '';
             }
 
-            // Items
             try
             {
                 $items = API::get('menus/' . $active_path[(int) $start] . '/children', array(
@@ -147,34 +177,49 @@ class Menus
             }
         }
 
-        // Now loop through items and take actions based
-        // on the item type.
+        // Now loop through items and take actions based on the item type.
+        //
         foreach ($items as &$item)
         {
+            // Switch through the item types.
+            //
             switch ($item['type'])
             {
+                // Static entry.
+                //
+                case Menu::TYPE_STATIC:
+                    if ( ! URL::valid($item['uri']))
+                    {
+                       $item['uri'] = URL::to(($before_uri ? $before_uri . '/' : null) . $item['uri'], $item['secure']);
+                    }
+                break;
+
+                // Page entry.
+                //
                 case Menu::TYPE_PAGE:
-
-                    // Fallback page URI
-                    $item['page_uri'] = '';
-
-                    // Set Page ID
+                    // Get the Page ID.
+                    //
                     $page_id = $item['page_id'];
 
-                    // Grab pages
+                    // Grab pages.
+                    //
                     $pages = array_filter($this->pages(), function($page) use ($page_id)
                     {
                         return $page['id'] == $page_id;
                     });
 
-                    // Grab the first match for the page
+                    // Grab the first match for the page.
+                    //
                     if (is_array($page = reset($pages)) and array_key_exists('id', $page))
                     {
-                        $item['page_uri'] = ($page['id'] != Platform::get('platform/pages::default.page')) ? $page['slug'] : '';;
+                        $item['uri'] = URL::to(($page['id'] != $default_page_id ? $page['slug'] : ''));
                     }
-
-                    break;
+                break;
             }
+
+            // The menu link target.
+            //
+            $item['target'] = ($item['target'] == 0 ? '_self' : '_blank');
         }
 
         // Return the widget view.
@@ -188,20 +233,39 @@ class Menus
                     ->with('child_depth', $children_depth);
     }
 
-    public function pages()
+
+    /**
+     * --------------------------------------------------------------------------
+     * Function: pages()
+     * --------------------------------------------------------------------------
+     *
+     * Returns all the pages.
+     *
+     * @access   protected
+     * @return   array
+     */
+    protected function pages()
     {
-        if ($this->pages === null)
+        // Do we have the pages loaded?
+        //
+        if (is_null($this->pages))
         {
             try
             {
+                // Get the pages and store them.
+                //
                 $this->pages = API::get('pages');
             }
             catch (APIClientException $e)
             {
+                // Fallback pages array.
+                //
                 $this->pages = array();
             }
         }
 
+        // Return the pages.
+        //
         return $this->pages;
     }
 }
