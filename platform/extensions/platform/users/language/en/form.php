@@ -120,6 +120,8 @@ return array(
 			'cancel'           => 'Cancel',
 		),
 
-	),
-
+		'register' => array(
+			'legend' => 'Register'
+		)
+	)
 );
