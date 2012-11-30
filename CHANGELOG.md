@@ -1,3 +1,26 @@
+1.1.3 Changelog
+----------
+
+**General:**
+
+  * Some files cleanup.
+  * Added the Laravel dragon to the paths.php file.
+
+**Menus:**
+
+  * Fixed page menus not being marked as active on the UI.
+  * Navigation widget cleanup
+
+**Users:**
+
+  * Fixed missing language line for the register page.
+
+**Developers:**
+
+  * Fixed extension creator zip file not having the proper directory structure.
+  * Fixed the missing javascript file on the extension creator page.
+  * Updated some stubs.
+
 1.1.2 Changelog
 ----------
 
