@@ -69,19 +69,13 @@ class ExtensionBag implements ArrayAccess {
 	}
 
 	/**
-	 * Adds all extensions automatically, thus saving
-	 * you registering them manually. You can even add
-	 * extensions at any given path, or just use the
-	 * default path provided.
-	 *
-	 * @param  string|array  $paths
-	 * @return void
+	 * Adds all local extensions in the given paths (or the
+	 * default path). Creates Extension objects with a File
+	 * Presence only and does not link to database. This means
+	 * Extensions may be utilized before the app starts.
 	 */
-	public function addAllExtensions($paths = null)
+	public function addAllLocalExtensions($paths = null)
 	{
-		// Find all extension database presence's
-		$databasePrecenses = DatabasePresence::all();
-
 		// Loop through all files found and create extension
 		// instances from each one
 		foreach ($this->findExtensionsFiles($paths) as $file)
@@ -90,6 +84,26 @@ class ExtensionBag implements ArrayAccess {
 			$extension = new Extension($this->validation);
 			$extension->setFilePresence(new FilePresence($file));
 
+			// Lastly, add the extension to this bag
+			$this->add($extension);
+		}
+	}
+
+	/**
+	 * Updates all local extensions (with a file presence only) to
+	 * have a database presence.
+	 *
+	 * @param  string|array  $paths
+	 * @return void
+	 */
+	public function addDatabasePresenceToLocalExtensions($paths = null)
+	{
+		// Find all extension database presence's
+		$databasePrecenses = DatabasePresence::all();
+
+		// Loop through all registered extensions
+		foreach ($this->extensions as $extension)
+		{
 			// Now, loop through database presences
 			foreach ($databasePrecenses as $presence)
 			{
@@ -100,9 +114,6 @@ class ExtensionBag implements ArrayAccess {
 					break;
 				}
 			}
-
-			// Lastly, add the extension to this bag
-			$this->add($extension);
 		}
 	}
 

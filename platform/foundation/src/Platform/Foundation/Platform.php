@@ -21,6 +21,8 @@
 use Illuminate\Container;
 use Illuminate\Foundation\Application;
 use Platform\Extensions\ExtensionBag;
+use Platform\Operate\Install\Installer;
+use Platform\Operate\Upgrade\Upgrader;
 
 class Platform extends Container {
 
@@ -43,9 +45,15 @@ class Platform extends Container {
 	 * Create a new Platform instance.
 	 *
 	 * @param  Illuminate\Validation\Factory  $validation
+	 * @param  Platform\Extensions\ExtensionBag  $extensionBag
+	 * // @param  Platform\Operate\Install\Installer  $installer
+	 * // @param  Platform\Operate\Upgrade\Upgrader  $upgrader
 	 * @return void
 	 */
-	public function __construct(Application $app, ExtensionBag $extensionBag)
+	public function __construct(
+		Application $app,
+		ExtensionBag $extensionBag
+	)
 	{
 		$this->app = $app;
 		$this->extensionBag = $extensionBag;
@@ -58,9 +66,37 @@ class Platform extends Container {
 	 */
 	public function boot()
 	{
-		$this->extensionBag->addAllExtensions();
+		$this->app['events']->fire('platform.booting', array($this));
+
+		if ( ! $this['operate.installer']->isInstalled())
+		{
+			dd('not installed.');
+		}
+
+		$this->extensionBag->addDatabasePresenceToLocalExtensions();
 		$this->extensionBag->startExtensions();
+
+		$this->app['events']->fire('platform.booted', array($this));
 	}
 
+	/**
+	 * Sets the Extension Bag for Platform.
+	 *
+	 * @param  Platform\Extensions\ExtensionBag
+	 */
+	public function setExtensionBag(ExtensionBag $extensionBag)
+	{
+		$this->extensionBag = $extensionBag;
+	}
+
+	/**
+	 * Gets Platform's Extension Bag.
+	 *
+	 * @param  Platform\Extensions\ExtensionBag
+	 */
+	public function getExtensionBag()
+	{
+		return $this->extensionBag;
+	}
 
 }

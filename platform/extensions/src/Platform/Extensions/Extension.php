@@ -196,8 +196,6 @@ class Extension implements ArrayAccess {
 		//  	));
 		// },
 		$loader->add($namespace, $this->directory.'/controllers');
-
-		dd($loader);
 	}
 
 	/**
