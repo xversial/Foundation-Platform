@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'default' => 'mysql',
+	'default' => 'pgsql',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -55,9 +55,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'cartalyst_platform2',
+			'database'  => 'database',
 			'username'  => 'root',
-			'password'  => 'root',
+			'password'  => '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
@@ -65,13 +65,13 @@ return array(
 
 		'pgsql' => array(
 			'driver'   => 'pgsql',
-			'host'     => 'localhost',
-			'database' => 'database',
-			'username' => 'root',
-			'password' => '',
-			'charset'  => 'utf8',
-			'prefix'   => '',
-            'schema'   => 'public',
+			'host'     => '{{host}}',
+			'database' => '{{database',
+			'username' => '{{username}}',
+			'password' => '{{password}}',
+			'charset'  => '{{charset}}',
+			'prefix'   => '{{prefix}}',
+            'schema'   => '{{schema}}',
 		),
 
 		'sqlsrv' => array(

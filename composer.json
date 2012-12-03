@@ -13,7 +13,10 @@
 			"Platform\\Extensions": "platform/extensions/src",
 			"Platform\\Foundation": "platform/foundation/src",
 			"Platform\\Operate": "platform/operate/src"
-		}
+		},
+		"files": [
+			"platform/foundation/src/helpers.php"
+		]
 	},
 	"minimum-stability": "dev"
 }

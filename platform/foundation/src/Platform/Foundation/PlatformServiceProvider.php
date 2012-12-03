@@ -11,7 +11,7 @@
  * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
  *
  * @package    Platform
- * @version    2.0
+ * @version    2.0.0
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
  * @copyright  (c) 2011 - 2013, Cartalyst LLC
@@ -22,6 +22,7 @@ use Illuminate\Support\ServiceProvider;
 use Platform\Extensions\ExtensionBag;
 use Platform\Operate\Install\InstallCommand;
 use Platform\Operate\Install\Installer;
+use Platform\Operate\Install\Repository as InstallRepository;
 use Platform\Operate\Upgrade\Upgrader;
 
 class PlatformServiceProvider extends ServiceProvider {
@@ -83,6 +84,12 @@ class PlatformServiceProvider extends ServiceProvider {
 			// bind in some extra keys
 			$platform['operate.installer'] = new Installer($app);
 			$platform['operate.upgrader'] = new Upgrader($app);
+
+			// Installer repository
+			$platform['operate.installer.repository'] = $platform->share(function($platform) use ($app)
+			{
+				return new InstallRepository($app, $app['validator']);
+			});
 
 			return $platform;
 		});

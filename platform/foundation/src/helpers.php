@@ -1,4 +1,4 @@
-<?php namespace Platform\Extensions;
+<?php
 /**
  * Part of the Platform application.
  *
@@ -18,28 +18,7 @@
  * @link       http://cartalyst.com
  */
 
-use Illuminate\Database\Eloquent\Model;
-
-class DatabasePresence extends Model {
-
-	/**
-	 * The primary key for the model.
-	 *
-	 * @var string
-	 */
-	protected $key = 'slug';
-
-	/**
-	 * The table associated with the model.
-	 *
-	 * @var string
-	 */
-	protected $table = 'extensions';
-
-	/**
-	 * Indicates if the IDs are auto-incrementing.
-	 *
-	 * @var bool
-	 */
-	public $incrementing = false;
-}
+/**
+ * Define the Platform version number.
+ */
+define('PLATFORM_VERSION', '2.0.0');

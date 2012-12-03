@@ -11,7 +11,7 @@
  * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
  *
  * @package    Platform
- * @version    2.0
+ * @version    2.0.0
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
  * @copyright  (c) 2011 - 2013, Cartalyst LLC
@@ -57,6 +57,16 @@ class Platform extends Container {
 	{
 		$this->app = $app;
 		$this->extensionBag = $extensionBag;
+	}
+
+	/**
+	 * Returns the Platform Version.
+	 *
+	 * @return string
+	 */
+	public function version()
+	{
+		return PLATFORM_VERSION;
 	}
 
 	/**

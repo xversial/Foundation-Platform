@@ -54,13 +54,13 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'cartalyst_platform2',
-			'username'  => 'root',
-			'password'  => 'root',
-			'charset'   => 'utf8',
-			'collation' => 'utf8_unicode_ci',
-			'prefix'    => '',
+			'host'      => '{{host}}',
+			'database'  => '{{database}}',
+			'username'  => '{{username}}',
+			'password'  => '{{password}}',
+			'charset'   => '{{charset}}',
+			'collation' => '{{collation}}',
+			'prefix'    => '{{prefix}}',
 		),
 
 		'pgsql' => array(
