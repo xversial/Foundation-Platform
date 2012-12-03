@@ -8,7 +8,16 @@
 			"app/models",
 			"app/database/migrations",
 			"app/tests/TestCase.php",
-			"vendor/platform/foundation/src/migrations"
+			"vendor/platform/foundation/src/migrations",
+			"extensions/platform/dashboard/database/migrations",
+			"extensions/platform/developers/database/migrations",
+			"extensions/platform/localization/database/migrations",
+			"extensions/platform/menus/database/migrations",
+			"extensions/platform/operations/database/migrations",
+			"extensions/platform/pages/database/migrations",
+			"extensions/platform/settings/database/migrations",
+			"extensions/platform/themes/database/migrations",
+			"extensions/platform/users/database/migrations"
 		],
 		"psr-0": {
 			"Platform\\Extensions": "vendor/platform/extensions/src",
