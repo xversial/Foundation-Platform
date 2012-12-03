@@ -7,15 +7,16 @@
 			"app/controllers",
 			"app/models",
 			"app/database/migrations",
-			"app/tests/TestCase.php"
+			"app/tests/TestCase.php",
+			"vendor/platform/foundation/src/migrations"
 		],
 		"psr-0": {
-			"Platform\\Extensions": "platform/extensions/src",
-			"Platform\\Foundation": "platform/foundation/src",
-			"Platform\\Operate": "platform/operate/src"
+			"Platform\\Extensions": "vendor/platform/extensions/src",
+			"Platform\\Foundation": "vendor/platform/foundation/src",
+			"Platform\\Operate": "vendor/platform/operate/src"
 		},
 		"files": [
-			"platform/foundation/src/helpers.php"
+			"vendor/platform/foundation/src/helpers.php"
 		]
 	},
 	"minimum-stability": "dev"
