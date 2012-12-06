@@ -1,6 +1,15 @@
 {
 	"require": {
-		"illuminate/foundation": "1.1.*"
+		"illuminate/foundation": "1.1.*",
+		"platform/dashbard": "dev-master",
+		"platform/developers": "dev-master",
+		"platform/localization": "dev-master",
+		"platform/menus": "dev-master",
+		"platform/operations": "dev-master",
+		"platform/pages": "dev-master",
+		"platform/settings": "dev-master",
+		"platform/themes": "dev-master",
+		"platform/users": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
