@@ -20,9 +20,14 @@
 			"extensions/platform/users/database/migrations",
 
 			"extensions/platform/pages/controllers",
-			"extensions/cartalyst/pages/controllers"
+			"extensions/cartalyst/pages/controllers",
+
+			"vendor/cartalyst/sentry/src/Cartalyst/Sentry/ProviderInterface.php",
+			"vendor/cartalyst/sentry/src/Cartalyst/Sentry/ThrottleInterface.php",
+			"vendor/cartalyst/sentry/src/Cartalyst/Sentry/UserInterface.php"
 		],
 		"psr-0": {
+			"Cartalyst\\Sentry": "vendor/cartalyst/sentry/src",
 			"Platform\\Extensions": "vendor/platform/extensions/src",
 			"Platform\\Foundation": "vendor/platform/foundation/src",
 			"Platform\\Operate": "vendor/platform/operate/src"
