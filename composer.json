@@ -1,6 +1,6 @@
 {
 	"require": {
-		"illuminate/foundation": ">=1.0.0"
+		"illuminate/foundation": "1.1.*"
 	},
 	"autoload": {
 		"classmap": [
@@ -28,8 +28,9 @@
 			"Platform\\Operate": "vendor/platform/operate/src"
 		},
 		"files": [
+			"app/tests/TestCase.php",
 			"vendor/platform/foundation/src/helpers.php"
 		]
 	},
-	"minimum-stability": "dev"
+	"minimum-stability": "stable"
 }
