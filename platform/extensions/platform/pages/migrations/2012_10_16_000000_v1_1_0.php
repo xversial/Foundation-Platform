@@ -141,62 +141,9 @@ class Platform_Pages_v1_1_0
         ));
         $pages_content->last_child_of($pages);
 
-
-        /*
+         /*
          * --------------------------------------------------------------------------
-         * # 3) Configuration settings.
-         * --------------------------------------------------------------------------
-         */
-        $settings = array(
-            // Status Disabled
-            //
-            array(
-                'vendor'    => 'platform',
-                'extension' => 'pages',
-                'type'      => 'status',
-                'name'      => 'disabled',
-                'value'     => '0'
-            ),
-
-            // Status Enabled
-            //
-            array(
-                'vendor'    => 'platform',
-                'extension' => 'pages',
-                'type'      => 'status',
-                'name'      => 'enabled',
-                'value'     => '1'
-            ),
-
-            // default page (/index)
-            //
-            array(
-                'vendor'    => 'platform',
-                'extension' => 'pages',
-                'type'      => 'default',
-                'name'      => 'page',
-                'value'     => 1,
-            ),
-
-            // default template (default)
-            //
-            array(
-                'vendor'    => 'platform',
-                'extension' => 'pages',
-                'type'      => 'default',
-                'name'      => 'template',
-                'value'     => 'default'
-            )
-        );
-
-        // Insert the settings into the database.
-        //
-        DB::table('settings')->insert($settings);
-
-
-        /*
-         * --------------------------------------------------------------------------
-         * # 4) Initial Welcome Page & Content.
+         * # 3) Initial Welcome Page & Content.
          * --------------------------------------------------------------------------
          */
         // Default Welcome Page
@@ -285,6 +232,57 @@ class Platform_Pages_v1_1_0
         );
 
         DB::table('content')->insert($content);
+
+        /*
+         * --------------------------------------------------------------------------
+         * # 4) Configuration settings.
+         * --------------------------------------------------------------------------
+         */
+        $settings = array(
+            // Status Disabled
+            //
+            array(
+                'vendor'    => 'platform',
+                'extension' => 'pages',
+                'type'      => 'status',
+                'name'      => 'disabled',
+                'value'     => '0'
+            ),
+
+            // Status Enabled
+            //
+            array(
+                'vendor'    => 'platform',
+                'extension' => 'pages',
+                'type'      => 'status',
+                'name'      => 'enabled',
+                'value'     => '1'
+            ),
+
+            // default page (/index)
+            //
+            array(
+                'vendor'    => 'platform',
+                'extension' => 'pages',
+                'type'      => 'default',
+                'name'      => 'page',
+                'value'     => $welcome_page_id,
+            ),
+
+            // default template (default)
+            //
+            array(
+                'vendor'    => 'platform',
+                'extension' => 'pages',
+                'type'      => 'default',
+                'name'      => 'template',
+                'value'     => 'default'
+            )
+        );
+
+        // Insert the settings into the database.
+        //
+        DB::table('settings')->insert($settings);
     }
 
 
