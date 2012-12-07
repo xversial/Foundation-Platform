@@ -102,6 +102,8 @@ return array(
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
+
+		'Cartalyst\Sentry\SentryServiceProvider',
 		'Platform\Foundation\PlatformServiceProvider',
 
 	),
@@ -137,7 +139,6 @@ return array(
 		'Log'        => 'Illuminate\Support\Facades\Log',
 		'Mail'       => 'Illuminate\Support\Facades\Mail',
 		'Paginator'  => 'Illuminate\Support\Facades\Paginator',
-		'Platform'   => 'Platform\Foundation\Facades\Platform',
 		'Redirect'   => 'Illuminate\Support\Facades\Redirect',
 		'Redis'      => 'Illuminate\Support\Facades\Redis',
 		'Request'    => 'Illuminate\Support\Facades\Request',
@@ -148,6 +149,9 @@ return array(
 		'URL'        => 'Illuminate\Support\Facades\URL',
 		'Validator'  => 'Illuminate\Support\Facades\Validator',
 		'View'       => 'Illuminate\Support\Facades\View',
+
+		'Sentry'     => 'Cartalyst\Sentry\Facades\Sentry',
+		'Platform'   => 'Platform\Foundation\Facades\Platform',
 
 	),
 
