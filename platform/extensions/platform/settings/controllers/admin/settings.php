@@ -99,14 +99,19 @@ class Platform_Settings_Admin_Settings_Controller extends Admin_Controller
         // Initiate an empty array.
         //
         $settings = array();
+        $tabs     = array();
 
-		// Get all the settings from the database.
+        // Get the settings from the database.
         //
-        foreach (API::get('settings', array('organize' => true)) as $extension => $vendors)
+        $_settings = API::get('settings', array('organize' => true));
+
+        // Get all the extensions.
+        //
+        foreach (API::get('extensions') as $extension => $vendors)
         {
-            // Loop through the vendors.
+            // Loop through this extension vendors.
             //
-            foreach ($vendors as $vendor => $extension_settings)
+            foreach ($vendors as $vendor => $info)
             {
                 // Make sure this extension settings widget exists.
                 //
@@ -114,6 +119,10 @@ class Platform_Settings_Admin_Settings_Controller extends Admin_Controller
                 {
                     continue;
                 }
+
+                // Get this extension settings, if any.
+                //
+                $extension_settings = array_get($_settings, $extension . '.' . $vendor, array());
 
                 // Loop through all this extension settings
                 //
@@ -137,6 +146,27 @@ class Platform_Settings_Admin_Settings_Controller extends Admin_Controller
                 }
             }
         }
+
+        // Unset the unnecessary data.
+        //
+        unset($_settings);
+
+        // Sort the tabs order.
+        //
+        ksort($tabs);
+
+        // Now, let's make sure the "General Settings" tab comes first..
+        //
+        $_tabs = array();
+        $_tabs['settings'] = $tabs['settings'];
+        foreach($tabs as $key => $value)
+        {
+            if($key != 'settings')
+            {
+                $_tabs[ $key ] = $value;
+            }
+        }
+        $tabs = $_tabs;
 
         // Show the page.
         //
