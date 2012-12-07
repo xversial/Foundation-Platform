@@ -1,4 +1,7 @@
 vendor/*
+!vendor/cartalyst
+vendor/cartalyst/*
+!vendor/cartalyst/api
 !vendor/platform
 vendor/platform/composer-installers
 composer.phar

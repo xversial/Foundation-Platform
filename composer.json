@@ -1,4 +1,10 @@
 {
+	"repositories": [
+        {
+            "type": "composer",
+            "url": "http://local.packages.cartalyst.com"
+        }
+    ],
 	"require": {
 		"illuminate/foundation": "1.1.*",
 		"cartalyst/sentry": "dev-master",
@@ -11,7 +17,7 @@
 		"platform/settings": "dev-master",
 		"platform/themes": "dev-master",
 		"platform/users": "dev-master",
-		"guzzle/guzzle": "3.0.*"
+		"rmccue/requests": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
@@ -33,6 +39,7 @@
 			"extensions/platform/pages/controllers"
 		],
 		"psr-0": {
+			"Cartalyst\\Api": "vendor/cartalyst/api/src",
 			"Platform\\Extensions": "vendor/platform/extensions/src",
 			"Platform\\Foundation": "vendor/platform/foundation/src",
 			"Platform\\Operate": "vendor/platform/operate/src"

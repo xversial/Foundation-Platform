@@ -104,6 +104,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 
 		'Cartalyst\Sentry\SentryServiceProvider',
+		'Cartalyst\Api\ApiServiceProvider',
 		'Platform\Foundation\PlatformServiceProvider',
 
 	),
@@ -151,6 +152,7 @@ return array(
 		'View'       => 'Illuminate\Support\Facades\View',
 
 		'Sentry'     => 'Cartalyst\Sentry\Facades\Sentry',
+		'Api'        => 'Cartalyst\Api\Facades\Api',
 		'Platform'   => 'Platform\Foundation\Facades\Platform',
 
 	),
