@@ -1,3 +1,14 @@
+1.1.4 Changelog
+----------
+
+**Developers:**
+
+  * Fixed extension creator stubs namespace problems.
+
+**Settings:**
+
+  * Settings tabs now shows up even if the extension doesn't have entries on the database.
+
 1.1.3 Changelog
 ----------
 
