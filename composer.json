@@ -1,6 +1,7 @@
 {
 	"require": {
 		"illuminate/foundation": "1.1.*",
+		"cartalyst/sentry": "dev-master",
 		"platform/dashboard": "dev-master",
 		"platform/developers": "dev-master",
 		"platform/localization": "dev-master",
@@ -9,7 +10,8 @@
 		"platform/pages": "dev-master",
 		"platform/settings": "dev-master",
 		"platform/themes": "dev-master",
-		"platform/users": "dev-master"
+		"platform/users": "dev-master",
+		"guzzle/guzzle": "3.0.*"
 	},
 	"autoload": {
 		"classmap": [
@@ -28,14 +30,9 @@
 			"extensions/platform/themes/database/migrations",
 			"extensions/platform/users/database/migrations",
 
-			"extensions/platform/pages/controllers",
-
-			"vendor/cartalyst/sentry/src/Cartalyst/Sentry/ProviderInterface.php",
-			"vendor/cartalyst/sentry/src/Cartalyst/Sentry/ThrottleInterface.php",
-			"vendor/cartalyst/sentry/src/Cartalyst/Sentry/UserInterface.php"
+			"extensions/platform/pages/controllers"
 		],
 		"psr-0": {
-			"Cartalyst\\Sentry": "vendor/cartalyst/sentry/src",
 			"Platform\\Extensions": "vendor/platform/extensions/src",
 			"Platform\\Foundation": "vendor/platform/foundation/src",
 			"Platform\\Operate": "vendor/platform/operate/src"
