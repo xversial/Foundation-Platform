@@ -18,7 +18,7 @@
  * @link       http://cartalyst.com
  */
 
-namespace [[namespace]]\\Widgets;
+namespace [[namespace]]\Widgets;
 
 class Static
 {
@@ -30,7 +30,7 @@ class Static
     public function test2()
     {
         // Initiate a data array.
-        // 
+        //
         $data = array(
             'extensions' => API::get('extensions')
         );

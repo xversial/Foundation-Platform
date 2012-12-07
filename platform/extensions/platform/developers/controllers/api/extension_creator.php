@@ -134,6 +134,7 @@ class Platform_Developers_API_Extension_Creator_Controller extends API_Controlle
             'extension'            => $extension,
             'extension_classified' => Str::classify($extension),
             'namespace'            => str_replace('_', '\\', Str::classify($vendor . '_' . $extension)),
+            'namespace_double'     => str_replace('_', '\\\\', Str::classify($vendor . '_' . $extension)),
             'namespace_underscore' => Str::classify($vendor . '_' . $extension),
             'slug_code'            => $vendor . '.' . $extension,
             'slug_designer'        => $vendor . ExtensionsManager::VENDOR_SEPARATOR . $extension,
