@@ -2,13 +2,12 @@
 	"repositories": [
         {
             "type": "composer",
-            "url": "http://local.packages.cartalyst.com"
+            "url": "http://packages.cartalyst.com"
         }
     ],
 	"require": {
 		"illuminate/foundation": "1.1.*",
 		"cartalyst/sentry": "dev-master",
-		"platform/dashboard": "dev-master",
 		"platform/developers": "dev-master",
 		"platform/localization": "dev-master",
 		"platform/menus": "dev-master",
@@ -17,7 +16,10 @@
 		"platform/settings": "dev-master",
 		"platform/themes": "dev-master",
 		"platform/users": "dev-master",
-		"rmccue/requests": "dev-master"
+		"rmccue/requests": "dev-master",
+		"bshaffer/oauth2-server-php": "dev-develop",
+		"bshaffer/oauth2-server-httpfoundation-bridge": "dev-master",
+		"friendsofsymfony/rest": "0.8.x-dev"
 	},
 	"autoload": {
 		"classmap": [
@@ -25,18 +27,7 @@
 			"app/models",
 			"app/database/migrations",
 			"app/tests/TestCase.php",
-			"vendor/platform/foundation/src/migrations",
-			"extensions/platform/dashboard/database/migrations",
-			"extensions/platform/developers/database/migrations",
-			"extensions/platform/localization/database/migrations",
-			"extensions/platform/menus/database/migrations",
-			"extensions/platform/operations/database/migrations",
-			"extensions/platform/pages/database/migrations",
-			"extensions/platform/settings/database/migrations",
-			"extensions/platform/themes/database/migrations",
-			"extensions/platform/users/database/migrations",
-
-			"extensions/platform/pages/controllers"
+			"vendor/platform/foundation/src/migrations"
 		],
 		"psr-0": {
 			"Cartalyst\\Api": "vendor/cartalyst/api/src",
