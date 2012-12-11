@@ -69,7 +69,7 @@ return array(
 		'mimes' => array(
 
 			// Images
-			'jpg', 'png', 'gif', 'bmp', 'JPG',
+			'jpg', 'png', 'gif', 'bmp',
 
 			// Files
 			'pdf', 'zip',
