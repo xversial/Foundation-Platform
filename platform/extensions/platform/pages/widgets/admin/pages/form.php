@@ -24,6 +24,7 @@ use API;
 use APIClientException;
 use Platform;
 use Platform\Pages\Helper;
+use Redirect;
 use Theme;
 
 class Admin_Pages_Form
@@ -34,6 +35,38 @@ class Admin_Pages_Form
 			1 => 'enabled',
 			0 => 'disabled',
 	);
+
+	// visiblity options
+	//
+	public $visibility_options = array(
+		0 => 'Show Always',
+		1 => 'Logged In',
+	);
+
+	public $groups = array();
+
+	/**
+	 * retrieve groups
+	 */
+	public function __construct()
+	{
+		try
+		{
+			$groups_result = API::get('users/groups');
+
+			$groups = array();
+			foreach ($groups_result as $group)
+			{
+				$groups[$group['name']] = $group['name'];
+			}
+
+			$this->groups = $groups;
+		}
+		catch(APIClientException $e)
+		{
+			Platform::messages()->error($e->getMessage());
+		}
+	}
 
 	/**
 	 * Create Content Form
@@ -52,6 +85,8 @@ class Admin_Pages_Form
 
 		return Theme::make('platform/pages::widgets.pages.form.create')
 			->with('status', $this->status)
+			->with('visibility_options', $this->visibility_options)
+			->with('groups', $this->groups)
 			->with('template', $template)
 			->with('templates', $templates);
 	}
@@ -67,20 +102,25 @@ class Admin_Pages_Form
 		//
 		try
 		{
-			$data['page'] = API::get('pages/'.$id);
+			$page = API::get('pages/'.$id);
+
+			$page['groups'] = (array) json_decode($page['groups']);
 		}
 		catch(APIClientException $e)
 		{
-			\Platform::messages()->error($e->getMessage());
-			return \Redirect::to_admin('pages');
+			Platform::messages()->error($e->getMessage());
+			return Redirect::to_admin('pages');
 		}
 
 		// retrieve templates
 		//
 		$templates = Helper::findTemplates();
 
-		return Theme::make('platform/pages::widgets.pages.form.edit', $data)
+		return Theme::make('platform/pages::widgets.pages.form.edit')
+			->with('page', $page)
 			->with('status', $this->status)
+			->with('visibility_options', $this->visibility_options)
+			->with('groups', $this->groups)
 			->with('templates', $templates);
 	}
 
@@ -95,20 +135,25 @@ class Admin_Pages_Form
 		//
 		try
 		{
-			$data['page'] = API::get('pages/'.$id);
+			$page = API::get('pages/'.$id);
+
+			$page['groups'] = (array) json_decode($page['groups']);
 		}
 		catch(APIClientException $e)
 		{
-			\Platform::messages()->error($e->getMessage());
-			return \Redirect::to_admin('pages');
+			Platform::messages()->error($e->getMessage());
+			return Redirect::to_admin('pages');
 		}
 
 		// retrieve templates
 		//
 		$templates = Helper::findTemplates();
 
-		return Theme::make('platform/pages::widgets.pages.form.copy', $data)
+		return Theme::make('platform/pages::widgets.pages.form.copy')
+			->with('page', $page)
 			->with('status', $this->status)
+			->with('visibility_options', $this->visibility_options)
+			->with('groups', $this->groups)
 			->with('templates', $templates);
 	}
 

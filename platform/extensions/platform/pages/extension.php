@@ -34,7 +34,7 @@ return array(
 		'name'        => 'Pages',
 		'author'      => 'Cartalyst LLC',
 		'description' => 'An extension to manage pages and content.',
-		'version'     => '1.1.1',
+		'version'     => '1.1.2',
 		'is_core'     => true,
 	),
 
@@ -45,10 +45,9 @@ return array(
      */
     'dependencies' => array(
         'platform.menus',
-        'platform.settings'
+        'platform.settings',
+        'platform.media',
     ),
-
-
 
     /*
      * -----------------------------------------
@@ -57,11 +56,13 @@ return array(
      */
 	'routes' => function()
 	{
-		Route::any('/', function()
-		{
-			return Controller::call('platform/pages::pages@page');
-		});
+		// route index page
+		Route::any('/', 'platform/pages::pages@page');
 
+		// route invalid permissions
+		Route::any('/invalid_permissions', 'cartalyst/pages::pages@invalid_permissions');
+
+		// route non-index pages
 		Route::any('(:any)', function($page = 'index')
 		{
 			// Check if the page is a bundle
