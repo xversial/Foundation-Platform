@@ -64,6 +64,7 @@
 			<div class="controls">
 				<textarea rows="10" class="field" name="value" id="value" placeholder="content" required>{{ Input::old('value', $page['value']) }}</textarea>
 				<span class="help-block">{{ Lang::line('platform/pages::form.pages.copy.value_help') }}</span>
+				<button class="btn btn-large btn-info pull-right" id="preview" type="button">Preview</button>
 			</div>
 		</div>
 
@@ -82,8 +83,6 @@
 
 {{ Theme::queue_asset('redactor', 'platform/pages::css/redactor.css', 'styles') }}
 {{ Theme::queue_asset('redactor', 'platform/pages::js/redactor.min.js', 'jquery') }}
-{{ Theme::queue_asset('redactor-content', 'platform/pages::js/plugin.content.js', 'redactor') }}
-{{ Theme::queue_asset('redactor-media', 'platform/pages::js/plugin.media.js', 'redactor') }}
-{{ Theme::queue_asset('redactor-fullscreen', 'platform/pages::js/plugin.fullscreen.js', 'redactor') }}
-{{ Theme::queue_asset('redactor-preview', 'platform/pages::js/plugin.preview.js', 'redactor') }}
+{{ Theme::queue_asset('redactor-plugins', 'platform/pages::js/redactor-plugins.js', 'redactor') }}
+{{ Theme::queue_asset('preview', 'platform/pages::js/preview.js', 'redactor') }}
 {{ Theme::queue_asset('editor', 'platform/pages::js/editor.js', 'media-chooser') }}

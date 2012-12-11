@@ -1,4 +1,4 @@
-@layout('extensions.cartalyst.pages.narrow')
+@layout('extensions.platform.pages.narrow')
 
 <!-- Title -->
 @section('title')

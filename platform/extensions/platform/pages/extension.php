@@ -60,7 +60,7 @@ return array(
 		Route::any('/', 'platform/pages::pages@page');
 
 		// route invalid permissions
-		Route::any('/invalid_permissions', 'cartalyst/pages::pages@invalid_permissions');
+		Route::any('/invalid_permissions', 'platform/pages::pages@invalid_permissions');
 
 		// route non-index pages
 		Route::any('(:any)', function($page = 'index')

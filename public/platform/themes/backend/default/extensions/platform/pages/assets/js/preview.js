@@ -1,17 +1,19 @@
-if (typeof RedactorPlugins === 'undefined') var RedactorPlugins = {};
+(function($) {
 
-RedactorPlugins.preview = {
+	$('body').append('<div class="page-preview"><span class="close-preview">Close</span><br /><iframe></iframe></div>');
 
-	init: function() {
-		var self = this;
+	var preview = $('.page-preview')
+			.hide()
+			.css({
+				'position': 'absolute',
+				'top': 0,
+				'left': 0,
+			});
 
-		//insert iframe
-		$('body').append('<div class="page-preview"><span class="close-preview">Close</span><br /><iframe></iframe></div>');
+	var previewFrame = preview.find('iframe');
 
-		var preview = $('.page-preview');
-		var close = preview.find('.close-preview');
-
-		close.css({
+	var close = preview.find('.close-preview')
+			.css({
 				'display': 'block',
 				'background-color': '#000',
 				'color': '#efefef',
@@ -26,14 +28,8 @@ RedactorPlugins.preview = {
 				preview.hide();
 			});
 
-		preview.hide().css({
-			'position': 'absolute',
-			'top': 0,
-			'left': 0,
-		});
-
-		this.addBtn('preview', 'Preview', function() {
-			preview.find('iframe')
+	$('#preview').on('click', function() {
+		previewFrame
 				.attr('src', platform.url.admin('pages/preview?'+$('form').serialize()))
 				.css({
 					'position': 'absolute',
@@ -47,7 +43,6 @@ RedactorPlugins.preview = {
 
 			preview.show();
 			window.scrollTo(0,0);
-		});
-	},
+	});
 
-};
+})(jQuery);

@@ -75,6 +75,7 @@
 	<div class="form-actions">
 		<a class="btn btn-large" href="{{ URL::to_admin('pages') }}">{{ Lang::line('button.cancel') }}</a>
 		<button class="btn btn-large btn-primary" type="submit">{{ Lang::line('button.update') }}</button>
+		<button class="btn btn-large btn-info pull-right" id="preview" type="button">Preview</button>
 	</div>
 
 </form>
@@ -82,8 +83,6 @@
 
 {{ Theme::queue_asset('redactor', 'platform/pages::css/redactor.css', 'styles') }}
 {{ Theme::queue_asset('redactor', 'platform/pages::js/redactor.min.js', 'jquery') }}
-{{ Theme::queue_asset('redactor-content', 'platform/pages::js/plugin.content.js', 'redactor') }}
-{{ Theme::queue_asset('redactor-media', 'platform/pages::js/plugin.media.js', 'redactor') }}
-{{ Theme::queue_asset('redactor-fullscreen', 'platform/pages::js/plugin.fullscreen.js', 'redactor') }}
-{{ Theme::queue_asset('redactor-preview', 'platform/pages::js/plugin.preview.js', 'redactor') }}
+{{ Theme::queue_asset('redactor-plugins', 'platform/pages::js/redactor-plugins.js', 'redactor') }}
+{{ Theme::queue_asset('preview', 'platform/pages::js/preview.js', 'redactor') }}
 {{ Theme::queue_asset('editor', 'platform/pages::js/editor.js', 'media-chooser') }}

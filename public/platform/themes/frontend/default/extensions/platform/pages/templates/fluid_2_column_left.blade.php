@@ -1,4 +1,4 @@
-@layout('extensions.cartalyst.pages.fluid')
+@layout('extensions.platform.pages.fluid')
 
 <!-- Title -->
 @section('title')
