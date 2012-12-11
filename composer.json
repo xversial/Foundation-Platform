@@ -7,6 +7,9 @@
     ],
 	"require": {
 		"illuminate/foundation": "1.1.*",
+		"dflydev/theme": "1.0.x-dev",
+		"jasonlewis/basset": "dev-master",
+		"leafo/lessphp": "dev-master",
 		"cartalyst/sentry": "dev-master",
 		"platform/developers": "dev-master",
 		"platform/localization": "dev-master",
@@ -31,6 +34,7 @@
 		],
 		"psr-0": {
 			"Cartalyst\\Api": "vendor/cartalyst/api/src",
+			"Cartalyst\\Themes": "vendor/cartalyst/themes/src",
 			"Platform\\Extensions": "vendor/platform/extensions/src",
 			"Platform\\Foundation": "vendor/platform/foundation/src",
 			"Platform\\Operate": "vendor/platform/operate/src"
