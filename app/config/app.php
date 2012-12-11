@@ -151,9 +151,10 @@ return array(
 		'Validator'  => 'Illuminate\Support\Facades\Validator',
 		'View'       => 'Illuminate\Support\Facades\View',
 
-		'Sentry'     => 'Cartalyst\Sentry\Facades\Sentry',
-		'Api'        => 'Cartalyst\Api\Facades\Api',
-		'Platform'   => 'Platform\Foundation\Facades\Platform',
+		'Sentry'        => 'Cartalyst\Sentry\Facades\Sentry',
+		'Api'           => 'Cartalyst\Api\Facades\Api',
+		'ApiController' => 'Cartalyst\Api\Routing\Controllers\Controller',
+		'Platform'      => 'Platform\Foundation\Facades\Platform',
 
 	),
 
