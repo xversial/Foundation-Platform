@@ -4,67 +4,84 @@
 	<fieldset>
 		<legend>{{ Lang::line('platform/pages::form.pages.create.legend') }}</legend>
 
-		<!-- Name -->
-		<div class="control-group">
-			<label class="control-label" for="name">{{ Lang::line('platform/pages::form.pages.create.name') }}:</label>
-			<div class="controls">
-				<input type="text" name="name" id="name" value="{{ Input::old('name') }}" placeholder="Name" required>
-				<span class="help-block">{{ Lang::line('platform/pages::form.pages.create.name_help') }}</span>
-			</div>
-		</div>
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#general" data-toggle="tab">General</a></li>
+			<li><a href="#visibility" data-toggle="tab">Visibility</a></li>
+		</ul>
 
-		<!-- Slug -->
-		<div class="control-group">
-			<label class="control-label" for="slug">{{ Lang::line('platform/pages::form.pages.create.slug') }}:</label>
-			<div class="controls">
-				<input type="text" name="slug" id="slug" value="{{ Input::old('slug') }}" placeholder="Slug" required>
-				<span class="help-block">{{ Lang::line('platform/pages::form.pages.create.slug_help') }}</span>
-			</div>
-		</div>
+		<div class="tab-content">
 
-		<!-- Status -->
-		<div class="control-group">
-			<label for="status" class="control-label">{{ Lang::line('platform/pages::form.pages.create.status') }}</label>
-			<div class="controls">
-				{{ Form::select('status', $status) }}
-				<span class="help-block">{{ Lang::line('platform/pages::form.pages.create.status_help') }}</span>
-			</div>
-		</div>
+			<div class="tab-pane active" id="general">
 
-		<!-- Visibility -->
-		<div class="control-group">
-			<label for="visibility" class="control-label">{{ Lang::line('platform/pages::form.pages.create.visibility') }}</label>
-			<div class="controls">
-				{{ form::select('visibility', $visibility_options, Input::old('visibility')) }}
-				<span class="help-block">{{ Lang::line('platform/pages::form.pages.create.visibility_help') }}</span>
-			</div>
-		</div>
+				<!-- Name -->
+				<div class="control-group">
+					<label class="control-label" for="name">{{ Lang::line('platform/pages::form.pages.create.name') }}:</label>
+					<div class="controls">
+						<input type="text" name="name" id="name" value="{{ Input::old('name') }}" placeholder="Name" required>
+						<span class="help-block">{{ Lang::line('platform/pages::form.pages.create.name_help') }}</span>
+					</div>
+				</div>
 
-		<!-- Groups -->
-		<div class="control-group">
-			<label for="groups" class="control-label">{{ Lang::line('platform/pages::form.pages.create.groups') }}</label>
-			<div class="controls">
-				{{ form::select('groups[]', $groups, Input::old('groups'), array('multiple' => true) )}}
-				<span class="help-block">{{ Lang::line('platform/pages::form.pages.create.groups_help') }}</span>
-			</div>
-		</div>
+				<!-- Slug -->
+				<div class="control-group">
+					<label class="control-label" for="slug">{{ Lang::line('platform/pages::form.pages.create.slug') }}:</label>
+					<div class="controls">
+						<input type="text" name="slug" id="slug" value="{{ Input::old('slug') }}" placeholder="Slug" required>
+						<span class="help-block">{{ Lang::line('platform/pages::form.pages.create.slug_help') }}</span>
+					</div>
+				</div>
 
-		<!-- Templates -->
-		<div class="control-group">
-			<label for="template" class="control-label">{{ Lang::line('platform/pages::form.pages.create.template') }}:</label>
-			<div class="controls">
-				{{ Form::select('templates', $templates, Input::old('template')) }}
-				<span class="help-block">{{ Lang::line('platform/pages::form.pages.create.template_help') }}</span>
-			</div>
-		</div>
+				<!-- Status -->
+				<div class="control-group">
+					<label for="status" class="control-label">{{ Lang::line('platform/pages::form.pages.create.status') }}</label>
+					<div class="controls">
+						{{ Form::select('status', $status) }}
+						<span class="help-block">{{ Lang::line('platform/pages::form.pages.create.status_help') }}</span>
+					</div>
+				</div>
 
-		<!-- Value -->
-		<div class="control-group">
-			<label class="control-label" for="value">{{ Lang::line('platform/pages::form.pages.create.value') }}:</label>
-			<div class="controls">
-				<textarea rows="10" name="value" id="value" placeholder="content" required>{{ Input::old('value') }}</textarea>
-				<span class="help-block">{{ Lang::line('platform/pages::form.pages.create.value_help') }}</span>
+				<!-- Templates -->
+				<div class="control-group">
+					<label for="template" class="control-label">{{ Lang::line('platform/pages::form.pages.create.template') }}:</label>
+					<div class="controls">
+						{{ Form::select('templates', $templates, Input::old('template')) }}
+						<span class="help-block">{{ Lang::line('platform/pages::form.pages.create.template_help') }}</span>
+					</div>
+				</div>
+
+				<!-- Value -->
+				<div class="control-group">
+					<label class="control-label" for="value">{{ Lang::line('platform/pages::form.pages.create.value') }}:</label>
+					<div class="controls">
+						<textarea rows="10" name="value" id="value" placeholder="content" required>{{ Input::old('value') }}</textarea>
+						<span class="help-block">{{ Lang::line('platform/pages::form.pages.create.value_help') }}</span>
+					</div>
+				</div>
+
 			</div>
+
+			<div class="tab-pane" id="visibility">
+
+				<!-- Visibility -->
+				<div class="control-group">
+					<label for="visibility" class="control-label">{{ Lang::line('platform/pages::form.pages.create.visibility') }}</label>
+					<div class="controls">
+						{{ form::select('visibility', $visibility_options, Input::old('visibility')) }}
+						<span class="help-block">{{ Lang::line('platform/pages::form.pages.create.visibility_help') }}</span>
+					</div>
+				</div>
+
+				<!-- Groups -->
+				<div class="control-group">
+					<label for="groups" class="control-label">{{ Lang::line('platform/pages::form.pages.create.groups') }}</label>
+					<div class="controls">
+						{{ form::select('groups[]', $groups, Input::old('groups'), array('multiple' => true) )}}
+						<span class="help-block">{{ Lang::line('platform/pages::form.pages.create.groups_help') }}</span>
+					</div>
+				</div>
+
+			</div>
+
 		</div>
 
 	</fieldset>
