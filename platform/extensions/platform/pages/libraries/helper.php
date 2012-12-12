@@ -60,6 +60,7 @@ class Helper
 		}
 
 		$templates = array();
+		$templateNames = array();
 		foreach ($themes as $theme => $name)
 		{
 			$path = path('public') . 'platform/themes/frontend/'.$name.'/extensions/platform/pages/templates';
@@ -69,7 +70,13 @@ class Helper
 			foreach ($files as $file)
 			{
 				$file = str_replace('.blade.php', '', basename($file));
-				$templates[$name][$name.'/'.$file] = $file;
+
+				// prevent duplicates because we use overriding
+				if ( ! in_array($file, $templateNames))
+				{
+					$templates[$name][$file] = $file;
+					$templateNames[] = $file;
+				}
 			}
 
 		}
@@ -91,6 +98,7 @@ class Helper
 		}
 
 		$files = array();
+		$fileNames = array();
 		foreach ($themes as $theme => $name)
 		{
 			$path = path('public') . 'platform/themes/frontend/'.$name.'/extensions/platform/pages/files';
@@ -100,7 +108,13 @@ class Helper
 			foreach ($_files as $file)
 			{
 				$file = str_replace('.blade.php', '', basename($file));
-				$files[$name][$name.'/'.$file] = $file;
+
+				// prevent duplicates because we use overriding
+				if ( ! in_array($file, $fileNames))
+				{
+					$files[$name][$file] = $file;
+					$fileNames[] = $file;
+				}
 			}
 
 		}

@@ -55,9 +55,15 @@
 	var editor = $('#editor-container');
 	var files  = $('#file-container').hide();
 
+	// load proper view
+	swap();
+
 	// check page type to see if editor or file list should be shown
-	types.on('change', function() {
-		if ($(this).val() == 'db')
+	types.on('change', swap);
+
+	function swap() {
+		console.log('hi');
+		if (types.val() == 'db')
 		{
 			files.hide();
 			editor.show();
@@ -67,6 +73,6 @@
 			editor.hide();
 			files.show();
 		}
-	});
+	}
 
 })(jQuery);

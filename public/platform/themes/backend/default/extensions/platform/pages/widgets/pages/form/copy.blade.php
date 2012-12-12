@@ -101,5 +101,5 @@
 {{ Theme::queue_asset('redactor', 'platform/pages::css/redactor.css', 'styles') }}
 {{ Theme::queue_asset('redactor', 'platform/pages::js/redactor.min.js', 'jquery') }}
 {{ Theme::queue_asset('redactor-plugins', 'platform/pages::js/redactor-plugins.js', 'redactor') }}
-{{ Theme::queue_asset('preview', 'platform/pages::js/preview.js', 'redactor') }}
+{{ Theme::queue_asset('page', 'platform/pages::js/page.js', 'redactor') }}
 {{ Theme::queue_asset('editor', 'platform/pages::js/editor.js', 'media-chooser') }}

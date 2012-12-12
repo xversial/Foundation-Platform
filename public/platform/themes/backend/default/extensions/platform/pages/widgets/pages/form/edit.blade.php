@@ -59,15 +59,18 @@
 							<span class="help-block">{{ Lang::line('platform/pages::form.pages.edit.value_help') }}</span>
 						</div>
 					</div>
+
 				@else
+
 					<!-- Files -->
 					<div class="control-group">
 						<label for="file" class="control-label">{{ Lang::line('platform/pages::form.pages.create.file') }}:</label>
 						<div class="controls">
-							{{ Form::select('file', $files, Input::old('file', $page['value'])) }}
+							{{ Form::select('file', $files, Input::old('file', $page['template'])) }}
 							<span class="help-block">{{ Lang::line('platform/pages::form.pages.create.file_help') }}</span>
 						</div>
 					</div>
+
 				@endif
 
 			</div>
@@ -112,5 +115,5 @@
 {{ Theme::queue_asset('redactor', 'platform/pages::css/redactor.css', 'styles') }}
 {{ Theme::queue_asset('redactor', 'platform/pages::js/redactor.min.js', 'jquery') }}
 {{ Theme::queue_asset('redactor-plugins', 'platform/pages::js/redactor-plugins.js', 'redactor') }}
-{{ Theme::queue_asset('preview', 'platform/pages::js/preview.js', 'redactor') }}
+{{ Theme::queue_asset('page', 'platform/pages::js/page.js', 'redactor') }}
 {{ Theme::queue_asset('editor', 'platform/pages::js/editor.js', 'media-chooser') }}

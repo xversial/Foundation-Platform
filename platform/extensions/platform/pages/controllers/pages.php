@@ -56,6 +56,13 @@ class Platform_Pages_Pages_Controller extends Public_Controller
 			return Event::first('404');
 		}
 
+		if ($page['type'] == 'file')
+		{
+			return Theme::make('platform/pages::files.'.$page['template'])
+        		->with('name', Input::get('name'))
+        		->with('slug', Input::get('slug'));
+		}
+
 		$content = Helper::renderContent($page['value']);
 
 		return Theme::make('platform/pages::templates.'.$page['template'])
