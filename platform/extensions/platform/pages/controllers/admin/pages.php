@@ -49,8 +49,9 @@ class Platform_Pages_Admin_Pages_Controller extends Admin_Controller
 		$data = array(
 			'name'       => Input::get('name'),
 			'slug'       => Input::get('slug'),
-			'value'      => Input::get('value'),
-			'template'   => Input::get('template', 'default'),
+			'type'       => Input::get('type'),
+			'template'   => (Input::get('type') == 'db') ? Input::get('template') : '',
+			'value'      => (Input::get('type') == 'db') ? Input::get('value') : Input::get('file'),
 			'status'     => Input::get('status', 1),
 			'visibility' => Input::get('visibility', 0),
 			'groups'     => json_encode(Input::get('groups', array())),
@@ -98,8 +99,8 @@ class Platform_Pages_Admin_Pages_Controller extends Admin_Controller
 		$data = array(
 			'name'       => Input::get('name'),
 			'slug'       => Input::get('slug'),
-			'value'      => Input::get('value'),
-			'template'   => Input::get('template', 'default'),
+			'value'      => Input::get('file', Input::get('value')),
+			'template'   => Input::get('template'),
 			'status'     => Input::get('status', 1),
 			'visibility' => Input::get('visibility', 0),
 			'groups'     => json_encode(Input::get('groups', array())),

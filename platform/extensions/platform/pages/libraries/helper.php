@@ -62,18 +62,49 @@ class Helper
 		$templates = array();
 		foreach ($themes as $theme => $name)
 		{
-			$path = path('public') . 'platform' . DS . 'themes' . DS . 'frontend'. DS . $name . DS . 'extensions' . DS . 'platform' . DS . 'pages' . DS . 'templates';
+			$path = path('public') . 'platform/themes/frontend/'.$name.'/extensions/platform/pages/templates';
 
 			$files = glob($path.DS.'*.blade.php');
 
 			foreach ($files as $file)
 			{
 				$file = str_replace('.blade.php', '', basename($file));
-				$templates[$name][$file] = $file;
+				$templates[$name][$name.'/'.$file] = $file;
 			}
 
 		}
 
 		return $templates;
+	}
+
+	public static function findPageFiles()
+	{
+		// Find current active and fallback themes for the frontend;
+		//
+		$themes['active'] = Platform::get('platform/themes::theme.frontend');
+
+		// Set the fallback if the theme is not on default
+		//
+		if ($themes['active'] != 'default')
+		{
+			$themes['fallback'] = 'default';
+		}
+
+		$files = array();
+		foreach ($themes as $theme => $name)
+		{
+			$path = path('public') . 'platform/themes/frontend/'.$name.'/extensions/platform/pages/files';
+
+			$_files = glob($path.DS.'*.blade.php');
+
+			foreach ($_files as $file)
+			{
+				$file = str_replace('.blade.php', '', basename($file));
+				$files[$name][$name.'/'.$file] = $file;
+			}
+
+		}
+
+		return $files;
 	}
 }

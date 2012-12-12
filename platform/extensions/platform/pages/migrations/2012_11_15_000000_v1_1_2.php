@@ -55,11 +55,15 @@ class Platform_Pages_v1_1_2
     public function up()
     {
         Schema::table('pages', function($table) {
-			$table->boolean('visibility');
+        	$table->string('type')->nullable();
+			$table->boolean('visibility')->nullable();
 			$table->text('groups')->nullable();
 		});
 
-		DB::table('pages')->update(array('visibility' => 0));
+		DB::table('pages')->update(array(
+			'visibility' => 0,
+			'type'       => 'db',
+		));
     }
 
 
@@ -76,7 +80,7 @@ class Platform_Pages_v1_1_2
     public function down()
     {
     	Schema::table('pages', function($table) {
-			$table->drop_column(array('visibility', 'groups'));
+			$table->drop_column(array('type', 'visibility', 'groups'));
 		});
     }
 }

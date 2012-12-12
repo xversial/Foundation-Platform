@@ -9,6 +9,8 @@ return array(
 	'pages' => array(
 
 		'create' => array(
+			'file'            => 'File',
+			'file_help'       => 'Select the file you wish to use for this page.',
 			'groups'          => 'Groups',
 			'groups_help'     => 'What user groups should see this page?',
 			'legend'          => 'Create Page',
@@ -20,6 +22,8 @@ return array(
 			'status_help'     => 'The page status',
 			'template'        => 'Template',
 			'template_help'   => 'Page template to use.',
+			'type'            => 'Type',
+			'type_help'       => 'How do you want to store and edit this page?',
 			'value'           => 'Content',
 			'value_help'      => 'Contents of your page. @content call is allowed.',
 			'visibility'      => 'Visibility',
@@ -27,6 +31,8 @@ return array(
 		),
 
 		'edit' => array(
+			'file'            => 'File',
+			'file_help'       => 'Select the file you wish to use for this page.',
 			'groups'          => 'Groups',
 			'groups_help'     => 'What user groups should see this page?',
 			'legend'          => 'Edit Page',
@@ -38,6 +44,8 @@ return array(
 			'status_help'     => 'The page status',
 			'template'        => 'Template',
 			'template_help'   => 'Page template to use.',
+			// 'type'            => 'Type',
+			// 'type_help'       => 'How do you want to store and edit this page?',
 			'value'           => 'Content',
 			'value_help'      => 'Contents of your page. @content call is allowed.',
 			'visibility'      => 'Visibility',
@@ -45,6 +53,8 @@ return array(
 		),
 
 		'copy' => array(
+			'file'            => 'File',
+			'file_help'       => 'Select the file you wish to use for this page.',
 			'groups'          => 'Groups',
 			'groups_help'     => 'What user groups should see this page?',
 			'legend'          => 'Copy Page',
@@ -56,6 +66,8 @@ return array(
 			'status_help'     => 'The page status',
 			'template'        => 'Template',
 			'template_help'   => 'Page template to use.',
+			// 'type'            => 'Type',
+			// 'type_help'       => 'How do you want to store and edit this page?',
 			'value'           => 'Content',
 			'value_help'      => 'Contents of your page. @content call is allowed.',
 			'visibility'      => 'Visibility',

@@ -40,22 +40,48 @@
 					</div>
 				</div>
 
-				<!-- Templates -->
+				<!-- Type -->
 				<div class="control-group">
-					<label for="template" class="control-label">{{ Lang::line('platform/pages::form.pages.create.template') }}:</label>
+					<label for="type" class="control-label">{{ Lang::line('platform/pages::form.pages.create.type') }}:</label>
 					<div class="controls">
-						{{ Form::select('templates', $templates, Input::old('template')) }}
-						<span class="help-block">{{ Lang::line('platform/pages::form.pages.create.template_help') }}</span>
+						{{ Form::select('type', $types, Input::old('type'), array('id' => 'type')) }}
+						<span class="help-block">{{ Lang::line('platform/pages::form.pages.create.type_help') }}</span>
 					</div>
 				</div>
 
-				<!-- Value -->
-				<div class="control-group">
-					<label class="control-label" for="value">{{ Lang::line('platform/pages::form.pages.create.value') }}:</label>
-					<div class="controls">
-						<textarea rows="10" name="value" id="value" placeholder="content" required>{{ Input::old('value') }}</textarea>
-						<span class="help-block">{{ Lang::line('platform/pages::form.pages.create.value_help') }}</span>
+				<div id="editor-container">
+
+					<!-- Templates -->
+					<div class="control-group">
+						<label for="template" class="control-label">{{ Lang::line('platform/pages::form.pages.create.template') }}:</label>
+						<div class="controls">
+							{{ Form::select('templates', $templates, Input::old('template')) }}
+							<span class="help-block">{{ Lang::line('platform/pages::form.pages.create.template_help') }}</span>
+						</div>
 					</div>
+
+					<!-- Value -->
+					<div class="control-group">
+						<label class="control-label" for="value">{{ Lang::line('platform/pages::form.pages.create.value') }}:</label>
+						<div class="controls">
+							<textarea rows="10" name="value" id="value" placeholder="content">{{ Input::old('value') }}</textarea>
+							<span class="help-block">{{ Lang::line('platform/pages::form.pages.create.value_help') }}</span>
+						</div>
+					</div>
+
+				</div>
+
+				<div id="file-container">
+
+					<!-- Files -->
+					<div class="control-group">
+						<label for="file" class="control-label">{{ Lang::line('platform/pages::form.pages.create.file') }}:</label>
+						<div class="controls">
+							{{ Form::select('file', $files, Input::old('file')) }}
+							<span class="help-block">{{ Lang::line('platform/pages::form.pages.create.file_help') }}</span>
+						</div>
+					</div>
+
 				</div>
 
 			</div>
@@ -101,5 +127,5 @@
 {{ Theme::queue_asset('redactor', 'platform/pages::css/redactor.css', 'styles') }}
 {{ Theme::queue_asset('redactor', 'platform/pages::js/redactor.min.js', 'jquery') }}
 {{ Theme::queue_asset('redactor-plugins', 'platform/pages::js/redactor-plugins.js', 'redactor') }}
-{{ Theme::queue_asset('preview', 'platform/pages::js/preview.js', 'redactor') }}
+{{ Theme::queue_asset('page', 'platform/pages::js/page.js', 'redactor') }}
 {{ Theme::queue_asset('editor', 'platform/pages::js/editor.js', 'media-chooser') }}

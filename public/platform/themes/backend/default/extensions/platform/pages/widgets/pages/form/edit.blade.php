@@ -40,23 +40,35 @@
 					</div>
 				</div>
 
-				<!-- Templates -->
-				<div class="control-group">
-					<label for="template" class="control-label">{{ Lang::line('platform/pages::form.pages.edit.template') }}:</label>
-					<div class="controls">
-						{{ Form::select('template', $templates, Input::old('template', $page['template'], array('id' => 'template'))) }}
-						<span class="help-block">{{ Lang::line('platform/pages::form.pages.edit.template_help') }}</span>
-					</div>
-				</div>
+				@if ($page['type'] == 'db')
 
-				<!-- Value -->
-				<div class="control-group">
-					<label class="control-label" for="value">{{ Lang::line('platform/pages::form.pages.edit.value') }}:</label>
-					<div class="controls">
-						<textarea rows="10" class="field" name="value" id="value" placeholder="content" required>{{ Input::old('value', $page['value']) }}</textarea>
-						<span class="help-block">{{ Lang::line('platform/pages::form.pages.edit.value_help') }}</span>
+					<!-- Templates -->
+					<div class="control-group">
+						<label for="template" class="control-label">{{ Lang::line('platform/pages::form.pages.edit.template') }}:</label>
+						<div class="controls">
+							{{ Form::select('template', $templates, Input::old('template', $page['template'], array('id' => 'template'))) }}
+							<span class="help-block">{{ Lang::line('platform/pages::form.pages.edit.template_help') }}</span>
+						</div>
 					</div>
-				</div>
+
+					<!-- Value -->
+					<div class="control-group">
+						<label class="control-label" for="value">{{ Lang::line('platform/pages::form.pages.edit.value') }}:</label>
+						<div class="controls">
+							<textarea rows="10" class="field" name="value" id="value" placeholder="content" required>{{ Input::old('value', $page['value']) }}</textarea>
+							<span class="help-block">{{ Lang::line('platform/pages::form.pages.edit.value_help') }}</span>
+						</div>
+					</div>
+				@else
+					<!-- Files -->
+					<div class="control-group">
+						<label for="file" class="control-label">{{ Lang::line('platform/pages::form.pages.create.file') }}:</label>
+						<div class="controls">
+							{{ Form::select('file', $files, Input::old('file', $page['value'])) }}
+							<span class="help-block">{{ Lang::line('platform/pages::form.pages.create.file_help') }}</span>
+						</div>
+					</div>
+				@endif
 
 			</div>
 

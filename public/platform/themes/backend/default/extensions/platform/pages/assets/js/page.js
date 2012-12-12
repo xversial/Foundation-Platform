@@ -1,3 +1,4 @@
+// preview
 (function($) {
 
 	$('body').append('<div class="page-preview"><span class="close-preview">Close</span><br /><iframe></iframe></div>');
@@ -43,6 +44,29 @@
 
 			preview.show();
 			window.scrollTo(0,0);
+	});
+
+})(jQuery);
+
+// shown editor
+(function($) {
+
+	var types = $('select#type');
+	var editor = $('#editor-container');
+	var files  = $('#file-container').hide();
+
+	// check page type to see if editor or file list should be shown
+	types.on('change', function() {
+		if ($(this).val() == 'db')
+		{
+			files.hide();
+			editor.show();
+		}
+		else
+		{
+			editor.hide();
+			files.show();
+		}
 	});
 
 })(jQuery);

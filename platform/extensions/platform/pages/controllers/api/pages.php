@@ -183,13 +183,14 @@ class Platform_Pages_Api_Pages_Controller extends API_Controller
 				'pages.id'      => Lang::line('platform/pages::table.pages.id')->get(),
 				'pages.name'    => Lang::line('platform/pages::table.pages.name')->get(),
 				'slug'          => Lang::line('platform/pages::table.pages.slug')->get(),
-				'template'      => Lang::line('platform/pages::table.pages.template')->get(),
+				'pages.type'    => Lang::line('platform/pages::table.pages.type')->get(),
 				'settings.name' => Lang::line('platform/pages::table.pages.status')->get(),
 			),
 			'alias'     => array(
-				'pages.id'    => 'id',
-				'pages.name'  => 'name',
+				'pages.id'      => 'id',
+				'pages.name'    => 'name',
 				'settings.name' => 'status',
+				'pages.type'    => 'type'
 			),
 			'where'     => array(),
 			'order_by'  => array('id' => 'desc'),

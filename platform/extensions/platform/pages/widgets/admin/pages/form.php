@@ -43,6 +43,13 @@ class Admin_Pages_Form
 		1 => 'Logged In',
 	);
 
+	// types
+	//
+	public $types = array(
+		'db'   => 'Database',
+		'file' => 'File',
+	);
+
 	public $groups = array();
 
 	/**
@@ -83,12 +90,18 @@ class Admin_Pages_Form
 		//
 		$templates = Helper::findTemplates();
 
+		// retrieve page files
+		//
+		$files = Helper::findPageFiles();
+
 		return Theme::make('platform/pages::widgets.pages.form.create')
 			->with('status', $this->status)
 			->with('visibility_options', $this->visibility_options)
 			->with('groups', $this->groups)
 			->with('template', $template)
-			->with('templates', $templates);
+			->with('templates', $templates)
+			->with('types', $this->types)
+			->with('files', $files);
 	}
 
 	/**
@@ -109,19 +122,25 @@ class Admin_Pages_Form
 		catch(APIClientException $e)
 		{
 			Platform::messages()->error($e->getMessage());
-			return Redirect::to_admin('pages');
+			return Redirect::to_admin('pages')->send();
 		}
 
 		// retrieve templates
 		//
 		$templates = Helper::findTemplates();
 
+		// retrieve page files
+		//
+		$files = Helper::findPageFiles();
+
 		return Theme::make('platform/pages::widgets.pages.form.edit')
 			->with('page', $page)
 			->with('status', $this->status)
 			->with('visibility_options', $this->visibility_options)
 			->with('groups', $this->groups)
-			->with('templates', $templates);
+			->with('templates', $templates)
+			->with('types', $this->types)
+			->with('files', $files);
 	}
 
 	/**
@@ -142,7 +161,13 @@ class Admin_Pages_Form
 		catch(APIClientException $e)
 		{
 			Platform::messages()->error($e->getMessage());
-			return Redirect::to_admin('pages');
+			return Redirect::to_admin('pages')->send();
+		}
+
+		if ($page['type'] == 'file')
+		{
+			Platform::messages()->error('Can not copy pages of type: file');
+			return Redirect::to_admin('pages')->send();
 		}
 
 		// retrieve templates
@@ -154,7 +179,8 @@ class Admin_Pages_Form
 			->with('status', $this->status)
 			->with('visibility_options', $this->visibility_options)
 			->with('groups', $this->groups)
-			->with('templates', $templates);
+			->with('templates', $templates)
+			->with('types', $this->types);
 	}
 
 }
