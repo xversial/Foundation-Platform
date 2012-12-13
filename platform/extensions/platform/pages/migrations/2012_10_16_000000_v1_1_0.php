@@ -94,7 +94,7 @@ class Platform_Pages_v1_1_0
         // Admin > Pages
         //
         $pages = new Menu(array(
-            'name'          => 'Pages',
+            'name'          => 'CMS',
             'vendor'        => 'platform',
             'extension'     => 'pages',
             'slug'          => 'admin-pages',
