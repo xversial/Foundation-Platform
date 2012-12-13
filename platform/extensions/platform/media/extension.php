@@ -21,7 +21,7 @@ return array(
 		'author'      => 'Cartalyst LLC',
 		'description' => 'Manages all media.',
 		'version'     => '1.0',
-		'is_core'     => false,
+		'is_core'     => true,
 	),
 
 
