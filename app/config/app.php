@@ -103,8 +103,11 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 
+		'Basset\BassetServiceProvider',
+
 		'Cartalyst\Sentry\SentryServiceProvider',
 		'Cartalyst\Api\ApiServiceProvider',
+		'Cartalyst\Themes\ThemeServiceProvider',
 		'Platform\Foundation\PlatformServiceProvider',
 
 	),
@@ -151,9 +154,12 @@ return array(
 		'Validator'  => 'Illuminate\Support\Facades\Validator',
 		'View'       => 'Illuminate\Support\Facades\View',
 
+		'Basset' => 'Basset\Facades\Basset',
+
 		'Sentry'        => 'Cartalyst\Sentry\Facades\Sentry',
 		'Api'           => 'Cartalyst\Api\Facades\Api',
 		'ApiController' => 'Cartalyst\Api\Routing\Controllers\Controller',
+		'Theme'         => 'Cartalyst\Themes\Facades\Theme',
 		'Platform'      => 'Platform\Foundation\Facades\Platform',
 
 	),
