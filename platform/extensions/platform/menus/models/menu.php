@@ -303,6 +303,13 @@ class Menu extends Nesty
 				return $this->children();
 			}
 
+			// format groups
+			foreach ($children_array as &$child)
+			{
+				$child->group_visibility = ( ! empty($child->group_visibility)) ? $child->group_visibility : array();
+				$child->group_visibility = (is_array($child->group_visibility)) ? $child->group_visibility : json_decode($child->group_visibility);
+			}
+
 			// Hydrate our children. If hydrate children
 			// returns false, there are no children for this
 			// model. That means that $this->children === false,
@@ -313,13 +320,6 @@ class Menu extends Nesty
 				$this->children = false;
 				return $this->children();
 			}
-		}
-
-		// format groups
-		foreach ($this->children as &$child)
-		{
-			$child->group_visibility = ( ! empty($child->group_visibility)) ? $child->group_visibility : '[]';
-			$child->group_visibility = (is_array($child->group_visibility)) ? $child->group_visibility : json_decode($child->group_visibility);
 		}
 
 		return $this->children;
@@ -601,12 +601,13 @@ SQL;
                     $duplicate->reload();
 
                     // Reset relevent values
-                    $child->name       = $duplicate->name;
-                    $child->slug       = $duplicate->slug;
-                    $child->uri        = $duplicate->uri;
-                    $child->secure     = $duplicate->secure;
-                    $child->visibility = $duplicate->visibility;
-                    $child->class      = $duplicate->class;
+					$child->name             = $duplicate->name;
+					$child->slug             = $duplicate->slug;
+					$child->uri              = $duplicate->uri;
+					$child->secure           = $duplicate->secure;
+					$child->visibility       = $duplicate->visibility;
+					$child->class            = $duplicate->class;
+					$child->group_visibility = $duplicate->group_visibility;
                 }
                 elseif ($child->is_new())
                 {

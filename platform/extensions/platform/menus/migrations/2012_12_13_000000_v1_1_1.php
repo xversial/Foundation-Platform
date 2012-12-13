@@ -56,7 +56,7 @@ class Platform_Menus_v1_1_1
 	{
         Schema::table('menus', function($table)
 		{
-			$table->text('group_visibility');
+			$table->text('group_visibility')->nullable();
 		});
 	}
 
