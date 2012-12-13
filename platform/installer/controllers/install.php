@@ -356,6 +356,7 @@ class Installer_Install_Controller extends Installer_Base_Controller
             $desired_order = array(
                 'admin-dashboard',
                 'admin-pages',
+                'admin-media',
                 'admin-users',
                 'admin-menus',
                 'admin-system' => array(
