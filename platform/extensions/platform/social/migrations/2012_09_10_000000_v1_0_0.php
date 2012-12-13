@@ -37,6 +37,8 @@ class Platform_Social_v1_0_0
 	 */
 	public function down()
 	{
+		Bundle::register('sentrysocial');
+
 		// find sentrysocial migrations
 		$migrations = DB::table('laravel_migrations')->where('bundle', '=', 'sentrysocial')->get();
 		$path = Bundle::path('sentrysocial') . 'migrations' . DS;
