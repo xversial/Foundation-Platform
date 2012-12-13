@@ -61,6 +61,10 @@ return array(
             'admin'      => 'Admin Only',
         ),
 
+        'groups' => array(
+        	'title' => 'Group Visibility',
+        ),
+
         'yes'    => 'Yes',
         'no'     => 'No',
         'status' => 'Enabled',

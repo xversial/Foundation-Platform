@@ -275,6 +275,57 @@ class Menu extends Nesty
     }
 
     /**
+	 * Get the children for this model.
+	 *
+	 * @param   int   $limit
+	 * @param   array $columns
+	 * @return  array
+	 */
+	public function children($limit = false, $columns = array('*'))
+	{
+		// If we have set the children property as
+		// false, there are no children
+		if ($this->children === false)
+		{
+			return array();
+		}
+
+		// Lazy load children
+		if (empty($this->children))
+		{
+			// Get an array of children from the database
+			$children_array = $this->query_children_array($limit, $columns);
+
+			// If we got an empty array of children
+			if (empty($children_array))
+			{
+				$this->children = false;
+				return $this->children();
+			}
+
+			// Hydrate our children. If hydrate children
+			// returns false, there are no children for this
+			// model. That means that $this->children === false,
+			// so we call this same method again which handles empty
+			// children
+			if ($this->fill_children($children_array) === false)
+			{
+				$this->children = false;
+				return $this->children();
+			}
+		}
+
+		// format groups
+		foreach ($this->children as &$child)
+		{
+			$child->group_visibility = ( ! empty($child->group_visibility)) ? $child->group_visibility : '[]';
+			$child->group_visibility = (is_array($child->group_visibility)) ? $child->group_visibility : json_decode($child->group_visibility);
+		}
+
+		return $this->children;
+	}
+
+    /**
      * --------------------------------------------------------------------------
      * Function: reorder_children()
      * --------------------------------------------------------------------------
@@ -693,6 +744,16 @@ SQL;
         }
 
         return array($data, $rules);
+    }
+
+    protected function prep_attributes($attributes)
+    {
+    	if (isset($attributes['group_visibility']))
+    	{
+    		$attributes['group_visibility'] = json_encode($attributes['group_visibility']);
+    	}
+
+    	return $attributes;
     }
 
     /**
