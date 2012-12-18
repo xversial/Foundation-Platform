@@ -29,7 +29,7 @@ return array(
 	| set to null if none is defined.
 	|
 	*/
-	'active' => 'public::platform/default',
+	'active' => 'public::platform/fancy',
 
 	/*
 	|--------------------------------------------------------------------------
