@@ -6,45 +6,26 @@
         }
     ],
 	"require": {
+		"platform/extensions": "dev-master",
+		"platform/foundation": "dev-master",
 		"illuminate/foundation": "1.2.*",
-		"dflydev/theme": "1.0.x-dev",
 		"jasonlewis/basset": "dev-master",
 		"natxet/CssMin": "dev-master",
 		"leafo/lessphp": "dev-master",
-		"cartalyst/sentry": "dev-master",
-		"cartalyst/nesty": "dev-master",
-		"platform/developers": "dev-master",
-		"platform/localization": "dev-master",
-		"platform/menus": "dev-master",
-		"platform/operations": "dev-master",
-		"platform/pages": "dev-master",
-		"platform/settings": "dev-master",
-		"platform/themes": "dev-master",
-		"platform/users": "dev-master",
-		"rmccue/requests": "dev-master",
-		"bshaffer/oauth2-server-php": "dev-develop",
-		"bshaffer/oauth2-server-httpfoundation-bridge": "dev-master",
-		"friendsofsymfony/rest": "0.8.x-dev"
+		"cartalyst/nesty": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
 			"app/controllers",
 			"app/models",
 			"app/database/migrations",
-			"app/tests/TestCase.php",
-			"vendor/platform/foundation/src/controllers",
-			"vendor/platform/foundation/src/migrations"
+			"app/tests/TestCase.php"
 		],
 		"psr-0": {
 			"Cartalyst\\Api": "vendor/cartalyst/api/src",
 			"Cartalyst\\Themes": "vendor/cartalyst/themes/src",
-			"Platform\\Extensions": "vendor/platform/extensions/src",
-			"Platform\\Foundation": "vendor/platform/foundation/src",
 			"Platform\\Operate": "vendor/platform/operate/src"
-		},
-		"files": [
-			"vendor/platform/foundation/src/helpers.php"
-		]
+		}
 	},
 	"minimum-stability": "dev"
 }
