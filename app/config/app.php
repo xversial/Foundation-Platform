@@ -99,6 +99,7 @@ return array(
 		'Illuminate\Redis\RedisServiceProvider',
 		'Illuminate\Database\SeedServiceProvider',
 		'Illuminate\Session\SessionServiceProvider',
+		'Illuminate\Foundation\Providers\TinkerServiceProvider',
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
@@ -109,7 +110,6 @@ return array(
 		'Cartalyst\Api\ApiServiceProvider',
 		'Cartalyst\Themes\ThemeServiceProvider',
 		'Platform\Foundation\PlatformServiceProvider',
-
 	),
 
 	/*
@@ -161,7 +161,6 @@ return array(
 		'ApiController' => 'Cartalyst\Api\Routing\Controllers\Controller',
 		'Theme'         => 'Cartalyst\Themes\Facades\Theme',
 		'Platform'      => 'Platform\Foundation\Facades\Platform',
-
 	),
 
 );

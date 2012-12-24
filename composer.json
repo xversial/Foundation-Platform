@@ -6,7 +6,7 @@
         }
     ],
 	"require": {
-		"platform/extensions": "dev-master",
+		"cartalyst/extensions": "dev-master",
 		"platform/foundation": "dev-master",
 		"illuminate/foundation": "1.2.*",
 		"jasonlewis/basset": "dev-master",
@@ -22,7 +22,6 @@
 			"app/tests/TestCase.php"
 		],
 		"psr-0": {
-			"Cartalyst\\Api": "vendor/cartalyst/api/src",
 			"Cartalyst\\Themes": "vendor/cartalyst/themes/src",
 			"Platform\\Operate": "vendor/platform/operate/src"
 		}
