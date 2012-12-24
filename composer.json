@@ -6,13 +6,17 @@
         }
     ],
 	"require": {
-		"cartalyst/extensions": "dev-master",
-		"platform/foundation": "dev-master",
 		"illuminate/foundation": "1.2.*",
-		"jasonlewis/basset": "dev-master",
-		"natxet/CssMin": "dev-master",
-		"leafo/lessphp": "dev-master",
-		"cartalyst/nesty": "dev-master"
+		"platform/foundation": "dev-master",
+
+		"platform/developers": "dev-master",
+		"platform/localization": "dev-master",
+		"platform/menus": "dev-master",
+		"platform/operations": "dev-master",
+		"platform/pages": "dev-master",
+		"platform/settings": "dev-master",
+		"platform/themes": "dev-master",
+		"platform/users": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
@@ -20,11 +24,7 @@
 			"app/models",
 			"app/database/migrations",
 			"app/tests/TestCase.php"
-		],
-		"psr-0": {
-			"Cartalyst\\Themes": "vendor/cartalyst/themes/src",
-			"Platform\\Operate": "vendor/platform/operate/src"
-		}
+		]
 	},
 	"minimum-stability": "dev"
 }
