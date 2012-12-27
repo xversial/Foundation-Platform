@@ -58,14 +58,14 @@ class Platform_Pages_Pages_Controller extends Public_Controller
 
 		if ($page['type'] == 'file')
 		{
-			return Theme::make('platform/pages::files.'.$page['template'])
+			return Theme::make('pages.'.$page['template'])
         		->with('name', Input::get('name'))
         		->with('slug', Input::get('slug'));
 		}
 
 		$content = Helper::renderContent($page['value']);
 
-		return Theme::make('platform/pages::templates.'.$page['template'])
+		return Theme::make('templates.layouts.'.$page['template'])
 			->with('name', $page['name'])
 			->with('slug', $page['slug'])
 			->with('content', $content);
@@ -74,7 +74,7 @@ class Platform_Pages_Pages_Controller extends Public_Controller
 	public function get_invalid_permissions()
 	{
 
-		return Theme::make('platform/pages::templates.'.Platform::get('platform/pages::default.template'))
+		return Theme::make('templates.layouts.'.Platform::get('platform/pages::default.template'))
 			->with('name', 'Invalid Permissions')
 			->with('slug', 'invalid-permissions')
 			->with('content', 'You do not have the proper permissions to view this page.');

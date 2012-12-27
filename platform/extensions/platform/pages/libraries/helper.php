@@ -63,7 +63,7 @@ class Helper
 		$templateNames = array();
 		foreach ($themes as $theme => $name)
 		{
-			$path = path('public') . 'platform/themes/frontend/'.$name.'/extensions/platform/pages/templates';
+			$path = path('public') . 'platform/themes/frontend/'.$name.'/templates/layouts';
 
 			$files = glob($path.DS.'*.blade.php');
 
@@ -101,7 +101,7 @@ class Helper
 		$fileNames = array();
 		foreach ($themes as $theme => $name)
 		{
-			$path = path('public') . 'platform/themes/frontend/'.$name.'/extensions/platform/pages/files';
+			$path = path('public') . 'platform/themes/frontend/'.$name.'/pages';
 
 			$_files = glob($path.DS.'*.blade.php');
 

@@ -166,16 +166,16 @@ class Platform_Pages_Admin_Pages_Controller extends Admin_Controller
 		// render the page using the correct type
 
 		// page is of file type
-        if (Input::get('file'))
+        if (Input::get('type') == 'file')
         {
-        	return Theme::make('platform/pages::files.'.Input::get('file'))
+        	return Theme::make('pages.'.Input::get('file'))
         		->with('name', Input::get('name'))
         		->with('slug', Input::get('slug'));
         }
 
 		$content = Helper::renderContent(Input::get('value'));
 
-		return Theme::make('platform/pages::templates.'.Input::get('template', 'default'))
+		return Theme::make('templates.layouts.'.Input::get('template', 'default'))
 			->with('name', Input::get('name'))
 			->with('slug', Input::get('slug'))
 			->with('content', $content);

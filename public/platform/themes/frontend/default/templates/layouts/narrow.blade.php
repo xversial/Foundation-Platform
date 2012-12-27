@@ -1,4 +1,4 @@
-@layout('extensions.platform.pages.narrow')
+@layout('templates.narrow')
 
 <!-- Title -->
 @section('title')

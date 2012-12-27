@@ -75,7 +75,7 @@ return array(
      * characters of random gibberish.
      *
      */
-    'key' => '',
+    'key' => '1izm6EGVvZ3F0ojCNrxwuIYFKha4Ssgp',
 
 
     /*

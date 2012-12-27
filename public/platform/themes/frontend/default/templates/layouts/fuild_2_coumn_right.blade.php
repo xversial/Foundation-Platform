@@ -1,4 +1,4 @@
-@layout('extensions.platform.pages.fluid')
+@layout('templates.fluid')
 
 <!-- Title -->
 @section('title')
