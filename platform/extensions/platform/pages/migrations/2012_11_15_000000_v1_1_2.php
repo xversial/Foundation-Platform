@@ -54,6 +54,8 @@ class Platform_Pages_v1_1_2
      */
     public function up()
     {
+        //Adding visbility options to pages
+        //
         Schema::table('pages', function($table) {
         	$table->string('type')->nullable();
 			$table->boolean('visibility')->nullable();
@@ -64,6 +66,7 @@ class Platform_Pages_v1_1_2
 			'visibility' => 0,
 			'type'       => 'db',
 		));
+
     }
 
 

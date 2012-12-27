@@ -19,9 +19,11 @@
 
 <!-- Content -->
 @section('content')
-<section id="{{ $slug }} page default">
+<section>
 
-	{{ $content }}
+	@if(isset($content))
+		{{ $content }}
+	@endif
 
 </section>
 @endsection

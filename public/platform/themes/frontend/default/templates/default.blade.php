@@ -62,7 +62,7 @@
 			<hr>
 
 			<footer>
-				@include('templates.partials.footer')
+				@content('copyright')
 			</footer>
 
 		</div> <!-- /container -->

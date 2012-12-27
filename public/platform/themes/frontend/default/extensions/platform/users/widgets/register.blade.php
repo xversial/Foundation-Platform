@@ -1,4 +1,3 @@
-
 <form action="{{ URL::to_secure('/register') }}" id="register-form" class="form-horizontal" method="POST" accept-char="UTF-8">
 <input type="hidden" name="{{ Session::csrf_token }}" value="{{ Session::token() }}">
 
