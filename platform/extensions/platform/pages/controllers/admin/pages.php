@@ -168,7 +168,7 @@ class Platform_Pages_Admin_Pages_Controller extends Admin_Controller
 		// page is of file type
         if (Input::get('type') == 'file')
         {
-        	return Theme::make('pages.'.Input::get('file'))
+        	return Theme::make('platform/pages::files.'.Input::get('file'))
         		->with('name', Input::get('name'))
         		->with('slug', Input::get('slug'));
         }

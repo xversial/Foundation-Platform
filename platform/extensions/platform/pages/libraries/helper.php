@@ -101,7 +101,7 @@ class Helper
 		$fileNames = array();
 		foreach ($themes as $theme => $name)
 		{
-			$path = path('public') . 'platform/themes/frontend/'.$name.'/pages';
+			$path = path('public') . 'platform/themes/frontend/'.$name.'/extensions/platform/pages/files';
 
 			$_files = glob($path.DS.'*.blade.php');
 

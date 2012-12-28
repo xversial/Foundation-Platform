@@ -58,7 +58,7 @@ class Platform_Pages_Pages_Controller extends Public_Controller
 
 		if ($page['type'] == 'file')
 		{
-			return Theme::make('pages.'.$page['template'])
+			return Theme::make('platform/pages::files.'.$page['template'])
         		->with('name', Input::get('name'))
         		->with('slug', Input::get('slug'));
 		}
