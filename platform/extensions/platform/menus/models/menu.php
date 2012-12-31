@@ -607,6 +607,7 @@ SQL;
 					$child->secure           = $duplicate->secure;
 					$child->visibility       = $duplicate->visibility;
 					$child->class            = $duplicate->class;
+
 					$child->group_visibility = $duplicate->group_visibility;
                 }
                 elseif ($child->is_new())
@@ -749,7 +750,7 @@ SQL;
 
     protected function prep_attributes($attributes)
     {
-    	if (isset($attributes['group_visibility']))
+    	if (isset($attributes['group_visibility']) and is_array($attributes['group_visibility']))
     	{
     		$attributes['group_visibility'] = json_encode($attributes['group_visibility']);
     	}
