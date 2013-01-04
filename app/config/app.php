@@ -105,8 +105,6 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 
-		'Basset\BassetServiceProvider',
-
 		'Cartalyst\Sentry\SentryServiceProvider',
 		'Cartalyst\Api\ApiServiceProvider',
 		'Cartalyst\Themes\ThemeServiceProvider',
@@ -154,8 +152,6 @@ return array(
 		'URL'        => 'Illuminate\Support\Facades\URL',
 		'Validator'  => 'Illuminate\Support\Facades\Validator',
 		'View'       => 'Illuminate\Support\Facades\View',
-
-		'Basset' => 'Basset\Facades\Basset',
 
 		'Sentry'        => 'Cartalyst\Sentry\Facades\Sentry',
 		'Api'           => 'Cartalyst\Api\Facades\Api',
