@@ -4,10 +4,15 @@
 **Developers:**
 
   * Fixed extension creator stubs namespace problems.
+  * Fixed problem with example widget name.
 
 **Settings:**
 
   * Settings tabs now shows up even if the extension doesn't have entries on the database.
+
+**Menus:**
+
+  * Fixed problem when adding new children to menus not being saved correctly.
 
 1.1.3 Changelog
 ----------
