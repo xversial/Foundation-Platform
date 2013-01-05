@@ -20,7 +20,10 @@
 
 namespace [[namespace]]\Widgets;
 
-class Static
+use API;
+use Theme;
+
+class Example
 {
     public function test()
     {
@@ -37,6 +40,6 @@ class Static
 
         // Show the page.
         //
-        return Theme::make('[[slug_designer]]::widgets.static.test2', $data);
+        return Theme::make('[[slug_designer]]::widgets.example.test2', $data);
     }
 }
