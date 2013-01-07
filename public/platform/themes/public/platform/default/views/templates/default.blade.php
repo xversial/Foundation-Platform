@@ -7,11 +7,11 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 
-		{{ Theme::queue('bootstrap', 'css/bootstrap.css') }}
-		{{ Theme::queue('style', 'less/style.less', 'bootstrap') }}
-		{{ Theme::queue('jquery', 'js/jquery.js') }}
-		{{ Theme::queue('bootstrap', 'js/bootstrap.js', 'jquery') }}
-		{{ Theme::queue('script', 'js/script.js', array('bootstrap', 'jquery')) }}
+		{{ Asset::queue('bootstrap', 'css/bootstrap.css') }}
+		{{ Asset::queue('style', 'less/style.less', 'bootstrap') }}
+		{{ Asset::queue('jquery', 'js/jquery.js') }}
+		{{ Asset::queue('bootstrap', 'js/bootstrap.js', 'jquery') }}
+		{{ Asset::queue('script', 'js/script.js', array('bootstrap', 'jquery')) }}
 
 		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
@@ -29,8 +29,6 @@
 	<body>
 
 		@yield('content')
-
-		df
 
 		<script>
 		{{ Theme::outputScripts() }}
