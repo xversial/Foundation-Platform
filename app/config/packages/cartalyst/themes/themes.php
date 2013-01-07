@@ -29,6 +29,7 @@ return array(
 	| set to null if none is defined.
 	|
 	*/
+
 	'active' => 'public::platform/fancy',
 
 	/*
@@ -46,6 +47,7 @@ return array(
 	| rather than checking for the public path in them.
 	|
 	*/
+
 	'paths' => array(
 		__DIR__.'/../../../../../public/platform/themes',
 	),
@@ -59,6 +61,7 @@ return array(
 	| packages to reside.
 	|
 	*/
+
 	'packages_path' => 'extensions',
 
 	/*
@@ -82,6 +85,7 @@ return array(
 	| view in Laravel now!
 	|
 	*/
+
 	'namespaces_path' => 'namespaces',
 
 	/*
@@ -93,6 +97,7 @@ return array(
 	| located.
 	|
 	*/
+
 	'views_path' => 'views',
 
 	/*
@@ -104,6 +109,7 @@ return array(
 	| located.
 	|
 	*/
+
 	'assets_path' => 'assets',
 
 );
