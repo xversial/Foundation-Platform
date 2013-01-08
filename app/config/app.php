@@ -153,11 +153,13 @@ return array(
 		'Validator'  => 'Illuminate\Support\Facades\Validator',
 		'View'       => 'Illuminate\Support\Facades\View',
 
-		'Api'      => 'Cartalyst\Api\Facades\Api',
+		'API'      => 'Cartalyst\Api\Facades\API',
 		'Asset'    => 'Cartalyst\Themes\Facades\Asset',
 		'Platform' => 'Platform\Foundation\Facades\Platform',
+		'Plugin'   => 'Platform\Foundation\Facades\Plugin',
 		'Sentry'   => 'Cartalyst\Sentry\Facades\Sentry',
 		'Theme'    => 'Cartalyst\Themes\Facades\Theme',
+		'Widget'   => 'Platform\Foundation\Facades\Widget',
 	),
 
 );
