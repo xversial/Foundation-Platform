@@ -1,5 +1,5 @@
 <li>
-	<a href="">{{ $child->name }}</a>
+	<a href="{{ URL::to($child->uri) }}">{{ $child->name }}</a>
 
 	@if ($child->children)
 		@each('platform/menus::widgets/nav/child', $child->children, 'child')
