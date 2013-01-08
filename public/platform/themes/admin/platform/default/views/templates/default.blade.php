@@ -74,7 +74,7 @@
                             <li class="divider-vertical"></li>
                         </ul>
                         <div id="primary-navigation" class="nav-collapse collapse">
-                            @widget('platform/menus::menus.nav', 'admin', 1, 'nav', ADMIN)
+                            {{ Widget::make('platform/menus::nav@show', array('admin', 1, 'nav', ADMIN_URI)) }}
                         </div><!--/.nav-collapse -->
                     </div>
                 </div>
