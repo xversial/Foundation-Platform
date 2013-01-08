@@ -42,23 +42,9 @@ $app->instance('path.base', __DIR__);
 $env = $app->detectEnvironment(array(
 
 	'local' => array('local.*', 'localhost', '*.dev', '*.app'),
+	'local' => array('localhost', '*.dev', '*.app'),
 
 ));
-
-/*
-|--------------------------------------------------------------------------
-| Set PHP Error Reporting Options
-|--------------------------------------------------------------------------
-|
-| Here we will set the strictest error reporting options, and also turn
-| off PHP's error reporting, since all errors will be handled by the
-| framework and we don't want any output leaking back to the user.
-|
-*/
-
-ini_set('display_errors', 'Off');
-
-error_reporting(-1);
 
 /*
 |--------------------------------------------------------------------------

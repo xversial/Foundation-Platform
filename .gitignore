@@ -1,8 +1,8 @@
-vendor/*
-!vendor/platform
-vendor/platform/*
-vendor/platform/composer-installers
-vendor/platform/foundation
+/vendor/*
+!/vendor/platform
+/vendor/platform/*
+/vendor/platform/composer-installers
+/vendor/platform/foundation
 composer.phar
 composer.lock
 .DS_Store

@@ -88,7 +88,6 @@ return array(
 		'Illuminate\CookieServiceProvider',
 		'Illuminate\Database\DatabaseServiceProvider',
 		'Illuminate\EncryptionServiceProvider',
-		'Illuminate\Events\EventServiceProvider',
 		'Illuminate\FilesystemServiceProvider',
 		'Illuminate\Hashing\HashServiceProvider',
 		'Illuminate\Log\LogServiceProvider',
@@ -160,6 +159,7 @@ return array(
 		'Sentry'   => 'Cartalyst\Sentry\Facades\Sentry',
 		'Theme'    => 'Cartalyst\Themes\Facades\Theme',
 		'Widget'   => 'Platform\Foundation\Facades\Widget',
+
 	),
 
 );
