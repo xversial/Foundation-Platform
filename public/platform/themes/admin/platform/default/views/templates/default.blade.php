@@ -84,15 +84,15 @@
 
                 <div class="row-fluid hidden-desktop">
                     <div class="span12">
-                        <nav class="secondary-navigation">
-                            {{ Widget::make('platform/menus::nav@show', array(1, 1, 'nav nav-stacked nav-pills', ADMIN_URI)) }}
+                        <nav class="secondary-navigation">sdf
+                            {{ Widget::make('platform/menus::nav@show', array('admin', 1, 'nav nav-stacked nav-pills', ADMIN_URI)) }}
                         </nav>
                     </div>
                 </div>
 
                 <div class="tabbable tabs-left">
 
-                    {{ Widget::make('platform/menus::nav@show', array(1, 1, 'secondary-navigation nav nav-tabs visible-desktop', ADMIN_URI)) }}
+                    {{ Widget::make('platform/menus::nav@show', array('admin', 1, 'secondary-navigation nav nav-tabs visible-desktop', ADMIN_URI)) }}
 
                     <div class="secondary page tab-content">
                         @widget('platform/application::messages.all')
