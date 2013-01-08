@@ -41,11 +41,6 @@ return array(
 	| also be set relative to a publically accessible directory so assets can
 	| be resolved.
 	|
-	| @todo, allow for a key / value pair of paths, where the key is the directory
-	| and the asset is the equivilent public URI (relative to the base URI) for
-	| the theme. This will allow for much quicker resolving of URLs for resources
-	| rather than checking for the public path in them.
-	|
 	*/
 
 	'paths' => array(
