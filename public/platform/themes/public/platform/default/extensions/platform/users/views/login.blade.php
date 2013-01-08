@@ -27,6 +27,7 @@
 	<fieldset>
 		<legend>{{ Lang::get('platform/users::form.auth.login.legend') }}</legend>
 		<p class="summary">{{ Lang::get('platform/users::form.auth.login.summary') }}</p>
+
 		<hr>
 
 		<!-- Email Address -->
