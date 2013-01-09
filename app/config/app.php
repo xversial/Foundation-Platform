@@ -83,6 +83,7 @@ return array(
 		'Illuminate\Foundation\Providers\ArtisanServiceProvider',
 		'Illuminate\Auth\AuthServiceProvider',
 		'Illuminate\Cache\CacheServiceProvider',
+		'Illuminate\Foundation\Providers\CommandCreatorServiceProvider',
 		'Illuminate\Foundation\Providers\ComposerServiceProvider',
 		'Illuminate\Routing\ControllerServiceProvider',
 		'Illuminate\CookieServiceProvider',
@@ -103,12 +104,26 @@ return array(
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
+		'Illuminate\Workbench\WorkbenchServiceProvider',
 
 		'Cartalyst\Sentry\SentryServiceProvider',
 		'Cartalyst\Api\ApiServiceProvider',
 		'Cartalyst\Themes\ThemeServiceProvider',
 		'Platform\Foundation\PlatformServiceProvider',
 	),
+
+	/*
+	|--------------------------------------------------------------------------
+	| Service Provider Manifest
+	|--------------------------------------------------------------------------
+	|
+	| The service provider manifest is used by Laravel to lazy load service
+	| providers which are not needed for each request, as well to keep a
+	| list of all of the services. Here, you may set its storage spot.
+	|
+	*/
+
+	'manifest' => __DIR__.'/../storage/meta',
 
 	/*
 	|--------------------------------------------------------------------------
