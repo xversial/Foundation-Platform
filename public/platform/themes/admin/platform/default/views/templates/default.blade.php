@@ -56,7 +56,7 @@
 							<span class="icon-bar"></span>
 						</a>
 
-						<a class="brand" href="{{ Request::root().'/'.ADMIN_URI }}">@get('platform/settings::site.title')</a>
+						<a class="brand" href="{{ Request::root().'/'.ADMIN_URI }}">@setting('platform.site.title')</a>
 
 						<ul class="nav pull-right">
 							<li class="divider-vertical"></li>
@@ -74,7 +74,7 @@
 							<li class="divider-vertical"></li>
 						</ul>
 						<div id="primary-navigation" class="nav-collapse collapse">
-							{{ Widget::make('platform/menus::nav@show', array('admin', 1, 'nav', ADMIN_URI)) }}
+							@widget('platform/menus::nav@show', array('admin', 1, 'nav', ADMIN_URI))
 						</div><!--/.nav-collapse -->
 					</div>
 				</div>
@@ -84,18 +84,17 @@
 
 				<div class="row-fluid hidden-desktop">
 					<div class="span12">
-						<nav class="secondary-navigation">sdf
-							{{ Widget::make('platform/menus::nav@show', array(1, 1, 'nav nav-stacked nav-pills', ADMIN_URI)) }}
+						<nav class="secondary-navigation">
+							@widget('platform/menus::nav@show', array(1, 1, 'nav nav-stacked nav-pills', ADMIN_URI))
 						</nav>
 					</div>
 				</div>
 
 				<div class="tabbable tabs-left">
 
-					{{ Widget::make('platform/menus::nav@show', array(1, 1, 'secondary-navigation nav nav-tabs visible-desktop', ADMIN_URI)) }}
+					@widget('platform/menus::nav@show', array(1, 1, 'secondary-navigation nav nav-tabs visible-desktop', ADMIN_URI))
 
 					<div class="secondary page tab-content">
-						@widget('platform/application::messages.all')
 						@yield('content')
 					</div>
 				</div>
