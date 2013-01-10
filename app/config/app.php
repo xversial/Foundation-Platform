@@ -106,11 +106,12 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
-		'Cartalyst\Api\ApiServiceProvider',
 		'Cartalyst\Sentry\SentryServiceProvider',
+		'Cartalyst\Api\ApiServiceProvider',
+
 		'Cartalyst\Themes\ThemeServiceProvider',
 
-		'Platform\Extensions\ExtensionServiceProvider',
+		'Platform\Extensions\ExtensionsServiceProvider',
 		'Platform\Foundation\PlatformServiceProvider',
 	),
 
