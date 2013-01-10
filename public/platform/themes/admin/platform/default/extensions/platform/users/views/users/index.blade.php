@@ -25,11 +25,11 @@
 <table class="table table-striped table-bordered" id="example">
 	<thead>
 		<tr>
-			<th>Rendering engine</th>
-			<th>Browser</th>
-			<th>Platform(s)</th>
-			<th>Engine version</th>
-			<th>CSS grade</th>
+			<th>{{ Lang::get('platform/users::table.users.id') }}</th>
+			<th>{{ Lang::get('platform/users::table.users.first_name') }}</th>
+			<th>{{ Lang::get('platform/users::table.users.last_name') }}</th>
+			<th>{{ Lang::get('platform/users::table.users.email') }}</th>
+			<th>{{ Lang::get('platform/users::table.users.groups') }}</th>
 		</tr>
 	</thead>
 	<tbody>
