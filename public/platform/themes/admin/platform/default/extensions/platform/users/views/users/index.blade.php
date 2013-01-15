@@ -1,5 +1,9 @@
 @extends('templates/default')
 
+@section('title')
+{{ Lang::get('platform/users::general.users.title') }}
+@stop
+
 @section('assets')
 
 @stop
@@ -19,6 +23,7 @@
 			<th>{{ Lang::get('platform/users::table.users.last_name') }}</th>
 			<th>{{ Lang::get('platform/users::table.users.email') }}</th>
 			<th>{{ Lang::get('platform/users::table.users.groups') }}</th>
+			<th>{{ Lang::get('table.actions') }}</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -39,12 +44,22 @@
 				<td>
 					{{ implode(', ', array_map(function($group) { return $group->name; }, $user->groups->all())) }}
 				</td>
+				<td class="span2">
+					<div class="btn-group">
+						<a href="{{ URL::to(ADMIN_URI."/users/edit/{$user->id}") }}" class="btn btn-small">
+							{{ Lang::get('button.edit') }}
+						</a>
+						<a href="{{ URL::to(ADMIN_URI."/users/delete/{$user->id}") }}" class="btn btn-small btn-danger">
+							{{ Lang::get('button.delete') }}
+						</a>
+					</div>
+				</td>
 			</tr>
 		@endforeach
 	</tbody>
 	<tfoot>
 		<tr>
-			<td colspan="5">
+			<td colspan="6">
 				<div class="pull-right">
 					{{ $users->links() }}
 				</div>
