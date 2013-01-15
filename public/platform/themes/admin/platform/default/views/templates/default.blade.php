@@ -74,7 +74,7 @@
 							<li class="divider-vertical"></li>
 						</ul>
 						<div id="primary-navigation" class="nav-collapse collapse">
-							@widget('platform/menus::nav@show', array('admin', 1, 'nav', ADMIN_URI))
+							@widget('platform/menus::nav.show', array('admin', 1, 'nav', ADMIN_URI))
 						</div><!--/.nav-collapse -->
 					</div>
 				</div>
@@ -85,14 +85,14 @@
 				<div class="row-fluid hidden-desktop">
 					<div class="span12">
 						<nav class="secondary-navigation">
-							@widget('platform/menus::nav@show', array(1, 1, 'nav nav-stacked nav-pills', ADMIN_URI))
+							@widget('platform/menus::nav.show', array(1, 1, 'nav nav-stacked nav-pills', ADMIN_URI))
 						</nav>
 					</div>
 				</div>
 
 				<div class="tabbable tabs-left">
 
-					@widget('platform/menus::nav@show', array(1, 1, 'secondary-navigation nav nav-tabs visible-desktop', ADMIN_URI))
+					@widget('platform/menus::nav.show', array(1, 1, 'secondary-navigation nav nav-tabs visible-desktop', ADMIN_URI))
 
 					<div class="secondary page tab-content">
 						@yield('content')

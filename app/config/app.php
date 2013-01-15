@@ -107,13 +107,16 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
+		'Cartalyst\DataGrid\DataGridServiceProvider',
 		'Cartalyst\Sentry\SentryServiceProvider',
 		'Cartalyst\Api\ApiServiceProvider',
-
 		'Cartalyst\Themes\ThemeServiceProvider',
 
 		'Platform\Extensions\ExtensionsServiceProvider',
 		'Platform\Foundation\PlatformServiceProvider',
+		'Platform\Addons\AddonsServiceProvider',
+		'Platform\Operations\OperationsServiceProvider',
+		'Platform\Routing\RoutingServiceProvider',
 
 	),
 
@@ -180,9 +183,12 @@ return array(
 		'Sentry'   => 'Cartalyst\Sentry\Facades\Sentry',
 		'Theme'    => 'Cartalyst\Themes\Facades\Theme',
 
-		'Platform' => 'Platform\Foundation\Facades\Platform',
-		'Plugin'   => 'Platform\Foundation\Facades\Plugin',
-		'Widget'   => 'Platform\Foundation\Facades\Widget',
+		'AdminRouter'  => 'Platform\Routing\Facade\AdminRouter',
+		'ApiRouter'    => 'Platform\Routing\Facade\ApiRouter',
+		'Platform'     => 'Platform\Foundation\Facades\Platform',
+		'Plugin'       => 'Platform\Addons\Facades\Plugin',
+		'PublicRouter' => 'Platform\Routing\Facade\PublicRouter',
+		'Widget'       => 'Platform\Addons\Facades\Widget',
 
 	),
 
