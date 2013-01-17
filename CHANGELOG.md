@@ -14,6 +14,10 @@
 
   * Fixed problem when adding new children to menus not being saved correctly.
 
+**Media:**
+
+  * Fixed Blade @media extension call's not working properly
+
 1.1.3 Changelog
 ----------
 
