@@ -250,7 +250,7 @@ class Media
 		try
 		{
 			// Grab the media item
-			$media = API::get('media/'.$media);
+			$media = API::get('media', array('media' => $media));
 		}
 		catch (APINotFoundException $e)
 		{

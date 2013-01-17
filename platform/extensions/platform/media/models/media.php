@@ -192,4 +192,49 @@ class Media extends Crud
 
         return (round($bytes / pow(1024, ($i = floor(log($bytes, 1024)))), $precision) . ' ' . $sizes[$i]);
     }
+
+    /**
+     * --------------------------------------------------------------------------
+     * Function: find()
+     * --------------------------------------------------------------------------
+     *
+     * A custom method to find media files, we can use the media id or the media
+     * file name.
+     *
+     * @access   public
+     * @param    mixed
+     * @param    array
+     * @param    array
+     * @return   object
+     */
+    public static function find($condition = 'first', $columns = array('*'), $events = array('before', 'after'))
+    {
+        // Do we have the media id?
+        //
+        if (is_numeric($condition) and ! in_array($condition, array('first', 'last')))
+        {
+            // Execute the query.
+            //
+            return parent::find(function($query) use ($condition)
+            {
+                return $query->where('id', '=', $condition);
+            }, $columns, $events);
+        }
+
+        // Do we have the media file name?
+        //
+        elseif (strpos($condition, '.'))
+        {
+            // Execute the query.
+            //
+            return parent::find(function($query) use ($condition)
+            {
+                return $query->where('name', '=', strtoupper($condition));
+            }, $columns, $events);
+        }
+
+        // Call parent.
+        //
+        return parent::find($condition, $columns, $events);
+    }
 }

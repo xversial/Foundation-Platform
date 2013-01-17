@@ -27,23 +27,26 @@ class Platform_Media_API_Media_Controller extends API_Controller
 	 * item.
 	 *
 	 *	<code>
-	 *		$media = API::get('media');
-	 *		$item  = API::get('media/1');
+	 *		$all  = API::get('media');
+	 *		$item = API::get('media', array('media' => 1));
+	 *		$item = API::get('media', array('media' => '1.jpg'))
 	 *	</code>
 	 *
 	 * @param   string  $slug
 	 * @return  array
 	 */
-	public function get_index($id = false)
+	public function get_index()
 	{
-		if ($id == false)
+		$id = Input::get('media');
+
+		if ( ! $id)
 		{
 			return Media::all();
 		}
 
 		$media = Media::find($id);
 
-		if ($media === null)
+		if (is_null($media))
 		{
 			return new Response(array(
 				'message' => "Media item [$id] does not exist.",
