@@ -182,11 +182,11 @@ return array(
 		'Sentry'   => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 		'Theme'    => 'Cartalyst\Themes\Facades\Theme',
 
-		'AdminRouter'  => 'Platform\Routing\Facade\AdminRouter',
-		'ApiRouter'    => 'Platform\Routing\Facade\ApiRouter',
+		'AdminRouter'  => 'Platform\Routing\Facades\AdminRouter',
+		'ApiRouter'    => 'Platform\Routing\Facades\ApiRouter',
 		'Platform'     => 'Platform\Foundation\Facades\Platform',
 		'Plugin'       => 'Platform\Addons\Facades\Plugin',
-		'PublicRouter' => 'Platform\Routing\Facade\PublicRouter',
+		'PublicRouter' => 'Platform\Routing\Facades\PublicRouter',
 		'Widget'       => 'Platform\Addons\Facades\Widget',
 
 	),
