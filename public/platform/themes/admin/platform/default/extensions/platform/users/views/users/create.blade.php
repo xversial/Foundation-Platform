@@ -34,7 +34,7 @@
 		<label class="control-label" for="first_name">{{ Lang::get('platform/users::users/form.first_name') }}:</label>
 		<div class="controls">
 			<div class="input-append">
-				<input type="text" name="first_name" id="first_name" value="{{ Input::old('metadata.first_name'); }}" placeholder="{{ Lang::get('platform/users::users/form.first_name') }}">
+				<input type="text" name="first_name" id="first_name" value="{{ Input::old('first_name'); }}" placeholder="{{ Lang::get('platform/users::users/form.first_name') }}">
 				<span class="add-on"><i class="icon-user"></i></span>
 			</div>
 			<span class="help-block">{{ Lang::get('platform/users::users/form.first_name_help') }}</span>
@@ -46,7 +46,7 @@
 		<label class="control-label" for="last_name">{{ Lang::get('platform/users::users/form.last_name') }}:</label>
 		<div class="controls">
 			<div class="input-append">
-				<input type="text" name="last_name" id="last_name" value="{{ Input::old('metadata.last_name'); }}" placeholder="{{ Lang::get('platform/users::users/form.last_name') }}">
+				<input type="text" name="last_name" id="last_name" value="{{ Input::old('last_name'); }}" placeholder="{{ Lang::get('platform/users::users/form.last_name') }}">
 				<span class="add-on"><i class="icon-user"></i></span>
 			</div>
 			<span class="help-block">{{ Lang::get('platform/users::users/form.last_name_help') }}</span>
