@@ -82,7 +82,7 @@ $('#grid').dataGrid();
 
 		<ul class="nav nav-tabs grid-pagination">
 			<li data-template>
-				<a href="#" data-page="[[number]]" class="goto-page">
+				<a href="#" data-page="[[page]]" class="goto-page">
 					Page #[[page]]
 				</a>
 			</li>
@@ -93,11 +93,11 @@ $('#grid').dataGrid();
 			<table class="table table-striped table-bordered grid-results">
 				<thead>
 					<tr>
-						<th>ID</th>
-						<th>First Name</th>
-						<th>Last Name</th>
-						<th>Country</th>
-						<th>Activated</th>
+						<th data-index="id">ID</th>
+						<th data-index="first_name">First Name</th>
+						<th data-index="last_name">Last Name</th>
+						<th data-index="country">Country</th>
+						<th data-index="activated">Activated</th>
 						<th></th>
 					</tr>
 				</thead>
@@ -118,7 +118,7 @@ $('#grid').dataGrid();
 								No
 							[? endif ?]
 						</td>
-						<td data-no-filters>
+						<td data-static>
 							<a href="{{ URL::to(ADMIN_URI.'/users/edit') }}/[[id]]">Edit [[first_name]]</a>
 						</td>
 					</tr>

@@ -27,6 +27,14 @@
 			// returns the correct JSON for the data grid
 			source: undefined,
 
+			// You may choose to setup the default sort for
+			// the grid. It is recommnded that you do choose
+			// this.
+			sort: {
+				column: undefined,
+				direction: 'asc'
+			},
+
 			// Here we can specify some options we would
 			// like to customize how our pagination works.
 			// Pagination in this DataGrid is dynamic, it
@@ -55,6 +63,7 @@
 		this.$element       = element;
 		this.source         = this.$element.data('source') || this.options.source;
 		this.templates      = {};
+		this.columns        = [];
 		this.filters        = [];
 		this.appliedFilters = [];
 		this.results        = [];
@@ -62,17 +71,21 @@
 			page: 1,
 			navigation: []
 		};
+		this.sort           = {
+			column: this.options.sort.column,
+			direction: this.options.sort.direction
+		};
 
 		// Our results DOM object must be found
 		// first before we attempt to move on as
 		// other methods utiize properties in it.
 		this.findResultsObject();
 
-		// Great, it's now time to setup our filters. This will
+		// Great, it's now time to setup our filters & sorting. This will
 		// inspect our results table to find all applicable HTML
 		// entities. We'll cache our filter data on this object
 		// for later use
-		this.setupFilters();
+		this.setupFiltersAndSorting();
 
 		// We'll now prepare our templates which registers
 		// the various compoenents using TempoJS
@@ -82,8 +95,10 @@
 		// data grid
 		this.renderFilters();
 
-		// We will observe applied filters
+		// Observe DOM
 		this.observeAppliedFilters();
+		this.observeSorting();
+		this.observePagination();
 
 		// All systems go - let's fetch our first lot of
 		// data
@@ -181,7 +196,7 @@
 			this.templates.pagination = Tempo.prepare(this.$pagination[0], this.options.tempoOptions);
 		},
 
-		setupFilters: function() {
+		setupFiltersAndSorting: function() {
 			var me = this
 			$resultsHeaders = this.$results.find('thead th'),
 			  $resultsCells = this.$results.find('[data-template] td');
@@ -192,10 +207,10 @@
 				     type,
 				 mappings = [];
 
-				// Sometimes a cell will have a 'data-no-filters' attribute.
+				// Sometimes a cell will have a 'data-static' attribute.
 				// This is fine as they may not want me column to be
 				// filtereable. If so, we'll just skip over the cell
-				if (typeof($cell.data('no-filters')) !== 'undefined') {
+				if (typeof($cell.data('static')) !== 'undefined') {
 					return;
 				}
 
@@ -205,12 +220,16 @@
 						break;
 				}
 
+				index = $cell.data('index');
+
 				me.filters.push({
 					'type': type,
-					'index': $cell.data('index'),
+					'index': index,
 					'label': $header.text(),
 					'mappings': mappings
 				});
+
+				me.columns.push(index);
 			});
 		},
 
@@ -276,6 +295,11 @@
 			// Empty out the input's
 			// value to default
 			input.val('');
+
+			// We always go back to page 1 when we
+			// apply a filter as it will more than likely
+			// reduce the data set
+			this.goToPage(1);
 		},
 
 		removeFilter: function(index) {
@@ -328,8 +352,31 @@
 		},
 
 		renderPagination: function() {
-			console.log(this.pagination.navigation);
 			this.templates.pagination.render(this.pagination.navigation);
+		},
+
+		observePagination: function() {
+			var me = this;
+
+			$('body').on('click', this.$pagination.selector + ' .goto-page', function() {
+				var $link = $(this),
+				   pageId = $link.data('page');
+
+				me.goToPage(pageId);
+				me.fetch();
+			});
+		},
+
+		observeSorting: function() {
+			var me = this;
+
+			this.$results.find('thead [data-index]').click(function() {
+				var $cell = $(this),
+				    index = $cell.data('index');
+
+				me.setSort(index);
+				me.fetch();
+			});
 		},
 
 		/*
@@ -375,8 +422,8 @@
 				page: this.pagination.page,
 				requested_pages: this.options.pagination.requestedPages,
 				minimum_per_page: this.options.pagination.minimumPerPage,
-				filters: []
-			};
+				filters: [],
+			}, sort, direction;
 
 			// Loop through filters and build up
 			// array of filter parameters
@@ -390,7 +437,50 @@
 				}
 			});
 
+			// Check we have specified a sort. If so, let's pass
+			// it to our query
+			if (typeof (sort = this.sort.column) !== 'undefined') {
+				parameters['sort']      = sort;
+				parameters['direction'] = this.sort.direction;
+			}
+
 			return parameters;
+		},
+
+		goToPage: function(page) {
+			var parsedPage;
+
+			// Validate our parsed page
+			if (isNaN(parsedPage = parseInt(page))) {
+				parsedPage = 1;
+			}
+
+			this.pagination.page = parsedPage;
+		},
+
+		setSort: function(column, direction) {
+
+			// Automatic toggling of sort if the
+			// direction is not specified
+			if (typeof direction === 'undefined') {
+
+				// If we're referring to the same column
+				// again, reverse the direction
+				if (column == this.sort.column) {
+					this.sort.direction = (this.sort.direction == 'asc') ? 'desc' : 'asc';
+
+				// Otherwise we'll change the column and set
+				// the sort to ascending
+				} else {
+					this.sort.column    = column;
+					this.sort.direction = 'asc';
+				}
+
+			// Otherwise they've provided the column and direction
+			} else {
+				this.sort.column    = column;
+				this.sort.direction = direction;
+			}
 		}
 
 	};
