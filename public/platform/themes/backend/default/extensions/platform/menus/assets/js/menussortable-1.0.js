@@ -248,7 +248,7 @@
 
 				if (value) {
 					var slug,
-					    uriSeparator = '/';
+					    uriSeparator = '-';
 					if (slug = slugify(value, uriSeparator)) {
 						$(that.options.nestySortable.fields.uri.newSelector).val(slug)
 						    .trigger('blur')
