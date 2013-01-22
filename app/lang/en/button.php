@@ -4,7 +4,7 @@
  *
  * NOTICE OF LICENSE
  *
- * Licensed under the 3-clause BSD License.s
+ * Licensed under the 3-clause BSD License.
  *
  * This source file is subject to the 3-clause BSD License that is
  * bundled with this package in the LICENSE file.  It is also available at
@@ -22,16 +22,25 @@ return array(
 
 	/*
 	|--------------------------------------------------------------------------
-	| Pagination Language Lines
+	| Button Language Lines
 	|--------------------------------------------------------------------------
 	|
-	| The following language lines are used by the paginator library to build
-	| the simple pagination links. You are free to change them to anything
-	| you want to customize your views to better match your application.
+	| The following language lines are used throughout the application. You
+	| can change them to anything you want to customize your views to better
+	| match your application.
 	|
 	*/
 
-	'previous' => '&laquo; Previous',
-	'next'     => 'Next &raquo;',
+	'cancel'    => 'Cancel',
+	'delete'    => 'Delete',
+	'edit'      => 'Edit',
+	'update'    => 'Save Changes',
+	'create'    => 'Create',
+	'submit'    => 'Save',
+	'save'      => 'Save',
+	'enable'    => 'Enable',
+	'disable'   => 'Disable',
+	'install'   => 'Install',
+	'uninstall' => 'Uninstall'
 
 );
