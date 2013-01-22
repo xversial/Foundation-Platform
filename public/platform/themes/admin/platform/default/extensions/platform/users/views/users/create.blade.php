@@ -15,9 +15,9 @@
 @section('content')
 <div class="page-header">
 	<h3>
-		{{ Lang::get('platform/users::users/form.edit.legend') }}
+		{{ Lang::get('platform/users::users/form.create.legend') }}
 
-		<small>{{ Lang::get('platform/users::users/form.edit.summary') }}</small>
+		<small>{{ Lang::get('platform/users::users/form.create.summary') }}</small>
 
 		<div class="pull-right">
 			<a href="{{ URL::to(ADMIN_URI . '/users') }}" class="btn btn-inverse btn-small">{{ Lang::get('button.back') }}</a>
@@ -34,7 +34,7 @@
 		<label class="control-label" for="first_name">{{ Lang::get('platform/users::users/form.first_name') }}:</label>
 		<div class="controls">
 			<div class="input-append">
-				<input type="text" name="first_name" id="first_name" value="{{ Input::old('metadata.first_name', $user->first_name); }}" placeholder="{{ Lang::get('platform/users::users/form.first_name') }}">
+				<input type="text" name="first_name" id="first_name" value="{{ Input::old('metadata.first_name'); }}" placeholder="{{ Lang::get('platform/users::users/form.first_name') }}">
 				<span class="add-on"><i class="icon-user"></i></span>
 			</div>
 			<span class="help-block">{{ Lang::get('platform/users::users/form.first_name_help') }}</span>
@@ -46,7 +46,7 @@
 		<label class="control-label" for="last_name">{{ Lang::get('platform/users::users/form.last_name') }}:</label>
 		<div class="controls">
 			<div class="input-append">
-				<input type="text" name="last_name" id="last_name" value="{{ Input::old('metadata.last_name', $user->last_name); }}" placeholder="{{ Lang::get('platform/users::users/form.last_name') }}" required>
+				<input type="text" name="last_name" id="last_name" value="{{ Input::old('metadata.last_name'); }}" placeholder="{{ Lang::get('platform/users::users/form.last_name') }}">
 				<span class="add-on"><i class="icon-user"></i></span>
 			</div>
 			<span class="help-block">{{ Lang::get('platform/users::users/form.last_name_help') }}</span>
@@ -58,10 +58,22 @@
 		<label class="control-label" for="email">{{ Lang::get('platform/users::users/form.email') }}:</label>
 		<div class="controls">
 			<div class="input-append">
-				<input type="email" name="email" id="email" value="{{ Input::old('email', $user->email); }}" placeholder="{{ Lang::get('platform/users::users/form.email') }}" required>
+				<input type="email" name="email" id="email" value="{{ Input::old('email'); }}" placeholder="{{ Lang::get('platform/users::users/form.email') }}">
 				<span class="add-on"><i class="icon-envelope"></i></span>
 			</div>
 			<span class="help-block">{{ Lang::get('platform/users::users/form.email_help') }}</span>
+		</div>
+	</div>
+
+	<!-- Password -->
+	<div class="control-group">
+		<label class="control-label" for="password">{{ Lang::get('platform/users::users/form.password') }}:</label>
+		<div class="controls">
+			<div class="input-append">
+				<input type="password" name="password" id="password" value="{{ Input::old('password'); }}" placeholder="{{ Lang::get('platform/users::users/form.password') }}">
+				<span class="add-on"><i class="icon-envelope"></i></span>
+			</div>
+			<span class="help-block">{{ Lang::get('platform/users::users/form.password_help') }}</span>
 		</div>
 	</div>
 
@@ -72,7 +84,7 @@
 			<div class="input-append">
 				<select name="groups[]" id="groups[]" multiple="multiple">
 					@foreach ($groups as $group)
-					{{ $group }}
+					<option value="{{ $group->id }}">{{ $group->name }}</option>
 					@endforeach
 				</select>
 			</div>

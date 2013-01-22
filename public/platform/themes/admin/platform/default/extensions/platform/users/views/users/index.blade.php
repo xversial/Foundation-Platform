@@ -1,7 +1,7 @@
 @extends('templates/default')
 
 @section('title')
-{{ Lang::get('platform/users::general.users.title') }}
+{{ Lang::get('platform/users::users/general.title') }}
 @stop
 
 @section('assets')
@@ -13,16 +13,24 @@
 @stop
 
 @section('content')
+<div class="page-header">
+	<h3>
+		{{ Lang::get('platform/users::users/general.title') }}
 
+		<div class="pull-right">
+			<a href="{{ URL::to(ADMIN_URI . '/users/create') }}" class="btn btn-info btn-small">{{ Lang::get('button.create') }}</a>
+		</div>
+	</h3>
+</div>
 
 <table class="table table-bordered">
 	<thead>
 		<tr>
-			<th>{{ Lang::get('platform/users::table.users.id') }}</th>
-			<th>{{ Lang::get('platform/users::table.users.first_name') }}</th>
-			<th>{{ Lang::get('platform/users::table.users.last_name') }}</th>
-			<th>{{ Lang::get('platform/users::table.users.email') }}</th>
-			<th>{{ Lang::get('platform/users::table.users.groups') }}</th>
+			<th>{{ Lang::get('platform/users::users/table.id') }}</th>
+			<th>{{ Lang::get('platform/users::users/table.first_name') }}</th>
+			<th>{{ Lang::get('platform/users::users/table.last_name') }}</th>
+			<th>{{ Lang::get('platform/users::users/table.email') }}</th>
+			<th>{{ Lang::get('platform/users::users/table.groups') }}</th>
 			<th>{{ Lang::get('table.actions') }}</th>
 		</tr>
 	</thead>
@@ -46,10 +54,10 @@
 				</td>
 				<td class="span2">
 					<div class="btn-group">
-						<a href="{{ URL::to(ADMIN_URI."/users/edit/{$user->id}") }}" class="btn btn-small">
+						<a href="{{ URL::to(ADMIN_URI . "/users/edit/{$user->id}") }}" class="btn btn-small">
 							{{ Lang::get('button.edit') }}
 						</a>
-						<a href="{{ URL::to(ADMIN_URI."/users/delete/{$user->id}") }}" class="btn btn-small btn-danger">
+						<a href="{{ URL::to(ADMIN_URI . "/users/delete/{$user->id}") }}" class="btn btn-small btn-danger">
 							{{ Lang::get('button.delete') }}
 						</a>
 					</div>
