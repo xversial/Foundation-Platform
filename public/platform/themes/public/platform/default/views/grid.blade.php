@@ -35,24 +35,24 @@ $('#grid').dataGrid();
 				<div class="form-inline">
 
 					<!-- Label -->
-					<label for="grid-filters-[[index]]">[[label]]</label>
+					<label for="grid-filters-[[column]]">[[label]]</label>
 
 					<!-- Build different HTML based on the type -->
 					[? if type == 'select' ?]
-						<select data-index="[[index]]" id="grid-filters-[[index]]">
+						<select data-column="[[column]]" id="grid-filters-[[column]]">
 							<option value="">
 								-- Please Select --
 							</option>
 
 							<!-- Need to work out how to embed each <option> inside the <optgroup> data-template... -->
 							<optgroup data-template-for="mappings" label="Option">
-								<option value="[[index]]">
+								<option value="[[value]]">
 									[[label]]
 								</option>
 							</optgroup>
 						</select>
 					[? else ?]
-						<input type="text" data-index="[[index]]" id="grid-filters-[[index]]">
+						<input type="text" data-column="[[column]]" id="grid-filters-[[column]]">
 					[? endif ?]
 
 					<!-- "Add Filter" button -->
@@ -71,7 +71,7 @@ $('#grid').dataGrid();
 				[? if type == 'global' ?]
 					<strong>[[value]]</strong>
 				[? else ?]
-					<small><em>([[index]])</em></small> <strong>[[value]]</strong>
+					<small><em>([[column]])</em></small> <strong>[[value]]</strong>
 				[? endif ?]
 				<span class="close" style="float: none;">&times;</span>
 			</a>
@@ -93,25 +93,25 @@ $('#grid').dataGrid();
 			<table class="table table-striped table-bordered grid-results">
 				<thead>
 					<tr>
-						<th data-index="id">ID</th>
-						<th data-index="first_name">First Name</th>
-						<th data-index="last_name">Last Name</th>
-						<th data-index="country">Country</th>
-						<th data-index="activated">Activated</th>
+						<th data-column="id">ID</th>
+						<th data-column="first_name">First Name</th>
+						<th data-column="last_name">Last Name</th>
+						<th data-column="country">Country</th>
+						<th data-column="activated">Activated</th>
 						<th></th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr data-template>
-						<td data-index="id">[[id]]</td>
-						<td data-index="first_name">[[first_name]]</td>
-						<td data-index="last_name">[[last_name]]</td>
-						<td data-index="country">
+						<td data-column="id">[[id]]</td>
+						<td data-column="first_name">[[first_name]]</td>
+						<td data-column="last_name">[[last_name]]</td>
+						<td data-column="country">
 							[? if country ?]
 								[[country]]
 							[? endif ?]
 						</td>
-						<td data-type="select" data-index="activated" data-mappings="Yes:1|No:0">
+						<td data-type="select" data-column="activated" data-mappings="Yes:1|No:0">
 							[? if activated == 1 ?]
 								Yes
 							[? else ?]

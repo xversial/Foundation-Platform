@@ -63,7 +63,6 @@
 		this.$element       = element;
 		this.source         = this.$element.data('source') || this.options.source;
 		this.templates      = {};
-		this.columns        = [];
 		this.filters        = [];
 		this.appliedFilters = [];
 		this.results        = [];
@@ -197,14 +196,12 @@
 		},
 
 		setupFiltersAndSorting: function() {
-			var me = this
-			$resultsHeaders = this.$results.find('thead th'),
-			  $resultsCells = this.$results.find('[data-template] td');
+			var me = this,
+			$cells = this.$results.find('[data-template] td');
 
-			$resultsCells.each(function(index) {
+			$cells.each(function(index) {
 				var $cell = $(this),
-				  $header = $($resultsHeaders[index]),
-				     type,
+				    column = $cell.data('column'),
 				 mappings = [];
 
 				// Sometimes a cell will have a 'data-static' attribute.
@@ -214,22 +211,21 @@
 					return;
 				}
 
+				// Find the header cell with the same 'data-column' attribute.
+				var $header = me.$results.find('thead [data-column="' + column + '"]');
+
 				switch (type = $cell.data('type') ? $cell.data('type') : 'text') {
 					case 'select':
 						mappings = me.parseMappings($cell.data('mappings'));
 						break;
 				}
 
-				index = $cell.data('index');
-
 				me.filters.push({
 					'type': type,
-					'index': index,
+					'column': column,
 					'label': $header.text(),
 					'mappings': mappings
 				});
-
-				me.columns.push(index);
 			});
 		},
 
@@ -264,7 +260,7 @@
 		},
 
 		applyFilter: function(input, type) {
-			var value, index, filter = {};
+			var value, column, filter = {};
 
 			// Default the filter type
 			if (typeof type === 'undefined') {
@@ -278,14 +274,14 @@
 				return;
 			}
 
-			if (type == 'normal' && ! (index = input.data('index'))) {
-				$.error('$.dataGrid requires each filter specify it\'s result index through [data-index="the_result_index"], none given.');
+			if (type == 'normal' && ! (column = input.data('column'))) {
+				$.error('$.dataGrid requires each filter specify it\'s result column through [data-column="the_result_column"], none given.');
 			}
 
 			// Now we build our new filter object for the
 			// filters array
 			if ((filter['type'] = type) == 'normal') {
-				filter['index'] = index;
+				filter['column'] = column;
 			}
 			filter['value'] = value;
 
@@ -302,7 +298,7 @@
 			this.goToPage(1);
 		},
 
-		removeFilter: function(index) {
+		removeFilter: function(column) {
 			this.appliedFilters.splice(index, 1);
 		},
 
@@ -370,11 +366,11 @@
 		observeSorting: function() {
 			var me = this;
 
-			this.$results.find('thead [data-index]').click(function() {
+			this.$results.find('thead [data-column]').click(function() {
 				var $cell = $(this),
-				    index = $cell.data('index');
+				    column = $cell.data('column');
 
-				me.setSort(index);
+				me.setSort(column);
 				me.fetch();
 			});
 		},
@@ -432,7 +428,7 @@
 					parameters.filters.push(filter.value);
 				} else {
 					var newFilter = {};
-					newFilter[filter.index] = filter.value;
+					newFilter[filter.column] = filter.value;
 					parameters.filters.push(newFilter);
 				}
 			});
