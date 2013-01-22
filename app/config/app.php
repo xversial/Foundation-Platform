@@ -107,6 +107,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
+		'Cartalyst\DataGrid\DataGridServiceProvider',
 		'Cartalyst\Sentry\SentryServiceProvider',
 		'Cartalyst\Api\ApiServiceProvider',
 		'Cartalyst\Themes\ThemeServiceProvider',
@@ -179,6 +180,7 @@ return array(
 
 		'API'      => 'Cartalyst\Api\Facades\API',
 		'Asset'    => 'Cartalyst\Themes\Facades\Asset',
+		'DataGrid' => 'Cartalyst\DataGrid\Facades\DataGrid',
 		'Sentry'   => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 		'Theme'    => 'Cartalyst\Themes\Facades\Theme',
 
