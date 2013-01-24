@@ -27,6 +27,7 @@
 	<thead>
 		<tr>
 			<th>{{ Lang::get('platform/content::table.id') }}</th>
+			<th>{{ Lang::get('platform/content::table.slug') }}</th>
 			<th>{{ Lang::get('platform/content::table.name') }}</th>
 			<th>{{ Lang::get('table.actions') }}</th>
 		</tr>
@@ -36,6 +37,9 @@
 			<tr>
 				<td>
 					{{ $row->id }}
+				</td>
+				<td>
+					{{ $row->slug }}
 				</td>
 				<td>
 					{{ $row->name }}
