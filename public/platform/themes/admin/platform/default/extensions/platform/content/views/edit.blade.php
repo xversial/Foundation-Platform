@@ -33,7 +33,7 @@
 	<div class="control-group">
 		<label class="control-label" for="name">{{ Lang::get('platform/content::form.name') }}:</label>
 		<div class="controls">
-			<input type="text" name="name" id="name" value="{{ Input::old('name', $content->name); }}" placeholder="{{ Lang::get('platform/content::form.name') }}" required>
+			<input type="text" name="name" id="name" value="{{ Input::old('name', $content->name) }}" placeholder="{{ Lang::get('platform/content::form.name') }}" required>
 			<span class="help-block">{{ Lang::get('platform/content::form.name_help') }}</span>
 		</div>
 	</div>
@@ -42,7 +42,7 @@
 	<div class="control-group">
 		<label class="control-label" for="slug">{{ Lang::get('platform/content::form.slug') }}:</label>
 		<div class="controls">
-			<input type="text" name="slug" id="slug" value="{{ Input::old('slug', $content->slug); }}" placeholder="{{ Lang::get('platform/content::form.slug') }}" required>
+			<input type="text" name="slug" id="slug" value="{{ Input::old('slug', $content->slug) }}" placeholder="{{ Lang::get('platform/content::form.slug') }}" required>
 			<span class="help-block">{{ Lang::get('platform/content::form.slug_help') }}</span>
 		</div>
 	</div>
