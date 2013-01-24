@@ -54,8 +54,8 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => '127.0.0.1',
-			'database'  => 'cartalyst_platform2',
+			'host'      => 'localhost',
+			'database'  => 'database',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',
