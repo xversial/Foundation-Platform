@@ -25,16 +25,16 @@
 	</h3>
 </div>
 
-<form class="form-horizontal" action="{{ Request::fullUrl() }}" method="POST" accept-char="UTF-8">
+<form class="form-horizontal" action="{{ Request::fullUrl() }}" method="POST" accept-char="UTF-8" autocomplete="off">
 	<!-- CSRF Token -->
-	<input type="hidden" name="csrf_token" value="{{ Session::getToken() }}">
+	<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
 
 	<!-- First Name -->
 	<div class="control-group">
 		<label class="control-label" for="first_name">{{ Lang::get('platform/users::users/form.first_name') }}:</label>
 		<div class="controls">
 			<div class="input-append">
-				<input type="text" name="first_name" id="first_name" value="{{ Input::old('first_name', $user->first_name); }}" placeholder="{{ Lang::get('platform/users::users/form.first_name') }}">
+				<input type="text" name="first_name" id="first_name" value="{{ Input::old('first_name', $user->first_name) }}" placeholder="{{ Lang::get('platform/users::users/form.first_name') }}" required>
 				<span class="add-on"><i class="icon-user"></i></span>
 			</div>
 			<span class="help-block">{{ Lang::get('platform/users::users/form.first_name_help') }}</span>
@@ -46,7 +46,7 @@
 		<label class="control-label" for="last_name">{{ Lang::get('platform/users::users/form.last_name') }}:</label>
 		<div class="controls">
 			<div class="input-append">
-				<input type="text" name="last_name" id="last_name" value="{{ Input::old('last_name', $user->last_name); }}" placeholder="{{ Lang::get('platform/users::users/form.last_name') }}" required>
+				<input type="text" name="last_name" id="last_name" value="{{ Input::old('last_name', $user->last_name) }}" placeholder="{{ Lang::get('platform/users::users/form.last_name') }}" required>
 				<span class="add-on"><i class="icon-user"></i></span>
 			</div>
 			<span class="help-block">{{ Lang::get('platform/users::users/form.last_name_help') }}</span>
@@ -58,10 +58,34 @@
 		<label class="control-label" for="email">{{ Lang::get('platform/users::users/form.email') }}:</label>
 		<div class="controls">
 			<div class="input-append">
-				<input type="email" name="email" id="email" value="{{ Input::old('email', $user->email); }}" placeholder="{{ Lang::get('platform/users::users/form.email') }}" required>
+				<input type="email" name="email" id="email" value="{{ Input::old('email', $user->email) }}" placeholder="{{ Lang::get('platform/users::users/form.email') }}" required>
 				<span class="add-on"><i class="icon-envelope"></i></span>
 			</div>
 			<span class="help-block">{{ Lang::get('platform/users::users/form.email_help') }}</span>
+		</div>
+	</div>
+
+	<!-- Password -->
+	<div class="control-group">
+		<label class="control-label" for="password">{{ Lang::get('platform/users::users/form.password') }}:</label>
+		<div class="controls">
+			<div class="input-append">
+				<input type="password" name="password" id="password" value="{{ Input::old('password') }}" placeholder="{{ Lang::get('platform/users::users/form.password') }}">
+				<span class="add-on"><i class="icon-key"></i></span>
+			</div>
+			<span class="help-block">{{ Lang::get('platform/users::users/form.password_help') }}</span>
+		</div>
+	</div>
+
+	<!-- Password Confirmation -->
+	<div class="control-group">
+		<label class="control-label" for="password_confirmation">{{ Lang::get('platform/users::users/form.password_confirm') }}:</label>
+		<div class="controls">
+			<div class="input-append">
+				<input type="password" name="password_confirmation" id="password_confirmation" value="{{ Input::old('password_confirmation') }}" placeholder="{{ Lang::get('platform/users::users/form.password_confirm') }}">
+				<span class="add-on"><i class="icon-key"></i></span>
+			</div>
+			<span class="help-block">{{ Lang::get('platform/users::users/form.password_confirm_help') }}</span>
 		</div>
 	</div>
 
@@ -71,8 +95,8 @@
 		<div class="controls">
 			<div class="input-append">
 				<select name="groups[]" id="groups[]" multiple="multiple">
-					@foreach ($groups as $group)
-					{{ $group }}
+					@foreach ($groups as $groupId => $groupName)
+					<option value="{{ $groupId }}"{{ (array_key_exists($groupId, $userGroups) ? ' selected="selected"' : '') }}>{{ $groupName }}</option>
 					@endforeach
 				</select>
 			</div>
@@ -80,8 +104,9 @@
 		</div>
 	</div>
 
+	<!-- Form Actions -->
 	<div class="form-actions">
-		<a class="btn btn-small" href="{{ URL::to(ADMIN_URI.'/users') }}">{{ Lang::get('button.cancel') }}</a>
+		<a class="btn btn-small" href="{{ URL::to(ADMIN_URI . '/users') }}">{{ Lang::get('button.cancel') }}</a>
 		<button class="btn btn-small btn-primary" type="submit">{{ Lang::get('button.update') }}</button>
 	</div>
 </form>
