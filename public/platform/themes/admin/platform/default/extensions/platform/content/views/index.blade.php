@@ -40,10 +40,10 @@
 					{{ $row->id }}
 				</td>
 				<td>
-					{{ $row->slug }}
+					{{ $row->name }}
 				</td>
 				<td>
-					{{ $row->name }}
+					{{ $row->slug }}
 				</td>
 				<td>
 					{{ Lang::get('general.' . ($row->status ? 'enabled' : 'disabled')) }}
