@@ -32,20 +32,20 @@
 		</tr>
 	</thead>
 	<tbody>
-		@foreach ($contentRows as $content)
+		@foreach ($content as $row)
 			<tr>
 				<td>
-					{{ $content->id }}
+					{{ $row->id }}
 				</td>
 				<td>
-					{{ $content->name }}
+					{{ $row->name }}
 				</td>
 				<td class="span2">
 					<div class="btn-group">
-						<a href="{{ URL::to(ADMIN_URI . "/content/edit/{$content->id}") }}" class="btn btn-small">
+						<a href="{{ URL::to(ADMIN_URI . "/content/edit/{$row->id}") }}" class="btn btn-small">
 							{{ Lang::get('button.edit') }}
 						</a>
-						<a href="{{ URL::to(ADMIN_URI . "/content/delete/{$content->id}") }}" class="btn btn-small btn-danger">
+						<a href="{{ URL::to(ADMIN_URI . "/content/delete/{$row->id}") }}" class="btn btn-small btn-danger">
 							{{ Lang::get('button.delete') }}
 						</a>
 					</div>
@@ -57,7 +57,7 @@
 		<tr>
 			<td colspan="6">
 				<div class="pull-right">
-					{{ $contentRows->links() }}
+					{{ $content->links() }}
 				</div>
 			</td>
 		</tr>
