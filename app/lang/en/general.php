@@ -20,7 +20,7 @@
 
 return array(
 
-	'actions' => 'Actions',
-	'status'  => 'Status'
+	'enabled'  => 'Enabled',
+	'disabled' => 'Disabled'
 
 );
