@@ -52,8 +52,8 @@
 		<label class="control-label" for="status">{{ Lang::get('platform/content::form.status') }}:</label>
 		<div class="controls">
 			<select name="status" id="status" required>
-				<option value="1">Enabled</option>
-				<option value="0">Disabled</option>
+				<option value="1"{{ (Input::old('status') === 1 ? ' selected="selected"' : '') }}>Enabled</option>
+				<option value="0"{{ (Input::old('status') === 0 ? ' selected="selected"' : '') }}>Disabled</option>
 			</select>
 			<span class="help-block">{{ Lang::get('platform/content::form.status_help') }}</span>
 		</div>
