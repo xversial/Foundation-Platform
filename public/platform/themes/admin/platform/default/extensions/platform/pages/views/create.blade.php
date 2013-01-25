@@ -33,7 +33,7 @@
 	<div class="control-group">
 		<label class="control-label" for="name">{{ Lang::get('platform/pages::form.name') }}:</label>
 		<div class="controls">
-			<input type="text" name="name" id="name" value="{{ Input::old('name') }}" placeholder="{{ Lang::get('platform/pages::form.name') }}" required>
+			<input type="text" name="name" id="name" value="{{ Input::old('name') }}" placeholder="{{ Lang::get('platform/pages::form.name') }}">
 			<span class="help-block">{{ Lang::get('platform/pages::form.name_help') }}</span>
 		</div>
 	</div>
@@ -42,7 +42,7 @@
 	<div class="control-group">
 		<label class="control-label" for="slug">{{ Lang::get('platform/pages::form.slug') }}:</label>
 		<div class="controls">
-			<input type="text" name="slug" id="slug" value="{{ Input::old('slug') }}" placeholder="{{ Lang::get('platform/pages::form.slug') }}" required>
+			<input type="text" name="slug" id="slug" value="{{ Input::old('slug') }}" placeholder="{{ Lang::get('platform/pages::form.slug') }}">
 			<span class="help-block">{{ Lang::get('platform/pages::form.slug_help') }}</span>
 		</div>
 	</div>
@@ -51,7 +51,7 @@
 	<div class="control-group">
 		<label class="control-label" for="status">{{ Lang::get('platform/pages::form.status') }}:</label>
 		<div class="controls">
-			<select name="status" id="status" required>
+			<select name="status" id="status">
 				<option value="1">{{ Lang::get('general.enabled') }}</option>
 				<option value="0">{{ Lang::get('general.disabled') }}</option>
 			</select>
@@ -63,12 +63,12 @@
 	<div class="control-group">
 		<label class="control-label" for="type">{{ Lang::get('platform/pages::form.type') }}:</label>
 		<div class="controls">
-			<select name="type" id="type" required>
+			<select name="type" id="type">
 			@foreach ($storageTypes as $typeId => $typeName)
 				<option value="{{ $typeId }}">{{ $typeName }}</option>
 			@endforeach
 			</select>
-			<span class="help-block">{{ Lang::get('platform/pages::form.status_help') }}</span>
+			<span class="help-block">{{ Lang::get('platform/pages::form.type_help') }}</span>
 		</div>
 	</div>
 
@@ -76,12 +76,16 @@
 	<div class="control-group">
 		<label class="control-label" for="template">{{ Lang::get('platform/pages::form.template') }}:</label>
 		<div class="controls">
-			<select name="template" id="template" required>
-			@foreach ($templates as $templateId => $templateName)
-				<option value="{{ $templateId }}">{{ $templateName }}</option>
+			<select name="template" id="template">
+			@foreach ($templates as $templateName => $layouts)
+				<optgroup label="{{ $templateName }}">
+					@foreach ($layouts as $layout)
+					<option value="{{ $layout }}">{{ $layout }}</option>
+					@endforeach
+				</optgroup>
 			@endforeach
 			</select>
-			<span class="help-block">{{ Lang::get('platform/pages::form.status_help') }}</span>
+			<span class="help-block">{{ Lang::get('platform/pages::form.template_help') }}</span>
 		</div>
 	</div>
 
@@ -104,7 +108,7 @@
 		<div class="controls">
 			<select name="groups[]" id="groups[]" multiple="multiple">
 				@foreach ($groups as $groupId => $groupName)
-				<option value="{{ $groupId }}">{{ $groupName }}</option>
+					<option value="{{ $groupId }}"{{ (array_key_exists($groupId, $selectedGroups) ? ' selected="selected"' : '') }}>{{ $groupName }}</option>
 				@endforeach
 			</select>
 			<span class="help-block">{{ Lang::get('platform/pages::form.groups_help') }}</span>
@@ -115,7 +119,7 @@
 	<div class="control-group">
 		<label class="control-label" for="value">{{ Lang::get('platform/pages::form.value') }}:</label>
 		<div class="controls">
-			<textarea rows="10" name="value" id="value" required>{{ Input::old('value') }}</textarea>
+			<textarea rows="10" name="value" id="value">{{ Input::old('value') }}</textarea>
 			<span class="help-block">{{ Lang::get('platform/pages::form.value_help') }}</span>
 		</div>
 	</div>

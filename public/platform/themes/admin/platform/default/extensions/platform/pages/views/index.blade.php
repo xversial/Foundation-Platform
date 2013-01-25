@@ -29,7 +29,7 @@
 			<th>{{ Lang::get('platform/pages::table.id') }}</th>
 			<th>{{ Lang::get('platform/pages::table.name') }}</th>
 			<th>{{ Lang::get('platform/pages::table.slug') }}</th>
-			<th>{{ Lang::get('platform/pages::table.type') }}</th>
+			<th class="span2">{{ Lang::get('platform/pages::table.type') }}</th>
 			<th class="span2">{{ Lang::get('table.status') }}</th>
 			<th class="span2">{{ Lang::get('table.actions') }}</th>
 		</tr>
@@ -38,16 +38,32 @@
 		@foreach ($pages as $page)
 			<tr>
 				<td class="span1">
-					{{ $row->id }}
+					{{ $page->id }}
 				</td>
 				<td>
-					{{ $row->name }}
+					{{ $page->name }}
 				</td>
 				<td>
-					{{ $row->slug }}
+					{{ $page->slug }}
 				</td>
 				<td>
-					{{ Lang::get('general.' . ($row->status ? 'enabled' : 'disabled')) }}
+					{{ ($page->type ? 'Database' : 'File') }}
+				</td>
+				<td>
+					{{ Lang::get('general.' . ($page->status ? 'enabled' : 'disabled')) }}
+				</td>
+				<td>
+					<div class="btn-group">
+						<a href="{{ URL::to(ADMIN_URI . "/pages/edit/{$page->id}") }}" class="btn btn-mini">
+							{{ Lang::get('button.edit') }}
+						</a>
+						<a href="{{ URL::to(ADMIN_URI . "/pages/clone/{$page->id}") }}" class="btn btn-mini btn-info">
+							{{ Lang::get('button.clone') }}
+						</a>
+						<a href="{{ URL::to(ADMIN_URI . "/pages/delete/{$page->id}") }}" class="btn btn-mini btn-danger">
+							{{ Lang::get('button.delete') }}
+						</a>
+					</div>
 				</td>
 			</tr>
 		@endforeach

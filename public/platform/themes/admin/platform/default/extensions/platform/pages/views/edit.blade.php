@@ -77,8 +77,12 @@
 		<label class="control-label" for="template">{{ Lang::get('platform/pages::form.template') }}:</label>
 		<div class="controls">
 			<select name="template" id="template" required>
-			@foreach ($templates as $templateId => $templateName)
-				<option value="{{ $templateId }}">{{ $templateName }}</option>
+			@foreach ($templates as $templateName => $layouts)
+				<optgroup label="{{ $templateName }}">
+					@foreach ($layouts as $layout)
+					<option value="{{ $layout }}">{{ $layout }}</option>
+					@endforeach
+				</optgroup>
 			@endforeach
 			</select>
 			<span class="help-block">{{ Lang::get('platform/pages::form.status_help') }}</span>
@@ -102,9 +106,9 @@
 	<div class="control-group">
 		<label for="groups" class="control-label">{{ Lang::get('platform/pages::form.groups') }}:</label>
 		<div class="controls">
-			<select name="groups[]" id="groups[]">
+			<select name="groups[]" id="groups[]" multiple="multiple">
 				@foreach ($groups as $groupId => $groupName)
-				<option value="{{ $groupId }}">{{ $groupName }}</option>
+				<option value="{{ $groupId }}"{{ (array_key_exists($groupId, $pageGroups) ? ' selected="selected"' : '') }}>{{ $groupName }}</option>
 				@endforeach
 			</select>
 			<span class="help-block">{{ Lang::get('platform/pages::form.groups_help') }}</span>
@@ -115,7 +119,7 @@
 	<div class="control-group">
 		<label class="control-label" for="value">{{ Lang::get('platform/pages::form.value') }}:</label>
 		<div class="controls">
-			<textarea rows="10" name="value" id="value" required>{{ Input::old('value') }}</textarea>
+			<textarea rows="10" name="value" id="value" required>{{ Input::old('value', $page->value) }}</textarea>
 			<span class="help-block">{{ Lang::get('platform/pages::form.value_help') }}</span>
 		</div>
 	</div>
