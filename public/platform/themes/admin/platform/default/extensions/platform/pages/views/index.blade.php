@@ -27,19 +27,36 @@
 	<thead>
 		<tr>
 			<th>{{ Lang::get('platform/pages::table.id') }}</th>
-			<th>{{ Lang::get('platform/pages::table.slug') }}</th>
 			<th>{{ Lang::get('platform/pages::table.name') }}</th>
-			<th>{{ Lang::get('table.actions') }}</th>
+			<th>{{ Lang::get('platform/pages::table.slug') }}</th>
+			<th>{{ Lang::get('platform/pages::table.type') }}</th>
+			<th class="span2">{{ Lang::get('table.status') }}</th>
+			<th class="span2">{{ Lang::get('table.actions') }}</th>
 		</tr>
 	</thead>
 	<tbody>
-
+		@foreach ($pages as $page)
+			<tr>
+				<td class="span1">
+					{{ $row->id }}
+				</td>
+				<td>
+					{{ $row->name }}
+				</td>
+				<td>
+					{{ $row->slug }}
+				</td>
+				<td>
+					{{ Lang::get('general.' . ($row->status ? 'enabled' : 'disabled')) }}
+				</td>
+			</tr>
+		@endforeach
 	</tbody>
 	<tfoot>
 		<tr>
 			<td colspan="6">
 				<div class="pull-right">
-					{ $pages->links() }}
+					{{ $pages->links() }}
 				</div>
 			</td>
 		</tr>
