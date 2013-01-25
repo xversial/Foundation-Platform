@@ -31,7 +31,8 @@
 			<th>{{ Lang::get('platform/users::users/table.last_name') }}</th>
 			<th>{{ Lang::get('platform/users::users/table.email') }}</th>
 			<th>{{ Lang::get('platform/users::users/table.groups') }}</th>
-			<th>{{ Lang::get('table.actions') }}</th>
+			<th class="span2">{{ Lang::get('platform/users::users/table.activated') }}</th>
+			<th class="span2">{{ Lang::get('table.actions') }}</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -52,7 +53,10 @@
 				<td>
 					{{ implode(', ', array_map(function($group) { return $group->name; }, $user->groups->all())) }}
 				</td>
-				<td class="span2">
+				<td>
+					{{ Lang::get('general.' . ($user->isActivated() ? 'yes' : 'no')) }}
+				</td>
+				<td>
 					<div class="btn-group">
 						<a href="{{ URL::to(ADMIN_URI . "/users/edit/{$user->id}") }}" class="btn btn-small">
 							{{ Lang::get('button.edit') }}
@@ -69,7 +73,7 @@
 	</tbody>
 	<tfoot>
 		<tr>
-			<td colspan="6">
+			<td colspan="7">
 				<div class="pull-right">
 					{{ $users->links() }}
 				</div>

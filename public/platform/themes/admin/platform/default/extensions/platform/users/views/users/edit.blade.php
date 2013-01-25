@@ -104,6 +104,20 @@
 		</div>
 	</div>
 
+	<!-- Activation Status -->
+	<div class="control-group">
+		<label class="control-label" for="activated">{{ Lang::get('platform/users::users/form.activated') }}</label>
+		<div class="controls">
+			<div class="input-append">
+				<select name="activated" id="activated" required>
+					<option value="1"{{ ($user->isActivated() ? ' selected="selected"' : '') }}>{{ Lang::get('general.yes') }}</option>
+					<option value="0"{{ ( ! $user->isActivated() ? ' selected="selected"' : '') }}>{{ Lang::get('general.no') }}</option>
+				</select>
+			</div>
+			<span class="help-block">{{ Lang::get('platform/users::users/form.activated_help') }}</span>
+		</div>
+	</div>
+
 	<!-- Form Actions -->
 	<div class="form-actions">
 		<a class="btn btn-small" href="{{ URL::to(ADMIN_URI . '/users') }}">{{ Lang::get('button.cancel') }}</a>
