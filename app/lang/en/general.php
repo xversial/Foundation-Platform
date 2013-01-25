@@ -20,6 +20,8 @@
 
 return array(
 
+	'yes'      => 'Yes',
+	'no'       => 'No',
 	'enabled'  => 'Enabled',
 	'disabled' => 'Disabled'
 
