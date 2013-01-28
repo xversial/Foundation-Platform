@@ -28,7 +28,8 @@
 		<tr>
 			<th>{{ Lang::get('platform/users::groups/table.id') }}</th>
 			<th>{{ Lang::get('platform/users::groups/table.name') }}</th>
-			<th>{{ Lang::get('table.actions') }}</th>
+			<th class="span2">{{ Lang::get('platform/users::groups/table.users') }}</th>
+			<th class="span2">{{ Lang::get('table.actions') }}</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -40,7 +41,10 @@
 				<td>
 					{{ $group->name }}
 				</td>
-				<td class="span2">
+				<td>
+					{{ $group->users()->count() }}
+				</td>
+				<td>
 					<div class="btn-group">
 						<a href="{{ URL::to(ADMIN_URI . "/users/groups/edit/{$group->id}") }}" class="btn btn-small">
 							{{ Lang::get('button.edit') }}
