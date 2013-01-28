@@ -28,24 +28,35 @@
 		<tr>
 			<th>{{ Lang::get('platform/content::table.id') }}</th>
 			<th>{{ Lang::get('platform/content::table.name') }}</th>
-			<th>{{ Lang::get('table.actions') }}</th>
+			<th>{{ Lang::get('platform/content::table.slug') }}</th>
+			<th class="span2">{{ Lang::get('table.status') }}</th>
+			<th class="span2">{{ Lang::get('table.actions') }}</th>
 		</tr>
 	</thead>
 	<tbody>
-		@foreach ($contentRows as $content)
+		@foreach ($content as $row)
 			<tr>
-				<td>
-					{{ $content->id }}
+				<td class="span1">
+					{{ $row->id }}
 				</td>
 				<td>
-					{{ $content->name }}
+					{{ $row->name }}
 				</td>
-				<td class="span2">
+				<td>
+					{{ $row->slug }}
+				</td>
+				<td>
+					{{ Lang::get('general.' . ($row->status ? 'enabled' : 'disabled')) }}
+				</td>
+				<td>
 					<div class="btn-group">
-						<a href="{{ URL::to(ADMIN_URI . "/content/edit/{$content->id}") }}" class="btn btn-small">
+						<a href="{{ URL::to(ADMIN_URI . "/content/edit/{$row->id}") }}" class="btn btn-mini">
 							{{ Lang::get('button.edit') }}
 						</a>
-						<a href="{{ URL::to(ADMIN_URI . "/content/delete/{$content->id}") }}" class="btn btn-small btn-danger">
+						<a href="{{ URL::to(ADMIN_URI . "/content/clone/{$row->id}") }}" class="btn btn-mini btn-info">
+							{{ Lang::get('button.clone') }}
+						</a>
+						<a href="{{ URL::to(ADMIN_URI . "/content/delete/{$row->id}") }}" class="btn btn-mini btn-danger">
 							{{ Lang::get('button.delete') }}
 						</a>
 					</div>
@@ -57,7 +68,7 @@
 		<tr>
 			<td colspan="6">
 				<div class="pull-right">
-					{{ $contentRows->links() }}
+					{{ $content->links() }}
 				</div>
 			</td>
 		</tr>

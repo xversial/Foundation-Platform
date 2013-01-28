@@ -15,9 +15,9 @@
 @section('content')
 <div class="page-header">
 	<h3>
-		{{ Lang::get('platform/content::form.create.legend') }}
+		{{ Lang::get('platform/content::form.clone.legend') }}
 
-		<small>{{ Lang::get('platform/content::form.create.summary') }}</small>
+		<small>{{ Lang::get('platform/content::form.clone.summary') }}</small>
 
 		<div class="pull-right">
 			<a href="{{ URL::to(ADMIN_URI . '/content') }}" class="btn btn-inverse btn-small">{{ Lang::get('button.back') }}</a>
@@ -33,7 +33,7 @@
 	<div class="control-group">
 		<label class="control-label" for="name">{{ Lang::get('platform/content::form.name') }}:</label>
 		<div class="controls">
-			<input type="text" name="name" id="name" value="{{ Input::old('name') }}" placeholder="{{ Lang::get('platform/content::form.name') }}" required>
+			<input type="text" name="name" id="name" value="{{ Input::old('name', $content->name) }}" placeholder="{{ Lang::get('platform/content::form.name') }}" required>
 			<span class="help-block">{{ Lang::get('platform/content::form.name_help') }}</span>
 		</div>
 	</div>
@@ -42,7 +42,7 @@
 	<div class="control-group">
 		<label class="control-label" for="slug">{{ Lang::get('platform/content::form.slug') }}:</label>
 		<div class="controls">
-			<input type="text" name="slug" id="slug" value="{{ Input::old('slug') }}" placeholder="{{ Lang::get('platform/content::form.slug') }}" required>
+			<input type="text" name="slug" id="slug" value="{{ Input::old('slug', $content->slug) }}" placeholder="{{ Lang::get('platform/content::form.slug') }}" required>
 			<span class="help-block">{{ Lang::get('platform/content::form.slug_help') }}</span>
 		</div>
 	</div>
@@ -52,8 +52,8 @@
 		<label class="control-label" for="status">{{ Lang::get('platform/content::form.status') }}:</label>
 		<div class="controls">
 			<select name="status" id="status" required>
-				<option value="1"{{ (Input::old('status') === 1 ? ' selected="selected"' : '') }}>Enabled</option>
-				<option value="0"{{ (Input::old('status') === 0 ? ' selected="selected"' : '') }}>Disabled</option>
+				<option value="1">Enabled</option>
+				<option value="0">Disabled</option>
 			</select>
 			<span class="help-block">{{ Lang::get('platform/content::form.status_help') }}</span>
 		</div>
@@ -63,7 +63,7 @@
 	<div class="control-group">
 		<label class="control-label" for="value">{{ Lang::get('platform/content::form.value') }}:</label>
 		<div class="controls">
-			<textarea rows="10" name="value" id="value" required>{{ Input::old('value') }}</textarea>
+			<textarea rows="10" name="value" id="value" required>{{ Input::old('value', $content->value) }}</textarea>
 			<span class="help-block">{{ Lang::get('platform/content::form.value_help') }}</span>
 		</div>
 	</div>

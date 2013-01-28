@@ -27,7 +27,7 @@
 
 <form class="form-horizontal" action="{{ Request::fullUrl() }}" method="POST" accept-char="UTF-8">
 	<!-- CSRF Token -->
-	<input type="hidden" name="csrf_token" value="{{ Session::getToken() }}">
+	<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
 
 	<!-- Name -->
 	<div class="control-group">

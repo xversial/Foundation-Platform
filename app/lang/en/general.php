@@ -20,7 +20,9 @@
 
 return array(
 
-	'actions' => 'Actions',
-	'status'  => 'Status'
+	'yes'      => 'Yes',
+	'no'       => 'No',
+	'enabled'  => 'Enabled',
+	'disabled' => 'Disabled'
 
 );

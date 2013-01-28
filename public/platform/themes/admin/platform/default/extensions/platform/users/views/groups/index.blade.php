@@ -42,10 +42,10 @@
 				</td>
 				<td class="span2">
 					<div class="btn-group">
-						<a href="{{ URL::to(ADMIN_URI."/users/groups/edit/{$group->id}") }}" class="btn btn-small">
+						<a href="{{ URL::to(ADMIN_URI . "/users/groups/edit/{$group->id}") }}" class="btn btn-small">
 							{{ Lang::get('button.edit') }}
 						</a>
-						<a href="{{ URL::to(ADMIN_URI."/users/groups/delete/{$group->id}") }}" class="btn btn-small btn-danger">
+						<a href="{{ URL::to(ADMIN_URI . "/users/groups/delete/{$group->id}") }}" class="btn btn-small btn-danger">
 							{{ Lang::get('button.delete') }}
 						</a>
 					</div>
@@ -63,6 +63,4 @@
 		</tr>
 	</tfoot>
 </table>
-
-
 @stop
