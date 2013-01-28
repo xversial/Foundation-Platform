@@ -18,7 +18,7 @@
 		{{ Lang::get('platform/media::general.title') }}
 
 		<div class="pull-right">
-			<a href="{{ URL::to(ADMIN_URI . '/media/upload') }}" class="btn btn-info btn-small">{{ Lang::get('button.upload') }}</a>
+			<a href="{{ URL::to(ADMIN_URI . '/media/upload') }}" class="btn btn-info btn-small">{{ Lang::get('platform/media::button.upload') }}</a>
 		</div>
 	</h3>
 </div>
@@ -26,13 +26,14 @@
 <table class="table table-bordered">
 	<thead>
 		<tr>
-			<th>Id</th>
-			<th>Name</th>
-			<th class="span2">File Extension</th>
-			<th class="span2">Mime Type</th>
-			<th class="span2">Size</th>
-			<th class="span2">Width</th>
-			<th class="span2">Height</th>
+			<th>{{ Lang::get('platform/media::table.id') }}</th>
+			<th>{{ Lang::get('platform/media::table.file_name') }}</th>
+			<th class="span2">{{ Lang::get('platform/media::table.file_extension') }}</th>
+			<th class="span2">{{ Lang::get('platform/media::table.file_mime_type') }}</th>
+			<th class="span2">{{ Lang::get('platform/media::table.file_size') }}</th>
+			<th class="span2">{{ Lang::get('platform/media::table.width') }}</th>
+			<th class="span2">{{ Lang::get('platform/media::table.height') }}</th>
+			<th class="span2">{{ Lang::get('platform/media::table.created_at') }}</th>
 			<th class="span2">{{ Lang::get('table.actions') }}</th>
 		</tr>
 	</thead>
@@ -59,6 +60,9 @@
 				</td>
 				<td>
 					{{ $row->height() }}
+				</td>
+				<td>
+					{{ $row->created_at }}
 				</td>
 				<td>
 					<div class="btn-group">
