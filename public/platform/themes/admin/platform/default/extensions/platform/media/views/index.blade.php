@@ -75,7 +75,7 @@
 	</tbody>
 	<tfoot>
 		<tr>
-			<td colspan="6">
+			<td colspan="8">
 				<div class="pull-right">
 					{{ $media->links() }}
 				</div>
