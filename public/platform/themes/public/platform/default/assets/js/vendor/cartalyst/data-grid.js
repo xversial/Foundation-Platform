@@ -52,6 +52,9 @@
 				var_braces : '\\[\\[\\]\\]',
 				tag_braces : '\\[\\?\\?\\]'
 			},
+
+			// Delay for live search
+			liveSearchDelay: 1000
 		}
 
 		// Merge the options passed through the jQuery
@@ -74,6 +77,7 @@
 			column: this.options.sort.column,
 			direction: this.options.sort.direction
 		};
+		this.liveSearch     = '';
 
 		// Our results DOM object must be found
 		// first before we attempt to move on as
@@ -98,6 +102,7 @@
 		this.observeAppliedFilters();
 		this.observeSorting();
 		this.observePagination();
+		this.observeLiveSearch();
 
 		// All systems go - let's fetch our first lot of
 		// data
@@ -127,12 +132,6 @@
 			this.$results = $results;
 		},
 
-		/**
-		 * Prepares the templates for use with TempoJS
-		 * by creating the instances needed.
-		 *
-		 * @return void
-		 */
 		prepareTemplates: function() {
 			this.prepareResultsTemplate();
 			this.prepareFiltersTemplate();
@@ -236,10 +235,27 @@
 		observeAppliedFilters: function() {
 			var me = this;
 
+			// Shortcut to trigger click
+			$('body').on('keyup', me.$filters.selector + ' :input', function(e) {
+				if (e.keyCode == 13) {
+					$(this).siblings('.add-global-filter, .add-filter').first().trigger('click');
+				}
+			});
+
 			// Adding global filters
 			$('body').on('click', me.$filters.selector + ' .add-global-filter', function() {
-				me.applyFilter($(this).siblings(':input').first(), 'global');
+				var $input = $(this).siblings(':input').first();
+
+				me.applyFilter($input, 'global');
 				me.renderAppliedFilters();
+
+				// If our input is also the live search
+				// box, we'll need to clear the live search
+				// property out
+				if ($input.hasClass('live-search')) {
+					me.clearLiveSearch();
+				}
+
 				me.fetch();
 			});
 
@@ -298,7 +314,7 @@
 			this.goToPage(1);
 		},
 
-		removeFilter: function(column) {
+		removeFilter: function(index) {
 			this.appliedFilters.splice(index, 1);
 		},
 
@@ -336,9 +352,16 @@
 			// Loop through the pages and add a new index
 			// to the pagination data array
 			for (i = 1; i <= pagination.total_pages; i++) {
-				this.pagination.navigation.push({
-					page: i
-				});
+				var paginationData = {
+					page: i,
+					active: false
+				};
+
+				if (this.pagination.page == i) {
+					paginationData.active = true;
+				}
+
+				this.pagination.navigation.push(paginationData);
 			}
 		},
 
@@ -354,7 +377,8 @@
 		observePagination: function() {
 			var me = this;
 
-			$('body').on('click', this.$pagination.selector + ' .goto-page', function() {
+			$('body').on('click', this.$pagination.selector + ' .goto-page', function(e) {
+				e.preventDefault();
 				var $link = $(this),
 				   pageId = $link.data('page');
 
@@ -372,6 +396,28 @@
 
 				me.setSort(column);
 				me.fetch();
+			});
+		},
+
+		observeLiveSearch: function() {
+			var me = this, liveSearch;
+
+			this.$element.find('.live-search').keyup(function(e) {
+				var $input = $(this);
+
+				// Clear any previous timeouts we had for live search
+				// so that propogation does not occur.
+				if (typeof liveSearch !== 'undefined') {
+					clearTimeout(liveSearch);
+				}
+
+				// Create a new live search timeout to be executed
+				// after the configured live search delay.
+				liveSearch = setTimeout(function() {
+					me.setLiveSearch($input.val());
+					me.fetch();
+				}, me.options.liveSearchDelay);
+
 			});
 		},
 
@@ -419,7 +465,8 @@
 				requested_pages: this.options.pagination.requestedPages,
 				minimum_per_page: this.options.pagination.minimumPerPage,
 				filters: [],
-			}, sort, direction;
+			},
+			sort, direction;
 
 			// Loop through filters and build up
 			// array of filter parameters
@@ -438,6 +485,12 @@
 			if (typeof (sort = this.sort.column) !== 'undefined') {
 				parameters['sort']      = sort;
 				parameters['direction'] = this.sort.direction;
+			}
+
+			// Look at the live search value. If there is a value
+			// we'll create a filter based off it.
+			if (this.liveSearch.length) {
+				parameters.filters.push(this.liveSearch);
 			}
 
 			return parameters;
@@ -477,6 +530,14 @@
 				this.sort.column    = column;
 				this.sort.direction = direction;
 			}
+		},
+
+		setLiveSearch: function(search) {
+			this.liveSearch = search;
+		},
+
+		clearLiveSearch: function() {
+			this.liveSearch = '';
 		}
 
 	};
