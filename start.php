@@ -55,11 +55,11 @@ $env = $app->detectEnvironment(array(
 |
 */
 
-if (class_exists('Cartalyst\CompositeConfig\CompositeLoader'))
+if (class_exists('Platform\Settings\ConfigLoader'))
 {
 	$app['config.loader'] = $app->share(function($app) use ($appPath)
 	{
-		return new Cartalyst\CompositeConfig\CompositeLoader(new Illuminate\Filesystem\Filesystem, $appPath.'/config');
+		return new Platform\Settings\ConfigLoader(new Illuminate\Filesystem\Filesystem, $appPath.'/config');
 	});
 }
 
