@@ -137,7 +137,8 @@
 				@foreach ($perms as $permission)
 					<div>
 						<label>
-							<input type="checkbox" id="permissions[]" name="permissions[]" value="{{ $permission['slug'] }}"{{ (array_key_exists($permission['permission'], $userPermissions) ? ' checked="checked"' : '')}} />
+							<input type="hidden" id="permissions[{{ $permission['slug'] }}]" name="permissions[{{ $permission['slug'] }}]" value="0" />
+							<input type="checkbox" id="permissions[{{ $permission['slug'] }}]" name="permissions[{{ $permission['slug'] }}]" value="1"{{ (array_key_exists($permission['permission'], $userPermissions) ? ' checked="checked"' : '')}} />
 							{{ $permission['label'] }}
 						</label>
 					</div>
