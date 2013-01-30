@@ -34,20 +34,32 @@ class Media
 	protected static $chooser_loaded = false;
 
 	/**
-	 * Presents a media chooser. By default, you must
-	 * use this in conjunction with calling the $.mediaChooser()
-	 * jQuery plugin:
+	 * Presents a media chooser. 
+	 * 
+	 * Default usage:
+	 * 
+	 * <code>
+	 * 		@widget('platform/media::media.chooser', 'my-chooser-instance')
+	 * </code>
+	 * 
+	 * To use a callback function to retrieve media items, call the $.mediaChooser() 
+	 * in conjuction with widget.
 	 *
 	 *	<code>
-	 *		@widget('platform/media::widget.chooser', 'my-chooser-instance')
+	 *		@widget('platform/media::media.chooser', 'my-chooser-instance', array('js'=>false))
 	 *		@section('scripts')
 	 *			<script>
 	 *				(function($) {
 	 *					$('#my-chooser-instance').mediaChooser({
-	 *						choose : function(items) {
-	 *							// Do something with array of items
-	 *							// chosen. Each item matches up with
-	 *							// the platform\Media\Media model instance.
+	 * 
+	 *						choose : {
+	 *      					callback: function(items, mediaChooser) {
+	 *           
+	 *           					// Do something with array of items
+	 *							    // chosen. Each item matches up with
+	 *							    // the platform\Media\Media model instance.
+	 * 							}
+	 *      					
 	 *						}
 	 *					});
 	 *				})(jQuery);
