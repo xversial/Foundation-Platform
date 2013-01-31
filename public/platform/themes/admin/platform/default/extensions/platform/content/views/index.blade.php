@@ -74,6 +74,4 @@
 		</tr>
 	</tfoot>
 </table>
-
-
 @stop
