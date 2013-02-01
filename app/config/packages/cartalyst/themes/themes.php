@@ -47,4 +47,16 @@ return array(
 		__DIR__.'/../../../../../public/platform/themes',
 	),
 
+	/*
+	|--------------------------------------------------------------------------
+	| Packages Path
+	|--------------------------------------------------------------------------
+	|
+	| Here, you set the path (relative to your theme's root folder) for all
+	| packages to reside.
+	|
+	*/
+
+	'packages_path' => 'extensions',
+
 );

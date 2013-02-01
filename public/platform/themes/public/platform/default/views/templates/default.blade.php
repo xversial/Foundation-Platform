@@ -26,21 +26,22 @@
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 
-		<link rel="shortcut icon" href="{{ Asset::url('img/favicon.png') }}">
-		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ Asset::url('img/apple-touch-icon-144x144-precomposed.png') }}">
-		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ Asset::url('img/apple-touch-icon-114x114-precomposed.png') }}">
-		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ Asset::url('img/apple-touch-icon-72x72-precomposed.png') }}">
-		<link rel="apple-touch-icon-precomposed" href="{{ Asset::url('img/apple-touch-icon-precomposed.png') }}">
-
-		<style>
-		{{ Asset::dumpStyles() }}
-		</style>
+		<link rel="shortcut icon" href="{{ Asset::getUrl('img/favicon.png') }}">
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ Asset::getUrl('img/apple-touch-icon-144x144-precomposed.png') }}">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ Asset::getUrl('img/apple-touch-icon-114x114-precomposed.png') }}">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ Asset::getUrl('img/apple-touch-icon-72x72-precomposed.png') }}">
+		<link rel="apple-touch-icon-precomposed" href="{{ Asset::getUrl('img/apple-touch-icon-precomposed.png') }}">
 
 		@yield('styles')
+
+		@foreach (Asset::getCompiledStyles() as $style)
+			<link href="{{ $style }}" rel="stylesheet">
+		@endforeach
 
 	</head>
 
 	<body>
+
 		<!--[if lt IE 7]>
 		<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
 		<![endif]-->
@@ -73,9 +74,9 @@
 
 		</div> <!-- /container -->
 
-		<script>
-		{{ Asset::dumpScripts() }}
-		</script>
+		@foreach (Asset::getCompiledScripts() as $script)
+			<script src="{{ $script }}"></script>
+		@endforeach
 
 		@yield('scripts')
 
