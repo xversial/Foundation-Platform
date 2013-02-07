@@ -15,21 +15,6 @@ $app = new Illuminate\Foundation\Application;
 
 /*
 |--------------------------------------------------------------------------
-| Define The Application Path
-|--------------------------------------------------------------------------
-|
-| Here we just defined the path to the application directory. Most likely
-| you will never need to change this value as the default setup should
-| work perfectly fine for the vast majority of all our applications.
-|
-*/
-
-$app->instance('path', $appPath = __DIR__.'/app');
-
-$app->instance('path.base', __DIR__);
-
-/*
-|--------------------------------------------------------------------------
 | Detect The Application Environment
 |--------------------------------------------------------------------------
 |
@@ -41,27 +26,22 @@ $app->instance('path.base', __DIR__);
 
 $env = $app->detectEnvironment(array(
 
-	'local' => array('local.*', 'localhost', '*.dev', '*.app'),
+	'local' => array('your-machine-name'),
 
 ));
 
 /*
 |--------------------------------------------------------------------------
-| Register The Configuration Loader
+| Bind Paths
 |--------------------------------------------------------------------------
 |
-| The configuration loader is responsible for loading the configuration
-| options for the application.
+| Here we are binding the paths configured in paths.php to the app. You
+| should not be changing these here. If you need to change these you
+| may do so within the paths.php file and they will be bound here.
 |
 */
 
-if (class_exists('Platform\Settings\ConfigLoader'))
-{
-	$app['config.loader'] = $app->share(function($app) use ($appPath)
-	{
-		return new Platform\Settings\ConfigLoader(new Illuminate\Filesystem\Filesystem, $appPath.'/config');
-	});
-}
+$app->bindInstallPaths(require __DIR__.'/paths.php');
 
 /*
 |--------------------------------------------------------------------------
