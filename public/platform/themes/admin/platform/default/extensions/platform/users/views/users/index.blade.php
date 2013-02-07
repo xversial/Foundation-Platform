@@ -61,7 +61,7 @@
 						<a href="{{ URL::to(ADMIN_URI . "/users/edit/{$user->id}") }}" class="btn btn-small">
 							{{ Lang::get('button.edit') }}
 						</a>
-						@if ($user->id !== Sentry::getUserId())
+						@if ($user->id !== Sentry::getId())
 						<a href="{{ URL::to(ADMIN_URI . "/users/delete/{$user->id}") }}" class="btn btn-small btn-danger">
 							{{ Lang::get('button.delete') }}
 						</a>
