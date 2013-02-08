@@ -117,9 +117,9 @@ return array(
 
 		'Platform\Extensions\ExtensionsServiceProvider',
 		'Platform\Routing\RoutingServiceProvider',
+		'Platform\Operations\OperationsServiceProvider',
 		'Platform\Foundation\PlatformServiceProvider',
 		'Platform\Addons\AddonsServiceProvider',
-		'Platform\Operations\OperationsServiceProvider',
 
 	),
 
