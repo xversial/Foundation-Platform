@@ -116,10 +116,10 @@ return array(
 		'Cartalyst\Themes\ThemeServiceProvider',
 
 		'Platform\Extensions\ExtensionsServiceProvider',
+		'Platform\Routing\RoutingServiceProvider',
 		'Platform\Foundation\PlatformServiceProvider',
 		'Platform\Addons\AddonsServiceProvider',
 		'Platform\Operations\OperationsServiceProvider',
-		'Platform\Routing\RoutingServiceProvider',
 
 	),
 
