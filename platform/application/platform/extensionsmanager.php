@@ -1764,10 +1764,13 @@ class ExtensionsManager
         //
         if (empty($this->default_directories))
         {
-            $this->default_directories = array_map(function($file) use ($self)
+            if ( glob(path('extensions') . '*' . DS . 'extension' . EXT, GLOB_NOSORT) !== false )
             {
-                return $self->parse($file);
-            }, (array) glob(path('extensions') . '*' . DS . 'extension' . EXT, GLOB_NOSORT));
+                $this->default_directories = array_map(function($file) use ($self)
+                {
+                    return $self->parse($file);
+                }, (array) glob(path('extensions') . '*' . DS . 'extension' . EXT, GLOB_NOSORT));
+            }
         }
 
         // Merge the directories, and return them.
