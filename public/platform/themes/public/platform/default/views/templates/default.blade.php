@@ -64,6 +64,10 @@
 
 		<div class="container">
 
+			@foreach ($errors as $error)
+				{{ $error }}
+			@endforeach
+
 			@yield('content')
 
 			<hr>

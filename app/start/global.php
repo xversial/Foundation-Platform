@@ -49,6 +49,19 @@ App::error(function(Exception $exception, $code)
 	Log::error($exception);
 });
 
+App::error(function(Symfony\Component\HttpKernel\Exception\HttpException $exception, $code)
+{
+	// No permissions means that the session probably expired.
+	// We will redirect to the login route
+	if ($code == 403)
+	{
+		if ($loginRoute = Route::getRoutes()->get('login'))
+		{
+			return Redirect::to('login')->withErrors($exception->getMessage());
+		}
+	}
+});
+
 /*
 |--------------------------------------------------------------------------
 | Require The Filters File
