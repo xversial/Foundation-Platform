@@ -6,6 +6,8 @@
 
 @section('assets')
 
+{{ Asset::queue('tabs', 'js/vendor/bootstrap/tab.js', 'jquery') }}
+
 @stop
 
 @section('scripts')
@@ -130,7 +132,7 @@
 		<!-- ./ tab-general -->
 
 		<!-- Tab Permissions -->
-		<div class="tab-panex" id="tab-permissions">
+		<div class="tab-pane" id="tab-permissions">
  			@foreach ($permissions as $extension => $perms)
 			<fieldset>
 				<legend>{{ $extension }}</legend>
