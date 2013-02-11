@@ -12,6 +12,7 @@
 		<meta name="base_url" content="{{ Request::root() }}">
 		<meta name="base_url" content="{{ Request::root().'/'.ADMIN_URI }}">
 
+		<!-- Queue template assets -->
 		{{ Asset::queue('style', 'less/style.less') }}
 
 		{{ Asset::queue('modernizr', 'js/vendor/modernizr/modernizr.js') }}
@@ -20,6 +21,7 @@
 		{{ Asset::queue('plugins', 'js/plugins.js', array('jquery')) }}
 		{{ Asset::queue('script', 'js/script.js', array('jquery')) }}
 
+		<!-- Call partial assets -->
 		@yield('assets')
 
 		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -33,10 +35,12 @@
 		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ Asset::getUrl('img/apple-touch-icon-72x72-precomposed.png') }}">
 		<link rel="apple-touch-icon-precomposed" href="{{ Asset::getUrl('img/apple-touch-icon-precomposed.png') }}">
 
+		<!-- Compile styles -->
 		@foreach (Asset::getCompiledStyles() as $style)
 			<link href="{{ $style }}" rel="stylesheet">
 		@endforeach
 
+		<!-- Call custom inline styles -->
 		@yield('styles')
 
 	</head>
@@ -108,10 +112,12 @@
 			@content('copyright')
 		</footer>
 
+		<!-- Compile scripts -->
 		@foreach (Asset::getCompiledScripts() as $script)
 			<script src="{{ $script }}"></script>
 		@endforeach
 
+		<!-- Call custom inline scripts -->
 		@yield('scripts')
 
 	</body>
