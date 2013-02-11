@@ -60,7 +60,7 @@
 							<span class="icon-bar"></span>
 						</a>
 
-						<a class="brand" href="{{ Request::root().'/'.ADMIN_URI }}">@setting('platform.site.title')</a>
+						<a class="brand" href="{{ Request::root().'/'.ADMIN_URI }}">{{ Config::get('platform.site.title') }}</a>
 
 						<ul class="nav pull-right">
 							<li class="divider-vertical"></li>
@@ -109,7 +109,7 @@
 		</div><!--/.base-->
 
 		<footer>
-			@content('copyright')
+			{{ Config::get('platform.site.copyright') }}
 		</footer>
 
 		<!-- Compile scripts -->

@@ -244,9 +244,7 @@ form input.valid + .add-on > i::before
 
 	#table table {
 		background-color:@white;
-		-webkit-border-top-right-radius:0;
-		-moz-border-radius-topright:0;
-		border-top-right-radius:0;
+		.border-top-right-radius(0);
 	}
 
 	#table th[class*=sortable]:after {
@@ -320,12 +318,8 @@ form input.valid + .add-on > i::before
 }
 .modal {
 	border: 8px solid #e2e2e2;
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
+	.border-radius(6px);
+	.box-shadow(none);
 
 }
 .modal-backdrop {

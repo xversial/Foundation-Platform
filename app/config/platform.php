@@ -27,6 +27,17 @@ return array(
 
 		'tagline' => 'An application framework build on Laravel',
 
+		/*
+		|--------------------------------------------------------------------------
+		| Site Copyright
+		|--------------------------------------------------------------------------
+		|
+		| Specify the copyright clause for your website
+		|
+		*/
+
+		'copyright' => 'Copyright (c) 2011-2013, Cartalyst LLC',
+
 	),
 
 );
