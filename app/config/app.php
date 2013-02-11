@@ -114,8 +114,8 @@ return array(
 		'Cartalyst\Sentry\SentryServiceProvider',
 		'Cartalyst\Api\ApiServiceProvider',
 		'Cartalyst\Themes\ThemeServiceProvider',
+		'Cartalyst\Extensions\ExtensionsServiceProvider',
 
-		'Platform\Extensions\ExtensionsServiceProvider',
 		'Platform\Routing\RoutingServiceProvider',
 		'Platform\Operations\OperationsServiceProvider',
 		'Platform\Foundation\PlatformServiceProvider',
