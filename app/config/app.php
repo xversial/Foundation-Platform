@@ -183,11 +183,12 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 
-		'API'      => 'Cartalyst\Api\Facades\API',
-		'Asset'    => 'Cartalyst\Themes\Facades\Asset',
-		'DataGrid' => 'Cartalyst\DataGrid\Facades\DataGrid',
-		'Sentry'   => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
-		'Theme'    => 'Cartalyst\Themes\Facades\Theme',
+		'API'        => 'Cartalyst\Api\Facades\API',
+		'Asset'      => 'Cartalyst\Themes\Facades\Asset',
+		'DataGrid'   => 'Cartalyst\DataGrid\Facades\DataGrid',
+		'Extensions' => 'Cartalyst\Extensions\Facades\Extensions',
+		'Sentry'     => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
+		'Theme'      => 'Cartalyst\Themes\Facades\Theme',
 
 		'AdminRouter'  => 'Platform\Routing\Facades\AdminRouter',
 		'ApiRouter'    => 'Platform\Routing\Facades\ApiRouter',
