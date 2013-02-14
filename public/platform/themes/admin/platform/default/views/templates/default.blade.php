@@ -6,7 +6,11 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>@yield('title')</title>
+		<title>
+			@section('title')
+			{{ Config::get('platform.site.title') }}
+			@show
+		</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
 		<meta name="base_url" content="{{ Request::root() }}">
@@ -22,7 +26,8 @@
 		{{ Asset::queue('script', 'js/script.js', array('jquery')) }}
 
 		<!-- Call partial assets -->
-		@yield('assets')
+		@section('assets')
+		@show
 
 		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
@@ -41,8 +46,8 @@
 		@endforeach
 
 		<!-- Call custom inline styles -->
-		@yield('styles')
-
+		@section('styles')
+		@show
 	</head>
 	<body>
 		<!--[if lt IE 7]>
@@ -99,7 +104,8 @@
 					@widget('platform/menus::nav.show', array(1, 1, 'secondary-navigation nav nav-tabs visible-desktop', ADMIN_URI))
 
 					<div class="secondary page tab-content">
-						@yield('content')
+						@section('content')
+						@show
 					</div>
 				</div>
 
@@ -118,8 +124,7 @@
 		@endforeach
 
 		<!-- Call custom inline scripts -->
-		@yield('scripts')
-
+		@section('scripts')
+		@show
 	</body>
-
 </html>

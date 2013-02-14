@@ -72,7 +72,8 @@
 			<!-- Notifications -->
 			@include('notifications')
 
-			@yield('content')
+			@section('content')
+			@show
 
 			<hr>
 
