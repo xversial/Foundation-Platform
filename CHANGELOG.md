@@ -24,7 +24,6 @@
   * Updated how new menu items url slugs are saved.
   * Added native support to default frontend theme for dropdown menus.
   * Added restrict by group select for menu items.
-  * Added submenu support to frontend nav widget.
 
 **Media:**
 
