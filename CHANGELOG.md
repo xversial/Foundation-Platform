@@ -33,6 +33,12 @@
 
   * Extension is now a core extension.
 
+**CMS**
+
+  * Added feature to pages to allow for file driven pages
+  * Added feature to set group permissions for a given page.
+  * Redactor WYSIWYG editor now standard
+
 1.1.3 Changelog
 ----------
 
