@@ -36,7 +36,7 @@
 			<label class="control-label" for="email">{{ Lang::get('platform/users::auth/form.email') }}:</label>
 			<div class="controls">
 				<div class="input-append">
-					<input type="email" name="email" id="email" value="{{ Input::old('email') }}" placeholder="{{ Lang::get('platform/users::auth/form.email_help') }}" requiredx>
+					<input type="email" name="email" id="email" value="{{ Input::old('email') }}" placeholder="{{ Lang::get('platform/users::auth/form.email_help') }}" required>
 					<span class="add-on"><i class="icon-envelope"></i></span>
 				</div>
 				{{{ $errors->first('email', '<span class="help-inline">:message</span>') }}}

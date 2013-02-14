@@ -37,7 +37,7 @@
 			<label class="control-label" for="password">{{ Lang::get('platform/users::auth/form.forgot-password.password') }}:</label>
 			<div class="controls">
 				<div class="input-append">
-					<input type="password" name="password" id="password" placeholder="{{ Lang::get('platform/users::auth/form.forgot-password.password_help') }}" requiredx>
+					<input type="password" name="password" id="password" placeholder="{{ Lang::get('platform/users::auth/form.forgot-password.password_help') }}" required>
 					<span class="add-on"><i class="icon-key"></i></span>
 				</div>
 				{{{ $errors->first('password', '<span class="help-inline">:message</span>') }}}
@@ -49,7 +49,7 @@
 			<label class="control-label" for="password_confirmation">{{ Lang::get('platform/users::auth/form.forgot-password.password_confirm') }}:</label>
 			<div class="controls">
 				<div class="input-append">
-					<input type="password" name="password_confirmation" id="password_confirmation" placeholder="{{ Lang::get('platform/users::auth/form.forgot-password.password_confirm_help') }}" requiredx>
+					<input type="password" name="password_confirmation" id="password_confirmation" placeholder="{{ Lang::get('platform/users::auth/form.forgot-password.password_confirm_help') }}" required>
 					<span class="add-on"><i class="icon-key"></i></span>
 				</div>
 				{{{ $errors->first('password_confirmation', '<span class="help-inline">:message</span>') }}}
