@@ -1,5 +1,13 @@
-1.1.4 Changelog
+1.2.0 Changelog
 ----------
+
+**General:**
+
+  * Fixed missing image declared on CSS on the default frontend theme.
+
+**Extensions:**
+
+  * Fixed invalid slug Exception
 
 **Developers:**
 
@@ -13,10 +21,17 @@
 **Menus:**
 
   * Fixed problem when adding new children to menus not being saved correctly.
+  * Updated how new menu items url slugs are saved.
+  * Added native support to default frontend theme for dropdown menus.
 
 **Media:**
 
+  * Extension is now a core extension.
   * Fixed Blade @media extension call's not working properly
+
+**Social:**
+
+  * Extension is now a core extension.
 
 1.1.3 Changelog
 ----------
