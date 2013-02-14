@@ -1,0 +1,79 @@
+/**
+ * Part of the Platform application.
+ *
+ * NOTICE OF LICENSE
+ *
+ * Licensed under the 3-clause BSD License.
+ *
+ * This source file is subject to the 3-clause BSD License that is
+ * bundled with this package in the LICENSE file.  It is also available at
+ * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
+ *
+ * @package    Platform
+ * @version    2.0
+ * @author     Cartalyst LLC
+ * @license    BSD License (3-clause)
+ * @copyright  (c) 2011 - 2012, Cartalyst LLC
+ * @link       http://getplatform.com
+ */
+
+@import "vendor/bootstrap/bootstrap";
+
+/* #Layout
+================================================== */
+body {
+	background: @base;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+#base {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -60px;
+    text-align: center;
+}
+#push,
+body > footer {
+    height: 60px;
+}
+
+hr {
+	margin: 8px 0 18px 0;
+	border: 0;
+	border-top: 1px solid @etch;
+	border-bottom: 1px solid @white;
+}
+
+#base .page {
+	border:1px solid @etch;
+	padding:14px;
+	.border-radius(4px);
+	-webkit-border-top-left-radius:0;
+    -moz-border-radius-topleft:0;
+    border-top-left-radius:0;
+}
+
+
+#base .primary {
+	background-color: @primary;
+}
+
+#base .secondary {
+	background-color: @secondary;
+}
+
+#base .tertiary {
+	background-color: @tertiary;
+}
+
+#base .quaternary {
+	background-color: @quaternary;
+	min-height: 600px;
+}
+
+@import "vendor/bootstrap/responsive";

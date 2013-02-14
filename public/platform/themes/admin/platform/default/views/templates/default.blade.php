@@ -13,7 +13,7 @@
 		<meta name="base_url" content="{{ Request::root().'/'.ADMIN_URI }}">
 
 		<!-- Queue template assets -->
-		{{ Asset::queue('style', 'less/style.less') }}
+		{{ Asset::queue('style', 'styles/less/style.less') }}
 
 		{{ Asset::queue('modernizr', 'js/vendor/modernizr/modernizr.js') }}
 		{{ Asset::queue('jquery', 'js/vendor/jquery/jquery.js') }}
