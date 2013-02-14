@@ -23,6 +23,8 @@
   * Fixed problem when adding new children to menus not being saved correctly.
   * Updated how new menu items url slugs are saved.
   * Added native support to default frontend theme for dropdown menus.
+  * Added restrict by group select for menu items.
+  * Added submenu support to frontend nav widget.
 
 **Media:**
 
@@ -35,9 +37,9 @@
 
 **CMS**
 
-  * Added feature to pages to allow for file driven pages
+  * Added feature to pages to allow for file driven pages.
   * Added feature to set group permissions for a given page.
-  * Redactor WYSIWYG editor now standard
+  * Redactor WYSIWYG editor now standard.
 
 1.1.3 Changelog
 ----------
@@ -50,7 +52,7 @@
 **Menus:**
 
   * Fixed page menus not being marked as active on the UI.
-  * Navigation widget cleanup
+  * Navigation widget cleanup.
 
 **Users:**
 
@@ -68,7 +70,7 @@
 **General:**
 
   * Application key reset.
-  * Various bug fixes across a few extensions
+  * Various bug fixes across a few extensions.
 
 **Extension Manager:**
 
@@ -77,8 +79,8 @@
 **Developer Tools:**
 
   * Fixed the zip files being corrupted on windows.
-  * Fixed missing comma in stubs
-  * New tool: Theme Creator
+  * Fixed missing comma in stubs.
+  * New tool: Theme Creator.
 
 **Menus:**
 
