@@ -7,7 +7,7 @@
 	<body>
 		<h1>{{ Config::get('platform.site.title') }}</h1>
 
-		<h2>Reset Password</h2>
+		<h2>Forgot Password</h2>
 
 		<p>Please follow the link provided below to change your password to the provided reset password.</p>
 

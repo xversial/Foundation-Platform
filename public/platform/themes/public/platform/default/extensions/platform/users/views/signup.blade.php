@@ -3,7 +3,7 @@
 <!-- Site title -->
 @section('title')
 @parent
-- Signup
+- Sign up
 @stop
 
 <!-- Queue assets -->
@@ -44,7 +44,7 @@
 		</div>
 
 		<!-- Email Address Confirmation -->
-		<div class="control-group{{ $errors->has('email') ? ' error' : '' }}">
+		<div class="control-group{{ $errors->has('email_confirmation') ? ' error' : '' }}">
 			<label class="control-label" for="email_confirmation">{{ Lang::get('platform/users::auth/form.signup.email_confirm') }}:</label>
 			<div class="controls">
 				<div class="input-append">
@@ -63,7 +63,7 @@
 					<input type="password" name="password" id="password" placeholder="{{ Lang::get('platform/users::auth/form.signup.password_help') }}" requiredx>
 					<span class="add-on"><i class="icon-key"></i></span>
 				</div>
-				{{{ $errors->first('email_confirmation', '<span class="help-inline">:message</span>') }}}
+				{{{ $errors->first('password', '<span class="help-inline">:message</span>') }}}
 			</div>
 		</div>
 
@@ -75,7 +75,7 @@
 					<input type="password" name="password_confirmation" id="password_confirmation" placeholder="{{ Lang::get('platform/users::auth/form.signup.password_confirm_help') }}" requiredx>
 					<span class="add-on"><i class="icon-key"></i></span>
 				</div>
-				{{{ $errors->first('email_confirmation', '<span class="help-inline">:message</span>') }}}
+				{{{ $errors->first('password_confirmation', '<span class="help-inline">:message</span>') }}}
 			</div>
 		</div>
 	</fieldset>

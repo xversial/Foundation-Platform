@@ -22,7 +22,7 @@
 @section('content')
 Password reset confirmation sent successfully!
 
-We’ve sent an email to {{ $user->email }} containing a temporary link that will allow you to reset your password for the next 24 hours.
+We’ve sent an email to {{ $userEmail }} containing a temporary link that will allow you to reset your password for the next 24 hours.
 
 <br>
 

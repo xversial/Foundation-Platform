@@ -3,7 +3,7 @@
 <!-- Site title -->
 @section('title')
 @parent
-- Login
+- Sign in
 @stop
 
 <!-- Queue assets -->
@@ -71,7 +71,7 @@
 	</fieldset>
 
 	<div class="form-actions">
-		<a class="btn" href="{{ URL::to('reset_password') }}">{{ Lang::get('platform/users::auth/form.login.reset_password') }}</a>
+		<a class="btn" href="{{ URL::to('forgot-password') }}">{{ Lang::get('platform/users::auth/form.login.reset_password') }}</a>
 		<button class="btn btn-primary" type="submit">{{ Lang::get('platform/users::auth/form.login.submit') }}</button>
 	</div>
 </form>
