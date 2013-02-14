@@ -35,25 +35,25 @@
 
 		<!-- Email Address -->
 		<div class="control-group">
-			<label class="control-label" for="email">{{ Lang::get('platform/users::auth/form.login.email') }}:</label>
+			<label class="control-label" for="email">{{ Lang::get('platform/users::auth/form.email') }}:</label>
 			<div class="controls">
 				<div class="input-append">
-					<input type="email" name="email" id="email" value="{{ Input::old('email') }}" placeholder="{{ Lang::get('platform/users::auth/form.login.email') }}" required>
+					<input type="email" name="email" id="email" value="{{ Input::old('email') }}" placeholder="{{ Lang::get('platform/users::auth/form.email') }}" required>
 					<span class="add-on"><i class="icon-envelope"></i></span>
 				</div>
-				<span class="help-block">{{ Lang::get('platform/users::auth/form.login.email_help') }}</span>
+				<span class="help-block">{{ Lang::get('platform/users::auth/form.email_help') }}</span>
 			</div>
 		</div>
 
 		<!-- Password -->
 		<div class="control-group">
-			<label class="control-label" for="password">{{ Lang::get('platform/users::auth/form.login.password') }}:</label>
+			<label class="control-label" for="password">{{ Lang::get('platform/users::auth/form.password') }}:</label>
 			<div class="controls">
 				<div class="input-append">
-					<input type="password" name="password" id="password" placeholder="{{ Lang::get('platform/users::auth/form.login.password') }}" required>
+					<input type="password" name="password" id="password" placeholder="{{ Lang::get('platform/users::auth/form.password') }}" required>
 					<span class="add-on"><i class="icon-key"></i></span>
 				</div>
-				<span class="help-block">{{ Lang::get('platform/users::auth/form.login.password_help') }}</span>
+				<span class="help-block">{{ Lang::get('platform/users::auth/form.password_help') }}</span>
 			</div>
 		</div>
 
