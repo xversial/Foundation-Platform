@@ -6,7 +6,11 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>@yield('title')</title>
+		<title>
+			@section('title')
+			{{ Config::get('platform.site.title') }}
+			@show
+		</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
 		<meta name="base_url" content="{{ Request::root() }}">
@@ -19,7 +23,8 @@
 		{{ Asset::queue('plugins', 'js/plugins.js', array('jquery')) }}
 		{{ Asset::queue('script', 'js/script.js', array('jquery')) }}
 
-		@yield('assets')
+		@section('assets')
+		@show
 
 		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
@@ -32,12 +37,12 @@
 		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ Asset::getUrl('img/apple-touch-icon-72x72-precomposed.png') }}">
 		<link rel="apple-touch-icon-precomposed" href="{{ Asset::getUrl('img/apple-touch-icon-precomposed.png') }}">
 
-		@yield('styles')
+		@section('styles')
+		@show
 
 		@foreach (Asset::getCompiledStyles() as $style)
 			<link href="{{ $style }}" rel="stylesheet">
 		@endforeach
-
 	</head>
 
 	<body>
@@ -64,9 +69,8 @@
 
 		<div class="container">
 
-			@foreach ($errors as $error)
-				{{ $error }}
-			@endforeach
+			<!-- Notifications -->
+			@include('notifications')
 
 			@yield('content')
 
@@ -76,13 +80,14 @@
 				@content('copyright')
 			</footer>
 
-		</div> <!-- /container -->
+		</div>
+		<!-- ./ container -->
 
 		@foreach (Asset::getCompiledScripts() as $script)
 			<script src="{{ $script }}"></script>
 		@endforeach
 
-		@yield('scripts')
-
+		@section('scripts')
+		@show
 	</body>
 </html>
