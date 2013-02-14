@@ -36,7 +36,7 @@ return array(
 	'edit'      => 'Edit',
 	'update'    => 'Save Changes',
 	'create'    => 'Create',
-	'submit'    => 'Save',
+	'submit'    => 'Submit',
 	'save'      => 'Save',
 	'enable'    => 'Enable',
 	'disable'   => 'Disable',

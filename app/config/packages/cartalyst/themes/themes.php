@@ -30,7 +30,7 @@ return array(
 	|
 	*/
 
-	'active' => 'public::platform/default',
+	'active' => 'frontend::platform/default',
 
 	/*
 	|--------------------------------------------------------------------------
