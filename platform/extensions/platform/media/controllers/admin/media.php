@@ -82,7 +82,16 @@ class Platform_Media_Admin_Media_Controller extends Admin_Controller
 
     public function get_view($id)
     {
-        $media = API::get('media/'.$id)[0];
+        $media = API::get('media/'.$id);
+
+        foreach ($media as $medi)
+        {
+            if ($medi['id'] == $id)
+            {
+                $media = $medi;
+                break;
+            }
+        }
 
         return Theme::make('platform/media::view')
                     ->with('media', $media);
