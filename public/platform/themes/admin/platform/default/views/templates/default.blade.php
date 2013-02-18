@@ -40,7 +40,7 @@
 		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ Asset::getUrl('img/apple-touch-icon-72x72-precomposed.png') }}">
 		<link rel="apple-touch-icon-precomposed" href="{{ Asset::getUrl('img/apple-touch-icon-precomposed.png') }}">
 
-		<!-- Compile styles -->
+		<!-- Compiled styles -->
 		@foreach (Asset::getCompiledStyles() as $style)
 			<link href="{{ $style }}" rel="stylesheet">
 		@endforeach
@@ -103,6 +103,9 @@
 
 					@widget('platform/menus::nav.show', array(1, 1, 'secondary-navigation nav nav-tabs visible-desktop', ADMIN_URI))
 
+					<!-- Notifications -->
+					@include('notifications')
+
 					<div class="secondary page tab-content">
 						@section('content')
 						@show
@@ -118,7 +121,7 @@
 			{{ Config::get('platform.site.copyright') }}
 		</footer>
 
-		<!-- Compile scripts -->
+		<!-- Compiled scripts -->
 		@foreach (Asset::getCompiledScripts() as $script)
 			<script src="{{ $script }}"></script>
 		@endforeach
