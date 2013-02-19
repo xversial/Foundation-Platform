@@ -47,11 +47,14 @@ class Platform_Pages_Admin_Pages_Controller extends Admin_Controller
 		// Prepare data
 		//
 		$data = array(
-			'name'     => Input::get('name'),
-			'slug'     => Input::get('slug'),
-			'value'    => Input::get('value'),
-			'template' => Input::get('template', 'default'),
-			'status'   => Input::get('status', 1),
+			'name'       => Input::get('name'),
+			'slug'       => Input::get('slug'),
+			'type'       => Input::get('type'),
+			'template'   => (Input::get('type') == 'db') ? Input::get('template') : Input::get('file'),
+			'value'      => (Input::get('type') == 'db') ? Input::get('value') : '',
+			'status'     => Input::get('status', 1),
+			'visibility' => Input::get('visibility', 0),
+			'groups'     => json_encode(Input::get('groups', array())),
 		);
 
 		try
@@ -94,11 +97,13 @@ class Platform_Pages_Admin_Pages_Controller extends Admin_Controller
 		// Prepare data
 		//
 		$data = array(
-			'name'     => Input::get('name'),
-			'slug'     => Input::get('slug'),
-			'value'    => Input::get('value'),
-			'template' => Input::get('template', 'default'),
-			'status'   => Input::get('status', 1),
+			'name'       => Input::get('name'),
+			'slug'       => Input::get('slug'),
+			'value'      => Input::get('value'),
+			'template'   => Input::get('file', Input::get('template')),
+			'status'     => Input::get('status', 1),
+			'visibility' => Input::get('visibility', 0),
+			'groups'     => json_encode(Input::get('groups', array())),
 		);
 
 		try
@@ -148,5 +153,31 @@ class Platform_Pages_Admin_Pages_Controller extends Admin_Controller
 		}
 
 		return Redirect::to_admin('pages');
+	}
+
+	public function get_preview()
+	{
+		// change theme back to frontend
+		Theme::active('frontend' . DS . Platform::get('platform/themes::theme.frontend'));
+
+        // change fallback theme back to frontend.
+        Theme::fallback('frontend' . DS . 'default');
+
+		// render the page using the correct type
+
+		// page is of file type
+        if (Input::get('type') == 'file')
+        {
+        	return Theme::make('platform/pages::files.'.Input::get('file'))
+        		->with('name', Input::get('name'))
+        		->with('slug', Input::get('slug'));
+        }
+
+		$content = Helper::renderContent(Input::get('value'));
+
+		return Theme::make('templates.layouts.'.Input::get('template', 'default'))
+			->with('name', Input::get('name'))
+			->with('slug', Input::get('slug'))
+			->with('content', $content);
 	}
 }

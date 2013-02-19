@@ -11,7 +11,7 @@
  * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
  *
  * @package    Platform
- * @version    1.1.1
+ * @version    1.1.4
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
  * @copyright  (c) 2011 - 2012, Cartalyst LLC
@@ -213,6 +213,16 @@ class Platform_Menus_Admin_Menus_Controller extends Admin_Controller
             $pages = array();
         }
 
+        // find all user groups
+        try
+        {
+        	$groups = API::get('users/groups');
+        }
+        catch (APIClientException $e)
+        {
+        	$groups = array();
+        }
+
         // Get the last child's ID.
         //
         $last_child_id = array_get(end($all_children), 'id', 0);
@@ -238,6 +248,7 @@ class Platform_Menus_Admin_Menus_Controller extends Admin_Controller
             'persisted_slugs' => $persisted_slugs,
             'pages'           => $pages,
             'page_type'       => ( ! $slug) ? 'create' : 'update',
+            'groups'          => $groups,
         );
 
         // Show the page.
@@ -442,15 +453,16 @@ class Platform_Menus_Admin_Menus_Controller extends Admin_Controller
     protected function process_child_recursively($child, &$children)
     {
         $new_child = array(
-            'name'       => Input::get('children.' . $child['id'] . '.name'),
-            'slug'       => Input::get('children.' . $child['id'] . '.slug'),
-            'uri'        => Input::get('children.' . $child['id'] . '.uri'),
-            'page_id'    => Input::get('children.' . $child['id'] . '.page_id'),
-            'class'      => Input::get('children.' . $child['id'] . '.class'),
-            'target'     => Input::get('children.' . $child['id'] . '.target', Menu::TARGET_SELF),
-            'visibility' => Input::get('children.' . $child['id'] . '.visibility', Menu::VISIBILITY_ALWAYS),
-            'status'     => Input::get('children.' . $child['id'] . '.status', 1),
-            'type'       => Input::get('children.' . $child['id'] . '.type', Menu::TYPE_STATIC),
+			'name'             => Input::get('children.' . $child['id'] . '.name'),
+			'slug'             => Input::get('children.' . $child['id'] . '.slug'),
+			'uri'              => Input::get('children.' . $child['id'] . '.uri'),
+			'page_id'          => Input::get('children.' . $child['id'] . '.page_id'),
+			'class'            => Input::get('children.' . $child['id'] . '.class'),
+			'target'           => Input::get('children.' . $child['id'] . '.target', Menu::TARGET_SELF),
+			'visibility'       => Input::get('children.' . $child['id'] . '.visibility', Menu::VISIBILITY_ALWAYS),
+			'group_visibility' => (array) Input::get('children.' . $child['id'] . '.group_visibility'),
+			'status'           => Input::get('children.' . $child['id'] . '.status', 1),
+			'type'             => Input::get('children.' . $child['id'] . '.type', Menu::TYPE_STATIC),
         );
 
         // Determine if we're a new child or not. If we're

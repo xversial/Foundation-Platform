@@ -2,7 +2,7 @@
 
 <!-- Page Title -->
 @section('title')
-    {{ Lang::line('platform/developers::general.creator.title') }}
+    {{ Lang::line('[[slug_designer]]::general.title') }}
 @endsection
 
 <!-- Queue Styles -->
@@ -42,9 +42,9 @@
         </p>
 
         <h2>Widgets</h2>
-        @widget('[[slug_designer]]::static.test')
+        @widget('[[slug_designer]]::example.test')
         <br>
-        @widget('[[slug_designer]]::static.test2')
+        @widget('[[slug_designer]]::example.test2')
     </div>
 </section>
 @endsection

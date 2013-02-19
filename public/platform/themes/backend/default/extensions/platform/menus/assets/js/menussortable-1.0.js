@@ -41,7 +41,7 @@
 						var value = $(this.rootSelector).val();
 						this._root = value;
 					}
-					
+
 					return this._root;
 				},
 				set root(value) {
@@ -190,7 +190,7 @@
 
 				str = str.replace(/^\s+|\s+$/g, ''); // trim
 				str = str.toLowerCase();
-				
+
 				// remove accents, swap ñ for n, etc
 				var from = "ĺěščřžýťňďàáäâèéëêìíïîòóöôùůúüûñç·/_,:;";
 				var to   = "lescrzytndaaaaeeeeiiiioooouuuuunc------";
@@ -241,14 +241,14 @@
 				}
 			});
 			that.$element.bind('new_uri_update.'+ns, function(event, value) {
-				
+
 				if (typeof value === 'undefined') {
 					value = $(that.options.nestySortable.fields.name.newSelector).val();
 				}
 
 				if (value) {
 					var slug,
-					    uriSeparator = '/';
+					    uriSeparator = '-';
 					if (slug = slugify(value, uriSeparator)) {
 						$(that.options.nestySortable.fields.uri.newSelector).val(slug)
 						    .trigger('blur')
@@ -400,7 +400,7 @@
 			return this;
 		}
 	}
-	
+
 
 	// The actual jquery plugin
 	$.fn.menuSortable = function(options) {

@@ -85,6 +85,22 @@
 					</div>
 				</div>
 
+				@if (count($groups) > 0)
+
+					<!-- Groups -->
+					<div class="control-group">
+						<label class="control-label" for="menu-children-{{ array_get($child, 'id', '[%id%]') }}-group-visibility">{{ Lang::line('platform/menus::form.child.groups.title') }}</label>
+						<div class="controls">
+							<select name="children[{{ array_get($child, 'id', '[%id%]') }}][group_visibility][]" id="menu-children-{{ array_get($child, 'id', '[%id%]') }}-group-visibility" class="child-group-visibility" multiple="multiple" {{ ( ! array_key_exists('group_visibility', $child)) ? '[%control.group_visibility%]' : null }} {{ (array_key_exists('user_editable', $child) and ( ! array_get($child, 'user_editable'))) ? 'disabled' : '' }}>
+								@foreach ($groups as $group)
+									<option value="{{ $group['id'] }}" {{ ( in_array($group['id'], array_get($child, 'group_visibility', array())) ) ? 'selected' : null }}>{{ $group['name'] }}</option>
+								@endforeach
+							</select>
+						</div>
+					</div>
+
+				@endif
+
 				<!-- Target -->
 				<div class="control-group">
 					<label class="control-label" for="menu-children-{{ array_get($child, 'id', '[%id%]') }}-target">{{ Lang::line('platform/menus::form.child.target.title') }}</label>
@@ -121,7 +137,7 @@
 	@if (isset($child['children']) and is_array($child['children']) and count($child['children']) > 0)
 		<ol>
 			@foreach ($child['children'] as $grand_child)
-				@render('platform/menus::edit.child', array('child' => $grand_child, 'pages' => $pages))
+				@render('platform/menus::edit.child', array('child' => $grand_child, 'pages' => $pages, 'groups' => $groups))
 			@endforeach
 		</ol>
 	@endif

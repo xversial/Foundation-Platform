@@ -11,7 +11,7 @@
  * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
  *
  * @package    Platform
- * @version    1.1.1
+ * @version    1.1.4
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
  * @copyright  (c) 2011 - 2012, Cartalyst LLC
@@ -134,6 +134,7 @@ class Platform_Developers_API_Extension_Creator_Controller extends API_Controlle
             'extension'            => $extension,
             'extension_classified' => Str::classify($extension),
             'namespace'            => str_replace('_', '\\', Str::classify($vendor . '_' . $extension)),
+            'namespace_double'     => str_replace('_', '\\\\', Str::classify($vendor . '_' . $extension)),
             'namespace_underscore' => Str::classify($vendor . '_' . $extension),
             'slug_code'            => $vendor . '.' . $extension,
             'slug_designer'        => $vendor . ExtensionsManager::VENDOR_SEPARATOR . $extension,

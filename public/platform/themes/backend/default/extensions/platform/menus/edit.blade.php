@@ -155,6 +155,11 @@
 						itemSelector: '.child-visibility'
 					},
 
+					'group_visibility' : {
+						newSelector: '#new-child-groups',
+						itemSelector: '.child-group-visibility',
+					},
+
 					'target' : {
 						newSelector: '#new-child-target',
 						itemSelector: '.child-target'
@@ -299,6 +304,18 @@
 							</select>
 						</div>
 
+						@if (count($groups) > 0)
+							<!-- Groups -->
+							<div class="control-group">
+								<label for="new-child-groups">{{ Lang::line('platform/menus::form.child.groups.title') }}</label>
+								<select id="new-child-groups" class="input-block-level" multiple="multiple">
+									@foreach ($groups as $group)
+										<option value="{{ $group['id'] }}">{{ $group['name'] }}</option>
+									@endforeach
+								</select>
+							</div>
+						@endif
+
 						<!-- Target -->
 						<div class="control-group">
 							<label>{{ Lang::line('platform/menus::form.child.target.title') }}</label>
@@ -332,14 +349,14 @@
 					<ol class="menu-children">
 						@if (isset($menu['children']))
 							@foreach ($menu['children'] as $child)
-								@render('platform/menus::edit.child', array('child' => $child, 'pages' => $pages))
+								@render('platform/menus::edit.child', array('child' => $child, 'pages' => $pages, 'groups' => $groups))
 							@endforeach
 						@endif
 					</ol>
 
 					<div class="new-child-template-container hide">
 						<ul class="new-child-template">
-							@render('platform/menus::edit.child', array('child' => array(), 'pages' => $pages, 'template' => true))
+							@render('platform/menus::edit.child', array('child' => array(), 'pages' => $pages, 'template' => true, 'groups' => $groups))
 						</ul>
 					</div>
 

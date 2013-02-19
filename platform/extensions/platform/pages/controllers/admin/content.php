@@ -148,4 +148,18 @@ class Platform_Pages_Admin_Content_Controller extends Admin_Controller
 
 		return Redirect::to_admin('pages/content');
 	}
+
+	public function get_findall()
+	{
+		try
+		{
+			$contents = Api::get('pages/content');
+
+			return json_encode(Api::get('pages/content'));
+		}
+		catch (APIClientException $e)
+		{
+			return 'no contents found';
+		}
+	}
 }

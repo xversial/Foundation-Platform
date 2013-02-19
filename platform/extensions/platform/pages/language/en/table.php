@@ -6,7 +6,7 @@ return array(
 		'id'       => 'Id',
 		'name'     => 'Name',
 		'slug'     => 'Slug',
-		'template' => 'Template',
+		'type'     => 'Type',
 		'status'   => 'Status'
 	),
 

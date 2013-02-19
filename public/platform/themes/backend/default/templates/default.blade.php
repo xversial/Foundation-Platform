@@ -100,7 +100,7 @@
 		</div><!--/.base-->
 
 		<footer>
-			@include('templates.partials.footer')
+			@content('copyright')
 		</footer>
 
 

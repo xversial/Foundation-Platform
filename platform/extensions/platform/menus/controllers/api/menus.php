@@ -12,7 +12,7 @@
  * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
  *
  * @package    Platform
- * @version    1.1.1
+ * @version    1.1.4
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
  * @copyright  (c) 2011 - 2012, Cartalyst LLC
@@ -475,6 +475,26 @@ class Platform_Menus_API_Menus_Controller extends API_Controller
 						{
 							array_splice($children, $index, 1);
 						}
+
+						$groups = json_decode($child->group_visibility);
+						if ( ! empty($groups) and ! Sentry::user()->has_access('superuser'))
+						{
+							$in_group = false;
+
+							foreach ($groups as $group_id)
+							{
+								if (Sentry::user()->in_group((int) $group_id))
+								{
+									$in_group = true;
+									break;
+								}
+							}
+
+							if ( ! $in_group)
+							{
+								array_splice($children, $index, 1);
+							}
+						}
 						break;
 
 					// Remove from anyone who's logged in
@@ -487,13 +507,33 @@ class Platform_Menus_API_Menus_Controller extends API_Controller
 
 					// Remove from anyone who's not admin
 					case Menu::VISIBILITY_ADMIN:
-						if (Sentry::check() and (Sentry::user()->has_access('is_admin') or Sentry::user()->has_access('superuser')))
-						{
-							$child['uri'] = ADMIN.'/'.$child['uri'];
-						}
-						else
+
+						// if not logged in, admin, or superuser - remove
+						if ( ! Sentry::check() or ( ! Sentry::user()->has_access('is_admin') and ! Sentry::user()->has_access('superuser')))
 						{
 							array_splice($children, $index, 1);
+						}
+
+						$child->uri = ADMIN.'/'.$child->uri;
+
+						$groups = json_decode($child->group_visibility);
+						if ( ! empty($groups) and ! Sentry::user()->has_access('superuser'))
+						{
+							$in_group = false;
+
+							foreach ($groups as $group_id)
+							{
+								if (Sentry::user()->in_group((int) $group_id))
+								{
+									$in_group = true;
+									break;
+								}
+							}
+
+							if ( ! $in_group)
+							{
+								array_splice($children, $index, 1);
+							}
 						}
 						break;
 				}

@@ -11,7 +11,7 @@
  * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
  *
  * @package    Platform
- * @version    1.1.1
+ * @version    1.1.4
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
  * @copyright  (c) 2011 - 2012, Cartalyst LLC
@@ -94,7 +94,7 @@ class Platform_Pages_v1_1_0
         // Admin > Pages
         //
         $pages = new Menu(array(
-            'name'          => 'Pages',
+            'name'          => 'CMS',
             'vendor'        => 'platform',
             'extension'     => 'pages',
             'slug'          => 'admin-pages',
@@ -141,62 +141,9 @@ class Platform_Pages_v1_1_0
         ));
         $pages_content->last_child_of($pages);
 
-
-        /*
+         /*
          * --------------------------------------------------------------------------
-         * # 3) Configuration settings.
-         * --------------------------------------------------------------------------
-         */
-        $settings = array(
-            // Status Disabled
-            //
-            array(
-                'vendor'    => 'platform',
-                'extension' => 'pages',
-                'type'      => 'status',
-                'name'      => 'disabled',
-                'value'     => '0'
-            ),
-
-            // Status Enabled
-            //
-            array(
-                'vendor'    => 'platform',
-                'extension' => 'pages',
-                'type'      => 'status',
-                'name'      => 'enabled',
-                'value'     => '1'
-            ),
-
-            // default page (/index)
-            //
-            array(
-                'vendor'    => 'platform',
-                'extension' => 'pages',
-                'type'      => 'default',
-                'name'      => 'page',
-                'value'     => 1,
-            ),
-
-            // default template (default)
-            //
-            array(
-                'vendor'    => 'platform',
-                'extension' => 'pages',
-                'type'      => 'default',
-                'name'      => 'template',
-                'value'     => 'default'
-            )
-        );
-
-        // Insert the settings into the database.
-        //
-        DB::table('settings')->insert($settings);
-
-
-        /*
-         * --------------------------------------------------------------------------
-         * # 4) Initial Welcome Page & Content.
+         * # 3) Initial Welcome Page & Content.
          * --------------------------------------------------------------------------
          */
         // Default Welcome Page
@@ -246,7 +193,7 @@ class Platform_Pages_v1_1_0
             array(
                 'name'      => 'Copyright',
                 'slug'      => 'copyright',
-                'value'     => 'The BSD 3-Clause License - Copyright &copy; 2011-2012, Cartalyst LLC',
+                'value'     => '<div class="legal"><p class="copyright">Created, developed, and designed by <a href="http://twitter.com/#!/Cartalyst">@Cartalyst</a></p><p class="licence">The BSD 3-Clause License - Copyright © 2011-2013, Cartalyst LLC</p></div>',
             ),
 
 
@@ -285,6 +232,57 @@ class Platform_Pages_v1_1_0
         );
 
         DB::table('content')->insert($content);
+
+        /*
+         * --------------------------------------------------------------------------
+         * # 4) Configuration settings.
+         * --------------------------------------------------------------------------
+         */
+        $settings = array(
+            // Status Disabled
+            //
+            array(
+                'vendor'    => 'platform',
+                'extension' => 'pages',
+                'type'      => 'status',
+                'name'      => 'disabled',
+                'value'     => '0'
+            ),
+
+            // Status Enabled
+            //
+            array(
+                'vendor'    => 'platform',
+                'extension' => 'pages',
+                'type'      => 'status',
+                'name'      => 'enabled',
+                'value'     => '1'
+            ),
+
+            // default page (/index)
+            //
+            array(
+                'vendor'    => 'platform',
+                'extension' => 'pages',
+                'type'      => 'default',
+                'name'      => 'page',
+                'value'     => $welcome_page_id,
+            ),
+
+            // default template (default)
+            //
+            array(
+                'vendor'    => 'platform',
+                'extension' => 'pages',
+                'type'      => 'default',
+                'name'      => 'template',
+                'value'     => 'default'
+            )
+        );
+
+        // Insert the settings into the database.
+        //
+        DB::table('settings')->insert($settings);
     }
 
 

@@ -48,7 +48,7 @@
 					</a>
 					<a class="brand" href="{{ URL::to('') }}">@get('platform/settings::site.title')</a>
 					<div class="nav-collapse collapse">
-						@widget('platform/menus::menus.nav', 'main', 1, 'nav')
+						@widget('platform/menus::menus.nav', 'main', 2, 'nav')
 					</div><!--/.nav-collapse -->
 				</div>
 			</div>
@@ -62,7 +62,7 @@
 			<hr>
 
 			<footer>
-				@include('templates.partials.footer')
+				@content('copyright')
 			</footer>
 
 		</div> <!-- /container -->

@@ -51,3 +51,9 @@
 	</div>
 
 </form>
+@widget('platform/media::media.chooser', 'platform/pages::redactor_media', array('limit' => 1, 'js' => false, 'link' => false))
+
+{{ Theme::queue_asset('redactor', 'platform/pages::css/redactor.css', 'styles') }}
+{{ Theme::queue_asset('redactor', 'platform/pages::js/redactor.min.js', 'jquery') }}
+{{ Theme::queue_asset('redactor-plugins', 'platform/pages::js/redactor-plugins.js', 'redactor') }}
+{{ Theme::queue_asset('editor', 'platform/pages::js/editor.js', 'media-chooser') }}

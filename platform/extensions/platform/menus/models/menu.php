@@ -11,7 +11,7 @@
  * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
  *
  * @package    Platform
- * @version    1.1.1
+ * @version    1.1.4
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
  * @copyright  (c) 2011 - 2012, Cartalyst LLC
@@ -273,6 +273,57 @@ class Menu extends Nesty
 
         return $this->children;
     }
+
+    /**
+	 * Get the children for this model.
+	 *
+	 * @param   int   $limit
+	 * @param   array $columns
+	 * @return  array
+	 */
+	public function children($limit = false, $columns = array('*'))
+	{
+		// If we have set the children property as
+		// false, there are no children
+		if ($this->children === false)
+		{
+			return array();
+		}
+
+		// Lazy load children
+		if (empty($this->children))
+		{
+			// Get an array of children from the database
+			$children_array = $this->query_children_array($limit, $columns);
+
+			// If we got an empty array of children
+			if (empty($children_array))
+			{
+				$this->children = false;
+				return $this->children();
+			}
+
+			// format groups
+			foreach ($children_array as &$child)
+			{
+				$child->group_visibility = ( ! empty($child->group_visibility)) ? $child->group_visibility : array();
+				$child->group_visibility = (is_array($child->group_visibility)) ? $child->group_visibility : json_decode($child->group_visibility);
+			}
+
+			// Hydrate our children. If hydrate children
+			// returns false, there are no children for this
+			// model. That means that $this->children === false,
+			// so we call this same method again which handles empty
+			// children
+			if ($this->fill_children($children_array) === false)
+			{
+				$this->children = false;
+				return $this->children();
+			}
+		}
+
+		return $this->children;
+	}
 
     /**
      * --------------------------------------------------------------------------
@@ -550,12 +601,14 @@ SQL;
                     $duplicate->reload();
 
                     // Reset relevent values
-                    $child->name       = $duplicate->name;
-                    $child->slug       = $duplicate->slug;
-                    $child->uri        = $duplicate->uri;
-                    $child->secure     = $duplicate->secure;
-                    $child->visibility = $duplicate->visibility;
-                    $child->class      = $duplicate->class;
+					$child->name             = $duplicate->name;
+					$child->slug             = $duplicate->slug;
+					$child->uri              = $duplicate->uri;
+					$child->secure           = $duplicate->secure;
+					$child->visibility       = $duplicate->visibility;
+					$child->class            = $duplicate->class;
+
+					$child->group_visibility = $duplicate->group_visibility;
                 }
                 elseif ($child->is_new())
                 {
@@ -693,6 +746,16 @@ SQL;
         }
 
         return array($data, $rules);
+    }
+
+    protected function prep_attributes($attributes)
+    {
+    	if (isset($attributes['group_visibility']) and is_array($attributes['group_visibility']))
+    	{
+    		$attributes['group_visibility'] = json_encode($attributes['group_visibility']);
+    	}
+
+    	return $attributes;
     }
 
     /**

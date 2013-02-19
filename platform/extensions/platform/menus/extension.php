@@ -11,7 +11,7 @@
  * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
  *
  * @package    Platform
- * @version    1.1.1
+ * @version    1.1.4
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
  * @copyright  (c) 2011 - 2012, Cartalyst LLC
@@ -34,7 +34,7 @@ return array(
         'name'        => 'Menus',
         'author'      => 'Cartalyst LLC',
         'description' => 'Manages all menus throughout the website admin.',
-        'version'     => '1.1',
+        'version'     => '1.1.1',
         'is_core'     => true
     ),
 

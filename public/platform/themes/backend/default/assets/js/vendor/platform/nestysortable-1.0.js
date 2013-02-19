@@ -193,6 +193,11 @@
 					// on the select element itthat
 					else if ($formElement.is('select')) {
 						data.control[slug] = 'data-value="' + $formElement.val() + '"';
+
+						// Multiple selects
+						if (typeof $formElement.attr('multiple') !== 'undefined') {
+							data.control[slug] += ' data-value-array';
+						}
 					}
 					else {
 						data.control[slug] = $formElement.val();
@@ -205,8 +210,6 @@
 				if (valid !== true) {
 					return false;
 				}
-
-				console.log(data);
 
 				// Get the template
 				var $template = $(that.options.template.selector).clone();
@@ -225,8 +228,19 @@
 				                 .find('select').each(function() {
 					var value;
 					if (value = $(this).attr('data-value')) {
-						$(this).val(value)
-						       .removeAttr('data-value');
+
+						// Array values (usually multiple selects)
+						if (typeof $(this).attr('data-value-array') !== 'undefined') {
+
+							$(this).val(value.split(','))
+							       .removeAttr('data-value')
+							       .removeAttr('data-value-array');
+
+						// Everybody else
+						} else {
+							$(this).val(value)
+							       .removeAttr('data-value');
+						}
 					}
 				});
 
