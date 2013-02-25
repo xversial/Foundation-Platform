@@ -1,14 +1,10 @@
-<li class="{{ in_array($item['id'], $active_path) ? 'active' : null }} @if($item['children'])dropdown@endif">
+<li class="{{ in_array($item['id'], $active_path) ? 'active' : null }} @if($item['children'])dropdown-submenu@endif">
 	<a data-target="#" href="{{ $item['uri'] }}"@if($item['children']) target="{{ $item['target'] }}" class="dropdown-toggle" data-toggle="dropdown"@endif>
 		@if ($item['class'])
 		<i class="{{ $item['class'] }}"></i>
 		@endif
 
 		{{ $item['name'] }}
-
-		@if($item['children'])
-		<b class="caret"></b>
-		@endif
 	</a>
 
 	@if ($item['children'])
