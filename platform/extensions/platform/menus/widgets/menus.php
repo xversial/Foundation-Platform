@@ -214,6 +214,8 @@ class Menus
                     {
                         $item['uri'] = URL::to(($page['id'] != $default_page_id ? $page['slug'] : ''));
                     }
+
+                    $this->fix_children_uri($item);
                 break;
             }
 
@@ -233,6 +235,28 @@ class Menus
                     ->with('child_depth', $children_depth);
     }
 
+
+    protected function fix_children_uri(&$item)
+    {
+        if ($item['children'])
+        {
+            foreach ($item['children'] as &$child)
+            {
+                foreach ($this->pages as $page)
+                {
+                    if ($page['id'] == $child['page_id'])
+                    {
+                        $child['uri'] = $page['slug'];
+                    }
+                }
+
+                if ($child['children'])
+                {
+                    return $this->fix_children_uri($child);
+                }
+            }
+        }
+    }
 
     /**
      * --------------------------------------------------------------------------
