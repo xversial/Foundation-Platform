@@ -1,3 +1,11 @@
+1.2.1 Changelog
+----------
+
+**Menus:**
+
+  * Fixed problem with pages as children in the navbar not having the correct uri.
+  * Fixed frontend navbar widget depth issue not rendering the navbar correctly.
+
 1.2.0 Changelog
 ----------
 
