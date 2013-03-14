@@ -36,7 +36,7 @@ class PlatformLess extends lessc
 	 * @param   string  $css_file
 	 * @param   string  $bundle_path
 	 */
-	public static function compile($less_file, $css_file)
+	public function compile($less_file, $css_file = null)
 	{
 		$filesystem = \Filesystem::make('native');
 
