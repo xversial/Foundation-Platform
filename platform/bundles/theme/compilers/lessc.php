@@ -1837,7 +1837,8 @@ class lessc {
 			$className = "lessc_formatter_$this->formatterName";
 		}
 
-		return new $className;
+		$class = "\Theme\Compilers\\$className";
+		return new $class;
 	}
 
 	public function setPreserveComments($preserve) {
@@ -2058,6 +2059,9 @@ class lessc {
 // responsible for taking a string of LESS code and converting it into a
 // syntax tree
 class lessc_parser {
+	static public function preg_quote($what) {
+		return preg_quote($what, '/');
+	}
 	static protected $nextBlockId = 0; // used to uniquely identify blocks
 
 	static protected $precedence = array(
@@ -2116,7 +2120,7 @@ class lessc_parser {
 
 		if (!self::$operatorString) {
 			self::$operatorString =
-				'('.implode('|', array_map(array('lessc', 'preg_quote'),
+				'('.implode('|', array_map(array('self', 'preg_quote'),
 					array_keys(self::$precedence))).')';
 
 			$commentSingle = lessc::preg_quote(self::$commentSingle);
@@ -2346,7 +2350,7 @@ class lessc_parser {
 	protected function isDirective($dirname, $directives) {
 		// TODO: cache pattern in parser
 		$pattern = implode("|",
-			array_map(array("lessc", "preg_quote"), $directives));
+			array_map(array("self", "preg_quote"), $directives));
 		$pattern = '/^(-[a-z-]+-)?(' . $pattern . ')$/i';
 
 		return preg_match($pattern, $dirname);
@@ -2634,7 +2638,7 @@ class lessc_parser {
 		$this->eatWhiteDefault = false;
 
 		$stop = array("'", '"', "@{", $end);
-		$stop = array_map(array("lessc", "preg_quote"), $stop);
+		$stop = array_map(array("self", "preg_quote"), $stop);
 		// $stop[] = self::$commentMulti;
 
 		if (!is_null($rejectStrs)) {

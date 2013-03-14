@@ -62,8 +62,7 @@ class LESS
 			// Remove all old less imports
 			static::remove_old_less_imports($less_file, $css_file);
 
-		    $PlatformLess = new PlatformLess();
-		    $PlatformLess->compileFile($less_file, $css_file);
+		    with(new PlatformLess())->compile($less_file, $css_file);
 		}
 
 		catch (Exception $e)
