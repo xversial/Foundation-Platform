@@ -1,3 +1,14 @@
+1.2.2 Changelog
+----------
+
+**General:**
+
+  * Twitter Bootstrap updated to v2.3.1
+
+**Theme Bundle:**
+
+  * Less Compiler updated to v0.3.9
+
 1.2.1 Changelog
 ----------
 
