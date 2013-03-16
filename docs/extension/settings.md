@@ -1,8 +1,8 @@
-###Settings
+### Settings
 
-----------
-
-The settings extension is where you will find site specfic ( not extension ) settings.  These include settings such as your site title, tagline and email address. More settings will be coming in the future.
+The settings extension is where you will find site specfic ( not extension )
+settings. These include settings such as your site title, tagline and email address.
+More settings will be coming in the future.
 
 ----------
 

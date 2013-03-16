@@ -1,4 +1,4 @@
-##Extensions
+### Available Extensions
 
 * [Dashboard](/platform/extension/dashboard)
 * [Extensions](/platform/extension/extensions)

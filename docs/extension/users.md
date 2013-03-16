@@ -1,4 +1,4 @@
-###Users
+### Users
 
 ----------
 
@@ -9,6 +9,8 @@ The users extension is used to find and edit information about your application'
 ----------
 
 #### Screencast
+
+..
 
 ----------
 
@@ -34,10 +36,9 @@ The users extension is used to find and edit information about your application'
 
 ### API Functionality
 
-
 #### Auth
 
-**Login**
+##### Login
 Logs a user in
 
 <table>
@@ -71,7 +72,7 @@ Logs a user in
 	}
 
 
-**Logout**
+##### Logout
 Logs a user out
 
 <table>
@@ -97,7 +98,7 @@ Logs a user out
 	}
 
 
-**Reset Password**
+##### Reset Password
 Resets a users password and sends an activation link to activate it.
 
 <table>
@@ -117,7 +118,6 @@ Resets a users password and sends an activation link to activate it.
 
 *Example*
 
-
 	try
 	{
 		 $response = API::post('users/reset_password', array(
@@ -130,7 +130,7 @@ Resets a users password and sends an activation link to activate it.
 		// Handle exception, may be a 400, 403, 404 etc
 	}
 
-**Reset Password Confirm**
+##### Reset Password Confirm
 Confirms a password reset
 
 <table>
@@ -162,10 +162,11 @@ Confirms a password reset
 		// Handle exception, may be a 400, 403, 404 etc
 	}
 
+----------
 
 #### Users
 
-**Get Users**
+##### Get Users
 Returns users and related data
 
 <table>
@@ -200,8 +201,7 @@ Returns users and related data
 		// Handle exception, may be a 400, 403, 404 etc
 	}
 
-
-**Register**
+##### Register
 Register a user and send an email for activation
 
 <table>
@@ -238,8 +238,7 @@ Register a user and send an email for activation
 		// Handle exception, may be a 400, 403, 404 etc
 	}
 
-
-**Create**
+##### Create
 Create a user
 
 <table>
@@ -276,8 +275,7 @@ Create a user
 		// Handle exception, may be a 400, 403, 404 etc
 	}
 
-
-**Activate**
+##### Activate
 Activate a user
 
 <table>
@@ -310,7 +308,7 @@ Activate a user
 	}
 
 
-**Update**
+##### Update
 Update a user
 
 <table>
@@ -347,8 +345,7 @@ Update a user
 		// Handle exception, may be a 400, 403, 404 etc
 	}
 
-
-**Delete**
+##### Delete
 Delete a user
 
 <table>
@@ -377,8 +374,7 @@ Delete a user
 		// Handle exception, may be a 400, 403, 404 etc
 	}
 
-
-**Datatable**
+##### Datatable
 Retrieve Users Datatable data
 
 <table>
@@ -428,7 +424,7 @@ Retrieve Users Datatable data
 
 	#### Users
 
-**Get Groups**
+##### Get Groups
 Returns groups and related data
 
 <table>
@@ -463,8 +459,7 @@ Returns groups and related data
 		// Handle exception, may be a 400, 403, 404 etc
 	}
 
-
-**Create**
+##### Create
 Create a group
 
 <table>
@@ -496,7 +491,7 @@ Create a group
 	}
 
 
-**Update**
+##### Update
 Update a group
 
 <table>
@@ -528,8 +523,7 @@ Update a group
 		// Handle exception, may be a 400, 403, 404 etc
 	}
 
-
-**Delete**
+##### Delete
 Delete a group
 
 <table>
@@ -559,7 +553,7 @@ Delete a group
 	}
 
 
-**Datatable**
+##### Datatable
 Retrieve Groups Datatable data
 
 <table>
