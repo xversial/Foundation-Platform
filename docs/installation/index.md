@@ -4,7 +4,6 @@
 
 #### Step 1
 
-
 ##### Preparing for Installation
 
 Step 1 is setting up your system for the installation process. This just includes
@@ -13,20 +12,17 @@ can write to them.
 
 Files and Directories to be modified for platform Installation:
 
-	`platform/application/config/`
-
-	`platform/application/config/application.php`
-
-	`public/platform/themes/compiled/`
+	platform/application/config/
+	platform/application/config/application.php
+	public/platform/themes/compiled/
 
 Once these permissions are set, you can proceed onto Step 2.
 
-<img src="/platform/manuals/img/installation/step1.jpg">
+<img src="https://raw.github.com/cartalyst/platform/develop/docs/assets/img/installation/step1.jpg?login=brunogaspar&token=00ba445ffcaf55b2bdf748be51ef284c" style="max-width: 450px;">
 
 -----------
 
 #### Step 2
-
 
 ##### Database Setup
 
@@ -39,7 +35,7 @@ Notification of connectivity is provided under the Step 2 text on the left.
 
 Once connected, you may proceed onto step 3.
 
-<img src="/platform/manuals/img/installation/step2.jpg">
+<img src="https://raw.github.com/cartalyst/platform/develop/docs/assets/img/installation/step2.jpg?login=brunogaspar&token=c04ad656074a1c864308c3aa393e93f3" style="max-width: 450px;">
 
 -----------
 
@@ -57,7 +53,7 @@ Step 3 updating you on your validation process.
 
 Once validated, you may proceed onto step 4.
 
-<img src="/platform/manuals/img/installation/step3.jpg">
+<img src="https://raw.github.com/cartalyst/platform/develop/docs/assets/img/installation/step3.jpg?login=brunogaspar&token=a25c2cc96c209e5a4f677744e3b04a28" style="max-width: 450px;">
 
 -----------
 
@@ -71,10 +67,9 @@ installation folders once you are done installing to prevent any future mishaps.
 
 Folders:
 
-	`platform/installer/*`
-
-	`public/installer/*`
+	platform/installer
+	public/installer
 
 And now your done! Have some fun with Platform!
 
-<img src="/platform/manuals/img/installation/step4.jpg">
+<img src="https://raw.github.com/cartalyst/platform/develop/docs/assets/img/installation/step4.jpg?login=brunogaspar&token=1e7e417e7b17694d26b622525611a560" style="max-width: 450px;">
