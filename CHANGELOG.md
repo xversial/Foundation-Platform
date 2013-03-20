@@ -4,6 +4,7 @@
 **General:**
 
   * Twitter Bootstrap updated to v2.3.1
+  * Laravel updated to 3.2.13
 
 **Theme Bundle:**
 
