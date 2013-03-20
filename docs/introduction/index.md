@@ -8,23 +8,25 @@ unique. It's well documented, feature awesome, open source, and always free.
 
 #### Features
 
-* Fully featured authentication & authorization
+* Authentication & Authorization by Sentry
+* Social Authentication (OAuth, OAuth 2)
 * Twitter Bootstrap 2.3.1 Ready
-* Frontend/Backend scaffolding
-* Included Extensions
+* Frontend/Backend Themes
 * User/Group management + permissions
+* Content Management
+* Page Management
 * Menu manager
 * Settings
 * Themes manager
 * Dashboard
 * Extension manager
-* Extension creator
 * Localisation
+* Developer Tools (extension & theme creator)
 * Powerful Extension System
 * Widgets
 * Plugins
-* Awesome API
-* Laravel 3.2.11
+* API
+* Laravel 3.2.13
 
 -----------
 
