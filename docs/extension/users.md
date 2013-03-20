@@ -8,12 +8,6 @@ The users extension is used to find and edit information about your application'
 
 ----------
 
-#### Screencast
-
-..
-
-----------
-
 ### Basic Usage
 
 #### Widgets

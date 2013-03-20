@@ -1,27 +1,97 @@
 ### Why Platform?
 
-Platform is an application base, a bootstrap for Laravel. The fundamentals + a
+Platform is an application base, a bootstrap for Laravel 3. The fundamentals + a
 few essentials that allow you to focus on the features that make your application
 unique. It's well documented, feature awesome, open source, and always free.
 
 -----------
 
-### Features
+#### Features
 
-* Fully featured authentication & authorization
+* Authentication & Authorization by Sentry
+* Social Authentication (OAuth, OAuth 2)
 * Twitter Bootstrap 2.3.1 Ready
-* Frontend/Backend scaffolding
-* Included Extensions
+* Frontend/Backend Themes
 * User/Group management + permissions
+* Content Management
+* Page Management
 * Menu manager
 * Settings
 * Themes manager
 * Dashboard
 * Extension manager
-* Extension creator
 * Localisation
+* Developer Tools (extension & theme creator)
 * Powerful Extension System
 * Widgets
 * Plugins
-* Awesome API
-* Laravel 3.2.11
+* API
+* Laravel 3.2.13
+
+-----------
+
+#### Getting Started
+
+You can install Platform by downloading the latest release at [https://github.com/cartalyst/platform](https://github.com/cartalyst/platform).
+
+Or, you can clone the Platform repository from GitHub:
+
+	git clone git://github.com/cartalyst/platform.git platform
+	cd platform
+
+-----------
+
+#### Versioning
+
+Platform will be maintained under the [Semantic Versioning](http://semver.org/)
+guidelines as much as possible.
+
+Releases will be numbered with the following format:
+
+`<major>.<minor>.<patch>`
+
+And constructed with the following guidelines:
+
+* Breaking backward compatibility bumps the major (and resets the minor and patch)
+* New additions without breaking backward compatibility bumps the minor (and resets the patch)
+* Bug fixes and misc changes bumps the patch
+
+-----------
+
+#### Issues
+
+Have a bug? Please create an issue here on GitHub that conforms with
+[necolas's guidelines](https://github.com/necolas/issue-guidelines).
+
+[https://github.com/cartalyst/platform/issues](https://github.com/cartalyst/platform/issues)
+
+-----------
+
+#### Twitter account
+
+Follow us on Twitter, [@cartalyst](http://twitter.com/cartalyst).
+
+-----------
+
+#### IRC
+
+Join us for a chat on IRC.
+
+Server: irc.freenode.net
+Channel: #cartalyst
+
+-----------
+
+#### License
+
+Copyright (c) 2011-2012, Cartalyst LLC
+
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+* Neither the name of Cartalyst LLC and its libraries nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

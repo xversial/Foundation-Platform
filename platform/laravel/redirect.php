@@ -1,4 +1,4 @@
-<?php namespace Laravel; use Router;
+<?php namespace Laravel; use Laravel\Routing\Router;
 
 class Redirect extends Response {
 

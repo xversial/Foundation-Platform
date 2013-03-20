@@ -3,28 +3,27 @@ Platform
 
 Platform is an application base, a bootstrap for Laravel. The fundamentals + a few essentials that allow you to focus on the features that make your application unique. It's well documented, feature awesome, open source, and always free.
 
-
-
-* Fully featured authentication & authorization
-* Twitter Bootstrap 2.1.* Ready w/ HTML5boilerplate & Font Awesome icons.
-* Public/Admin views ready w/navigation
-* Included Extensions
-  * User/Group management + permissions
-  * Menu manager
-  * Settings
-  * Themes manager
-  * Dashboard
-  * Extension manager
-  * Localisation
-  * Developer Tools - Extension Creator
-  * Pages (content management system)
+* Authentication & Authorization by Sentry
+* Social Authentication (OAuth, OAuth 2)
+* Twitter Bootstrap 2.3.1 Ready
+* Frontend/Backend Themes
+* User/Group management + permissions
+* Content Management
+* Page Management
+* Menu manager
+* Settings
+* Themes manager
+* Dashboard
+* Extension manager
+* Localisation
+* Developer Tools (extension & theme creator)
 * Powerful Extension System
-* widgets
-* plugins
-* Awesome API
-* Laravel 3.2.11
+* Widgets
+* Plugins
+* API
+* Laravel 3.2.13
 
-[Official website & documentation](http://www.getplatform.com)
+[Official website & documentation](http://www.cartalyst.com)
 
 
 Getting Started

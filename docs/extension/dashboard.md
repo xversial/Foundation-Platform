@@ -9,12 +9,6 @@ It is a great place to present information based data to your admin users.
 
 -----------
 
-#### Screencast
-
-..
-
------------
-
 #### Basic Usage
 
 The dashboard page is essentially just a template for you to display any widgets
