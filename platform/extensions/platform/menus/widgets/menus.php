@@ -250,6 +250,8 @@ class Menus
                     }
                 }
 
+                $child['target'] = ($child['target'] == 0 ? '_self' : '_blank');
+
                 if ($child['children'])
                 {
                     return $this->fix_children_uri($child);
