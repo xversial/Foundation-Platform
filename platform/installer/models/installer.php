@@ -313,11 +313,6 @@ class Installer
         //
         $connection = new \Laravel\Database\Connection($driver->connect($config), $config);
 
-        // If no credentials are provided, we need to try to get contents of a table.
-        // Use a random table name so that it doesn't actually exist.
-        //
-        $connection->table(Str::random(10, 'alpha'))->get();
-
         // If we got this far without an exception been thrown, we've connected.
         //
         return true;
