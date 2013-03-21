@@ -238,7 +238,7 @@
 							<label class="control-label" for="menu-name">
 								{{ Lang::line('platform/menus::form.root.name') }}
 							</label>
-							<input type="text" name="name" id="menu-name" class="input-block-level" value="{{ array_get($menu, 'name') }}" {{ (array_key_exists('user_editable', $menu) and ( ! array_get($menu, 'user_editable'))) ? 'disabled' : 'required'}}>
+							<input type="text" name="name" id="menu-name" class="input-block-level" value="{{ array_get($menu, 'name') }}" required>
 						</div>
 
 						<div class="control-group">
