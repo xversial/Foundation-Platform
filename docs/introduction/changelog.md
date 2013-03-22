@@ -16,8 +16,9 @@
   * Less Compiler updated to v0.3.9
 
 **Menu Extension**
-  * Updated UI to be a bit more friendly
-  * Allowed default menus to be editable accept for link/slug
+
+  * Updated UI to be a bit more friendly.
+  * Allowed default menus to be editable.
 
 ----------
 
