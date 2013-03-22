@@ -1,8 +1,11 @@
 1.2.2 Changelog
+----------
 
 **General:**
 
   * Twitter Bootstrap updated to v2.3.1
+  * Laravel updated to 3.2.13
+  * Fixed installer problem that was generating a random table after a succesfull database connection.
 
 **Theme Bundle:**
 

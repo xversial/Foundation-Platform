@@ -26,7 +26,7 @@
 				<div class="control-group">
 					<label class="control-label" for="menu-children-{{ array_get($child, 'id', '[%id%]') }}-name">{{ Lang::line('platform/menus::form.child.name') }}</label>
 					<div class="controls">
-						<input type="text" name="children[{{ array_get($child, 'id', '[%id%]') }}][name]" id="menu-children-{{ array_get($child, 'id', '[%id%]') }}-name" class="child-name" value="{{ array_get($child, 'name', '[%control.name%]') }}" {{ (array_key_exists('user_editable', $child) and ( ! array_get($child, 'user_editable'))) ? 'disabled' : 'required' }}>
+						<input type="text" name="children[{{ array_get($child, 'id', '[%id%]') }}][name]" id="menu-children-{{ array_get($child, 'id', '[%id%]') }}-name" class="child-name" value="{{ array_get($child, 'name', '[%control.name%]') }}" required>
 					</div>
 				</div>
 
@@ -66,7 +66,7 @@
 					<label class="control-label" for="menu-children-{{ array_get($child, 'id', '[%id%]') }}-secure">{{ Lang::line('platform/menus::form.child.secure') }}</label>
 					<div class="controls">
 						<label class="checkbox">
-							<input type="checkbox" name="children[{{ array_get($child, 'id', '[%id%]') }}][secure]" id="menu-children-{{ array_get($child, 'id', '[%id%]') }}-secure" class="child-secure" value="1" {{ (array_key_exists('secure', $child) and ( ! array_get($child, 'user_editable') or URL::valid(array_get($child, 'user_editable')))) ? 'disabled' : null }} {{ (array_key_exists('secure', $child)) ? ((array_get($child, 'secure')) ? 'checked' : null) : '[%control.secure%]' }}>
+							<input type="checkbox" name="children[{{ array_get($child, 'id', '[%id%]') }}][secure]" id="menu-children-{{ array_get($child, 'id', '[%id%]') }}-secure" class="child-secure" value="1" {{ (array_key_exists('secure', $child)) ? ((array_get($child, 'secure')) ? 'checked' : null) : '[%control.secure%]' }}>
 							{{ Lang::line('platform/menus::form.child.secure') }}
 						</label>
 					</div>
@@ -76,7 +76,7 @@
 				<div class="control-group">
 					<label class="control-label" for="menu-children-{{ array_get($child, 'id', '[%id%]') }}-visibility">{{ Lang::line('platform/menus::form.child.visibility.title') }}</label>
 					<div class="controls">
-						<select name="children[{{ array_get($child, 'id', '[%id%]') }}][visibility]" id="menu-children-{{ array_get($child, 'id', '[%id%]') }}-visibility" class="child-visibility" {{ ( ! array_key_exists('visibility', $child)) ? '[%control.visibility%]' : null }} {{ (array_key_exists('user_editable', $child) and ( ! array_get($child, 'user_editable'))) ? 'disabled' : 'required' }}>
+						<select name="children[{{ array_get($child, 'id', '[%id%]') }}][visibility]" id="menu-children-{{ array_get($child, 'id', '[%id%]') }}-visibility" class="child-visibility" {{ ( ! array_key_exists('visibility', $child)) ? '[%control.visibility%]' : null }} required>
 							<option value="{{ Platform\Menus\Menu::VISIBILITY_ALWAYS }}" {{ (array_get($child, 'visibility') == Platform\Menus\Menu::VISIBILITY_ALWAYS) ? 'selected' : null }}>{{ Lang::line('platform/menus::form.child.visibility.always') }}</option>
 							<option value="{{ Platform\Menus\Menu::VISIBILITY_LOGGED_IN }}" {{ (array_get($child, 'visibility') == Platform\Menus\Menu::VISIBILITY_LOGGED_IN) ? 'selected' : null }}>{{ Lang::line('platform/menus::form.child.visibility.logged_in') }}</option>
 							<option value="{{ Platform\Menus\Menu::VISIBILITY_LOGGED_OUT }}" {{ (array_get($child, 'visibility') == Platform\Menus\Menu::VISIBILITY_LOGGED_OUT) ? 'selected' : null }}>{{ Lang::line('platform/menus::form.child.visibility.logged_out') }}</option>
@@ -91,7 +91,7 @@
 					<div class="control-group">
 						<label class="control-label" for="menu-children-{{ array_get($child, 'id', '[%id%]') }}-group-visibility">{{ Lang::line('platform/menus::form.child.groups.title') }}</label>
 						<div class="controls">
-							<select name="children[{{ array_get($child, 'id', '[%id%]') }}][group_visibility][]" id="menu-children-{{ array_get($child, 'id', '[%id%]') }}-group-visibility" class="child-group-visibility" multiple="multiple" {{ ( ! array_key_exists('group_visibility', $child)) ? '[%control.group_visibility%]' : null }} {{ (array_key_exists('user_editable', $child) and ( ! array_get($child, 'user_editable'))) ? 'disabled' : '' }}>
+							<select name="children[{{ array_get($child, 'id', '[%id%]') }}][group_visibility][]" id="menu-children-{{ array_get($child, 'id', '[%id%]') }}-group-visibility" class="child-group-visibility" multiple="multiple" {{ ( ! array_key_exists('group_visibility', $child)) ? '[%control.group_visibility%]' : null }}>
 								@foreach ($groups as $group)
 									<option value="{{ $group['id'] }}" {{ ( in_array($group['id'], array_get($child, 'group_visibility', array())) ) ? 'selected' : null }}>{{ $group['name'] }}</option>
 								@endforeach
@@ -118,7 +118,7 @@
 				<div class="control-group">
 					<label class="control-label" for="menu-children-{{ array_get($child, 'id', '[%id%]') }}-class">{{ Lang::line('platform/menus::form.child.class') }}</label>
 					<div class="controls">
-						<input type="text" name="children[{{ array_get($child, 'id', '[%id%]') }}][class]" id="menu-children-{{ array_get($child, 'id', '[%id%]') }}-class" class="child-class" value="{{ array_get($child, 'class', '[%control.class%]') }}" {{ (array_key_exists('user_editable', $child) and ( ! array_get($child, 'user_editable'))) ? 'disabled' : null }}>
+						<input type="text" name="children[{{ array_get($child, 'id', '[%id%]') }}][class]" id="menu-children-{{ array_get($child, 'id', '[%id%]') }}-class" class="child-class" value="{{ array_get($child, 'class', '[%control.class%]') }}">
 					</div>
 				</div>
 

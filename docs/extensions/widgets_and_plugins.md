@@ -1,14 +1,10 @@
-###Widgets and Plugins
-
-----------
+### Widgets and Plugins
 
 Widgets and Plugins are new systems we've built into Laravel.  We feel that our system is really powerful and easy to use. Widgets are used pull in generated views, while plugins will be used to pull in and store requested data to manipulate as you wish.
 
 ----------
 
 #### Creation
-
-----------
 
 To create a widget or plugin, you just need to create a standard class with the appropriate namespace.  We'll use users as an example again with some additional comments to explain the structure and code. The example below is all you need to create a widget or plugin.
 
@@ -59,8 +55,6 @@ To create a widget or plugin, you just need to create a standard class with the 
 
 #### Usage
 
-----------
-
 Now that we have created a widget or plugin, we need to know how to call it.  To do this, we took advantage of Laraval's blade extending. To call a widget or plugin is as simple as calling `@widget('key')` or `@plugin('key')`. Your key will essentially be the path to your widget or plugin.
 
 To call our Form Edit widget, we would do the following call in our view.
@@ -77,12 +71,9 @@ Now that you have your 2 key portions, you just combine them with `::`. So now o
 
 > **Note:** if you use subdirectories to organize your widget and plugins folder, use the PSR-0 naming convention.  This means you append your directory structure to the beginning of your class name with a `_` seperator.  A structure of `widgets\groups\form.php` will have the class name of `Groups_Form`. The new widget call would be @widget('platform/users::groups.form.edit');
 
-
 ----------
 
 #### Parameters
-
-----------
 
 Paramaters with widgets and plugins are slightly different. With widgets, the parameters that get passed to your widget method start with the 2nd paramater in your widget call.
 

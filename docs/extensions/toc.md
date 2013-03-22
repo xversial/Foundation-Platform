@@ -1,6 +1,6 @@
-##Extensions
+## Extensions
 
-* [Introduction](/platform/extensions/introduction)
+* [Overview](/platform/extensions)
 * [Structure](/platform/extensions/structure)
 * [Requirements](/platform/extensions/requirements)
 * [Migrations](/platform/extensions/migrations)

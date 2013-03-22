@@ -1,12 +1,10 @@
-###Requirements
-
-----------
+### Requirements
 
 As stated before, Extensions are just Laravel bundles at the core with a few additional requirements and friendly additions.
 
 ----------
 
-####Extension.php file
+#### Extension.php file
 
 In addition to your base bundle folder setup, you will also need an extension.php file in your extensions root folder.  This file sets several configurable options for our extension that Platform will hook into. These options include extension info, dependencies, bundle settings, used events, event listeners, global routes and rules.
 
@@ -26,7 +24,7 @@ Here is an example extension.php file for a users extension.
 		'dependencies' => array(
 			'platform.menus',
 		),
-		
+
 		'overrides' => array(
 			'platform.dashboard',
 		),
@@ -61,6 +59,7 @@ Here is an example extension.php file for a users extension.
 			'platform/users::admin.users@edit',
 			'platform/users::admin.users@delete',
 			'platform/users::admin.groups@index',
+			'platform/users::admin.groups@create',
 		),
 
 	);
@@ -80,5 +79,3 @@ Here is an example extension.php file for a users extension.
 - `global_routes` Each extension can still have its own routes.php file which can contain routing logic for that specific extension. But, what if you want to also add routes to the global routing? Thats what global routes are for.  These routes will be equivalent to the routes you put into the main application bundle's route.php file.  They are loaded after the main applications bundle route though. *Note: These routes are contained in a function rather than an array*.
 
 - `rules` The rules array contains rules, or permissions users must have, in order to view a certain area of your extension.  You can learn more about how rules work in the Sentry portion of our documentation. Simply put though, if you want to add a rule to your extension, you add it to this array.
-
-----------

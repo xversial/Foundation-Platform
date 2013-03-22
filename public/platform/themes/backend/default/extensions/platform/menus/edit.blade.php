@@ -212,35 +212,46 @@
 	<div class="quaternary page">
 
 		<form method="POST" method="POST" accept-char="UTF-8" autocomplete="off" id="menu">
+
 			{{ Form::token() }}
 
-			<fieldset class="form-horizontal">
+			<div class="actions clearfix">
+				<div class="pull-right">
+					{{ HTML::link_to_secure(ADMIN.'/menus', Lang::line('button.cancel'), array('class' => 'btn btn-large')) }}
 
-				<legend>{{ Lang::line('platform/menus::form.legend') }}</legend>
-
-				<div class="control-group">
-					<label class="control-label" for="menu-name">
-						{{ Lang::line('platform/menus::form.root.name') }}
-					</label>
-					<div class="controls">
-						<input type="text" name="name" id="menu-name" value="{{ array_get($menu, 'name') }}" {{ (array_key_exists('user_editable', $menu) and ( ! array_get($menu, 'user_editable'))) ? 'disabled' : 'required'}}>
-					</div>
+					<button type="submit" class="btn btn-large btn-primary btn-save-menu" data-loading-text="{{ Lang::line('button.loading') }}" data-complete-text="{{ Lang::line('button.saved') }}">
+						{{ Lang::line('button.'.(($menu_slug) ? 'update' : 'create')) }}
+					</button>
 				</div>
+			</div>
 
-				<div class="control-group">
-					<label class="control-label" for="menu-slug">
-						{{ Lang::line('platform/menus::form.root.slug') }}
-					</label>
-					<div class="controls">
-						<input type="text" name="slug" id="menu-slug" value="{{ array_get($menu, 'slug') }}"  {{ (array_key_exists('user_editable', $menu) and ( ! array_get($menu, 'user_editable'))) ? 'disabled' : 'required'}}>
-					</div>
-				</div>
-
-			</fieldset>
+			<hr>
 
 			<div class="row-fluid">
-				<div class="span3" id="menu-new-child">
+				<div class="span3">
+
 					<fieldset>
+
+						<legend>{{ Lang::line('platform/menus::form.legend') }}</legend>
+
+						<div class="control-group">
+							<label class="control-label" for="menu-name">
+								{{ Lang::line('platform/menus::form.root.name') }}
+							</label>
+							<input type="text" name="name" id="menu-name" class="input-block-level" value="{{ array_get($menu, 'name') }}" required>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label" for="menu-slug">
+								{{ Lang::line('platform/menus::form.root.slug') }}
+							</label>
+
+							<input type="text" name="slug" id="menu-slug" class="input-block-level" value="{{ array_get($menu, 'slug') }}"  {{ (array_key_exists('user_editable', $menu) and ( ! array_get($menu, 'user_editable'))) ? 'disabled' : 'required'}}>
+						</div>
+
+					</fieldset>
+
+					<fieldset  id="menu-new-child">
 						<legend>{{ Lang::line('platform/menus::form.create.child.legend') }}</legend>
 
 						<!-- Item Name -->
@@ -334,9 +345,11 @@
 						</div>
 
 						<div class="form-actions">
-							<button type="button" class="btn btn-primary children-add-new">
-								{{ Lang::line('platform/menus::button.add_child') }}
-							</button>
+							<div class="pull-right">
+								<button type="button" class="btn btn-primary children-add-new">
+									{{ Lang::line('platform/menus::button.add_child') }}
+								</button>
+							</div>
 						</div>
 
 					</fieldset>
@@ -344,7 +357,8 @@
 				</div>
 				<!-- /end - menu-new-child -->
 
-				<div class="span9">
+				<div class="span8">
+					<hr>
 
 					<ol class="menu-children">
 						@if (isset($menu['children']))
@@ -363,12 +377,16 @@
 				</div>
 			</div>
 
-			<div class="form-actions">
-				<button type="submit" class="btn btn-primary btn-save-menu" data-loading-text="{{ Lang::line('button.loading') }}" data-complete-text="{{ Lang::line('button.saved') }}">
-					{{ Lang::line('button.'.(($menu_slug) ? 'update' : 'create')) }}
-				</button>
+			<hr>
 
-				{{ HTML::link_to_secure(ADMIN.'/menus', Lang::line('button.cancel'), array('class' => 'btn')) }}
+			<div class="actions clearfix">
+				<div class="pull-right">
+					{{ HTML::link_to_secure(ADMIN.'/menus', Lang::line('button.cancel'), array('class' => 'btn btn-large')) }}
+
+					<button type="submit" class="btn btn-large btn-primary btn-save-menu" data-loading-text="{{ Lang::line('button.loading') }}" data-complete-text="{{ Lang::line('button.saved') }}">
+						{{ Lang::line('button.'.(($menu_slug) ? 'update' : 'create')) }}
+					</button>
+				</div>
 			</div>
 
 		</form>

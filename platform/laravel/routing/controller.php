@@ -259,8 +259,6 @@ abstract class Controller {
 	 */
 	protected static function format($bundle, $controller)
 	{
-		$bundle = str_replace('/', '_', $bundle);
-
 		return Bundle::class_prefix($bundle).Str::classify($controller).'_Controller';
 	}
 
