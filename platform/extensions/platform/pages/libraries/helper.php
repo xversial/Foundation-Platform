@@ -105,15 +105,17 @@ class Helper
 
 			$_files = glob($path.DS.'*.blade.php');
 
-			foreach ($_files as $file)
-			{
-				$file = str_replace('.blade.php', '', basename($file));
-
-				// prevent duplicates because we use overriding
-				if ( ! in_array($file, $fileNames))
+			if($_files) {
+				foreach ($_files as $file)
 				{
-					$files[$name][$file] = $file;
-					$fileNames[] = $file;
+					$file = str_replace('.blade.php', '', basename($file));
+
+					// prevent duplicates because we use overriding
+					if ( ! in_array($file, $fileNames))
+					{
+						$files[$name][$file] = $file;
+						$fileNames[] = $file;
+					}
 				}
 			}
 
