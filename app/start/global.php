@@ -59,9 +59,9 @@ App::error(function(Symfony\Component\HttpKernel\Exception\HttpException $except
 	// We will redirect to the login route
 	if ($code == 403)
 	{
-		if ($loginRoute = Route::getRoutes()->get('login'))
+		if ($loginRoute = Route::getRoutes()->get('signin'))
 		{
-			return Redirect::to('login')->withErrors($exception->getMessage());
+			return Redirect::route('signin')->withErrors($exception->getMessage());
 		}
 	}
 });
