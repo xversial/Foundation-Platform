@@ -1,5 +1,5 @@
 {
-    "hash": "ed1d1b233c45d7eeed25ab38af7c7adc",
+    "hash": "496e60a70e963e7c29885a9452cfe60b",
     "packages": [
         {
             "name": "cartalyst/api",
@@ -689,34 +689,35 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/themes.git",
-                "reference": "ce900015ee6c53e80ece4e441ecc6e58fcf59266"
+                "reference": "e1925fc472e87382595b2c30d165f1add32adb15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/themes/zipball/ce900015ee6c53e80ece4e441ecc6e58fcf59266",
-                "reference": "ce900015ee6c53e80ece4e441ecc6e58fcf59266",
+                "url": "https://api.github.com/repos/cartalyst/themes/zipball/e1925fc472e87382595b2c30d165f1add32adb15",
+                "reference": "e1925fc472e87382595b2c30d165f1add32adb15",
                 "shasum": ""
             },
             "require": {
-                "cartalyst/assetic-filters": "1.0.*",
                 "cartalyst/dependencies": "1.0.*",
-                "coffeescript/coffeescript": "1.3.*",
-                "illuminate/container": "4.0.*",
+                "herrera-io/json": "1.0.*",
+                "illuminate/events": "4.0.*",
                 "illuminate/filesystem": "4.0.*",
                 "illuminate/support": "4.0.*",
                 "illuminate/view": "4.0.*",
-                "jasonlewis/basset": "dev-master",
                 "kriswallsmith/assetic": "1.1.*",
-                "leafo/lessphp": "dev-master",
-                "leafo/scssphp": "dev-master",
-                "leafo/scssphp-compass": "dev-master",
-                "lmammino/jsmin4assetic": "dev-master",
-                "natxet/cssmin": "dev-master",
-                "php": ">=5.3.0",
-                "richthegeek/phpsass": "dev-master"
+                "php": ">=5.3.0"
             },
             "require-dev": {
                 "mockery/mockery": "0.7.2"
+            },
+            "suggest": {
+                "cartalyst/assetic-filters": "CoffeeScript & SASS PHP compiler.",
+                "jasonlewis/basset": "URL rewrite filter.",
+                "leafo/lessphp": "LESS PHP compiler.",
+                "leafo/scssphp": "SCSS PHP compiler.",
+                "leafo/scssphp-compass": "Compass support for SCSS PHP compiler.",
+                "lmammino/jsmin4assetic": "JavaScript PHP minification.",
+                "natxet/CssMin": "CSS PHP minification."
             },
             "type": "library",
             "extra": {
@@ -773,7 +774,7 @@
                 "source": "https://github.com/cartalyst/themes/tree/master",
                 "issues": "https://github.com/cartalyst/themes/issues"
             },
-            "time": "2013-03-28 00:41:55"
+            "time": "2013-04-02 09:51:28"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -823,26 +824,41 @@
             "time": "2013-03-03 02:54:09"
         },
         {
-            "name": "coffeescript/coffeescript",
-            "version": "1.3.1",
+            "name": "herrera-io/json",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/alxlit/coffeescript-php",
-                "reference": "1.3.1"
+                "url": "https://github.com/herrera-io/php-json.git",
+                "reference": "1.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/alxlit/coffeescript-php/zipball/1.3.1",
-                "reference": "1.3.1",
+                "url": "https://api.github.com/repos/herrera-io/php-json/zipball/1.0.2",
+                "reference": "1.0.2",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "justinrainbow/json-schema": ">=1.0,<2.0-dev",
+                "php": ">=5.3.3",
+                "seld/jsonlint": ">=1.0,<2.0-dev"
+            },
+            "require-dev": {
+                "herrera-io/phpunit-test-case": "1.*",
+                "mikey179/vfsstream": "1.1.0",
+                "phpunit/phpunit": "3.7.*"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
             "autoload": {
+                "files": [
+                    "src/lib/json_version.php"
+                ],
                 "psr-0": {
-                    "CoffeeScript": "src/"
+                    "Herrera\\Json": "src/lib"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -851,20 +867,20 @@
             ],
             "authors": [
                 {
-                    "name": "Alex Little",
-                    "email": "alxlit@gmail.com",
-                    "homepage": "http://alxlit.name"
+                    "name": "Kevin Herrera",
+                    "email": "kevin@herrera.io",
+                    "homepage": "http://kevin.herrera.io"
                 }
             ],
-            "description": "A port of the CoffeeScript compiler to PHP.",
-            "homepage": "http://github.com/alxlit/coffeescript-php",
+            "description": "A library for simplifying JSON linting and validation.",
+            "homepage": "http://herrera-io.github.com/php-json",
             "keywords": [
-                "JS",
-                "coffee",
-                "coffeescript",
-                "javascript"
+                "json",
+                "lint",
+                "schema",
+                "validate"
             ],
-            "time": "2012-08-04 07:44:51"
+            "time": "2013-03-20 17:01:55"
         },
         {
             "name": "ircmaxell/password-compat",
@@ -958,6 +974,72 @@
             "time": "2013-01-12 14:37:01"
         },
         {
+            "name": "justinrainbow/json-schema",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/justinrainbow/json-schema.git",
+                "reference": "630e41a4220c0519c751b678a3e0b2b9476e7912"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/630e41a4220c0519c751b678a3e0b2b9476e7912",
+                "reference": "630e41a4220c0519c751b678a3e0b2b9476e7912",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=3.7,<3.8"
+            },
+            "bin": [
+                "bin/validate-json"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "JsonSchema": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Igor Wiedler",
+                    "email": "igor@wiedler.ch",
+                    "homepage": "http://wiedler.ch/igor/"
+                },
+                {
+                    "name": "Bruno Prieto Reis",
+                    "email": "bruno.p.reis@gmail.com"
+                },
+                {
+                    "name": "Justin Rainbow",
+                    "email": "justin.rainbow@gmail.com"
+                },
+                {
+                    "name": "Robert Schönthal",
+                    "email": "seroscho@googlemail.com",
+                    "homepage": "http://digitalkaoz.net"
+                }
+            ],
+            "description": "A library to validate a json schema.",
+            "homepage": "https://github.com/justinrainbow/json-schema",
+            "keywords": [
+                "json",
+                "schema"
+            ],
+            "time": "2013-03-18 14:37:09"
+        },
+        {
             "name": "kriswallsmith/assetic",
             "version": "dev-master",
             "source": {
@@ -1034,12 +1116,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "d05e573a26af1d13758ed8c9f090703b600640ea"
+                "reference": "7f5b0b086247370fdb7b4014f4fad8244d4311ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/d05e573a26af1d13758ed8c9f090703b600640ea",
-                "reference": "d05e573a26af1d13758ed8c9f090703b600640ea",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/7f5b0b086247370fdb7b4014f4fad8244d4311ec",
+                "reference": "7f5b0b086247370fdb7b4014f4fad8244d4311ec",
                 "shasum": ""
             },
             "require": {
@@ -1125,7 +1207,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-04-01 21:44:03"
+            "time": "2013-04-02 00:36:38"
         },
         {
             "name": "leafo/lessphp",
@@ -2230,55 +2312,51 @@
             "time": "2012-12-21 11:40:51"
         },
         {
-            "name": "richthegeek/phpsass",
-            "version": "dev-master",
+            "name": "seld/jsonlint",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/richthegeek/phpsass.git",
-                "reference": "8c3e99db6a930fb89f41d1a1f7732be0e610cd14"
+                "url": "http://github.com/Seldaek/jsonlint",
+                "reference": "1.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/richthegeek/phpsass/zipball/8c3e99db6a930fb89f41d1a1f7732be0e610cd14",
-                "reference": "8c3e99db6a930fb89f41d1a1f7732be0e610cd14",
+                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/1.1.1",
+                "reference": "1.1.1",
                 "shasum": ""
             },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "bin": [
+                "bin/jsonlint"
+            ],
             "type": "library",
             "autoload": {
-                "classmap": [
-                    "script/",
-                    "renderers/",
-                    "tree/",
-                    "SassException.php",
-                    "SassFile.php",
-                    "SassParser.php"
-                ]
+                "psr-0": {
+                    "Seld\\JsonLint": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD-2-Clause"
+                "MIT"
             ],
             "authors": [
                 {
-                    "name": "Richard Lyon",
-                    "homepage": "https://github.com/richthegeek"
-                },
-                {
-                    "name": "Sebastian Siemssen",
-                    "homepage": "https://twitter.com/thefubhy"
-                },
-                {
-                    "name": "Steve Jones",
-                    "homepage": "https://github.com/darthsteven"
-                },
-                {
-                    "name": "Sam Richard",
-                    "homepage": "https://github.com/snugug"
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be",
+                    "role": "Developer"
                 }
             ],
-            "description": "PHPSass is a PHP compiler for SASS, a popular CSS pre-processor language.",
-            "homepage": "http://phpsass.com",
-            "time": "2013-03-22 13:54:10"
+            "description": "JSON Linter",
+            "keywords": [
+                "json",
+                "linter",
+                "parser",
+                "validator"
+            ],
+            "time": "2013-02-11 23:03:12"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2966,9 +3044,14 @@
 
     ],
     "minimum-stability": "dev",
-    "stability-flags": [
-
-    ],
+    "stability-flags": {
+        "jasonlewis/basset": 20,
+        "leafo/lessphp": 20,
+        "leafo/scssphp": 20,
+        "leafo/scssphp-compass": 20,
+        "lmammino/jsmin4assetic": 20,
+        "natxet/cssmin": 20
+    },
     "platform": [
 
     ],

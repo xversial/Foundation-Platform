@@ -18,7 +18,15 @@
 
 		"platform/users": "1.0.*",
 		"platform/menus": "1.0.*",
-		"platform/settings": "1.0.*"
+		"platform/settings": "1.0.*",
+
+		"cartalyst/assetic-filters": "1.0.*",
+		"jasonlewis/basset": "dev-master",
+		"leafo/lessphp": "dev-master",
+		"leafo/scssphp": "dev-master",
+		"leafo/scssphp-compass": "dev-master",
+		"lmammino/jsmin4assetic": "dev-master",
+		"natxet/CssMin": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
@@ -31,7 +39,10 @@
 		]
 	},
 	"scripts": {
-		"post-update-cmd": "php artisan optimize"
+		"post-update-cmd": [
+			"php artisan optimize",
+			"php artisan theme:publish --extensions"
+		]
 	},
 	"minimum-stability": "dev"
 }
