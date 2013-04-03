@@ -13,8 +13,8 @@
 		</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
-		<meta name="base_url" content="{{ Request::root() }}">
-		<meta name="base_url" content="{{ Request::root().'/'.ADMIN_URI }}">
+		<meta name="base_url" content="{{ URL::to('/') }}">
+		<meta name="base_url" content="{{ URL::to(ADMIN_URI) }}">
 
 		<!-- Queue template assets -->
 		{{ Asset::queue('style', 'styles/less/style.less') }}
@@ -42,7 +42,7 @@
 
 		<!-- Compiled styles -->
 		@foreach (Asset::getCompiledStyles() as $style)
-			<link href="{{ $style }}" rel="stylesheet">
+		<link href="{{ $style }}" rel="stylesheet">
 		@endforeach
 
 		<!-- Call custom inline styles -->
@@ -65,12 +65,12 @@
 							<span class="icon-bar"></span>
 						</a>
 
-						<a class="brand" href="{{ Request::root().'/'.ADMIN_URI }}">{{ Config::get('platform.site.title') }}</a>
+						<a class="brand" href="{{ URL::to(ADMIN_URI) }}">{{ Config::get('platform.site.title') }}</a>
 
 						<ul class="nav pull-right">
 							<li class="divider-vertical"></li>
 							<li>
-								<a href="{{ Request::root() }}" target="_self">
+								<a href="{{ URL::to('/') }}" target="_self">
 									<i class="icon-home"></i> <span>Home</span>
 								</a>
 							</li>
@@ -123,7 +123,7 @@
 
 		<!-- Compiled scripts -->
 		@foreach (Asset::getCompiledScripts() as $script)
-			<script src="{{ $script }}"></script>
+		<script src="{{ $script }}"></script>
 		@endforeach
 
 		<!-- Call custom inline scripts -->
