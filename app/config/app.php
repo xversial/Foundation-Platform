@@ -103,6 +103,7 @@ return array(
 		'Cartalyst\DataGrid\DataGridServiceProvider',
 		'Cartalyst\Sentry\SentryServiceProvider',
 		'Cartalyst\Api\ApiServiceProvider',
+		'Cartalyst\NestedSets\NestedSetsServiceProvider',
 		'Cartalyst\Themes\ThemeServiceProvider',
 		'Cartalyst\Extensions\ExtensionsServiceProvider',
 
