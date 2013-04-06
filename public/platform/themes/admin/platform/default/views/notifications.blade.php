@@ -2,8 +2,8 @@
 <div class="alert alert-error alert-block">
 	<button type="button" class="close" data-dismiss="alert">&times;</button>
 	<h4>Error</h4>
-	@if ($errors->has(0))
-	{{ $errors->first(0, ':message') }}
+	@if ($message = $errors->first(0, ':message'))
+	{{ $message }}
 	@else
 	Please check the form below for errors
 	@endif
