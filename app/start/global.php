@@ -55,15 +55,7 @@ App::error(function(Exception $exception, $code)
 
 App::error(function(Symfony\Component\HttpKernel\Exception\HttpException $exception, $code)
 {
-	// No permissions means that the session probably expired.
-	// We will redirect to the login route
-	if ($code == 403)
-	{
-		if ($loginRoute = Route::getRoutes()->get('signin'))
-		{
-			return Redirect::route('signin')->withErrors($exception->getMessage());
-		}
-	}
+
 });
 
 /*
