@@ -19,4 +19,50 @@
 
 jQuery(document).ready(function($) {
 
+	var $body = $(document.body);
+	var $sidebar = $('#base').find('.sidebar');
+	var $page = $('#base').find('.page');
+
+	var sizes = {
+		sidebar : {
+			open: '15%',
+			closed: 60
+		},
+		page : {
+			open: '84%'
+		}
+	};
+
+	if( typeof localStorage.getItem('sidebar') === 'string' && localStorage.getItem('sidebar') === 'closed' ){
+
+		$body.addClass('collapsed');
+		$sidebar.css({'width' : sizes.sidebar.closed });
+		$page.css({ 'width' : $body.width() - (sizes.sidebar.closed + 10), 'marginLeft' : sizes.sidebar.closed });
+
+	}
+
+	$sidebar.on('click', '.close-sidebar', function(){
+
+		$body.addClass('collapsed');
+		$sidebar.animate({ 'width' : sizes.sidebar.closed });
+		$page.animate({ 'width' : $body.width() - (sizes.sidebar.closed + 10), 'marginLeft' : sizes.sidebar.closed });
+		localStorage.setItem('sidebar', 'closed');
+
+	})
+	.on('click', '.open-sidebar', function(){
+
+		$sidebar.animate({ 'width' : sizes.sidebar.open }, function(){
+			$body.removeClass('collapsed');
+		});
+		$page.animate({ 'width' : sizes.page.open, 'marginLeft' : sizes.sidebar.open });
+		localStorage.setItem('sidebar', 'open');
+
+	});
+
+	// if( $sidebar.height() > $page.height() ){
+	// 	$page.css({'height' : $sidebar.height() });
+	// }
+
+	// console.log( $sidebar.height() + ' | ' + $page.height() );
+
 });
