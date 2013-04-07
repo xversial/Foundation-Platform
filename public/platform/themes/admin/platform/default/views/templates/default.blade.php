@@ -16,7 +16,7 @@
 		<meta name="base_url" content="{{ URL::to('/') }}">
 		<meta name="base_url" content="{{ URL::to(ADMIN_URI) }}">
 
-		<!-- Queue template assets -->
+		{{-- Queue template assets --}}
 		{{ Asset::queue('style', 'styles/less/style.less') }}
 
 		{{ Asset::queue('modernizr', 'js/vendor/modernizr/modernizr.js') }}
@@ -25,7 +25,7 @@
 		{{ Asset::queue('plugins', 'js/plugins.js', array('jquery')) }}
 		{{ Asset::queue('script', 'js/script.js', array('jquery')) }}
 
-		<!-- Call partial assets -->
+		{{-- Call partial assets --}}
 		@section('assets')
 		@show
 
@@ -40,12 +40,12 @@
 		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ Asset::getUrl('img/apple-touch-icon-72x72-precomposed.png') }}">
 		<link rel="apple-touch-icon-precomposed" href="{{ Asset::getUrl('img/apple-touch-icon-precomposed.png') }}">
 
-		<!-- Compiled styles -->
+		{{-- Compiled styles --}}
 		@foreach (Asset::getCompiledStyles() as $style)
 		<link href="{{ $style }}" rel="stylesheet">
 		@endforeach
 
-		<!-- Call custom inline styles -->
+		{{-- Call custom inline styles --}}
 		@section('styles')
 		@show
 
@@ -85,18 +85,16 @@
 				<nav class="secondary-navigation">
 					@widget('platform/menus::nav.show', array(1, 1, 'nav nav-tabs', ADMIN_URI))
 				</nav>
-				<div>[[ show messages ]]</div>
 				@yield('content')
 			</article>
 		</div>
 
-
-		<!-- Compiled scripts -->
+		{{-- Compiled scripts --}}
 		@foreach (Asset::getCompiledScripts() as $script)
 		<script src="{{ $script }}"></script>
 		@endforeach
 
-		<!-- Call custom inline scripts -->
+		{{-- Call custom inline scripts --}}
 		@section('scripts')
 		@show
 
