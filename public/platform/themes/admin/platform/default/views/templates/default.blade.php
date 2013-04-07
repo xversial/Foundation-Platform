@@ -48,6 +48,7 @@
 		<!-- Call custom inline styles -->
 		@section('styles')
 		@show
+
 	</head>
 	<body>
 		<!--[if lt IE 7]>
@@ -55,71 +56,40 @@
 		<![endif]-->
 
 		<div id="base">
+			<aside class="sidebar">
+				<a class="close-sidebar icon-double-angle-left"></a>
+				<a class="open-sidebar icon-double-angle-right"></a>
 
-			<header class="navbar">
-				<div class="navbar-inner">
-					<div class="container-fluid">
-						<a class="btn btn-navbar" data-toggle="collapse" data-target="#primary-navigation">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</a>
+				<a class="brand" href="{{ URL::to(ADMIN_URI) }}">
+					<img src="{{ Asset::getUrl('img/brand-admin.png') }}" alt="">
+					<span>@setting('platform.site.title')</span>
+				</a>
 
-						<a class="brand" href="{{ URL::to(ADMIN_URI) }}">{{ Config::get('platform.site.title') }}</a>
+				<nav>@widget('platform/menus::nav.show', array('admin', 1, '', ADMIN_URI))</nav>
+			</aside>
+			<article class="page">
+				<nav class="profile">
+					<ul>
+						<li>
+							<a href="{{ URL::to('') }}" target="_self">
+								<i class="icon-home"></i>
+							</a>
+						</li>
+						<li>
+							<a href="{{ URL::to('logout') }}" target="_self">
+								<i class="icon-signout"></i>
+							</a>
+						</li>
+					</ul>
+				</nav>
+				<nav class="secondary-navigation">
+					@widget('platform/menus::nav.show', array(1, 1, 'nav nav-tabs', ADMIN_URI))
+				</nav>
+				<div>[[ show messages ]]</div>
+				@yield('content')
+			</article>
+		</div>
 
-						<ul class="nav pull-right">
-							<li class="divider-vertical"></li>
-							<li>
-								<a href="{{ URL::to('/') }}" target="_self">
-									<i class="icon-home"></i> <span>Home</span>
-								</a>
-							</li>
-							<li class="divider-vertical"></li>
-							<li>
-								<a href="{{ URL::to('/logout') }}" target="_self">
-									<i class="icon-signout"></i> <span>Logout</span>
-								</a>
-							</li>
-							<li class="divider-vertical"></li>
-						</ul>
-						<div id="primary-navigation" class="nav-collapse collapse">
-							@widget('platform/menus::nav.show', array('admin', 1, 'nav', ADMIN_URI))
-						</div><!--/.nav-collapse -->
-					</div>
-				</div>
-			</header><!--/.Mobile Navigation -->
-
-			<div class="primary page container-fluid">
-
-				<div class="row-fluid hidden-desktop">
-					<div class="span12">
-						<nav class="secondary-navigation">
-							@widget('platform/menus::nav.show', array(1, 1, 'nav nav-stacked nav-pills', ADMIN_URI))
-						</nav>
-					</div>
-				</div>
-
-				<div class="tabbable tabs-left">
-
-					@widget('platform/menus::nav.show', array(1, 1, 'secondary-navigation nav nav-tabs visible-desktop', ADMIN_URI))
-
-					<!-- Notifications -->
-					@include('notifications')
-
-					<div class="secondary page tab-content">
-						@section('content')
-						@show
-					</div>
-				</div>
-
-			</div>
-			<div id="push"></div>
-
-		</div><!--/.base-->
-
-		<footer>
-			{{ Config::get('platform.site.copyright') }}
-		</footer>
 
 		<!-- Compiled scripts -->
 		@foreach (Asset::getCompiledScripts() as $script)
@@ -129,5 +99,6 @@
 		<!-- Call custom inline scripts -->
 		@section('scripts')
 		@show
+
 	</body>
 </html>
