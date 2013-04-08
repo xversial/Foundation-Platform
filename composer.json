@@ -8,25 +8,13 @@
 	"require": {
 		"laravel/framework": "4.0.*",
 
-		"cartalyst/data-grid": "1.0.*",
-		"cartalyst/themes": "2.0.*",
-
-		"platform/addons": "1.0.*",
 		"platform/foundation": "1.0.*",
 		"platform/operations": "1.0.*",
 		"platform/routing": "1.0.*",
 
 		"platform/users": "1.0.*",
 		"platform/menus": "1.0.*",
-		"platform/settings": "1.0.*",
-
-		"cartalyst/assetic-filters": "1.0.*",
-		"jasonlewis/basset": "dev-master",
-		"leafo/lessphp": "dev-master",
-		"leafo/scssphp": "dev-master",
-		"leafo/scssphp-compass": "dev-master",
-		"lmammino/jsmin4assetic": "dev-master",
-		"natxet/CssMin": "dev-master"
+		"platform/settings": "1.0.*"
 	},
 	"autoload": {
 		"classmap": [
