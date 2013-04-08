@@ -1767,20 +1767,18 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-content.git",
-                "reference": "a5331dfc3c9f35b9cd67858c915f9d3583cbce48"
+                "reference": "97cffd143e4e4868c352eb503ca86c9b39bdac10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/a5331dfc3c9f35b9cd67858c915f9d3583cbce48",
-                "reference": "a5331dfc3c9f35b9cd67858c915f9d3583cbce48",
+                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/97cffd143e4e4868c352eb503ca86c9b39bdac10",
+                "reference": "97cffd143e4e4868c352eb503ca86c9b39bdac10",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "1.0.*",
                 "php": ">=5.3.0",
-                "platform/admin": "1.0.*",
-                "platform/menus": "1.0.*",
-                "platform/users": "1.0.*"
+                "platform/admin": "1.0.*"
             },
             "require-dev": {
                 "mockery/mockery": "0.7.*"
@@ -1841,7 +1839,7 @@
                 "source": "https://github.com/cartalyst/platform-content/tree/master",
                 "issues": "https://github.com/cartalyst/platform-content/issues"
             },
-            "time": "2013-03-05 20:03:06"
+            "time": "2013-04-08 10:21:54"
         },
         {
             "name": "platform/foundation",
@@ -2085,21 +2083,19 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-pages.git",
-                "reference": "e319195afb5fcb41c85f3ac0d16c70ac16e78d9e"
+                "reference": "7c7a2d519c9e183288306030a8e886a0f5377e12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/e319195afb5fcb41c85f3ac0d16c70ac16e78d9e",
-                "reference": "e319195afb5fcb41c85f3ac0d16c70ac16e78d9e",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/7c7a2d519c9e183288306030a8e886a0f5377e12",
+                "reference": "7c7a2d519c9e183288306030a8e886a0f5377e12",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "1.0.*",
                 "php": ">=5.3.0",
                 "platform/admin": "1.0.*",
-                "platform/content": "1.0.*",
-                "platform/menus": "1.0.*",
-                "platform/users": "1.0.*"
+                "platform/content": "1.0.*"
             },
             "require-dev": {
                 "mockery/mockery": "0.7.*"
@@ -2160,7 +2156,7 @@
                 "source": "https://github.com/cartalyst/platform-pages/tree/master",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2013-03-05 20:09:02"
+            "time": "2013-04-08 10:22:08"
         },
         {
             "name": "platform/routing",
@@ -2533,12 +2529,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/richthegeek/phpsass.git",
-                "reference": "cbe5a2cbdb13954dab5fc91034b0bc3f36bc7d65"
+                "reference": "ceb61dbb97100a1f144b3f30906c4e45e38cb9f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/richthegeek/phpsass/zipball/cbe5a2cbdb13954dab5fc91034b0bc3f36bc7d65",
-                "reference": "cbe5a2cbdb13954dab5fc91034b0bc3f36bc7d65",
+                "url": "https://api.github.com/repos/richthegeek/phpsass/zipball/ceb61dbb97100a1f144b3f30906c4e45e38cb9f7",
+                "reference": "ceb61dbb97100a1f144b3f30906c4e45e38cb9f7",
                 "shasum": ""
             },
             "type": "library",
@@ -2576,7 +2572,7 @@
             ],
             "description": "PHPSass is a PHP compiler for SASS, a popular CSS pre-processor language.",
             "homepage": "http://phpsass.com",
-            "time": "2013-04-03 13:30:45"
+            "time": "2013-04-08 13:25:23"
         },
         {
             "name": "seld/jsonlint",
