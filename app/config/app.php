@@ -181,6 +181,9 @@ return array(
 		'Asset'      => 'Cartalyst\Themes\Facades\Asset',
 		'DataGrid'   => 'Cartalyst\DataGrid\Facades\DataGrid',
 		'Extensions' => 'Cartalyst\Extensions\Facades\Extensions',
+		'Input'      => 'Cartalyst\Api\Facades\Input',
+		'Request'    => 'Cartalyst\Api\Facades\Request',
+		'Response'   => 'Cartalyst\Api\Facades\Response',
 		'Sentry'     => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 		'Theme'      => 'Cartalyst\Themes\Facades\Theme',
 
