@@ -313,7 +313,51 @@ html, body {
 	}
 }
 
+/**
+ * Menus
+ */
+ .nestable{
+ 	width:100%; 
+ 	max-width:100%;
+ }
 
+ .item-dd-handle, .item-toggle{
+ 	background:@base;
+ 	border:0;
+
+ 	&:hover{
+ 		background:lighten(@base, 10%);
+ 	}
+ }
+
+ .item-dd-handle{ line-height: 25px; }
+
+ .item-dd-handle{ border-right:1px solid @baseEtch; }
+ .item-toggle{ border-left:1px solid @baseEtch; }
+
+ .item-name{
+
+ 	background:@content;
+
+ 	border-top:1px solid @etch;
+ 	border-bottom:1px solid @etch;
+ 	border-left:1px solid @baseEtchLight;
+ 	border-right:1px solid @baseEtchLight;
+
+  	-webkit-touch-callout: none;
+  	-webkit-user-drag: none;
+
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+ }
+
+ .item-dd-empty, .item-dd-placeholder{
+ 	border:1px dashed @base;
+ 	background:lighten(@base, 60%);
+ }
 
 /* #Forms
 ================================================== */
