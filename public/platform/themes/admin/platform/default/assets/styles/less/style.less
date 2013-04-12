@@ -205,6 +205,7 @@ html, body {
 		background:@page;
 		line-height: 22px;
 		border:1px solid transparent;
+		
 		&:hover{
 			border:1px solid transparent;
 			background:@page;
@@ -228,7 +229,7 @@ html, body {
 		padding:14px 16px;
 
 		&:hover{
-			color:@purple;
+
 		}
 	}
 
@@ -246,15 +247,19 @@ html, body {
 		list-style-type: none;
 	}
 
-	li{ display:inline; }
+	li{ display:inline; text-align: center;}
 
 	a, a:visited{
 		display:inline-block;
 		padding:5px;
 
-		font-size:17px;
+		font-size:16px;
 		text-decoration: none;
 		color:#fff;
+
+		&:hover{
+			font-size:20px;
+		}
 
 	}
 
@@ -291,31 +296,8 @@ html, body {
 
 }
 
-
-.notice {
-	width: 300px;
-	height: 300px;
-	position: absolute;
-	left: 56%;
-	top: 56%;
-	margin-left: -150px;
-	margin-top: -150px;
-	text-align: center;
-
-	i {
-		font-size:48px;
-		display: block;
-		padding:10px 0;
-	}
-
-	span {
-		font-size:18px;
-	}
-}
-
-/**
- * Menus
- */
+/* Menus
+==================================================*/
  .nestable{
  	width:100%; 
  	max-width:100%;
@@ -324,13 +306,12 @@ html, body {
  .item-dd-handle, .item-toggle{
  	background:@base;
  	border:0;
+ 	// line-height: 25px;
 
  	&:hover{
  		background:lighten(@base, 10%);
  	}
  }
-
- .item-dd-handle{ line-height: 25px; }
 
  .item-dd-handle{ border-right:1px solid @baseEtch; }
  .item-toggle{ border-left:1px solid @baseEtch; }
@@ -558,6 +539,28 @@ form label.default {
 	text-align: center;
 	border-radius: 4px;
 	border:1px solid @etch;
+}
+
+/* #Messages
+==================================================*/
+.messages {
+	width:100%; 
+	position: relative;
+
+	margin-top:10px;
+	margin-bottom:20px;
+
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	.stack{
+		width:100%; 
+		position: absolute;
+		top:0; left:0;	
+	}
+
+	.alert{ margin:0 10px; }
+
 }
 
 /* #A few bootstrap overides
