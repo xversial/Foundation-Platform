@@ -107,7 +107,7 @@
 		// All systems go - let's fetch our first lot of
 		// data
 		this.fetch();
-	}
+	};
 
 	// All of the methods which remain the same between
 	// instnaces of DataGrid
@@ -144,6 +144,7 @@
 		},
 
 		prepareFiltersTemplate: function() {
+
 			var filtersSelector, $filters;
 
 			// Let's check our filters
@@ -393,6 +394,25 @@
 			this.$results.find('thead [data-column]').click(function() {
 				var $cell = $(this),
 				    column = $cell.data('column');
+
+				    $cell.removeClass('sortable-asc sortable-desc').addClass('sortable');
+
+				    if($cell.data('order-by')){
+
+				    	if($cell.data('order-by') === 'asc'){
+				    		$cell.removeClass('sortable-asc').addClass('sortable-desc').data('order-by', 'desc');
+				    	}else{
+				    		$cell.removeClass('sortable-desc').addClass('sortable').data('order-by', '');
+				    		me.setSort();
+				    		me.fetch();
+				    		return;
+				    	}
+
+				    }else{
+				    	$cell.removeClass('sortable').addClass('sortable-asc').data('order-by', 'asc');
+				    }
+
+
 
 				me.setSort(column);
 				me.fetch();
