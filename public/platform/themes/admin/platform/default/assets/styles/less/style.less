@@ -534,11 +534,46 @@ form label.toggle, div.controls.switch {
 /* #Toggles
 ==================================================*/
 
-form label.default {
+.switch.default {
 	background-color: @content;
+	font-weight: bold;
 	text-align: center;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
 	border-radius: 4px;
 	border:1px solid @etch;
+}
+
+.switch.default input:checked + label {
+	color: @white;
+
+}
+
+.switch.default .slide-button {
+	border: 1px solid @etch;
+	background-color: @base;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	border:1px solid @etch;
+}
+
+.switch.default p {
+	color: #333;
+
+	text-shadow: none;
+}
+
+.switch.default span {
+	color: #fff;
+}
+
+.switch.default.blue .slide-button {
+	background-color: #38a3d4;
+}
+
+.switch.default.yellow .slide-button {
+	background-color: #f5e560;
 }
 
 /* #Messages
