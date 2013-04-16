@@ -1,3 +1,21 @@
+/**
+ * Part of the Data Grid package.
+ *
+ * NOTICE OF LICENSE
+ *
+ * Licensed under the 3-clause BSD License.
+ *
+ * This source file is subject to the 3-clause BSD License that is
+ * bundled with this package in the LICENSE file.  It is also available at
+ * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
+ *
+ * @package    Data Grid
+ * @version    1.0.0
+ * @author     Cartalyst LLC
+ * @license    BSD License (3-clause)
+ * @copyright  (c) 2011 - 2013, Cartalyst LLC
+ * @link       http://cartalyst.com
+ */
 (function($) {
 
 	/**
@@ -327,10 +345,10 @@
 
 			// Let's retrieve the new JSON payload from the server with our
 			// fetch parameters that we've built.
-			$.getJSON(this.source, this.buildFetchParameters(), function(data) {
+			$.getJSON(this.source, this.buildFetchParameters(), function(response) {
 
-				me.loadResults(data.results);
-				me.loadPagination(data.pagination);
+				me.loadResults(response.results);
+				me.loadPagination(response.pages_count);
 				me.renderResults();
 				me.renderPagination();
 
@@ -344,14 +362,14 @@
 			this.results = results;
 		},
 
-		loadPagination: function(pagination) {
+		loadPagination: function(pagesCount) {
 
 			// Reset our pagination data
 			this.pagination.navigation = [];
 
 			// Loop through the pages and add a new index
 			// to the pagination data array
-			for (i = 1; i <= pagination.total_pages; i++) {
+			for (i = 1; i <= pagesCount; i++) {
 				var paginationData = {
 					page: i,
 					active: false
