@@ -14,7 +14,7 @@
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
 		<meta name="base_url" content="{{ URL::to('/') }}">
-		<meta name="base_url" content="{{ URL::to(ADMIN_URI) }}">
+		<meta name="base_url" content="{{ URL::toAdmin('/') }}">
 
 		{{-- Queue template assets --}}
 		{{ Asset::queue('style', 'styles/less/style.less') }}
@@ -60,7 +60,7 @@
 				<a class="close-sidebar icon-double-angle-left"></a>
 				<a class="open-sidebar icon-double-angle-right"></a>
 
-				<a class="brand" href="{{ URL::to(ADMIN_URI) }}">
+				<a class="brand" href="{{ URL::toAdmin('/') }}">
 					<img src="{{ Asset::getUrl('img/brand-admin.png') }}" alt="">
 					<span>@setting('platform.site.title')</span>
 				</a>
@@ -82,10 +82,13 @@
 						</li>
 					</ul>
 				</nav>
+
 				<nav class="secondary-navigation">
 					@widget('platform/ui::nav.show', array(1, 1, 'nav nav-tabs', ADMIN_URI))
 				</nav>
-				@yield('content')
+
+				@section('content')
+				@show
 			</article>
 		</div>
 
