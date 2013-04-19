@@ -87,6 +87,7 @@
 					@widget('platform/ui::nav.show', array(1, 1, 'nav nav-tabs', ADMIN_URI))
 				</nav>
 
+				@include('notifications')
 				@section('content')
 				@show
 			</article>
