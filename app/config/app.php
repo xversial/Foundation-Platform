@@ -106,7 +106,10 @@ return array(
 		'Illuminate\Foundation\Providers\RouteListServiceProvider',
 		'Illuminate\Database\SeedServiceProvider',
 		'Illuminate\Foundation\Providers\ServerServiceProvider',
-		'Illuminate\Session\SessionServiceProvider',
+
+		// 'Illuminate\Session\SessionServiceProvider',
+		'Overrides\SessionServiceProvider',
+
 		'Illuminate\Foundation\Providers\TinkerServiceProvider',
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
