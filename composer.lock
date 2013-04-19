@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "f9f3a526ba1cd3f8840d8ec0b6b4d1be",
+    "hash": "975b104c3f6644d36a765ec3d88921ae",
     "packages": [
         {
             "name": "cartalyst/api",
@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/api.git",
-                "reference": "3f254689e225cb0f5b0029c13d037e2f79581155"
+                "reference": "7e213d3e69b63410c28503caae3c3fb794493235"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/api/zipball/3f254689e225cb0f5b0029c13d037e2f79581155",
-                "reference": "3f254689e225cb0f5b0029c13d037e2f79581155",
+                "url": "https://api.github.com/repos/cartalyst/api/zipball/7e213d3e69b63410c28503caae3c3fb794493235",
+                "reference": "7e213d3e69b63410c28503caae3c3fb794493235",
                 "shasum": ""
             },
             "require": {
@@ -83,7 +83,7 @@
                 "source": "https://github.com/cartalyst/api/tree/master",
                 "issues": "https://github.com/cartalyst/api/issues"
             },
-            "time": "2013-04-08 09:47:55"
+            "time": "2013-04-18 01:02:35"
         },
         {
             "name": "cartalyst/assetic-filters",
@@ -288,12 +288,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/data-grid.git",
-                "reference": "35777de1765a4818ac54ed64938d6a2f2e0d1215"
+                "reference": "2ac4514415c10a80d086d2677a0f4da5c822bf60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/data-grid/zipball/35777de1765a4818ac54ed64938d6a2f2e0d1215",
-                "reference": "35777de1765a4818ac54ed64938d6a2f2e0d1215",
+                "url": "https://api.github.com/repos/cartalyst/data-grid/zipball/2ac4514415c10a80d086d2677a0f4da5c822bf60",
+                "reference": "2ac4514415c10a80d086d2677a0f4da5c822bf60",
                 "shasum": ""
             },
             "require": {
@@ -350,7 +350,7 @@
                 "source": "https://github.com/cartalyst/data-grid/tree/master",
                 "issues": "https://github.com/cartalyst/data-grid/issues"
             },
-            "time": "2013-04-16 07:32:01"
+            "time": "2013-04-19 00:08:07"
         },
         {
             "name": "cartalyst/dependencies",
@@ -1147,12 +1147,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "4485d19634219ee791fe631657b31069e0de277d"
+                "reference": "10be52ae3dc88e102db9dbce776b856606421859"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/4485d19634219ee791fe631657b31069e0de277d",
-                "reference": "4485d19634219ee791fe631657b31069e0de277d",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/10be52ae3dc88e102db9dbce776b856606421859",
+                "reference": "10be52ae3dc88e102db9dbce776b856606421859",
                 "shasum": ""
             },
             "require": {
@@ -1209,7 +1209,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2013-04-14 16:29:11"
+            "time": "2013-04-18 15:56:29"
         },
         {
             "name": "doctrine/inflector",
@@ -1263,7 +1263,7 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -1473,7 +1473,7 @@
             "authors": [
                 {
                     "name": "Anthony Ferrara",
-                    "email": "ircmaxell@ircmaxell.com",
+                    "email": "ircmaxell@php.net",
                     "homepage": "http://blog.ircmaxell.com"
                 }
             ],
@@ -1680,12 +1680,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "6c1fcc518185bc533db44a3e8eceba055bb29705"
+                "reference": "40e391ad9bc3f95751aedd921be10509c42175c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/6c1fcc518185bc533db44a3e8eceba055bb29705",
-                "reference": "6c1fcc518185bc533db44a3e8eceba055bb29705",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/40e391ad9bc3f95751aedd921be10509c42175c4",
+                "reference": "40e391ad9bc3f95751aedd921be10509c42175c4",
                 "shasum": ""
             },
             "require": {
@@ -1694,7 +1694,7 @@
                 "filp/whoops": "1.0.1",
                 "ircmaxell/password-compat": "1.0.*",
                 "monolog/monolog": "1.4.*",
-                "patchwork/utf8": "1.0.*",
+                "patchwork/utf8": "1.1.*",
                 "php": ">=5.3.0",
                 "predis/predis": "0.8.*",
                 "swiftmailer/swiftmailer": "4.3.*",
@@ -1776,7 +1776,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-04-17 21:35:45"
+            "time": "2013-04-18 22:35:52"
         },
         {
             "name": "leafo/lessphp",
@@ -2098,16 +2098,16 @@
         },
         {
             "name": "patchwork/utf8",
-            "version": "v1.0.4",
+            "version": "v1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nicolas-grekas/Patchwork-UTF8.git",
-                "reference": "v1.0.4"
+                "reference": "v1.1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/nicolas-grekas/Patchwork-UTF8/archive/v1.0.4.zip",
-                "reference": "v1.0.4",
+                "url": "https://api.github.com/repos/nicolas-grekas/Patchwork-UTF8/zipball/v1.1.3",
+                "reference": "v1.1.3",
                 "shasum": ""
             },
             "require": {
@@ -2115,9 +2115,10 @@
             },
             "type": "library",
             "autoload": {
-                "files": [
-                    "bootup.utf8.php"
-                ]
+                "psr-0": {
+                    "Patchwork": "class/",
+                    "Normalizer": "class/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2138,7 +2139,7 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2012-12-13 08:48:39"
+            "time": "2013-04-18 18:46:28"
         },
         {
             "name": "platform/addons",
@@ -3665,12 +3666,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpFoundation.git",
-                "reference": "ed220679d8e56041e09e6ed96623af2bb285a1be"
+                "reference": "f7778acd885f1bffde426967790248f0083d1dd6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/ed220679d8e56041e09e6ed96623af2bb285a1be",
-                "reference": "ed220679d8e56041e09e6ed96623af2bb285a1be",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/f7778acd885f1bffde426967790248f0083d1dd6",
+                "reference": "f7778acd885f1bffde426967790248f0083d1dd6",
                 "shasum": ""
             },
             "require": {
@@ -3706,7 +3707,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "http://symfony.com",
-            "time": "2013-04-12 15:30:12"
+            "time": "2013-04-18 05:30:58"
         },
         {
             "name": "symfony/http-kernel",
