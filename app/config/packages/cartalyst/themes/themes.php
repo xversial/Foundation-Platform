@@ -30,7 +30,7 @@ return array(
 	|
 	*/
 
-	'active' => 'frontend::platform/default',
+	'active' => 'frontend::default',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -44,7 +44,7 @@ return array(
 	*/
 
 	'paths' => array(
-		__DIR__.'/../../../../../public/platform/themes',
+		__DIR__.'/../../../../../public/themes',
 	),
 
 	/*
