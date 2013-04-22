@@ -42,6 +42,7 @@ return array(
 	'disable'   => 'Disable',
 	'install'   => 'Install',
 	'uninstall' => 'Uninstall',
-	'clone'     => 'Clone'
+	'clone'     => 'Clone',
+	'close'     => 'Close',
 
 );
