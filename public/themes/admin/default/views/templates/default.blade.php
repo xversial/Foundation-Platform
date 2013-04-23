@@ -60,9 +60,9 @@
 				<a class="close-sidebar icon-double-angle-left"></a>
 				<a class="open-sidebar icon-double-angle-right"></a>
 
-				<a class="brand" href="{{ URL::toAdmin('/') }}">
+				<a class="brand" href="{{ URL::toAdmin('/') }}" title="@setting('platform/ui::site.tagline')">
 					<img src="{{ Asset::getUrl('img/brand-admin.png') }}" alt="">
-					<span>@setting('platform.site.title')</span>
+					<span>@setting('platform/ui::site.title')</span>
 				</a>
 
 				<nav>@widget('platform/ui::nav.show', array('admin', 1, '', ADMIN_URI))</nav>
