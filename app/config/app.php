@@ -114,6 +114,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
 		'Cartalyst\Sentry\SentryServiceProvider',
+		'Cartalyst\SentrySocial\SentrySocialServiceProvider',
 		'Cartalyst\Api\ApiServiceProvider',
 		'Cartalyst\DataGrid\DataGridServiceProvider',
 		'Cartalyst\Extensions\ExtensionsServiceProvider',
