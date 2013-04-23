@@ -53,11 +53,6 @@ App::error(function(Exception $exception, $code)
 	Log::error($exception);
 });
 
-App::error(function(Symfony\Component\HttpKernel\Exception\HttpException $exception, $code)
-{
-
-});
-
 /*
 |--------------------------------------------------------------------------
 | Require The Filters File
