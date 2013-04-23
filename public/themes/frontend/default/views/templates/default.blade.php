@@ -26,7 +26,7 @@
 		@section('assets')
 		@show
 
-		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+		{{-- HTML5 shim, for IE6-8 support of HTML5 elements --}}
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -69,7 +69,7 @@
 
 		<div class="container">
 
-			<!-- Notifications -->
+			{{-- Notifications --}}
 			@include('notifications')
 
 			@section('content')
@@ -82,7 +82,7 @@
 			</footer>
 
 		</div>
-		<!-- ./ container -->
+		{{-- ./ container --}}
 
 		@foreach (Asset::getCompiledScripts() as $script)
 			<script src="{{ $script }}"></script>
