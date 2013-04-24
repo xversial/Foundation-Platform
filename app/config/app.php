@@ -114,12 +114,12 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
 		'Cartalyst\Sentry\SentryServiceProvider',
-		'Cartalyst\SentrySocial\SentrySocialServiceProvider',
 		'Cartalyst\Api\ApiServiceProvider',
 		'Cartalyst\DataGrid\DataGridServiceProvider',
 		'Cartalyst\Extensions\ExtensionsServiceProvider',
 		'Cartalyst\NestedSets\NestedSetsServiceProvider',
 		'Cartalyst\Themes\ThemeServiceProvider',
+		'Cartalyst\SentrySocial\SentrySocialServiceProvider',
 
 		'Platform\Routing\RoutingServiceProvider',
 		'Platform\Operations\OperationsServiceProvider',
