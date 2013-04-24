@@ -8,7 +8,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>
 			@section('title')
-			{{ Config::get('platform.site.title') }}
+			{{ Config::get('platform/ui::site.title') }}
 			@show
 		</title>
 		<meta name="description" content="">
@@ -48,7 +48,6 @@
 		{{-- Call custom inline styles --}}
 		@section('styles')
 		@show
-
 	</head>
 	<body>
 		<!--[if lt IE 7]>
@@ -87,7 +86,9 @@
 					@widget('platform/ui::nav.show', array(1, 1, 'nav nav-tabs', ADMIN_URI))
 				</nav>
 
+				{{-- Notifications --}}
 				@include('notifications')
+
 				@section('content')
 				@show
 			</article>
@@ -101,6 +102,5 @@
 		{{-- Call custom inline scripts --}}
 		@section('scripts')
 		@show
-
 	</body>
 </html>

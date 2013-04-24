@@ -8,13 +8,14 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>
 			@section('title')
-			{{ Config::get('platform.site.title') }}
+			{{ Config::get('platform/ui::site.title') }}
 			@show
 		</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
-		<meta name="base_url" content="{{ Request::root() }}">
+		<meta name="base_url" content="{{ URL::to('/') }}">
 
+		{{-- Queue template assets --}}
 		{{ Asset::queue('style', 'less/style.less') }}
 
 		{{ Asset::queue('modernizr', 'js/vendor/modernizr/modernizr.js') }}
@@ -23,6 +24,7 @@
 		{{ Asset::queue('plugins', 'js/plugins.js', array('jquery')) }}
 		{{ Asset::queue('script', 'js/script.js', array('jquery')) }}
 
+		{{-- Call partial assets --}}
 		@section('assets')
 		@show
 
@@ -37,12 +39,14 @@
 		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ Asset::getUrl('img/apple-touch-icon-72x72-precomposed.png') }}">
 		<link rel="apple-touch-icon-precomposed" href="{{ Asset::getUrl('img/apple-touch-icon-precomposed.png') }}">
 
-		@section('styles')
-		@show
-
+		{{-- Compiled styles --}}
 		@foreach (Asset::getCompiledStyles() as $style)
 			<link href="{{ $style }}" rel="stylesheet">
 		@endforeach
+
+		{{-- Call custom inline styles --}}
+		@section('styles')
+		@show
 	</head>
 
 	<body>
@@ -84,10 +88,12 @@
 		</div>
 		{{-- ./ container --}}
 
+		{{-- Compiled scripts --}}
 		@foreach (Asset::getCompiledScripts() as $script)
 			<script src="{{ $script }}"></script>
 		@endforeach
 
+		{{-- Call custom inline scripts --}}
 		@section('scripts')
 		@show
 	</body>
