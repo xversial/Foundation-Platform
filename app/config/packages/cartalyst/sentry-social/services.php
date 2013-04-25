@@ -29,7 +29,7 @@ return array(
 	| application requires.
 	|
 	| Each connection must specify the following:
-	| 1. "service" - a valid authentication type (optional). Valid types are:
+	|  1. "service" - a valid authentication type (optional). Valid types are:
 	|    (OAuth 1): "fitbit", "twitter"
 	|    (OAuth 2): "bitly", "facebook", "foursquare", "github", "google",
 	|               "microsoft", "soundcloud", "yammer".
@@ -37,82 +37,93 @@ return array(
 	|    the configuration to guess the type. This allows for convenience
 	|    as well as multiple configurations with the same "service".
 	|    We plan on adding support for more providers in the future.
-	| 2. "key" - your application's key.
-	| 3. "secret" - your application's secret.
+	|  2. "name" - a human-friendly name (optional).
+	|  3. "key" - your application's key.
+	|  4. "secret" - your application's secret.
 	|
 	| OAuth2 providers can also provide the following:
-	| 1. "scopes" - an array of scopes you are requesting access to (optional).
+	|  1. "scopes" - an array of scopes you are requesting access to (optional).
 	|
-	| All connections are optional, feel free to replace with
-	| your own at will.
+	| All connections are optional, feel free to replace with your own at will.
 	|
 	*/
+
 	'connections' => array(
 
 		'bitly' => array(
+			'name'   => 'bitly',
 			'key'    => '',
 			'secret' => '',
 			'scopes' => array(),
 		),
 
 		'facebook' => array(
+			'name'   => 'Facebook',
 			'key'    => '',
 			'secret' => '',
 			'scopes' => array('email'),
 		),
 
 		'fitbit' => array(
+			'name'   => 'Fitbit',
 			'key'    => '',
 			'secret' => '',
 		),
 
 		'foursquare' => array(
+			'name'   => 'Foursquare',
 			'key'    => '',
 			'secret' => '',
 			'scopes' => array(),
 		),
 
 		'github' => array(
+			'name'   => 'GitHub',
 			'key'    => '',
 			'secret' => '',
 			'scopes' => array('user'),
 		),
 
 		'google' => array(
+			'name'   => 'Google',
 			'key'    => '',
 			'secret' => '',
 			'scopes' => array('userinfo_profile', 'userinfo_email'),
 		),
 
 		'microsoft' => array(
+			'name'   => 'Microsoft',
 			'key'    => '',
 			'secret' => '',
 			'scopes' => array('emails'),
 		),
 
 		'soundcloud' => array(
+			'name'   => 'SoundCloud',
 			'key'    => '',
 			'secret' => '',
 			'scopes' => array(),
 		),
 
 		'twitter' => array(
+			'name'   => 'Twitter',
 			'key'    => '',
 			'secret' => '',
 		),
 
 		'yammer' => array(
+			'name'   => 'Yammer',
 			'key'    => '',
 			'secret' => '',
 			'scopes' => array(),
 		),
 
 		/*
-		// Example of using a different key
-		// to the "service". This allows for multiple
-		// configurations for the one
+		// Example of using a different key to the "service".
+		// This allows for multiple configurations for the one.
 		'main' => array(
 			'service' => 'google',
+			'name'    => 'Google',
 			'key'     => '',
 			'secret'  => '',
 			'scopes'  => array('userinfo_email', 'userinfo_profile'),

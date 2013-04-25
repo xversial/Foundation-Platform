@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "878bfc5616aff77137dd9aa0bd04615a",
+    "hash": "fc1c3915ab04cbe16242292a346711b4",
     "packages": [
         {
             "name": "cartalyst/api",
@@ -688,12 +688,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/sentry-social.git",
-                "reference": "1fa04754d02138eb153b829e311edb4972b55355"
+                "reference": "82432d1b0f5a33d4893f9a940bce226f6859e9ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentry-social/zipball/1fa04754d02138eb153b829e311edb4972b55355",
-                "reference": "1fa04754d02138eb153b829e311edb4972b55355",
+                "url": "https://api.github.com/repos/cartalyst/sentry-social/zipball/82432d1b0f5a33d4893f9a940bce226f6859e9ae",
+                "reference": "82432d1b0f5a33d4893f9a940bce226f6859e9ae",
                 "shasum": ""
             },
             "require": {
@@ -767,7 +767,7 @@
                 "source": "https://github.com/cartalyst/sentry-social/tree/master",
                 "issues": "https://github.com/cartalyst/sentry-social/issues"
             },
-            "time": "2013-04-24 07:13:43"
+            "time": "2013-04-24 23:50:57"
         },
         {
             "name": "cartalyst/themes",
@@ -1431,16 +1431,16 @@
         },
         {
             "name": "filp/whoops",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "1.0.3"
+                "reference": "1.0.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/1.0.3",
-                "reference": "1.0.3",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/1.0.4",
+                "reference": "1.0.4",
                 "shasum": ""
             },
             "require": {
@@ -1478,7 +1478,7 @@
                 "whoops",
                 "zf2"
             ],
-            "time": "2013-04-23 07:20:17"
+            "time": "2013-04-24 15:55:28"
         },
         {
             "name": "herrera-io/json",
@@ -1816,20 +1816,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "1176cd8a6442e574cd9c6461cfe1f5df6bbe1c06"
+                "reference": "291c64d0255d267a2dd62f6d760424a795a64bf5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/1176cd8a6442e574cd9c6461cfe1f5df6bbe1c06",
-                "reference": "1176cd8a6442e574cd9c6461cfe1f5df6bbe1c06",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/291c64d0255d267a2dd62f6d760424a795a64bf5",
+                "reference": "291c64d0255d267a2dd62f6d760424a795a64bf5",
                 "shasum": ""
             },
             "require": {
                 "classpreloader/classpreloader": "1.0.*",
                 "doctrine/dbal": "2.4.x",
-                "filp/whoops": "1.0.3",
+                "filp/whoops": "1.0.4",
                 "ircmaxell/password-compat": "1.0.*",
-                "monolog/monolog": "1.4.*",
+                "monolog/monolog": "1.5.*",
                 "nesbot/carbon": "1.*",
                 "patchwork/utf8": "1.1.*",
                 "php": ">=5.3.0",
@@ -1918,7 +1918,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-04-24 04:50:48"
+            "time": "2013-04-24 20:06:40"
         },
         {
             "name": "leafo/lessphp",
@@ -2096,12 +2096,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Lusitanian/PHPoAuthLib.git",
-                "reference": "97c3241b820904f345c8e787403cbaaef90df38c"
+                "reference": "2951e3f8b802cc7a534b0d79610492e403d4c842"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Lusitanian/PHPoAuthLib/zipball/97c3241b820904f345c8e787403cbaaef90df38c",
-                "reference": "97c3241b820904f345c8e787403cbaaef90df38c",
+                "url": "https://api.github.com/repos/Lusitanian/PHPoAuthLib/zipball/2951e3f8b802cc7a534b0d79610492e403d4c842",
+                "reference": "2951e3f8b802cc7a534b0d79610492e403d4c842",
                 "shasum": ""
             },
             "require": {
@@ -2142,7 +2142,7 @@
                 "oauth",
                 "security"
             ],
-            "time": "2013-04-21 01:31:48"
+            "time": "2013-04-24 23:18:29"
         },
         {
             "name": "monolog/monolog",
@@ -2150,12 +2150,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "a1927a7a9b5a3e469aeb2214b83d4e0dca95bcf4"
+                "reference": "b264026cba83b4f02ebea7d908a6340a9fd010ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/a1927a7a9b5a3e469aeb2214b83d4e0dca95bcf4",
-                "reference": "a1927a7a9b5a3e469aeb2214b83d4e0dca95bcf4",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/b264026cba83b4f02ebea7d908a6340a9fd010ac",
+                "reference": "b264026cba83b4f02ebea7d908a6340a9fd010ac",
                 "shasum": ""
             },
             "require": {
@@ -2177,7 +2177,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4.x-dev"
+                    "dev-master": "1.5.x-dev"
                 }
             },
             "autoload": {
@@ -2204,7 +2204,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2013-04-23 13:40:22"
+            "time": "2013-04-24 15:45:58"
         },
         {
             "name": "natxet/CssMin",
@@ -3812,12 +3812,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Filesystem.git",
-                "reference": "71057c34700a99a62b8b5fe56f099c9b4dc4cc71"
+                "reference": "edc1bc3db33b9bf08667570a98c2bf3621abc8b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/71057c34700a99a62b8b5fe56f099c9b4dc4cc71",
-                "reference": "71057c34700a99a62b8b5fe56f099c9b4dc4cc71",
+                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/edc1bc3db33b9bf08667570a98c2bf3621abc8b0",
+                "reference": "edc1bc3db33b9bf08667570a98c2bf3621abc8b0",
                 "shasum": ""
             },
             "require": {
@@ -3850,7 +3850,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "http://symfony.com",
-            "time": "2013-04-22 18:32:36"
+            "time": "2013-04-24 08:04:45"
         },
         {
             "name": "symfony/finder",
@@ -4026,12 +4026,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Process.git",
-                "reference": "a7177e400f55d62d5b94027ce7df6a715cef51ff"
+                "reference": "a2a22e359c8c6c6a44ec2d158d0865e9a94348b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Process/zipball/a7177e400f55d62d5b94027ce7df6a715cef51ff",
-                "reference": "a7177e400f55d62d5b94027ce7df6a715cef51ff",
+                "url": "https://api.github.com/repos/symfony/Process/zipball/a2a22e359c8c6c6a44ec2d158d0865e9a94348b1",
+                "reference": "a2a22e359c8c6c6a44ec2d158d0865e9a94348b1",
                 "shasum": ""
             },
             "require": {
@@ -4064,7 +4064,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "http://symfony.com",
-            "time": "2013-04-21 08:43:42"
+            "time": "2013-04-23 20:53:10"
         },
         {
             "name": "symfony/routing",
