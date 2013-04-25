@@ -119,7 +119,6 @@ return array(
 		'Cartalyst\Extensions\ExtensionsServiceProvider',
 		'Cartalyst\NestedSets\NestedSetsServiceProvider',
 		'Cartalyst\Themes\ThemeServiceProvider',
-		'Cartalyst\SentrySocial\SentrySocialServiceProvider',
 
 		'Platform\Routing\RoutingServiceProvider',
 		'Platform\Operations\OperationsServiceProvider',
@@ -199,7 +198,6 @@ return array(
 		'Request'      => 'Cartalyst\Api\Facades\Request',
 		'Response'     => 'Cartalyst\Api\Facades\Response',
 		'Sentry'       => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
-		'SentrySocial' => 'Cartalyst\SentrySocial\Facades\Laravel\SentrySocial',
 		'Theme'        => 'Cartalyst\Themes\Facades\Theme',
 
 		'AdminRouter'  => 'Platform\Routing\Facades\AdminRouter',
