@@ -34,21 +34,6 @@ return array(
 
 	/*
 	|--------------------------------------------------------------------------
-	| Themes Path
-	|--------------------------------------------------------------------------
-	|
-	| Here you set the default themes path for your application. Paths should
-	| also be set relative to a publically accessible directory so assets can
-	| be resolved.
-	|
-	*/
-
-	'paths' => array(
-		__DIR__.'/../../../../../public/themes',
-	),
-
-	/*
-	|--------------------------------------------------------------------------
 	| Packages Path
 	|--------------------------------------------------------------------------
 	|
