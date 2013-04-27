@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "878bfc5616aff77137dd9aa0bd04615a",
+    "hash": "fc1c3915ab04cbe16242292a346711b4",
     "packages": [
         {
             "name": "cartalyst/api",
@@ -288,12 +288,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/data-grid.git",
-                "reference": "161a08072003284dc13e73bcd2409832388b1240"
+                "reference": "746fd8458d245f6aae1fe9f31b68524e927af9be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/data-grid/zipball/161a08072003284dc13e73bcd2409832388b1240",
-                "reference": "161a08072003284dc13e73bcd2409832388b1240",
+                "url": "https://api.github.com/repos/cartalyst/data-grid/zipball/746fd8458d245f6aae1fe9f31b68524e927af9be",
+                "reference": "746fd8458d245f6aae1fe9f31b68524e927af9be",
                 "shasum": ""
             },
             "require": {
@@ -350,7 +350,7 @@
                 "source": "https://github.com/cartalyst/data-grid/tree/master",
                 "issues": "https://github.com/cartalyst/data-grid/issues"
             },
-            "time": "2013-04-25 23:48:03"
+            "time": "2013-04-26 21:36:31"
         },
         {
             "name": "cartalyst/dependencies",
@@ -1532,7 +1532,7 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -1743,7 +1743,7 @@
             "authors": [
                 {
                     "name": "Anthony Ferrara",
-                    "email": "ircmaxell@ircmaxell.com",
+                    "email": "ircmaxell@php.net",
                     "homepage": "http://blog.ircmaxell.com"
                 }
             ],
@@ -1855,12 +1855,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/justinrainbow/json-schema.git",
-                "reference": "59777466d2f22b34624bda4e29e992cccca54204"
+                "reference": "40f727208fc65e6955e8f841aca52ee2261326c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/59777466d2f22b34624bda4e29e992cccca54204",
-                "reference": "59777466d2f22b34624bda4e29e992cccca54204",
+                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/40f727208fc65e6955e8f841aca52ee2261326c1",
+                "reference": "40f727208fc65e6955e8f841aca52ee2261326c1",
                 "shasum": ""
             },
             "require": {
@@ -1913,7 +1913,7 @@
                 "json",
                 "schema"
             ],
-            "time": "2013-04-24 05:53:37"
+            "time": "2013-04-26 23:33:05"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -1992,12 +1992,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "b2ef5b1338aa9ab3a84ed7e25b666581ee921ce1"
+                "reference": "d40055fb2d545e4701e49638dee70b21a5bf4310"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/b2ef5b1338aa9ab3a84ed7e25b666581ee921ce1",
-                "reference": "b2ef5b1338aa9ab3a84ed7e25b666581ee921ce1",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/d40055fb2d545e4701e49638dee70b21a5bf4310",
+                "reference": "d40055fb2d545e4701e49638dee70b21a5bf4310",
                 "shasum": ""
             },
             "require": {
@@ -2094,7 +2094,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-04-25 16:18:12"
+            "time": "2013-04-27 02:07:31"
         },
         {
             "name": "leafo/lessphp",
@@ -3357,12 +3357,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-users.git",
-                "reference": "55d6ecccd4e0a5cfecf0c3eb28bde97b8602ae5e"
+                "reference": "e23e20c34c7908f9d1405b29d26366c28fae9ef4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/55d6ecccd4e0a5cfecf0c3eb28bde97b8602ae5e",
-                "reference": "55d6ecccd4e0a5cfecf0c3eb28bde97b8602ae5e",
+                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/e23e20c34c7908f9d1405b29d26366c28fae9ef4",
+                "reference": "e23e20c34c7908f9d1405b29d26366c28fae9ef4",
                 "shasum": ""
             },
             "require": {
@@ -3429,7 +3429,7 @@
                 "source": "https://github.com/cartalyst/platform-users/tree/master",
                 "issues": "https://github.com/cartalyst/platform-users/issues"
             },
-            "time": "2013-04-25 05:50:12"
+            "time": "2013-04-26 21:46:00"
         },
         {
             "name": "predis/predis",
@@ -4133,12 +4133,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpKernel.git",
-                "reference": "f2e3c5852260b04bf16e1b69ac29555205cf624b"
+                "reference": "1d8815ab2431713546a1e1ed5330a00dba67db44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/f2e3c5852260b04bf16e1b69ac29555205cf624b",
-                "reference": "f2e3c5852260b04bf16e1b69ac29555205cf624b",
+                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/1d8815ab2431713546a1e1ed5330a00dba67db44",
+                "reference": "1d8815ab2431713546a1e1ed5330a00dba67db44",
                 "shasum": ""
             },
             "require": {
@@ -4194,7 +4194,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "http://symfony.com",
-            "time": "2013-04-25 14:01:08"
+            "time": "2013-04-26 12:08:31"
         },
         {
             "name": "symfony/process",
@@ -4250,12 +4250,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Routing.git",
-                "reference": "b572a3d29cb357c28df686d6eb23a854616d8c60"
+                "reference": "b05719c698602b3201ba034a133f28b480018118"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Routing/zipball/b572a3d29cb357c28df686d6eb23a854616d8c60",
-                "reference": "b572a3d29cb357c28df686d6eb23a854616d8c60",
+                "url": "https://api.github.com/repos/symfony/Routing/zipball/b05719c698602b3201ba034a133f28b480018118",
+                "reference": "b05719c698602b3201ba034a133f28b480018118",
                 "shasum": ""
             },
             "require": {
@@ -4299,7 +4299,7 @@
             ],
             "description": "Symfony Routing Component",
             "homepage": "http://symfony.com",
-            "time": "2013-04-25 15:52:07"
+            "time": "2013-04-26 09:39:57"
         },
         {
             "name": "symfony/translation",
