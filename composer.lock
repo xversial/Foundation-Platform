@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "94f5af03c1dcab6732bea24a1d51ef5b",
+    "hash": "5b41cd2676ea60b2c68bde1b2a84d985",
     "packages": [
         {
             "name": "cartalyst/api",
@@ -288,12 +288,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/data-grid.git",
-                "reference": "746fd8458d245f6aae1fe9f31b68524e927af9be"
+                "reference": "909a99591f5ac0c2dbab5a532c3f4159df29f33a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/data-grid/zipball/746fd8458d245f6aae1fe9f31b68524e927af9be",
-                "reference": "746fd8458d245f6aae1fe9f31b68524e927af9be",
+                "url": "https://api.github.com/repos/cartalyst/data-grid/zipball/909a99591f5ac0c2dbab5a532c3f4159df29f33a",
+                "reference": "909a99591f5ac0c2dbab5a532c3f4159df29f33a",
                 "shasum": ""
             },
             "require": {
@@ -350,7 +350,7 @@
                 "source": "https://github.com/cartalyst/data-grid/tree/master",
                 "issues": "https://github.com/cartalyst/data-grid/issues"
             },
-            "time": "2013-04-26 21:36:31"
+            "time": "2013-04-30 17:30:15"
         },
         {
             "name": "cartalyst/dependencies",
@@ -504,12 +504,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/interpret.git",
-                "reference": "851eafc618a0baaeea80c376ef50a084e8898ce9"
+                "reference": "e50e5a13b3e9f64aad1bbda0f74a8a37e0bb7740"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/interpret/zipball/851eafc618a0baaeea80c376ef50a084e8898ce9",
-                "reference": "851eafc618a0baaeea80c376ef50a084e8898ce9",
+                "url": "https://api.github.com/repos/cartalyst/interpret/zipball/e50e5a13b3e9f64aad1bbda0f74a8a37e0bb7740",
+                "reference": "e50e5a13b3e9f64aad1bbda0f74a8a37e0bb7740",
                 "shasum": ""
             },
             "require": {
@@ -581,7 +581,7 @@
                 "source": "https://github.com/cartalyst/interpret/tree/master",
                 "issues": "https://github.com/cartalyst/interpret/issues"
             },
-            "time": "2013-04-25 06:47:53"
+            "time": "2013-04-29 16:13:20"
         },
         {
             "name": "cartalyst/nested-sets",
@@ -773,12 +773,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/sentry-social.git",
-                "reference": "9fc28b4ccfc97d2a03f37f5f842a96a363f7d4c7"
+                "reference": "2cbd71cb44ab6f15924b0f1882e0e8b77caffbd2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentry-social/zipball/9fc28b4ccfc97d2a03f37f5f842a96a363f7d4c7",
-                "reference": "9fc28b4ccfc97d2a03f37f5f842a96a363f7d4c7",
+                "url": "https://api.github.com/repos/cartalyst/sentry-social/zipball/2cbd71cb44ab6f15924b0f1882e0e8b77caffbd2",
+                "reference": "2cbd71cb44ab6f15924b0f1882e0e8b77caffbd2",
                 "shasum": ""
             },
             "require": {
@@ -852,7 +852,7 @@
                 "source": "https://github.com/cartalyst/sentry-social/tree/master",
                 "issues": "https://github.com/cartalyst/sentry-social/issues"
             },
-            "time": "2013-04-26 01:25:26"
+            "time": "2013-04-29 19:14:58"
         },
         {
             "name": "cartalyst/themes",
@@ -860,12 +860,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/themes.git",
-                "reference": "590cef65577a10948b029de2d6ed35b1473fc2f1"
+                "reference": "d230f38177016a77d751ad083ed15102e0dc8355"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/themes/zipball/590cef65577a10948b029de2d6ed35b1473fc2f1",
-                "reference": "590cef65577a10948b029de2d6ed35b1473fc2f1",
+                "url": "https://api.github.com/repos/cartalyst/themes/zipball/d230f38177016a77d751ad083ed15102e0dc8355",
+                "reference": "d230f38177016a77d751ad083ed15102e0dc8355",
                 "shasum": ""
             },
             "require": {
@@ -948,7 +948,7 @@
                 "source": "https://github.com/cartalyst/themes/tree/master",
                 "issues": "https://github.com/cartalyst/themes/issues"
             },
-            "time": "2013-04-26 00:41:55"
+            "time": "2013-04-29 06:09:18"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -985,7 +985,6 @@
                     "ClassPreloader": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1020,7 +1019,6 @@
                     "CoffeeScript": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1064,7 +1062,6 @@
                     "Kurenai": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1101,7 +1098,6 @@
                     "dflydev\\markdown": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "New BSD License"
             ],
@@ -1164,7 +1160,6 @@
                     "Doctrine\\Common\\Annotations\\": "lib/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1231,7 +1226,6 @@
                     "Doctrine\\Common\\Cache\\": "lib/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1297,7 +1291,6 @@
                     "Doctrine\\Common\\Collections\\": "lib/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1369,7 +1362,6 @@
                     "Doctrine\\Common\\": "lib/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1416,12 +1408,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "fbbc65e9068b2de3384553b6e3188b11b635b880"
+                "reference": "1d8d6bcfec388e17480b2c8953820b7c3e6d0850"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/fbbc65e9068b2de3384553b6e3188b11b635b880",
-                "reference": "fbbc65e9068b2de3384553b6e3188b11b635b880",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/1d8d6bcfec388e17480b2c8953820b7c3e6d0850",
+                "reference": "1d8d6bcfec388e17480b2c8953820b7c3e6d0850",
                 "shasum": ""
             },
             "require": {
@@ -1478,7 +1470,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2013-04-27 09:42:07"
+            "time": "2013-05-01 17:26:25"
         },
         {
             "name": "doctrine/inflector",
@@ -1508,7 +1500,6 @@
                     "Doctrine\\Common\\Inflector\\": "lib/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1576,7 +1567,6 @@
                     "Doctrine\\Common\\Lexer\\": "lib/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1632,7 +1622,6 @@
                     "Whoops": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1662,12 +1651,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "a9c1c8b76abe4622b285dcd7aa342cab9dfb6de6"
+                "reference": "6108cba60e2bca334c5a0e4e70829562315c0287"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/a9c1c8b76abe4622b285dcd7aa342cab9dfb6de6",
-                "reference": "a9c1c8b76abe4622b285dcd7aa342cab9dfb6de6",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/6108cba60e2bca334c5a0e4e70829562315c0287",
+                "reference": "6108cba60e2bca334c5a0e4e70829562315c0287",
                 "shasum": ""
             },
             "require": {
@@ -1684,7 +1673,6 @@
                     "Faker": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1699,7 +1687,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2013-04-23 12:35:55"
+            "time": "2013-04-30 12:39:11"
         },
         {
             "name": "herrera-io/json",
@@ -1740,7 +1728,6 @@
                     "Herrera\\Json": "src/lib"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1767,12 +1754,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ircmaxell/password_compat.git",
-                "reference": "v1.0.0"
+                "reference": "v1.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ircmaxell/password_compat/zipball/v1.0.0",
-                "reference": "v1.0.0",
+                "url": "https://api.github.com/repos/ircmaxell/password_compat/zipball/v1.0.3",
+                "reference": "v1.0.3",
                 "shasum": ""
             },
             "type": "library",
@@ -1788,7 +1775,7 @@
             "authors": [
                 {
                     "name": "Anthony Ferrara",
-                    "email": "ircmaxell@ircmaxell.com",
+                    "email": "ircmaxell@php.net",
                     "homepage": "http://blog.ircmaxell.com"
                 }
             ],
@@ -1798,7 +1785,7 @@
                 "hashing",
                 "password"
             ],
-            "time": "2013-01-14 16:49:31"
+            "time": "2013-04-30 19:58:08"
         },
         {
             "name": "jasonlewis/basset",
@@ -1806,37 +1793,45 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jasonlewis/basset.git",
-                "reference": "b5dd8228474ffd8a439234832e83e23531e7f8bf"
+                "reference": "c16a2321160766a2f73a1983fee4b4fb561ecb56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jasonlewis/basset/zipball/b5dd8228474ffd8a439234832e83e23531e7f8bf",
-                "reference": "b5dd8228474ffd8a439234832e83e23531e7f8bf",
+                "url": "https://api.github.com/repos/jasonlewis/basset/zipball/c16a2321160766a2f73a1983fee4b4fb561ecb56",
+                "reference": "c16a2321160766a2f73a1983fee4b4fb561ecb56",
                 "shasum": ""
             },
             "require": {
-                "illuminate/config": "4.*",
-                "illuminate/container": "4.*",
-                "illuminate/filesystem": "4.*",
-                "illuminate/http": "4.*",
-                "illuminate/routing": "4.*",
-                "illuminate/support": "4.*",
-                "kriswallsmith/assetic": "1.*",
+                "kriswallsmith/assetic": "1.1.*",
                 "php": ">=5.3.0"
             },
             "require-dev": {
-                "mockery/mockery": "0.7.*"
+                "illuminate/config": "4.0.*",
+                "illuminate/console": "4.0.*",
+                "illuminate/filesystem": "4.0.*",
+                "illuminate/http": "4.0.*",
+                "illuminate/routing": "4.0.*",
+                "illuminate/support": "4.0.*",
+                "mockery/mockery": ">=0.7.2",
+                "symfony/process": "2.3.*"
+            },
+            "suggest": {
+                "aws/aws-sdk-php": "Deploy static assets directly to your S3 buckets.",
+                "rackspace/php-cloudfiles": "Deploy static assets directly to your Cloud Files container."
             },
             "type": "library",
             "autoload": {
                 "psr-0": {
                     "Basset": "src/"
-                }
+                },
+                "classmap": [
+                    "tests/Cases/FilterTestCase.php"
+                ],
+                "files": [
+                    "src/helpers.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-2-Clause"
-            ],
             "authors": [
                 {
                     "name": "Jason Lewis",
@@ -1845,12 +1840,13 @@
                     "role": "Creator"
                 }
             ],
-            "description": "A Better Asset Management package for Laravel.",
+            "description": "A better asset management package for Laravel.",
             "keywords": [
-                "asset",
-                "basset"
+                "assets",
+                "basset",
+                "laravel"
             ],
-            "time": "2013-01-12 14:37:01"
+            "time": "2013-05-01 06:56:00"
         },
         {
             "name": "jasonlewis/resource-watcher",
@@ -1877,7 +1873,6 @@
                     "JasonLewis\\ResourceWatcher": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
                     "name": "Jason Lewis",
@@ -1928,7 +1923,6 @@
                     "JsonSchema": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -2011,7 +2005,6 @@
                     "src/functions.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2037,12 +2030,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "0bbe9c576a90536075ab2aff582d5b15a199bef1"
+                "reference": "c710a10b3952ae2658f1c2b57a51b7c66d7fa54c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/0bbe9c576a90536075ab2aff582d5b15a199bef1",
-                "reference": "0bbe9c576a90536075ab2aff582d5b15a199bef1",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/c710a10b3952ae2658f1c2b57a51b7c66d7fa54c",
+                "reference": "c710a10b3952ae2658f1c2b57a51b7c66d7fa54c",
                 "shasum": ""
             },
             "require": {
@@ -2055,7 +2048,7 @@
                 "patchwork/utf8": "1.1.*",
                 "php": ">=5.3.0",
                 "predis/predis": "0.8.*",
-                "swiftmailer/swiftmailer": "4.3.*",
+                "swiftmailer/swiftmailer": "5.0.*",
                 "symfony/browser-kit": "2.3.*",
                 "symfony/console": "2.3.*",
                 "symfony/css-selector": "2.3.*",
@@ -2139,7 +2132,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-04-29 21:43:36"
+            "time": "2013-05-01 16:51:10"
         },
         {
             "name": "leafo/lessphp",
@@ -2166,7 +2159,6 @@
                     "lessc.inc.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT",
                 "GPL-3.0"
@@ -2209,7 +2201,6 @@
                     "scss.inc.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT",
                 "GPL-3.0"
@@ -2248,7 +2239,6 @@
                     "compass.inc.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
                     "name": "Leaf Corcoran",
@@ -2288,7 +2278,6 @@
                     "src/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2342,7 +2331,6 @@
                     "OAuth": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2406,7 +2394,6 @@
                     "Monolog": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2450,7 +2437,6 @@
                     "CssMin": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2492,7 +2478,6 @@
                     "Carbon": "."
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2540,7 +2525,6 @@
                     "PHPParser": "lib/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -2580,7 +2564,6 @@
                     "Normalizer": "class/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "(Apache-2.0 or GPL-2.0)"
             ],
@@ -2756,12 +2739,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-content.git",
-                "reference": "c32c626b2ad3b582b8a206a042e5001fe2839195"
+                "reference": "7622dad1ac4002911817257b2f657b7e5c623356"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/c32c626b2ad3b582b8a206a042e5001fe2839195",
-                "reference": "c32c626b2ad3b582b8a206a042e5001fe2839195",
+                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/7622dad1ac4002911817257b2f657b7e5c623356",
+                "reference": "7622dad1ac4002911817257b2f657b7e5c623356",
                 "shasum": ""
             },
             "require": {
@@ -2829,7 +2812,7 @@
                 "source": "https://github.com/cartalyst/platform-content/tree/master",
                 "issues": "https://github.com/cartalyst/platform-content/issues"
             },
-            "time": "2013-04-25 06:04:35"
+            "time": "2013-04-25 05:58:12"
         },
         {
             "name": "platform/foundation",
@@ -2992,12 +2975,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-operations.git",
-                "reference": "bced181f7c1606271c774c165bc007a0f08a3ca2"
+                "reference": "5e80b3fc66831986820e18b6a01aae7d8bdd97af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/bced181f7c1606271c774c165bc007a0f08a3ca2",
-                "reference": "bced181f7c1606271c774c165bc007a0f08a3ca2",
+                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/5e80b3fc66831986820e18b6a01aae7d8bdd97af",
+                "reference": "5e80b3fc66831986820e18b6a01aae7d8bdd97af",
                 "shasum": ""
             },
             "require": {
@@ -3065,7 +3048,7 @@
                 "source": "https://github.com/cartalyst/platform-operations/tree/master",
                 "issues": "https://github.com/cartalyst/platform-operations/issues"
             },
-            "time": "2013-04-24 01:03:41"
+            "time": "2013-04-29 17:41:28"
         },
         {
             "name": "platform/pages",
@@ -3503,7 +3486,6 @@
                     "Predis": "lib/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3543,7 +3525,6 @@
                     "Psr\\Log\\": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3586,7 +3567,6 @@
                     "SassParser.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-2-Clause"
             ],
@@ -3638,7 +3618,6 @@
                     "Seld\\JsonLint": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3665,12 +3644,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "e77eb358a1aa7157afb922f33e2afc22f6a7bef2"
+                "reference": "a64528efec37173a6dabaedb0e678beffdb446f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/e77eb358a1aa7157afb922f33e2afc22f6a7bef2",
-                "reference": "e77eb358a1aa7157afb922f33e2afc22f6a7bef2",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/a64528efec37173a6dabaedb0e678beffdb446f0",
+                "reference": "a64528efec37173a6dabaedb0e678beffdb446f0",
                 "shasum": ""
             },
             "require": {
@@ -3679,7 +3658,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.3-dev"
+                    "dev-master": "5.0-dev"
                 }
             },
             "autoload": {
@@ -3687,9 +3666,8 @@
                     "lib/swift_required.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL"
+                "MIT"
             ],
             "authors": [
                 {
@@ -3706,7 +3684,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2013-04-11 10:22:54"
+            "time": "2013-04-30 17:36:15"
         },
         {
             "name": "symfony/browser-kit",
@@ -3715,12 +3693,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/BrowserKit.git",
-                "reference": "698d6aac8134ecec647e745c67970ca1f0ce073b"
+                "reference": "v2.3.0-BETA1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/BrowserKit/zipball/698d6aac8134ecec647e745c67970ca1f0ce073b",
-                "reference": "698d6aac8134ecec647e745c67970ca1f0ce073b",
+                "url": "https://api.github.com/repos/symfony/BrowserKit/zipball/v2.3.0-BETA1",
+                "reference": "v2.3.0-BETA1",
                 "shasum": ""
             },
             "require": {
@@ -3761,7 +3739,7 @@
             ],
             "description": "Symfony BrowserKit Component",
             "homepage": "http://symfony.com",
-            "time": "2013-04-25 10:35:08"
+            "time": "2013-04-30 07:16:44"
         },
         {
             "name": "symfony/console",
@@ -3770,12 +3748,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "3b1de5a3e9157fcf506a709b48deedfea7092613"
+                "reference": "v2.3.0-BETA1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/3b1de5a3e9157fcf506a709b48deedfea7092613",
-                "reference": "3b1de5a3e9157fcf506a709b48deedfea7092613",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/v2.3.0-BETA1",
+                "reference": "v2.3.0-BETA1",
                 "shasum": ""
             },
             "require": {
@@ -3811,7 +3789,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2013-04-27 02:13:33"
+            "time": "2013-04-30 07:16:44"
         },
         {
             "name": "symfony/css-selector",
@@ -3820,12 +3798,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/CssSelector.git",
-                "reference": "dd9044c8e42c7208b71d171d6ca8eff9ddee550b"
+                "reference": "v2.3.0-BETA1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/CssSelector/zipball/dd9044c8e42c7208b71d171d6ca8eff9ddee550b",
-                "reference": "dd9044c8e42c7208b71d171d6ca8eff9ddee550b",
+                "url": "https://api.github.com/repos/symfony/CssSelector/zipball/v2.3.0-BETA1",
+                "reference": "v2.3.0-BETA1",
                 "shasum": ""
             },
             "require": {
@@ -3871,12 +3849,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Debug.git",
-                "reference": "cc615424a19193d1c96886cc0d4ff6125eac7cde"
+                "reference": "211f4a9307add219ea332a3f210752784744d32b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Debug/zipball/cc615424a19193d1c96886cc0d4ff6125eac7cde",
-                "reference": "cc615424a19193d1c96886cc0d4ff6125eac7cde",
+                "url": "https://api.github.com/repos/symfony/Debug/zipball/211f4a9307add219ea332a3f210752784744d32b",
+                "reference": "211f4a9307add219ea332a3f210752784744d32b",
                 "shasum": ""
             },
             "require": {
@@ -3918,7 +3896,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "http://symfony.com",
-            "time": "2013-04-07 20:25:23"
+            "time": "2013-05-01 17:15:41"
         },
         {
             "name": "symfony/dom-crawler",
@@ -3955,7 +3933,6 @@
                     "Symfony\\Component\\DomCrawler\\": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3980,12 +3957,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "2e1fce7bb3ea06d9e42756f1dd3edf966420c755"
+                "reference": "v2.3.0-BETA1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/2e1fce7bb3ea06d9e42756f1dd3edf966420c755",
-                "reference": "2e1fce7bb3ea06d9e42756f1dd3edf966420c755",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/v2.3.0-BETA1",
+                "reference": "v2.3.0-BETA1",
                 "shasum": ""
             },
             "require": {
@@ -4034,12 +4011,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Filesystem.git",
-                "reference": "d6cda54824e01e27370d630e92456de797a18adb"
+                "reference": "v2.3.0-BETA1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/d6cda54824e01e27370d630e92456de797a18adb",
-                "reference": "d6cda54824e01e27370d630e92456de797a18adb",
+                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/v2.3.0-BETA1",
+                "reference": "v2.3.0-BETA1",
                 "shasum": ""
             },
             "require": {
@@ -4072,7 +4049,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "http://symfony.com",
-            "time": "2013-04-25 12:07:50"
+            "time": "2013-05-01 07:15:46"
         },
         {
             "name": "symfony/finder",
@@ -4103,7 +4080,6 @@
                     "Symfony\\Component\\Finder\\": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -4128,12 +4104,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpFoundation.git",
-                "reference": "bb9fc05bac6d6248f53dbc42396fe4b8d92d7e5b"
+                "reference": "v2.3.0-BETA1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/bb9fc05bac6d6248f53dbc42396fe4b8d92d7e5b",
-                "reference": "bb9fc05bac6d6248f53dbc42396fe4b8d92d7e5b",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/v2.3.0-BETA1",
+                "reference": "v2.3.0-BETA1",
                 "shasum": ""
             },
             "require": {
@@ -4169,7 +4145,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "http://symfony.com",
-            "time": "2013-04-25 12:33:17"
+            "time": "2013-04-30 17:05:37"
         },
         {
             "name": "symfony/http-kernel",
@@ -4178,17 +4154,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpKernel.git",
-                "reference": "1d8815ab2431713546a1e1ed5330a00dba67db44"
+                "reference": "f6e305f7c138c265b0fb84733b691ab505ee5921"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/1d8815ab2431713546a1e1ed5330a00dba67db44",
-                "reference": "1d8815ab2431713546a1e1ed5330a00dba67db44",
+                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/f6e305f7c138c265b0fb84733b691ab505ee5921",
+                "reference": "f6e305f7c138c265b0fb84733b691ab505ee5921",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
                 "psr/log": ">=1.0,<2.0",
+                "symfony/debug": ">=2.3,<3.0",
                 "symfony/event-dispatcher": ">=2.1,<3.0",
                 "symfony/http-foundation": ">=2.2,<2.4-dev"
             },
@@ -4197,7 +4174,6 @@
                 "symfony/class-loader": ">=2.1,<3.0",
                 "symfony/config": ">=2.0,<3.0",
                 "symfony/console": "2.2.*",
-                "symfony/debug": ">=2.3,<3.0",
                 "symfony/dependency-injection": ">=2.0,<3.0",
                 "symfony/finder": ">=2.0,<3.0",
                 "symfony/process": ">=2.0,<3.0",
@@ -4239,7 +4215,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "http://symfony.com",
-            "time": "2013-04-26 12:08:31"
+            "time": "2013-05-01 16:29:33"
         },
         {
             "name": "symfony/process",
@@ -4248,12 +4224,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Process.git",
-                "reference": "d55770ab111a89ee92773eb16f8acef9b09870f5"
+                "reference": "v2.3.0-BETA1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Process/zipball/d55770ab111a89ee92773eb16f8acef9b09870f5",
-                "reference": "d55770ab111a89ee92773eb16f8acef9b09870f5",
+                "url": "https://api.github.com/repos/symfony/Process/zipball/v2.3.0-BETA1",
+                "reference": "v2.3.0-BETA1",
                 "shasum": ""
             },
             "require": {
@@ -4286,7 +4262,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "http://symfony.com",
-            "time": "2013-04-25 13:23:11"
+            "time": "2013-04-30 07:21:49"
         },
         {
             "name": "symfony/routing",
@@ -4295,12 +4271,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Routing.git",
-                "reference": "b05719c698602b3201ba034a133f28b480018118"
+                "reference": "v2.3.0-BETA1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Routing/zipball/b05719c698602b3201ba034a133f28b480018118",
-                "reference": "b05719c698602b3201ba034a133f28b480018118",
+                "url": "https://api.github.com/repos/symfony/Routing/zipball/v2.3.0-BETA1",
+                "reference": "v2.3.0-BETA1",
                 "shasum": ""
             },
             "require": {
@@ -4353,12 +4329,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Translation.git",
-                "reference": "6bc4b753c1ae5640c0eacdbe27c04a69cde3d10d"
+                "reference": "v2.3.0-BETA1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Translation/zipball/6bc4b753c1ae5640c0eacdbe27c04a69cde3d10d",
-                "reference": "6bc4b753c1ae5640c0eacdbe27c04a69cde3d10d",
+                "url": "https://api.github.com/repos/symfony/Translation/zipball/v2.3.0-BETA1",
+                "reference": "v2.3.0-BETA1",
                 "shasum": ""
             },
             "require": {
@@ -4399,7 +4375,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "http://symfony.com",
-            "time": "2013-04-21 13:23:54"
+            "time": "2013-04-30 17:05:37"
         }
     ],
     "packages-dev": [
