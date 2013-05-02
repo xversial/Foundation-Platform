@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "94f5af03c1dcab6732bea24a1d51ef5b",
+    "hash": "601ce4c029765695809c30eb9ebf9347",
     "packages": [
         {
             "name": "cartalyst/api",
@@ -288,12 +288,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/data-grid.git",
-                "reference": "909a99591f5ac0c2dbab5a532c3f4159df29f33a"
+                "reference": "e76ca07b254bd5a8f3c66e14d9cf5b84f4530b7b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/data-grid/zipball/909a99591f5ac0c2dbab5a532c3f4159df29f33a",
-                "reference": "909a99591f5ac0c2dbab5a532c3f4159df29f33a",
+                "url": "https://api.github.com/repos/cartalyst/data-grid/zipball/e76ca07b254bd5a8f3c66e14d9cf5b84f4530b7b",
+                "reference": "e76ca07b254bd5a8f3c66e14d9cf5b84f4530b7b",
                 "shasum": ""
             },
             "require": {
@@ -350,7 +350,7 @@
                 "source": "https://github.com/cartalyst/data-grid/tree/master",
                 "issues": "https://github.com/cartalyst/data-grid/issues"
             },
-            "time": "2013-04-30 17:30:15"
+            "time": "2013-05-01 00:19:32"
         },
         {
             "name": "cartalyst/dependencies",
@@ -2660,12 +2660,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-admin.git",
-                "reference": "001e5164cbb9ce45a13be7bd833d4210a6525dcd"
+                "reference": "b2df87f09509a80dbf0cb409673e5ab3c72cace6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-admin/zipball/001e5164cbb9ce45a13be7bd833d4210a6525dcd",
-                "reference": "001e5164cbb9ce45a13be7bd833d4210a6525dcd",
+                "url": "https://api.github.com/repos/cartalyst/platform-admin/zipball/b2df87f09509a80dbf0cb409673e5ab3c72cace6",
+                "reference": "b2df87f09509a80dbf0cb409673e5ab3c72cace6",
                 "shasum": ""
             },
             "require": {
@@ -2731,7 +2731,7 @@
                 "source": "https://github.com/cartalyst/platform-admin/tree/master",
                 "issues": "https://github.com/cartalyst/platform-admin/issues"
             },
-            "time": "2013-04-23 00:59:39"
+            "time": "2013-04-29 21:54:31"
         },
         {
             "name": "platform/content",
@@ -2739,12 +2739,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-content.git",
-                "reference": "7622dad1ac4002911817257b2f657b7e5c623356"
+                "reference": "afa4f30b350198d2af78c90f30570898b8ed5fd0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/7622dad1ac4002911817257b2f657b7e5c623356",
-                "reference": "7622dad1ac4002911817257b2f657b7e5c623356",
+                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/afa4f30b350198d2af78c90f30570898b8ed5fd0",
+                "reference": "afa4f30b350198d2af78c90f30570898b8ed5fd0",
                 "shasum": ""
             },
             "require": {
@@ -2812,7 +2812,7 @@
                 "source": "https://github.com/cartalyst/platform-content/tree/master",
                 "issues": "https://github.com/cartalyst/platform-content/issues"
             },
-            "time": "2013-04-25 05:58:12"
+            "time": "2013-04-29 21:49:10"
         },
         {
             "name": "platform/foundation",
@@ -3056,12 +3056,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-pages.git",
-                "reference": "85d975abe40c44ba54f15d306502f3742337e9a9"
+                "reference": "2dc54c920ade917b9a11e9875092f62dbedadcab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/85d975abe40c44ba54f15d306502f3742337e9a9",
-                "reference": "85d975abe40c44ba54f15d306502f3742337e9a9",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/2dc54c920ade917b9a11e9875092f62dbedadcab",
+                "reference": "2dc54c920ade917b9a11e9875092f62dbedadcab",
                 "shasum": ""
             },
             "require": {
@@ -3129,7 +3129,7 @@
                 "source": "https://github.com/cartalyst/platform-pages/tree/master",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2013-04-24 01:00:33"
+            "time": "2013-04-29 22:11:37"
         },
         {
             "name": "platform/routing",
@@ -3290,6 +3290,85 @@
                 "issues": "https://github.com/cartalyst/platform-settings/issues"
             },
             "time": "2013-04-25 00:38:07"
+        },
+        {
+            "name": "platform/tags",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:cartalyst/platform-tags.git",
+                "reference": "9884e9a474ca8f16c787663a6d114662e0928d53"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cartalyst/platform-tags/zipball/9884e9a474ca8f16c787663a6d114662e0928d53",
+                "reference": "9884e9a474ca8f16c787663a6d114662e0928d53",
+                "shasum": ""
+            },
+            "require": {
+                "cartalyst/composer-installers": "1.0.*",
+                "cartalyst/nested-sets": "dev-master",
+                "php": ">=5.3.0",
+                "platform/admin": "1.0.*"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.7.*"
+            },
+            "type": "platform-extension",
+            "extra": {
+                "component": "extension",
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Platform\\Menus": "models"
+                },
+                "classmap": [
+                    "controllers",
+                    "database/migrations",
+                    "plugins",
+                    "tests",
+                    "widgets"
+                ]
+            },
+            "license": [
+                "BSD License (3-clause)"
+            ],
+            "authors": [
+                {
+                    "name": "Cartalyst LLC",
+                    "email": "help@cartalyst.com"
+                },
+                {
+                    "name": "Ben Corlett",
+                    "email": "ben.corlett@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Bruno Gaspar",
+                    "email": "bruno.gaspar@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dan Syme",
+                    "email": "dan.syme@cartalyst.com",
+                    "role": "Creator & Designer"
+                }
+            ],
+            "keywords": [
+                "cartalyst",
+                "extension",
+                "laravel",
+                "platform",
+                "tags"
+            ],
+            "support": {
+                "source": "https://github.com/cartalyst/platform-tags/tree/master",
+                "issues": "https://github.com/cartalyst/platform-tags/issues"
+            },
+            "time": "2013-05-01 23:48:56"
         },
         {
             "name": "platform/ui",
