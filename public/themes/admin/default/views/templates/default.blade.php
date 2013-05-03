@@ -75,6 +75,11 @@
 							</a>
 						</li>
 						<li>
+							<a href="{{ URL::toAdmin('settings') }}" target="_self">
+								<i class="icon-cog"></i>
+							</a>
+						</li>
+						<li>
 							<a href="{{ URL::to('logout') }}" target="_self">
 								<i class="icon-signout"></i>
 							</a>

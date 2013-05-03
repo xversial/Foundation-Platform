@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "94f5af03c1dcab6732bea24a1d51ef5b",
+    "hash": "601ce4c029765695809c30eb9ebf9347",
     "packages": [
         {
             "name": "cartalyst/api",
@@ -860,12 +860,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/themes.git",
-                "reference": "0a02eca8bce0a737c2115fff7ac2a09c711e53a2"
+                "reference": "db23d24fcc556d39f4a4bb521044f8780e8a605d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/themes/zipball/0a02eca8bce0a737c2115fff7ac2a09c711e53a2",
-                "reference": "0a02eca8bce0a737c2115fff7ac2a09c711e53a2",
+                "url": "https://api.github.com/repos/cartalyst/themes/zipball/db23d24fcc556d39f4a4bb521044f8780e8a605d",
+                "reference": "db23d24fcc556d39f4a4bb521044f8780e8a605d",
                 "shasum": ""
             },
             "require": {
@@ -948,7 +948,7 @@
                 "source": "https://github.com/cartalyst/themes/tree/master",
                 "issues": "https://github.com/cartalyst/themes/issues"
             },
-            "time": "2013-05-02 19:47:27"
+            "time": "2013-05-03 01:38:16"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -3316,6 +3316,83 @@
                 "issues": "https://github.com/cartalyst/platform-settings/issues"
             },
             "time": "2013-05-03 01:03:17"
+        },
+        {
+            "name": "platform/tags",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:cartalyst/platform-tags.git",
+                "reference": "92ea9e5fe27c19372370564b5ef6beff9f84738a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cartalyst/platform-tags/zipball/92ea9e5fe27c19372370564b5ef6beff9f84738a",
+                "reference": "92ea9e5fe27c19372370564b5ef6beff9f84738a",
+                "shasum": ""
+            },
+            "require": {
+                "cartalyst/composer-installers": "1.0.*",
+                "cartalyst/nested-sets": "dev-master",
+                "php": ">=5.3.0",
+                "platform/admin": "1.0.*"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.7.*"
+            },
+            "type": "platform-extension",
+            "extra": {
+                "component": "extension",
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "controllers",
+                    "database/migrations",
+                    "models",
+                    "plugins",
+                    "tests",
+                    "widgets"
+                ]
+            },
+            "license": [
+                "BSD License (3-clause)"
+            ],
+            "authors": [
+                {
+                    "name": "Cartalyst LLC",
+                    "email": "help@cartalyst.com"
+                },
+                {
+                    "name": "Ben Corlett",
+                    "email": "ben.corlett@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Bruno Gaspar",
+                    "email": "bruno.gaspar@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dan Syme",
+                    "email": "dan.syme@cartalyst.com",
+                    "role": "Creator & Designer"
+                }
+            ],
+            "keywords": [
+                "cartalyst",
+                "extension",
+                "laravel",
+                "platform",
+                "tags"
+            ],
+            "support": {
+                "source": "https://github.com/cartalyst/platform-tags/tree/master",
+                "issues": "https://github.com/cartalyst/platform-tags/issues"
+            },
+            "time": "2013-05-02 04:59:22"
         },
         {
             "name": "platform/ui",

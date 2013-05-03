@@ -1,0 +1,170 @@
+/**
+ * Part of the Platform application.
+ *
+ * NOTICE OF LICENSE
+ *
+ * Licensed under the 3-clause BSD License.
+ *
+ * This source file is subject to the 3-clause BSD License that is
+ * bundled with this package in the LICENSE file.  It is also available at
+ * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
+ *
+ * @package    Platform
+ * @version    2.0
+ * @author     Cartalyst LLC
+ * @license    BSD License (3-clause)
+ * @copyright  (c) 2011 - 2013, Cartalyst LLC
+ * @link       http://getplatform.com
+ */
+
+body {
+	background:#faf8f2;
+}
+
+#base  {
+	width:300px;
+	margin:0 auto;
+	margin-top:5%;
+	text-align: center;
+}
+
+
+#base .control-group {
+	margin:0 auto;
+	margin-top:18px;
+	width: 240px;
+}
+
+#base .control-group label {
+	position: relative;
+	margin:0;
+	padding: 0 10px;
+	background: #fff;
+
+	text-align: right;
+	font-size: 20px;
+	color: #a72568;
+
+	line-height: 40px;
+	height: 40px;
+
+	border:1px solid #ccc;
+
+	border-top:none;
+	-webkit-border-radius: 0 0 0;
+	-moz-border-radius: 0 0 0;
+	border-radius: 0 0 0;
+}
+
+#base .control-group label:first-child {
+	border-top:1px solid #ccc;
+	-webkit-border-radius: 4px 4px 0 0;
+	-moz-border-radius: 4px 4px 0 0;
+	border-radius:  4px 4px 0 0;
+}
+
+#base .control-group label:last-child {
+	border-top:none;
+	-webkit-border-radius: 0 0 4px 4px;
+	-moz-border-radius: 0 0 4px 4px;
+	border-radius: 0 0 4px 4px;
+}
+
+#base .control-group label.select {
+	border:1px solid #ccc;
+	-webkit-border-radius: 4px;
+	-moz-border-radius:  4px;
+	border-radius: 4px;
+}
+
+
+#base .control-group input {
+	position: absolute;
+	top:0;
+	left:0;
+	margin:0;
+	padding:0 10px;
+	border:none;
+	height: 39px;
+	line-height: 39px;
+	width:218px;
+	background: transparent;
+}
+
+#base .control-group select {
+	position: absolute;
+	top:0;
+	left:0;
+	margin:0;
+	padding:0 10px;
+	border:none;
+	height: 39px;
+	line-height: 39px;
+	width:240px;
+	background: transparent;
+
+	height: 40px;
+	line-height:20px;
+	-webkit-appearance: none;
+}
+#base .agree,
+#base button {
+	display: block;
+	margin-top:20;
+	padding:8px 12px;
+	width:100%;
+
+	color:@white;
+
+	border:2px solid #64163f;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	text-shadow:rgba(0,0,0,.4) 0 1px 0;
+	text-decoration:none;
+
+	background:#821d52;
+}
+
+#base .agree:hover,
+#base button:hover,
+#base button:focus {
+	background: #a72568;
+}
+
+#base .errors {
+	margin:10px 0;
+	padding:10px;
+	background:#f7f7f7;
+	border:1px solid #ddd;
+	-webkit-border-radius: 4px;
+	-moz-border-radius:  4px;
+	border-radius: 4px;
+	color:#870000;
+}
+
+
+#base .extras {
+	margin-top:10px;
+	font-size:12px;
+	color:#999;
+}
+
+#base .licence {
+	overflow: auto;
+	max-height:300px;
+	border:1px solid #dbd9d2;
+	background-color: #fff;
+	margin:15px 0;
+}
+
+#base .licence pre {
+	font-size:10px;
+	border:0;
+	background-color:#fff;
+}
+
+#base .agree {
+	width:270px;
+	margin:10px auto;
+}
