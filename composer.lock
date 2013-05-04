@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "4f0e9bf1b96678a575f9104fc4d72ece",
+    "hash": "b8454c20fe9e34169c73bb26cda0d572",
     "packages": [
         {
             "name": "cartalyst/api",
@@ -1416,12 +1416,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "1d8d6bcfec388e17480b2c8953820b7c3e6d0850"
+                "reference": "873b952c416b2d316ecb1e052f822d57390ac296"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/1d8d6bcfec388e17480b2c8953820b7c3e6d0850",
-                "reference": "1d8d6bcfec388e17480b2c8953820b7c3e6d0850",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/873b952c416b2d316ecb1e052f822d57390ac296",
+                "reference": "873b952c416b2d316ecb1e052f822d57390ac296",
                 "shasum": ""
             },
             "require": {
@@ -1478,7 +1478,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2013-05-01 17:26:25"
+            "time": "2013-05-04 11:57:47"
         },
         {
             "name": "doctrine/inflector",
@@ -2046,12 +2046,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "b89df7c892f3b327159e00266a7120e3a12adf8c"
+                "reference": "c120badfda8d81ba3832c25baa7b3c97937b0440"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/b89df7c892f3b327159e00266a7120e3a12adf8c",
-                "reference": "b89df7c892f3b327159e00266a7120e3a12adf8c",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/c120badfda8d81ba3832c25baa7b3c97937b0440",
+                "reference": "c120badfda8d81ba3832c25baa7b3c97937b0440",
                 "shasum": ""
             },
             "require": {
@@ -2148,7 +2148,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-05-03 21:06:31"
+            "time": "2013-05-04 17:58:10"
         },
         {
             "name": "leafo/lessphp",
@@ -2765,12 +2765,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-content.git",
-                "reference": "afa4f30b350198d2af78c90f30570898b8ed5fd0"
+                "reference": "47edfb0f3c197144a4291387a4798c9f60281b1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/afa4f30b350198d2af78c90f30570898b8ed5fd0",
-                "reference": "afa4f30b350198d2af78c90f30570898b8ed5fd0",
+                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/47edfb0f3c197144a4291387a4798c9f60281b1b",
+                "reference": "47edfb0f3c197144a4291387a4798c9f60281b1b",
                 "shasum": ""
             },
             "require": {
@@ -2838,7 +2838,7 @@
                 "source": "https://github.com/cartalyst/platform-content/tree/master",
                 "issues": "https://github.com/cartalyst/platform-content/issues"
             },
-            "time": "2013-04-29 21:49:10"
+            "time": "2013-05-04 01:33:28"
         },
         {
             "name": "platform/foundation",
@@ -3082,12 +3082,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-pages.git",
-                "reference": "2dc54c920ade917b9a11e9875092f62dbedadcab"
+                "reference": "588e1cc1ed136d6c2fb7d40c315e58bbca6ee579"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/2dc54c920ade917b9a11e9875092f62dbedadcab",
-                "reference": "2dc54c920ade917b9a11e9875092f62dbedadcab",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/588e1cc1ed136d6c2fb7d40c315e58bbca6ee579",
+                "reference": "588e1cc1ed136d6c2fb7d40c315e58bbca6ee579",
                 "shasum": ""
             },
             "require": {
@@ -3155,7 +3155,7 @@
                 "source": "https://github.com/cartalyst/platform-pages/tree/master",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2013-04-29 22:11:37"
+            "time": "2013-05-04 01:33:46"
         },
         {
             "name": "platform/routing",
@@ -3488,12 +3488,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-users.git",
-                "reference": "e23e20c34c7908f9d1405b29d26366c28fae9ef4"
+                "reference": "acd81facdce034aad94adbf728224c32558ca7f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/e23e20c34c7908f9d1405b29d26366c28fae9ef4",
-                "reference": "e23e20c34c7908f9d1405b29d26366c28fae9ef4",
+                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/acd81facdce034aad94adbf728224c32558ca7f8",
+                "reference": "acd81facdce034aad94adbf728224c32558ca7f8",
                 "shasum": ""
             },
             "require": {
@@ -3560,7 +3560,7 @@
                 "source": "https://github.com/cartalyst/platform-users/tree/master",
                 "issues": "https://github.com/cartalyst/platform-users/issues"
             },
-            "time": "2013-04-26 21:46:00"
+            "time": "2013-05-04 21:44:40"
         },
         {
             "name": "predis/predis",
