@@ -58,6 +58,9 @@
 		]
 	},
 	"scripts": {
+		"pre-update-cmd": [
+			"php artisan clear-compiled"
+		],
 		"post-install-cmd": [
 			"php artisan optimize",
 			"php artisan theme:publish --extensions"
