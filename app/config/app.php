@@ -200,12 +200,7 @@ return array(
 		'Sentry'       => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 		'Theme'        => 'Cartalyst\Themes\Facades\Theme',
 
-		'AdminRouter'  => 'Platform\Routing\Facades\AdminRouter',
-		'ApiRouter'    => 'Platform\Routing\Facades\ApiRouter',
 		'Platform'     => 'Platform\Foundation\Facades\Platform',
-		'Plugin'       => 'Platform\Ui\Facades\Plugin',
-		'PublicRouter' => 'Platform\Routing\Facades\PublicRouter',
-		'Widget'       => 'Platform\Ui\Facades\Widget',
 
 	),
 
