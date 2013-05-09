@@ -124,7 +124,6 @@ return array(
 		'Platform\Routing\RoutingServiceProvider',
 		'Platform\Operations\OperationsServiceProvider',
 		'Platform\Foundation\PlatformServiceProvider',
-		'Platform\Addons\AddonsServiceProvider',
 
 	),
 
@@ -204,9 +203,9 @@ return array(
 		'AdminRouter'  => 'Platform\Routing\Facades\AdminRouter',
 		'ApiRouter'    => 'Platform\Routing\Facades\ApiRouter',
 		'Platform'     => 'Platform\Foundation\Facades\Platform',
-		'Plugin'       => 'Platform\Addons\Facades\Plugin',
+		'Plugin'       => 'Platform\Ui\Facades\Plugin',
 		'PublicRouter' => 'Platform\Routing\Facades\PublicRouter',
-		'Widget'       => 'Platform\Addons\Facades\Widget',
+		'Widget'       => 'Platform\Ui\Facades\Widget',
 
 	),
 
