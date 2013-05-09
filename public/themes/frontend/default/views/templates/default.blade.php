@@ -63,9 +63,9 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</a>
-					<a class="brand" href="{{ Request::root() }}">Site Title Here</a>
+					<a class="brand" href="{{ Request::root() }}">@setting('platform/ui::site.title')</a>
 					<div class="nav-collapse collapse">
-						Nav goes here
+
 					</div><!--/.nav-collapse -->
 				</div>
 			</div>
@@ -78,12 +78,6 @@
 
 			@section('content')
 			@show
-
-			<hr>
-
-			<footer>
-				@content('copyright')
-			</footer>
 
 		</div>
 		{{-- ./ container --}}

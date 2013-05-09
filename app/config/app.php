@@ -124,7 +124,6 @@ return array(
 		'Platform\Routing\RoutingServiceProvider',
 		'Platform\Operations\OperationsServiceProvider',
 		'Platform\Foundation\PlatformServiceProvider',
-		'Platform\Addons\AddonsServiceProvider',
 
 	),
 
@@ -201,12 +200,7 @@ return array(
 		'Sentry'       => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 		'Theme'        => 'Cartalyst\Themes\Facades\Theme',
 
-		'AdminRouter'  => 'Platform\Routing\Facades\AdminRouter',
-		'ApiRouter'    => 'Platform\Routing\Facades\ApiRouter',
 		'Platform'     => 'Platform\Foundation\Facades\Platform',
-		'Plugin'       => 'Platform\Addons\Facades\Plugin',
-		'PublicRouter' => 'Platform\Routing\Facades\PublicRouter',
-		'Widget'       => 'Platform\Addons\Facades\Widget',
 
 	),
 
