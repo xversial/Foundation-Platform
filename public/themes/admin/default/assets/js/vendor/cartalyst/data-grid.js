@@ -22,34 +22,34 @@
 
 	var defaults = {
 		source: undefined,
-        sort: {
-            column: undefined,
-            direction: 'asc'
-        },
 		dividend: 10,
 		threshold: 20,
 		throttle: 500,
 		type: 'pages',
+		loader: undefined,
+		sort: {
+            column: undefined,
+            direction: 'asc'
+        },
         tempoOptions: {
             var_braces: '\\[\\[\\]\\]',
             tag_braces: '\\[\\?\\?\\]'
         },
-        loader: undefined,
         callback: undefined
 	};
 
 	// DataGrid plugin constructor
-	function DataGrid(key, results, pagination, filters, options){
+	function DataGrid(grid, results, pagination, filters, options){
 
 		this.opt = $.extend({}, defaults, options);
 
-		//Binding Key
-		this.key = '[data-key='+key+']';
+		//Binding grid
+		this.grid = '[data-grid='+grid+']';
 
 		//Common Selectors
-		this.$results = $(results + this.key);
-		this.$pagi = $(pagination + this.key);
-		this.$filters = $(filters + this.key);
+		this.$results = $(results + this.grid);
+		this.$pagi = $(pagination + this.grid);
+		this.$filters = $(filters + this.grid);
 		this.$body = $(document.body);
 
 		//Get Our Source
@@ -122,10 +122,10 @@
 			var self = this;
 
 			//Sorting
-			this.$body.on('click', '[data-sort]'+this.key, function(e){
+			this.$body.on('click', '[data-sort]'+this.grid, function(e){
 
 				//Visual Sort Helpers
-				$('[data-sort]'+self.key).not($(this)).removeClass('asc desc');
+				$('[data-sort]'+self.grid).not($(this)).removeClass('asc desc');
 
 				if($(this).hasClass('asc')){
 					$(this).removeClass('asc').addClass('desc');
@@ -133,13 +133,15 @@
 					$(this).removeClass('desc').addClass('asc');
 				}
 
+
 				self._setSorting($(this).data('sort'));
 				self.templates.results.clear();
 				self._fetch();
+
 			});
 
 			//Filters
-			this.$body.on('click', '[data-filter]'+this.key, function(e){
+			this.$body.on('click', '[data-filter]'+this.grid, function(e){
 				self._setFilters($(this).data('filter'), $(this).data('label'), false);
 				self.templates.results.clear();
 				self._goToPage(1);
@@ -148,12 +150,14 @@
 
 			//Search
 			var timeout;
-			this.$body.find('[data-search]'+this.key).on('submit keyup', function(e){
+			this.$body.find('[data-search]'+this.grid).on('submit keyup', function(e){
 
 				e.preventDefault();
 
 				var $input = $(this).find('input'),
 					$column = $(this).find('select');
+
+				if(e.keyCode === 9){ return; } //don't do anything for tab
 
 				if(e.type === 'submit'){
 
@@ -175,7 +179,11 @@
 
 					clearTimeout(timeout);
 
-					self._setFilters($column.val()+':'+$input.val(), '', false);
+					if($column.length){
+						self._setFilters($column.val()+':'+$input.val(), '', false);
+					}else{
+						self._setFilters('all'+':'+$input.val(), '', false);
+					}
 
 					self.templates.results.clear();
 					self._goToPage(1);
@@ -186,8 +194,6 @@
 
 					//DEMO ONLY
 					$('.options li').text('All');
-
-					return false;
 
 				}
 
@@ -209,15 +215,18 @@
 
 							});
 
-							self._fetch();
+							if($column.length){
+								self._setFilters($column.val()+':'+$input.val(), '', true);
+							}else{
+								self._setFilters('all'+':'+$input.val(), '', true);
+							}
+
+							self.templates.results.clear();
+							self._goToPage(1);
+							self._fetch(true);
+
 						}
 
-						if(!$.trim($input.val()).length){ return; }
-
-						self._setFilters($column.val()+':'+$input.val(), '', true);
-						self.templates.results.clear();
-						self._goToPage(1);
-						self._fetch();
 
 					}, 800);
 				}
@@ -241,7 +250,7 @@
 			});
 
 			//Reset Grid
-			this.$body.on('click', '[data-reset]'+this.key, function(e){
+			this.$body.on('click', '[data-reset]'+this.grid, function(e){
 				self._reset();
 			});
 
@@ -260,7 +269,7 @@
 
 				}
 
-				if(self.opt.type === 'infiniteload'){
+				if(self.opt.type === 'infinite'){
 
 					pageId = $(this).data('page');
 					$(this).data('page', ++pageId);
@@ -282,7 +291,7 @@
 			});
 
 			//Demo Only Events
-			$('[data-opt]'+this.key).on('change', function(){
+			$('[data-opt]'+this.grid).on('change', function(){
 				var opt = $(this).data('opt'),
 					val = $(this).val();
 
@@ -399,7 +408,7 @@
 
 		},
 
-		_fetch: function(){
+		_fetch: function(live){
 			//fetch our results from our controller
 
 			var self = this;
@@ -412,7 +421,6 @@
 					data: this._buildFetchData()
 				})
 				.done(function(response){
-					self._loader();
 
 					self.isActive = false;
 
@@ -422,12 +430,23 @@
 					if(self.opt.type === 'pages'){
 						self.templates.results.render(response.results);
 					}else{
-						self.templates.results.append(response.results);
+
+						if(live){
+							self.templates.results.render(response.results);
+						}else{
+							self.templates.results.append(response.results);
+						}
+
 					}
 
 					self.templates.pagination.render(self._buildPagination(response.pages_count, response.total_count, response.filtered_count));
 
+					if(response.pages_count <= 1 && self.opt.type === 'infinite'){
+						self.templates.pagination.clear();
+					}
+
 					self._callback();
+					self._loader();
 
 				})
 				.error(function(jqXHR, textStatus, errorThrown) {
@@ -541,14 +560,13 @@
 
 			}
 
-
 			//load more pagination
-			if(this.opt.type === 'infiniteload'){
+			if(this.opt.type === 'infinite'){
 
 				pagiData = {
 					page: self.pagination,
 					active: true,
-					infiniteload: true
+					infinite: true
 				};
 
 				pagiNav.push(pagiData);
@@ -629,8 +647,8 @@
 
 	};
 
-	$.datagrid = function(key, results, pagination, filters, options){
-		return new DataGrid(key, results, pagination, filters, options);
+	$.datagrid = function(grid, results, pagination, filters, options){
+		return new DataGrid(grid, results, pagination, filters, options);
 	};
 
 })(jQuery, window, document);
