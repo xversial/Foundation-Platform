@@ -33,16 +33,10 @@ App::after(function($request, $response)
 |
 */
 
-// Route::filter('auth', function()
-// {
-// 	if (Auth::guest()) return Redirect::route('login');
-// });
-
-
-// Route::filter('auth.basic', function()
-// {
-// 	return Auth::basic();
-// });
+Route::filter('auth', function()
+{
+	if ( ! Sentry::check()) return Redirect::route('login');
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -55,10 +49,10 @@ App::after(function($request, $response)
 |
 */
 
-// Route::filter('guest', function()
-// {
-// 	if (Auth::check()) return Redirect::to('/');
-// });
+Route::filter('guest', function()
+{
+	if (Sentry::check()) return Redirect::to('/');
+});
 
 /*
 |--------------------------------------------------------------------------
