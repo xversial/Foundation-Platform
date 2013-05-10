@@ -127,11 +127,11 @@ Extension::disabled(function(Extension $extension)
 
 Extension::upgrading(function(Extension $extension)
 {
-	//
+	// Before an extension is upgraded
 });
 
 Extension::upgraded(function(Extension $extension)
 {
-	//
+	// After an extension is upgraded
 });
 
