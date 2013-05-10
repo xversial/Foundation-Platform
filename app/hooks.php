@@ -36,9 +36,9 @@ Installer::after(function()
 {
 	// Called after Platform has been installed
 
-	// If our admin class exists, we'll go ahead and set
-	// the order of the admin menu now according to the
-	// specific applictaion's requirements.
+	// If our admin class exists, we'll set the order of the
+	// admin menu according to the specific application
+	// requirements.
 	if (class_exists('Platform\Ui\Models\Menu'))
 	{
 		set_menu_order('admin', Config::get('platform.admin.menu'));
@@ -51,7 +51,7 @@ Installer::after(function()
 | Platform hooks
 |--------------------------------------------------------------------------
 |
-| Hooks for Platform events themselves
+| Hooks for events of Platform itself.
 |
 */
 
@@ -64,7 +64,6 @@ Platform::booted(function($platform)
 {
 	// When everything is setup and ready to roll
 });
-
 
 Platform::ineligible(function($platform)
 {
@@ -83,7 +82,7 @@ Platform::ineligible(function($platform)
 
 Extension::registering(function(Extension $extension)
 {
-	// Before an extenesion is registered (happens for every extension)
+	// Before an extension is registered (happens for every extension)
 });
 
 Extension::registered(function(Extension $extension)
@@ -93,12 +92,12 @@ Extension::registered(function(Extension $extension)
 
 Extension::booting(function(Extension $extension)
 {
-	// Before an installed, enabled extension boots (after all are registered)
+	// Before an installed and enabled extension boots (after all are registered)
 });
 
 Extension::booted(function(Extension $extension)
 {
-	// After an installed, enable extension boots
+	// After an installed and enabled extension boots
 });
 
 Extension::installing(function(Extension $extension)
