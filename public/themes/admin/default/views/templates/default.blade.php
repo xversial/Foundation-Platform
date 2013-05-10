@@ -70,17 +70,17 @@
 				<nav class="profile">
 					<ul>
 						<li>
-							<a href="{{ URL::to('') }}" target="_self">
+							<a href="{{ URL::to('/') }}" target="_self" title="@setting('platform/ui::site.title')">
 								<i class="icon-home"></i>
 							</a>
 						</li>
 						<li>
-							<a href="{{ URL::toAdmin('settings') }}" target="_self">
+							<a href="{{ URL::toAdmin('settings') }}" target="_self" title="Settings">
 								<i class="icon-cog"></i>
 							</a>
 						</li>
 						<li>
-							<a href="{{ URL::to('logout') }}" target="_self">
+							<a href="{{ URL::route('logout') }}" target="_self" title="Logout">
 								<i class="icon-signout"></i>
 							</a>
 						</li>
