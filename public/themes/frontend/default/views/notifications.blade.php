@@ -10,21 +10,21 @@
 </div>
 @endif
 
-@if ($messages = Session::get('messages') and $messages->has('success'))
+@if ($notifications = Session::get('notifications') and $notifications->has('success'))
 <div class="alert alert-success alert-block">
 	<button type="button" class="close" data-dismiss="alert">&times;</button>
 	<h4>Success</h4>
-	@foreach ($messages->get('success') as $message)
+	@foreach ($notifications->get('success') as $message)
 	{{ $message }}
 	@endforeach
 </div>
 @endif
 
-@if ($messages = Session::get('messages') and $messages->has('error'))
+@if ($notifications = Session::get('notifications') and $notifications->has('error'))
 <div class="alert alert-error alert-block">
 	<button type="button" class="close" data-dismiss="alert">&times;</button>
 	<h4>Error</h4>
-	@foreach ($messages->get('error') as $message)
+	@foreach ($notifications->get('error') as $message)
 	{{ $message }}
 	@endforeach
 </div>

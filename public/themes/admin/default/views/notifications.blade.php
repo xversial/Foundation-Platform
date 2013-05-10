@@ -12,8 +12,8 @@
 		</div>
 	@endif
 
-	@if ($messages = Session::get('messages') and $messages->has('success'))
-		@foreach ($messages->get('success') as $message)
+	@if ($notifications = Session::get('notifications') and $notifications->has('success'))
+		@foreach ($notifications->get('success') as $message)
 			<div class="alert alert-success alert-block">
 				{{-- <button type="button" class="close" data-dismiss="alert">&times;</button> --}}
 				{{ $message }}
@@ -21,8 +21,8 @@
 		@endforeach
 	@endif
 
-	@if ($messages = Session::get('messages') and $messages->has('error'))
-		@foreach ($messages->get('error') as $message)
+	@if ($notifications = Session::get('notifications') and $notifications->has('error'))
+		@foreach ($notifications->get('error') as $message)
 			<div class="alert alert-error alert-block">
 				{{-- <button type="button" class="close" data-dismiss="alert">&times;</button> --}}
 				{{ $message }}

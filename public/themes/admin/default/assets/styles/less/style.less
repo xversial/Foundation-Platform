@@ -295,6 +295,16 @@ html, body {
 
 }
 
+#applied{
+	list-style: none;
+
+	li{ 
+		display:inline-block;
+		margin-right:5px;
+	}
+
+}
+
 /* Menus
 ==================================================*/
  .nestable{
@@ -506,21 +516,30 @@ form label.toggle, div.controls.switch {
 	margin-right:10px;
 }
 
-#table-filters-applied {
-	padding:10px 0;
+.applied {
+	padding:0; 
+	margin:0 0 10px 0;
+	display:block;
+	width:100%;
+	list-style: none;
+
+	li{
+		margin-right:5px;
+		display:inline-block;
+	}
 }
 
-#table-filters-applied .btn {
+.applied .btn {
 	margin-left:4px;
 }
 
-#table .processing {
+.processing {
 	text-align: center;
 	height:42px;
 }
 
-#table .table-processing {
-	background-image: url('../img/table/loading.gif');
+.table-processing {
+	background-image: url('../img/loading.gif');
 	background-repeat: no-repeat;
 	background-position: left;
 	display: none;
