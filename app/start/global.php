@@ -81,3 +81,27 @@ App::down(function()
 */
 
 require __DIR__.'/../filters.php';
+
+/*
+|--------------------------------------------------------------------------
+| Require The Functions File
+|--------------------------------------------------------------------------
+|
+| We'll require a file which you can hook and custom functions required
+| into.
+|
+*/
+
+require __DIR__.'/../functions.php';
+
+/*
+|--------------------------------------------------------------------------
+| Require The Hooks File
+|--------------------------------------------------------------------------
+|
+| Next we will load the hooks file for your Platform application. This
+| file contains a number of events which you can hook into.
+|
+*/
+
+require __DIR__.'/../hooks.php';
