@@ -23,12 +23,10 @@ use Platform\Ui\Models\Menu;
 if ( ! function_exists('set_admin_menu_order'))
 {
 	/**
-	 * Set the order of the the given menu's
-	 * children according to array of slugs
-	 * given. This will not remove any menu
-	 * items and it will skip non-existent
-	 * items (they'll be shoved at the end
-	 * of the menu).
+	 * Set the order of the provided menu's children according to
+	 * the given array of slugs. This will not remove any menu
+	 * items and it will skip non-existent items
+	 * (they'll be shoved at the end of the menu).
 	 *
 	 * @param  string  $menuSlug
 	 * @param  array   $slugs
