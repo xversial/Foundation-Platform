@@ -193,6 +193,7 @@ return array(
 		'API'          => 'Cartalyst\Api\Facades\API',
 		'Asset'        => 'Cartalyst\Themes\Facades\Asset',
 		'DataGrid'     => 'Cartalyst\DataGrid\Facades\DataGrid',
+		'Extension'    => 'Cartalyst\Extensions\Extension',
 		'Extensions'   => 'Cartalyst\Extensions\Facades\Extensions',
 		'Input'        => 'Cartalyst\Api\Facades\Input',
 		'Request'      => 'Cartalyst\Api\Facades\Request',
@@ -200,7 +201,8 @@ return array(
 		'Sentry'       => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 		'Theme'        => 'Cartalyst\Themes\Facades\Theme',
 
-		'Platform'     => 'Platform\Foundation\Facades\Platform',
+		'Installer' => 'Platform\Operations\Facades\Installer',
+		'Platform'  => 'Platform\Foundation\Facades\Platform',
 
 	),
 
