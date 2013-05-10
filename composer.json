@@ -61,11 +61,13 @@
 		],
 		"post-install-cmd": [
 			"php artisan optimize",
-			"php artisan theme:publish --extensions"
+			"php artisan theme:publish --extensions",
+			"php artisan asset:publish platform/operations"
 		],
 		"post-update-cmd": [
 			"php artisan optimize",
-			"php artisan theme:publish --extensions"
+			"php artisan theme:publish --extensions",
+			"php artisan asset:publish platform/operations"
 		]
 	},
 	"config": {
