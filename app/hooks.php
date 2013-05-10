@@ -20,15 +20,21 @@
 
 /*
 |--------------------------------------------------------------------------
-| After Installation
+| Operation Hooks
 |--------------------------------------------------------------------------
 |
-| Configuration the administration of your Platform application.
+| Hook into the installation / upgrading of your Platform installation
 |
 */
 
+Installer::before(function()
+{
+	// Called before Platform is to be installed
+});
+
 Installer::after(function()
 {
+	// Called after Platform has been installed
 
 	// If our admin class exists, we'll go ahead and set
 	// the order of the admin menu now according to the
