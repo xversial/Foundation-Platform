@@ -627,10 +627,14 @@
 
 			this.appliedFilters = [];
 			this.pagination = 1;
+
+			//remove sort
 			this.sort = {
 				column: this.opt.sort.column,
 				direction: this.opt.sort.direction
 			};
+			$('[data-sort]'+this.grid).removeClass('asc desc');
+
 			this.templates.appliedFilters.clear();
 			this.templates.results.clear();
 			this._fetch();
