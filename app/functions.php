@@ -34,7 +34,7 @@ if ( ! function_exists('set_admin_menu_order'))
 	 * @param  array   $slugs
 	 * @return void
 	 */
-	function set_menu_order($menuSlug, arary $slugs)
+	function set_menu_order($menuSlug, array $slugs)
 	{
 		$previous = null;
 
