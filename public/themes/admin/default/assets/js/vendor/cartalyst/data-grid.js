@@ -251,6 +251,7 @@
 
 			//Reset Grid
 			this.$body.on('click', '[data-reset]'+this.grid, function(e){
+				e.preventDefault();
 				self._reset();
 			});
 
@@ -624,7 +625,6 @@
 
 		_reset: function(){
 			//reset the grid back to first load
-
 			this.appliedFilters = [];
 			this.pagination = 1;
 
@@ -635,8 +635,13 @@
 			};
 			$('[data-sort]'+this.grid).removeClass('asc desc');
 
+			//reset search
+			$('[data-search]'+this.grid).find('input').val('');
+			$('[data-search]'+this.grid).find('select').prop('selectedIndex',0);
+
 			this.templates.appliedFilters.clear();
 			this.templates.results.clear();
+
 			this._fetch();
 		},
 
