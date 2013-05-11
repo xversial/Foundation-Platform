@@ -80,8 +80,8 @@ return array(
 
 		'github' => array(
 			'name'   => 'GitHub',
-			'key'    => 'ac9871fc7c7bf27a4548',
-			'secret' => 'd0cf5941f3a8ebfc0412979b3868539390dad77e',
+			'key'    => '',
+			'secret' => '',
 			'scopes' => array('user'),
 		),
 
