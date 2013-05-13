@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/api.git",
-                "reference": "c18213ceeb90a5aee816548b2f25e9d41c3f3b59"
+                "reference": "a2cfa02fb6dca8d91f294c20c9240d5c2edfb8ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/api/zipball/c18213ceeb90a5aee816548b2f25e9d41c3f3b59",
-                "reference": "c18213ceeb90a5aee816548b2f25e9d41c3f3b59",
+                "url": "https://api.github.com/repos/cartalyst/api/zipball/a2cfa02fb6dca8d91f294c20c9240d5c2edfb8ce",
+                "reference": "a2cfa02fb6dca8d91f294c20c9240d5c2edfb8ce",
                 "shasum": ""
             },
             "require": {
@@ -83,7 +83,7 @@
                 "source": "https://github.com/cartalyst/api/tree/master",
                 "issues": "https://github.com/cartalyst/api/issues"
             },
-            "time": "2013-05-13 02:19:00"
+            "time": "2013-05-13 04:18:38"
         },
         {
             "name": "cartalyst/assetic-filters",
@@ -589,12 +589,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/nested-sets.git",
-                "reference": "414df277efca664ecd94c20ebadd42ea7347f055"
+                "reference": "d20b301f727272b238337778f7ebfee276a0bbc4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/nested-sets/zipball/414df277efca664ecd94c20ebadd42ea7347f055",
-                "reference": "414df277efca664ecd94c20ebadd42ea7347f055",
+                "url": "https://api.github.com/repos/cartalyst/nested-sets/zipball/d20b301f727272b238337778f7ebfee276a0bbc4",
+                "reference": "d20b301f727272b238337778f7ebfee276a0bbc4",
                 "shasum": ""
             },
             "require": {
@@ -663,7 +663,7 @@
                 "source": "https://github.com/cartalyst/nested-sets/tree/master",
                 "issues": "https://github.com/cartalyst/nested-sets/issues"
             },
-            "time": "2013-05-13 02:14:59"
+            "time": "2013-05-13 05:38:50"
         },
         {
             "name": "cartalyst/sentry",
@@ -1209,16 +1209,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "4116eff37635219101a22c9732f409633eb07c5d"
+                "reference": "45123145f70dd79618963a72a5271b4f389712e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/4116eff37635219101a22c9732f409633eb07c5d",
-                "reference": "4116eff37635219101a22c9732f409633eb07c5d",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/45123145f70dd79618963a72a5271b4f389712e4",
+                "reference": "45123145f70dd79618963a72a5271b4f389712e4",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
+            },
+            "conflict": {
+                "doctrine/common": ">2.2,<2.4"
             },
             "type": "library",
             "extra": {
@@ -1257,7 +1260,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1267,7 +1270,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2013-05-04 23:23:40"
+            "time": "2013-05-13 02:51:07"
         },
         {
             "name": "doctrine/collections",
@@ -2001,12 +2004,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "d43c15b858ad6b5a69851aa914a925125944cfde"
+                "reference": "a91b802a37a57a2c08ec4f4df825b92ab3bc53f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/d43c15b858ad6b5a69851aa914a925125944cfde",
-                "reference": "d43c15b858ad6b5a69851aa914a925125944cfde",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/a91b802a37a57a2c08ec4f4df825b92ab3bc53f9",
+                "reference": "a91b802a37a57a2c08ec4f4df825b92ab3bc53f9",
                 "shasum": ""
             },
             "require": {
@@ -2103,7 +2106,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-05-12 18:57:52"
+            "time": "2013-05-13 02:38:40"
         },
         {
             "name": "leafo/lessphp",
@@ -2650,12 +2653,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-content.git",
-                "reference": "51e2fe7002966d8c4922b4a51e7a05070c1cca13"
+                "reference": "8160cf5ff50f9a4fd7b06ff98e8a2f1d99e74411"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/51e2fe7002966d8c4922b4a51e7a05070c1cca13",
-                "reference": "51e2fe7002966d8c4922b4a51e7a05070c1cca13",
+                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/8160cf5ff50f9a4fd7b06ff98e8a2f1d99e74411",
+                "reference": "8160cf5ff50f9a4fd7b06ff98e8a2f1d99e74411",
                 "shasum": ""
             },
             "require": {
@@ -2721,7 +2724,7 @@
                 "source": "https://github.com/cartalyst/platform-content/tree/master",
                 "issues": "https://github.com/cartalyst/platform-content/issues"
             },
-            "time": "2013-05-12 15:27:31"
+            "time": "2013-05-13 02:40:00"
         },
         {
             "name": "platform/foundation",
@@ -2804,12 +2807,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-menus.git",
-                "reference": "766cccc43611c22d7e57f5a0eef06de4cada5cef"
+                "reference": "7af15831856afbb81e2e5d676eab22e2aba7811d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/766cccc43611c22d7e57f5a0eef06de4cada5cef",
-                "reference": "766cccc43611c22d7e57f5a0eef06de4cada5cef",
+                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/7af15831856afbb81e2e5d676eab22e2aba7811d",
+                "reference": "7af15831856afbb81e2e5d676eab22e2aba7811d",
                 "shasum": ""
             },
             "require": {
@@ -2874,7 +2877,7 @@
                 "source": "https://github.com/cartalyst/platform-menus/tree/master",
                 "issues": "https://github.com/cartalyst/platform-menus/issues"
             },
-            "time": "2013-05-12 15:27:36"
+            "time": "2013-05-13 06:15:17"
         },
         {
             "name": "platform/operations",
@@ -2963,12 +2966,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-pages.git",
-                "reference": "4c746e958ea27409a741ffd77de6564446a25493"
+                "reference": "0ecb9ffeb596e4d93c9f50970b79295f73c3471a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/4c746e958ea27409a741ffd77de6564446a25493",
-                "reference": "4c746e958ea27409a741ffd77de6564446a25493",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/0ecb9ffeb596e4d93c9f50970b79295f73c3471a",
+                "reference": "0ecb9ffeb596e4d93c9f50970b79295f73c3471a",
                 "shasum": ""
             },
             "require": {
@@ -3034,7 +3037,7 @@
                 "source": "https://github.com/cartalyst/platform-pages/tree/master",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2013-05-13 02:22:55"
+            "time": "2013-05-13 04:37:36"
         },
         {
             "name": "platform/routing",
