@@ -41,22 +41,4 @@ return array(
 
 	),
 
-	/*
-	|--------------------------------------------------------------------------
-	| Elligibility Whitelist
-	|--------------------------------------------------------------------------
-	|
-	| When Platform is not installed, if the trusted IP address filter passes,
-	| the following URIs can be accessed from your application. Feel free to
-	| add more if you have your own installation logic.
-	|
-	*/
-
-	'eligibility_whitelist' => array(
-
-		'installer',
-		'installer/*',
-
-	),
-
 );
