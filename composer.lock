@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "db88bc6037ac7fb05aa26e561d9aea74",
+    "hash": "3688a1918031bb5ad1afdd6b69ffe015",
     "packages": [
         {
             "name": "cartalyst/api",
@@ -2889,12 +2889,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-menus.git",
-                "reference": "b01092ee3fe5e03abdf72326784bf714bc9f892b"
+                "reference": "607e8f5f9a5c78001854f8e4ab42e7fad5712162"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/b01092ee3fe5e03abdf72326784bf714bc9f892b",
-                "reference": "b01092ee3fe5e03abdf72326784bf714bc9f892b",
+                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/607e8f5f9a5c78001854f8e4ab42e7fad5712162",
+                "reference": "607e8f5f9a5c78001854f8e4ab42e7fad5712162",
                 "shasum": ""
             },
             "require": {
@@ -2959,7 +2959,85 @@
                 "source": "https://github.com/cartalyst/platform-menus/tree/master",
                 "issues": "https://github.com/cartalyst/platform-menus/issues"
             },
-            "time": "2013-05-14 02:14:58"
+            "time": "2013-05-14 03:41:25"
+        },
+        {
+            "name": "platform/operations",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:cartalyst/platform-operations.git",
+                "reference": "683207dee2f31e5492ce7f7210b52b8b87873dd5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/683207dee2f31e5492ce7f7210b52b8b87873dd5",
+                "reference": "683207dee2f31e5492ce7f7210b52b8b87873dd5",
+                "shasum": ""
+            },
+            "require": {
+                "cartalyst/composer-installers": "1.0.*",
+                "php": ">=5.3.0",
+                "platform/admin": "1.0.*"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.7.*"
+            },
+            "type": "platform-extension",
+            "extra": {
+                "component": "extension",
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Platform\\Operations": "models"
+                },
+                "classmap": [
+                    "controllers",
+                    "database/migrations",
+                    "plugins",
+                    "tests",
+                    "widgets"
+                ]
+            },
+            "license": [
+                "BSD License (3-clause)"
+            ],
+            "authors": [
+                {
+                    "name": "Cartalyst LLC",
+                    "email": "help@cartalyst.com"
+                },
+                {
+                    "name": "Ben Corlett",
+                    "email": "ben.corlett@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Bruno Gaspar",
+                    "email": "bruno.gaspar@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dan Syme",
+                    "email": "dan.syme@cartalyst.com",
+                    "role": "Creator & Designer"
+                }
+            ],
+            "description": "Extension to power the administration of your website.",
+            "keywords": [
+                "cartalyst",
+                "extension",
+                "laravel",
+                "platform"
+            ],
+            "support": {
+                "source": "https://github.com/cartalyst/platform-operations/tree/master",
+                "issues": "https://github.com/cartalyst/platform-operations/issues"
+            },
+            "time": "2013-05-14 03:45:10"
         },
         {
             "name": "platform/pages",
