@@ -64,7 +64,7 @@
 					<span>@setting('platform/ui::site.title')</span>
 				</a>
 
-				<nav>@widget('platform/ui::nav.show', array('admin', 1, '', ADMIN_URI))</nav>
+				<nav>@widget('platform/ui::nav.show', array('admin', 1, '', app('platform.admin.uri')))</nav>
 			</aside>
 			<article class="page">
 				<nav class="profile">
@@ -88,7 +88,7 @@
 				</nav>
 
 				<nav class="secondary-navigation">
-					@widget('platform/ui::nav.show', array(1, 1, 'nav nav-tabs', ADMIN_URI))
+					@widget('platform/ui::nav.show', array(1, 1, 'nav nav-tabs', app('platform.admin.uri')))
 				</nav>
 
 				{{-- Notifications --}}
