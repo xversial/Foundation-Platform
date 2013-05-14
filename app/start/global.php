@@ -80,7 +80,7 @@ App::down(function()
 |
 */
 
-require __DIR__.'/../filters.php';
+require app_path().'/filters.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -92,7 +92,7 @@ require __DIR__.'/../filters.php';
 |
 */
 
-require __DIR__.'/../functions.php';
+require app_path().'/functions.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -104,4 +104,4 @@ require __DIR__.'/../functions.php';
 |
 */
 
-require __DIR__.'/../hooks.php';
+require app_path().'/hooks.php';
