@@ -36,9 +36,9 @@ Installer::after(function()
 {
 	// Called after Platform has been installed
 
-	// If our admin class exists, we'll set the order of the
-	// admin menu according to the specific application
-	// requirements.
+	// If we have the platform/ui extension installed, we'll
+	// set the order of the admin menu according to the
+	// specific application requirements.
 	if (class_exists('Platform\Ui\Models\Menu'))
 	{
 		set_menu_order('admin', Config::get('platform.admin.menu'));
