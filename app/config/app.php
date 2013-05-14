@@ -122,7 +122,7 @@ return array(
 		'Cartalyst\Themes\ThemeServiceProvider',
 
 		'Platform\Routing\RoutingServiceProvider',
-		'Platform\Operations\OperationsServiceProvider',
+		'Platform\Installer\InstallerServiceProvider',
 		'Platform\Foundation\PlatformServiceProvider',
 
 	),
@@ -201,7 +201,7 @@ return array(
 		'Sentry'       => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 		'Theme'        => 'Cartalyst\Themes\Facades\Theme',
 
-		'Installer' => 'Platform\Operations\Facades\Installer',
+		'Installer' => 'Platform\Installer\Facades\Installer',
 		'Platform'  => 'Platform\Foundation\Facades\Platform',
 
 	),
