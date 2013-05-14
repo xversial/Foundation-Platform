@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "3688a1918031bb5ad1afdd6b69ffe015",
+    "hash": "c512437f2a83e2021ea8a9995489b713",
     "packages": [
         {
             "name": "cartalyst/api",
@@ -1419,12 +1419,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "2.4.0-BETA2"
+                "reference": "38f679377432e3c299be5a94ab1d034a822d296c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/2.4.0-BETA2",
-                "reference": "2.4.0-BETA2",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/38f679377432e3c299be5a94ab1d034a822d296c",
+                "reference": "38f679377432e3c299be5a94ab1d034a822d296c",
                 "shasum": ""
             },
             "require": {
@@ -1481,7 +1481,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2013-05-11 08:21:40"
+            "time": "2013-05-14 13:30:37"
         },
         {
             "name": "doctrine/inflector",
@@ -1933,12 +1933,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kriswallsmith/assetic.git",
-                "reference": "b52745747f8fa1767e0edd18f20bb2e66f1a4d74"
+                "reference": "fe0fa3d77b7dbbcc5b54a736216ee04f3ffd72be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/b52745747f8fa1767e0edd18f20bb2e66f1a4d74",
-                "reference": "b52745747f8fa1767e0edd18f20bb2e66f1a4d74",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/fe0fa3d77b7dbbcc5b54a736216ee04f3ffd72be",
+                "reference": "fe0fa3d77b7dbbcc5b54a736216ee04f3ffd72be",
                 "shasum": ""
             },
             "require": {
@@ -1996,7 +1996,7 @@
                 "compression",
                 "minification"
             ],
-            "time": "2013-05-13 16:03:03"
+            "time": "2013-05-14 16:55:03"
         },
         {
             "name": "laravel/framework",
@@ -2004,12 +2004,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "d97f0df83ce30b65dbda90970b0c47fb9508e220"
+                "reference": "dc5d9c27658a750091a8d17898f4da3af208efcb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/d97f0df83ce30b65dbda90970b0c47fb9508e220",
-                "reference": "d97f0df83ce30b65dbda90970b0c47fb9508e220",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/dc5d9c27658a750091a8d17898f4da3af208efcb",
+                "reference": "dc5d9c27658a750091a8d17898f4da3af208efcb",
                 "shasum": ""
             },
             "require": {
@@ -2106,7 +2106,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-05-14 06:03:59"
+            "time": "2013-05-14 13:25:18"
         },
         {
             "name": "leafo/lessphp",
