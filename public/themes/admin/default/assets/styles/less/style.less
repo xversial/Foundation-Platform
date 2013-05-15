@@ -32,17 +32,16 @@ html, body {
 }
 
 .sidebar, .page {
-	float: left;
 	padding-bottom: 999em;
 	margin-bottom: -999em;
 }
 
 .sidebar {
 
-	width:15%;
+	width:200px;
 	position:fixed;
 
-	background:@sidebar;
+	background:transparent;
 
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -117,33 +116,44 @@ html, body {
 		}
 
 	}
-	.open-sidebar, .close-sidebar{
-		position: absolute;
-		top:20px;
-		left:14px;
-
-		font-size:30px;
-		text-decoration: none;
-
-		color:@white;
-
-		cursor: pointer;
-	}
-
-	.close-sidebar{
+	.sidebar-toggle{
 		display:block;
-	}
+		min-height:80px;
+		width:80px;
+		float:left;
 
-	.open-sidebar{
-		display:none;
+		position: relative;
+
+		line-height: 80px;
+		text-align: center;
+		text-indent: -9999em;
+
+		background: url('../img/sidebar-close.png') center center no-repeat;
+		border-right:1px solid @pageDark;
+
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+		&:before{
+			content:'';
+			width:1px;
+			height:100%;
+			display:block;
+			position: absolute;
+			top:0; right:0;
+			background:@pageLight;
+		}
+
 	}
 }
 
 
 .page {
 
-	width:84%;
-	margin-left:15%;
+	position: relative;
+	margin-left:200px;
+
+	margin-right:20px;
 	margin-top:60px;
 
 	background:@page;
@@ -174,9 +184,8 @@ html, body {
 }
 
 .secondary-navigation{
-
-	margin-top:-60px;
-	min-height:60px;
+	position: absolute;
+	top:-60px;
 
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -240,7 +249,8 @@ html, body {
 
 .profile {
 	position: absolute;
-	top:15px; right:10px;
+	top:-40px;
+	right:0;
 
 	ul {
 		list-style-type: none;
