@@ -17,52 +17,78 @@
  * @link       http://getplatform.com
  */
 
-jQuery(document).ready(function($) {
+;(function(window, document, $, undefined){
 
+	'use strict';
+
+	var $win = $(window);
 	var $body = $(document.body);
-	var $sidebar = $('#base').find('.sidebar');
-	var $page = $('#base').find('.page');
+
+	var $siteWrap = $('#base');
+	var $sidebar = $siteWrap.find('.sidebar');
+	var $page = $siteWrap.find('.page');
 
 	var sizes = {
 		sidebar : {
-			open: '15%',
-			closed: 60
-		},
-		page : {
-			open: '84%'
+			open: 200,
+			closed: 80
 		}
 	};
 
-	if( typeof localStorage.getItem('sidebar') === 'string' && localStorage.getItem('sidebar') === 'closed' ){
+	init();
 
-		$body.addClass('collapsed');
-		$sidebar.css({'width' : sizes.sidebar.closed });
-		$page.css({ 'width' : $body.width() - (sizes.sidebar.closed + 10), 'marginLeft' : sizes.sidebar.closed });
+
+	function init(){
+
+		//SideBar
+		checkSidebar();
+
+		//Listeners
+		addListeners();
+	}
+
+
+	function addListeners(){
+
+		//Toggle Sidebar
+		$body.on('click', '.sidebar-toggle', toggleSidebar);
 
 	}
 
-	$sidebar.on('click', '.close-sidebar', function(){
 
-		$body.addClass('collapsed');
-		$sidebar.animate({ 'width' : sizes.sidebar.closed });
-		$page.animate({ 'width' : $body.width() - (sizes.sidebar.closed + 10), 'marginLeft' : sizes.sidebar.closed });
-		localStorage.setItem('sidebar', 'closed');
+	function checkSidebar(){
 
-	})
-	.on('click', '.open-sidebar', function(){
+		if ( typeof localStorage.getItem('sidebar') === 'string' && localStorage.getItem('sidebar') === 'closed'){
 
-		$sidebar.animate({ 'width' : sizes.sidebar.open }, function(){
-			$body.removeClass('collapsed');
-		});
-		$page.animate({ 'width' : sizes.page.open, 'marginLeft' : sizes.sidebar.open });
-		localStorage.setItem('sidebar', 'open');
+			$body.addClass('collapsed');
+			$sidebar.css({ 'width' : sizes.sidebar.closed });
+			$page.css({ 'marginLeft' : sizes.sidebar.closed });
 
-	});
+		}
 
-	// if( $sidebar.height() > $page.height() ){
-	// 	$page.css({'height' : $sidebar.height() });
-	// }
+	}
 
-	// console.log( $sidebar.height() + ' | ' + $page.height() );
+	function toggleSidebar(e){
+		e.preventDefault();
 
-});
+		if( ! $body.hasClass('collapsed')){
+
+			$body.addClass('collapsed');
+			$sidebar.animate({ 'width' : sizes.sidebar.closed });
+			$page.animate({ 'marginLeft' : sizes.sidebar.closed });
+			localStorage.setItem('sidebar', 'closed');
+
+
+		}else{
+
+			$sidebar.animate({ 'width' : sizes.sidebar.open }, function(){
+				$body.removeClass('collapsed');
+			});
+			$page.animate({ 'marginLeft' : sizes.sidebar.open });
+			localStorage.setItem('sidebar', 'open');
+
+		}
+
+	}
+
+})(window, document, jQuery);

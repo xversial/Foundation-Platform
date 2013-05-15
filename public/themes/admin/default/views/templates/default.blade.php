@@ -56,8 +56,6 @@
 
 		<div id="base">
 			<aside class="sidebar">
-				<a class="close-sidebar icon-double-angle-left"></a>
-				<a class="open-sidebar icon-double-angle-right"></a>
 
 				<a class="brand" href="{{ URL::toAdmin('/') }}" title="@setting('platform/ui::site.tagline')">
 					<img src="{{ Asset::getUrl('img/brand.png') }}" alt="">
@@ -65,6 +63,10 @@
 				</a>
 
 				<nav>@widget('platform/ui::nav.show', array('admin', 1, '', app('platform.admin.uri')))</nav>
+
+				@include('partials/footer')
+
+				<a href="#" class="sidebar-toggle pull-left">Sidebar Toggle</a>
 			</aside>
 			<article class="page">
 				<nav class="profile">
