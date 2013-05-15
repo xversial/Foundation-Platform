@@ -294,17 +294,6 @@ html, body {
 	}
 
 }
-
-#applied{
-	list-style: none;
-
-	li{ 
-		display:inline-block;
-		margin-right:5px;
-	}
-
-}
-
 /* Menus
 ==================================================*/
  .nestable{
@@ -448,9 +437,6 @@ form label.toggle, div.controls.switch {
 
 /* #tables
 ================================================== */
-#table {
-
-}
 
 #table .container {
 	margin:0;
@@ -467,7 +453,7 @@ form label.toggle, div.controls.switch {
 	-moz-border-radius-topright: 0;
 	border-radius: 4px;
 	border-top-right-radius: 0;
-
+	margin-right:150;
 }
 
 #table .tabs-right > ul {
@@ -489,13 +475,17 @@ form label.toggle, div.controls.switch {
 
 }
 
+#table th{
+	cursor: pointer;
+}
+
 #table th[class*=sortable]:after {
 	font-family:FontAwesome;
 	content:"\00A0\f0dc";
 	font-size:12px;
 	color:@baseAccent3;
 	font-weight:normal !important;
-	line-height:1em
+	line-height:1em;
 }
 
 #table th.sortable.asc:after {
@@ -517,7 +507,7 @@ form label.toggle, div.controls.switch {
 }
 
 .applied {
-	padding:0; 
+	padding:0;
 	margin:0 0 10px 0;
 	display:block;
 	width:100%;
@@ -532,6 +522,18 @@ form label.toggle, div.controls.switch {
 .applied .btn {
 	margin-left:4px;
 }
+
+.pagination{
+	margin-top:55px;
+	text-align: center;
+	font-weight:600;
+}
+
+.create{
+	position: absolute;
+	right:35px;
+}
+
 
 .processing {
 	text-align: center;
