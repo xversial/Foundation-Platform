@@ -22,7 +22,8 @@ return array(
 
 	'yes'      => 'Yes',
 	'no'       => 'No',
+	'all'      => 'All',
 	'enabled'  => 'Enabled',
-	'disabled' => 'Disabled'
+	'disabled' => 'Disabled',
 
 );
