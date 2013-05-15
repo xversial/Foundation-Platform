@@ -287,23 +287,24 @@ html, body {
 	.actions{ margin-top:30px; }
 }
 
-.collapsed .sidebar{
 
-	.close-sidebar{ display:none; }
-	.open-sidebar{ display:block; }
 
-	span{ display:none; }
+/*
+ * :: Collapsed Styles
+ */
+.collapsed{
 
-	a, a:visited{
-		text-align: center;
-		padding-left:8px;
-	}
+	.sidebar-toggle{ background: url('../img/sidebar-open.png') center center no-repeat; }
 
-	.active a{
-		padding-left:0px;
-	}
+	.sidebar span{ display:none; }
+	.sidebar a, a:visited{ text-align: center; padding-left:0; }
 
 }
+
+
+
+
+
 /* Menus
 ==================================================*/
  .nestable{

@@ -1,5 +1,9 @@
+<hr>
+
 <footer>
-	<a class="brand" href="{{ URL::toAdmin('/') }}" title="@setting('platform/ui::site.tagline')">
-		<img src="{{ Asset::getUrl('img/brand-admin.png') }}" alt=""><br>Licence
+
+	<a href="{{ URL::to('http://www.cartalyst.com/licence') }}" target="_blank">
+		<img src="{{ Asset::getUrl('img/licence.png') }}" alt=""><br>&copy; 2013
 	</a>
+
 </footer>
