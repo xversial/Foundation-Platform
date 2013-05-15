@@ -60,7 +60,7 @@
 				<a class="open-sidebar icon-double-angle-right"></a>
 
 				<a class="brand" href="{{ URL::toAdmin('/') }}" title="@setting('platform/ui::site.tagline')">
-					<img src="{{ Asset::getUrl('img/brand-admin.png') }}" alt="">
+					<img src="{{ Asset::getUrl('img/brand.png') }}" alt="">
 					<span>@setting('platform/ui::site.title')</span>
 				</a>
 
