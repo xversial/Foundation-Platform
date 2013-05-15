@@ -2,16 +2,44 @@
 
 @section('content')
 
-<h1>This is the default template</h1>
+<div class="introduction hero-unit">
 
-<div class="well">
+	<center><img src="{{ URL::to('assets/img/brand-logo.png') }}" alt="Platform 2 Logo" /></center>
+
 	@content('hero')
+
 </div>
 
-<h3>Now, back to the page</h3>
+<div class="row">
 
-<p>It's located at <code>pages/home.blade.php</code> of your theme.</p>
+	<div class="span4">
+		@content('develop')
+	</div>
 
-<a href="{{ URL::toAdmin('/') }}" class="btn">Admin</a>
+	<div class="span4">
+		@content('design')
+	</div>
+
+	<div class="span4">
+		@content('extend')
+	</div>
+
+</div>
+
+<div class="row">
+
+	<div class="span4">
+
+	</div>
+
+	<div class="span4">
+
+	</div>
+
+	<div class="span4">
+
+	</div>
+
+</div>
 
 @stop
