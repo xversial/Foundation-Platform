@@ -1,1 +1,1 @@
-Hi, this is some markdown content through a blade `@content` call. This file can be found under `public/content/hero.md`.
+Platform is an application base, a bootstrap for Laravel. The fundamentals + a few essentials that allow you to focus on the features that make your application unique. It's well documented, feature awesome, and open source.

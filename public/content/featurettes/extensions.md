@@ -1,3 +1,3 @@
-###Develop
+###Extensions
 
-Platform is Core light and built upon a strong PHP framework with great documentation and a fantastic community, Laravel.
+A starter kit for building a modular, extensions-based application.
