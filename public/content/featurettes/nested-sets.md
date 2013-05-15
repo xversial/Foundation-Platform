@@ -1,4 +1,3 @@
-###Develop
+###Nested Sets
 
-Platform is Core light and built upon a strong PHP framework with great documentation and a fantastic community, Laravel.
-`
+Our Nested Sets package is a PHP 5.3+, framework agnostic package for managing hierarchical data.

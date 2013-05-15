@@ -1,3 +1,3 @@
-###Design
+###Sentry
 
-Powerful theme system that utilizes the blade template engine giving front end developers a solid separation between logic and markup.
+Sentry is a PHP 5.3+ fully-featured authentication & authorization system. It also provides additional features such as user groups and additional security features.
