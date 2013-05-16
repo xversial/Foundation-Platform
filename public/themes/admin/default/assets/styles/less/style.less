@@ -37,7 +37,6 @@ html, body {
 }
 
 .sidebar {
-
 	width:200px;
 	position:fixed;
 
@@ -49,7 +48,6 @@ html, body {
 	ul{
 		margin:0;
 		padding:0;
-
 		list-style: none;
 	}
 
@@ -58,12 +56,16 @@ html, body {
 		border-bottom:1px solid @baseEtch;
 	}
 
+	li:last-child {
+		border-bottom:none;
+	}
+
 	nav a, nav a:visited {
 		display:block;
 		padding:10px 0 10px 20px;
 
 
-		color:@etch;
+		color:@white;
 		font-size:16px;
 		font-weight:200;
 		letter-spacing: 1px;
@@ -106,7 +108,7 @@ html, body {
 		text-align: center;
 		text-decoration: none;
 
-		color:@etch;
+		color:@white;
 
 		border-bottom:1px solid @baseEtch;
 
@@ -119,6 +121,9 @@ html, body {
 
 	footer{
 		text-align: center;
+		position:fixed;
+		bottom:20px;
+		width: inherit;
 
 		a{ color:#fff; }
 
@@ -229,6 +234,31 @@ html, body {
 	}
 }
 
+.profile {
+	position: absolute;
+	top:-60px;
+	right:0;
+
+	ul {
+		list-style-type: none;
+	}
+
+	li{ display:inline; text-align: center;}
+
+	a, a:visited{
+		display:inline-block;
+		padding:5px;
+
+		font-size:16px;
+		text-decoration: none;
+		color:#fff;
+
+		&:hover{
+			font-size:20px;
+		}
+	}
+}
+
 .tertiary-navigation {
 	float:right;
 
@@ -255,32 +285,7 @@ html, body {
 	}
 }
 
-.profile {
-	position: absolute;
-	top:-40px;
-	right:0;
 
-	ul {
-		list-style-type: none;
-	}
-
-	li{ display:inline; text-align: center;}
-
-	a, a:visited{
-		display:inline-block;
-		padding:5px;
-
-		font-size:16px;
-		text-decoration: none;
-		color:#fff;
-
-		&:hover{
-			font-size:20px;
-		}
-
-	}
-
-}
 
 .content {
 
