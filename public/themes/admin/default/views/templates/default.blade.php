@@ -14,7 +14,7 @@
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
 		<meta name="base_url" content="{{ URL::to('/') }}">
-		<meta name="base_url" content="{{ URL::toAdmin('/') }}">
+		<meta name="admin_url" content="{{ URL::toAdmin('/') }}">
 
 		{{-- Queue template assets --}}
 		{{ Asset::queue('style', 'styles/less/style.less') }}
@@ -62,7 +62,7 @@
 					<span>@setting('platform/ui::site.title')</span>
 				</a>
 
-				<nav>@widget('platform/ui::nav.show', array('admin', 1, '', app('platform.admin.uri')))</nav>
+				<nav>@widget('platform/ui::nav.show', array('admin', 1, '', admin_uri()))</nav>
 
 				<a href="#" class="sidebar-toggle"></a>
 
