@@ -42,4 +42,15 @@
 
 </div>
 
+<div class="row">
+
+	<footer>
+
+		<p class="copyright">Created, developed, and designed by <a href="http://twitter.com/#!/Cartalyst">@Cartalyst</a></p>
+		<p class="licence">The BSD 3-Clause License - Copyright © 2011-2013, Cartalyst LLC</p>
+
+	</footer>
+
+</div>
+
 @stop
