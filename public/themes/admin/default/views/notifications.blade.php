@@ -2,7 +2,7 @@
 	<br>
 
 	@if ($errors->any())
-		<div class="alert alert-error alert-block">
+		<div class="alert alert-error">
 			{{-- <button type="button" class="close" data-dismiss="alert">&times;</button> --}}
 			@if ($message = $errors->first(0, ':message'))
 				{{ $message }}
@@ -14,9 +14,9 @@
 
 	@if ($notifications = Session::get('notifications') and $notifications->has('success'))
 		@foreach ($notifications->get('success') as $message)
-			<div class="alert alert-success alert-block">
+			<div class="alert alert-success"><i class="icon-ok-sign"></i>
 				{{-- <button type="button" class="close" data-dismiss="alert">&times;</button> --}}
-				{{ $message }}
+				<p class="message">{{ $message }}</p>
 			</div>
 		@endforeach
 	@endif
@@ -25,7 +25,7 @@
 		@foreach ($notifications->get('error') as $message)
 			<div class="alert alert-error alert-block">
 				{{-- <button type="button" class="close" data-dismiss="alert">&times;</button> --}}
-				{{ $message }}
+				<p class="message">{{ $message }}</p>
 			</div>
 		@endforeach
 	@endif

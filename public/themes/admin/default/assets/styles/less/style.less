@@ -597,25 +597,33 @@ form label.toggle, div.controls.switch {
 	background-color: #f5e560;
 }
 
-/* #Messages
+/* #notifications
 ==================================================*/
-.messages {
-	width:100%;
-	position: relative;
+#notifications {
+	position: absolute;
+	top:0;
+	right:0;
+	//border:1px solid red;
+	//background:red;
+	min-height: 40px;
+	width:480px;
 
-	margin-top:10px;
-	margin-bottom:20px;
+	border-radius: 4px;
+	.alert{
+		font-size:28px;
+		line-height: 28px;
 
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+		i {
+			padding-right:10px;
+			border-right:1px solid @etch;
+		}
 
-	.stack{
-		width:100%;
-		position: absolute;
-		top:0; left:0;
+		.message {
+			font-size:12px;
+			line-height: 28px;
+		}
+
 	}
-
-	.alert{ margin:0 10px; }
 
 }
 
