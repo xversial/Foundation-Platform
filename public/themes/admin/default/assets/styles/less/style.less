@@ -56,10 +56,6 @@ html, body {
 		border-bottom:1px solid @baseEtch;
 	}
 
-	li:last-child {
-		border-bottom:none;
-	}
-
 	nav a, nav a:visited {
 		display:block;
 		padding:10px 0 10px 20px;
@@ -110,8 +106,6 @@ html, body {
 
 		color:@white;
 
-		border-bottom:1px solid @baseEtch;
-
 		span{
 			display:block;
 			margin-top:20px;
@@ -119,43 +113,26 @@ html, body {
 
 	}
 
-	footer{
-		text-align: center;
-		position:fixed;
-		bottom:20px;
-		width: inherit;
-
-		a{ color:#fff; }
-
-	}
-
 	.sidebar-toggle{
 		display:block;
-		min-height:80px;
-		width:80px;
-		float:left;
+		min-height:60px;
+		border-top:1px solid @baseEtchLight;
+		background: url('../../img/sidebar-close.png') center right no-repeat;
+	}
 
-		position: relative;
+	footer{
 
-		line-height: 80px;
+		position:fixed;
+		height: 80px;
+		padding-top:20px;
+		bottom:0;
+
+		width: inherit;
+
 		text-align: center;
-		text-indent: -9999em;
-
-		background: url('../img/sidebar-close.png') center center no-repeat;
-		border-right:1px solid @pageDark;
-
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
-
-		&:before{
-			content:'';
-			width:1px;
-			height:100%;
-			display:block;
-			position: absolute;
-			top:0; right:0;
-			background:@pageLight;
-		}
+		line-height: 11px;
+		font-size:11px;
+		color:#f7f7f7;
 
 	}
 }
@@ -236,7 +213,7 @@ html, body {
 
 .profile {
 	position: absolute;
-	top:-60px;
+	top:-50px;
 	right:0;
 
 	ul {
@@ -307,7 +284,7 @@ html, body {
  */
 .collapsed{
 
-	.sidebar-toggle{ background: url('../img/sidebar-open.png') center center no-repeat; }
+	.sidebar-toggle{ background: url('../../img/sidebar-open.png') center center no-repeat; }
 	.sidebar span{ display:none; }
 	.sidebar a, a:visited{ text-align: center; padding-left:0; }
 	.sidebar .brand{ padding:0 10px 20px 10px;}

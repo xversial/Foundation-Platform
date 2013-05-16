@@ -64,9 +64,10 @@
 
 				<nav>@widget('platform/ui::nav.show', array('admin', 1, '', app('platform.admin.uri')))</nav>
 
+				<a href="#" class="sidebar-toggle"></a>
+
 				@include('partials/footer')
 
-				<a href="#" class="sidebar-toggle pull-left">Sidebar Toggle</a>
 			</aside>
 			<article class="page">
 				<nav class="profile">
