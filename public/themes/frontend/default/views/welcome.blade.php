@@ -29,15 +29,15 @@
 <div class="row">
 
 	<div class="span4">
-
+		@content('nested-sets')
 	</div>
 
 	<div class="span4">
-
+		@content('themes')
 	</div>
 
 	<div class="span4">
-
+		@content('extensions')
 	</div>
 
 </div>
