@@ -444,7 +444,6 @@ form label.toggle, div.controls.switch {
 
 /* #tables
 ================================================== */
-
 #table .container {
 	margin:0;
 }
@@ -465,6 +464,7 @@ form label.toggle, div.controls.switch {
 
 #table .tabs-right > ul {
 	margin-left: -1px;
+	padding:0;
 }
 
 #table .nav-tabs > .active > a, .nav-tabs > .active > a:hover {
@@ -479,7 +479,10 @@ form label.toggle, div.controls.switch {
 	-moz-border-radius-topright:0;
 	border-top-right-radius:0;
 	margin-bottom:0;
+}
 
+#table td {
+	vertical-align: middle;
 }
 
 #table th.sortable{
@@ -503,13 +506,13 @@ form label.toggle, div.controls.switch {
 	content:"\00A0\f0dd";
 }
 
-#table-filters {
-	margin-top:8px;
+
+.filters input {
+	height:34px;
 }
 
-#table-filters select,
-#table-filters input,
-#table-filters .btn {
+.filters select {
+	height: 44px;
 	margin-right:10px;
 }
 
@@ -531,20 +534,15 @@ form label.toggle, div.controls.switch {
 }
 
 .pagination{
-	margin-top:55px;
+	margin-top:0;
 	text-align: center;
 	font-weight:600;
 }
 
-.create{
-	position: absolute;
-	right:35px;
-}
-
-
 .processing {
 	text-align: center;
-	height:42px;
+	height:44px;
+	margin-top:10px;
 }
 
 .table-processing {
