@@ -636,6 +636,10 @@
 
 		_reset: function() {
 			//reset the grid back to first load
+			this.$body.find('[data-sort]').removeClass('asc desc');
+
+			this.$body.find('[data-search]').find('input').val('');
+			this.$body.find('[data-search]').find('select').prop('selectedIndex',0);
 
 			this.appliedFilters = [];
 			this.pagination = 1;
