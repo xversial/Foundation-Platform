@@ -25,9 +25,9 @@ return array(
 	| Button Language Lines
 	|--------------------------------------------------------------------------
 	|
-	| The following language lines are used throughout the application. You
-	| can change them to anything you want to customize your views to better
-	| match your application.
+	| The following language lines are used throughout the whole application.
+	| You can change them to anything you want to customize your views to
+	| better match your application.
 	|
 	*/
 

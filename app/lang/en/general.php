@@ -26,4 +26,8 @@ return array(
 	'enabled'  => 'Enabled',
 	'disabled' => 'Disabled',
 
+	'processing' => 'Processing...',
+	'search'     => 'Search',
+	'load_more'  => 'Load more',
+
 );

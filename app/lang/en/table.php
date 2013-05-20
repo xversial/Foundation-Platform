@@ -21,6 +21,6 @@
 return array(
 
 	'actions' => 'Actions',
-	'status'  => 'Status'
+	'status'  => 'Status',
 
 );
