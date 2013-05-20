@@ -415,7 +415,6 @@
 				data: this._buildFetchData()
 			})
 			.done(function(response){
-				self._loader();
 
 				self.isActive = false;
 
@@ -439,6 +438,7 @@
 				}
 
 				self._callback();
+				self._loader();
 			})
 			.error(function(jqXHR, textStatus, errorThrown) {
 				console.log(jqXHR.status + ' ' + errorThrown);
