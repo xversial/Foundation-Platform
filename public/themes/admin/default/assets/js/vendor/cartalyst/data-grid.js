@@ -277,7 +277,7 @@
 
 				e.preventDefault();
 
-				if (self.opt.type === 'pages')
+				if (self.opt.type === 'pages' || self.opt.type === 'page')
 				{
 
 					pageId = $(this).data('page');
@@ -503,8 +503,6 @@
 				newPerPage,
 				i;
 
-			console.log(pages_count);
-
 
 			if (this.opt.type === 'pages')
 			{
@@ -587,7 +585,7 @@
 
 			}
 
-			if (this.opt.type == 'page'){
+			if (this.opt.type === 'page'){
 
 				pagiData = {
 					prevPage: (self.pagination - 1) === 0 ? 1 : (self.pagination - 1),
