@@ -25,7 +25,7 @@
 		dividend: 10,
 		threshold: 20,
 		throttle: 500,
-		type: 'pages',
+		type: 'page',
 		loader: undefined,
 		sort: {
 			column: undefined,
@@ -503,6 +503,8 @@
 				newPerPage,
 				i;
 
+			console.log(pages_count);
+
 
 			if (this.opt.type === 'pages')
 			{
@@ -580,6 +582,20 @@
 					active: true,
 					infinite: true
 				};
+
+				pagiNav.push(pagiData);
+
+			}
+
+			if (this.opt.type == 'page'){
+
+				pagiData = {
+					prevPage: (self.pagination - 1) === 0 ? 1 : (self.pagination - 1),
+					nextPage: (self.pagination + 1) > pages_count ? pages_count : (self.pagination + 1),
+					page: self.pagination,
+					active: true,
+					total: total_count
+				}
 
 				pagiNav.push(pagiData);
 
