@@ -587,7 +587,19 @@
 
 			if (this.opt.type === 'page'){
 
+				if (filtered_count !== total_count)
+				{
+					newPerPage = Math.ceil(filtered_count / pages_count);
+				}
+				else
+				{
+					newPerPage = Math.ceil(total_count / pages_count);
+				}
+
+
 				pagiData = {
+					pageStart: self.pagination === 1 ? 1 : (newPerPage * (self.pagination - 1) + 1),
+					pageLimit: self.pagination === 1 ? newPerPage : (total_count < (newPerPage * self.pagination)) ? total_count : newPerPage * self.pagination,
 					prevPage: (self.pagination - 1) === 0 ? 1 : (self.pagination - 1),
 					nextPage: (self.pagination + 1) > pages_count ? pages_count : (self.pagination + 1),
 					page: self.pagination,
