@@ -559,6 +559,24 @@ form label.toggle, div.controls.switch {
 	padding-left:35px;
 }
 
+.action-rel{
+	position: relative;
+}
+
+.action-tip{
+	position: absolute;
+	right:0; top:-25px;
+	display:none;
+
+	padding:10px;
+
+	background:#666;
+
+	border-radius: 4px;
+}
+
+.table tr:hover .action-tip{ display:block; }
+
 /* #Toggles
 ==================================================*/
 
@@ -607,6 +625,7 @@ form label.toggle, div.controls.switch {
 /* #notifications
 ==================================================*/
 #notifications {
+	display:none;
 	position: absolute;
 	top:0;
 	right:0;
