@@ -20,6 +20,16 @@
 
 use Platform\Ui\Models\Menu;
 
+/*
+|--------------------------------------------------------------------------
+| Functions
+|--------------------------------------------------------------------------
+|
+| Here's a great place to register any custom functions for your
+| application. We've included a couple to get you started.
+|
+*/
+
 if ( ! function_exists('set_admin_menu_order'))
 {
 	/**
