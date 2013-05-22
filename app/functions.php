@@ -30,7 +30,7 @@ use Platform\Ui\Models\Menu;
 |
 */
 
-if ( ! function_exists('set_admin_menu_order'))
+if ( ! function_exists('set_menu_order'))
 {
 	/**
 	 * Set the order of the provided menu's children according to
