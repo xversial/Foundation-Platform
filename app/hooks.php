@@ -48,7 +48,7 @@ Installer::after(function()
 
 /*
 |--------------------------------------------------------------------------
-| Platform hooks
+| Platform Hooks
 |--------------------------------------------------------------------------
 |
 | Hooks for events of Platform itself.
@@ -72,7 +72,7 @@ Platform::ineligible(function($platform)
 
 /*
 |--------------------------------------------------------------------------
-| Extension hooks
+| Extension Hooks
 |--------------------------------------------------------------------------
 |
 | Hooks for various stages of an Extension's lifecycle. You can access the
@@ -139,4 +139,3 @@ Extension::upgraded(function(Extension $extension)
 {
 	// After an extension is upgraded
 });
-

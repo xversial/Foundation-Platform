@@ -20,7 +20,17 @@
 
 use Platform\Ui\Models\Menu;
 
-if ( ! function_exists('set_admin_menu_order'))
+/*
+|--------------------------------------------------------------------------
+| Functions
+|--------------------------------------------------------------------------
+|
+| Here's a great place to register any custom functions for your
+| application. We've included a couple to get you started.
+|
+*/
+
+if ( ! function_exists('set_menu_order'))
 {
 	/**
 	 * Set the order of the provided menu's children according to
