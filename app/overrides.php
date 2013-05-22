@@ -36,10 +36,14 @@ Route::group(array('prefix' => '{api}/v1'), function() use ($app)
 	// Override an API route
 });
 
-Route::group(array('prefix' => admin_uri()), function() use ($app)
+// Only route admin routes if the admin extension is installed
+if (function_exists('admin_uri'))
 {
-	// Override an admin route
-});
+	Route::group(array('prefix' => admin_uri()), function() use ($app)
+	{
+		// Override an admin route
+	});
+}
 
 /*
 |--------------------------------------------------------------------------
