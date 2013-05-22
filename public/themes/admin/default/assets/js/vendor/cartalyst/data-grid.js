@@ -25,7 +25,7 @@
 		dividend: 10,
 		threshold: 20,
 		throttle: 500,
-		type: 'page',
+		type: 'single',
 		loader: undefined,
 		sort: {
 			column: undefined,
@@ -277,7 +277,7 @@
 
 				e.preventDefault();
 
-				if (self.opt.type === 'pages' || self.opt.type === 'page')
+				if (self.opt.type === 'multiple' || self.opt.type === 'single')
 				{
 
 					pageId = $(this).data('page');
@@ -504,7 +504,7 @@
 				i;
 
 
-			if (this.opt.type === 'pages')
+			if (this.opt.type === 'multiple')
 			{
 
 				//pagination if a throttle is set
@@ -585,7 +585,7 @@
 
 			}
 
-			if (this.opt.type === 'page'){
+			if (this.opt.type === 'single'){
 
 				if (filtered_count !== total_count)
 				{
