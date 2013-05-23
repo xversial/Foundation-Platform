@@ -11,41 +11,9 @@
 </div>
 
 <div class="row">
-	<div class="span3">@content('packages')</div>
-	<div class="span3">@content('extensions')</div>
-	<div class="span3">@content('themes')</div>
-</div>
-
-<div class="row">
-
-	<div class="span4">
-		@content('api')
-	</div>
-
-	<div class="span4">
-		@content('sentry')
-	</div>
-
-	<div class="span4">
-		@content('data-grid')
-	</div>
-
-</div>
-
-<div class="row">
-
-	<div class="span4">
-		@content('nested-sets')
-	</div>
-
-	<div class="span4">
-		@content('themes')
-	</div>
-
-	<div class="span4">
-		@content('extensions')
-	</div>
-
+	<div class="span4">@content('packages')</div>
+	<div class="span4">@content('extensions')</div>
+	<div class="span4">@content('themes')</div>
 </div>
 
 <div class="row">
