@@ -1,3 +1,3 @@
-###Themes
+###Theme Ready
 
-You won’t find complex and tangled control structures; everything in Platform is an extension and completely modular.
+A smart, simple, &amp; powerful theme system for the front-end developer. Includes theme inheritance, fall back support, asset compilation, static asset caching, and more!
