@@ -1,5 +1,4 @@
-// A URL helper for Platform
-// Just incase the files get loaded out of order
+// Just in case the files get loaded out of order
 if (platform == undefined)
 {
 	var platform = {};
