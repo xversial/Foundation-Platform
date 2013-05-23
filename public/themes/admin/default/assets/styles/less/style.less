@@ -619,31 +619,35 @@ form label.toggle, div.controls.switch {
 /* #notifications
 ==================================================*/
 #notifications {
-	display:none;
-	position: absolute;
-	top:0;
-	right:0;
-	//border:1px solid red;
-	//background:red;
-	min-height: 40px;
-	width:480px;
+	width:100%;
+	text-align: center;
+	margin-bottom:10px;
 
-	border-radius: 4px;
 	.alert{
-		font-size:28px;
-		line-height: 28px;
+		position: relative;
+		padding:5px;
+		font-size:16px;
+		border-radius: 0;
+		border-bottom:1px solid darken(@base, 10%);
+	}
 
-		i {
-			padding-right:10px;
-			border-right:1px solid @etch;
-		}
+	.close{
+		top:12px;
+		right:25px;
+	}
 
-		.message {
-			font-size:12px;
-			line-height: 28px;
-		}
+	i{
+		display:inline-block;
+		padding-right:10px;
+		margin-right:10px;
+		font-size:18px;
+
+		&.success{ border-right:1px solid @green; }
+		&.error{ border-right:1px solid @red; }
+		&.warning{ border-right:1px solid @yellow; }
 
 	}
+	.message{ display:inline-block; }
 
 }
 

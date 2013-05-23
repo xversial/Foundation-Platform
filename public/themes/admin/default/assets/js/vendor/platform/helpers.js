@@ -76,3 +76,29 @@ if (platform == undefined)
 	});
 
 })(jQuery);
+
+$(function(){
+
+	//Alert Close
+	$(".alert").on('click', '.close', function(e){
+
+		$(e.delegateTarget).slideToggle(function(){
+			$(this).remove();
+		});
+
+	});
+
+	//Hide Alert after Time
+	var timer;
+
+	if($('.alert').is(':visible')){
+
+		timer = setTimeout(function(){
+
+			$('.alert').slideToggle();
+
+		}, 10000);
+
+	}
+
+});

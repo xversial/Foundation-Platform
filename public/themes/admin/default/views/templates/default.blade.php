@@ -54,6 +54,9 @@
 		<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
 		<![endif]-->
 
+		{{-- Notifications --}}
+		@include('notifications')
+
 		<div id="base">
 			<aside class="sidebar">
 
@@ -94,11 +97,9 @@
 					@widget('platform/ui::nav.show', array(1, 1, 'nav nav-tabs', app('platform.admin.uri')))
 				</nav>
 
-				{{-- Notifications --}}
-				@include('notifications')
-
 				@section('content')
 				@show
+
 			</article>
 		</div>
 
