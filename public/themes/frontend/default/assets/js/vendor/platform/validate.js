@@ -1,22 +1,27 @@
-/*! H5F - v1.0.0 - 2012-07-18
+/*! H5F
 * https://github.com/ryanseddon/H5F/
-* Copyright (c) 2012 Ryan Seddon; Licensed MIT */
+* Copyright (c) Ryan Seddon | Licensed MIT */
 
-/* slight name modification by @cartalyst for expressivness only */
+(function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(factory);
+    } else {
+        // Browser globals
+        root.H5F = factory();
+    }
+}(this, function () {
 
-var Validate = Validate || {};
-
-(function(d){
-
-    var field = d.createElement("input"),
+    var d = document,
+        field = d.createElement("input"),
         emailPatt = /^[a-zA-Z0-9.!#$%&'*+-\/=?\^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
         urlPatt = /[a-z][\-\.+a-z]*:\/\//i,
         nodes = /^(input|select|textarea)$/i,
-        isSubmit, usrPatt, curEvt, args, custMsg = "",
+        isSubmit, bypassSubmit, usrPatt, curEvt, args,
         // Methods
-        setup, validation, validity, checkField, checkValidity, setCustomValidity, support, pattern, placeholder, range, required, valueMissing, listen, unlisten, preventActions, getTarget, addClass, removeClass, isHostMethod;
+        setup, validation, validity, checkField, bypassChecks, checkValidity, setCustomValidity, support, pattern, placeholder, range, required, valueMissing, listen, unlisten, preventActions, getTarget, addClass, removeClass, isHostMethod, isSiblingChecked;
 
-    setup = function(form,settings) {
+    setup = function(form, settings) {
         var isCollection = !form.nodeType || false;
 
         var opts = {
@@ -46,7 +51,8 @@ var Validate = Validate || {};
     validation = function(form) {
         var f = form.elements,
             flen = f.length,
-            isRequired, noValidate = !!(form.attributes["novalidate"]);
+            isRequired,
+            noValidate = !!(form.attributes["novalidate"]);
 
         listen(form,"invalid",checkField,true);
         listen(form,"blur",checkField,true);
@@ -54,11 +60,14 @@ var Validate = Validate || {};
         listen(form,"keyup",checkField,true);
         listen(form,"focus",checkField,true);
         listen(form,"change",checkField,true);
+        listen(form,"click",bypassChecks,true);
 
         listen(form,"submit",function(e){
             isSubmit = true;
-            if(!noValidate && !form.checkValidity()) {
-                preventActions(e);
+            if(!bypassSubmit) {
+                if(!noValidate && !form.checkValidity()) {
+                    preventActions(e);
+                }
             }
         },false);
 
@@ -89,11 +98,10 @@ var Validate = Validate || {};
             step = range(elem,"step"),
             min = range(elem,"min"),
             max = range(elem,"max"),
-            customError = (custMsg !== "");
+            customError = !( elem.validationMessage === "" || elem.validationMessage === undefined );
 
         elem.checkValidity = function() { return checkValidity.call(this,elem); };
         elem.setCustomValidity = function(msg) { setCustomValidity.call(elem,msg); };
-        elem.validationMessage = custMsg;
 
         elem.validity = {
             valueMissing: missing,
@@ -107,7 +115,7 @@ var Validate = Validate || {};
 
         if(attrs.placeholder && !evt.test(curEvt)) { placeholder(elem); }
     };
-    checkField = function (e) {
+    checkField = function(e) {
         var el = getTarget(e) || e, // checkValidity method passes element not event
             events = /^(input|keyup|focusin|focus|change)$/i,
             ignoredTypes = /^(submit|image|button|reset)$/i,
@@ -142,7 +150,7 @@ var Validate = Validate || {};
             }
         }
     };
-    checkValidity = function (el) {
+    checkValidity = function(el) {
         var f, ff, isRequired, hasPattern, invalid = false;
 
         if(el.nodeName.toLowerCase() === "form") {
@@ -170,11 +178,19 @@ var Validate = Validate || {};
             return el.validity.valid;
         }
     };
-    setCustomValidity = function (msg) {
+    setCustomValidity = function(msg) {
         var el = this;
-        custMsg = msg;
 
-        el.validationMessage = custMsg;
+        el.validationMessage = msg;
+    };
+
+    bypassChecks = function(e) {
+        // handle formnovalidate attribute
+        var el = getTarget(e);
+
+        if(el.attributes["formnovalidate"] && el.type === "submit") {
+            bypassSubmit = true;
+        }
     };
 
     support = function() {
@@ -196,7 +212,7 @@ var Validate = Validate || {};
             usrPatt = new RegExp('^(?:' + type + ')$');
 
             if(val === placeholder) {
-                return true;
+                return false;
             } else if(val === "") {
                 return false;
             } else {
@@ -225,7 +241,7 @@ var Validate = Validate || {};
             }
         }
     };
-    range = function(el,type) {
+    range = function(el, type) {
         // Emulate min, max and step
         var min = parseInt(el.getAttribute("min"),10) || 0,
             max = parseInt(el.getAttribute("max"),10) || false,
@@ -254,8 +270,9 @@ var Validate = Validate || {};
     };
     valueMissing = function(el) {
         var placeholder = el.getAttribute("placeholder"),
+            specialTypes = /^(checkbox|radio)$/i,
             isRequired = !!(el.attributes["required"]);
-        return !!(isRequired && (el.value === "" || el.value === placeholder));
+        return !!(isRequired && (el.value === "" || el.value === placeholder || (specialTypes.test(el.type) && !isSiblingChecked(el))));
     };
 
     /* Util methods */
@@ -325,10 +342,20 @@ var Validate = Validate || {};
         var t = typeof o[m], reFeaturedMethod = new RegExp('^function|object$', 'i');
         return !!((reFeaturedMethod.test(t) && o[m]) || t === 'unknown');
     };
+    /* Checking if one of the radio siblings is checked */
+    isSiblingChecked = function(el) {
+        var siblings = document.getElementsByName(el.name);
+        for(var i=0; i<siblings.length; i++){
+            if(siblings[i].checked){
+                return true;
+            }
+        }
+        return false;
+    };
 
     // Since all methods are only used internally no need to expose globally
-    window["Validate"] = {
+    return {
         setup: setup
     };
 
-}(document));
+}));
