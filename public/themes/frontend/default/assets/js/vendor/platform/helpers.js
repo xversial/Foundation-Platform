@@ -43,17 +43,4 @@ $(function(){
 
 	});
 
-	//Hide Alert after Time
-	var timer;
-
-	if($('.alert').is(':visible')){
-
-		timer = setTimeout(function(){
-
-			$('.alert').slideToggle();
-
-		}, 10000);
-
-	}
-
 });
