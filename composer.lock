@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "2f4b44549a98383a5b557a767db1b689",
+    "hash": "de7838509be7224b3c5e7b7b77122f14",
     "packages": [
         {
             "name": "cartalyst/api",
@@ -230,12 +230,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/composite-config.git",
-                "reference": "12792f57111059447117cae466e76aef472ce777"
+                "reference": "4df20b44a0ff0b3065815cc9876a623ebeb72421"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/composite-config/zipball/12792f57111059447117cae466e76aef472ce777",
-                "reference": "12792f57111059447117cae466e76aef472ce777",
+                "url": "https://api.github.com/repos/cartalyst/composite-config/zipball/4df20b44a0ff0b3065815cc9876a623ebeb72421",
+                "reference": "4df20b44a0ff0b3065815cc9876a623ebeb72421",
                 "shasum": ""
             },
             "require": {
@@ -280,7 +280,7 @@
                 "source": "https://github.com/cartalyst/composite-config/tree/master",
                 "issues": "https://github.com/cartalyst/composite-config/issues"
             },
-            "time": "2013-05-22 21:50:47"
+            "time": "2013-05-27 22:55:36"
         },
         {
             "name": "cartalyst/data-grid",
@@ -427,12 +427,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/extensions.git",
-                "reference": "971d01914e1c6069e8925de4af265b870f7e549a"
+                "reference": "83394688e98b5f4dfc8b0e5ed13f2d6d6ac233f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/extensions/zipball/971d01914e1c6069e8925de4af265b870f7e549a",
-                "reference": "971d01914e1c6069e8925de4af265b870f7e549a",
+                "url": "https://api.github.com/repos/cartalyst/extensions/zipball/83394688e98b5f4dfc8b0e5ed13f2d6d6ac233f5",
+                "reference": "83394688e98b5f4dfc8b0e5ed13f2d6d6ac233f5",
                 "shasum": ""
             },
             "require": {
@@ -496,7 +496,7 @@
                 "source": "https://github.com/cartalyst/extensions/tree/master",
                 "issues": "https://github.com/cartalyst/extensions/issues"
             },
-            "time": "2013-05-22 03:28:03"
+            "time": "2013-05-27 23:02:31"
         },
         {
             "name": "cartalyst/interpret",
@@ -589,12 +589,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/nested-sets.git",
-                "reference": "c0986b51ee6d6a59bfa3fa79dd1752a37d60fd4a"
+                "reference": "6c7a43fa325fd110e4e5ef0929813abe0aab9757"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/nested-sets/zipball/c0986b51ee6d6a59bfa3fa79dd1752a37d60fd4a",
-                "reference": "c0986b51ee6d6a59bfa3fa79dd1752a37d60fd4a",
+                "url": "https://api.github.com/repos/cartalyst/nested-sets/zipball/6c7a43fa325fd110e4e5ef0929813abe0aab9757",
+                "reference": "6c7a43fa325fd110e4e5ef0929813abe0aab9757",
                 "shasum": ""
             },
             "require": {
@@ -663,7 +663,7 @@
                 "source": "https://github.com/cartalyst/nested-sets/tree/master",
                 "issues": "https://github.com/cartalyst/nested-sets/issues"
             },
-            "time": "2013-05-22 16:08:08"
+            "time": "2013-05-28 11:14:20"
         },
         {
             "name": "cartalyst/sentry",
@@ -671,12 +671,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cartalyst/sentry.git",
-                "reference": "4489c1de255ff6e12e39a134dbaf3a16fbfd2e3c"
+                "reference": "f9f5934948ed81039108d4c30eee1aa9ee6b402c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/4489c1de255ff6e12e39a134dbaf3a16fbfd2e3c",
-                "reference": "4489c1de255ff6e12e39a134dbaf3a16fbfd2e3c",
+                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/f9f5934948ed81039108d4c30eee1aa9ee6b402c",
+                "reference": "f9f5934948ed81039108d4c30eee1aa9ee6b402c",
                 "shasum": ""
             },
             "require": {
@@ -690,11 +690,8 @@
                 "mockery/mockery": "0.7.2"
             },
             "suggest": {
-                "dhorrigan/capsule": "Capsule is a small utility for managing database connections given to illuminate/database outside of Laravel 4.",
-                "illuminate/cookie": "Sentry provides an Illuminate cookie driver for cookie integration.",
-                "illuminate/database": "Sentry provides Eloquent models for User, Group and Throttle providers.",
-                "illuminate/session": "Sentry provides an Illuminate session driver for storage integration.",
-                "ircmaxell/password-compat": "A forward-compatible PHP 5.5 password package for password_* functions can be used as a hasher (NativeHasher) in Sentry."
+                "illuminate/database": "Default sentry user, group and throttling implementations.",
+                "ircmaxell/password-compat": "Default hashing uses PHP 5.5 password_* functions, with forward-compatible support."
             },
             "type": "library",
             "extra": {
@@ -765,7 +762,7 @@
                 "source": "https://github.com/cartalyst/sentry/tree/master",
                 "issues": "https://github.com/cartalyst/sentry/issues"
             },
-            "time": "2013-05-23 18:35:34"
+            "time": "2013-05-27 23:29:19"
         },
         {
             "name": "cartalyst/sentry-social",
@@ -1346,12 +1343,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "1459223adae87305d07c9ea5f742a7fd6c8a740e"
+                "reference": "2169b0ce1d253d448c60b7d40bbe4e4b5afe22fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/1459223adae87305d07c9ea5f742a7fd6c8a740e",
-                "reference": "1459223adae87305d07c9ea5f742a7fd6c8a740e",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/2169b0ce1d253d448c60b7d40bbe4e4b5afe22fe",
+                "reference": "2169b0ce1d253d448c60b7d40bbe4e4b5afe22fe",
                 "shasum": ""
             },
             "require": {
@@ -1399,7 +1396,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1412,7 +1409,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2013-05-21 02:44:34"
+            "time": "2013-05-27 19:11:46"
         },
         {
             "name": "doctrine/dbal",
@@ -1420,12 +1417,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "4e31bb0f3570999d2b9cd1625a4436b7175d32a9"
+                "reference": "da9564df54d248de03f9fd3d31e5eade86f8f747"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/4e31bb0f3570999d2b9cd1625a4436b7175d32a9",
-                "reference": "4e31bb0f3570999d2b9cd1625a4436b7175d32a9",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/da9564df54d248de03f9fd3d31e5eade86f8f747",
+                "reference": "da9564df54d248de03f9fd3d31e5eade86f8f747",
                 "shasum": ""
             },
             "require": {
@@ -1482,7 +1479,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2013-05-27 15:51:14"
+            "time": "2013-05-27 19:17:11"
         },
         {
             "name": "doctrine/inflector",
@@ -1747,7 +1744,7 @@
             "authors": [
                 {
                     "name": "Anthony Ferrara",
-                    "email": "ircmaxell@php.net",
+                    "email": "ircmaxell@ircmaxell.com",
                     "homepage": "http://blog.ircmaxell.com"
                 }
             ],
@@ -2005,12 +2002,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "2edc2ea956c8d54c69a9c29dc16c9be63e5751df"
+                "reference": "a77846aa48ba1b15070688669793fdbdedd16269"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/2edc2ea956c8d54c69a9c29dc16c9be63e5751df",
-                "reference": "2edc2ea956c8d54c69a9c29dc16c9be63e5751df",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/a77846aa48ba1b15070688669793fdbdedd16269",
+                "reference": "a77846aa48ba1b15070688669793fdbdedd16269",
                 "shasum": ""
             },
             "require": {
@@ -2107,7 +2104,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-05-27 15:10:34"
+            "time": "2013-05-28 01:31:52"
         },
         {
             "name": "leafo/lessphp",
@@ -2737,12 +2734,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-foundation.git",
-                "reference": "874e97f23882fb983af4d2022c7f0577bd0ee6ff"
+                "reference": "272562b999cdc959d5d1063f712b93bb475155ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/874e97f23882fb983af4d2022c7f0577bd0ee6ff",
-                "reference": "874e97f23882fb983af4d2022c7f0577bd0ee6ff",
+                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/272562b999cdc959d5d1063f712b93bb475155ce",
+                "reference": "272562b999cdc959d5d1063f712b93bb475155ce",
                 "shasum": ""
             },
             "require": {
@@ -2804,7 +2801,7 @@
                 "source": "https://github.com/cartalyst/platform-foundation/tree/master",
                 "issues": "https://github.com/cartalyst/platform-foundation/issues"
             },
-            "time": "2013-05-22 13:55:14"
+            "time": "2013-05-27 23:08:07"
         },
         {
             "name": "platform/installer",
