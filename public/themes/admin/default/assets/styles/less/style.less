@@ -440,26 +440,26 @@ form label.toggle, div.controls.switch {
 /* #tables
 ================================================== */
 .create {margin-left:10px;}
-#table {
+#grid {
 
 }
 
-#table table {
+#grid {
 	-webkit-border-top-right-radius:0;
 	-moz-border-radius-topright:0;
 	border-top-right-radius:0;
 	margin-bottom:0;
 }
 
-#table th {
+#grid th {
 	color:@base;
 	font-size:16px;
 }
-#table th.sortable{
+#grid th.sortable{
 	cursor: pointer;
 }
 
-#table th[class*=sortable]:after {
+#grid th[class*=sortable]:after {
 	font-family:FontAwesome;
 	content:"\00A0\f0dc";
 	font-size:12px;
@@ -468,11 +468,11 @@ form label.toggle, div.controls.switch {
 	line-height:1em;
 }
 
-#table th.sortable.asc:after {
+#grid th.sortable.asc:after {
 	content:"\00A0\f0de";
 }
 
-#table th.sortable.desc:after {
+#grid th.sortable.desc:after {
 	content:"\00A0\f0dd";
 }
 
@@ -544,16 +544,16 @@ form label.toggle, div.controls.switch {
 	border-radius: 4px;
 }
 
-#table th .totals {
+#grid th .totals {
 	text-align: right;
 }
 
-#table th .filtered,
-#table th .total {
+#grid th .filtered,
+#grid th .total {
 	font-size:28px;
 }
 
-#table .actions {
+#grid .actions {
 	text-align: right;
 	a, a:visited{
 		color:@white;
@@ -566,7 +566,7 @@ form label.toggle, div.controls.switch {
 	}
 }
 
-#table tr:hover td{
+#grid tr:hover td{
 	background: @base;
 	color: @white;
 }
