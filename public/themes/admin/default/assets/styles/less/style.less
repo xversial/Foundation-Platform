@@ -563,13 +563,15 @@ form label.toggle, div.controls.switch {
 
 }
 
-.search{ margin-top:20px; }
+.search{ margin-top:20px;}
+.search form {margin-bottom:0;}
 
-.filters input { height:34px; }
+.filters input { height:34px;}
 
 .applied {
 	padding:0;
-	margin:8px 0 10px 10px;
+	margin:0;
+	margin-left:10px;
 	display:inline-block;
 	list-style: none;
 
@@ -584,6 +586,10 @@ form label.toggle, div.controls.switch {
 
 .applied .btn {
 	margin-left:10px;
+}
+
+.applied .btn-large {
+	padding:11px 8px;
 }
 
 .grid-pagination{
@@ -616,7 +622,7 @@ form label.toggle, div.controls.switch {
 
 	a, a:visited{
 		color:@white;
-		font-weight: 300;
+		font-weight: mormal;
 		letter-spacing: 1px;
 		font-size:12px;
 		padding:0 5px;
