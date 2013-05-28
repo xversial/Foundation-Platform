@@ -329,10 +329,7 @@ html, body {
 
 }
 
-.search{
-	margin-top:20px;
-}
-
+.search{ margin-top:20px; }
 
 /*
  * :: Collapsed Styles
@@ -495,37 +492,35 @@ form label.toggle, div.controls.switch {
 	border-top-right-radius:0;
 	margin-bottom:0;
 }
-#grid thead tr{
-	border-bottom:2px solid #ccc;
-}
 
-#grid tbody tr td:first-child{
-	padding-left:30px;
-}
+#grid thead tr{ border-bottom:2px solid #ccc; }
+
+#grid tbody tr td:first-child{ padding-left:30px; }
 
 #grid th {
 	color:@base;
 	font-size:16px;
 }
+
 #grid th.sortable{
 	cursor: pointer;
-}
 
-#grid th[class*=sortable]:after {
-	font-family:FontAwesome;
-	content:"\00A0\f0dc";
-	font-size:12px;
-	color:@base;
-	font-weight:normal !important;
-	line-height:1em;
-}
+	&:after {
+		font-family:FontAwesome;
+		content:"\00A0\f0dc";
+		font-size:12px;
+		color:@base;
+		font-weight:normal !important;
+		line-height:1em;
+	}
 
-#grid th.sortable.asc:after {
-	content:"\00A0\f0de";
-}
+	&.asc:after {
+		content:"\00A0\f0de";
+	}
 
-#grid th.sortable.desc:after {
-	content:"\00A0\f0dd";
+	&.desc:after {
+		content:"\00A0\f0dd";
+	}
 }
 
 #grid tbody tr:hover{
@@ -575,22 +570,7 @@ form label.toggle, div.controls.switch {
 
 }
 
-.filters input {
-	height:34px;
-}
-
-.filters select {
-	height: 44px;
-	margin-right:10px;
-}
-
-.input-append .add-on {
-	height:42px;
-	line-height: 40px;
-	padding:0 10px;
-	color:@grey;
-}
-
+.filters input { height:34px; }
 
 .applied {
 	padding:0;
@@ -664,8 +644,6 @@ form label.toggle, div.controls.switch {
     border:solid 1px #ccc;
     display:inline-block;
     border-radius: 4px;
-
-    line-height: 20px;
 
     &:after{
     	content: '';
