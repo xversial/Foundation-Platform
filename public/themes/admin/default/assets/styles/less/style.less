@@ -282,6 +282,44 @@ html, body {
 	.actions{ margin-top:30px; }
 }
 
+.utilities{
+	margin-left:20px;
+	margin-top:4px;
+
+	ul{
+		list-style: none;
+		margin:0;
+		padding:0;
+	}
+
+	li{ display:inline; }
+}
+
+.btn-circle{
+	position: relative;
+	padding:5px 10px;
+
+	border-radius: 500px;
+	border-color:@purple;
+	color:@purple;
+
+	background:transparent;
+
+	&:hover:after{
+		content: attr(title);
+
+		display:block;
+		position: absolute;
+		z-index: 1;
+		bottom:-34px;
+		left:-32%;
+
+		padding:5px;
+
+		background:#ddd;
+		border-radius: 4px;
+	}
+}
 
 
 /*
