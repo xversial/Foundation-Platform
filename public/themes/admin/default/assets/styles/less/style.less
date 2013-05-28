@@ -293,19 +293,8 @@ html, body {
 	}
 
 	li{ display:inline; }
-}
 
-.btn-circle{
-	position: relative;
-	padding:5px 10px;
-
-	border-radius: 500px;
-	border-color:@purple;
-	color:@purple;
-
-	background:transparent;
-
-	&:hover:after{
+	.btn-circle:hover:after{
 		content: attr(title);
 
 		display:block;
@@ -319,6 +308,19 @@ html, body {
 		background:#ddd;
 		border-radius: 4px;
 	}
+}
+
+.btn-circle{
+	position: relative;
+	padding:5px 10px;
+
+	border-radius: 500px;
+	border-color:@purple;
+	color:@purple;
+
+	background:transparent;
+
+
 }
 
 
@@ -488,6 +490,9 @@ form label.toggle, div.controls.switch {
 	border-top-right-radius:0;
 	margin-bottom:0;
 }
+#grid thead tr{
+	border-bottom:2px solid #ccc;
+}
 
 #grid th {
 	color:@base;
@@ -546,10 +551,14 @@ form label.toggle, div.controls.switch {
 	margin-left:10px;
 }
 
-.pagination{
-	margin-top:0;
+.grid-pagination{
 	text-align: center;
 	font-weight:600;
+	margin-top:8px;
+
+	.page-meta{
+		margin-right:10px;
+	}
 }
 
 .processing {
@@ -604,9 +613,50 @@ form label.toggle, div.controls.switch {
 	}
 }
 
-#grid tr:hover td{
-	background: @base;
+#grid tbody tr:hover td{
+	background:@base;
 	color: @white;
+}
+
+.styled {
+	position: relative;
+    overflow:hidden;
+    padding:0; margin:0;
+
+    width:12em;
+    border: solid 1px #ccc;
+    display:inline-block;
+    border-radius: 4px;
+
+    &:after{
+    	content: '';
+		width: 0;
+		height: 0;
+		position: absolute;
+		top: 22px;
+		right: 10px;
+		border-left: 5px solid transparent;
+		border-right: 5px solid transparent;
+		border-top: 5px solid #443e40;
+    }
+}
+
+.styled select {
+    width:115% /* this percentage effectively extends the drop down button out of view */;
+    background-color:transparent /* this hides the select's background making any styling visible from the div */;
+    background-image:none;
+    -webkit-appearance: none /* this is required for Webkit browsers */;
+    border:none;
+    box-shadow:none;
+    padding:0.3em 0.5em; /* padding should be added to the select, not the div */
+}
+
+.ie7 div.styled {border:none; }
+.ie7 div.styled select {
+    width:100%;
+    background-color:white;
+    border: solid 1px #ccc;
+    padding:0.3em 0.5em;
 }
 
 /* #Toggles
