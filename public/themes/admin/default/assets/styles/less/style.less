@@ -489,11 +489,6 @@ form label.toggle, div.controls.switch {
 
 /* #tables
 ================================================== */
-.create {margin-left:10px;}
-#grid {
-
-}
-
 #grid {
 	-webkit-border-top-right-radius:0;
 	-moz-border-radius-topright:0;
@@ -531,6 +526,54 @@ form label.toggle, div.controls.switch {
 
 #grid th.sortable.desc:after {
 	content:"\00A0\f0dd";
+}
+
+#grid tbody tr:hover{
+
+	background:#f7f7f7;
+
+	td:first-child{
+		position: relative;
+		z-index: 3;
+
+		&:after{
+			content: '';
+			width: 0;
+			height: 0;
+			position: absolute;
+			top:0;
+			left:0;
+			border-top: 18px solid transparent;
+			border-bottom: 18px solid transparent;
+			border-left: 18px solid @base;
+		}
+
+	}
+
+	.actions{
+		background:@base;
+		right:-8px; top:-41px;
+		display:block;
+		width:120px;
+		line-height: 21px;
+		padding:10px 0;
+		text-align: center;
+
+		&:before{
+			content: '';
+			width: 0;
+			height: 0;
+			position: absolute;
+			z-index: 1;
+			top:10px;
+			left:-10px;
+			border-top: 10px solid transparent;
+			border-bottom: 10px solid transparent;
+			border-right: 10px solid @base;
+		}
+
+	}
+
 }
 
 .filters input {
@@ -600,19 +643,8 @@ form label.toggle, div.controls.switch {
 .actions{
 	position: absolute;
 	display:none;
-}
-
-#grid th .totals {
 	text-align: right;
-}
 
-#grid th .filtered,
-#grid th .total {
-	font-size:28px;
-}
-
-#grid .actions {
-	text-align: right;
 	a, a:visited{
 		color:@white;
 		display: block;
@@ -623,60 +655,6 @@ form label.toggle, div.controls.switch {
 
 	}
 }
-
-#grid tbody tr:hover{
-
-	background:#f7f7f7;
-
-	// td{
-	// 	border-top:1px solid @base;
-	// 	border-bottom:1px solid @base;
-	// }
-
-	td:first-child{
-		position: relative;
-		z-index: 3;
-
-		&:after{
-			content: '';
-			width: 0;
-			height: 0;
-			position: absolute;
-			top:0;
-			left:0;
-			border-top: 18px solid transparent;
-			border-bottom: 18px solid transparent;
-			border-left: 18px solid @base;
-		}
-
-	}
-
-	.actions{
-		background:@base;
-		right:-8px; top:-41px;
-		display:block;
-		width:120px;
-		line-height: 21px;
-		padding:10px 0;
-		text-align: center;
-
-		&:before{
-			content: '';
-			width: 0;
-			height: 0;
-			position: absolute;
-			z-index: 1;
-			top:10px;
-			left:-10px;
-			border-top: 10px solid transparent;
-			border-bottom: 10px solid transparent;
-			border-right: 10px solid @base;
-		}
-
-	}
-
-}
-
 .styled {
 	position: relative;
     overflow:hidden;
@@ -705,14 +683,14 @@ form label.toggle, div.controls.switch {
 }
 
 .styled select {
-    width:115% /* this percentage effectively extends the drop down button out of view */;
+    width:115%;
     margin:0; padding:0;
-    background-color:transparent /* this hides the select's background making any styling visible from the div */;
+    background-color:transparent;
     background-image:none;
-    -webkit-appearance: none /* this is required for Webkit browsers */;
+    -webkit-appearance: none;
     border:none;
     box-shadow:none;
-    padding-left:0.75em; /* padding should be added to the select, not the div */
+    padding-left:0.75em;
     outline:none;
 
 }
