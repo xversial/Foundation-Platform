@@ -20,7 +20,8 @@
 
 return array(
 
-	'actions' => 'Actions',
-	'status'  => 'Status',
+	'actions'    => 'Actions',
+	'status'     => 'Status',
+	'no_results' => 'No Results',
 
 );
