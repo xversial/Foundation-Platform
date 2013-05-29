@@ -129,7 +129,7 @@
 
 				self._setSortDirection($(this));
 				self._setSort($(this).data('sort'));
-				self.opt.tmpl.results.clear();
+				self._clearResults();
 				self._ajaxFetch();
 
 			});
@@ -137,7 +137,7 @@
 			this.$body.on('click', '[data-filter]'+this.grid, function(e){
 
 				self._setFilter($(this).data('filter'), $(this).data('label'));
-				self.opt.tmpl.results.clear();
+				self._clearResults();
 				self._goToPage(1);
 				self._ajaxFetch();
 
@@ -153,7 +153,7 @@
 
 					pageIdx = $(this).data('page');
 					self.opt.tmpl.pagination.clear();
-					self.opt.tmpl.results.clear();
+					self._clearResults();
 
 				}
 
@@ -173,7 +173,7 @@
 
 				self.opt.throttle += self.opt.pagiThrottle;
 				self.opt.tmpl.pagination.clear();
-				self.opt.tmpl.results.clear();
+				self._clearResults();
 				self._ajaxFetch();
 
 			});
@@ -204,7 +204,7 @@
 					clearTimeout(timeout);
 
 					self._setFilter($select.val()+':'+$input.val());
-					self.opt.tmpl.results.clear();
+					self._clearResults();
 					self._goToPage(1);
 					self._ajaxFetch();
 
@@ -274,7 +274,8 @@
 
 				}
 
-				this.opt.tmpl.results.clear();
+				this._clearResults();
+
 			}
 
 		},
@@ -360,8 +361,6 @@
 
 			}
 
-			console.log(this.opt.sort);
-
 		},
 
 		_setSortDirection: function(el){
@@ -397,6 +396,10 @@
 				self.opt.prevIdx = json.previous_page;
 				self.opt.totalPages = json.pages_count;
 
+				if(self.opt.type !== 'infinite'){
+					self.opt.tmpl.results.clear();
+				}
+
 				if(self.opt.type === 'single' || self.opt.type === 'multiple'){
 					self.opt.tmpl.results.render(json.results);
 				}else{
@@ -422,6 +425,14 @@
 			.error(function(jqXHR, textStatus, errorThrown) {
 				self._logError('ajaxFetch '+jqXHR.status ,errorThrown);
 			});
+
+		},
+
+		_clearResults: function(){
+
+			if(this.opt.type === 'infinite'){
+				this.opt.tmpl.results.clear();
+			}
 
 		},
 
@@ -476,7 +487,7 @@
 				}
 
 				params = {
-					pageStart: perPage == 0 ? 0 : (this.opt.pageIdx === 1 ? 1 : (perPage * (this.opt.pageIdx - 1) + 1)),
+					pageStart: perPage === 0 ? 0 : (this.opt.pageIdx === 1 ? 1 : (perPage * (this.opt.pageIdx - 1) + 1)),
 					pageLimit: this.opt.pageIdx === 1 ? perPage : (this.opt.totalCount < (perPage * this.opt.pageIdx)) ? this.opt.totalCount : perPage * this.opt.pageIdx,
 					prevPage: prev,
 					nextPage: next,
@@ -500,7 +511,7 @@
 					for(i = 1; i <= this.opt.dividend; i++){
 
 						params = {
-							pageStart: perPage == 0 ? 0 : ( i === 1 ? 1 : (perPage * (i - 1) + 1)),
+							pageStart: perPage === 0 ? 0 : ( i === 1 ? 1 : (perPage * (i - 1) + 1)),
 							pageLimit: i === 1 ? perPage : (this.opt.totalCount < this.opt.throttle && i === this.opt.dividend) ? this.opt.totalCount : perPage * i,
 							prevPage: prev,
 							nextPage: next,
@@ -534,7 +545,7 @@
 					for(i = 1; i <= total; i++){
 
 						params = {
-							pageStart: perPage == 0 ? 0 : ( i === 1 ? 1 : (perPage * (i - 1) + 1)),
+							pageStart: perPage === 0 ? 0 : ( i === 1 ? 1 : (perPage * (i - 1) + 1)),
 							pageLimit: i === 1 ? perPage : (this.opt.totalCount < (perPage * i)) ? this.opt.totalCount : perPage * i,
 							prevPage: prev,
 							nextPage: next,
@@ -578,7 +589,7 @@
 		_removeFilter: function(idx){
 
 			this.opt.tmpl.appliedFilters.clear();
-			this.opt.tmpl.results.clear();
+			this._clearResults();
 			this.opt.appliedFilters.splice(idx, 1);
 
 			for(var i = 0; i < this.opt.appliedFilters.length; i++){
