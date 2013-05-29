@@ -110,6 +110,16 @@ Extension::installed(function(Extension $extension)
 	// After an extension is installed
 });
 
+Extension::uninstalling(function(Extension $extension)
+{
+	// Before an extension is uninstalled
+});
+
+Extension::uninstalled(function(Extension $extension)
+{
+	// After an extension is uninstalled
+});
+
 Extension::enabling(function(Extension $extension)
 {
 	// Before an extension is enabled
