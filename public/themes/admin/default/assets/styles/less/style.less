@@ -159,6 +159,10 @@ html, body {
 	> section {
 		margin:0 20px;
 		padding:20px 0;
+
+		header {
+			margin-top:10px;
+		}
 	}
 
 	h1 {
@@ -169,7 +173,6 @@ html, body {
 		font-weight:400;
 		color:@purple;
 		border:none;
-		margin-bottom:30px;
 	}
 }
 
@@ -289,7 +292,6 @@ html, body {
 
 .utilities{
 	margin-left:20px;
-	margin-top:4px;
 
 	ul{
 		list-style: none;
@@ -299,37 +301,40 @@ html, body {
 
 	li{ display:inline; }
 
-	.btn-circle:hover:after{
+	a:hover:after{
 		content: attr(data-title);
 
 		display:block;
 		position: absolute;
 		z-index: 1;
-		bottom:-34px;
-		left:-32%;
-
-		padding:5px;
+		bottom:-24px;
+		left:-14px;
+		width:60px;
+		font-size:12px;
+		text-align: center;
 	}
+
 }
 
-.btn-circle{
+.btn-action{
 	position: relative;
-	padding:5px 10px;
-
 	border-radius: 500px;
-	background:@purple;
+	background: @purple;
 	color:@white;
-
+	border:4px solid @purple;
 	text-shadow:none;
-	border:none;
+	box-shadow: none;
+
+	padding: 6px 8px;
+
+	line-height: 20px;
+	font-size:20px;
 
 	&:hover{
-		border:1px solid @purple;
+		background:none;
 		color:@purple;
-		background:transparent;
+
 	}
-
-
 }
 
 /*
@@ -494,13 +499,25 @@ form label.toggle, div.controls.switch {
 	margin-bottom:0;
 }
 
-#grid thead tr{ border-bottom:2px solid #ccc; }
+#grid thead tr{ }
 
-#grid tbody tr td:first-child{ padding-left:30px; }
+#grid tbody tr td:first-child{ padding-left:20px; }
 
 #grid th {
-	color:@base;
-	font-size:16px;
+	color:@white;
+	background: @base;
+	font-weight: normal;
+}
+
+#grid th:first-child {
+	-webkit-border-top-left-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	border-top-left-radius: 4px;
+}
+#grid th:last-child {
+	-webkit-border-top-right-radius: 4px;
+	-moz-border-radius-topright: 4px;
+	border-top-right-radius: 4px;
 }
 
 #grid th.sortable{
@@ -510,7 +527,7 @@ form label.toggle, div.controls.switch {
 		font-family:FontAwesome;
 		content:"\00A0\f0dc";
 		font-size:12px;
-		color:@base;
+		color:@white;
 		font-weight:normal !important;
 		line-height:1em;
 	}
@@ -524,55 +541,47 @@ form label.toggle, div.controls.switch {
 	}
 }
 
-#grid tbody tr:hover{
+#grid tbody td {
+	padding:10px;
+}
 
-	background:#f7f7f7;
+#grid .actions {
+	text-align: right;
+}
+#grid .actions .btn-group {
+	visibility: hidden;
+}
+#grid tbody tr:hover{
 
 	td:first-child{
 		position: relative;
 		z-index: 3;
+
 
 		&:after{
 			content: '';
 			width: 0;
 			height: 0;
 			position: absolute;
-			top:0;
+			top:14px;
 			left:0;
-			border-top: 18px solid transparent;
-			border-bottom: 18px solid transparent;
-			border-left: 18px solid @base;
+			border-top: 10px solid transparent;
+			border-bottom: 10px solid transparent;
+			border-left: 10px solid @base;
 		}
 
 	}
 
-	.actions{
-		background:@base;
-		right:-8px; top:-11px;
-		display:block;
-		width:150px;
-		line-height: 21px;
-		padding:10px 0;
-
-		&:before{
-			content: '';
-			width: 0;
-			height: 0;
-			position: absolute;
-			z-index: 1;
-			top:10px;
-			left:-10px;
-			border-top: 10px solid transparent;
-			border-bottom: 10px solid transparent;
-			border-right: 10px solid @base;
-		}
-
+	.btn-group {
+		visibility:visible;
 	}
 
 }
 
-.search{ margin-top:20px;}
-.search form {margin-bottom:0;}
+
+
+.grid-functions{ margin:10px 0;}
+.grid-functions form {margin-bottom:0;}
 
 .filters input { height:34px;}
 
@@ -588,7 +597,7 @@ form label.toggle, div.controls.switch {
 		display:inline-block;
 	}
 
-	a{ background:transparent; }
+	a{ background:@content; }
 	i{ color:@base; }
 }
 
@@ -602,8 +611,10 @@ form label.toggle, div.controls.switch {
 
 .grid-pagination{
 	text-align: center;
-	font-weight:600;
 	margin-top:8px;
+	font-size:20px;
+	color:@purple;
+	font-weight: bold;
 
 	.page-meta{ margin-right:10px; }
 }
@@ -621,22 +632,7 @@ form label.toggle, div.controls.switch {
 	padding-left:35px;
 }
 
-.action-rel{ position: relative; }
 
-.actions{
-	position: absolute;
-	display:none;
-	text-align: center;
-
-	a, a:visited{
-		color:@white;
-		font-weight: mormal;
-		letter-spacing: 1px;
-		font-size:12px;
-		padding:0 5px;
-
-	}
-}
 .styled {
 	position: relative;
     overflow:hidden;
@@ -771,7 +767,7 @@ form label.toggle, div.controls.switch {
 ==================================================*/
 
 hr {
-	margin:10px 0;
+	margin:20px 0;
 	border:none;
 	border-top:8px solid @base;
 	border-bottom:1px solid @white;
