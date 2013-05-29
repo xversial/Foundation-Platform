@@ -171,39 +171,43 @@ html, body {
 		border:none;
 		margin-bottom:30px;
 	}
-
-	.action {
-		float:right;
-	}
 }
 
 
-
-.profile {
+.top-navigation {
 	position: absolute;
-	top:-50px;
+	top:-40px;
 	right:0;
 
-	ul {
-		list-style-type: none;
+	ul{
+		list-style: none;
+		margin:0;
+		padding:0;
 	}
 
-	li{ display:inline; text-align: center;}
+	li{ display:inline; }
 
-	a, a:visited{
-		display:inline-block;
-		padding:5px;
-
-		font-size:16px;
+	a {
+		position: relative;
+		padding:4px 8px;
+		color:@white;
+		font-size:18px;
 		text-decoration: none;
-		color:#fff;
+	}
 
-		&:hover{
-			font-size:20px;
-		}
+	a:hover:after{
+		content: attr(data-title);
+
+		display:block;
+		position: absolute;
+		z-index: 1;
+		bottom:-14px;
+		left:-14px;
+		width:60px;
+		font-size:12px;
+		text-align: center;
 	}
 }
-
 
 .secondary-navigation{
 	position: absolute;
@@ -280,7 +284,6 @@ html, body {
 		box-sizing: border-box;
 	}
 
-	.actions{ margin-top:30px; }
 }
 
 
@@ -328,11 +331,6 @@ html, body {
 
 
 }
-
-.search{
-	margin-top:20px;
-}
-
 
 /*
  * :: Collapsed Styles
@@ -495,37 +493,35 @@ form label.toggle, div.controls.switch {
 	border-top-right-radius:0;
 	margin-bottom:0;
 }
-#grid thead tr{
-	border-bottom:2px solid #ccc;
-}
 
-#grid tbody tr td:first-child{
-	padding-left:30px;
-}
+#grid thead tr{ border-bottom:2px solid #ccc; }
+
+#grid tbody tr td:first-child{ padding-left:30px; }
 
 #grid th {
 	color:@base;
 	font-size:16px;
 }
+
 #grid th.sortable{
 	cursor: pointer;
-}
 
-#grid th[class*=sortable]:after {
-	font-family:FontAwesome;
-	content:"\00A0\f0dc";
-	font-size:12px;
-	color:@base;
-	font-weight:normal !important;
-	line-height:1em;
-}
+	&:after {
+		font-family:FontAwesome;
+		content:"\00A0\f0dc";
+		font-size:12px;
+		color:@base;
+		font-weight:normal !important;
+		line-height:1em;
+	}
 
-#grid th.sortable.asc:after {
-	content:"\00A0\f0de";
-}
+	&.asc:after {
+		content:"\00A0\f0de";
+	}
 
-#grid th.sortable.desc:after {
-	content:"\00A0\f0dd";
+	&.desc:after {
+		content:"\00A0\f0dd";
+	}
 }
 
 #grid tbody tr:hover{
@@ -552,7 +548,7 @@ form label.toggle, div.controls.switch {
 
 	.actions{
 		background:@base;
-		right:-8px; top:-41px;
+		right:-8px; top:-11px;
 		display:block;
 		width:150px;
 		line-height: 21px;
@@ -575,26 +571,15 @@ form label.toggle, div.controls.switch {
 
 }
 
-.filters input {
-	height:34px;
-}
+.search{ margin-top:20px;}
+.search form {margin-bottom:0;}
 
-.filters select {
-	height: 44px;
-	margin-right:10px;
-}
-
-.input-append .add-on {
-	height:42px;
-	line-height: 40px;
-	padding:0 10px;
-	color:@grey;
-}
-
+.filters input { height:34px;}
 
 .applied {
 	padding:0;
-	margin:8px 0 10px 10px;
+	margin:0;
+	margin-left:10px;
 	display:inline-block;
 	list-style: none;
 
@@ -611,19 +596,19 @@ form label.toggle, div.controls.switch {
 	margin-left:10px;
 }
 
+.applied .btn-large {
+	padding:11px 8px;
+}
+
 .grid-pagination{
 	text-align: center;
 	font-weight:600;
 	margin-top:8px;
 
-	.page-meta{
-		margin-right:10px;
-	}
+	.page-meta{ margin-right:10px; }
 }
 
-.processing {
-	text-align: center;
-}
+.processing { text-align: center; }
 
 .table-processing {
 	background-image: url('../../img/loading.gif');
@@ -635,9 +620,8 @@ form label.toggle, div.controls.switch {
 	margin-left:20px;
 	padding-left:35px;
 }
-.action-rel{
-	position: relative;
-}
+
+.action-rel{ position: relative; }
 
 .actions{
 	position: absolute;
@@ -646,7 +630,7 @@ form label.toggle, div.controls.switch {
 
 	a, a:visited{
 		color:@white;
-		font-weight: 300;
+		font-weight: mormal;
 		letter-spacing: 1px;
 		font-size:12px;
 		padding:0 5px;
@@ -664,8 +648,6 @@ form label.toggle, div.controls.switch {
     border:solid 1px #ccc;
     display:inline-block;
     border-radius: 4px;
-
-    line-height: 20px;
 
     &:after{
     	content: '';
@@ -689,6 +671,7 @@ form label.toggle, div.controls.switch {
     border:none;
     box-shadow:none;
     padding-left:0.75em;
+    padding-top:5px;
     outline:none;
 
 }
