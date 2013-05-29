@@ -103,6 +103,8 @@
 			</article>
 		</div>
 
+		@include('modals')
+
 		{{-- Compiled scripts --}}
 		@foreach (Asset::getCompiledScripts() as $script)
 		<script src="{{ $script }}"></script>
