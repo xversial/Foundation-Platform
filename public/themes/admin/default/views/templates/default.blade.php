@@ -65,7 +65,7 @@
 					<span>@setting('platform/ui::site.title')</span>
 				</a>
 
-				<nav>@widget('platform/ui::nav.show', array('admin', 1, '', admin_uri()))</nav>
+				<nav>@widget('platform/menus::nav.show', array('admin', 1, '', admin_uri()))</nav>
 
 				<a href="#" class="sidebar-toggle"></a>
 
@@ -94,7 +94,7 @@
 				</nav>
 
 				<nav class="secondary-navigation">
-					@widget('platform/ui::nav.show', array(1, 1, 'nav nav-tabs', app('platform.admin.uri')))
+					@widget('platform/menus::nav.show', array(1, 1, 'nav nav-tabs', app('platform.admin.uri')))
 				</nav>
 
 				@section('content')
