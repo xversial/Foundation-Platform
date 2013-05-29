@@ -30,10 +30,10 @@ return array(
 	'delete_record' => 'You are about to delete this record, do you want to Continue?',
 
 	// Search & Pagination
-	'in'         => 'in',
-	'of'         => 'of',
-	'processing' => 'Processing...',
-	'search'     => 'Search',
-	'load_more'  => 'Load more',
+	'in'        => 'in',
+	'of'        => 'of',
+	'loading'   => 'Loading',
+	'search'    => 'Search',
+	'load_more' => 'Load more',
 
 );
