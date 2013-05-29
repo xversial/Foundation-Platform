@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "de7838509be7224b3c5e7b7b77122f14",
+    "hash": "2f4b44549a98383a5b557a767db1b689",
     "packages": [
         {
             "name": "cartalyst/api",
@@ -671,12 +671,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cartalyst/sentry.git",
-                "reference": "f9f5934948ed81039108d4c30eee1aa9ee6b402c"
+                "reference": "800a0f0cabcdc41cd0665365c57b8d437ace31f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/f9f5934948ed81039108d4c30eee1aa9ee6b402c",
-                "reference": "f9f5934948ed81039108d4c30eee1aa9ee6b402c",
+                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/800a0f0cabcdc41cd0665365c57b8d437ace31f5",
+                "reference": "800a0f0cabcdc41cd0665365c57b8d437ace31f5",
                 "shasum": ""
             },
             "require": {
@@ -762,7 +762,7 @@
                 "source": "https://github.com/cartalyst/sentry/tree/master",
                 "issues": "https://github.com/cartalyst/sentry/issues"
             },
-            "time": "2013-05-27 23:29:19"
+            "time": "2013-05-29 10:47:53"
         },
         {
             "name": "cartalyst/sentry-social",
@@ -1815,7 +1815,7 @@
             "authors": [
                 {
                     "name": "Anthony Ferrara",
-                    "email": "ircmaxell@ircmaxell.com",
+                    "email": "ircmaxell@php.net",
                     "homepage": "http://blog.ircmaxell.com"
                 }
             ],
@@ -2073,12 +2073,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "v4.0.0"
+                "reference": "c613ac394877eae6d15bb2c8dfb3701a3ff78c9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/v4.0.0",
-                "reference": "v4.0.0",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/c613ac394877eae6d15bb2c8dfb3701a3ff78c9f",
+                "reference": "c613ac394877eae6d15bb2c8dfb3701a3ff78c9f",
                 "shasum": ""
             },
             "require": {
@@ -2175,7 +2175,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-05-28 14:13:34"
+            "time": "2013-05-29 14:16:16"
         },
         {
             "name": "leafo/lessphp",
@@ -2803,12 +2803,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-foundation.git",
-                "reference": "4654291d517aa05af6262864fef67e08dc460aa8"
+                "reference": "e5be395a7d8e736d5a804b2c9f9a3c82ce8cdc84"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/4654291d517aa05af6262864fef67e08dc460aa8",
-                "reference": "4654291d517aa05af6262864fef67e08dc460aa8",
+                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/e5be395a7d8e736d5a804b2c9f9a3c82ce8cdc84",
+                "reference": "e5be395a7d8e736d5a804b2c9f9a3c82ce8cdc84",
                 "shasum": ""
             },
             "require": {
@@ -2881,7 +2881,7 @@
                 "source": "https://github.com/cartalyst/platform-foundation/tree/master",
                 "issues": "https://github.com/cartalyst/platform-foundation/issues"
             },
-            "time": "2013-05-29 06:37:13"
+            "time": "2013-05-29 16:56:16"
         },
         {
             "name": "platform/installer",
@@ -2970,12 +2970,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-menus.git",
-                "reference": "67b2fb6fee6748027214f519c7b06b5bd5edb49a"
+                "reference": "146409614bc8a80aa578fed84ff368c3310de5b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/67b2fb6fee6748027214f519c7b06b5bd5edb49a",
-                "reference": "67b2fb6fee6748027214f519c7b06b5bd5edb49a",
+                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/146409614bc8a80aa578fed84ff368c3310de5b1",
+                "reference": "146409614bc8a80aa578fed84ff368c3310de5b1",
                 "shasum": ""
             },
             "require": {
@@ -3043,7 +3043,7 @@
                 "source": "https://github.com/cartalyst/platform-menus/tree/master",
                 "issues": "https://github.com/cartalyst/platform-menus/issues"
             },
-            "time": "2013-05-29 06:54:04"
+            "time": "2013-05-29 16:59:43"
         },
         {
             "name": "platform/operations",
