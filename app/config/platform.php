@@ -52,7 +52,7 @@ return array(
 		|
 		*/
 
-		'tagline' => 'An application framework build on Laravel',
+		'tagline' => 'An application framework built on Laravel',
 
 		/*
 		|--------------------------------------------------------------------------
