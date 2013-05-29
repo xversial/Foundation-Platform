@@ -120,6 +120,7 @@ return array(
 		'Cartalyst\Extensions\ExtensionsServiceProvider',
 		'Cartalyst\NestedSets\NestedSetsServiceProvider',
 		'Cartalyst\Themes\ThemeServiceProvider',
+		'Cartalyst\Widgets\WidgetsServiceProvider',
 
 		'Platform\Routing\RoutingServiceProvider',
 		'Platform\Installer\InstallerServiceProvider',
@@ -200,6 +201,7 @@ return array(
 		'Response'     => 'Cartalyst\Api\Facades\Response',
 		'Sentry'       => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 		'Theme'        => 'Cartalyst\Themes\Facades\Theme',
+		'Widget'       => 'Cartalyst\Widgets\Facades\Widget',
 
 		'Installer' => 'Platform\Installer\Facades\Installer',
 		'Platform'  => 'Platform\Foundation\Facades\Platform',
