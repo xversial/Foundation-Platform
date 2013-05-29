@@ -8,7 +8,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>
 			@section('title')
-			{{ Config::get('platform/ui::site.title') }}
+			{{ Config::get('platform.site.title') }}
 			@show
 		</title>
 		<meta name="description" content="">
@@ -63,7 +63,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</a>
-					<a class="brand" href="{{ Request::root() }}">@setting('platform/ui::site.title')</a>
+					<a class="brand" href="{{ Request::root() }}">@setting('platform.site.title')</a>
 					<div class="nav-collapse collapse">
 
 					</div><!--/.nav-collapse -->

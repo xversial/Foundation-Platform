@@ -8,7 +8,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>
 			@section('title')
-			{{ Config::get('platform/ui::site.title') }}
+			{{ Config::get('platform.site.title') }}
 			@show
 		</title>
 		<meta name="description" content="">
@@ -60,9 +60,9 @@
 		<div id="base">
 			<aside class="sidebar">
 
-				<a class="brand" href="{{ URL::toAdmin('/') }}" title="@setting('platform/ui::site.tagline')">
+				<a class="brand" href="{{ URL::toAdmin('/') }}" title="@setting('platform.site.tagline')">
 					<img src="{{ Asset::getUrl('img/brand.png') }}" alt="">
-					<span>@setting('platform/ui::site.title')</span>
+					<span>@setting('platform.site.title')</span>
 				</a>
 
 				<nav>@widget('platform/menus::nav.show', array('admin', 1, '', admin_uri()))</nav>
