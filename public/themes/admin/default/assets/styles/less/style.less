@@ -548,10 +548,14 @@ form label.toggle, div.controls.switch {
 #grid .actions {
 	text-align: right;
 }
-#grid .actions .btn-group {
+#grid .actions a {
 	visibility: hidden;
+	display: inline-block;
+	padding:0 4px;
 }
 #grid tbody tr:hover{
+
+	background: @content;
 
 	td:first-child{
 		position: relative;
@@ -563,7 +567,7 @@ form label.toggle, div.controls.switch {
 			width: 0;
 			height: 0;
 			position: absolute;
-			top:14px;
+			top:10px;
 			left:0;
 			border-top: 10px solid transparent;
 			border-bottom: 10px solid transparent;
@@ -572,7 +576,7 @@ form label.toggle, div.controls.switch {
 
 	}
 
-	.btn-group {
+	.actions a {
 		visibility:visible;
 	}
 
