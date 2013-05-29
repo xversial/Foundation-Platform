@@ -73,20 +73,20 @@
 
 			</aside>
 			<article class="page">
-				<nav class="profile">
+				<nav class="top-navigation">
 					<ul>
 						<li>
-							<a href="{{ URL::to('/') }}" target="_self" title="@setting('platform/ui::site.title')">
+							<a href="{{ URL::to('/') }}" target="_self" data-title="Home">
 								<i class="icon-home"></i>
 							</a>
 						</li>
 						<li>
-							<a href="{{ URL::toAdmin('settings') }}" target="_self" title="Settings">
+							<a href="{{ URL::toAdmin('settings') }}" target="_self" data-title="Settings">
 								<i class="icon-cog"></i>
 							</a>
 						</li>
 						<li>
-							<a href="{{ URL::route('logout') }}" target="_self" title="Logout">
+							<a href="{{ URL::route('logout') }}" target="_self" data-title="Logout">
 								<i class="icon-signout"></i>
 							</a>
 						</li>
