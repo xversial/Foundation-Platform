@@ -26,6 +26,9 @@ return array(
 	'enabled'  => 'Enabled',
 	'disabled' => 'Disabled',
 
+	// Search & Pagination
+	'in'         => 'in',
+	'of'         => 'of',
 	'processing' => 'Processing...',
 	'search'     => 'Search',
 	'load_more'  => 'Load more',
