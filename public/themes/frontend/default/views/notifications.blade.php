@@ -1,5 +1,5 @@
 @if ($errors->any())
-<div class="alert alert-error alert-block">
+<div class="notification alert alert-error alert-block">
 	<button type="button" class="close" data-dismiss="alert">&times;</button>
 	<h4>Error</h4>
 	@if ($message = $errors->first(0, ':message'))
@@ -11,7 +11,7 @@
 @endif
 
 @if ($notifications = Session::get('notifications') and $notifications->has('success'))
-<div class="alert alert-success alert-block">
+<div class="notification alert alert-success alert-block">
 	<button type="button" class="close" data-dismiss="alert">&times;</button>
 	<h4>Success</h4>
 	@foreach ($notifications->get('success') as $message)
@@ -21,7 +21,7 @@
 @endif
 
 @if ($notifications = Session::get('notifications') and $notifications->has('error'))
-<div class="alert alert-error alert-block">
+<div class="notification alert alert-error alert-block">
 	<button type="button" class="close" data-dismiss="alert">&times;</button>
 	<h4>Error</h4>
 	@foreach ($notifications->get('error') as $message)

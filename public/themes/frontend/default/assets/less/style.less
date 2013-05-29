@@ -22,18 +22,31 @@
 /* #Layout
 ================================================== */
 body {
-	padding-top: 60px;
+	margin-top: 40px;
+}
+
+.page.container {
+	padding-top:20px;
+}
+
+.introduction,
+.featurettes {
 	text-align: center;
 }
 
-
-
-footer{ margin-top:20px; }
+footer{
+	margin-top:20px;
+	text-align: center;
+}
 
 .copyright, .licence {
 	font-size:11px;
 	padding:0;
 	line-height:12px;
+}
+
+.notification {
+	width:100%;
 }
 
 /* #Forms
@@ -102,15 +115,5 @@ form input.valid + .add-on > i::before {
 /* #A few bootstrap overides
 ==================================================*/
 
-.btn-primary:hover {
-	color: @white;
-    text-decoration: none;
-    background-color: lighten(@purple, 5%);
-    *background-color: lighten(@purple, 10%); /* Buttons in IE7 don't get borders, so darken on hover */
-    background-position: 0 -40px;
-    // transition is only when going to hover, otherwise the background
-    // behind the gradient (there for IE<=9 fallback) gets mismatched
-    .transition(background-position .08s linear);
-}
 
 @import "vendor/bootstrap/responsive";
