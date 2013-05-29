@@ -29,11 +29,6 @@
 		@section('assets')
 		@show
 
-		{{-- HTML5 shim, for IE6-8 support of HTML5 elements --}}
-		<!--[if lt IE 9]>
-			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-
 		<link rel="shortcut icon" href="{{ Asset::getUrl('img/favicon.png') }}">
 		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ Asset::getUrl('img/apple-touch-icon-144x144-precomposed.png') }}">
 		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ Asset::getUrl('img/apple-touch-icon-114x114-precomposed.png') }}">
