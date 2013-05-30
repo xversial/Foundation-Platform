@@ -481,7 +481,7 @@ form.form-inline label {
 }
 
 form .form-actions {
-	background:@content;
+	background:@page;
 	padding:10px 0;
 	border:0;
 }
@@ -751,7 +751,7 @@ form label.toggle, div.controls.switch {
 /* #notifications
 ==================================================*/
 #notifications {
-	position: fixed;
+	position: absolute;
 	top:0; left:0;
 	z-index: 2;
 	width:100%;
@@ -761,21 +761,23 @@ form label.toggle, div.controls.switch {
 	.alert{
 		position: relative;
 		padding:5px;
-		font-size:16px;
+		font-size:20px;
 		border-radius: 0;
 		border-bottom:1px solid darken(@base, 10%);
 	}
 
 	.close{
-		top:12px;
+		top:15px;
 		right:25px;
+		font-size:26px;
+
 	}
 
 	i{
 		display:inline-block;
 		padding-right:10px;
 		margin-right:10px;
-		font-size:18px;
+		font-size:24px;
 
 		&.success{ border-right:1px solid @green; }
 		&.error{ border-right:1px solid @red; }
