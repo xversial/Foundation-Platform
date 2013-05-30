@@ -302,9 +302,9 @@ html, body {
 .btn-action{
 	position: relative;
 	border-radius: 500px;
-	background: @purple;
+	background: @base;
 	color:@white;
-	border:4px solid @purple;
+	border:4px solid @base;
 	text-shadow:none;
 	box-shadow: none;
 
@@ -315,8 +315,7 @@ html, body {
 
 	&:hover{
 		background:@page;
-		color:@purple;
-
+		color:@base;
 	}
 }
 
@@ -642,7 +641,7 @@ form .control-group-toggle .controls {
 	text-align: center;
 	margin-top:8px;
 	font-size:20px;
-	color:@purple;
+	color:@base;
 	font-weight: bold;
 
 	.page-meta{ margin-right:10px; }
@@ -764,16 +763,7 @@ hr {
 	margin-bottom:-1px;
 }
 
-.btn-primary:hover {
-	color: @white;
-	text-decoration: none;
-	background-color: lighten(@purple, 5%);
-	*background-color: lighten(@purple, 10%); /* Buttons in IE7 don't get borders, so darken on hover */
-	background-position: 0 -40px;
-	// transition is only when going to hover, otherwise the background
-	// behind the gradient (there for IE<=9 fallback) gets mismatched
-	.transition(background-position .08s linear);
-}
+
 .modal {
 	border: 8px solid #e2e2e2;
 	-webkit-border-radius: 8px;
