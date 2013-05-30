@@ -13,7 +13,7 @@
  * @version    2.0
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
- * @copyright  (c) 2011 - 2012, Cartalyst LLC
+ * @copyright  (c) 2011 - 2013, Cartalyst LLC
  * @link       http://getplatform.com
  */
 
@@ -52,14 +52,13 @@ html, body {
 	}
 
 	li{
-		border-top:1px solid @baseEtchLight;
-		border-bottom:1px solid @baseEtch;
+		border-top:1px solid @baseLight;
+		border-bottom:1px solid @baseDark;
 	}
 
 	nav a, nav a:visited {
 		display:block;
 		padding:10px 0 10px 20px;
-
 
 		color:@white;
 		font-size:16px;
@@ -73,11 +72,11 @@ html, body {
 		-o-transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 		transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 
-		&:hover { border-left:8px solid @baseEtchLight; }
+		&:hover { border-left:8px solid @baseLight; }
 	}
 
 	.active a{
-		border-left:8px solid @baseEtchLight;
+		border-left:8px solid @baseLight;
 		position: relative;
 		padding:10px 0 10px 12px;
 
@@ -105,7 +104,7 @@ html, body {
 		text-decoration: none;
 
 		color:@white;
-		border-bottom:1px solid @baseEtch;
+		border-bottom:1px solid @baseDark;
 
 		span{
 			display:block;
@@ -117,12 +116,11 @@ html, body {
 	.sidebar-toggle{
 		display:block;
 		min-height:60px;
-		border-top:1px solid @baseEtchLight;
+		border-top:1px solid @baseLight;
 		background: url('../../img/sidebar-close.png') center right no-repeat;
 	}
 
 	footer{
-
 		position:fixed;
 		height: 80px;
 		padding-top:20px;
@@ -134,7 +132,6 @@ html, body {
 		line-height: 11px;
 		font-size:11px;
 		color:#f7f7f7;
-
 	}
 }
 
@@ -171,13 +168,12 @@ html, body {
 		font-size:36px;
 		line-height: 36px;
 		font-weight:400;
-		color:@purple;
-		border:none;
+		color:@headingsColor;
 	}
 }
 
 
-.top-navigation {
+.system-navigation {
 	position: absolute;
 	top:-40px;
 	right:0;
@@ -353,8 +349,8 @@ html, body {
  	}
  }
 
- .item-dd-handle{ border-right:1px solid @baseEtch; }
- .item-toggle{ border-left:1px solid @baseEtch; }
+ .item-dd-handle{ border-right:1px solid @baseDark; }
+ .item-toggle{ border-left:1px solid @baseDark; }
 
  .item-name{
 
@@ -362,8 +358,8 @@ html, body {
 
  	border-top:1px solid @etch;
  	border-bottom:1px solid @etch;
- 	border-left:1px solid @baseEtchLight;
- 	border-right:1px solid @baseEtchLight;
+ 	border-left:1px solid @baseLight;
+ 	border-right:1px solid @baseLight;
 
   	-webkit-touch-callout: none;
   	-webkit-user-drag: none;

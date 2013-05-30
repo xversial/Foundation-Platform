@@ -5,8 +5,8 @@
 @page:					#ffffff;
 @content:				#f7f7f7;
 
-@baseEtch:				#64163f;
-@baseEtchLight:			#a72568;
+@baseDark:				#64163f;
+@baseLight:				#a72568;
 
 @etch:					#ddd;
 
@@ -28,12 +28,35 @@
 
 // Links
 // -------------------------
-@linkColor:             @purple;
+@linkColor:             @baseLight;
 @linkColorHover:        darken(@linkColor, 15%);
+
+// Typography
+// -------------------------
+@sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+@serifFontFamily:       Georgia, "Times New Roman", Times, serif;
+@monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
+
+@baseFontSize:          14px;
+@baseFontFamily:        @sansFontFamily;
+@baseLineHeight:        20px;
+@altFontFamily:         @serifFontFamily;
+
+@headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
+@headingsFontWeight:    bold;    // instead of browser default, bold
+@headingsColor:         @base; // empty to use BS default, @textColor
+
+// Component sizing
+// -------------------------
+// Based on 14px font-size and 20px line-height
+
+@fontSizeLarge:         @baseFontSize * 1.25; // ~18px
+@fontSizeSmall:         @baseFontSize * 0.85; // ~12px
+@fontSizeMini:          @baseFontSize * 0.75; // ~11px
 
 // Tooltips and popovers
 // -------------------------
 @tooltipColor:            #fff;
-@tooltipBackground:       @base;
+@tooltipBackground:       @baseDark;
 @tooltipArrowWidth:       5px;
-@tooltipArrowColor:       @base;
+@tooltipArrowColor:       @baseDark;

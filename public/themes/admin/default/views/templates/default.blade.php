@@ -68,7 +68,7 @@
 
 			</aside>
 			<article class="page">
-				<nav class="top-navigation">
+				<nav class="system-navigation">
 					<ul>
 						<li>
 							<a href="{{ URL::to('/') }}" target="_self" data-title="Home">
