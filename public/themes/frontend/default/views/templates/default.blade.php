@@ -55,7 +55,6 @@
 		<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
 		<![endif]-->
 
-
 		<div class="navbar navbar navbar-fixed-top">
 			<div class="navbar-inner">
 				<div class="container">
@@ -64,9 +63,11 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</a>
-					<a class="brand" href="{{ Request::root() }}">@setting('platform.site.title')</a>
-					<div class="nav-collapse collapse">
 
+					<a class="brand" href="{{ URL::to('/') }}">@setting('platform.site.title')</a>
+
+					<div class="nav-collapse collapse">
+						@widget('platform/menus::nav.show', array('main', 1, 'nav'))
 					</div>
 				</div>
 			</div>
@@ -85,7 +86,6 @@
 			<p class="copyright">Created, developed, and designed by <a href="http://twitter.com/#!/Cartalyst">@Cartalyst</a></p>
 			<p class="licence">The BSD 3-Clause License - Copyright © 2011-2013, Cartalyst LLC</p>
 		</footer>
-
 
 		{{-- Compiled scripts --}}
 		@foreach (Asset::getCompiledScripts() as $script)
