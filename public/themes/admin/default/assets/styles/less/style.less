@@ -488,7 +488,7 @@ form .control-group-toggle .controls {
 		display:none;
 		position: absolute;
 		z-index: 1;
-		top:0;
+		top:36px;
 		left:0;
 
 		width:100%;
@@ -496,13 +496,13 @@ form .control-group-toggle .controls {
 
 		background:rgba(255,255,255,0.6);
 
-		div{
+		.loading-wrap{
 			display: table;
 			width:100%;
 			height:100%;
 		}
 
-		span{
+		.cell{
 			display: table-cell;
 			text-align: center;
 			vertical-align: middle;
@@ -512,9 +512,30 @@ form .control-group-toggle .controls {
 			color:#666;
 		}
 
+		.loader{
+			display:inline-block;
+			font:0/0 a;
+			text-shadow:none;
+			color:transparent;
+			width:0;
+			height:0;
+			margin-right:85px;
+			border-radius:40px;
+			box-shadow: 0 0 0 3px @base, 20px 0 0 4px @base, 40px 0 0 5px @baseLight, 60px 0 0 3px @base;
+			-webkit-animation:loading 1s infinite linear;
+		}
+
 	}
 
 }
+
+@-webkit-keyframes loading{
+  25% {    box-shadow: 0 0 0 3px @base, 20px 0 0 3px @base, 40px 0 0 4px @base, 60px 0 0 5px @baseLight;  }
+  50% {    box-shadow: 0 0 0 5px @baseLight, 20px 0 0 3px @base, 40px 0 0 3px @base, 60px 0 0 4px @base;  }
+  75% {    box-shadow: 0 0 0 4px @base, 20px 0 0 5px @baseLight, 40px 0 0 4px @base, 60px 0 0 3px @base; }
+  100% {   box-shadow: 0 0 0 3px @base, 20px 0 0 4px @base, 40px 0 0 5px @baseLight, 60px 0 0 4px @base; }
+}
+
 #grid {
 	-webkit-border-top-right-radius:0;
 	-moz-border-radius-topright:0;
