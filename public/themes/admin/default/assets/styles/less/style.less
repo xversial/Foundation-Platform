@@ -184,12 +184,15 @@ html, body {
 	}
 
 	.utilities{
-		margin-left:20px;
+
+		nav {
+			margin:0;
+		}
 
 		ul{
 			list-style: none;
 			margin:0;
-			padding:0;
+			padding-left:10px;
 		}
 
 		li{ display:inline; }
@@ -451,11 +454,30 @@ form.form-inline label {
 	padding:0 4px;
 }
 
-form .form-actions {
+form footer {
 	background:@page;
 	padding:10px 0;
 	border:0;
+	margin:0;
 }
+
+form footer nav {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    text-align: right;
+}
+
+form footer nav:before {
+    border-top: 8px solid @base;
+    content:"";
+    margin: 0 auto;
+    position: absolute;
+    top: 20px; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+}
+
+form footer nav ul { background: @page; display: inline-block;}
 
 form .control-group-toggle {
 	margin-top:10px;
