@@ -27,6 +27,7 @@
 	var $siteWrap = $('#base');
 	var $sidebar = $siteWrap.find('.sidebar');
 	var $page = $siteWrap.find('.page');
+	var $systemNavigation = $('.system-navigation a');
 
 	var sizes = {
 		sidebar : {
@@ -52,6 +53,14 @@
 
 		//Toggle Sidebar
 		$body.on('click', '.sidebar-toggle', toggleSidebar);
+
+		//Tooltip for system navigation
+		$systemNavigation.each(function() {
+			$(this).tooltip({
+				title: $(this).find('span').text(),
+				placement: 'bottom'
+			});
+		});
 
 	}
 

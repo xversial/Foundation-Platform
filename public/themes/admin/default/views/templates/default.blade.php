@@ -21,6 +21,7 @@
 
 		{{ Asset::queue('modernizr', 'js/vendor/modernizr/modernizr.js') }}
 		{{ Asset::queue('jquery', 'js/vendor/jquery/jquery.js') }}
+		{{ Asset::queue('tooltip', 'js/vendor/bootstrap/tooltip.js', 'jquery') }}
 		{{ Asset::queue('helpers', 'js/vendor/platform/helpers.js', array('jquery')) }}
 		{{ Asset::queue('plugins', 'js/plugins.js', array('jquery')) }}
 		{{ Asset::queue('script', 'js/script.js', array('jquery')) }}
@@ -68,24 +69,9 @@
 
 			</aside>
 			<article class="page">
+
 				<nav class="system-navigation">
-					<ul>
-						<li>
-							<a href="{{ URL::to('/') }}" target="_self" data-title="Home">
-								<i class="icon-home"></i>
-							</a>
-						</li>
-						<li>
-							<a href="{{ URL::toAdmin('settings') }}" target="_self" data-title="Settings">
-								<i class="icon-cog"></i>
-							</a>
-						</li>
-						<li>
-							<a href="{{ URL::route('logout') }}" target="_self" data-title="Logout">
-								<i class="icon-signout"></i>
-							</a>
-						</li>
-					</ul>
+					@widget('platform/menus::nav.show', array('system', 1, '', admin_uri()))
 				</nav>
 
 				<nav class="secondary-navigation">
