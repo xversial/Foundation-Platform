@@ -69,6 +69,41 @@ return array(
 
 	/*
 	|--------------------------------------------------------------------------
+	| Frontend
+	|--------------------------------------------------------------------------
+	|
+	| Configuration the frontend of your Platform application.
+	|
+	*/
+
+	'frontend' => array(
+
+		/*
+		|--------------------------------------------------------------------------
+		| Menu
+		|--------------------------------------------------------------------------
+		|
+		| Here you can list the order for which the menu children will appear
+		| in the admin of your application. Feel free to add any menus for
+		| any extensions your application ships with!
+		|
+		| If a menu children doesn't exist, it'll be skipped, the
+		| order however, will be preserved.
+		|
+		*/
+
+		'menu' => array(
+
+			'main-home',
+			'main-login',
+			'main-logout',
+
+		),
+
+	),
+
+	/*
+	|--------------------------------------------------------------------------
 	| Admin
 	|--------------------------------------------------------------------------
 	|
