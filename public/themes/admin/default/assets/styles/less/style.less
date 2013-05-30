@@ -203,10 +203,40 @@ html, body {
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 
+		.nav-tabs {
+			margin-bottom:0;
+
+			a, a:visited{
+
+				color:@base;
+
+				&:hover{
+					color:@base;
+				}
+			}
+
+			.active a, .active a:visited{
+				color:@purple;
+				background:@page;
+
+
+				&:hover{
+					background:@page;
+				}
+			}
+		}
+
 		.tab-content{
 			-webkit-box-sizing:border-box;
 			-moz-box-sizing: border-box;
 			box-sizing: border-box;
+			border:1px solid @etch;
+			border-top:0;
+			padding:10px;
+
+			fieldset {
+				// background: @page;
+			}
 		}
 
 	}
