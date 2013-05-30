@@ -66,7 +66,7 @@ if (platform == undefined)
 // Shows a confirmation modal on click
 (function($) {
 
-	$('body').on('click', '[data-toggle="modal"]', function(e) {
+	$('table, .utilities').on('click', '[data-toggle="modal"]', function(e) {
 		e.preventDefault();
 
 		$('#platform-modal-confirm .confirm').attr('href', $(this).attr('href'));
