@@ -73,7 +73,7 @@
 			</div>
 		</div>
 
-		@include('notifications')
+		@include('partials/notifications')
 
 		<div class="page container">
 

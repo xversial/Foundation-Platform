@@ -17,29 +17,29 @@
  * @link       http://getplatform.com
  */
 
-;(function(window, document, $, undefined){
+ ;(function(window, document, $, undefined){
 
-	'use strict';
+ 	'use strict';
 
-	var $win = $(window);
-	var $body = $(document.body);
+ 	var $win = $(window);
+ 	var $body = $(document.body);
 
-	var $siteWrap = $('#base');
-	var $sidebar = $siteWrap.find('.sidebar');
-	var $page = $siteWrap.find('.page');
-	var $systemNavigation = $('.system-navigation a');
+ 	var $siteWrap = $('#base');
+ 	var $sidebar = $siteWrap.find('.sidebar');
+ 	var $page = $siteWrap.find('.page');
+ 	var $systemNavigation = $('.system-navigation a');
 
-	var sizes = {
-		sidebar : {
-			open: 200,
-			closed: 80
-		}
-	};
+ 	var sizes = {
+ 		sidebar : {
+ 			open: 200,
+ 			closed: 80
+ 		}
+ 	};
 
-	init();
+ 	init();
 
 
-	function init(){
+ 	function init(){
 
 		//SideBar
 		checkSidebar();
@@ -99,5 +99,28 @@
 		}
 
 	}
+
+	// Avoid `console` errors in browsers that lack a console.
+	(function() {
+		var method;
+		var noop = function () {};
+		var methods = [
+		'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
+		'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
+		'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
+		'timeStamp', 'trace', 'warn'
+		];
+		var length = methods.length;
+		var console = (window.console = window.console || {});
+
+		while (length--) {
+			method = methods[length];
+
+	        // Only stub undefined methods.
+	        if (!console[method]) {
+	        	console[method] = noop;
+	        }
+	    }
+	}());
 
 })(window, document, jQuery);

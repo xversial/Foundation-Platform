@@ -135,6 +135,18 @@ html, body {
 	}
 }
 
+/*
+ * :: Collapsed Styles
+ */
+.collapsed{
+
+	.sidebar-toggle{ background: url('../../img/sidebar-open.png') center center no-repeat; }
+	.sidebar span{ display:none; }
+	.sidebar a, a:visited{ text-align: center; padding-left:0; }
+	.sidebar .brand{ padding:0 10px 20px 10px;}
+
+}
+
 
 .page {
 
@@ -166,12 +178,37 @@ html, body {
 		margin:0;
 		float: left;
 		font-size:36px;
-		line-height: 36px;
+		line-height: 40px;
 		font-weight:400;
 		color:@headingsColor;
 	}
-}
 
+	.utilities{
+		margin-left:20px;
+
+		ul{
+			list-style: none;
+			margin:0;
+			padding:0;
+		}
+
+		li{ display:inline; }
+	}
+
+	.content {
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+		.tab-content{
+			-webkit-box-sizing:border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+
+	}
+
+}
 
 .system-navigation {
 	position: absolute;
@@ -191,24 +228,10 @@ html, body {
 	li{ display:inline; }
 
 	a {
-		position: relative;
 		padding:4px 8px;
 		color:@white;
 		font-size:18px;
 		text-decoration: none;
-	}
-
-	a:hover:after{
-		content: attr(data-title);
-
-		display:block;
-		position: absolute;
-		z-index: 1;
-		bottom:-14px;
-		left:-14px;
-		width:60px;
-		font-size:12px;
-		text-align: center;
 	}
 }
 
@@ -276,33 +299,6 @@ html, body {
 	}
 }
 
-
-
-.content {
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-
-	.tab-content{
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
-	}
-
-}
-
-
-.utilities{
-	margin-left:20px;
-
-	ul{
-		list-style: none;
-		margin:0;
-		padding:0;
-	}
-
-	li{ display:inline; }
-
-}
-
 .btn-action{
 	position: relative;
 	border-radius: 500px;
@@ -324,17 +320,6 @@ html, body {
 	}
 }
 
-/*
- * :: Collapsed Styles
- */
-.collapsed{
-
-	.sidebar-toggle{ background: url('../../img/sidebar-open.png') center center no-repeat; }
-	.sidebar span{ display:none; }
-	.sidebar a, a:visited{ text-align: center; padding-left:0; }
-	.sidebar .brand{ padding:0 10px 20px 10px;}
-
-}
 
 /* Menus
 ==================================================*/
