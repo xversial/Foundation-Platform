@@ -22,8 +22,8 @@
 
 	var defaults = {
 		source: null,
-		dividend: 10,
-		threshold: 20,
+		dividend: 1,
+		threshold: 100,
 		throttle: 500,
 		type: 'multiple',
 		loader: undefined,
