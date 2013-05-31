@@ -23,7 +23,7 @@
 	var defaults = {
 		source: null,
 		dividend: 1,
-		threshold: 100,
+		threshold: 50,
 		throttle: 500,
 		type: 'multiple',
 		loader: undefined,
