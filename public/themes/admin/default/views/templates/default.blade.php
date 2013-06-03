@@ -70,11 +70,11 @@
 			<article class="page">
 
 				<nav class="system-navigation">
-					@widget('platform/menus::nav.show', array('system', 1, '', admin_uri()))
+					@widget('platform/menus::nav.show', array('system', 1, ''))
 				</nav>
 
 				<nav class="secondary-navigation">
-					@widget('platform/menus::nav.show', array(1, 1, 'nav nav-tabs', app('platform.admin.uri')))
+					@widget('platform/menus::nav.show', array(1, 1, 'nav nav-tabs', admin_uri()))
 				</nav>
 
 				@section('content')
