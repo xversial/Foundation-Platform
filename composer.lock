@@ -1468,38 +1468,31 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "dev-master",
+            "version": "2.3.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "da9564df54d248de03f9fd3d31e5eade86f8f747"
+                "reference": "6a62fefefde6b2c0d8b3df70151d6a81fc028d28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/da9564df54d248de03f9fd3d31e5eade86f8f747",
-                "reference": "da9564df54d248de03f9fd3d31e5eade86f8f747",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/6a62fefefde6b2c0d8b3df70151d6a81fc028d28",
+                "reference": "6a62fefefde6b2c0d8b3df70151d6a81fc028d28",
                 "shasum": ""
             },
             "require": {
-                "doctrine/common": "2.4.*@beta",
+                "doctrine/common": ">=2.3.0,<2.5-dev",
                 "php": ">=5.3.2"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "3.7.*",
-                "symfony/console": "2.*"
-            },
-            "suggest": {
-                "symfony/console": "Allows use of the command line interface"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4.x-dev"
+                    "dev-master": "2.3.x-dev"
                 }
             },
             "autoload": {
                 "psr-0": {
-                    "Doctrine\\DBAL\\": "lib/"
+                    "Doctrine\\DBAL": "lib/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1534,7 +1527,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2013-05-27 19:17:11"
+            "time": "2013-05-21 05:53:02"
         },
         {
             "name": "doctrine/inflector",
@@ -2063,17 +2056,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "1908bc1199f7756fb926d0a057aad03b526499cc"
+                "reference": "v4.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/1908bc1199f7756fb926d0a057aad03b526499cc",
-                "reference": "1908bc1199f7756fb926d0a057aad03b526499cc",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/v4.0.2",
+                "reference": "v4.0.2",
                 "shasum": ""
             },
             "require": {
                 "classpreloader/classpreloader": "1.0.*",
-                "doctrine/dbal": "2.4.x",
+                "doctrine/dbal": "2.3.x",
                 "filp/whoops": "1.0.6",
                 "ircmaxell/password-compat": "1.0.*",
                 "monolog/monolog": "1.5.*",
@@ -2165,7 +2158,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-06-03 15:19:44"
+            "time": "2013-06-03 17:03:45"
         },
         {
             "name": "leafo/lessphp",
