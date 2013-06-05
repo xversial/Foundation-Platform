@@ -108,6 +108,18 @@ require app_path().'/hooks.php';
 
 /*
 |--------------------------------------------------------------------------
+| Boot Platform
+|--------------------------------------------------------------------------
+|
+| Now that we have our functions and hooks registered, we'll boot Platform
+| before we include our overrides (and eventually, routes).
+|
+*/
+
+Platform::boot();
+
+/*
+|--------------------------------------------------------------------------
 | Require The Overrides File
 |--------------------------------------------------------------------------
 |
