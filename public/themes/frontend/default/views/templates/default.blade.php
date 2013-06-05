@@ -73,9 +73,9 @@
 			</div>
 		</div>
 
-		@include('partials/notifications')
-
 		<div class="page container">
+
+			@include('partials/notifications')
 
 			@section('content')
 			@show
