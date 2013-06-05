@@ -7,7 +7,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>
-			503 Service Unavailable
+			500 Error
 		</title>
 
 		{{-- Call custom inline styles --}}
@@ -89,11 +89,11 @@
 
 		<div class="error">
 
-			<h1>503</h1>
-			<h2>Be Right Back.</h2>
+			<h1>500</h1>
+			<h2>Well... this is Awkward.</h2>
 
 			<p>
-				We're hiding from you, intentionally. No, we're currently upgrading our website and we're protecting you from the insides of the internet.
+				Something has gone wrong. Something's horribly wrong on our end. You should probably wait a minute and try again.
 			</p>
 
 		</div>

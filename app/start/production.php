@@ -20,14 +20,14 @@ App::error(function(Exception $exception, $code)
 	return show_error_page(500);
 });
 
-App::error(function(Symfony\Component\HttpKernel\HttpException $exception, $code)
+App::error(function(Symfony\Component\HttpKernel\Exception\HttpException $exception, $code)
 {
 	Log::error($exception);
 
 	return show_error_page($exception->getStatusCode());
 });
 
-App::error(function(Symfony\Component\HttpKernel\NotFoundHttpException $exception, $code)
+App::error(function(Symfony\Component\HttpKernel\Exception\NotFoundHttpException $exception, $code)
 {
 	Log::error($exception);
 
