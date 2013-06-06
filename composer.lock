@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "8415d75a1669286d7987d01c9b8f4df4",
+    "hash": "baee8fa6cd36d54357f94f981494f144",
     "packages": [
         {
             "name": "cartalyst/api",
@@ -1294,7 +1294,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/"
                 },
@@ -1312,7 +1312,7 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -1364,7 +1364,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/"
                 },
@@ -1382,9 +1382,9 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1430,7 +1430,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/"
                 },
@@ -1448,7 +1448,7 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -1520,9 +1520,9 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1634,7 +1634,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/"
                 },
@@ -1652,7 +1652,7 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -1711,7 +1711,7 @@
                     "email": "roman@code-factory.org"
                 },
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -1863,7 +1863,7 @@
             "authors": [
                 {
                     "name": "Anthony Ferrara",
-                    "email": "ircmaxell@php.net",
+                    "email": "ircmaxell@ircmaxell.com",
                     "homepage": "http://blog.ircmaxell.com"
                 }
             ],
@@ -1881,12 +1881,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jasonlewis/basset.git",
-                "reference": "025dbe318f0972cfd011205ad7cd2285ec453fa9"
+                "reference": "568f647523b9409dee056c1ac90ba48d7a5bb1ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jasonlewis/basset/zipball/025dbe318f0972cfd011205ad7cd2285ec453fa9",
-                "reference": "025dbe318f0972cfd011205ad7cd2285ec453fa9",
+                "url": "https://api.github.com/repos/jasonlewis/basset/zipball/568f647523b9409dee056c1ac90ba48d7a5bb1ff",
+                "reference": "568f647523b9409dee056c1ac90ba48d7a5bb1ff",
                 "shasum": ""
             },
             "require": {
@@ -1939,7 +1939,7 @@
                 "basset",
                 "laravel"
             ],
-            "time": "2013-06-04 00:29:34"
+            "time": "2013-06-06 10:58:10"
         },
         {
             "name": "jasonlewis/resource-watcher",
@@ -2123,16 +2123,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "4.0.x-dev",
+            "version": "v4.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "7626cef8f73d608bf50e11c7720f5680524ba65f"
+                "reference": "v4.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/7626cef8f73d608bf50e11c7720f5680524ba65f",
-                "reference": "7626cef8f73d608bf50e11c7720f5680524ba65f",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/v4.0.2",
+                "reference": "v4.0.2",
                 "shasum": ""
             },
             "require": {
@@ -2229,7 +2229,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-06-06 03:56:47"
+            "time": "2013-06-03 17:03:45"
         },
         {
             "name": "leafo/lessphp",
@@ -2410,12 +2410,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Lusitanian/PHPoAuthLib.git",
-                "reference": "26e5678de0ec3b586ace7504afb98a4303fee94c"
+                "reference": "ca27f73f26ec29c06adee5c5ee1734f804aca13a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Lusitanian/PHPoAuthLib/zipball/26e5678de0ec3b586ace7504afb98a4303fee94c",
-                "reference": "26e5678de0ec3b586ace7504afb98a4303fee94c",
+                "url": "https://api.github.com/repos/Lusitanian/PHPoAuthLib/zipball/ca27f73f26ec29c06adee5c5ee1734f804aca13a",
+                "reference": "ca27f73f26ec29c06adee5c5ee1734f804aca13a",
                 "shasum": ""
             },
             "require": {
@@ -2456,7 +2456,7 @@
                 "oauth",
                 "security"
             ],
-            "time": "2013-05-28 14:11:37"
+            "time": "2013-06-06 13:22:22"
         },
         {
             "name": "monolog/monolog",
