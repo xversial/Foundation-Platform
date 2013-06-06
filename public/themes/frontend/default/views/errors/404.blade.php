@@ -7,7 +7,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>
-			404 Error
+			404 Not Found
 		</title>
 
 		{{-- Call custom inline styles --}}
