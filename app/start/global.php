@@ -37,21 +37,15 @@ Log::useDailyFiles(storage_path().'/logs/'.$logFile);
 
 /*
 |--------------------------------------------------------------------------
-| Application Error Handler
+| Require The Errors File
 |--------------------------------------------------------------------------
 |
-| Here you may handle any errors that occur in your application, including
-| logging them or displaying custom views for specific errors. You may
-| even register several error handlers to handle different types of
-| exceptions. If nothing is returned, the default error view is
-| shown, which includes a detailed stack trace during debug.
+| Next we will load the file responsible for error handling. This allows us
+| to have error handling setup before we boot our app.
 |
 */
 
-App::error(function(Exception $exception, $code)
-{
-	Log::error($exception);
-});
+require __DIR__.'/errors.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -71,24 +65,12 @@ App::down(function()
 
 /*
 |--------------------------------------------------------------------------
-| Require The Filters File
-|--------------------------------------------------------------------------
-|
-| Next we will load the filters file for the application. This gives us
-| a nice separate location to store our route and application filter
-| definitions instead of putting them all in the main routes file.
-|
-*/
-
-require app_path().'/filters.php';
-
-/*
-|--------------------------------------------------------------------------
 | Require The Functions File
 |--------------------------------------------------------------------------
 |
-| We'll require a file which you can hook and custom functions required
-| into.
+| We'll require a file which you can define any custom functions for your
+| application, before any usage of these functions occurs. This is just
+| a convenient way to organize your code.
 |
 */
 
@@ -117,6 +99,19 @@ require app_path().'/hooks.php';
 */
 
 Platform::boot();
+
+/*
+|--------------------------------------------------------------------------
+| Require The Filters File
+|--------------------------------------------------------------------------
+|
+| Next we will load the filters file for the application. This gives us
+| a nice separate location to store our route and application filter
+| definitions instead of putting them all in the main routes file.
+|
+*/
+
+require app_path().'/filters.php';
 
 /*
 |--------------------------------------------------------------------------
