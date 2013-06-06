@@ -59,8 +59,8 @@
 			"php artisan clear-compiled"
 		],
 		"post-install-cmd": [
-			"php artisan key:generate",
 			"php artisan optimize",
+			"php artisan key:generate",
 			"php artisan theme:publish --extensions",
 			"php artisan asset:publish platform/installer"
 		],
