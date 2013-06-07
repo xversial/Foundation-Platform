@@ -90,7 +90,7 @@
 		<div class="error">
 
 			<h1>503</h1>
-			<h2>Be Right Back.</h2>
+			<h2>Be right back.</h2>
 
 			<p>
 				We're hiding from you, intentionally. No, we're currently upgrading our website and we're protecting you from the insides of the internet.

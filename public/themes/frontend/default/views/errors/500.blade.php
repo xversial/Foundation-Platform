@@ -90,7 +90,7 @@
 		<div class="error">
 
 			<h1>500</h1>
-			<h2>Well... this is Awkward.</h2>
+			<h2>Our bad.</h2>
 
 			<p>
 				Something has gone wrong. Something's horribly wrong on our end. You should probably wait a minute and try again.

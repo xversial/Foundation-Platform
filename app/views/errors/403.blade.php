@@ -7,7 +7,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>
-			500 Internal Server Error
+			403 Forbidden
 		</title>
 
 		{{-- Call custom inline styles --}}
@@ -89,11 +89,11 @@
 
 		<div class="error">
 
-			<h1>500</h1>
-			<h2>Our bad.</h2>
+			<h1>403</h1>
+			<h2>No soup for you!</h2>
 
 			<p>
-				Something has gone wrong. Something's horribly wrong on our end. You should probably wait a minute and try again.
+				You're probably not meant to access this page. At least, that's what we think.
 			</p>
 
 		</div>

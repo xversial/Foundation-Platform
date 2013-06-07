@@ -90,7 +90,7 @@
 		<div class="error">
 
 			<h1>404</h1>
-			<h2>Well... this is Awkward.</h2>
+			<h2>Well... this is awkward.</h2>
 
 			<p>
 				Something has gone wrong. Its possible the internet is broken, or the world is ending. Either way, you should find a new destination. <a class="btn" href="/">Back to Homepage</a>
