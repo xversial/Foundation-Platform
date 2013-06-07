@@ -31,7 +31,7 @@
 		}
 	],
 	"require": {
-		"laravel/framework": "4.0.*",
+		"laravel/framework": "4.0.2",
 
 		"platform/foundation": "1.0.*",
 		"platform/installer": "1.0.*",
@@ -60,6 +60,7 @@
 		],
 		"post-install-cmd": [
 			"php artisan optimize",
+			"php artisan key:generate",
 			"php artisan theme:publish --extensions",
 			"php artisan asset:publish platform/installer"
 		],
