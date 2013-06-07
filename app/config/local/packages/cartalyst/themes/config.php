@@ -33,7 +33,7 @@ return array(
 
 		'css' => array(
 
-			function() { return new Assetic\Filter\CssImportFilter; },
+			'Assetic\Filter\CssImportFilter',
 			'Basset\Filter\UriRewriteFilter',
 
 		),
