@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "baee8fa6cd36d54357f94f981494f144",
+    "hash": "8415d75a1669286d7987d01c9b8f4df4",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1843,12 +1843,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "c2e9f5e269faab961f72f765769b744643c91818"
+                "reference": "4e07683d9435ef68007b514eb0d50cdf55e47e11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/c2e9f5e269faab961f72f765769b744643c91818",
-                "reference": "c2e9f5e269faab961f72f765769b744643c91818",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/4e07683d9435ef68007b514eb0d50cdf55e47e11",
+                "reference": "4e07683d9435ef68007b514eb0d50cdf55e47e11",
                 "shasum": ""
             },
             "require": {
@@ -1927,7 +1927,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2013-06-08 07:22:30"
+            "time": "2013-06-09 20:15:22"
         },
         {
             "name": "herrera-io/json",
@@ -2034,12 +2034,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jasonlewis/basset.git",
-                "reference": "84c9d0152e0a3f16cf2d1fde99c06d6c9c45aaaf"
+                "reference": "11a4d94a37e36154ad26ebcffca0f9b2d4255327"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jasonlewis/basset/zipball/84c9d0152e0a3f16cf2d1fde99c06d6c9c45aaaf",
-                "reference": "84c9d0152e0a3f16cf2d1fde99c06d6c9c45aaaf",
+                "url": "https://api.github.com/repos/jasonlewis/basset/zipball/11a4d94a37e36154ad26ebcffca0f9b2d4255327",
+                "reference": "11a4d94a37e36154ad26ebcffca0f9b2d4255327",
                 "shasum": ""
             },
             "require": {
@@ -2078,6 +2078,9 @@
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
             "authors": [
                 {
                     "name": "Jason Lewis",
@@ -2092,7 +2095,7 @@
                 "basset",
                 "laravel"
             ],
-            "time": "2013-06-08 08:13:24"
+            "time": "2013-06-09 12:32:47"
         },
         {
             "name": "jasonlewis/resource-watcher",
@@ -2276,16 +2279,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v4.0.2",
+            "version": "4.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "v4.0.2"
+                "reference": "13c0ba37e52d16af2ea22279d0ec325704e3ac0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/v4.0.2",
-                "reference": "v4.0.2",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/13c0ba37e52d16af2ea22279d0ec325704e3ac0d",
+                "reference": "13c0ba37e52d16af2ea22279d0ec325704e3ac0d",
                 "shasum": ""
             },
             "require": {
@@ -2382,7 +2385,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-06-03 17:03:45"
+            "time": "2013-06-09 20:13:34"
         },
         {
             "name": "leafo/lessphp",
@@ -3221,12 +3224,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-menus.git",
-                "reference": "f607a08ecefd552dbf3f441c30c9ea929010cf7f"
+                "reference": "5c277f2e43f958cf05140103cb799d85cc0ff661"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/f607a08ecefd552dbf3f441c30c9ea929010cf7f",
-                "reference": "f607a08ecefd552dbf3f441c30c9ea929010cf7f",
+                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/5c277f2e43f958cf05140103cb799d85cc0ff661",
+                "reference": "5c277f2e43f958cf05140103cb799d85cc0ff661",
                 "shasum": ""
             },
             "require": {
@@ -3293,7 +3296,7 @@
                 "source": "https://github.com/cartalyst/platform-menus/tree/master",
                 "issues": "https://github.com/cartalyst/platform-menus/issues"
             },
-            "time": "2013-06-08 17:46:47"
+            "time": "2013-06-09 01:03:44"
         },
         {
             "name": "platform/operations",
