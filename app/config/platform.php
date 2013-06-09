@@ -132,7 +132,7 @@ return array(
 			'admin-pages',
 			'admin-content',
 			'admin-menus',
-			'admin-tags',
+			'admin-operations',
 			'admin-users',
 
 		),
