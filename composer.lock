@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "8415d75a1669286d7987d01c9b8f4df4",
+    "hash": "005a247ea918cbb4a6f490011c8067d2",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1530,12 +1530,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "2169b0ce1d253d448c60b7d40bbe4e4b5afe22fe"
+                "reference": "d658ec7a03f6475eff0dd1eb940bdedd862e4b96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/2169b0ce1d253d448c60b7d40bbe4e4b5afe22fe",
-                "reference": "2169b0ce1d253d448c60b7d40bbe4e4b5afe22fe",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/d658ec7a03f6475eff0dd1eb940bdedd862e4b96",
+                "reference": "d658ec7a03f6475eff0dd1eb940bdedd862e4b96",
                 "shasum": ""
             },
             "require": {
@@ -1596,7 +1596,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2013-05-27 19:11:46"
+            "time": "2013-06-10 18:20:01"
         },
         {
             "name": "doctrine/dbal",
@@ -1843,12 +1843,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "4e07683d9435ef68007b514eb0d50cdf55e47e11"
+                "reference": "v3.7.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/4e07683d9435ef68007b514eb0d50cdf55e47e11",
-                "reference": "4e07683d9435ef68007b514eb0d50cdf55e47e11",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/v3.7.0",
+                "reference": "v3.7.0",
                 "shasum": ""
             },
             "require": {
@@ -1892,7 +1892,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.6-dev"
+                    "dev-master": "3.7-dev"
                 }
             },
             "autoload": {
@@ -1927,7 +1927,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2013-06-09 20:15:22"
+            "time": "2013-06-11 00:24:07"
         },
         {
             "name": "herrera-io/json",
@@ -2034,12 +2034,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jasonlewis/basset.git",
-                "reference": "11a4d94a37e36154ad26ebcffca0f9b2d4255327"
+                "reference": "d5ddbb0bedb47b5cc8e76004a00e39b7c5611f7c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jasonlewis/basset/zipball/11a4d94a37e36154ad26ebcffca0f9b2d4255327",
-                "reference": "11a4d94a37e36154ad26ebcffca0f9b2d4255327",
+                "url": "https://api.github.com/repos/jasonlewis/basset/zipball/d5ddbb0bedb47b5cc8e76004a00e39b7c5611f7c",
+                "reference": "d5ddbb0bedb47b5cc8e76004a00e39b7c5611f7c",
                 "shasum": ""
             },
             "require": {
@@ -2095,7 +2095,7 @@
                 "basset",
                 "laravel"
             ],
-            "time": "2013-06-09 12:32:47"
+            "time": "2013-06-10 05:11:43"
         },
         {
             "name": "jasonlewis/resource-watcher",
@@ -2145,12 +2145,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/justinrainbow/json-schema.git",
-                "reference": "3e40eaaa3e4f7d18fe5150deb6d3dcfa3b1571f8"
+                "reference": "1.3.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/3e40eaaa3e4f7d18fe5150deb6d3dcfa3b1571f8",
-                "reference": "3e40eaaa3e4f7d18fe5150deb6d3dcfa3b1571f8",
+                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/1.3.2",
+                "reference": "1.3.2",
                 "shasum": ""
             },
             "require": {
@@ -2204,7 +2204,7 @@
                 "json",
                 "schema"
             ],
-            "time": "2013-06-01 06:21:04"
+            "time": "2013-06-10 15:31:33"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -2283,12 +2283,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "13c0ba37e52d16af2ea22279d0ec325704e3ac0d"
+                "reference": "582e64fc32340a50e8e7b4522a9d89e94ab112cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/13c0ba37e52d16af2ea22279d0ec325704e3ac0d",
-                "reference": "13c0ba37e52d16af2ea22279d0ec325704e3ac0d",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/582e64fc32340a50e8e7b4522a9d89e94ab112cf",
+                "reference": "582e64fc32340a50e8e7b4522a9d89e94ab112cf",
                 "shasum": ""
             },
             "require": {
@@ -2385,7 +2385,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-06-09 20:13:34"
+            "time": "2013-06-11 01:27:24"
         },
         {
             "name": "leafo/lessphp",
@@ -3224,12 +3224,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-menus.git",
-                "reference": "5c277f2e43f958cf05140103cb799d85cc0ff661"
+                "reference": "cda3959e9a1504d8dbf06c2ab2d181067381c83c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/5c277f2e43f958cf05140103cb799d85cc0ff661",
-                "reference": "5c277f2e43f958cf05140103cb799d85cc0ff661",
+                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/cda3959e9a1504d8dbf06c2ab2d181067381c83c",
+                "reference": "cda3959e9a1504d8dbf06c2ab2d181067381c83c",
                 "shasum": ""
             },
             "require": {
@@ -3296,7 +3296,7 @@
                 "source": "https://github.com/cartalyst/platform-menus/tree/master",
                 "issues": "https://github.com/cartalyst/platform-menus/issues"
             },
-            "time": "2013-06-09 01:03:44"
+            "time": "2013-06-09 21:24:16"
         },
         {
             "name": "platform/operations",
@@ -3541,12 +3541,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-settings.git",
-                "reference": "61cdc2b58b9620285764e867b840fffe0e81814a"
+                "reference": "b7b2147f9f5d950e98f85ce4ab098a7d9df7588e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-settings/zipball/61cdc2b58b9620285764e867b840fffe0e81814a",
-                "reference": "61cdc2b58b9620285764e867b840fffe0e81814a",
+                "url": "https://api.github.com/repos/cartalyst/platform-settings/zipball/b7b2147f9f5d950e98f85ce4ab098a7d9df7588e",
+                "reference": "b7b2147f9f5d950e98f85ce4ab098a7d9df7588e",
                 "shasum": ""
             },
             "require": {
@@ -3613,7 +3613,7 @@
                 "source": "https://github.com/cartalyst/platform-settings/tree/master",
                 "issues": "https://github.com/cartalyst/platform-settings/issues"
             },
-            "time": "2013-06-07 10:26:31"
+            "time": "2013-06-09 21:27:04"
         },
         {
             "name": "platform/users",
