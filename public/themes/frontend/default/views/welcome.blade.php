@@ -4,8 +4,8 @@
 
 <div class="introduction hero-unit">
 
-	<center><img src="{{ Asset::getUrl('img/brand-logo.png') }}" alt="Platform 2 Logo" /></center>
-	<br>
+	<img src="{{ Asset::getUrl('img/brand-logo.png') }}" alt="Platform 2 Logo" />
+
 	@content('synopsis')
 
 </div>

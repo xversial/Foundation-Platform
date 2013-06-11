@@ -18,11 +18,12 @@
 		{{-- Queue template assets --}}
 		{{ Asset::queue('style', 'less/style.less') }}
 
-		{{ Asset::queue('modernizr', 'js/vendor/modernizr/modernizr.js') }}
-		{{ Asset::queue('jquery', 'js/vendor/jquery/jquery.js') }}
-		{{ Asset::queue('helpers', 'js/vendor/platform/helpers.js', array('jquery')) }}
+		{{ Asset::queue('modernizr', 'js/modernizr/modernizr.js') }}
+		{{ Asset::queue('jquery', 'js/jquery/jquery.js') }}
+		{{ Asset::queue('helpers', 'js/platform/helpers.js', array('jquery')) }}
 		{{ Asset::queue('plugins', 'js/plugins.js', array('jquery')) }}
 		{{ Asset::queue('script', 'js/script.js', array('jquery')) }}
+		{{ Asset::queue('collapse', 'js/bootstrap/collapse.js', array('jquery')) }}
 
 		{{-- Call partial assets --}}
 		@section('assets')
@@ -81,8 +82,9 @@
 			@show
 
 		</div>
-
+		<hr>
 		<footer>
+			<img src="{{ Asset::getUrl('img/brand-cartalyst.png') }}" alt="Cartalyst Logo" />
 			<p class="copyright">Created, developed, and designed by <a href="http://twitter.com/#!/Cartalyst">@Cartalyst</a></p>
 			<p class="licence">The BSD 3-Clause License - Copyright © 2011-2013, Cartalyst LLC</p>
 		</footer>
