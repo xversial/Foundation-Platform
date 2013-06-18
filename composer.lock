@@ -1600,31 +1600,38 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "2.3.x-dev",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "6a62fefefde6b2c0d8b3df70151d6a81fc028d28"
+                "reference": "958efa3e2db6fcec72a04aafbf10c1bc603c09fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/6a62fefefde6b2c0d8b3df70151d6a81fc028d28",
-                "reference": "6a62fefefde6b2c0d8b3df70151d6a81fc028d28",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/958efa3e2db6fcec72a04aafbf10c1bc603c09fe",
+                "reference": "958efa3e2db6fcec72a04aafbf10c1bc603c09fe",
                 "shasum": ""
             },
             "require": {
-                "doctrine/common": ">=2.3.0,<2.5-dev",
+                "doctrine/common": "2.4.*@beta",
                 "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "symfony/console": "2.*"
+            },
+            "suggest": {
+                "symfony/console": "Allows use of the command line interface"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3.x-dev"
+                    "dev-master": "2.4.x-dev"
                 }
             },
             "autoload": {
                 "psr-0": {
-                    "Doctrine\\DBAL": "lib/"
+                    "Doctrine\\DBAL\\": "lib/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1659,7 +1666,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2013-05-21 05:53:02"
+            "time": "2013-06-15 21:10:38"
         },
         {
             "name": "doctrine/inflector",
@@ -2283,17 +2290,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "7bc71ab9f064d4031fba85fd1d7eeca0a403310c"
+                "reference": "3162a918057380c0c2522222a5cf93c19f1a4f53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/7bc71ab9f064d4031fba85fd1d7eeca0a403310c",
-                "reference": "7bc71ab9f064d4031fba85fd1d7eeca0a403310c",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/3162a918057380c0c2522222a5cf93c19f1a4f53",
+                "reference": "3162a918057380c0c2522222a5cf93c19f1a4f53",
                 "shasum": ""
             },
             "require": {
                 "classpreloader/classpreloader": "1.0.*",
-                "doctrine/dbal": "2.3.x",
+                "doctrine/dbal": "2.4.x",
                 "filp/whoops": "1.0.6",
                 "ircmaxell/password-compat": "1.0.*",
                 "monolog/monolog": "1.5.*",
@@ -2385,7 +2392,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-06-14 22:09:50"
+            "time": "2013-06-17 00:52:02"
         },
         {
             "name": "leafo/lessphp",
@@ -3698,12 +3705,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nrk/predis.git",
-                "reference": "aa458a1922a99611d7f81795bedff88459bc8753"
+                "reference": "4576dc029f04f25438521065aa4d29419a19bf2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nrk/predis/zipball/aa458a1922a99611d7f81795bedff88459bc8753",
-                "reference": "aa458a1922a99611d7f81795bedff88459bc8753",
+                "url": "https://api.github.com/repos/nrk/predis/zipball/4576dc029f04f25438521065aa4d29419a19bf2a",
+                "reference": "4576dc029f04f25438521065aa4d29419a19bf2a",
                 "shasum": ""
             },
             "require": {
@@ -3737,7 +3744,7 @@
                 "predis",
                 "redis"
             ],
-            "time": "2013-06-03 10:04:10"
+            "time": "2013-06-17 09:16:07"
         },
         {
             "name": "psr/log",
@@ -3923,16 +3930,16 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.0.0",
+            "version": "v5.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "v5.0.0"
+                "reference": "v5.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/v5.0.0",
-                "reference": "v5.0.0",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/v5.0.1",
+                "reference": "v5.0.1",
                 "shasum": ""
             },
             "require": {
@@ -3941,7 +3948,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.0-dev"
+                    "dev-master": "5.1-dev"
                 }
             },
             "autoload": {
@@ -3968,7 +3975,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2013-04-30 17:35:30"
+            "time": "2013-06-17 13:32:32"
         },
         {
             "name": "symfony/browser-kit",
@@ -4032,12 +4039,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "c1d150edad8f74f2e25df6bdbee1d0087fe85bba"
+                "reference": "35da735fae40d43a199ed51b30ac3f073404d1c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/c1d150edad8f74f2e25df6bdbee1d0087fe85bba",
-                "reference": "c1d150edad8f74f2e25df6bdbee1d0087fe85bba",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/35da735fae40d43a199ed51b30ac3f073404d1c6",
+                "reference": "35da735fae40d43a199ed51b30ac3f073404d1c6",
                 "shasum": ""
             },
             "require": {
@@ -4076,7 +4083,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2013-06-13 07:51:49"
+            "time": "2013-06-15 17:55:04"
         },
         {
             "name": "symfony/css-selector",
@@ -4085,12 +4092,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/CssSelector.git",
-                "reference": "v2.3.0"
+                "reference": "e4f7310ad25e71f2362236b8c1588b416b03c2be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/CssSelector/zipball/v2.3.0",
-                "reference": "v2.3.0",
+                "url": "https://api.github.com/repos/symfony/CssSelector/zipball/e4f7310ad25e71f2362236b8c1588b416b03c2be",
+                "reference": "e4f7310ad25e71f2362236b8c1588b416b03c2be",
                 "shasum": ""
             },
             "require": {
@@ -4127,7 +4134,7 @@
             ],
             "description": "Symfony CssSelector Component",
             "homepage": "http://symfony.com",
-            "time": "2013-05-19 18:59:12"
+            "time": "2013-06-17 07:15:51"
         },
         {
             "name": "symfony/debug",
@@ -4245,12 +4252,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "v2.3.0-RC1"
+                "reference": "v2.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/v2.3.0-RC1",
-                "reference": "v2.3.0-RC1",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/v2.3.1",
+                "reference": "v2.3.1",
                 "shasum": ""
             },
             "require": {
@@ -4618,12 +4625,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Translation.git",
-                "reference": "v2.3.0-RC1"
+                "reference": "v2.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Translation/zipball/v2.3.0-RC1",
-                "reference": "v2.3.0-RC1",
+                "url": "https://api.github.com/repos/symfony/Translation/zipball/v2.3.1",
+                "reference": "v2.3.1",
                 "shasum": ""
             },
             "require": {
