@@ -22,9 +22,9 @@
 
 	var defaults = {
 		source: null,
-		dividend: 10,
-		threshold: 20,
-		throttle: 500,
+		dividend: 1,
+		threshold: 100,
+		throttle: 100,
 		type: 'multiple',
 		loader: undefined,
 		sort: {},
@@ -231,7 +231,7 @@
 						self._goToPage(1);
 						self._ajaxFetch();
 
-					}, 800);
+					}, self.opt.searchThreshold);
 
 				}
 
@@ -330,9 +330,9 @@
 
 					this.opt.appliedFilters.push({
 						column: values[0] === 'all' ? undefined : values[0],
-						columnLabel: typeof values[3] === 'undefined' ? values[0] : values[3],
+						columnLabel: typeof values[2] === 'undefined' ? values[1] : values[2],
 						value: values[1],
-						valueLabel: typeof values[2] === 'undefined' ? values[1] : values[2],
+						valueLabel: typeof values[3] === 'undefined' ? values[0] : values[3],
 						type: 'normal'
 					});
 
