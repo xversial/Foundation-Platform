@@ -286,6 +286,25 @@ h1 {
  		}
  	}
 
+ 	.page__tabs{
+		float:right;
+
+		a{
+			color:@base;
+			margin:0 4px;
+			padding:14px 16px;
+		}
+
+		.active {
+			background:@base;
+			.border-radius(5px);
+
+			a{ color:@white; }
+
+		}
+
+ 	}
+
  	.page__actions {
  		overflow: hidden;
 
@@ -301,9 +320,21 @@ h1 {
 
  		.border-top-left-radius(8px);
  	}
+
+ 	.page__footer{
+
+ 		&.page__footer--right {
+ 			float:right;
+ 		}
+
+ 	}
  }
 
  .actions {
+
+ 	&.actions--right {
+ 		float:right;
+ 	}
 
  	&.actions--hidden {
  		visibility: hidden;
@@ -417,41 +448,6 @@ h1 {
 // 	}
 
 // }
-
-
-
-
-// .tertiary-navigation {
-// 	float:right;
-
-// 	ul {
-// 		padding:0;
-// 		margin:0;
-// 		float:left;
-// 	}
-
-// 	li a, li a:visited{
-
-// 		color:@base;
-// 		margin:0 4px;
-// 		padding:14px 16px;
-
-// 		&:hover{
-
-// 		}
-// 	}
-
-// 	.active a, .active a:visited{
-// 		color:@white;
-// 		background:@base;
-// 	}
-// }
-
-
-
-
-
-
 /* Menus
 ==================================================*/
 .nestable{
