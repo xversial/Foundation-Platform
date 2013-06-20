@@ -49,6 +49,7 @@ h1 {
 	font-weight: 500;
 	margin:0;
 	float:left;
+	padding-right:10px;
 }
 
 .console {
@@ -648,6 +649,27 @@ form .control-group-toggle .controls {
 
 	.data-grid__applied {
 		float:left;
+		list-style-type: none;
+		margin-left:8px;
+
+		a {
+			display: block;
+			color: @white;
+			padding:10px 12px;
+			margin-left: 4px;
+			background-color: lighten(@base, 12%);
+			border-style: solid;
+			border-width: 0 0 8px 8px;
+			border-color: transparent transparent @page transparent;
+
+			&:hover {
+				text-decoration: none
+			}
+
+			i {
+				padding-left:4px;
+			}
+		}
 	}
 
 	.data-grid__pagination {
@@ -671,7 +693,7 @@ form .control-group-toggle .controls {
 		th {
 			background: @base;
 			color:@page;
-			padding:8px;
+			padding:12px;
 			text-align: left;
 			font-weight:normal;
 		}

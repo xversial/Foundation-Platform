@@ -23,7 +23,7 @@
 		{{ Asset::queue('jquery', 'js/vendor/jquery/jquery.js') }}
 		{{ Asset::queue('tooltip', 'js/vendor/bootstrap/tooltip.js', 'jquery') }}
 		{{ Asset::queue('helpers', 'js/vendor/platform/helpers.js', array('jquery')) }}
-		{{ Asset::queue('script', 'js/script.js', array('tooltip')) }}
+		{{ Asset::queue('script', 'js/script.js', array('tooltip', 'modal')) }}
 
 		{{-- Call partial assets --}}
 		@section('assets')
