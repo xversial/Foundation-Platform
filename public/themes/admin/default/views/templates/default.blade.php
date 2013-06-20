@@ -23,11 +23,7 @@
 		{{ Asset::queue('jquery', 'js/vendor/jquery/jquery.js') }}
 		{{ Asset::queue('tooltip', 'js/vendor/bootstrap/tooltip.js', 'jquery') }}
 		{{ Asset::queue('helpers', 'js/vendor/platform/helpers.js', array('jquery')) }}
-		{{ Asset::queue('script', 'js/script.js', array('tooltip', 'modal')) }}
-
-		{{-- Call partial assets --}}
-		@section('assets')
-		@show
+		{{ Asset::queue('script', 'js/vendor/platform/platform.js', array('tooltip', 'modal')) }}
 
 		<link rel="shortcut icon" href="{{ Asset::getUrl('img/favicon.png') }}">
 		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ Asset::getUrl('img/apple-touch-icon-144x144-precomposed.png') }}">
@@ -57,6 +53,7 @@
 			<nav class="console__navigation">
 				@widget('platform/menus::nav.show', array('system', 1, 'navigation navigation--inline navigation--icons-only'))
 			</nav>
+
 		</header>
 
 		<aside class="sidebar">
