@@ -1,4 +1,4 @@
-// Just in case the files get loaded out of order
+ // Just in case the files get loaded out of order
 if (platform == undefined)
 {
 	var platform = {};
@@ -76,29 +76,3 @@ if (platform == undefined)
 	});
 
 })(jQuery);
-
-$(function(){
-
-	//Alert Close
-	$(".alert").on('click', '.close', function(e){
-
-		$(e.delegateTarget).slideToggle(function(){
-			$(this).remove();
-		});
-
-	});
-
-	//Hide Alert after Time
-	var timer;
-
-	if($('.alert').is(':visible')){
-
-		timer = setTimeout(function(){
-
-			$('.alert').slideToggle();
-
-		}, 10000);
-
-	}
-
-});

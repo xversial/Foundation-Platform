@@ -45,43 +45,43 @@
 		@show
 	</head>
 	<body>
+
 		<!--[if lt IE 7]>
 		<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
 		<![endif]-->
 
-		{{-- Notifications --}}
-		@include('partials/notifications')
+		<header class="console">
 
-		<div id="base">
-			<aside class="sidebar">
+			@include('partials/notifications')
 
-				<a class="brand" href="{{ URL::toAdmin('/') }}" title="@setting('platform.site.tagline')">
-					<img src="{{ Asset::getUrl('img/brand.png') }}" alt="">
-					<span>@setting('platform.site.title')</span>
-				</a>
+			<nav class="console__navigation">
+				@widget('platform/menus::nav.show', array('system', 1, 'navigation navigation--inline navigation--icons-only'))
+			</nav>
+		</header>
 
-				<nav>@widget('platform/menus::nav.show', array('admin', 1, '', admin_uri()))</nav>
+		<aside class="sidebar">
 
-				<a href="#" class="sidebar-toggle"></a>
+			<a class="sidebar__brand" href="{{ URL::toAdmin('/') }}" title="@setting('platform.site.tagline')">
+				<img src="{{ Asset::getUrl('img/brand.png') }}" alt="@setting('platform.site.title')">
+				<span>@setting('platform.site.title')</span>
+			</a>
 
-				@include('partials/footer')
+			<nav class="sidebar__navigation">
+				@widget('platform/menus::nav.show', array('admin', 1, 'navigation navigation--list', admin_uri()))
+			</nav>
 
-			</aside>
-			<article class="page">
+			<a href="#" class="sidebar__toggle"></a>
 
-				<nav class="system-navigation">
-					@widget('platform/menus::nav.show', array('system', 1, ''))
-				</nav>
+			@include('partials/footer')
 
-				<nav class="secondary-navigation">
-					@widget('platform/menus::nav.show', array(1, 1, 'nav nav-tabs', admin_uri()))
-				</nav>
+		</aside>
 
-				@section('content')
-				@show
+		<article class="page">
 
-			</article>
-		</div>
+			@section('content')
+			@show
+
+		</article>
 
 		@include('modals/delete')
 

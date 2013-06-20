@@ -20,108 +20,150 @@
  ;(function(window, document, $, undefined){
 
  	'use strict';
+	/**
+	 * Platform Global Object
+	 * @type {[type]}
+	 */
+	 var Platform = Platform || {};
+	 Platform.Cache = Platform.Cache || {};
+	 Platform.Main = Platform.Main || {};
 
- 	var $win = $(window);
- 	var $body = $(document.body);
+	/**
+	 * Cache our common selectors
+	 */
+	 Platform.Cache.$win = $(window);
+	 Platform.Cache.$body = $(document.body);
+	 Platform.Cache.$sidebar = Platform.Cache.$body.find('.sidebar');
+	 Platform.Cache.$page = Platform.Cache.$body.find('.page');
+	 Platform.Cache.$console = Platform.Cache.$body.find('.console');
+	 Platform.Cache.$sysNav = Platform.Cache.$body.find('.console__navigation a');
+	 Platform.Cache.$tip = Platform.Cache.$body.find('.tip');
 
- 	var $siteWrap = $('#base');
- 	var $sidebar = $siteWrap.find('.sidebar');
- 	var $page = $siteWrap.find('.page');
- 	var $systemNavigation = $('.system-navigation a');
+	/**
+	 * Sidebar Sizes
+	 * @type {Object}
+	 */
+	 Platform.Cache.sizes = {
+	 	closed: 80,
+	 	open: 200
+	 };
 
- 	var sizes = {
- 		sidebar : {
- 			open: 200,
- 			closed: 80
- 		}
- 	};
+	/**
+	 * Media Query Break Points
+	 * @type {Number}
+	 */
+	 Platform.Cache.breakPointTablet = 768;
+	 Platform.Cache.breakPointDesktop = 1200;
 
- 	init();
+	 Platform.Main.init = function(){
 
+	 	Platform.Main.checkSidebar();
 
- 	function init(){
+	 	Platform.Main.addListeners();
 
-		//SideBar
-		checkSidebar();
+	 	Platform.Cache.$sysNav.each(function(){
+	 		$(this).tooltip({
+	 			title: $(this).find('span').text(),
+	 			placement: 'bottom'
+	 		});
+	 	});
 
-		//Listeners
-		addListeners();
-	}
+	 	Platform.Cache.$tip.tooltip();
 
+	 };
 
-	function addListeners(){
+	 Platform.Main.addListeners = function(){
 
-		//Toggle Sidebar
-		$body.on('click', '.sidebar-toggle', toggleSidebar);
+	 	Platform.Cache.$win.on('resize', Platform.Main.onWindowResize);
 
-		//Tooltip for system navigation
-		$systemNavigation.each(function() {
-			$(this).tooltip({
-				title: $(this).find('span').text(),
-				placement: 'bottom'
-			});
-		});
+	 	Platform.Cache.$win.on('breakPointChanged', Platform.Main.breakPointChanged);
 
-		$('.tip').tooltip();
-	}
+	 	Platform.Cache.$body.on('click', '.sidebar__toggle', Platform.Main.toggleSidebar);
 
+	 };
 
-	function checkSidebar(){
+	 Platform.Main.checkSidebar = function(){
 
-		if ( typeof localStorage.getItem('sidebar') === 'string' && localStorage.getItem('sidebar') === 'closed'){
+	 	if( typeof localStorage.getItem('sidebar') === 'string' && localStorage.getItem('sidebar') === 'closed'){
 
-			$body.addClass('collapsed');
-			$sidebar.css({ 'width' : sizes.sidebar.closed });
-			$page.css({ 'marginLeft' : sizes.sidebar.closed });
+	 		Platform.Cache.$body.addClass('collapsed');
+	 		localStorage.setItem('sidebar', 'closed');
 
-		}
+	 	}
 
-	}
+	 };
 
-	function toggleSidebar(e){
-		e.preventDefault();
+	 Platform.Main.toggleSidebar = function(event){
 
-		if( ! $body.hasClass('collapsed')){
+	 	if( ! Platform.Cache.$body.hasClass('collapsed')){
 
-			$body.addClass('collapsed');
-			$sidebar.animate({ 'width' : sizes.sidebar.closed });
-			$page.animate({ 'marginLeft' : sizes.sidebar.closed });
-			localStorage.setItem('sidebar', 'closed');
+	 		Platform.Cache.$body.addClass('collapsed');
+	 		localStorage.setItem('sidebar', 'closed');
+
+	 	}else{
 
 
+	 		Platform.Cache.$body.removeClass('collapsed');
+	 		localStorage.setItem('sidebar', 'open');
+
+	 	}
+
+	 	event.preventDefault();
+
+	 };
+
+	 Platform.Main.onWindowResize = function(){
+
+	 	var w = Platform.Cache.$win.width();
+
+	 	if( w > Platform.Cache.breakPointTablet){
+
+	 		Platform.Cache.newMode = Platform.Cache.breakPointTablet;
+
+	 	}else{
+
+	 		Platform.Cache.newMode = Platform.Cache.breakPointDesktop;
+
+	 	}
+
+	 	if( Platform.Cache.currentMode !== Platform.Cache.newMode){
+
+	 		Platform.Cache.$win.trigger('breakPointChanged');
+
+	 	}
+
+	 	Platform.Cache.currentMode = Platform.Cache.newMode;
+
+	 };
+
+	 Platform.Main.breakPointChanged = function(){
+
+	 	if( Platform.Cache.currentMode === Platform.Cache.breakPointTablet){
+
+	 		Platform.Cache.$body.addClass('collapsed');
+	 		localStorage.setItem('sidebar', 'closed');
+
+	 	}
+
+	 	if( Platform.Cache.currentMode === Platform.Cache.breakPointDesktop){
+
+	 		Platform.Cache.$body.removeClass('collapsed');
+	 		localStorage.setItem('sidebar', 'open');
+
+	 	}
+	 };
+
+	Platform.Main.shorten = function(num){
+		if (num >= 1e6){
+			num = (num / 1e6).toFixed(1) + "M"
+		} else if (num >= 1e3){
+			num = (num / 1e3).toFixed(1) + "k"
 		}else{
-
-			$sidebar.animate({ 'width' : sizes.sidebar.open }, function(){
-				$body.removeClass('collapsed');
-			});
-			$page.animate({ 'marginLeft' : sizes.sidebar.open });
-			localStorage.setItem('sidebar', 'open');
-
+			num = num;
 		}
+		return num;
+	};
 
-	}
+	Platform.Main.init();
 
-	// Avoid `console` errors in browsers that lack a console.
-	(function() {
-		var method;
-		var noop = function () {};
-		var methods = [
-		'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
-		'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
-		'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
-		'timeStamp', 'trace', 'warn'
-		];
-		var length = methods.length;
-		var console = (window.console = window.console || {});
-
-		while (length--) {
-			method = methods[length];
-
-	        // Only stub undefined methods.
-	        if (!console[method]) {
-	        	console[method] = noop;
-	        }
-	    }
-	}());
-
-})(window, document, jQuery);
+	})(window, document, jQuery);

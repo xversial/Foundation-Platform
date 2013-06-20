@@ -1,35 +1,27 @@
-<section id="notifications">
-
+<div class="console__notify">
 	@if ($errors->any())
-		<div class="alert alert-error">
-			<button type="button" class="close" data-dismiss="alert"><i class="icon-collapse-alt"></i></button>
-			<i class="icon-exclamation error"></i>
+		<p class="notify notify--error">
 			@if ($message = $errors->first(0, ':message'))
-				<p class="message">{{ $message }}</p>
+				<p><i class="icon-exclamation"></i> {{ $message }}</p>
 			@else
-				<p class="message">Please check the form below for errors</p>
+				<p><i class="icon-exclamation"></i> Please check the form below for errors </p>
 			@endif
-		</div>
-	@endif
-
-	@if ($notifications = Session::get('notifications') and $notifications->has('success'))
-		@foreach ($notifications->get('success') as $message)
-			<div class="alert alert-success">
-				<i class="icon-ok-sign success"></i>
-				<button type="button" class="close" data-dismiss="alert"><i class="icon-collapse-alt"></i></button>
-				<p class="message">{{ $message }}</p>
-			</div>
-		@endforeach
+		</p>
 	@endif
 
 	@if ($notifications = Session::get('notifications') and $notifications->has('error'))
 		@foreach ($notifications->get('error') as $message)
-			<div class="alert alert-warning">
-				<i class="icon-warning-sign warning"></i>
-				<button type="button" class="close" data-dismiss="alert"><i class="icon-collapse-alt"></i></button>
-				<p class="message">{{ $message }}</p>
-			</div>
+			<p class="notify notify--warning">
+				<i class="icon-warning-sign"></i> {{ $message }}
+			</p>
 		@endforeach
 	@endif
 
-</section>
+	@if ($notifications = Session::get('notifications') and $notifications->has('success'))
+		@foreach ($notifications->get('success') as $message)
+			<p  class="notify notify--success">
+				<i class="icon-ok-sign"></i> {{ $message }}
+			</p>
+		@endforeach
+	@endif
+</div>
