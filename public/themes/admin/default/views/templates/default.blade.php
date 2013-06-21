@@ -46,39 +46,44 @@
 		<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
 		<![endif]-->
 
-		<header class="console">
+		<div id="base">
 
-			@include('partials/notifications')
+			<header class="console">
 
-			<nav class="console__navigation">
-				@widget('platform/menus::nav.show', array('system', 1, 'navigation navigation--inline navigation--icons-only'))
-			</nav>
+				@include('partials/notifications')
 
-		</header>
+				<nav class="console__navigation">
+					@widget('platform/menus::nav.show', array('system', 1, 'navigation navigation--inline navigation--icons-only'))
+				</nav>
 
-		<aside class="sidebar">
+			</header>
 
-			<a class="sidebar__brand" href="{{ URL::toAdmin('/') }}" title="@setting('platform.site.tagline')">
-				<img src="{{ Asset::getUrl('img/brand.png') }}" alt="@setting('platform.site.title')">
-				<span>@setting('platform.site.title')</span>
-			</a>
+			<aside class="sidebar">
 
-			<nav class="sidebar__navigation">
-				@widget('platform/menus::nav.show', array('admin', 1, 'navigation navigation--list', admin_uri()))
-			</nav>
+				<a class="sidebar__brand" href="{{ URL::toAdmin('/') }}" title="@setting('platform.site.tagline')">
+					<img src="{{ Asset::getUrl('img/brand.png') }}" alt="@setting('platform.site.title')">
+					<span>@setting('platform.site.title')</span>
+				</a>
 
-			<a href="#" class="sidebar__toggle"></a>
+				<nav class="sidebar__navigation">
+					@widget('platform/menus::nav.show', array('admin', 1, 'navigation navigation--list', admin_uri()))
+				</nav>
 
-			@include('partials/footer')
+				<a href="#" class="sidebar__toggle"></a>
 
-		</aside>
+				@include('partials/footer')
 
-		<article class="page">
+			</aside>
 
-			@section('content')
-			@show
+			<article class="page">
 
-		</article>
+				@section('content')
+				@show
+
+			</article>
+
+		</div>
+
 
 		@include('modals/delete')
 

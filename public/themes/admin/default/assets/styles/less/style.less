@@ -21,10 +21,10 @@
 ==================================================
 	#Bootstrap & Variables
 	#Basic Layout
-	#Site Styles
-	#Typography
-	#Links
-	#Lists
+	#Navigation
+	#Pages
+	#Content
+	#Forms
 	#Images
 	#Buttons
 	#Forms
@@ -41,6 +41,9 @@
 
 html, body {
 	height: 100%;
+}
+
+#base {
 	min-height: 100%;
 	overflow: hidden;
 }
@@ -225,12 +228,14 @@ h1 {
  .collapsed {
  	.sidebar { width:80px;}
  	.page {margin-left:80px;}
+ 	.page {bottom:0;
+		right:28px;
+		left:88px;}
  	.console {margin-left:80px;}
  	.sidebar__toggle{ background: url('../../img/sidebar-open.png') center center no-repeat; }
  	.sidebar span{ display:none; }
  	.sidebar__navigation a:link, a:visited{ text-align: center; padding-left:0; }
  	.sidebar__brand{ padding:0 10px 20px 10px;}
-
  }
 
  .page {
@@ -315,19 +320,29 @@ h1 {
  	}
 
  	.page__content {
- 		margin:0 20px;
+ 		margin:0 20px 80px 20px;
  		padding:20px 0;
 
  		.border-top-left-radius(8px);
  	}
 
- 	.page__footer{
+ 	.page__footer {
+		position: fixed;
+		bottom:0;
+		right:28px;
+		left:208px;
+		height:80px;
+		padding:0 20px;
+		background: #eee;
+		border:4px solid #ccc;
+		.border-top-radius(8px);
 
- 		&.page__footer--right {
- 			float:right;
- 		}
+		nav {
+			margin-top:20px;
+		}
 
- 	}
+	}
+
  }
 
  .actions {
@@ -514,11 +529,8 @@ form legend {
 }
 
 form fieldset {
-	background:@content;
 	padding:10px;
 	margin:10px 0;
-	border:1px solid @etch;
-	.border-radius(8px)
 }
 
 form textarea {
@@ -579,31 +591,6 @@ form.form-inline label {
 	padding:0 4px;
 }
 
-form footer {
-	background:@page;
-	padding:10px 0;
-	border:0;
-	margin:0;
-}
-
-form footer nav {
-	position: relative;
-	z-index: 2;
-	width: 100%;
-	text-align: right;
-}
-
-form footer nav:before {
-	border-top: 8px solid @base;
-	content:"";
-	margin: 0 auto;
-	position: absolute;
-	top: 20px; left: 0; right: 0; bottom: 0;
-	z-index: -1;
-}
-
-form footer nav ul { background: @page; display: inline-block;}
-
 form .control-group-toggle {
 	margin-top:10px;
 }
@@ -631,7 +618,7 @@ form .control-group-toggle .controls {
 
 .data-grid {
 
-	border-bottom:8px solid fade(@base,30%);
+	margin-bottom:10px;
 
 	.data-grid__search {
 
@@ -671,18 +658,6 @@ form .control-group-toggle .controls {
 	.data-grid__loader {
 		margin-top:8px;
 		float:right;
-	}
-
-	.data-grid__pagination {
-		float:right;
-		margin:20px 0;
-
-		color:@base;
-
-		.total {
-			font-weight: bold;
-			padding-right:10px;
-		}
 	}
 
 	.data-grid__table {
@@ -743,6 +718,20 @@ form .control-group-toggle .controls {
 	}
 }
 
+.data-grid__pagination {
+		float:right;
+		.count {
+			color:@base;
+			padding-left:20px;
+			float:left;
+			line-height: 38px;
+			margin-top:20px;
+
+			.total {
+				font-weight: bold;
+			}
+		}
+	}
 
 .loading{
 	display:none;
@@ -850,12 +839,12 @@ form .control-group-toggle .controls {
 ==================================================*/
 
 hr {
-	margin:20px 0;
 	border:none;
-	border-top:8px solid @base;
-	border-bottom:1px solid @white;
+	border-top:8px solid lighten(@base, 10%);
+	border-bottom:12px solid @base;
 	clear: both;
 	background: none;
+	margin:30px 20px 0 20px;
 }
 
 .tabbable > ul{
@@ -876,4 +865,6 @@ hr {
 .modal-backdrop {
 	background-color: #ffffff;
 }
+
+
 
