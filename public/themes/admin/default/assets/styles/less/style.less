@@ -118,11 +118,15 @@ h1 {
 
 		li {
 			border-collapse: separate;
-			display: inline-block;
+			display:inline-block;
+    		vertical-align:middle;
 		}
 
 		a, button {
 			display: table-cell;
+			vertical-align:middle;
+			-webkit-box-sizing: content-box;
+    		box-sizing: content-box;
 		}
 
 	}
@@ -366,15 +370,23 @@ h1 {
  	}
 
  	a, button {
+ 		position: 0; margin:0;
+ 		padding:0;
+
  		background: @base;
  		color:@white;
- 		border:4px solid @base;
+
  		vertical-align: middle;
+
  		width:32px;
  		height:32px;
+
  		text-align: center;
- 		border-radius: 32px;
  		font-size:20px;
+
+ 		border:0;
+ 		border:4px solid @base;
+ 		border-radius: 32px;
 
  		&.warning {
  			background: @orange;
