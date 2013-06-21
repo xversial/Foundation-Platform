@@ -69,7 +69,7 @@
 					@widget('platform/menus::nav.show', array('admin', 1, 'navigation navigation--list', admin_uri()))
 				</nav>
 
-				<a href="#" class="sidebar__toggle"></a>
+				<a href="#" class="sidebar__toggle tip" data-placement="right" title="Collapse"></a>
 
 				@include('partials/footer')
 
