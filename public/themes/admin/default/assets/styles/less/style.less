@@ -100,7 +100,7 @@ h1 {
 
 	&.navigation--list {
 
-		a {
+		a, button {
 			display:block;
 		}
 
@@ -108,7 +108,7 @@ h1 {
 
 	&.navigation--inline {
 
-		li, a {
+		li, a, button {
 
 			display: inline-block;
 		}
@@ -121,9 +121,10 @@ h1 {
 			display: inline-block;
 		}
 
-		a {
+		a, button {
 			display: table-cell;
 		}
+
 	}
 
 	&.navigation--icons-only span {
@@ -442,6 +443,7 @@ h1 {
 form legend {
 	position:relative;
 	color:@base;
+	border-bottom:8px solid @content;
 }
 
 form .help-block {
