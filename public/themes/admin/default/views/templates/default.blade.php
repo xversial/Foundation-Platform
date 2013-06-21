@@ -23,11 +23,7 @@
 		{{ Asset::queue('jquery', 'js/vendor/jquery/jquery.js') }}
 		{{ Asset::queue('tooltip', 'js/vendor/bootstrap/tooltip.js', 'jquery') }}
 		{{ Asset::queue('helpers', 'js/vendor/platform/helpers.js', array('jquery')) }}
-		{{ Asset::queue('script', 'js/script.js', array('tooltip')) }}
-
-		{{-- Call partial assets --}}
-		@section('assets')
-		@show
+		{{ Asset::queue('script', 'js/vendor/platform/platform.js', array('tooltip', 'modal')) }}
 
 		<link rel="shortcut icon" href="{{ Asset::getUrl('img/favicon.png') }}">
 		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ Asset::getUrl('img/apple-touch-icon-144x144-precomposed.png') }}">
@@ -45,43 +41,49 @@
 		@show
 	</head>
 	<body>
+
 		<!--[if lt IE 7]>
 		<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
 		<![endif]-->
 
-		{{-- Notifications --}}
-		@include('partials/notifications')
-
 		<div id="base">
+
+			<header class="console">
+
+				@include('partials/notifications')
+
+				<nav class="console__navigation">
+					@widget('platform/menus::nav.show', array('system', 1, 'navigation navigation--inline navigation--icons-only'))
+				</nav>
+
+			</header>
+
 			<aside class="sidebar">
 
-				<a class="brand" href="{{ URL::toAdmin('/') }}" title="@setting('platform.site.tagline')">
-					<img src="{{ Asset::getUrl('img/brand.png') }}" alt="">
+				<a class="sidebar__brand" href="{{ URL::toAdmin('/') }}" title="@setting('platform.site.tagline')">
+					<img src="{{ Asset::getUrl('img/brand.png') }}" alt="@setting('platform.site.title')">
 					<span>@setting('platform.site.title')</span>
 				</a>
 
-				<nav>@widget('platform/menus::nav.show', array('admin', 1, '', admin_uri()))</nav>
+				<nav class="sidebar__navigation">
+					@widget('platform/menus::nav.show', array('admin', 1, 'navigation navigation--list', admin_uri()))
+				</nav>
 
-				<a href="#" class="sidebar-toggle"></a>
+				<a href="#" class="sidebar__toggle tip" data-placement="right" title="Collapse"></a>
 
 				@include('partials/footer')
 
 			</aside>
+
 			<article class="page">
-
-				<nav class="system-navigation">
-					@widget('platform/menus::nav.show', array('system', 1, ''))
-				</nav>
-
-				<nav class="secondary-navigation">
-					@widget('platform/menus::nav.show', array(1, 1, 'nav nav-tabs', admin_uri()))
-				</nav>
 
 				@section('content')
 				@show
 
 			</article>
+
 		</div>
+
 
 		@include('modals/delete')
 
