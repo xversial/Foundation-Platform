@@ -1,14 +1,7 @@
-# What is Platform 2
-
-> **Note:** To use Cartalyst's Platform 2 application you need to have a valid Cartalyst.com subscription.
-Click [here](https://www.cartalyst.com/pricing) to obtain your subscription.
+<a name="introduction"></a>
+### Introduction
 
 Cartalyst's Platform 2 application provides a very flexible and extensible way of building your custom application. It gives you a basic installation to get you quick-started with content management, themeable views, application extensions and much more. Pretty much everything on Platform 2 can be extended and overwritten so you can add your own functionality. Platform 2 is not just another CMS, it's a starting point for you to build your application providing the tools you need to get the job done as easy as possible.
-
-----------
-
-<a name="features"></a>
-### Features
 
 #### Flexibility
 
@@ -27,7 +20,7 @@ Utilize our API, data and extensions where you need, they won't get in your way.
 
 #### Extensibility
 
-Platform 2 was made to be even more extendible than Platform 1. A number of key files to get you off the ground with extending Platform is:
+Platform 2 was made to be even more extendible than Platform 1. A number of key files to get you off the ground with extending Platform are:
 
  - `app/routes.php`
  - `app/hooks.php`
@@ -36,86 +29,36 @@ Platform 2 was made to be even more extendible than Platform 1. A number of key 
 
 These files provide a number of templates and boilerplate code for you to override extension classes, API routes, hook into system events and add custom logic.
 
-#### Themeable
+<a name="features"></a>
+### Features
 
-You can add different themes to Platform 2 to adjust the look and feel of your application. Themes are located in the `public/themes` directory. Platform 2 ships with 2 default themes: `frontend/default` and `admin/default`. Again, these themes are namespaced in the same order as composer packages in order to prevent naming collisions.
+- Authentication & Authorization with [Sentry 2](http://docs.cartalyst.com/sentry-2)
+- Social Authentication (OAuth, OAuth 2)
+- Twitter Bootstrap 2.3.1 Ready
+- Frontend/Backend/Custom Themes
+- User/Group management + permissions
+- Content Management
+- Menu manager
+- Settings
+- Themes manager
+- Dashboard
+- Extension manager
+- Localisation
+- Developer Tools (extension & theme creator)
+- Powerful Extension System
+- Widgets
+- Plugins
+- API
 
-You can add your own theme as long as it's namespaced in the following order: `area/my-own-themes`. The `area` being an area for your locations (for example: back-end, front-end, help center, etc...) and your theme name. Add a `theme.json` file with all the info for your theme. A basic theme.json file could look like this:
+<a name="requirements"></a>
+### Requirements
 
-	{
-		"name":        "Default Frontend Theme",
-		"slug":        "frontend::default",
-		"description": "The default theme.",
-		"author":      "Cartalyst LLC",
-		"version":     "2.0"
-	}
+- PHP >= 5.3.7
+- MCrypt PHP Extension
 
-After creating your theme, you can simply go into the Platform 2 settings and select it as the default theme. You can now also create extension assets specifically for your theme.
+To use Cartalyst's Platform 2 application you need to have a valid Cartalyst.com subscription. Click [here](https://www.cartalyst.com/pricing) to obtain your subscription.
 
-> **Note:** please note that the slug you're adding in the `theme.json` file needs to be exactly the same as the theme's namespaced folder names.
+<a name="license"></a>
+### License
 
-
-
-
-
-
-
-### Publishing Assets
-
-You can publish extension assets by running the built-in `theme:publish` command with the `--extensions` flag.
-
-	php artisan theme:publish --extensions
-
-Optionally you can specify to just publish the assets of a specific extension by providing its vendor/name on the `--extension` flag.
-
-	php artisan theme:publish --extension=platform/menus
-
-### Watching Assets
-
-Should you want to publish assets automatically to themes when you're editing them inside your extensions you can do so by adding an extra `--watch` flag to your `theme:publish --extensions` command.
-
-	php artisan theme:publish --extensions --watch
-
-This will make sure that your assets get published to the corresponding theme whenever you save them.
-
-Of course you can just watch assets for a specific extension as well.
-
-	php artisan theme:publish --extension=platform/menus --watch
-
-### Theme Assets
-
-Because Platform 2 uses Cartalyst's Themes 2 package it comes with all of the goodness for asset queuing and compiling. More info about using theme assets can be found in [the Themes 2 documentation](http://docs.cartalyst.com/themes-2).
-
-**Asset Queuing**
-
-Add assets for your views by queuing them to be compiled later.
-
-	Asset::queue($alias, $path, $dependencies);
-
-- **Alias:** The file alias. This can be used later to indicate asset dependencies.
-- **Path:** The path where to locate the alias. You can include a file in the theme's assets folder or use the `vendor/packages::path` convention to load an external theme's asset file.
-- **Dependencies:** Add asset aliases in an array to indicate asset dependencies. These will be loaded then be compiled in a specific sequence so your asset dependencies are loaded before your asset file.
-
-You can also queue `.less` files and they'll be compiled automatically.
-
-	Asset::queue('style', 'css/style.less');
-
-**Asset Compiling**
-
-When you've queued your assets you can later compile them, for example, in your theme's header. You can use the `getCompileStyles` function to compile style sheets and the `getCompileScripts` function to compile Javascript files.
-
-	@foreach (Asset::getCompiledStyles() as $url)
-		{{ HTML::style($url) . PHP_EOL }}
-	@endforeach
-
-<a name="content"></a>
-## Pages
-
-Just like in a normal CMS you can add pages to your application. Platform 2 provides support to store the content for these pages in the database or make use of the filesystem to use static view files which are part of your theme. These static view files can include various content sections and prove to be very dynamic. You can later re-use these view files in other parts of your application.
-
-<a name="pages"></a>
-## Content
-
-Most of the content you create in Platform 2 can be either content stored in the database or in static content files. Content files are saved in the `public/content` folder. After creating a content file you can create a content entry for it in the Platform 2 back-end.
-
-Content entries, either static or database driven can be used in views directly by including them with their slug throught the `@content('content-entry-slug')` method. This method is an extension to the blade templating language specially made to work with Platform 2.
+Cartalyst's Platform 2 application is licensed under [the BSD 3-Clause license](/platform2/overview/license).
