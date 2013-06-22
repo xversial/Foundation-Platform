@@ -1,4 +1,3 @@
-## Install Platform 2
+## Install & Configure
 
-- [Requirements](/platform2/installation#requirements)
-- [Installation](/platform2/installation#install)
+- [Installation](/platform2/installation)
