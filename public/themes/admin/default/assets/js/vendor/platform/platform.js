@@ -88,20 +88,16 @@ var Platform;
 
 		event.preventDefault();
 
-		if($(this).attr('href').indexOf("#") > -1){
+		console.log($(this).attr('href').indexOf("#"));
 
-			var $modal = $(this).attr('href');
-			$modal.modal({ show:true });
-
-		}else{
+		if($(this).attr('href').indexOf("#") === -1){
 
 			$('#platform-modal-confirm .confirm').attr('href', $(this).attr('href'));
 			$('#platform-modal-confirm').modal({show:true, remote:false});
 
+			return false;
+
 		}
-
-
-		return false;
 
 	};
 
