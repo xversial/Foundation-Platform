@@ -1,6 +1,6 @@
 # What is Platform 2
 
-> **Note:** Platform 2 is in Early Beta, Documentation is incomplete and in active development. Please see our quick start guide here. https://gist.github.com/driesvints/b0730aeeccd55fbb2549
+> **READ FIRST:** Platform 2 is in Early Beta, Documentation is incomplete and in active development. Please see our quick start guide here. https://gist.github.com/driesvints/b0730aeeccd55fbb2549
 
 > **Note:** To use Cartalyst's Platform 2 application you need to have a valid Cartalyst.com subscription.
 Click [here](https://www.cartalyst.com/pricing) to obtain your subscription.
