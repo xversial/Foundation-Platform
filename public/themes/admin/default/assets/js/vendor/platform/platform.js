@@ -88,8 +88,6 @@ var Platform;
 
 		event.preventDefault();
 
-		console.log($(this).attr('href').indexOf("#"));
-
 		if($(this).attr('href').indexOf("#") === -1){
 
 			$('#platform-modal-confirm .confirm').attr('href', $(this).attr('href'));
