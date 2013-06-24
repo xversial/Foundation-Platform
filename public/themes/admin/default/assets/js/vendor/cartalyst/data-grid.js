@@ -23,8 +23,8 @@
 	var defaults = {
 		source: null,
 		dividend: 1,
-		threshold: 100,
-		throttle: 100,
+		threshold: 50,
+		throttle: 50,
 		type: 'multiple',
 		loader: undefined,
 		sort: {},
