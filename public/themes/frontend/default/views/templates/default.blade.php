@@ -25,10 +25,6 @@
 		{{ Asset::queue('script', 'js/script.js', array('jquery')) }}
 		{{ Asset::queue('collapse', 'js/bootstrap/collapse.js', array('jquery')) }}
 
-		{{-- Call partial assets --}}
-		@section('assets')
-		@show
-
 		{{-- HTML5 shim, for IE6-8 support of HTML5 elements --}}
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
