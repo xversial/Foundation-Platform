@@ -97,7 +97,7 @@
 				Something has gone <strong>horribly</strong> wrong, wait a minute and try again.
 			</p>
 
-			<a href="/" class="btn">Let's go Home</a>
+			<a href="{{ URL::to('/') }}" class="btn">Let's go Home</a>
 
 		</div>
 

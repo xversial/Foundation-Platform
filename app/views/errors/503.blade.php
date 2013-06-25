@@ -97,7 +97,7 @@
 				Something couldn't <strong>connect</strong>, wait a few and try again.
 			</p>
 
-			<a href="/" class="btn">Let's go Home</a>
+			<a href="{{ URL::to('/') }}" class="btn">Let's go Home</a>
 
 		</div>
 

@@ -97,7 +97,7 @@
 				We didn't find the <strong>Page</strong> you were looking for.
 			</p>
 
-			<a href="/" class="btn">Let's go Home</a>
+			<a href="{{ URL::to('/') }}" class="btn">Let's go Home</a>
 
 		</div>
 
