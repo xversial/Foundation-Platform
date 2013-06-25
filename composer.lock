@@ -815,12 +815,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/sentry-social.git",
-                "reference": "03e68371d33e54d804e3750fc8d9047739a2ae74"
+                "reference": "aef40f04163afd466f1257aeb18af104d6de0337"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentry-social/zipball/03e68371d33e54d804e3750fc8d9047739a2ae74",
-                "reference": "03e68371d33e54d804e3750fc8d9047739a2ae74",
+                "url": "https://api.github.com/repos/cartalyst/sentry-social/zipball/aef40f04163afd466f1257aeb18af104d6de0337",
+                "reference": "aef40f04163afd466f1257aeb18af104d6de0337",
                 "shasum": ""
             },
             "require": {
@@ -895,7 +895,7 @@
                 "source": "https://github.com/cartalyst/sentry-social/tree/master",
                 "issues": "https://github.com/cartalyst/sentry-social/issues"
             },
-            "time": "2013-06-18 18:45:12"
+            "time": "2013-06-25 18:04:31"
         },
         {
             "name": "cartalyst/themes",
@@ -1137,16 +1137,16 @@
         },
         {
             "name": "classpreloader/classpreloader",
-            "version": "dev-master",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mtdowling/ClassPreloader.git",
-                "reference": "62c99d52ce2f1b0b8449c61e2d94f48d918222eb"
+                "reference": "1.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mtdowling/ClassPreloader/zipball/62c99d52ce2f1b0b8449c61e2d94f48d918222eb",
-                "reference": "62c99d52ce2f1b0b8449c61e2d94f48d918222eb",
+                "url": "https://api.github.com/repos/mtdowling/ClassPreloader/zipball/1.0.1",
+                "reference": "1.0.1",
                 "shasum": ""
             },
             "require": {
@@ -1180,7 +1180,7 @@
                 "class",
                 "preload"
             ],
-            "time": "2013-05-26 16:10:36"
+            "time": "2013-06-24 22:58:34"
         },
         {
             "name": "coffeescript/coffeescript",
@@ -1604,12 +1604,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "8ca2763c66c1a3901aea7812b99e3dce73a202f8"
+                "reference": "3253f7a1c13a2177d925bd0f6ee8387c5dd9c57a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/8ca2763c66c1a3901aea7812b99e3dce73a202f8",
-                "reference": "8ca2763c66c1a3901aea7812b99e3dce73a202f8",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/3253f7a1c13a2177d925bd0f6ee8387c5dd9c57a",
+                "reference": "3253f7a1c13a2177d925bd0f6ee8387c5dd9c57a",
                 "shasum": ""
             },
             "require": {
@@ -1666,7 +1666,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2013-06-24 06:42:46"
+            "time": "2013-06-25 17:49:29"
         },
         {
             "name": "doctrine/inflector",
@@ -1850,12 +1850,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "e6a90e32ac9ddd7d3b7fe99be085c928c6e08da2"
+                "reference": "51b63998bb1c55def789450f37cd1876f948f21a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/e6a90e32ac9ddd7d3b7fe99be085c928c6e08da2",
-                "reference": "e6a90e32ac9ddd7d3b7fe99be085c928c6e08da2",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/51b63998bb1c55def789450f37cd1876f948f21a",
+                "reference": "51b63998bb1c55def789450f37cd1876f948f21a",
                 "shasum": ""
             },
             "require": {
@@ -1934,7 +1934,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2013-06-23 17:27:09"
+            "time": "2013-06-25 14:08:47"
         },
         {
             "name": "herrera-io/json",
@@ -2290,12 +2290,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "111d4444c5ca331759d9dd2bc3a6561c9d57fbcd"
+                "reference": "9f6bc71167e27759410afecedde2b6540df9fe63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/111d4444c5ca331759d9dd2bc3a6561c9d57fbcd",
-                "reference": "111d4444c5ca331759d9dd2bc3a6561c9d57fbcd",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/9f6bc71167e27759410afecedde2b6540df9fe63",
+                "reference": "9f6bc71167e27759410afecedde2b6540df9fe63",
                 "shasum": ""
             },
             "require": {
@@ -2392,7 +2392,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-06-24 03:04:52"
+            "time": "2013-06-24 18:36:56"
         },
         {
             "name": "leafo/lessphp",
@@ -3231,12 +3231,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-menus.git",
-                "reference": "3b38e3d3aec63bdcb13095c8d03ec03c1f3d7553"
+                "reference": "3b91ca8abb144f6f7641399b6fd09315bf87e95c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/3b38e3d3aec63bdcb13095c8d03ec03c1f3d7553",
-                "reference": "3b38e3d3aec63bdcb13095c8d03ec03c1f3d7553",
+                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/3b91ca8abb144f6f7641399b6fd09315bf87e95c",
+                "reference": "3b91ca8abb144f6f7641399b6fd09315bf87e95c",
                 "shasum": ""
             },
             "require": {
@@ -3303,7 +3303,7 @@
                 "source": "https://github.com/cartalyst/platform-menus/tree/master",
                 "issues": "https://github.com/cartalyst/platform-menus/issues"
             },
-            "time": "2013-06-23 19:36:47"
+            "time": "2013-06-24 18:20:17"
         },
         {
             "name": "platform/operations",
