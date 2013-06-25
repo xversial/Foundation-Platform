@@ -5,6 +5,8 @@
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteRule ^ index.php [L]
-
-	php_flag magic_quotes_gpc Off
 </IfModule>
+
+<IfModule mod_php5.c>
+	php_flag magic_quotes_gpc Off
+</IfMOdule>
