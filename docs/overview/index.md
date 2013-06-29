@@ -3,7 +3,7 @@
 
 Cartalyst's Platform 2 application provides a very flexible and extensible way of building your custom application. It gives you a basic installation to get you quick-started with content management, themeable views, application extensions and much more. Pretty much everything on Platform 2 can be extended and overwritten so you can add your own functionality. Platform 2 is not just another CMS, it's a starting point for you to build your application providing the tools you need to get the job done as easy as possible.
 
-#### Flexibility
+**Flexibility**
 
 The main goal of Platform 2 was flexibility. Platform 2 aims to be as unobtrusive
 to your application as possible, while providing all the features to make it
@@ -18,7 +18,7 @@ Want to install Platform 2 for an administration area but build a completely cus
 website? Sure, just start working with `app/routes.php` as you normally would.
 Utilize our API, data and extensions where you need, they won't get in your way.
 
-#### Extensibility
+**Extensibility**
 
 Platform 2 was made to be even more extendible than Platform 1. A number of key files to get you off the ground with extending Platform are:
 
