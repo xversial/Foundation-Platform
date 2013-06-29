@@ -35,7 +35,6 @@
 				background: -ms-radial-gradient(center, ellipse cover,  rgba(168,45,110,0.56) 20%,rgba(168,45,110,0) 78%); /* IE10+ */
 				background: radial-gradient(ellipse at center,  rgba(168,45,110,0.56) 20%,rgba(168,45,110,0) 78%); /* W3C */
 				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8fa82d6e', endColorstr='#00a82d6e',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
-
 			}
 
 			h1{
@@ -77,7 +76,6 @@
 				color:#fff;
 				font-weight:200;
 				text-align: center;
-
 			}
 		</style>
 
@@ -97,7 +95,6 @@
 			</p>
 
 		</div>
-
 
 	</body>
 </html>
