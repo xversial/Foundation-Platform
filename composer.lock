@@ -20,12 +20,12 @@
                 "shasum": ""
             },
             "require": {
-                "doctrine/collections": ">=1.0,<2.0",
-                "guzzle/guzzle": ">=3.0,<4.0",
+                "doctrine/collections": "~1.0",
+                "guzzle/guzzle": "~3.0",
                 "php": ">=5.3.3",
-                "pimple/pimple": ">=1.0,<2.0",
-                "symfony/filesystem": ">=2.0,<3.0",
-                "symfony/process": ">=2.0,<3.0"
+                "pimple/pimple": "~1.0",
+                "symfony/filesystem": "~2.0",
+                "symfony/process": "~2.0"
             },
             "require-dev": {
                 "ext-zip": "*",
@@ -815,12 +815,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/sentry-social.git",
-                "reference": "5a25c581cdb60f2e537dd33e5bb1e9da0307731b"
+                "reference": "e811fa3cf5a81075080d94a83e6a1525b9af774e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentry-social/zipball/5a25c581cdb60f2e537dd33e5bb1e9da0307731b",
-                "reference": "5a25c581cdb60f2e537dd33e5bb1e9da0307731b",
+                "url": "https://api.github.com/repos/cartalyst/sentry-social/zipball/e811fa3cf5a81075080d94a83e6a1525b9af774e",
+                "reference": "e811fa3cf5a81075080d94a83e6a1525b9af774e",
                 "shasum": ""
             },
             "require": {
@@ -895,7 +895,7 @@
                 "source": "https://github.com/cartalyst/sentry-social/tree/master",
                 "issues": "https://github.com/cartalyst/sentry-social/issues"
             },
-            "time": "2013-06-26 15:14:40"
+            "time": "2013-06-28 17:08:22"
         },
         {
             "name": "cartalyst/themes",
@@ -1319,16 +1319,16 @@
         },
         {
             "name": "doctrine/annotations",
-            "version": "v1.1.1",
+            "version": "v1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "v1.1.1"
+                "reference": "v1.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/v1.1.1",
-                "reference": "v1.1.1",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/v1.1.2",
+                "reference": "v1.1.2",
                 "shasum": ""
             },
             "require": {
@@ -1386,7 +1386,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2013-04-20 08:30:17"
+            "time": "2013-06-16 21:33:03"
         },
         {
             "name": "doctrine/cache",
@@ -1530,12 +1530,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "c4255b9fbd63ee1fe52697839318af5937fced9b"
+                "reference": "2.4.0-RC4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/c4255b9fbd63ee1fe52697839318af5937fced9b",
-                "reference": "c4255b9fbd63ee1fe52697839318af5937fced9b",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/2.4.0-RC4",
+                "reference": "2.4.0-RC4",
                 "shasum": ""
             },
             "require": {
@@ -1581,7 +1581,7 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -1604,12 +1604,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "3253f7a1c13a2177d925bd0f6ee8387c5dd9c57a"
+                "reference": "2.4.0-RC2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/3253f7a1c13a2177d925bd0f6ee8387c5dd9c57a",
-                "reference": "3253f7a1c13a2177d925bd0f6ee8387c5dd9c57a",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/2.4.0-RC2",
+                "reference": "2.4.0-RC2",
                 "shasum": ""
             },
             "require": {
@@ -1850,12 +1850,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "db39c98b3e9e4fdbea3fa042f94914efaec38603"
+                "reference": "4c11c0a1e41752520b9ed249a735d7a94167d0ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/db39c98b3e9e4fdbea3fa042f94914efaec38603",
-                "reference": "db39c98b3e9e4fdbea3fa042f94914efaec38603",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/4c11c0a1e41752520b9ed249a735d7a94167d0ed",
+                "reference": "4c11c0a1e41752520b9ed249a735d7a94167d0ed",
                 "shasum": ""
             },
             "require": {
@@ -1934,7 +1934,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2013-06-28 04:05:15"
+            "time": "2013-07-01 00:40:59"
         },
         {
             "name": "herrera-io/json",
@@ -2152,12 +2152,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/justinrainbow/json-schema.git",
-                "reference": "6f877ff62f00bcd6c35b89bd9eb4c24ac65a6853"
+                "reference": "f2156832d221ba1a0c0c04e38f970debcc740387"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/6f877ff62f00bcd6c35b89bd9eb4c24ac65a6853",
-                "reference": "6f877ff62f00bcd6c35b89bd9eb4c24ac65a6853",
+                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/f2156832d221ba1a0c0c04e38f970debcc740387",
+                "reference": "f2156832d221ba1a0c0c04e38f970debcc740387",
                 "shasum": ""
             },
             "require": {
@@ -2165,7 +2165,7 @@
             },
             "require-dev": {
                 "json-schema/json-schema-test-suite": "1.1.0",
-                "phpunit/phpunit": ">=3.7,<3.8"
+                "phpunit/phpunit": "~3.7.0"
             },
             "bin": [
                 "bin/validate-json"
@@ -2211,7 +2211,7 @@
                 "json",
                 "schema"
             ],
-            "time": "2013-06-20 02:44:19"
+            "time": "2013-07-01 15:43:23"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -2290,12 +2290,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "9f6bc71167e27759410afecedde2b6540df9fe63"
+                "reference": "0c12b6726983040385a2d058663a6ae339849fb3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/9f6bc71167e27759410afecedde2b6540df9fe63",
-                "reference": "9f6bc71167e27759410afecedde2b6540df9fe63",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/0c12b6726983040385a2d058663a6ae339849fb3",
+                "reference": "0c12b6726983040385a2d058663a6ae339849fb3",
                 "shasum": ""
             },
             "require": {
@@ -2392,7 +2392,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-06-24 18:36:56"
+            "time": "2013-06-30 00:40:01"
         },
         {
             "name": "leafo/lessphp",
@@ -2573,12 +2573,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Lusitanian/PHPoAuthLib.git",
-                "reference": "cd01b45328f3d0e7d1e9c3d0b80ab978dd550002"
+                "reference": "4c6e345c54c4f0a0be5ae20f81ff83e2ac984c4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Lusitanian/PHPoAuthLib/zipball/cd01b45328f3d0e7d1e9c3d0b80ab978dd550002",
-                "reference": "cd01b45328f3d0e7d1e9c3d0b80ab978dd550002",
+                "url": "https://api.github.com/repos/Lusitanian/PHPoAuthLib/zipball/4c6e345c54c4f0a0be5ae20f81ff83e2ac984c4c",
+                "reference": "4c6e345c54c4f0a0be5ae20f81ff83e2ac984c4c",
                 "shasum": ""
             },
             "require": {
@@ -2612,14 +2612,14 @@
                     "email": "info@pieterhordijk.com"
                 }
             ],
-            "description": "PHP 5.4+ oAuth 1/2 Library",
+            "description": "PHP 5.3+ oAuth 1/2 Library",
             "keywords": [
                 "Authentication",
                 "authorization",
                 "oauth",
                 "security"
             ],
-            "time": "2013-06-19 18:32:13"
+            "time": "2013-06-28 18:50:29"
         },
         {
             "name": "monolog/monolog",
@@ -3231,12 +3231,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-menus.git",
-                "reference": "efdc0b33f10cae51809b05b61568a52bf30f1803"
+                "reference": "db4d7f3af8726550950dc97894748910c7bc46aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/efdc0b33f10cae51809b05b61568a52bf30f1803",
-                "reference": "efdc0b33f10cae51809b05b61568a52bf30f1803",
+                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/db4d7f3af8726550950dc97894748910c7bc46aa",
+                "reference": "db4d7f3af8726550950dc97894748910c7bc46aa",
                 "shasum": ""
             },
             "require": {
@@ -3303,7 +3303,7 @@
                 "source": "https://github.com/cartalyst/platform-menus/tree/master",
                 "issues": "https://github.com/cartalyst/platform-menus/issues"
             },
-            "time": "2013-06-25 23:26:57"
+            "time": "2013-07-01 15:04:54"
         },
         {
             "name": "platform/operations",
@@ -3390,12 +3390,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-pages.git",
-                "reference": "80f0d0f443fef6545c155cb97c377c7067623386"
+                "reference": "6c61c4c81c39aa0ec0f3b1ac91bd76df432338b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/80f0d0f443fef6545c155cb97c377c7067623386",
-                "reference": "80f0d0f443fef6545c155cb97c377c7067623386",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/6c61c4c81c39aa0ec0f3b1ac91bd76df432338b9",
+                "reference": "6c61c4c81c39aa0ec0f3b1ac91bd76df432338b9",
                 "shasum": ""
             },
             "require": {
@@ -3463,7 +3463,7 @@
                 "source": "https://github.com/cartalyst/platform-pages/tree/master",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2013-06-22 03:33:57"
+            "time": "2013-07-01 00:31:52"
         },
         {
             "name": "platform/routing",
@@ -3551,12 +3551,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-settings.git",
-                "reference": "9494741ea7ff3a7dd5ff164b48b5e8dff0845ba3"
+                "reference": "9e41545f417896b7b8c4692e375b4cc870cfa51c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-settings/zipball/9494741ea7ff3a7dd5ff164b48b5e8dff0845ba3",
-                "reference": "9494741ea7ff3a7dd5ff164b48b5e8dff0845ba3",
+                "url": "https://api.github.com/repos/cartalyst/platform-settings/zipball/9e41545f417896b7b8c4692e375b4cc870cfa51c",
+                "reference": "9e41545f417896b7b8c4692e375b4cc870cfa51c",
                 "shasum": ""
             },
             "require": {
@@ -3623,7 +3623,7 @@
                 "source": "https://github.com/cartalyst/platform-settings/tree/master",
                 "issues": "https://github.com/cartalyst/platform-settings/issues"
             },
-            "time": "2013-06-27 04:37:35"
+            "time": "2013-07-01 15:03:23"
         },
         {
             "name": "platform/users",
@@ -3631,12 +3631,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-users.git",
-                "reference": "a46e1af63e8905fdbf22c1d52cc3a81caad365b8"
+                "reference": "a802e1d0db590a6e06dbb492031adf158493f185"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/a46e1af63e8905fdbf22c1d52cc3a81caad365b8",
-                "reference": "a46e1af63e8905fdbf22c1d52cc3a81caad365b8",
+                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/a802e1d0db590a6e06dbb492031adf158493f185",
+                "reference": "a802e1d0db590a6e06dbb492031adf158493f185",
                 "shasum": ""
             },
             "require": {
@@ -3700,7 +3700,7 @@
                 "source": "https://github.com/cartalyst/platform-users/tree/master",
                 "issues": "https://github.com/cartalyst/platform-users/issues"
             },
-            "time": "2013-06-24 00:27:17"
+            "time": "2013-07-01 19:22:16"
         },
         {
             "name": "predis/predis",
@@ -4042,19 +4042,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "35da735fae40d43a199ed51b30ac3f073404d1c6"
+                "reference": "68fda7fc4351e9dad8beef70470050aea752d780"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/35da735fae40d43a199ed51b30ac3f073404d1c6",
-                "reference": "35da735fae40d43a199ed51b30ac3f073404d1c6",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/68fda7fc4351e9dad8beef70470050aea752d780",
+                "reference": "68fda7fc4351e9dad8beef70470050aea752d780",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "symfony/event-dispatcher": ">=2.1,<3.0"
+                "symfony/event-dispatcher": "~2.1"
             },
             "suggest": {
                 "symfony/event-dispatcher": ""
@@ -4086,7 +4086,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2013-06-15 17:55:04"
+            "time": "2013-07-01 12:24:43"
         },
         {
             "name": "symfony/css-selector",
@@ -4095,12 +4095,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/CssSelector.git",
-                "reference": "e4f7310ad25e71f2362236b8c1588b416b03c2be"
+                "reference": "e3aa2495604a483b58f318ad6de845b88ec410d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/CssSelector/zipball/e4f7310ad25e71f2362236b8c1588b416b03c2be",
-                "reference": "e4f7310ad25e71f2362236b8c1588b416b03c2be",
+                "url": "https://api.github.com/repos/symfony/CssSelector/zipball/e3aa2495604a483b58f318ad6de845b88ec410d6",
+                "reference": "e3aa2495604a483b58f318ad6de845b88ec410d6",
                 "shasum": ""
             },
             "require": {
@@ -4137,7 +4137,7 @@
             ],
             "description": "Symfony CssSelector Component",
             "homepage": "http://symfony.com",
-            "time": "2013-06-17 07:15:51"
+            "time": "2013-07-01 12:24:43"
         },
         {
             "name": "symfony/debug",
@@ -4146,20 +4146,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Debug.git",
-                "reference": "v2.3.1"
+                "reference": "947e8d434bb461bec07b1ce7102d8823ed150f01"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Debug/zipball/v2.3.1",
-                "reference": "v2.3.1",
+                "url": "https://api.github.com/repos/symfony/Debug/zipball/947e8d434bb461bec07b1ce7102d8823ed150f01",
+                "reference": "947e8d434bb461bec07b1ce7102d8823ed150f01",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "symfony/http-foundation": ">=2.1,<3.0",
-                "symfony/http-kernel": ">=2.1,<3.0"
+                "symfony/http-foundation": "~2.1",
+                "symfony/http-kernel": "~2.1"
             },
             "suggest": {
                 "symfony/class-loader": "",
@@ -4193,7 +4193,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "http://symfony.com",
-            "time": "2013-06-02 11:58:44"
+            "time": "2013-07-01 12:24:43"
         },
         {
             "name": "symfony/dom-crawler",
@@ -4202,19 +4202,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/DomCrawler.git",
-                "reference": "761ea57ee2839c79dd04fe39b73bacd2ba133f22"
+                "reference": "c8f8f06933cff3559bbd8c8833c5224e18d1df8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/761ea57ee2839c79dd04fe39b73bacd2ba133f22",
-                "reference": "761ea57ee2839c79dd04fe39b73bacd2ba133f22",
+                "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/c8f8f06933cff3559bbd8c8833c5224e18d1df8a",
+                "reference": "c8f8f06933cff3559bbd8c8833c5224e18d1df8a",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "symfony/css-selector": ">=2.0,<3.0"
+                "symfony/css-selector": "~2.0"
             },
             "suggest": {
                 "symfony/css-selector": ""
@@ -4246,7 +4246,7 @@
             ],
             "description": "Symfony DomCrawler Component",
             "homepage": "http://symfony.com",
-            "time": "2013-06-23 08:16:02"
+            "time": "2013-07-01 12:24:43"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -4356,12 +4356,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder.git",
-                "reference": "efe739e6599b3f43610a4005818a364fbdd67ce8"
+                "reference": "71ced0f8fa27461da26c245ddf6b0e49a6a6c2c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/efe739e6599b3f43610a4005818a364fbdd67ce8",
-                "reference": "efe739e6599b3f43610a4005818a364fbdd67ce8",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/71ced0f8fa27461da26c245ddf6b0e49a6a6c2c4",
+                "reference": "71ced0f8fa27461da26c245ddf6b0e49a6a6c2c4",
                 "shasum": ""
             },
             "require": {
@@ -4394,7 +4394,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "http://symfony.com",
-            "time": "2013-06-13 07:51:49"
+            "time": "2013-07-01 12:17:23"
         },
         {
             "name": "symfony/http-foundation",
@@ -4403,12 +4403,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpFoundation.git",
-                "reference": "997715db218331076ef21c5a6ae622595755c6ef"
+                "reference": "2ee5c0da197451c0b297908d1337c944166bcd72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/997715db218331076ef21c5a6ae622595755c6ef",
-                "reference": "997715db218331076ef21c5a6ae622595755c6ef",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/2ee5c0da197451c0b297908d1337c944166bcd72",
+                "reference": "2ee5c0da197451c0b297908d1337c944166bcd72",
                 "shasum": ""
             },
             "require": {
@@ -4444,7 +4444,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "http://symfony.com",
-            "time": "2013-06-23 08:16:02"
+            "time": "2013-07-01 12:24:43"
         },
         {
             "name": "symfony/http-kernel",
@@ -4523,12 +4523,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Process.git",
-                "reference": "f12e5857c60fa572b4f7d947276ffc2336ddea04"
+                "reference": "4aafcf725f846a43f02c36feefb6f066602dca38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Process/zipball/f12e5857c60fa572b4f7d947276ffc2336ddea04",
-                "reference": "f12e5857c60fa572b4f7d947276ffc2336ddea04",
+                "url": "https://api.github.com/repos/symfony/Process/zipball/4aafcf725f846a43f02c36feefb6f066602dca38",
+                "reference": "4aafcf725f846a43f02c36feefb6f066602dca38",
                 "shasum": ""
             },
             "require": {
@@ -4561,7 +4561,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "http://symfony.com",
-            "time": "2013-06-23 08:16:02"
+            "time": "2013-07-01 12:24:43"
         },
         {
             "name": "symfony/routing",
