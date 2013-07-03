@@ -1850,12 +1850,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "7949ba06b3eddf8abec181adf803ab1807b96caa"
+                "reference": "b1677c00021756705c5e7535c4dc34ae7f93be3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/7949ba06b3eddf8abec181adf803ab1807b96caa",
-                "reference": "7949ba06b3eddf8abec181adf803ab1807b96caa",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/b1677c00021756705c5e7535c4dc34ae7f93be3d",
+                "reference": "b1677c00021756705c5e7535c4dc34ae7f93be3d",
                 "shasum": ""
             },
             "require": {
@@ -1934,7 +1934,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2013-07-02 16:15:48"
+            "time": "2013-07-02 19:53:26"
         },
         {
             "name": "herrera-io/json",
@@ -2689,12 +2689,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/natxet/CssMin.git",
-                "reference": "9801e2a0de7ae252ca4f2b85542d75a82047a8b4"
+                "reference": "afdcdbdb5fc332313f47a79ae60346df3e69a572"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/natxet/CssMin/zipball/9801e2a0de7ae252ca4f2b85542d75a82047a8b4",
-                "reference": "9801e2a0de7ae252ca4f2b85542d75a82047a8b4",
+                "url": "https://api.github.com/repos/natxet/CssMin/zipball/afdcdbdb5fc332313f47a79ae60346df3e69a572",
+                "reference": "afdcdbdb5fc332313f47a79ae60346df3e69a572",
                 "shasum": ""
             },
             "require": {
@@ -2702,9 +2702,9 @@
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "CssMin": "src/"
-                }
+                "classmap": [
+                    "src/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2723,7 +2723,7 @@
                 "css",
                 "minify"
             ],
-            "time": "2013-03-15 18:47:32"
+            "time": "2013-07-02 20:53:35"
         },
         {
             "name": "nesbot/carbon",
@@ -3231,12 +3231,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-menus.git",
-                "reference": "5c4a60648aa05c5ca356535f38ab69e8d81f1753"
+                "reference": "14f3b57066c8384d0a2eb4362774dc759dddd6df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/5c4a60648aa05c5ca356535f38ab69e8d81f1753",
-                "reference": "5c4a60648aa05c5ca356535f38ab69e8d81f1753",
+                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/14f3b57066c8384d0a2eb4362774dc759dddd6df",
+                "reference": "14f3b57066c8384d0a2eb4362774dc759dddd6df",
                 "shasum": ""
             },
             "require": {
@@ -3303,7 +3303,7 @@
                 "source": "https://github.com/cartalyst/platform-menus/tree/master",
                 "issues": "https://github.com/cartalyst/platform-menus/issues"
             },
-            "time": "2013-07-02 18:26:41"
+            "time": "2013-07-03 01:18:50"
         },
         {
             "name": "platform/operations",
