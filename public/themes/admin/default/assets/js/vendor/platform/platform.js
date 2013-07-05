@@ -82,6 +82,19 @@ var Platform;
 
 		Platform.Cache.$page.on('click', '[data-toggle="modal"]', Platform.Main.displayModal);
 
+		Platform.Cache.$sidebar.on('mousemove touchmove', Platform.Main.scrollNav);
+
+	};
+
+	Platform.Main.scrollNav = function(event){
+
+		var sidebarTop = parseInt(Platform.Cache.$sidebar.find('.sidebar__navigation').offset().top, 10);
+		var sidebarBottom = parseInt(Platform.Cache.$sidebar.find('.sidebar__navigation').height(), 10);
+		var menuHeight = parseInt(Platform.Cache.$sidebar.find('.navigation').outerHeight(), 10 );
+		var top = Math.round( ((event.pageY - sidebarTop) * (menuHeight - sidebarBottom) / sidebarBottom));
+
+		Platform.Cache.$sidebar.find('.sidebar__navigation').scrollTop(top + 10);
+
 	};
 
 	Platform.Main.displayModal = function(event){
