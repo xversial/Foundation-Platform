@@ -82,6 +82,10 @@ var Platform;
 
 		Platform.Cache.$page.on('click', '[data-toggle="modal"]', Platform.Main.displayModal);
 
+		$(document).bind('touchmove', function(e){
+			e.preventDefault();
+		});
+
 		Platform.Cache.$sidebar.on('mousemove touchmove', Platform.Main.scrollNav);
 
 	};
@@ -91,9 +95,12 @@ var Platform;
 		var sidebarTop = parseInt(Platform.Cache.$sidebar.find('.sidebar__navigation').offset().top, 10);
 		var sidebarBottom = parseInt(Platform.Cache.$sidebar.find('.sidebar__navigation').height(), 10);
 		var menuHeight = parseInt(Platform.Cache.$sidebar.find('.navigation').outerHeight(), 10 );
-		var top = Math.round( ((event.pageY - sidebarTop) * (menuHeight - sidebarBottom) / sidebarBottom));
 
-		Platform.Cache.$sidebar.find('.sidebar__navigation').scrollTop(top + 10);
+		var pageY = event.pageY || event.originalEvent.touches[0].pageY;
+		var top = Math.round( ((pageY - sidebarTop) * (menuHeight - sidebarBottom) / sidebarBottom));
+
+
+		Platform.Cache.$sidebar.find('.sidebar__navigation').scrollTop(top);
 
 	};
 
