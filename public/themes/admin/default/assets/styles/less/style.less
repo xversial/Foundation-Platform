@@ -175,7 +175,7 @@ h1 {
 
 	.sidebar__navigation {
 
-		max-height:250px;
+		height:250px;
 		position: relative;
 		overflow: hidden;
 
@@ -414,6 +414,13 @@ h1 {
  	}
  }
 
+ @media (max-width:1024px){
+
+ 	.sidebar{ position: relative; float:left; }
+ 	.sidebar .sidebar__navigation{ height:auto; overflow: visible; }
+
+ }
+
 /* Menus
 ==================================================*/
 .nestable{
@@ -571,6 +578,10 @@ form .control-group-toggle .controls {
 .data-grid {
 
 	margin-bottom:10px;
+
+	.data-grid__header {
+		overflow: hidden;
+	}
 
 	.data-grid__search {
 
