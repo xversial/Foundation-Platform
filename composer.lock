@@ -815,12 +815,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/sentry-social.git",
-                "reference": "v2.1.0-beta1"
+                "reference": "6c1c76890dfc2b0970a5ddf098baae934b39693c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentry-social/zipball/v2.1.0-beta1",
-                "reference": "v2.1.0-beta1",
+                "url": "https://api.github.com/repos/cartalyst/sentry-social/zipball/6c1c76890dfc2b0970a5ddf098baae934b39693c",
+                "reference": "6c1c76890dfc2b0970a5ddf098baae934b39693c",
                 "shasum": ""
             },
             "require": {
@@ -895,7 +895,7 @@
                 "source": "https://github.com/cartalyst/sentry-social/tree/master",
                 "issues": "https://github.com/cartalyst/sentry-social/issues"
             },
-            "time": "2013-07-07 00:31:56"
+            "time": "2013-07-08 16:46:53"
         },
         {
             "name": "cartalyst/themes",
@@ -2229,7 +2229,7 @@
             },
             "require": {
                 "php": ">=5.3.1",
-                "symfony/process": ">=2.1,<3.0"
+                "symfony/process": "~2.1"
             },
             "require-dev": {
                 "cssmin/cssmin": "*",
@@ -3390,12 +3390,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-pages.git",
-                "reference": "e679f3961ad0822725985f0721f28643e9e5854f"
+                "reference": "53118a5157ad5d7a98b5e6c6af84021d453e2f17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/e679f3961ad0822725985f0721f28643e9e5854f",
-                "reference": "e679f3961ad0822725985f0721f28643e9e5854f",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/53118a5157ad5d7a98b5e6c6af84021d453e2f17",
+                "reference": "53118a5157ad5d7a98b5e6c6af84021d453e2f17",
                 "shasum": ""
             },
             "require": {
@@ -3463,7 +3463,7 @@
                 "source": "https://github.com/cartalyst/platform-pages/tree/master",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2013-07-08 02:55:17"
+            "time": "2013-07-08 13:38:33"
         },
         {
             "name": "platform/routing",
@@ -3631,12 +3631,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-users.git",
-                "reference": "d6098d01c9f790f6346fa7d447b2b2e6de6ee87e"
+                "reference": "fc91f53383dacc2c4017929270fb5aae7dd7be62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/d6098d01c9f790f6346fa7d447b2b2e6de6ee87e",
-                "reference": "d6098d01c9f790f6346fa7d447b2b2e6de6ee87e",
+                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/fc91f53383dacc2c4017929270fb5aae7dd7be62",
+                "reference": "fc91f53383dacc2c4017929270fb5aae7dd7be62",
                 "shasum": ""
             },
             "require": {
@@ -3700,7 +3700,7 @@
                 "source": "https://github.com/cartalyst/platform-users/tree/master",
                 "issues": "https://github.com/cartalyst/platform-users/issues"
             },
-            "time": "2013-07-07 00:35:15"
+            "time": "2013-07-08 17:08:28"
         },
         {
             "name": "predis/predis",
@@ -4403,12 +4403,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpFoundation.git",
-                "reference": "2ee5c0da197451c0b297908d1337c944166bcd72"
+                "reference": "b1c48bb731933100540c63720303814ebb611c59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/2ee5c0da197451c0b297908d1337c944166bcd72",
-                "reference": "2ee5c0da197451c0b297908d1337c944166bcd72",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/b1c48bb731933100540c63720303814ebb611c59",
+                "reference": "b1c48bb731933100540c63720303814ebb611c59",
                 "shasum": ""
             },
             "require": {
@@ -4444,7 +4444,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "http://symfony.com",
-            "time": "2013-07-01 12:24:43"
+            "time": "2013-07-08 13:36:15"
         },
         {
             "name": "symfony/http-kernel",
@@ -4453,12 +4453,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpKernel.git",
-                "reference": "c0b64cf85cf228a7107012c934b36aaa640d1a69"
+                "reference": "1fc0a1d294a19948f9755ca8957cc61e7d2aab41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/c0b64cf85cf228a7107012c934b36aaa640d1a69",
-                "reference": "c0b64cf85cf228a7107012c934b36aaa640d1a69",
+                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/1fc0a1d294a19948f9755ca8957cc61e7d2aab41",
+                "reference": "1fc0a1d294a19948f9755ca8957cc61e7d2aab41",
                 "shasum": ""
             },
             "require": {
@@ -4514,7 +4514,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "http://symfony.com",
-            "time": "2013-07-01 12:24:43"
+            "time": "2013-07-08 13:36:15"
         },
         {
             "name": "symfony/process",

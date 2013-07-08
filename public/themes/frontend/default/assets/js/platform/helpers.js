@@ -1,12 +1,13 @@
 // Just in case the files get loaded out of order
-if (platform == undefined)
+if (typeof platform === 'undefined')
 {
 	var platform = {};
 }
 
-// start helpers
+// Start helpers
 (function($) {
-	// define Helpers object
+
+	// Define Helpers object
 	platform.url = {
 
 		urls : {
@@ -14,15 +15,20 @@ if (platform == undefined)
 		},
 
 		init: function() {
-			this.urls.base  = $('meta[name=base_url]').attr('content');
+
+			this.urls.base = $('meta[name=base_url]').attr('content');
+
 		},
 
 		base: function(path) {
-			if (path === undefined) {
-				path = ''
+
+			if (typeof path === 'undefined')
+			{
+				path = '';
 			}
 
 			return this.urls.base + '/' + path;
+
 		}
 
 	};
@@ -34,11 +40,13 @@ if (platform == undefined)
 
 $(function(){
 
-	//Alert Close
-	$(".alert").on('click', '.close', function(e){
+	// Alert Close
+	$('.alert').on('click', '.close', function(e) {
 
-		$(e.delegateTarget).slideToggle(function(){
+		$(e.delegateTarget).slideToggle(function() {
+
 			$(this).remove();
+
 		});
 
 	});
