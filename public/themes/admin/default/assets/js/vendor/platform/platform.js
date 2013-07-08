@@ -82,11 +82,11 @@ var Platform;
 
 		Platform.Cache.$page.on('click', '[data-toggle="modal"]', Platform.Main.displayModal);
 
-		$(document).bind('touchmove', function(e){
-			e.preventDefault();
-		});
+		if(!Modernizr.touch){
 
-		Platform.Cache.$sidebar.on('mousemove touchmove', Platform.Main.scrollNav);
+			Platform.Cache.$sidebar.on('mousemove', Platform.Main.scrollNav);
+
+		}
 
 	};
 
