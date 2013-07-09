@@ -1795,16 +1795,16 @@
         },
         {
             "name": "filp/whoops",
-            "version": "1.0.6",
+            "version": "1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "1.0.6"
+                "reference": "1.0.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/1.0.6",
-                "reference": "1.0.6",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/1.0.7",
+                "reference": "1.0.7",
                 "shasum": ""
             },
             "require": {
@@ -1842,7 +1842,7 @@
                 "whoops",
                 "zf2"
             ],
-            "time": "2013-05-10 22:13:22"
+            "time": "2013-06-10 12:22:13"
         },
         {
             "name": "guzzle/guzzle",
@@ -2290,18 +2290,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "98c0c3b1f25cf643a81f4e2d88ab4befc4ce6a22"
+                "reference": "8909eb7dd1ef5eac7bf255dc07186b19a226ef53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/98c0c3b1f25cf643a81f4e2d88ab4befc4ce6a22",
-                "reference": "98c0c3b1f25cf643a81f4e2d88ab4befc4ce6a22",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/8909eb7dd1ef5eac7bf255dc07186b19a226ef53",
+                "reference": "8909eb7dd1ef5eac7bf255dc07186b19a226ef53",
                 "shasum": ""
             },
             "require": {
                 "classpreloader/classpreloader": "1.0.*",
                 "doctrine/dbal": "2.4.x",
-                "filp/whoops": "1.0.6",
+                "filp/whoops": "1.0.7",
                 "ircmaxell/password-compat": "1.0.*",
                 "monolog/monolog": "1.5.*",
                 "nesbot/carbon": "1.*",
@@ -2392,7 +2392,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-07-05 03:25:16"
+            "time": "2013-07-09 13:04:15"
         },
         {
             "name": "leafo/lessphp",
@@ -2400,12 +2400,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/leafo/lessphp.git",
-                "reference": "ff86f2941c3f3d67d56acad2f8902ca57c73b359"
+                "reference": "366fb52798d4f120503af0703da11cba4ad06f8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/leafo/lessphp/zipball/ff86f2941c3f3d67d56acad2f8902ca57c73b359",
-                "reference": "ff86f2941c3f3d67d56acad2f8902ca57c73b359",
+                "url": "https://api.github.com/repos/leafo/lessphp/zipball/366fb52798d4f120503af0703da11cba4ad06f8d",
+                "reference": "366fb52798d4f120503af0703da11cba4ad06f8d",
                 "shasum": ""
             },
             "type": "library",
@@ -2433,7 +2433,7 @@
             ],
             "description": "lessphp is a compiler for LESS written in PHP.",
             "homepage": "http://leafo.net/lessphp/",
-            "time": "2013-05-22 17:52:29"
+            "time": "2013-07-09 16:25:09"
         },
         {
             "name": "leafo/scssphp",
@@ -2573,19 +2573,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Lusitanian/PHPoAuthLib.git",
-                "reference": "4c6e345c54c4f0a0be5ae20f81ff83e2ac984c4c"
+                "reference": "c2e166d7c2cfae6a7e29f4f2545d4f48e6835137"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Lusitanian/PHPoAuthLib/zipball/4c6e345c54c4f0a0be5ae20f81ff83e2ac984c4c",
-                "reference": "4c6e345c54c4f0a0be5ae20f81ff83e2ac984c4c",
+                "url": "https://api.github.com/repos/Lusitanian/PHPoAuthLib/zipball/c2e166d7c2cfae6a7e29f4f2545d4f48e6835137",
+                "reference": "c2e166d7c2cfae6a7e29f4f2545d4f48e6835137",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
             "require-dev": {
-                "symfony/http-foundation": ">=2.1,<3.0"
+                "symfony/http-foundation": "~2.1"
             },
             "type": "library",
             "extra": {
@@ -2619,7 +2619,7 @@
                 "oauth",
                 "security"
             ],
-            "time": "2013-06-28 18:50:29"
+            "time": "2013-07-09 16:48:21"
         },
         {
             "name": "monolog/monolog",
@@ -2986,12 +2986,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-content.git",
-                "reference": "1321255b05c94c06548e985d8e59a4e67c3753bd"
+                "reference": "0356aef21c59cb940453e5d7af292cb5df29eee8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/1321255b05c94c06548e985d8e59a4e67c3753bd",
-                "reference": "1321255b05c94c06548e985d8e59a4e67c3753bd",
+                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/0356aef21c59cb940453e5d7af292cb5df29eee8",
+                "reference": "0356aef21c59cb940453e5d7af292cb5df29eee8",
                 "shasum": ""
             },
             "require": {
@@ -3056,7 +3056,7 @@
                 "source": "https://github.com/cartalyst/platform-content/tree/master",
                 "issues": "https://github.com/cartalyst/platform-content/issues"
             },
-            "time": "2013-07-08 02:57:14"
+            "time": "2013-07-08 18:05:03"
         },
         {
             "name": "platform/foundation",
@@ -3231,12 +3231,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-menus.git",
-                "reference": "825124e07ea2e4d7ed1ba2527e9d2463c3f6d2b6"
+                "reference": "145ea5e71783a36dddbcdc220c200e933fdfd8c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/825124e07ea2e4d7ed1ba2527e9d2463c3f6d2b6",
-                "reference": "825124e07ea2e4d7ed1ba2527e9d2463c3f6d2b6",
+                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/145ea5e71783a36dddbcdc220c200e933fdfd8c2",
+                "reference": "145ea5e71783a36dddbcdc220c200e933fdfd8c2",
                 "shasum": ""
             },
             "require": {
@@ -3303,7 +3303,7 @@
                 "source": "https://github.com/cartalyst/platform-menus/tree/master",
                 "issues": "https://github.com/cartalyst/platform-menus/issues"
             },
-            "time": "2013-07-05 23:51:11"
+            "time": "2013-07-08 18:05:59"
         },
         {
             "name": "platform/operations",
@@ -3311,12 +3311,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-operations.git",
-                "reference": "1d4f9a0dc46cdd84d9157c13b0bc26357d881002"
+                "reference": "2322b21a19bca44a7067f1751e4f9afd8ef3d128"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/1d4f9a0dc46cdd84d9157c13b0bc26357d881002",
-                "reference": "1d4f9a0dc46cdd84d9157c13b0bc26357d881002",
+                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/2322b21a19bca44a7067f1751e4f9afd8ef3d128",
+                "reference": "2322b21a19bca44a7067f1751e4f9afd8ef3d128",
                 "shasum": ""
             },
             "require": {
@@ -3382,7 +3382,7 @@
                 "source": "https://github.com/cartalyst/platform-operations/tree/master",
                 "issues": "https://github.com/cartalyst/platform-operations/issues"
             },
-            "time": "2013-07-03 16:14:30"
+            "time": "2013-07-08 18:07:18"
         },
         {
             "name": "platform/pages",
@@ -3390,12 +3390,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-pages.git",
-                "reference": "53118a5157ad5d7a98b5e6c6af84021d453e2f17"
+                "reference": "7c16654c7250d325d59b0e98997de0c25159bab0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/53118a5157ad5d7a98b5e6c6af84021d453e2f17",
-                "reference": "53118a5157ad5d7a98b5e6c6af84021d453e2f17",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/7c16654c7250d325d59b0e98997de0c25159bab0",
+                "reference": "7c16654c7250d325d59b0e98997de0c25159bab0",
                 "shasum": ""
             },
             "require": {
@@ -3463,7 +3463,7 @@
                 "source": "https://github.com/cartalyst/platform-pages/tree/master",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2013-07-08 13:38:33"
+            "time": "2013-07-08 18:04:16"
         },
         {
             "name": "platform/routing",
@@ -3631,12 +3631,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-users.git",
-                "reference": "fc91f53383dacc2c4017929270fb5aae7dd7be62"
+                "reference": "e2c9b796cbd73c545f199b8884a20076da16055d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/fc91f53383dacc2c4017929270fb5aae7dd7be62",
-                "reference": "fc91f53383dacc2c4017929270fb5aae7dd7be62",
+                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/e2c9b796cbd73c545f199b8884a20076da16055d",
+                "reference": "e2c9b796cbd73c545f199b8884a20076da16055d",
                 "shasum": ""
             },
             "require": {
@@ -3700,7 +3700,7 @@
                 "source": "https://github.com/cartalyst/platform-users/tree/master",
                 "issues": "https://github.com/cartalyst/platform-users/issues"
             },
-            "time": "2013-07-08 17:08:28"
+            "time": "2013-07-09 21:01:25"
         },
         {
             "name": "predis/predis",
