@@ -1,3 +1,4 @@
 ## Extensions
 
-- [Overview](/platform2/extensions)
+- [Basics](/platform2/extensions)
+- [Creating Extensions](/platform2/extensions/creating-extensions)
