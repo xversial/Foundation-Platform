@@ -2219,12 +2219,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kriswallsmith/assetic.git",
-                "reference": "0e18168c45df6500617ad8739f122fdf917a9293"
+                "reference": "41930af87d8182c3298cf66f49a1606fa3c1d367"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/0e18168c45df6500617ad8739f122fdf917a9293",
-                "reference": "0e18168c45df6500617ad8739f122fdf917a9293",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/41930af87d8182c3298cf66f49a1606fa3c1d367",
+                "reference": "41930af87d8182c3298cf66f49a1606fa3c1d367",
                 "shasum": ""
             },
             "require": {
@@ -2239,9 +2239,9 @@
                 "leafo/scssphp": "*",
                 "leafo/scssphp-compass": "*",
                 "mrclay/minify": "*",
-                "phpunit/phpunit": ">=3.7,<4.0",
+                "phpunit/phpunit": "~3.7",
                 "ptachoire/cssembed": "*",
-                "twig/twig": ">=1.6,<2.0"
+                "twig/twig": "~1.6"
             },
             "suggest": {
                 "leafo/lessphp": "Assetic provides the integration with the lessphp LESS compiler",
@@ -2282,7 +2282,7 @@
                 "compression",
                 "minification"
             ],
-            "time": "2013-06-13 16:56:43"
+            "time": "2013-07-11 15:46:25"
         },
         {
             "name": "laravel/framework",
@@ -2573,12 +2573,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Lusitanian/PHPoAuthLib.git",
-                "reference": "c2e166d7c2cfae6a7e29f4f2545d4f48e6835137"
+                "reference": "4d51512e30216b45ef54b93133d9c07f2c410f84"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Lusitanian/PHPoAuthLib/zipball/c2e166d7c2cfae6a7e29f4f2545d4f48e6835137",
-                "reference": "c2e166d7c2cfae6a7e29f4f2545d4f48e6835137",
+                "url": "https://api.github.com/repos/Lusitanian/PHPoAuthLib/zipball/4d51512e30216b45ef54b93133d9c07f2c410f84",
+                "reference": "4d51512e30216b45ef54b93133d9c07f2c410f84",
                 "shasum": ""
             },
             "require": {
@@ -2619,7 +2619,7 @@
                 "oauth",
                 "security"
             ],
-            "time": "2013-07-09 16:48:21"
+            "time": "2013-07-11 15:48:29"
         },
         {
             "name": "monolog/monolog",
@@ -3231,12 +3231,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-menus.git",
-                "reference": "d293fcb5efa2503118c873b02910c14a0ba75fec"
+                "reference": "fa937372c85cded6176677812b14a5330ccbd35d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/d293fcb5efa2503118c873b02910c14a0ba75fec",
-                "reference": "d293fcb5efa2503118c873b02910c14a0ba75fec",
+                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/fa937372c85cded6176677812b14a5330ccbd35d",
+                "reference": "fa937372c85cded6176677812b14a5330ccbd35d",
                 "shasum": ""
             },
             "require": {
@@ -3303,7 +3303,7 @@
                 "source": "https://github.com/cartalyst/platform-menus/tree/master",
                 "issues": "https://github.com/cartalyst/platform-menus/issues"
             },
-            "time": "2013-07-10 20:53:07"
+            "time": "2013-07-11 17:06:36"
         },
         {
             "name": "platform/operations",
