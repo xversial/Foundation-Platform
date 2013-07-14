@@ -716,12 +716,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cartalyst/sentry.git",
-                "reference": "a22bbd69ac75bd8d0ca96a21a226d5a150609b59"
+                "reference": "v2.0.0-RC2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/a22bbd69ac75bd8d0ca96a21a226d5a150609b59",
-                "reference": "a22bbd69ac75bd8d0ca96a21a226d5a150609b59",
+                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/v2.0.0-RC2",
+                "reference": "v2.0.0-RC2",
                 "shasum": ""
             },
             "require": {
@@ -804,10 +804,10 @@
                 "security"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/sentry/tree/master",
+                "source": "https://github.com/cartalyst/sentry/tree/v2.0.0-RC2",
                 "issues": "https://github.com/cartalyst/sentry/issues"
             },
-            "time": "2013-07-10 22:36:44"
+            "time": "2013-07-13 05:06:11"
         },
         {
             "name": "cartalyst/sentry-social",
@@ -1850,12 +1850,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "1f33485b6e5f11fb1fc72a2090f961fe9508a300"
+                "reference": "2c4ece62e1f05df7050d8a2e06020d07f356fa1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/1f33485b6e5f11fb1fc72a2090f961fe9508a300",
-                "reference": "1f33485b6e5f11fb1fc72a2090f961fe9508a300",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/2c4ece62e1f05df7050d8a2e06020d07f356fa1e",
+                "reference": "2c4ece62e1f05df7050d8a2e06020d07f356fa1e",
                 "shasum": ""
             },
             "require": {
@@ -1934,7 +1934,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2013-07-11 23:30:45"
+            "time": "2013-07-14 05:32:36"
         },
         {
             "name": "herrera-io/json",
@@ -2774,12 +2774,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "5ccf6196d6925e66568e3b8460c262e9512e4b92"
+                "reference": "f9c3aa2a22498ff4c0db38bae40999cebe60f831"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/5ccf6196d6925e66568e3b8460c262e9512e4b92",
-                "reference": "5ccf6196d6925e66568e3b8460c262e9512e4b92",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/f9c3aa2a22498ff4c0db38bae40999cebe60f831",
+                "reference": "f9c3aa2a22498ff4c0db38bae40999cebe60f831",
                 "shasum": ""
             },
             "require": {
@@ -2810,7 +2810,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2013-05-23 13:17:59"
+            "time": "2013-07-12 23:03:57"
         },
         {
             "name": "patchwork/utf8",
@@ -3231,12 +3231,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-menus.git",
-                "reference": "fa937372c85cded6176677812b14a5330ccbd35d"
+                "reference": "fc9bdef08140fae29a180f0cf363acabef966702"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/fa937372c85cded6176677812b14a5330ccbd35d",
-                "reference": "fa937372c85cded6176677812b14a5330ccbd35d",
+                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/fc9bdef08140fae29a180f0cf363acabef966702",
+                "reference": "fc9bdef08140fae29a180f0cf363acabef966702",
                 "shasum": ""
             },
             "require": {
@@ -3303,7 +3303,7 @@
                 "source": "https://github.com/cartalyst/platform-menus/tree/master",
                 "issues": "https://github.com/cartalyst/platform-menus/issues"
             },
-            "time": "2013-07-11 17:06:36"
+            "time": "2013-07-14 18:33:50"
         },
         {
             "name": "platform/operations",
@@ -3631,12 +3631,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-users.git",
-                "reference": "e2c9b796cbd73c545f199b8884a20076da16055d"
+                "reference": "459386c048bd8b1d2317ef619e3809c984b680b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/e2c9b796cbd73c545f199b8884a20076da16055d",
-                "reference": "e2c9b796cbd73c545f199b8884a20076da16055d",
+                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/459386c048bd8b1d2317ef619e3809c984b680b6",
+                "reference": "459386c048bd8b1d2317ef619e3809c984b680b6",
                 "shasum": ""
             },
             "require": {
@@ -3700,7 +3700,7 @@
                 "source": "https://github.com/cartalyst/platform-users/tree/master",
                 "issues": "https://github.com/cartalyst/platform-users/issues"
             },
-            "time": "2013-07-09 21:01:25"
+            "time": "2013-07-12 23:18:30"
         },
         {
             "name": "predis/predis",
