@@ -23,8 +23,8 @@
 	var defaults = {
 		source: null,
 		dividend: 1,
-		threshold: 50,
-		throttle: 50,
+		threshold: 100,
+		throttle: 100,
 		type: 'multiple',
 		loader: undefined,
 		sort: {},
@@ -330,9 +330,9 @@
 
 					this.opt.appliedFilters.push({
 						column: values[0] === 'all' ? undefined : values[0],
-						columnLabel: typeof values[2] === 'undefined' ? values[1] : values[2],
+						columnLabel: typeof values[2] === 'undefined' ? values[0] : values[2],
 						value: values[1],
-						valueLabel: typeof values[3] === 'undefined' ? values[0] : values[3],
+						valueLabel: typeof values[3] === 'undefined' ? values[1] : values[3],
 						type: 'normal'
 					});
 
@@ -625,13 +625,9 @@
 		_loading: function(){
 
 			if ($(this.opt.loader).is(':visible')){
-
 				$(this.opt.loader).fadeOut();
-
 			}else{
-
 				$(this.opt.loader).fadeIn();
-
 			}
 
 		},
