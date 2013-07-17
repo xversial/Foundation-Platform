@@ -50,8 +50,6 @@
 
 			<header class="console">
 
-				@include('partials/notifications')
-
 				<nav class="console__navigation">
 					@widget('platform/menus::nav.show', array('system', 1, 'navigation navigation--inline navigation--icons-only'))
 				</nav>
@@ -77,13 +75,19 @@
 
 			<article class="page">
 
-				@section('content')
-				@show
+				@yield('page')
+
+				<footer class="page__footer">
+
+					@include('partials/notifications')
+
+					@yield('page__footer')
+
+				</footer>
 
 			</article>
 
 		</div>
-
 
 		@include('modals/delete')
 

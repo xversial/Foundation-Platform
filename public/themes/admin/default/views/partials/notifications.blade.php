@@ -1,4 +1,4 @@
-<div class="console__notify">
+<div class="notifications">
 	@if ($errors->any())
 		<p class="notify notify--error">
 			@if ($message = $errors->first(0, ':message'))
