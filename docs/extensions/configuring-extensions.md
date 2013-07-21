@@ -21,7 +21,7 @@
 <a name="introduction"></a>
 #### Introduction
 
-Below we'll go over all of the configuration options for a Platform 2 extension. All configuration options cna be set in the `extension.php` file. This works exactly as any other Laravel 4 configuration file. The titles for these configuration options represent the key which can be set in the configuration array.
+Below we'll go over all of the configuration options for a Platform 2 extension. All configuration options can be set in the `extension.php` file. This works exactly as any other Laravel 4 configuration file. The titles for these configuration options represent the key which can be set in the configuration array.
 
 <a name="name"></a>
 #### name
