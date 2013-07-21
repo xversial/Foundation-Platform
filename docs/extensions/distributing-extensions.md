@@ -12,7 +12,7 @@ If you'd like to distribute your extensions you can do so using [Composer](http:
 <a name="public-extensions"></a>
 #### Public Extensions
 
-Distributing public extensions through Composer can be done in a lot of ways, the foremost being public Github repositories. By any means, every extension which is distrobuted through Composer requires a `composer.json` file. [Dayle Rees](https://twitter.com/daylerees) has written [a great article about using Composer for your packages](http://daylerees.com/composer-primer). It will get you started on how you can format your `composer.json` file.
+Distributing public extensions through Composer can be done in a lot of ways, the foremost being public Github repositories. By any means, every extension which is distributed through Composer requires a `composer.json` file. [Dayle Rees](https://twitter.com/daylerees) has written [a great article about using Composer for your packages](http://daylerees.com/composer-primer). It will get you started on how you can format your `composer.json` file.
 
 For the full requirements for a Platform 2 extension see the [Basic Usage](/platform2/extensions#requirements) chapter.
 
