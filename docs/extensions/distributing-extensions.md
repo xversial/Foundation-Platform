@@ -1,4 +1,4 @@
-### Publishing Extensions
+### Distributing Extensions
 
 - [Introduction](#introduction)
 - [Public Extensions](#public-extensions)
@@ -7,12 +7,12 @@
 <a name="introduction"></a>
 #### Introduction
 
-Because extensions are actually composer packages you can easily distribute them through [packagist.org](https://packagist.org). Or if you want your extension to be privately distributed you could use, for example, [satis](https://github.com/composer/satis).
+If you'd like to distribute your extensions you can do so using [Composer](http://getcomposer.org/). Composer makes it easy to allow your extensions to be set as dependencies in Platform 2. They can easily be distributed through [packagist.org](https://packagist.org). Or if you want your extension to be privately distributed you could use, for example, [satis](https://github.com/composer/satis).
 
 <a name="public-extensions"></a>
 #### Public Extensions
 
-Publishing public extensions can through a lot of mediums, the foremost being public Github repositories. By any means, every extension requires a `composer.json` file. [Dayle Rees](https://twitter.com/daylerees) has written [a great article about using Composer for your packages](http://daylerees.com/composer-primer). It will get you started on how you can format your composer.json file.
+Distributing public extensions through Composer can be done in a lot of ways, the foremost being public Github repositories. By any means, every extension which is distrobuted through Composer requires a `composer.json` file. [Dayle Rees](https://twitter.com/daylerees) has written [a great article about using Composer for your packages](http://daylerees.com/composer-primer). It will get you started on how you can format your `composer.json` file.
 
 For the full requirements for a Platform 2 extension see the [Basic Usage](/platform2/extensions#requirements) chapter.
 
