@@ -5,4 +5,3 @@
 - [Configuring Extensions](/platform2/extensions/configuring-extensions)
 - [Extending Existing Extensions](/platform2/extensions/extending-existing-extensions)
 - [Distributing Extensions](/platform2/extensions/distributing-extensions)
-- [Widgets](/platform2/extensions/widgets)

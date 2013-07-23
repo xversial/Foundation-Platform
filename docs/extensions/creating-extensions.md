@@ -4,6 +4,7 @@
 - [Using The Workshop Extension](#using-the-workshop-extension)
 - [Manually Creating Extensions](#manually-creating-extensions)
 - [Enabling An Extension](#enabling-an-extension)
+- [Registering Widgets](#registering-widgets)
 
 <a name="introduction"></a>
 #### Introduction
@@ -62,3 +63,25 @@ See [requirements](/platform2/extensions#requirements) for more info.
 After that your extension is added to the extensions folder you can install and enable it through the admin back-end under the operations section. Your extension will be listed amongst the other extensions. Click the edit button to install and enable your extension.
 
 Remember that you can always go back here to disable or uninstall your extension.
+
+<a name="registering-widgets"></a>
+#### Registering Widgets
+
+Widgets can be used to provide small pieces of views which can be easily re-used throughout your application or extension.
+
+If you want to register a small widget but don't want to create a class for it you can do it directly in the `extensions.php` file. 
+
+	'widgets' => array(
+		'foo' => function ()
+		{
+			// return content.
+		}
+	),
+
+If you'd like to create a separate class for the widget to have some extra functionality you can create a class in the `widgets` folder. By default, Platform 2 will register your widgets by using your class name as the widget key. You can override this by registering the widget in the `extensions.php` file.
+
+	'widgets' => array(
+		'foo' => 'My\Widget\Namespace\Foo@someMethod',
+	),
+
+For more info on creating widgets see [the widgets documentation](/platform2/usage/widgets).
