@@ -5,3 +5,4 @@
 - [Pages](/platform2/usage/pages)
 - [Content](/platform2/usage/content)
 - [Widgets](/platform2/usage/widgets)
+- [Overrides](/platform2/usage/overrides)
