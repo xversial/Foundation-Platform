@@ -22,7 +22,6 @@ Utilize our API, data and extensions where you need, they won't get in your way.
 
 Platform 2 was made to be even more extendible than Platform 1. A number of key files to get you off the ground with extending Platform are:
 
- - `app/routes.php`
  - `app/hooks.php`
  - `app/functions.php`
  - `app/overrides.php`
