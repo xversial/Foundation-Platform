@@ -38,3 +38,7 @@ The users option panel gives you a couple of user registration options like sett
 **Pages**
 
 The pages settings allows you to choose your default landing page for your application.
+
+**Workshop**
+
+The workshop settings allows you to set a default author name and email for your extensions. You can also set an optional vendor folder which will be used when generating extensions.
