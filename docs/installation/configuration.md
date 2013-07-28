@@ -31,4 +31,4 @@ The copyright notice for your application.
 <a name="menus"></a>
 #### Menus
 
-You can set menus for both the `frontend` and `admin` area of your application. By default the standard menus, when Platform 2 was first installed, are listed here.
+You can set menus for both the `frontend` and `admin` area of your application. By default the standard menus, when Platform 2 is first installed, are listed here.

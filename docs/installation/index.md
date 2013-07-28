@@ -15,18 +15,18 @@ Click [here](https://www.cartalyst.com/pricing) to obtain your subscription.
 <a name="get-platform-2"></a>
 #### 1. Get Platform 2
 
-You can get Platform 2 by cloning the repository from Github.
+You can get Platform 2 by cloning the repository from GitHub.
 
-	git clone https://github.com/cartalyst/platform2.git my-platform2-project
+	git clone git@github.com:cartalyst/platform2.git my-platform2-project
 
-Platform 2 can also be installed by simply [downloading a copy from Github](https://github.com/cartalyst/platform2/archive/master.zip). After downloading, unzip the `.zip` folder in a location that suits you.
+Platform 2 can also be installed by simply [downloading a copy from GitHub](https://github.com/cartalyst/platform2/archive/master.zip). After downloading, unzip the `.zip` file into a location that suits you.
 
-> **Note:** Installing by cloning from the Github repository is the preferred method as this gives you an easy way to update Platform 2 by merging changes from the original Github repository.
+> **Note:** Installing by cloning from the GitHub repository is the preferred method as this gives you an easy way to update Platform 2 by merging changes from the original GitHub repository.
 
 <a name="composer"></a>
 #### 2. Composer
 
-After getting Platform 2, you can install all of Platform 2's dependencies by running a composer install command in your CLI. Navigate to your Platform 2 folder and run the following command.
+After getting Platform 2, you can install all of Platform 2's dependencies by running a composer install command in your CLI. Navigate to your Platform 2 folder and run the following command:
 
 	composer install
 
@@ -59,7 +59,7 @@ The easiest way to install Platform 2 is to run the CLI installer. Just run the 
 <a name="the-browser-installer"></a>
 #### 7. The Browser Installer
 
-You should see the Platform 2 installer when you navigate to the project in your browser. Follow its instructions.
+You should see the Platform 2 installer when you navigate to the project in your browser. Follow the on screen instructions.
 
 <a name="custom-installer"></a>
 #### 8. Custom Installer
