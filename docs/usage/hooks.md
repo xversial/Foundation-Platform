@@ -8,7 +8,7 @@
 <a name="introduction"></a>
 #### Introduction
 
-Platform 2 hooks are events which are fired at various occasions throughout certain Platform 2 actions. They give you the opertunity to do something when the event is fired.
+Platform 2 hooks are events which are fired at various occasions throughout certain Platform 2 actions. They give you the opertunity to do something when the event is fired. You can find these hooks in the `app/hooks.php` file.
 
 <a name="operation-hooks"></a>
 #### Operation Hooks
