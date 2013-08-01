@@ -716,12 +716,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cartalyst/sentry.git",
-                "reference": "a74b4b78a2ede75f481fac6cfdea21048df3b21f"
+                "reference": "ce6407573d50cd3f283e9fd53c4e79dd96db0f19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/a74b4b78a2ede75f481fac6cfdea21048df3b21f",
-                "reference": "a74b4b78a2ede75f481fac6cfdea21048df3b21f",
+                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/ce6407573d50cd3f283e9fd53c4e79dd96db0f19",
+                "reference": "ce6407573d50cd3f283e9fd53c4e79dd96db0f19",
                 "shasum": ""
             },
             "require": {
@@ -807,7 +807,7 @@
                 "source": "https://github.com/cartalyst/sentry/tree/master",
                 "issues": "https://github.com/cartalyst/sentry/issues"
             },
-            "time": "2013-07-31 03:20:59"
+            "time": "2013-08-01 01:26:29"
         },
         {
             "name": "cartalyst/sentry-social",
@@ -1070,12 +1070,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/workshop.git",
-                "reference": "6ef2a4d715f1cde160b0f57d3492bcf2e3303039"
+                "reference": "b187a268f20b51c207e07611ba380e6db20bb632"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/workshop/zipball/6ef2a4d715f1cde160b0f57d3492bcf2e3303039",
-                "reference": "6ef2a4d715f1cde160b0f57d3492bcf2e3303039",
+                "url": "https://api.github.com/repos/cartalyst/workshop/zipball/b187a268f20b51c207e07611ba380e6db20bb632",
+                "reference": "b187a268f20b51c207e07611ba380e6db20bb632",
                 "shasum": ""
             },
             "require": {
@@ -1133,7 +1133,7 @@
                 "source": "https://github.com/cartalyst/workshop/tree/master",
                 "issues": "https://github.com/cartalyst/workshop/issues"
             },
-            "time": "2013-07-27 14:46:30"
+            "time": "2013-07-31 09:02:34"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -1604,12 +1604,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "fbce4b50a89352cfe600116ea7267bd1066dc972"
+                "reference": "170442dcef20c86df4c3bcba4714900ae87dbf33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/fbce4b50a89352cfe600116ea7267bd1066dc972",
-                "reference": "fbce4b50a89352cfe600116ea7267bd1066dc972",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/170442dcef20c86df4c3bcba4714900ae87dbf33",
+                "reference": "170442dcef20c86df4c3bcba4714900ae87dbf33",
                 "shasum": ""
             },
             "require": {
@@ -1666,7 +1666,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2013-07-29 00:10:38"
+            "time": "2013-07-31 05:13:32"
         },
         {
             "name": "doctrine/inflector",
@@ -2290,12 +2290,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "308b71034a3543b447e27c12bb613ad1f5621620"
+                "reference": "68f62dc9c07783ce66f354f963557da25ab14dbe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/308b71034a3543b447e27c12bb613ad1f5621620",
-                "reference": "308b71034a3543b447e27c12bb613ad1f5621620",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/68f62dc9c07783ce66f354f963557da25ab14dbe",
+                "reference": "68f62dc9c07783ce66f354f963557da25ab14dbe",
                 "shasum": ""
             },
             "require": {
@@ -2392,7 +2392,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-07-30 21:23:29"
+            "time": "2013-08-01 14:26:36"
         },
         {
             "name": "leafo/lessphp",
@@ -3846,16 +3846,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/rmccue/Requests.git",
-                "reference": "7820210f53e08a776f4bada8bc1edf8b64eca17e"
+                "reference": "9e941787677123113f84006c70e7542f07ff2551"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rmccue/Requests/zipball/7820210f53e08a776f4bada8bc1edf8b64eca17e",
-                "reference": "7820210f53e08a776f4bada8bc1edf8b64eca17e",
+                "url": "https://api.github.com/repos/rmccue/Requests/zipball/9e941787677123113f84006c70e7542f07ff2551",
+                "reference": "9e941787677123113f84006c70e7542f07ff2551",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2"
+            },
+            "require-dev": {
+                "satooshi/php-coveralls": "dev-master"
             },
             "type": "library",
             "autoload": {
@@ -3884,7 +3887,7 @@
                 "iri",
                 "sockets"
             ],
-            "time": "2013-05-28 12:43:19"
+            "time": "2013-07-31 08:24:42"
         },
         {
             "name": "seld/jsonlint",
