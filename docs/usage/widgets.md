@@ -17,7 +17,7 @@ Widgets should best be created in the `app/widgets` folder. Widgets preferable a
 
 For example, you may have a `TwitterFeed` class widget.
 
-	<?php namespace App\Widgets
+	<?php namespace App\Widgets;
 
 	class TwitterFeed {
 
