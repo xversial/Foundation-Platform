@@ -11,7 +11,7 @@
 			{{ Config::get('platform.site.title') }}
 			@show
 		</title>
-		<meta name="description" content="">
+		<meta name="description" content="@yield('meta-description')">
 		<meta name="viewport" content="width=device-width">
 		<meta name="base_url" content="{{ URL::to('/') }}">
 

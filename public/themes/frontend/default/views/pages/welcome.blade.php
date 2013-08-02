@@ -1,7 +1,17 @@
 @extends('templates/default')
 
-@section('content')
+{{-- Page title --}}
+@section('title')
+{{{ $page->meta_title }}}
+@stop
 
+{{-- Meta description --}}
+@section('meta-description')
+{{{ $page->meta_description }}}
+@stop
+
+{{-- Page content --}}
+@section('content')
 <div class="introduction hero-unit">
 
 	<img src="{{ Asset::getUrl('img/brand-logo.png') }}" alt="Platform 2 Logo" />
