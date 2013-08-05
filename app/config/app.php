@@ -204,6 +204,7 @@ return array(
 		'Widget'          => 'Cartalyst\Widgets\Facades\Widget',
 
 		'Installer'       => 'Platform\Installer\Facades\Installer',
+		'Page'            => 'Platform\Pages\Models\Page',
 		'Platform'        => 'Platform\Foundation\Facades\Platform',
 
 	),

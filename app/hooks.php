@@ -150,3 +150,17 @@ Extension::upgraded(function(Extension $extension)
 {
 	// After an extension is upgraded
 });
+
+/*
+|--------------------------------------------------------------------------
+| Miscellaneous Hooks
+|--------------------------------------------------------------------------
+|
+| Hooks for all other parts of Platform.
+|
+*/
+
+Page::rendering(function(Page $page)
+{
+	// Page is rendering, return an array of additional data
+});
