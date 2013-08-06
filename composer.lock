@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "3da9bdd28d3878d7f30e15034dd9c898",
+    "hash": "3d2f2fb1bc2fa80db835928a84c80b97",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1443,7 +1443,7 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -1509,7 +1509,7 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -1581,7 +1581,7 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -1604,12 +1604,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "2a7f59c1ecc62d828edf012f344ca44acdbe3c75"
+                "reference": "92b61c757c0e8fe3c12e0d9350f78d3744342407"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/2a7f59c1ecc62d828edf012f344ca44acdbe3c75",
-                "reference": "2a7f59c1ecc62d828edf012f344ca44acdbe3c75",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/92b61c757c0e8fe3c12e0d9350f78d3744342407",
+                "reference": "92b61c757c0e8fe3c12e0d9350f78d3744342407",
                 "shasum": ""
             },
             "require": {
@@ -1666,7 +1666,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2013-08-03 15:29:12"
+            "time": "2013-08-06 11:15:23"
         },
         {
             "name": "doctrine/inflector",
@@ -2400,12 +2400,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/leafo/lessphp.git",
-                "reference": "e6d1b601d5ca02a720246463c315f8a35b007cb7"
+                "reference": "5950c6fb4c455e90a4d776055dd7c66fd8601e9d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/leafo/lessphp/zipball/e6d1b601d5ca02a720246463c315f8a35b007cb7",
-                "reference": "e6d1b601d5ca02a720246463c315f8a35b007cb7",
+                "url": "https://api.github.com/repos/leafo/lessphp/zipball/5950c6fb4c455e90a4d776055dd7c66fd8601e9d",
+                "reference": "5950c6fb4c455e90a4d776055dd7c66fd8601e9d",
                 "shasum": ""
             },
             "type": "library",
@@ -2433,7 +2433,7 @@
             ],
             "description": "lessphp is a compiler for LESS written in PHP.",
             "homepage": "http://leafo.net/lessphp/",
-            "time": "2013-08-05 17:05:10"
+            "time": "2013-08-06 15:26:32"
         },
         {
             "name": "leafo/scssphp",
@@ -3392,12 +3392,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-pages.git",
-                "reference": "ef53c0c272523120ca1475adfd5ac958cca21f03"
+                "reference": "7bd4281d52792b77af80057f9fa0bf5b75c1130e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/ef53c0c272523120ca1475adfd5ac958cca21f03",
-                "reference": "ef53c0c272523120ca1475adfd5ac958cca21f03",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/7bd4281d52792b77af80057f9fa0bf5b75c1130e",
+                "reference": "7bd4281d52792b77af80057f9fa0bf5b75c1130e",
                 "shasum": ""
             },
             "require": {
@@ -3465,7 +3465,7 @@
                 "source": "https://github.com/cartalyst/platform-pages/tree/master",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2013-08-05 23:19:49"
+            "time": "2013-08-06 00:21:48"
         },
         {
             "name": "platform/routing",
@@ -4458,12 +4458,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpKernel.git",
-                "reference": "db40d3dd68f606f8ec0e73c057594b575360c846"
+                "reference": "0c537aa5c4c3e033588a3b8268a4ee35d036fb28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/db40d3dd68f606f8ec0e73c057594b575360c846",
-                "reference": "db40d3dd68f606f8ec0e73c057594b575360c846",
+                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/0c537aa5c4c3e033588a3b8268a4ee35d036fb28",
+                "reference": "0c537aa5c4c3e033588a3b8268a4ee35d036fb28",
                 "shasum": ""
             },
             "require": {
@@ -4520,7 +4520,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "http://symfony.com",
-            "time": "2013-08-02 23:18:34"
+            "time": "2013-08-06 05:49:23"
         },
         {
             "name": "symfony/process",
