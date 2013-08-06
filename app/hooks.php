@@ -160,7 +160,10 @@ Extension::upgraded(function(Extension $extension)
 |
 */
 
-Page::rendering(function(Page $page)
+if (class_exists('Page'))
 {
-	// Page is rendering, return an array of additional data
-});
+	Page::rendering(function(Page $page)
+	{
+		// Page is rendering, return an array of additional data
+	});
+}
