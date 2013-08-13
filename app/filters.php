@@ -35,7 +35,13 @@ App::after(function($request, $response)
 
 Route::filter('auth', function()
 {
-	if ( ! Sentry::check()) return Redirect::route('login');
+	if ( ! Sentry::check())
+	{
+		// Store the current URI
+		Session::flash('redirect', Request::getPathInfo());
+
+		return Redirect::route('login')->withErrors(Lang::get('general.not_logged_in'));
+	}
 });
 
 /*

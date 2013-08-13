@@ -29,6 +29,8 @@ return array(
 
 	'delete_record' => 'You are about to delete this record, do you want to Continue?',
 
+	'not_logged_in' => 'You are not logged in.',
+
 	// Search & Pagination
 	'in'        => 'in',
 	'of'        => 'of',
