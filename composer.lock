@@ -333,12 +333,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/data-grid.git",
-                "reference": "1c91c8df61f71a26bee42af8295c225fe2a62eb3"
+                "reference": "31cfa2faa245b83f7b3ea2b0422a7fe5100b8127"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/data-grid/zipball/1c91c8df61f71a26bee42af8295c225fe2a62eb3",
-                "reference": "1c91c8df61f71a26bee42af8295c225fe2a62eb3",
+                "url": "https://api.github.com/repos/cartalyst/data-grid/zipball/31cfa2faa245b83f7b3ea2b0422a7fe5100b8127",
+                "reference": "31cfa2faa245b83f7b3ea2b0422a7fe5100b8127",
                 "shasum": ""
             },
             "require": {
@@ -395,7 +395,7 @@
                 "source": "https://github.com/cartalyst/data-grid/tree/master",
                 "issues": "https://github.com/cartalyst/data-grid/issues"
             },
-            "time": "2013-07-24 05:26:47"
+            "time": "2013-08-13 12:12:42"
         },
         {
             "name": "cartalyst/dependencies",
@@ -716,12 +716,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cartalyst/sentry.git",
-                "reference": "6f44517763ea4a8ed992975272f5f972a8cc3cec"
+                "reference": "f083ec64190adaaefb7590b300f8564b71703097"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/6f44517763ea4a8ed992975272f5f972a8cc3cec",
-                "reference": "6f44517763ea4a8ed992975272f5f972a8cc3cec",
+                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/f083ec64190adaaefb7590b300f8564b71703097",
+                "reference": "f083ec64190adaaefb7590b300f8564b71703097",
                 "shasum": ""
             },
             "require": {
@@ -735,6 +735,7 @@
                 "mockery/mockery": "0.7.2"
             },
             "suggest": {
+                "happydemon/txt": "Required Text helpers when using the Kohana implementation",
                 "illuminate/database": "Default sentry user, group and throttling implementations.",
                 "ircmaxell/password-compat": "Default hashing uses PHP 5.5 password_* functions, with forward-compatible support."
             },
@@ -745,7 +746,8 @@
                     "Laravel 3",
                     "Laravel 4",
                     "CodeIgniter 3",
-                    "FuelPHP 1"
+                    "FuelPHP 1",
+                    "Kohana"
                 ],
                 "versions": {
                     "1": "1.1/master",
@@ -800,6 +802,7 @@
                 "auth",
                 "codeigniter",
                 "fuelphp",
+                "kohana",
                 "laravel",
                 "security"
             ],
@@ -807,7 +810,7 @@
                 "source": "https://github.com/cartalyst/sentry/tree/master",
                 "issues": "https://github.com/cartalyst/sentry/issues"
             },
-            "time": "2013-08-07 07:45:46"
+            "time": "2013-08-13 12:14:19"
         },
         {
             "name": "cartalyst/sentry-social",
