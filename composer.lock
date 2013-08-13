@@ -716,12 +716,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cartalyst/sentry.git",
-                "reference": "f083ec64190adaaefb7590b300f8564b71703097"
+                "reference": "c896a934a9c1ab973eff23a3810e880e5c26dbf1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/f083ec64190adaaefb7590b300f8564b71703097",
-                "reference": "f083ec64190adaaefb7590b300f8564b71703097",
+                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/c896a934a9c1ab973eff23a3810e880e5c26dbf1",
+                "reference": "c896a934a9c1ab973eff23a3810e880e5c26dbf1",
                 "shasum": ""
             },
             "require": {
@@ -810,7 +810,7 @@
                 "source": "https://github.com/cartalyst/sentry/tree/master",
                 "issues": "https://github.com/cartalyst/sentry/issues"
             },
-            "time": "2013-08-13 12:14:19"
+            "time": "2013-08-13 19:27:33"
         },
         {
             "name": "cartalyst/sentry-social",
@@ -2293,12 +2293,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "1d9514469248dda2b1803cfeb6c7beffa6d53e47"
+                "reference": "e7a2979c0748918892581acf8540f9a6078bf88e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/1d9514469248dda2b1803cfeb6c7beffa6d53e47",
-                "reference": "1d9514469248dda2b1803cfeb6c7beffa6d53e47",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/e7a2979c0748918892581acf8540f9a6078bf88e",
+                "reference": "e7a2979c0748918892581acf8540f9a6078bf88e",
                 "shasum": ""
             },
             "require": {
@@ -2387,7 +2387,9 @@
             "authors": [
                 {
                     "name": "Taylor Otwell",
-                    "email": "taylorotwell@gmail.com"
+                    "email": "taylorotwell@gmail.com",
+                    "homepage": "https://github.com/taylorotwell",
+                    "role": "Developer"
                 }
             ],
             "description": "The Laravel Framework.",
@@ -2395,7 +2397,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-08-10 17:46:54"
+            "time": "2013-08-13 18:03:45"
         },
         {
             "name": "leafo/lessphp",
@@ -2819,16 +2821,16 @@
         },
         {
             "name": "patchwork/utf8",
-            "version": "v1.1.9",
+            "version": "v1.1.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nicolas-grekas/Patchwork-UTF8.git",
-                "reference": "v1.1.9"
+                "reference": "v1.1.10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nicolas-grekas/Patchwork-UTF8/zipball/v1.1.9",
-                "reference": "v1.1.9",
+                "url": "https://api.github.com/repos/nicolas-grekas/Patchwork-UTF8/zipball/v1.1.10",
+                "reference": "v1.1.10",
                 "shasum": ""
             },
             "require": {
@@ -2860,7 +2862,7 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2013-08-04 15:20:14"
+            "time": "2013-08-13 16:36:44"
         },
         {
             "name": "pimple/pimple",
@@ -3636,12 +3638,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-users.git",
-                "reference": "262f0d13f1c905a6ca7975c53f61c8f5175aee81"
+                "reference": "0d1547fab8bea9218875c6ed4e5fc3d300a24f33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/262f0d13f1c905a6ca7975c53f61c8f5175aee81",
-                "reference": "262f0d13f1c905a6ca7975c53f61c8f5175aee81",
+                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/0d1547fab8bea9218875c6ed4e5fc3d300a24f33",
+                "reference": "0d1547fab8bea9218875c6ed4e5fc3d300a24f33",
                 "shasum": ""
             },
             "require": {
@@ -3705,7 +3707,7 @@
                 "source": "https://github.com/cartalyst/platform-users/tree/master",
                 "issues": "https://github.com/cartalyst/platform-users/issues"
             },
-            "time": "2013-08-13 02:00:18"
+            "time": "2013-08-13 19:26:09"
         },
         {
             "name": "predis/predis",
@@ -4461,12 +4463,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpKernel.git",
-                "reference": "aa1d06d1de95e9132c32ff2d220156247287dd89"
+                "reference": "4d44f520287ee19646dc5fb4eaecce86b06ab052"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/aa1d06d1de95e9132c32ff2d220156247287dd89",
-                "reference": "aa1d06d1de95e9132c32ff2d220156247287dd89",
+                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/4d44f520287ee19646dc5fb4eaecce86b06ab052",
+                "reference": "4d44f520287ee19646dc5fb4eaecce86b06ab052",
                 "shasum": ""
             },
             "require": {
@@ -4523,7 +4525,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "http://symfony.com",
-            "time": "2013-08-11 17:29:22"
+            "time": "2013-08-13 20:18:00"
         },
         {
             "name": "symfony/process",
@@ -4532,12 +4534,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Process.git",
-                "reference": "24edc6eb5d4da198f88637ca8b09d2c6257051ea"
+                "reference": "3f807d3604c456389da15988d404cecb35e23edc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Process/zipball/24edc6eb5d4da198f88637ca8b09d2c6257051ea",
-                "reference": "24edc6eb5d4da198f88637ca8b09d2c6257051ea",
+                "url": "https://api.github.com/repos/symfony/Process/zipball/3f807d3604c456389da15988d404cecb35e23edc",
+                "reference": "3f807d3604c456389da15988d404cecb35e23edc",
                 "shasum": ""
             },
             "require": {
@@ -4570,7 +4572,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "http://symfony.com",
-            "time": "2013-08-08 12:56:07"
+            "time": "2013-08-13 20:18:00"
         },
         {
             "name": "symfony/routing",
@@ -4579,12 +4581,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Routing.git",
-                "reference": "v2.3.3"
+                "reference": "023071a9ab677d0a8f1732dec970529cfa45fe3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Routing/zipball/v2.3.3",
-                "reference": "v2.3.3",
+                "url": "https://api.github.com/repos/symfony/Routing/zipball/023071a9ab677d0a8f1732dec970529cfa45fe3d",
+                "reference": "023071a9ab677d0a8f1732dec970529cfa45fe3d",
                 "shasum": ""
             },
             "require": {
@@ -4628,7 +4630,7 @@
             ],
             "description": "Symfony Routing Component",
             "homepage": "http://symfony.com",
-            "time": "2013-08-02 20:53:38"
+            "time": "2013-08-13 20:18:00"
         },
         {
             "name": "symfony/translation",
