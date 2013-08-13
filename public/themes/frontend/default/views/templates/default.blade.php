@@ -20,9 +20,7 @@
 
 		{{ Asset::queue('modernizr', 'js/modernizr/modernizr.js') }}
 		{{ Asset::queue('jquery', 'js/jquery/jquery.js') }}
-		{{ Asset::queue('helpers', 'js/platform/helpers.js', array('jquery')) }}
-		{{ Asset::queue('plugins', 'js/plugins.js', array('jquery')) }}
-		{{ Asset::queue('script', 'js/script.js', array('jquery')) }}
+		{{ Asset::queue('platform', 'js/platform/platform.js', array('jquery')) }}
 		{{ Asset::queue('collapse', 'js/bootstrap/collapse.js', array('jquery')) }}
 
 		{{-- HTML5 shim, for IE6-8 support of HTML5 elements --}}
