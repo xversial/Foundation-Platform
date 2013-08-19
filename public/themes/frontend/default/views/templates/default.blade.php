@@ -22,6 +22,7 @@
 		{{ Asset::queue('jquery', 'js/jquery/jquery.js') }}
 		{{ Asset::queue('platform', 'js/platform/platform.js', array('jquery')) }}
 		{{ Asset::queue('collapse', 'js/bootstrap/collapse.js', array('jquery')) }}
+		{{ Asset::queue('collapse', 'js/bootstrap/dropdown.js', array('jquery')) }}
 
 		{{-- HTML5 shim, for IE6-8 support of HTML5 elements --}}
 		<!--[if lt IE 9]>
@@ -50,7 +51,7 @@
 		<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
 		<![endif]-->
 
-		<div class="navbar navbar navbar-fixed-top">
+		<div class="navbar navbar-fixed-top">
 			<div class="navbar-inner">
 				<div class="container">
 					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -62,7 +63,7 @@
 					<a class="brand" href="{{ URL::to('/') }}">@setting('platform.site.title')</a>
 
 					<div class="nav-collapse collapse">
-						@widget('platform/menus::nav.show', array('main', 1, 'nav'))
+						@widget('platform/menus::nav.show', array('main', 0, 'nav'))
 					</div>
 				</div>
 			</div>
