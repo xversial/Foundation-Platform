@@ -221,22 +221,21 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/composer-installers.git",
-                "reference": "1d825625ac55ca5717ee268544a7fed68e59538d"
+                "reference": "7bc6eedd092c7879c69f0a927f8697e8d2245a59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/composer-installers/zipball/1d825625ac55ca5717ee268544a7fed68e59538d",
-                "reference": "1d825625ac55ca5717ee268544a7fed68e59538d",
+                "url": "https://api.github.com/repos/cartalyst/composer-installers/zipball/7bc6eedd092c7879c69f0a927f8697e8d2245a59",
+                "reference": "7bc6eedd092c7879c69f0a927f8697e8d2245a59",
                 "shasum": ""
             },
             "require": {
-                "composer-plugin-api": "1.0.0",
                 "php": ">=5.3.0"
             },
             "require-dev": {
                 "mockery/mockery": "0.7.2"
             },
-            "type": "composer-installer",
+            "type": "composer-plugin",
             "extra": {
                 "branch-alias": {
                     "dev-master": "1.0-dev"
@@ -268,7 +267,7 @@
                 "source": "https://github.com/cartalyst/composer-installers/tree/1.0",
                 "issues": "https://github.com/cartalyst/composer-installers/issues"
             },
-            "time": "2013-09-06 22:56:00"
+            "time": "2013-09-08 00:21:59"
         },
         {
             "name": "cartalyst/composite-config",
@@ -1534,12 +1533,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "b4c7860e0c5a8d13598ca34d156533300b0dacf0"
+                "reference": "67c8d7ea5dfe93b758d21c9bcb1e7a831b3a9e54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/b4c7860e0c5a8d13598ca34d156533300b0dacf0",
-                "reference": "b4c7860e0c5a8d13598ca34d156533300b0dacf0",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/67c8d7ea5dfe93b758d21c9bcb1e7a831b3a9e54",
+                "reference": "67c8d7ea5dfe93b758d21c9bcb1e7a831b3a9e54",
                 "shasum": ""
             },
             "require": {
@@ -1553,7 +1552,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4.x-dev"
+                    "dev-master": "2.5.x-dev"
                 }
             },
             "autoload": {
@@ -1585,7 +1584,7 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -1600,39 +1599,34 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2013-08-20 18:10:31"
+            "time": "2013-09-07 10:21:05"
         },
         {
             "name": "doctrine/dbal",
-            "version": "dev-master",
+            "version": "2.4.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "642245644392f3b9c34c75af57d322a81317becb"
+                "reference": "956149287e6ff274a161d975cabb0525e99b7773"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/642245644392f3b9c34c75af57d322a81317becb",
-                "reference": "642245644392f3b9c34c75af57d322a81317becb",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/956149287e6ff274a161d975cabb0525e99b7773",
+                "reference": "956149287e6ff274a161d975cabb0525e99b7773",
                 "shasum": ""
             },
             "require": {
-                "doctrine/common": "2.4.*@beta",
+                "doctrine/common": "~2.4",
                 "php": ">=5.3.2"
             },
             "require-dev": {
                 "phpunit/phpunit": "3.7.*",
-                "symfony/console": "2.*"
+                "symfony/console": "~2.0"
             },
             "suggest": {
                 "symfony/console": "Allows use of the command line interface"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.4.x-dev"
-                }
-            },
             "autoload": {
                 "psr-0": {
                     "Doctrine\\DBAL\\": "lib/"
@@ -1670,7 +1664,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2013-09-06 21:43:44"
+            "time": "2013-09-07 10:49:19"
         },
         {
             "name": "doctrine/inflector",
@@ -1854,12 +1848,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "40602780fcc40ceddef43216334da6ad0ddb7ff3"
+                "reference": "ea73e03d8235b7b5cb9baac583af1a2803ab7ae9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/40602780fcc40ceddef43216334da6ad0ddb7ff3",
-                "reference": "40602780fcc40ceddef43216334da6ad0ddb7ff3",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/ea73e03d8235b7b5cb9baac583af1a2803ab7ae9",
+                "reference": "ea73e03d8235b7b5cb9baac583af1a2803ab7ae9",
                 "shasum": ""
             },
             "require": {
@@ -1938,7 +1932,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2013-08-29 20:54:09"
+            "time": "2013-09-07 19:53:53"
         },
         {
             "name": "herrera-io/json",
@@ -2156,12 +2150,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/justinrainbow/json-schema.git",
-                "reference": "ed06b67e0824e1f7c464af23f127cfb3d8290288"
+                "reference": "6d6da001df4b51e73823b72143c421e66bf7f333"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/ed06b67e0824e1f7c464af23f127cfb3d8290288",
-                "reference": "ed06b67e0824e1f7c464af23f127cfb3d8290288",
+                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/6d6da001df4b51e73823b72143c421e66bf7f333",
+                "reference": "6d6da001df4b51e73823b72143c421e66bf7f333",
                 "shasum": ""
             },
             "require": {
@@ -2215,7 +2209,7 @@
                 "json",
                 "schema"
             ],
-            "time": "2013-08-16 16:44:41"
+            "time": "2013-09-07 22:20:34"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -2294,12 +2288,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "307dcc142d65c71caf54d0192790dc1cfc78749f"
+                "reference": "0802bde2ef554517f71c869b71caf8b340847d0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/307dcc142d65c71caf54d0192790dc1cfc78749f",
-                "reference": "307dcc142d65c71caf54d0192790dc1cfc78749f",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/0802bde2ef554517f71c869b71caf8b340847d0d",
+                "reference": "0802bde2ef554517f71c869b71caf8b340847d0d",
                 "shasum": ""
             },
             "require": {
@@ -2398,7 +2392,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-08-31 21:50:30"
+            "time": "2013-09-07 05:09:22"
         },
         {
             "name": "leafo/lessphp",
@@ -4372,12 +4366,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpFoundation.git",
-                "reference": "cd7b96d5777a742e178fb58059ab70d794b5b351"
+                "reference": "d9a6b4b517463f3804282fc053a5046637d52fe8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/cd7b96d5777a742e178fb58059ab70d794b5b351",
-                "reference": "cd7b96d5777a742e178fb58059ab70d794b5b351",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/d9a6b4b517463f3804282fc053a5046637d52fe8",
+                "reference": "d9a6b4b517463f3804282fc053a5046637d52fe8",
                 "shasum": ""
             },
             "require": {
@@ -4413,7 +4407,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "http://symfony.com",
-            "time": "2013-08-29 19:32:30"
+            "time": "2013-09-07 16:30:19"
         },
         {
             "name": "symfony/http-kernel",
@@ -4493,12 +4487,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Process.git",
-                "reference": "6e3b487a74ce7dcab6af34e14afcb9d438d69327"
+                "reference": "501b64b92040c1331339d8a4efe0e06f81dd889e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Process/zipball/6e3b487a74ce7dcab6af34e14afcb9d438d69327",
-                "reference": "6e3b487a74ce7dcab6af34e14afcb9d438d69327",
+                "url": "https://api.github.com/repos/symfony/Process/zipball/501b64b92040c1331339d8a4efe0e06f81dd889e",
+                "reference": "501b64b92040c1331339d8a4efe0e06f81dd889e",
                 "shasum": ""
             },
             "require": {
@@ -4531,7 +4525,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "http://symfony.com",
-            "time": "2013-08-30 13:10:46"
+            "time": "2013-09-07 16:30:19"
         },
         {
             "name": "symfony/routing",
