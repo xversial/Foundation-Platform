@@ -11,7 +11,7 @@
  * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
  *
  * @package    Sentry
- * @version    2.0.0
+ * @version    3.0.0
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
  * @copyright  (c) 2011 - 2013, Cartalyst LLC
@@ -22,119 +22,137 @@ return array(
 
 	/*
 	|--------------------------------------------------------------------------
-	| Service Connections
+	| Connections
 	|--------------------------------------------------------------------------
 	|
-	| Here, you may specify any number of connection configurations your
-	| application requires.
+	| Connections are simple. Each key is a unique slug for the connection. Use
+	| anything, just make it unique. This is how you reference it in Sentry
+	| Social. Each slug requires a driver, which must match a valid inbuilt
+	| driver or may match your own custom class name that inherits from a
+	| valid base driver.
 	|
-	| Each connection must specify the following:
-	| 1. "service" - a valid authentication type (optional). Valid types are:
-	|    (OAuth 1): "fitbit", "twitter"
-	|    (OAuth 2): "bitly", "facebook", "foursquare", "github", "google",
-	|               "microsoft", "soundcloud", "yammer".
-	|    If the "service" key is not specified, we will use the array key for
-	|    the configuration to guess the type. This allows for convenience
-	|    as well as multiple configurations with the same "service".
-	|    We plan on adding support for more providers in the future.
-	| 2. "name" - a human-friendly name (optional).
-	| 3. "key" - your application's key.
-	| 4. "secret" - your application's secret.
+	| Make sure each connection contains an "identifier" and a "secret". Thse
+	| are also known as "key" and "secret", "app id" and "app secret"
+	| depending on the service. We're using "identifier" and
+	| "secret" for consistency.
 	|
-	| OAuth2 providers can also provide the following:
-	| 1. "scopes" - an array of scopes you are requesting access to (optional).
+	| OAuth2 providers may contain an optional "scopes" array, which is a
+	| list of scopes you're requesting from the user for that connection.
 	|
-	| All connections are optional, feel free to replace with
-	| your own at will.
+	| You may use multiple connections with the same driver!
 	|
 	*/
 
 	'connections' => array(
 
-		'bitly' => array(
-			'name'   => 'bitly',
-			'key'    => '',
-			'secret' => '',
-			'scopes' => array(),
-		),
-
 		'facebook' => array(
-			'name'   => 'Facebook',
-			'key'    => '',
-			'secret' => '',
-			'scopes' => array('email'),
-		),
-
-		'fitbit' => array(
-			'name'   => 'Fitbit',
-			'key'    => '',
-			'secret' => '',
-		),
-
-		'foursquare' => array(
-			'name'   => 'Foursquare',
-			'key'    => '',
-			'secret' => '',
-			'scopes' => array(),
+			'driver'     => 'Facebook',
+			'identifier' => '',
+			'secret'     => '',
+			'scopes'     => array('email'),
 		),
 
 		'github' => array(
-			'name'   => 'GitHub',
-			'key'    => '',
-			'secret' => '',
-			'scopes' => array('user'),
+			'driver'     => 'GitHub',
+			'identifier' => '',
+			'secret'     => '',
+			'scopes'     => array('user'),
 		),
 
 		'google' => array(
-			'name'   => 'Google',
-			'key'    => '',
-			'secret' => '',
-			'scopes' => array('userinfo_profile', 'userinfo_email'),
+			'driver'     => 'Google',
+			'identifier' => '',
+			'secret'     => '',
+			'scopes'     => array(
+				'https://www.googleapis.com/auth/userinfo.profile',
+				'https://www.googleapis.com/auth/userinfo.email',
+			),
 		),
 
 		'microsoft' => array(
-			'name'   => 'Microsoft',
-			'key'    => '',
-			'secret' => '',
-			'scopes' => array('emails'),
-		),
-
-		'soundcloud' => array(
-			'name'   => 'SoundCloud',
-			'key'    => '',
-			'secret' => '',
-			'scopes' => array(),
+			'driver'     => 'Microsoft',
+			'identifier' => '',
+			'secret'     => '',
+			'scopes'     => array('wl.basic', 'wl.emails'),
 		),
 
 		'twitter' => array(
-			'name'   => 'Twitter',
-			'key'    => '',
-			'secret' => '',
+			'driver'     => 'Twitter',
+			'identifier' => '',
+			'secret'     => '',
 		),
 
-		'yammer' => array(
-			'name'   => 'Yammer',
-			'key'    => '',
-			'secret' => '',
-			'scopes' => array(),
+		'tumblr' => array(
+			'driver'     => 'Tumblr',
+			'identifier' => '',
+			'secret'     => '',
 		),
-
-		/*
-		// Example of using a different key to the "service"
-		// "service" used. This allows for multiple
-		// configurations for the one service. You would
-		// call SentrySocial::make('secondary'); to make this
-		// service.
-		'secondary' => array(
-			'service' => 'google',
-			'name'    => 'Google 2',
-			'key'     => '',
-			'secret'  => '',
-			'scopes'  => array('userinfo_email', 'userinfo_profile'),
-		),
-		*/
 
 	),
+
+	/*
+	|--------------------------------------------------------------------------
+	| Coming Soon
+	|--------------------------------------------------------------------------
+	|
+	| The below connections are coming very soon. We're in the process of
+	| adding the requirements to the underlying OAuth packages,
+	| league/oauth1-client and league/oauth2-client. The
+	| requirements we're adding are UID, email and
+	| scren name fetching. As soon as they're
+	| added, these drivers will be
+	| available.
+	|
+	*/
+
+		// 'bitly' => array(
+		// 	'driver'     => 'bitly',
+		// 	'identifier' => '',
+		// 	'secret'     => '',
+		// 	'scopes'     => array(),
+		// ),
+
+		// 'fitbit' => array(
+		// 	'driver'     => 'Fitbit',
+		// 	'identifier' => '',
+		// 	'secret'     => '',
+		// ),
+
+		// 'foursquare' => array(
+		// 	'driver'     => 'Foursquare',
+		// 	'identifier' => '',
+		// 	'secret'     => '',
+		// 	'scopes'     => array(),
+		// ),
+
+		// 'soundcloud' => array(
+		// 	'driver'     => 'SoundCloud',
+		// 	'identifier' => '',
+		// 	'secret'     => '',
+		// 	'scopes'     => array(),
+		// ),
+
+
+		// 'yammer' => array(
+		// 	'driver'     => 'Yammer',
+		// 	'identifier' => '',
+		// 	'secret'     => '',
+		// 	'scopes'     => array(),
+		// ),
+
+		// 'vkontakte' => array(
+		// 	'driver'     => 'Vkontakte',
+		// 	'identifier' => '',
+		// 	'secret'     => '',
+		// 	'scopes'     => array(),
+		// ),
+
+		// 'linkedin' => array(
+		// 	'driver'     => 'LinkedIn',
+		// 	'identifier' => '',
+		// 	'secret'     => '',
+		// 	'scopes'     => array('r_fullprofile', 'r_emailaddress'),
+		// ),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -145,9 +163,8 @@ return array(
 	| authentications with user instances. Feel free to use your own model
 	| with our provider.
 	|
-	|
 	*/
 
-	'link' => 'Cartalyst\SentrySocial\SocialLinks\Eloquent\SocialLink',
+	'link' => 'Cartalyst\SentrySocial\Links\Eloquent\Link',
 
 );
