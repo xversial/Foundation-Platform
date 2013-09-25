@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "3d2f2fb1bc2fa80db835928a84c80b97",
+    "hash": "20dfa29f9a5e3dc2ff4f0f318d010f8f",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -291,12 +291,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/composite-config.git",
-                "reference": "f166addce52adf310d1796b057f69d6985375518"
+                "reference": "c4d29f68a0090d93553873a83d2b4a90a1a83bd5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/composite-config/zipball/f166addce52adf310d1796b057f69d6985375518",
-                "reference": "f166addce52adf310d1796b057f69d6985375518",
+                "url": "https://api.github.com/repos/cartalyst/composite-config/zipball/c4d29f68a0090d93553873a83d2b4a90a1a83bd5",
+                "reference": "c4d29f68a0090d93553873a83d2b4a90a1a83bd5",
                 "shasum": ""
             },
             "require": {
@@ -309,6 +309,7 @@
             },
             "type": "library",
             "extra": {
+                "component": "package",
                 "branch-alias": {
                     "dev-master": "1.0-dev"
                 }
@@ -341,7 +342,7 @@
                 "source": "https://github.com/cartalyst/composite-config/tree/1.0",
                 "issues": "https://github.com/cartalyst/composite-config/issues"
             },
-            "time": "2013-07-04 01:19:37"
+            "time": "2013-09-25 19:49:58"
         },
         {
             "name": "cartalyst/data-grid",
@@ -925,12 +926,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/themes.git",
-                "reference": "dc3649d4c317d671358dd988b5e232b353095746"
+                "reference": "8f99af2479f1a0cff87645b2842258b95a7c89b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/themes/zipball/dc3649d4c317d671358dd988b5e232b353095746",
-                "reference": "dc3649d4c317d671358dd988b5e232b353095746",
+                "url": "https://api.github.com/repos/cartalyst/themes/zipball/8f99af2479f1a0cff87645b2842258b95a7c89b2",
+                "reference": "8f99af2479f1a0cff87645b2842258b95a7c89b2",
                 "shasum": ""
             },
             "require": {
@@ -1013,7 +1014,7 @@
                 "source": "https://github.com/cartalyst/themes/tree/2.0",
                 "issues": "https://github.com/cartalyst/themes/issues"
             },
-            "time": "2013-08-23 22:32:41"
+            "time": "2013-09-25 20:58:00"
         },
         {
             "name": "cartalyst/widgets",
