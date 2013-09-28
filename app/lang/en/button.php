@@ -31,6 +31,8 @@ return array(
 	|
 	*/
 
+	'add'       => 'Add',
+	'remove'    => 'Remove',
 	'cancel'    => 'Cancel',
 	'delete'    => 'Delete',
 	'edit'      => 'Edit',
