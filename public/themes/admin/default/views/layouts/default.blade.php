@@ -58,7 +58,7 @@
 			<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
 			<![endif]-->
 
-			<nav class="navbar navbar-default" role="navigation">
+			<nav class="navbar navbar-default navbar-static-top" role="navigation">
 				<div class="container">
 
 					<!-- Brand and toggle get grouped for better mobile display -->

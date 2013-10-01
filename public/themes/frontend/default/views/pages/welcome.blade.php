@@ -17,9 +17,13 @@
 
 	<div class="container">
 
-		<img src="{{ Asset::getUrl('img/brand-logo.png') }}" alt="Platform 2 Logo" />
+		<div class="text-center">
 
-		@content('synopsis')
+			<img src="{{ Asset::getUrl('img/brand-logo.png') }}" alt="Platform 2 Logo" />
+
+			@content('synopsis')
+
+		</div>
 
 	</div>
 
