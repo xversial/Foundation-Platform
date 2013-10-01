@@ -18,6 +18,7 @@
 		{{-- Queue template assets --}}
 		{{-- Workaround, until the LESS PHP Compiler get's update FFS! --}}
 		{{ Asset::queue('bootstrap', 'css/bootstrap/bootstrap.css') }}
+		{{ Asset::queue('font-awesome', 'css/font-awesome/font-awesome.css') }}
 		{{ Asset::queue('style', 'css/style.css') }}
 		{{-- Asset::queue('style', 'less/style.less') --}}
 
