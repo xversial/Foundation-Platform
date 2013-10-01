@@ -691,7 +691,7 @@ if (!String.prototype.slugify) {
 
 				// permitted by default but can be overridden
 				'-': '-',
-				'_': '_'
+				'_': '-'
 			};
 
 		// add any user-defined separator elements
