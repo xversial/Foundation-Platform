@@ -1,4 +1,4 @@
-@extends('templates/default')
+@extends('layouts/default')
 
 {{-- Page title --}}
 @section('title')
@@ -12,17 +12,27 @@
 
 {{-- Page content --}}
 @section('content')
-<div class="introduction hero-unit">
 
-	<img src="{{ Asset::getUrl('img/brand-logo.png') }}" alt="Platform 2 Logo" />
+<div class="jumbotron">
 
-	@content('synopsis')
+	<div class="container">
+
+		<img src="{{ Asset::getUrl('img/brand-logo.png') }}" alt="Platform 2 Logo" />
+
+		@content('synopsis')
+
+	</div>
 
 </div>
 
-<div class="featurettes row">
-	<div class="span4">@content('packages')</div>
-	<div class="span4">@content('extensions')</div>
-	<div class="span4">@content('themes')</div>
+<div class="row">
+
+	<div class="col-lg-4">@content('packages')</div>
+
+	<div class="col-lg-4">@content('extensions')</div>
+
+	<div class="col-lg-4">@content('themes')</div>
+
 </div>
+
 @stop

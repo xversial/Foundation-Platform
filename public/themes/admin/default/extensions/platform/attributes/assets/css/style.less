@@ -1,0 +1,46 @@
+.dragged {
+	position: absolute;
+	opacity: 0.5;
+	z-index: 2000;
+}
+
+/*
+tr.placeholder
+{
+	display: block;
+	background: purple;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+tr.placeholder:before
+{
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: 5px solid transparent;
+	border-left-color: purple;
+	margin-top: -5px;
+	left: -5px;
+	border-right: none;
+}*/
+
+body.dragging, body.dragging * {
+	cursor: move !important;
+}
+
+.dragged {
+	background: #ccc;
+	position: absolute;
+	opacity: 0.5;
+	z-index: 2000;
+}
+
+.placeholder {
+	background: #ccff00;
+	padding: 35px 5px;
+	clear: both;
+}
