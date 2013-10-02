@@ -27,11 +27,13 @@ return array(
 	'disabled' => 'Disabled',
 	'warning'  => 'Warning',
 
-	'delete_record' => 'You are about to delete this record, do you want to Continue?',
+	'delete_record' => 'You are about to delete this record, do you want to continue?',
 
 	'not_logged_in' => 'You are not logged in.',
 
 	// Search & Pagination
+	'showing'   => 'Showing',
+	'to'        => 'to',
 	'in'        => 'in',
 	'of'        => 'of',
 	'loading'   => 'Loading',
