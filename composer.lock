@@ -221,12 +221,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/attributes.git",
-                "reference": "a8c37bc1db3974eed1b7cfc2b3d1ddb7280e9c3f"
+                "reference": "63857afa6360778da6291734f2a14b85bd30044f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/attributes/zipball/a8c37bc1db3974eed1b7cfc2b3d1ddb7280e9c3f",
-                "reference": "a8c37bc1db3974eed1b7cfc2b3d1ddb7280e9c3f",
+                "url": "https://api.github.com/repos/cartalyst/attributes/zipball/63857afa6360778da6291734f2a14b85bd30044f",
+                "reference": "63857afa6360778da6291734f2a14b85bd30044f",
                 "shasum": ""
             },
             "require": {
@@ -281,7 +281,7 @@
                 "source": "https://github.com/cartalyst/attributes/tree/master",
                 "issues": "https://github.com/cartalyst/attributes/issues"
             },
-            "time": "2013-10-01 03:28:28"
+            "time": "2013-10-02 20:14:50"
         },
         {
             "name": "cartalyst/composer-installers",
@@ -801,12 +801,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cartalyst/sentry.git",
-                "reference": "3d9f047e0c817d1b07f8c3e197495c21a2b2d234"
+                "reference": "1cf86553c9cf707722b8514d968345d927715e9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/3d9f047e0c817d1b07f8c3e197495c21a2b2d234",
-                "reference": "3d9f047e0c817d1b07f8c3e197495c21a2b2d234",
+                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/1cf86553c9cf707722b8514d968345d927715e9b",
+                "reference": "1cf86553c9cf707722b8514d968345d927715e9b",
                 "shasum": ""
             },
             "require": {
@@ -895,7 +895,7 @@
                 "source": "https://github.com/cartalyst/sentry/tree/master",
                 "issues": "https://github.com/cartalyst/sentry/issues"
             },
-            "time": "2013-09-30 17:54:41"
+            "time": "2013-10-02 05:24:00"
         },
         {
             "name": "cartalyst/sentry-social",
@@ -1936,12 +1936,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "e024996037f14d72ce963074edd21600827a55cc"
+                "reference": "b170b028c6bb5799640e46c8803015b0f9a45ed9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/e024996037f14d72ce963074edd21600827a55cc",
-                "reference": "e024996037f14d72ce963074edd21600827a55cc",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/b170b028c6bb5799640e46c8803015b0f9a45ed9",
+                "reference": "b170b028c6bb5799640e46c8803015b0f9a45ed9",
                 "shasum": ""
             },
             "require": {
@@ -2020,7 +2020,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2013-10-01 17:27:14"
+            "time": "2013-10-02 20:47:00"
         },
         {
             "name": "herrera-io/json",
@@ -2236,6 +2236,54 @@
             "time": "2013-09-25 12:48:49"
         },
         {
+            "name": "jeremeamia/SuperClosure",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jeremeamia/super_closure.git",
+                "reference": "dba99c01800510c2d78a15d8579a49673072f270"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jeremeamia/super_closure/zipball/dba99c01800510c2d78a15d8579a49673072f270",
+                "reference": "dba99c01800510c2d78a15d8579a49673072f270",
+                "shasum": ""
+            },
+            "require": {
+                "nikic/php-parser": "dev-master",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Jeremeamia\\SuperClosure": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeremy Lindblom"
+                }
+            ],
+            "description": "Doing interesting things with closures like serialization and partial function application.",
+            "homepage": "https://github.com/jeremeamia/super_closure",
+            "keywords": [
+                "closure",
+                "function",
+                "parser",
+                "serializable",
+                "serialize",
+                "tokenizer"
+            ],
+            "time": "2013-06-14 07:20:08"
+        },
+        {
             "name": "justinrainbow/json-schema",
             "version": "dev-master",
             "source": {
@@ -2379,12 +2427,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "03f8744b71e45a6f53af243284eb5b3e99de3866"
+                "reference": "0955b7ec3164a92c51c336819dc0ffee513e32dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/03f8744b71e45a6f53af243284eb5b3e99de3866",
-                "reference": "03f8744b71e45a6f53af243284eb5b3e99de3866",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/0955b7ec3164a92c51c336819dc0ffee513e32dd",
+                "reference": "0955b7ec3164a92c51c336819dc0ffee513e32dd",
                 "shasum": ""
             },
             "require": {
@@ -2392,6 +2440,7 @@
                 "doctrine/dbal": "2.4.*",
                 "filp/whoops": "1.0.7",
                 "ircmaxell/password-compat": "1.0.*",
+                "jeremeamia/superclosure": "1.0.*",
                 "monolog/monolog": "1.6.*",
                 "nesbot/carbon": "1.*",
                 "patchwork/utf8": "1.1.*",
@@ -2483,7 +2532,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-10-01 22:00:06"
+            "time": "2013-10-02 20:48:15"
         },
         {
             "name": "leafo/lessphp",
@@ -2778,12 +2827,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "df90f919b73e2e848d767a372caf9ca036877bf6"
+                "reference": "4e85d2655135a045ae7e713413cab823a1f7334a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/df90f919b73e2e848d767a372caf9ca036877bf6",
-                "reference": "df90f919b73e2e848d767a372caf9ca036877bf6",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/4e85d2655135a045ae7e713413cab823a1f7334a",
+                "reference": "4e85d2655135a045ae7e713413cab823a1f7334a",
                 "shasum": ""
             },
             "require": {
@@ -2833,7 +2882,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2013-09-27 14:18:10"
+            "time": "2013-10-02 14:49:08"
         },
         {
             "name": "natxet/CssMin",
@@ -3217,12 +3266,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-content.git",
-                "reference": "57c3a4d469c97c3aeb8aacb91190a2a906f7dcac"
+                "reference": "e3b61f008c279ccaf04b60bce28d2bde0c789c6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/57c3a4d469c97c3aeb8aacb91190a2a906f7dcac",
-                "reference": "57c3a4d469c97c3aeb8aacb91190a2a906f7dcac",
+                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/e3b61f008c279ccaf04b60bce28d2bde0c789c6f",
+                "reference": "e3b61f008c279ccaf04b60bce28d2bde0c789c6f",
                 "shasum": ""
             },
             "require": {
@@ -3287,7 +3336,7 @@
                 "source": "https://github.com/cartalyst/platform-content/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-content/issues"
             },
-            "time": "2013-10-01 22:09:28"
+            "time": "2013-10-02 20:14:00"
         },
         {
             "name": "platform/foundation",
@@ -3462,12 +3511,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-menus.git",
-                "reference": "e3f2912150a00286858a5a6f197cb12263b3cc45"
+                "reference": "41afe90183cdc9e043e5c3967561384c08dfffea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/e3f2912150a00286858a5a6f197cb12263b3cc45",
-                "reference": "e3f2912150a00286858a5a6f197cb12263b3cc45",
+                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/41afe90183cdc9e043e5c3967561384c08dfffea",
+                "reference": "41afe90183cdc9e043e5c3967561384c08dfffea",
                 "shasum": ""
             },
             "require": {
@@ -3534,7 +3583,7 @@
                 "source": "https://github.com/cartalyst/platform-menus/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-menus/issues"
             },
-            "time": "2013-10-02 00:59:01"
+            "time": "2013-10-02 20:13:39"
         },
         {
             "name": "platform/operations",
@@ -3542,12 +3591,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-operations.git",
-                "reference": "446f0387cf70fc07224b3f8a657919ac6f5f3426"
+                "reference": "844da8a15c7d9fd78deb3e96ea5adbe111239264"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/446f0387cf70fc07224b3f8a657919ac6f5f3426",
-                "reference": "446f0387cf70fc07224b3f8a657919ac6f5f3426",
+                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/844da8a15c7d9fd78deb3e96ea5adbe111239264",
+                "reference": "844da8a15c7d9fd78deb3e96ea5adbe111239264",
                 "shasum": ""
             },
             "require": {
@@ -3613,7 +3662,7 @@
                 "source": "https://github.com/cartalyst/platform-operations/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-operations/issues"
             },
-            "time": "2013-10-02 04:00:36"
+            "time": "2013-10-02 19:15:59"
         },
         {
             "name": "platform/pages",
@@ -3621,12 +3670,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-pages.git",
-                "reference": "d1edb62f7fb34ef570585ec609f6a39f17bf4289"
+                "reference": "1814abbae1b1f01f4672d42f7577f9b038d0b632"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/d1edb62f7fb34ef570585ec609f6a39f17bf4289",
-                "reference": "d1edb62f7fb34ef570585ec609f6a39f17bf4289",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/1814abbae1b1f01f4672d42f7577f9b038d0b632",
+                "reference": "1814abbae1b1f01f4672d42f7577f9b038d0b632",
                 "shasum": ""
             },
             "require": {
@@ -3694,7 +3743,7 @@
                 "source": "https://github.com/cartalyst/platform-pages/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2013-10-01 22:09:42"
+            "time": "2013-10-02 20:14:13"
         },
         {
             "name": "platform/routing",
@@ -3862,12 +3911,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-users.git",
-                "reference": "ba63fdac70ac9271fe0877272eb5297c862f3734"
+                "reference": "58ac29a29aa15bd89e68c55fa4027a5a9a7da1b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/ba63fdac70ac9271fe0877272eb5297c862f3734",
-                "reference": "ba63fdac70ac9271fe0877272eb5297c862f3734",
+                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/58ac29a29aa15bd89e68c55fa4027a5a9a7da1b7",
+                "reference": "58ac29a29aa15bd89e68c55fa4027a5a9a7da1b7",
                 "shasum": ""
             },
             "require": {
@@ -3931,7 +3980,7 @@
                 "source": "https://github.com/cartalyst/platform-users/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-users/issues"
             },
-            "time": "2013-10-01 22:30:02"
+            "time": "2013-10-02 20:13:27"
         },
         {
             "name": "predis/predis",
