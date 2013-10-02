@@ -36,12 +36,13 @@
 		"platform/foundation": "1.0.*",
 		"platform/installer": "1.0.*",
 
-		"platform/content": "1.0.*",
-		"platform/menus": "1.0.*",
-		"platform/operations": "1.0.*",
-		"platform/pages": "1.0.*",
-		"platform/settings": "1.0.*",
-		"platform/users": "1.0.*"
+		"platform/attributes": "1.0.*",
+		"platform/content": "dev-develop",
+		"platform/menus": "dev-develop",
+		"platform/operations": "dev-develop",
+		"platform/pages": "dev-develop",
+		"platform/settings": "dev-develop",
+		"platform/users": "dev-develop"
 	},
 	"autoload": {
 		"classmap": [
