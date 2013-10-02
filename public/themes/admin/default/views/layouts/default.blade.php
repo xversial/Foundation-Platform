@@ -102,7 +102,7 @@
 
 				<span>
 					<a href="{{ URL::to('http://www.cartalyst.com/licence') }}" target="_blank">
-						Copyright &copy; 2013 Cartalyst LLC
+						Copyright &copy; 2011 - 2013 Cartalyst LLC
 					</a>
 				</span>
 
