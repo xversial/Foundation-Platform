@@ -55,7 +55,7 @@ You can also choose to download a zip file of your generated extension and insta
 
 Manually creating an extensions takes a bit more work. There are two required files for creating extensions: the `composer.json` file and the `extensions.php` file.
 
-See [requirements](/platform2/extensions#requirements) for more info.
+See [requirements](extensions#requirements) for more info.
 
 <a name="enabling-an-extension"></a>
 #### Enabling An Extension
@@ -69,7 +69,7 @@ Remember that you can always go back here to disable or uninstall your extension
 
 Widgets can be used to provide small pieces of views which can be easily re-used throughout your application or extension.
 
-If you want to register a small widget but don't want to create a class for it you can do it directly in the `extensions.php` file. 
+If you want to register a small widget but don't want to create a class for it you can do it directly in the `extensions.php` file.
 
 	'widgets' => array(
 		'foo' => function ()
@@ -84,4 +84,4 @@ If you'd like to create a separate class for the widget to have some extra funct
 		'foo' => 'My\Widget\Namespace\Foo@someMethod',
 	),
 
-For more info on creating widgets see [the widgets documentation](/platform2/usage/widgets).
+For more info on creating widgets see [the widgets documentation](usage/widgets).

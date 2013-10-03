@@ -11,4 +11,4 @@ Just like in a normal CMS you can add pages to your application. Platform 2 prov
 <a name="importing-content"></a>
 #### Importing Content
 
-You can import content pieces by using the `@content()` blade structure. This even works with the database type. See [Re-using Content](/platform2/usage/content#re-using-content) in the Content section about how to re-use content parts.
+You can import content pieces by using the `@content()` blade structure. This even works with the database type. See [Re-using Content](usage/content#re-using-content) in the Content section about how to re-use content parts.

@@ -1,10 +1,10 @@
 ## Usage
 
-- [Basics](/platform2/usage)
-- [Themes](/platform2/usage/themes)
-- [Users](/platform2/usage/users)
-- [Pages](/platform2/usage/pages)
-- [Content](/platform2/usage/content)
-- [Widgets](/platform2/usage/widgets)
-- [Hooks](/platform2/usage/hooks)
-- [Overrides](/platform2/usage/overrides)
+- [Basics](usage)
+- [Themes](usage/themes)
+- [Users](usage/users)
+- [Pages](usage/pages)
+- [Content](usage/content)
+- [Widgets](usage/widgets)
+- [Hooks](usage/hooks)
+- [Overrides](usage/overrides)
