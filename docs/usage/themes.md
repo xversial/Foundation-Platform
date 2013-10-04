@@ -1,16 +1,13 @@
-### Themes
+## Themes
 
-- [Introduction](#introduction)
 - [Creating Themes](#creating-themes)
 - [Theme Assets](#theme-assets)
 
-<a name="introduction"></a>
-#### Introduction
-
 Platform 2 uses [Cartalyst's Themes 2 package](http://docs.cartalyst.com/themes-2) for managing its themes. Because of re-using it, Platform 2 comes with all of the goodness of Themes 2 like asset queuing and compiling. In the documentation below you can find out how to create your own custom themes.
 
-<a name="creating-themes"></a>
-#### Creating Themes
+### Creating Themes {#creating-themes}
+
+---
 
 You can add different themes to Platform 2 to adjust the look and feel of your application. Themes are located in the `public/themes` directory. Platform 2 ships with 2 default themes: `frontend/default` and `admin/default`. These themes are namespaced in the same order as composer packages in order to prevent naming collisions.
 
@@ -28,8 +25,10 @@ After creating your theme, you can simply go into the Platform 2 settings and se
 
 > **Note:** please note that the slug you're adding in the `theme.json` file needs to be exactly the same as the theme's namespaced folder names.
 
-<a name="theme-assets"></a>
-#### Theme Assets
+
+### Theme Assets {#theme-assets}
+
+---
 
 Because Platform 2 uses Cartalyst's Themes 2 package it comes with all of the goodness for asset queuing and compiling. More info about using theme assets can be found in [the Themes 2 documentation](http://docs.cartalyst.com/themes-2).
 

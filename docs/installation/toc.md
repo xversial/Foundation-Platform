@@ -1,4 +1,4 @@
 ## Install & Configure
 
-- [Installation](/platform2/installation)
-- [Configuration](/platform2/installation/configuration)
+- [Installation](/manual/platform/installation)
+- [Configuration](/manual/platform/installation/configuration)

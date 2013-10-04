@@ -1,16 +1,13 @@
-### Configuration
+## Configuration
 
-- [Introduction](#introduction)
 - [Site](#site)
 - [Menus](#menus)
 
-<a name="introduction"></a>
-#### Introduction
-
 Platform 2 provides some configuration options for you which you can use throughout your site. You can find these options in the `app/config/platform.php` file.
 
-<a name="site"></a>
-#### Site
+### Site {#site}
+
+---
 
 **title**
 
@@ -28,7 +25,8 @@ An optional tagline for your application.
 
 The copyright notice for your application.
 
-<a name="menus"></a>
-#### Menus
+### Menus {#menus}
+
+---
 
 You can set menus for both the `frontend` and `admin` area of your application. By default the standard menus, when Platform 2 is first installed, are listed here.
