@@ -5,7 +5,7 @@
 - [Enabling An Extension](#enabling-an-extension)
 - [Registering Widgets](#registering-widgets)
 
-Because extensions are basically separates app folders there really is no limit to what you can build with them. You could write a media manager extension or a notification handler extension which you can re-use on different Platform 2 applications.
+Because extensions are basically separated app folders there really is no limit to what you can build with them. You could write a media manager extension or a notification handler extension which you can re-use on different Platform 2 applications.
 
 ### Using The Workshop Extension {#using-the-workshop-extension}
 
