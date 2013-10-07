@@ -10,7 +10,7 @@ extensions folder on your Platform 2 application.
 
 Extensions may also be part of your application's repo and not separate composer
 packages. They may sit under the extensions or the workbench folder. Be sure to
-adjust `extensions/.gitignore` file for your need.
+adjust `extensions/.gitignore` file for your own needs.
 
 An extension can hold views, controllers, migrations, models, languages files,
 anything you'd normally create in the Laravel 4 `app` directory. This gives
@@ -47,4 +47,4 @@ The `"type": "platform-extension"` will identify your package as a Platform 2 ex
 
 This file, which resides in the root of your extension folder is the configuration file for your extension. It defines info like the extension name, uri, version, etc. as well as the extension routes, menus, permissions, widgets, etc.
 
-For a detailed anatomy of the `extension.php` file, have a look at [configuring extensions](/platform2/extensions/configuring-extensions).
+For a detailed anatomy of the `extension.php` file, have a look at [configuring extensions](/manual/platform/extensions/configuring-extensions).

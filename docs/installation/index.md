@@ -15,9 +15,9 @@
 
 You can get Platform by cloning the repository from GitHub.
 
-	git clone git@github.com:cartalyst/platform2.git my-platform2-project
+	git clone git@github.com:cartalyst/platform.git my-platform-project
 
-Platform can also be installed by simply [downloading a copy from GitHub](https://github.com/cartalyst/platform2/archive/master.zip). After downloading, unzip the `.zip` file into a location that suits you.
+Platform can also be installed by simply [downloading a copy from GitHub](https://github.com/cartalyst/platform/archive/master.zip). After downloading, unzip the `.zip` file into a location that suits you.
 
 > Installing by cloning from the GitHub repository is the preferred method as this gives you an easy way to update Platform by merging changes from the original GitHub repository.
 
@@ -69,4 +69,10 @@ You should see the Platform installer when you navigate to the project in your b
 
 ---
 
-You may also choose to use your own installer by extending ours or completely replacing it. Platform is an application-base, and thus it is flexible. If you're distributing an app, you probably don't want a Platform installer for it, you probably want your own installer with your own custom logic. Just change the requirements in `composer.json` and register your own installer's service provider.
+You may also choose to use your own installer by extending ours or completely replacing it.
+
+Platform is an application-base, and thus it is flexible.
+
+If you're distributing an app, you probably don't want a Platform installer for it, you probably want your own installer with your own custom logic.
+
+Just change the requirements in `composer.json` and register your own installer's service provider.

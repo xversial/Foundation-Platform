@@ -15,7 +15,7 @@ The title for your Platform 2 application.
 
 **email**
 
-Your application's email address. This can be used by extensions to send emails.
+Your application's email address.
 
 **tagline**
 

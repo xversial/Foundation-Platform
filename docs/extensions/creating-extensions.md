@@ -5,7 +5,7 @@
 - [Enabling An Extension](#enabling-an-extension)
 - [Registering Widgets](#registering-widgets)
 
-Because extensions are basically separate app folders there really is no limit to what you can build with them. You could write a media manager extension or a notification handler extension which you can re-use on different Platform 2 applications.
+Because extensions are basically separates app folders there really is no limit to what you can build with them. You could write a media manager extension or a notification handler extension which you can re-use on different Platform 2 applications.
 
 ### Using The Workshop Extension {#using-the-workshop-extension}
 
@@ -13,7 +13,7 @@ Because extensions are basically separate app folders there really is no limit t
 
 The easiest way to get started with an extension is to create one though the Workshop extension. To get started browse to `admin/operations/workshop` in your Platform 2 back-end.
 
-You'll notice a series of input fields which will be needed to generate your extension files. We'll go over each of them.
+You'll notice a series of input fields which will be needed to generate your extension files. We'll go over each one of them.
 
 **Author name and email**
 
@@ -52,9 +52,9 @@ You can also choose to download a zip file of your generated extension and insta
 
 ---
 
-Manually creating an extensions takes a bit more work. There are two required files for creating extensions: the `composer.json` file and the `extensions.php` file.
+Manually creating an extensions takes a bit more work. There are two required files for creating extensions: the `composer.json` file and the `extension.php` file.
 
-See [requirements](/platform2/extensions#requirements) for more info.
+See [requirements](/manual/platform/extensions#requirements) for more info.
 
 
 ### Enabling An Extension {#enabling-an-extension}
@@ -72,7 +72,7 @@ Remember that you can always go back here to disable or uninstall your extension
 
 Widgets can be used to provide small pieces of views which can be easily re-used throughout your application or extension.
 
-If you want to register a small widget but don't want to create a class for it you can do it directly in the `extensions.php` file.
+If you want to register a small widget but don't want to create a class for it you can do it directly in the `extension.php` file.
 
 	'widgets' => array(
 		'foo' => function ()
@@ -81,10 +81,10 @@ If you want to register a small widget but don't want to create a class for it y
 		}
 	),
 
-If you'd like to create a separate class for the widget to have some extra functionality you can create a class in the `widgets` folder. By default, Platform 2 will register your widgets by using your class name as the widget key. You can override this by registering the widget in the `extensions.php` file.
+If you'd like to create a separate class for the widget to have some extra functionality you can create a class in the `widgets` folder. By default, Platform 2 will register your widgets by using your class name as the widget key. You can override this by registering the widget in the `extension.php` file.
 
 	'widgets' => array(
 		'foo' => 'My\Widget\Namespace\Foo@someMethod',
 	),
 
-For more info on creating widgets see [the widgets documentation](/platform2/usage/widgets).
+For more info on creating widgets see [the widgets documentation](/manual/platform/usage/widgets).

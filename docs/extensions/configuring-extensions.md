@@ -67,7 +67,7 @@ You should list here all the extensions this extension requires to work properly
 
 ---
 
-Here You can define your extension's autoloading logic. It may either be `composer`, `platform` or a Closure.
+Here you can define your extension's autoloading logic. It may either be `composer`, `platform` or a Closure.
 
 If composer is defined, your `composer.json` file specifies the autoloading logic.
 

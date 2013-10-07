@@ -1,4 +1,4 @@
-### Distributing Extensions
+## Distributing Extensions
 
 - [Public Extensions](#public-extensions)
 - [Private Extensions](#private-extensions)
@@ -11,7 +11,7 @@ If you'd like to distribute your extensions you can do so using [Composer](http:
 
 Distributing public extensions through Composer can be done in a lot of ways, the foremost being public Github repositories. By any means, every extension which is distributed through Composer requires a `composer.json` file. [Dayle Rees](https://twitter.com/daylerees) has written [a great article about using Composer for your packages](http://daylerees.com/composer-primer). It will get you started on how you can format your `composer.json` file.
 
-For the full requirements for a Platform 2 extension see the [Basic Usage](/platform2/extensions#requirements) chapter.
+For the full requirements for a Platform 2 extension see the [Basic Usage](/manual/platform/extensions#requirements) chapter.
 
 After creating your extension you can push it to Github and publish it on [packagist.org](https://packagist.org).
 

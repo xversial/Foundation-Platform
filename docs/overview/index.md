@@ -4,13 +4,19 @@
 - [Requirements](platform/overview#requirements)
 - [License](platform/overview#license)
 
-Cartalyst's Platform application provides a very flexible and extensible way of building your custom application. It gives you a basic installation to get you quick-started with content management, themeable views, application extensions and much more. Pretty much everything on Platform can be extended and overwritten so you can add your own functionality. Platform is not just another CMS, it's a starting point for you to build your application providing the tools you need to get the job done as easy as possible.
+Cartalyst's Platform application provides a very flexible and extensible way of building your custom application.
+
+It gives you a basic installation to get you quick-started with content management, themeable views, application extensions and much more.
+
+Pretty much everything on Platform can be extended and overwritten so you can add your own functionality.
+
+Platform is not just another CMS, it's a starting point for you to build your application providing the tools you need to get the job done as easy as possible.
 
 ### Flexibility
 
 ---
 
-The main goal of Platform was flexibility. Platform aims to be as unobtrusive
+The main goal of Platform is flexibility. Platform aims to be as unobtrusive
 to your application as possible, while providing all the features to make it
 awesome and **save you time**. The `app` folder is almost identical to a
 stock-standard Laravel 4 `app` folder, with a few registered service
@@ -27,7 +33,7 @@ Utilize our API, data and extensions where you need, they won't get in your way.
 
 ---
 
-Platform was made to be even more extendable than Platform 1. A number of key files to get you off the ground with extending Platform are:
+Platform 2 was made to be even more extendable than Platform 1. A number of key files to get you off the ground with extending Platform are:
 
  - `app/hooks.php`
  - `app/functions.php`
@@ -41,7 +47,7 @@ These files provide a number of templates and boilerplate code for you to overri
 
 - Authentication & Authorization
 - Social Authentication (OAuth, OAuth 2)
-- Twitter Bootstrap 2.3.1 Ready
+- Twitter Bootstrap 3.0.0 Ready
 - Frontend/Backend/Custom Themes
 - User/Group management + permissions
 - Content Management
@@ -51,7 +57,7 @@ These files provide a number of templates and boilerplate code for you to overri
 - Dashboard
 - Extension manager
 - Localisation
-- Developer Tools (extension & theme creator)
+- Developer Tools (extension creator)
 - Powerful Extension System
 - Widgets
 - Plugins
