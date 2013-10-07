@@ -1,8 +1,8 @@
 ## Introduction
 
-- [Features](platform/overview#features)
-- [Requirements](platform/overview#requirements)
-- [License](platform/overview#license)
+- [Features](#features)
+- [Requirements](#requirements)
+- [License](#license)
 
 Cartalyst's Platform application provides a very flexible and extensible way of building your custom application.
 
