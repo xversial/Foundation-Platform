@@ -76,4 +76,4 @@ To use Cartalyst's Platform application you need to have a valid Cartalyst.com s
 
 ---
 
-Cartalyst's Platform application is licensed under [the BSD 3-Clause license](/manual/platform/overview/license).
+Cartalyst's Platform application is licensed under [the BSD 3-Clause license]({url}/overview/license).

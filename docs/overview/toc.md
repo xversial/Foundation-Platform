@@ -1,3 +1,3 @@
 ## Overview
 
-- [Introduction](/manual/platform/overview#introduction)
+- [Introduction]({url}/overview#introduction)

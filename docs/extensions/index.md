@@ -47,4 +47,4 @@ The `"type": "platform-extension"` will identify your package as a Platform 2 ex
 
 This file, which resides in the root of your extension folder is the configuration file for your extension. It defines info like the extension name, uri, version, etc. as well as the extension routes, menus, permissions, widgets, etc.
 
-For a detailed anatomy of the `extension.php` file, have a look at [configuring extensions](/manual/platform/extensions/configuring-extensions).
+For a detailed anatomy of the `extension.php` file, have a look at [configuring extensions]({url}/extensions/configuring-extensions).
