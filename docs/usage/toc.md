@@ -1,10 +1,10 @@
 ## Usage
 
-- [Basics](usage)
-- [Themes](usage/themes)
-- [Users](usage/users)
-- [Pages](usage/pages)
-- [Content](usage/content)
-- [Widgets](usage/widgets)
-- [Hooks](usage/hooks)
-- [Overrides](usage/overrides)
+- [Basics](/manual/platform/usage)
+- [Themes](/manual/platform/usage/themes)
+- [Users](/manual/platform/usage/users)
+- [Pages](/manual/platform/usage/pages)
+- [Content](/manual/platform/usage/content)
+- [Widgets](/manual/platform/usage/widgets)
+- [Hooks](/manual/platform/usage/hooks)
+- [Overrides](/manual/platform/usage/overrides)

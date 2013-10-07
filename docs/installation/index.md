@@ -1,67 +1,78 @@
-### Install & Configure Platform 2
+## Install & Configure Platform
 
-> **Note:** To use Cartalyst's Platform 2 application you need to have a valid Cartalyst.com subscription.
-Click [here](https://www.cartalyst.com/pricing) to obtain your subscription.
+* [Get Platform](#get-platform)
+* [Composer](#composer)
+* [Configure Laravel](#configure-laravel)
+* [Permissions](#permissions)
+* [Trusted IPs](#trusted-ips)
+* [The CLI Installer](#the-cli-installer)
+* [The Browser Installer](#the-browser-installer)
+* [Custom Installer](#custom-installer)
 
-1. [Get Platform 2](#get-platform-2)
-2. [Composer](#composer)
-3. [Configure Laravel](#configure-laravel)
-4. [Permissions](#permissions)
-5. [Trusted IPs](#trusted-ips)
-6. [The CLI Installer](#the-cli-installer)
-7. [The Browser Installer](#the-browser-installer)
-8. [Custom Installer](#custom-installer)
+### Get Platform {#get-platform}
 
-<a name="get-platform-2"></a>
-#### 1. Get Platform 2
+---
 
-You can get Platform 2 by cloning the repository from GitHub.
+You can get Platform by cloning the repository from GitHub.
 
-	git clone git@github.com:cartalyst/platform2.git my-platform2-project
+	git clone git@github.com:cartalyst/platform.git my-platform-project
 
-Platform 2 can also be installed by simply [downloading a copy from GitHub](https://github.com/cartalyst/platform2/archive/master.zip). After downloading, unzip the `.zip` file into a location that suits you.
+Platform can also be installed by simply [downloading a copy from GitHub](https://github.com/cartalyst/platform/archive/master.zip). After downloading, unzip the `.zip` file into a location that suits you.
 
-> **Note:** Installing by cloning from the GitHub repository is the preferred method as this gives you an easy way to update Platform 2 by merging changes from the original GitHub repository.
+> Installing by cloning from the GitHub repository is the preferred method as this gives you an easy way to update Platform by merging changes from the original GitHub repository.
 
-<a name="composer"></a>
-#### 2. Composer
+### Composer {#composer}
 
-After getting Platform 2, you can install all of Platform 2's dependencies by running a composer install command in your CLI. Navigate to your Platform 2 folder and run the following command:
+---
+
+After getting Platform, you can install all of Platform's dependencies by running a composer install command in your CLI. Navigate to your Platform folder and run the following command:
 
 	composer install
 
-<a name="configure-laravel"></a>
-#### 3. Configure Laravel
+### Configure Laravel {#configure-laravel}
 
-Before you can get started with Platform 2, you'll still have to configure the Laravel 4 framework. Platform 2 is built with Laravel 4 so some configuration is necessary. Please follow all steps detailed in [the Laravel 4 configuration documentation](http://laravel.com/docs/installation#configuration).
+---
 
-<a name="permissions"></a>
-#### 4. Permissions
+Before you can get started with Platform, you'll still have to configure the Laravel 4 framework. Platform is built with Laravel 4 so some configuration is necessary. Please follow all steps detailed in [the Laravel 4 configuration documentation](http://laravel.com/docs/installation#configuration).
 
-Platform 2 requires the following folders to have write access by the web server:
+### Permissions {#permissions}
 
-- The `app/config` folder (necessary for writing the Platform 2 config files)
+---
+
+Platform requires the following folders to have write access by the web server:
+
+- The `app/config` folder (necessary for writing the Platform config files)
 - The `public/assets` folder and its contents
 - The `app/storage` folder and its contents
 
-<a name="trusted-ips"></a>
-#### 5. Trusted IPs
+### Trusted IPs {#trusted-ips}
+
+---
 
 If you aren't installing on your localhost you can add trusted IP's to the installer's config file in `app\config\packages\platform\installer\config.php`.
 
-<a name="the-cli-installer"></a>
-#### 6. The CLI Installer
+### The CLI Installer {#the-cli-installer}
 
-The easiest way to install Platform 2 is to run the CLI installer. Just run the following command and follow all of the steps.
+---
+
+The easiest way to install Platform is to run the CLI installer. Just run the following command and follow all of the steps.
 
 	php artisan platform:install
 
-<a name="the-browser-installer"></a>
-#### 7. The Browser Installer
+### The Browser Installer {#browser-installer}
 
-You should see the Platform 2 installer when you navigate to the project in your browser. Follow the on screen instructions.
+---
 
-<a name="custom-installer"></a>
-#### 8. Custom Installer
+You should see the Platform installer when you navigate to the project in your browser. Follow the on screen instructions.
 
-You may also choose to use your own installer by extending ours or completely replacing it. Platform 2 is an application-base, and thus it is flexible. If you're distributing an app, you probably don't want a Platform installer for it, you probably want your own installer with your own custom logic. Just change the requirements in `composer.json` and register your own installer's service provider.
+### Custom Installer {#custom-installer}
+
+---
+
+You may also choose to use your own installer by extending ours or completely replacing it.
+
+Platform is an application-base, and thus it is flexible.
+
+If you're distributing an app, you probably don't want a Platform installer for it, you probably want your own installer with your own custom logic.
+
+Just change the requirements in `composer.json` and register your own installer's service provider.

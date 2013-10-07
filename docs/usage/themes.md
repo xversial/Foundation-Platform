@@ -1,20 +1,17 @@
-### Themes
+## Themes
 
-- [Introduction](#introduction)
 - [Creating Themes](#creating-themes)
 - [Theme Assets](#theme-assets)
 
-<a name="introduction"></a>
-#### Introduction
+Platform 2 uses [Cartalyst's Themes 2 package](http://cartalyst.com/manual/themes) for managing themes. Because of re-using it, Platform 2 comes with all of the goodness of Themes 2 like asset queuing and compiling. In the documentation below you can find out how to create your own custom themes.
 
-Platform 2 uses [Cartalyst's Themes 2 package](http://docs.cartalyst.com/themes-2) for managing its themes. Because of re-using it, Platform 2 comes with all of the goodness of Themes 2 like asset queuing and compiling. In the documentation below you can find out how to create your own custom themes.
+### Creating Themes {#creating-themes}
 
-<a name="creating-themes"></a>
-#### Creating Themes
+---
 
 You can add different themes to Platform 2 to adjust the look and feel of your application. Themes are located in the `public/themes` directory. Platform 2 ships with 2 default themes: `frontend/default` and `admin/default`. These themes are namespaced in the same order as composer packages in order to prevent naming collisions.
 
-You can add your own theme as long as it's namespaced in the following order: `area/my-own-themes`. The `area` being an area for your locations (for example: back-end, front-end, help center, etc...) and your theme name. Add a `theme.json` file with all the info for your theme. A basic theme.json file could look like this:
+You can add your own theme as long as it's namespaced in the following order: `area/my-own-theme`. The `area` being an area for your locations (for example: back-end, front-end, help center, etc...) and your theme name. Add a `theme.json` file with all the info for your theme. A basic theme.json file should look like this:
 
 	{
 		"name":        "Default Frontend Theme",
@@ -28,10 +25,12 @@ After creating your theme, you can simply go into the Platform 2 settings and se
 
 > **Note:** please note that the slug you're adding in the `theme.json` file needs to be exactly the same as the theme's namespaced folder names.
 
-<a name="theme-assets"></a>
-#### Theme Assets
 
-Because Platform 2 uses Cartalyst's Themes 2 package it comes with all of the goodness for asset queuing and compiling. More info about using theme assets can be found in [the Themes 2 documentation](http://docs.cartalyst.com/themes-2).
+### Theme Assets {#theme-assets}
+
+---
+
+Because Platform 2 uses Cartalyst's Themes 2 package it comes with all of the goodness for asset queuing and compiling. More info about using theme assets can be found in [the Themes 2 documentation](http://cartalyst.com/manual/themes).
 
 **Asset Queuing**
 
@@ -49,7 +48,7 @@ You can also queue `.less` files and they'll be compiled automatically.
 
 **Asset Compiling**
 
-When you've queued your assets you can later compile them, for example, in your theme's header. You can use the `getCompileStyles` function to compile style sheets and the `getCompileScripts` function to compile Javascript files.
+When you've queued your assets you can later compile them, for example, in your theme's header. You can use the `getCompiledStyles()` function to compile style sheets and the `getCompiledScripts()` function to compile Javascript files.
 
 	@foreach (Asset::getCompiledStyles() as $url)
 		{{ HTML::style($url) . PHP_EOL }}
