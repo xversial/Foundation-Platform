@@ -14,4 +14,4 @@ You can later re-use these view files in other parts of your application.
 
 ---
 
-You can import content pieces by using the `@content()` blade structure. This even works with the database type. See [Re-using Content](/manual/platform/usage/content#re-using-content) in the Content section about how to re-use content parts.
+You can import content pieces by using the `@content()` blade structure. This even works with the database type. See [Re-using Content]({url}/usage/content#re-using-content) in the Content section about how to re-use content parts.

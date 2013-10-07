@@ -54,7 +54,7 @@ You can also choose to download a zip file of your generated extension and insta
 
 Manually creating an extensions takes a bit more work. There are two required files for creating extensions: the `composer.json` file and the `extension.php` file.
 
-See [requirements](/manual/platform/extensions#requirements) for more info.
+See [requirements]({url}/extensions#requirements) for more info.
 
 
 ### Enabling An Extension {#enabling-an-extension}
@@ -87,4 +87,4 @@ If you'd like to create a separate class for the widget to have some extra funct
 		'foo' => 'My\Widget\Namespace\Foo@someMethod',
 	),
 
-For more info on creating widgets see [the widgets documentation](/manual/platform/usage/widgets).
+For more info on creating widgets see [the widgets documentation]({url}/usage/widgets).

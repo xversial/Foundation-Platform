@@ -26,4 +26,4 @@ Because Platform 2 comes with Sentry 2 installed, you also get easy group manage
 
 Permissions can both be set on users and groups. You can assign permissions by editing a user or group and clicking the permissions tab on the right above. Here you'll get a listing of all the available permissions for your Platform 2 application.
 
-Permissions are usually added through extensions. You can read more about how to add permissions through extensions [here](/manual/platform/extensions/configuring-extensions#permissions).
+Permissions are usually added through extensions. You can read more about how to add permissions through extensions [here]({url}/extensions/configuring-extensions#permissions).
