@@ -70,10 +70,10 @@ These files provide a number of templates and boilerplate code for you to overri
 - PHP >= 5.3.7
 - MCrypt PHP Extension
 
-To use Cartalyst's Platform application you need to have a valid Cartalyst.com subscription. Click [here](platform/https://www.cartalyst.com/pricing) to obtain your subscription.
+To use Cartalyst's Platform application you need to have a valid Cartalyst.com subscription. Click [here](https://www.cartalyst.com/pricing) to obtain your subscription.
 
 ### License {#licence}
 
 ---
 
-Cartalyst's Platform application is licensed under [the BSD 3-Clause license](platform/overview/license).
+Cartalyst's Platform application is licensed under [the BSD 3-Clause license](/manual/platform/overview/license).
