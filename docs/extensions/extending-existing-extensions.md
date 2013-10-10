@@ -1,8 +1,5 @@
 ## Extending Existing Extensions
 
-- [Creating The Extension](#creating-the-extension)
-- [How Does It Work](#how-does-it-work)
-
 Extending existing extensions can be done by simply creating a new extension and registering it under the same uri as the extension you'd like to extend. You'll need to register the extension you're extending in the require array.
 
 ### Creating The Extension {#creating-the-extension}

@@ -1,7 +1,5 @@
 ## Content
 
-- [Re-using Content](#re-using-content)
-
 Most of the content you create in Platform 2 can be either content stored in the database or in static content files.
 
 Content files are saved in the `public/content` folder.

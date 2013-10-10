@@ -1,7 +1,5 @@
 ## Basics
 
-- [Requirements](#requirements)
-
 Extensions allow you to extend Platform 2 beyond its basic functionality. The
 default extensions for Platform 2 are actually composer packages. If you want,
 for example, to add a media library, you could add it as a composer package

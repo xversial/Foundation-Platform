@@ -1,14 +1,5 @@
 ## Install & Configure Platform
 
-* [Get Platform](#get-platform)
-* [Composer](#composer)
-* [Configure Laravel](#configure-laravel)
-* [Permissions](#permissions)
-* [Trusted IPs](#trusted-ips)
-* [The CLI Installer](#the-cli-installer)
-* [The Browser Installer](#the-browser-installer)
-* [Custom Installer](#custom-installer)
-
 ### Get Platform {#get-platform}
 
 ---
