@@ -1,6 +1,6 @@
 ## Usage
 
-- [Basics]({url}/usage/basics)
+- [Overview]({url}/usage/overview)
 	- [Dashboard](#dashboard)
 	- [Settings](#settings)
 - [Themes]({url}/usage/themes)
