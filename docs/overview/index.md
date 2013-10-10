@@ -1,9 +1,5 @@
 ## Introduction
 
-- [Features](#features)
-- [Requirements](#requirements)
-- [License](#license)
-
 Cartalyst's Platform application provides a very flexible and extensible way of building your custom application.
 
 It gives you a basic installation to get you quick-started with content management, themeable views, application extensions and much more.
