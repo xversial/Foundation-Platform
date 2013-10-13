@@ -13,7 +13,7 @@
 |
 */
 
-if (App::environment() != 'production')
+if (App::environment() != 'production' or Config::get('debug') == true)
 {
 	App::error(function(Exception $exception, $code)
 	{
