@@ -13,14 +13,7 @@
 |
 */
 
-if (App::environment() != 'production' or Config::get('debug') == true)
-{
-	App::error(function(Exception $exception, $code)
-	{
-		Log::error($exception);
-	});
-}
-else
+if (App::environment() === 'production' or Config::get('app.debug') === false)
 {
 	App::error(function(Exception $exception, $code)
 	{
@@ -57,5 +50,12 @@ else
 		}
 
 		return show_error_page($statusCode);
+	});
+}
+else
+{
+	App::error(function(Exception $exception, $code)
+	{
+		Log::error($exception);
 	});
 }
