@@ -1,8 +1,5 @@
 ## Configuration
 
-- [Site](#site)
-- [Menus](#menus)
-
 Platform 2 provides some configuration options for you which you can use throughout your site. You can find these options in the `app/config/platform.php` file.
 
 ### Site {#site}

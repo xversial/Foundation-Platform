@@ -1,8 +1,5 @@
 ## Distributing Extensions
 
-- [Public Extensions](#public-extensions)
-- [Private Extensions](#private-extensions)
-
 If you'd like to distribute your extensions you can do so using [Composer](http://getcomposer.org/). Composer makes it easy to allow your extensions to be set as dependencies in Platform 2. They can easily be distributed through [packagist.org](https://packagist.org). Or if you want your extension to be privately distributed you could use, for example, [satis](https://github.com/composer/satis).
 
 ### Public Extensions {#public-extensions}

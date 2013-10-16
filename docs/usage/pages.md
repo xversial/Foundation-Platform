@@ -1,7 +1,5 @@
 ## Pages
 
-- [Importing Content](#importing-content)
-
 Just like in a normal CMS you can add pages to your application.
 
 Platform 2 provides support to store the content for these pages in the database or make use of the filesystem to use static view files which are part of your theme.

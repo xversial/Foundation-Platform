@@ -1,10 +1,5 @@
 ## Hooks {#hooks}
 
-- [Introduction](#introduction)
-- [Operation Hooks](#operation-hooks)
-- [Platform Hooks](#platform-hooks)
-- [Extension Hooks](#extension-hooks)
-
 Platform 2 hooks are events which are fired at various occasions throughout certain Platform 2 actions.
 
 They give you the oportunity to do something when the event is fired. You can find these hooks in the `app/hooks.php` file.

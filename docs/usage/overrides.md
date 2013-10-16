@@ -1,9 +1,5 @@
 ## Overrides
 
-- [Route Overrides](#route-overrides)
-- [Model Overrides](#model-overrides)
-- [Service Overrides](#service-overrides)
-
 Overrides in Platform 2 give you the ability to easily swap core functionality with your own custom functionality. You can register these overrides in the `app/overrides.php` file.
 
 ### Route Overrides {#route-overrides}
