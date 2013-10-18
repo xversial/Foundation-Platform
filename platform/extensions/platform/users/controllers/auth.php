@@ -138,6 +138,8 @@ class Platform_Users_Auth_Controller extends Public_Controller
 
 					$response['redirect'] = URL::to_secure($redirect);
 				}
+
+				return Redirect::to($redirect);
 			}
 			else
 			{
