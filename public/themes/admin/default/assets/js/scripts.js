@@ -1,10 +1,16 @@
 $(function() {
 
 	// Activate tooltips
-	$('.tip, .tooltip, [data-toogle=tooltip]').tooltip();
+	$('.tip, .tooltip, [data-toggle="tooltip"]').tooltip();
 
-	// Activate modals
+	// Activate popovers
+	$('.popover, [data-toggle="popover"]').popover({
+		trigger : 'hover'
+	});
+
+	// Activate modal windows
 	$(document).on('click', '[data-toggle="modal"]', function(event) {
+
 		event.preventDefault();
 
 		// Get the modal target

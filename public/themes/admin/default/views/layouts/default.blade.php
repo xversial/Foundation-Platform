@@ -24,10 +24,11 @@
 
 		{{ Asset::queue('modernizr', 'js/modernizr/modernizr.js') }}
 		{{ Asset::queue('jquery', 'js/jquery/jquery.js') }}
-		{{ Asset::queue('collapse', 'js/bootstrap/collapse.js', array('jquery')) }}
-		{{ Asset::queue('dropdown', 'js/bootstrap/dropdown.js', array('jquery')) }}
-		{{ Asset::queue('modal', 'js/bootstrap/modal.js', array('jquery')) }}
-		{{ Asset::queue('tooltip', 'js/bootstrap/tooltip.js', array('jquery')) }}
+		{{ Asset::queue('bootstrap.collapse', 'js/bootstrap/collapse.js', array('jquery')) }}
+		{{ Asset::queue('bootstrap.dropdown', 'js/bootstrap/dropdown.js', array('jquery')) }}
+		{{ Asset::queue('bootstrap.modal', 'js/bootstrap/modal.js', array('jquery')) }}
+		{{ Asset::queue('bootstrap.tooltip', 'js/bootstrap/tooltip.js', array('jquery')) }}
+		{{ Asset::queue('bootstrap.popover', 'js/bootstrap/popover.js', array('bootstrap.tooltip')) }}
 		{{ Asset::queue('scripts', 'js/scripts.js', array('jquery')) }}
 
 		{{-- HTML5 shim, for IE6-8 support of HTML5 elements --}}
@@ -98,6 +99,7 @@
 
 		{{-- Footer --}}
 		<footer id="footer">
+
 			<div class="container">
 
 				<span>
@@ -109,6 +111,7 @@
 				<span class="pull-right">Platform Version {{{ PLATFORM_VERSION }}}</span>
 
 			</div>
+
 		</footer>
 
 		{{-- Modals --}}
