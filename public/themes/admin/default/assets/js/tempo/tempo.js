@@ -1,5 +1,5 @@
 /*!
- * Tempo Template Engine 2.0
+ * Tempo Template Engine 2.1
  *
  * http://tempojs.com/
  */
@@ -149,9 +149,9 @@ var Tempo = (function (tempo) {
         removeAttr: function (el, name) {
             if (el !== undefined) {
                 el.setAttribute(name, '');
-                if (el.removeAttribute) {
-                    el.removeAttribute(name);
-                }
+//                if (el.removeAttribute) {
+//                    el.removeAttribute(name);
+//                }
             }
         },
 
@@ -204,7 +204,7 @@ var Tempo = (function (tempo) {
             } else {
                 return array.indexOf(obj) > -1;
             }
-        }
+                                    }
     };
 
     function Templates(params, nestedItem) {
@@ -319,9 +319,9 @@ var Tempo = (function (tempo) {
                 }
 
                 // If there is no default template (data-template) then create one from container
-                if (this.defaultTemplate === null) {
-                    this.createTemplate(container);
-                }
+//                if (this.defaultTemplate === null) {
+//                    this.createTemplate(container);
+//                }
 
                 utils.clearContainer(this.container);
                 if (callback !== undefined) {
@@ -355,6 +355,8 @@ var Tempo = (function (tempo) {
                     var val;
                     if (attr.value === '') {
                         val = true;
+                    } else if (attr.value === 'null') {
+                        val = null;
                     } else {
                         val = '\'' + attr.value + '\'';
                     }
@@ -442,13 +444,13 @@ var Tempo = (function (tempo) {
                     if (args !== undefined && args !== '') {
                         var filters = utils.trim(utils.trim(args).substring(1)).split(self.filterSplitter);
                         for (var p = 0; p < filters.length; p++) {
-                            var filter = utils.trim(filters[p]);
-                            var filter_args = [];
+                            var filter = utils.trim(filters[p]), filter_args, j = filter.indexOf(' ');
                             // If there is a space, there must be arguments
-                            if (filter.indexOf(' ') > -1) {
-                                var f = filter.substring(filter.indexOf(' ')).replace(/^[ ']*|[ ']*$/g, '');
-                                filter_args = f.split(/(?:[\'"])[ ]?,[ ]?(?:[\'"])/);
-                                filter = filter.substring(0, filter.indexOf(' '));
+                            if (~j) {
+                                filter_args = filter.substr(j).replace(/(^ *['"])|(['"] *$)/g, '').split(/['"] *, *['"]/);
+                                filter = filter.substr(0, j);
+                            } else {
+                                filter_args = [];
                             }
                             val = renderer.filters[filter](val, filter_args);
                         }
@@ -527,15 +529,23 @@ var Tempo = (function (tempo) {
             return function (templates) {
                 var r = new Renderer(templates);
                 var data = null;
-                if (i.hasOwnProperty(nested.split('.')[0])) {
-                    data = eval('i.' + nested);
+
+                if (nested === '*' || i.hasOwnProperty(nested.split('.')[0])) {
+                    if (nested === '*') {
+                        data = i;
+                    } else {
+                        data = eval('i.' + nested);
+                    }
+
                     if (data) {
                         try {
                             if (utils.typeOf(data) === 'array') {
                                 for (var s = 0; s < data.length; s++) {
-                                    data[s]._parent = function () {
-                                        return i;
-                                    }()
+                                    if (utils.typeOf(data[s]) === 'object') {
+                                        data[s]._parent = function () {
+                                            return i;
+                                        }()
+                                    }
                                 }
                             } else {
                                 data._parent = function () {
@@ -636,6 +646,8 @@ var Tempo = (function (tempo) {
 
                 for (var i = 0; i < data.length; i++) {
                     tempo_info.index = i;
+                    tempo_info.first = i < 1;
+                    tempo_info.last = i == data.length - 1;
                     this.renderItem(this, tempo_info, data[i], fragment);
                 }
 
@@ -729,12 +741,12 @@ var Tempo = (function (tempo) {
             return this;
         },
 
-        errors: function(errorHandler) {
+        errors: function (errorHandler) {
             this.errorHandler = errorHandler;
             return this;
         },
 
-        _onError: function(err) {
+        _onError: function (err) {
             if (this.errorHandler !== null) {
                 this.errorHandler.call(this, err);
             }
@@ -824,7 +836,7 @@ var Tempo = (function (tempo) {
             },
             'titlecase': function (value, args) {
                 var blacklist = [];
-                if (args !== undefined && args.length == 1) {
+                if (args !== undefined && args.length === 1) {
                     blacklist = args[0].split(' ');
                 }
                 return value.replace(/\w[a-z]\S*/g, function (m, i) {
