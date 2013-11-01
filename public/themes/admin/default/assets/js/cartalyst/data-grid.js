@@ -98,6 +98,10 @@
 
         _init: function() {
 
+            if( $('#no-results-tmpl'+this.grid).length ) {
+                this.$results.html( _.template( $('#no-results-tmpl'+this.grid).html() ) );
+            }
+
             this._addListeners();
 
             this._ajaxFetch();
@@ -415,6 +419,11 @@
 
                 if(json.pages_count <= 1 && _this.opt.type === 'infinite') {
                     _this.$results.empty();
+                }
+
+                // If No Results
+                if(!json.results.length){
+                    _this.$results.html( _.template( $('#no-results-tmpl'+_this.grid).html() ) );
                 }
 
                 _this._loading();
