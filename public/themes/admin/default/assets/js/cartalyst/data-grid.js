@@ -18,660 +18,676 @@
  */
 ;(function($, window, document, undefined){
 
-	'use strict';
+    'use strict';
+
+    var defaults = {
+        source: null,
+        dividend: 1,
+        threshold: 100,
+        throttle: 100,
+        type: 'multiple',
+        loader: undefined,
+        ascClass: 'asc',
+        descClass: 'desc',
+        sort: {},
+        searchThreshold: 800,
+        callback: undefined,
+        templateSettings : {
+            evaluate    : /<%([\s\S]+?)%>/g,
+            interpolate : /<%=([\s\S]+?)%>/g,
+            escape      : /<%-([\s\S]+?)%>/g
+        }
+    };
+    var helpers = {
+        tmpl: {},
+        appliedFilters: [],
+        pageIdx: 1,
+        nextIdx: null,
+        prevIdx: null,
+        totalPages: null,
+        isActive: false,
+        pagiThrottle: null,
+        totalCount: null,
+        filterCount: null
+    };
+
+    function DataGrid(grid, results, pagination, filters, options) {
+
+        if( typeof _ === 'undefined' ) {
+            this._log('Underscore is not defined. DataGrid Requires UnderscoreJS v 1.5.2 or later to run!');
+            return false;
+        }
+
+        this.opt = $.extend({}, defaults, options, helpers);
+
+        // Set _ templates interpolate
+        _.templateSettings = {
+            evaluate    : this.opt.templateSettings.evaluate,
+            interpolate : this.opt.templateSettings.interpolate,
+            escape      : this.opt.templateSettings.escape
+        };
 
-	var defaults = {
-		source: null,
-		dividend: 1,
-		threshold: 100,
-		throttle: 100,
-		type: 'multiple',
-		loader: undefined,
-		sort: {},
-		tempoOptions: {
-			var_braces: '\\[\\[\\]\\]',
-			tag_braces: '\\[\\?\\?\\]',
-			escape: true
-		},
-		searchThreshold: 800,
-		callback: undefined
-	};
+        // Binding Key
+        this.grid = '[data-grid=' + grid + ']';
 
-	var helpers = {
-		appliedFilters: [],
-		tmpl: {},
-		pageIdx: 1,
-		nextIdx: null,
-		prevIdx: null,
-		totalPages: null,
-		isActive: false,
-		pagiThrottle: null,
-		totalCount: null,
-		filterCount: null
-	};
+        // Cache Our Selectors
+        this.$results = $(results + this.grid);
+        this.$pagination = $(pagination + this.grid);
+        this.$filters = $(filters + this.grid);
+        this.$body = $(document.body);
 
-	function DataGrid(grid, results, pagination, filters, options){
+        // Get Our Source
+        this.opt.source = this.$results.data('source') || this.opt.source;
 
-		this.opt = $.extend({}, defaults, options, helpers);
+        // Default Throttle
+        this.opt.source = this.$results.data('source') || this.opt.source;
 
-		//Binding Key
-		this.grid = '[data-grid='+grid+']';
+        // Prep and Cache Our Templates
+        this._prepTemplates(results, pagination, filters);
 
-		//Cache Our Selectors
-		this.$results = $(results + this.grid);
-		this.$pagination = $(pagination + this.grid);
-		this.$filters = $(filters + this.grid);
-		this.$body = $(document.body);
+        // If Our Results Element is a table lets get the <tbody>
+        if ( this.$results.get(0).tagName.toLowerCase() === 'table') {
+            this.$results = $(results + this.grid).find('tbody');
+        }
 
-		//Get Our Source
-		this.opt.source = this.$results.data('source') || this.opt.source;
+        this._init();
 
-		//Default Throttle
-		this.opt.pagiThrottle = this.opt.throttle;
+    }
 
-		this._init();
+    DataGrid.prototype  = {
 
+        _init: function() {
 
-	}
+            this._addListeners();
 
-	DataGrid.prototype = {
+            this._ajaxFetch();
 
-		_init: function(){
+        },
 
-			this._checkDeps();
+        _prepTemplates: function(results, pagination, filters) {
 
-			this._prepTemplates();
+            results = $('#'+results.substr(1)+'-tmpl' + this.grid);
+            pagination = $('#'+pagination.substr(1)+'-tmpl' + this.grid);
+            filters = $('#'+filters.substr(1)+'-tmpl' + this.grid);
 
-			this._events();
+            if( results.length ) {
+                this.opt.tmpl['results'] = _.template( results.html() );
+            }else{
+                this._log('Missing a results container, make sure you have data-grid set!');
+            }
 
-			if(!$.isEmptyObject(this.opt.sort)){
+            if( pagination.length ) {
+                this.opt.tmpl['pagination'] = _.template( pagination.html() );
+            }else{
+                this._log('Missing a pagination container, make sure you have data-grid set!');
+            }
 
-				this.$body.find('[data-sort="'+this.opt.sort.column+'"]'+this.grid).addClass(this.opt.sort.direction);
+            if( filters.length ) {
+                this.opt.tmpl['filters'] = _.template( filters.html() );
+            }else{
+                this._log('Missing a applied filters container, make sure you have data-grid set!');
+            }
 
-			}
 
-			this._ajaxFetch();
-		},
+        },
 
-		_checkDeps: function(){
+        _addListeners: function() {
 
-			if(typeof Tempo === 'undefined'){
-				this._logError('Tempo is not defined. DataGrid requires TempoJS v2.0.0 or later to run!', this);
-			}
+            var _this = this;
 
-			if(!this.$results.length){
-				this._logError('Missing a results container, make sure you have data-grid set!', this);
-			}
+            this.$body.on('click', '[data-sort]'+this.grid, function(e){
+                _this._setSortDirection($(this));
+                _this._setSort($(this).data('sort'));
+                _this._clearResults();
+                _this._ajaxFetch();
+            });
 
-			if(!this.$pagination.length){
-				this._logError('Missing a pagination container, make sure you have data-grid set!', this);
-			}
+            this.$body.on('click', '[data-filter]'+this.grid, function(e) {
+                _this._setFilter($(this).data('filter'), $(this).data('label'));
+                _this._clearResults();
+                _this._goToPage(1);
+                _this._ajaxFetch();
+            });
 
-			if(!this.$filters.length){
-				this._logError('Missing a applied filters container, make sure you have data-grid set!', this);
-			}
+            this.$pagination.on('click', '[data-page]', function(e) {
 
-		},
+                e.preventDefault();
 
-		_prepTemplates: function(){
+                var pageIdx;
 
-			this.opt.tmpl.results = Tempo.prepare(this.$results, this.opt.tempoOptions);
-			this.opt.tmpl.pagination = Tempo.prepare(this.$pagination, this.opt.tempoOptions);
-			this.opt.tmpl.appliedFilters = Tempo.prepare(this.$filters, this.opt.tempoOptions);
+                if( _this.opt.type === 'single' || _this.opt.type === 'multiple') {
 
-		},
+                    pageIdx = $(this).data('page');
+                    _this.$pagination.empty();
+                    _this._clearResults();
 
-		_events: function(){
+                }
 
-			var self = this;
+                if( _this.opt.type === 'infinite' ) {
 
-			this.$body.on('click', '[data-sort]'+this.grid, function(e){
+                    pageIdx = $(this).data('page');
+                    $(this).data('page', ++pageIdx);
 
-				self._setSortDirection($(this));
-				self._setSort($(this).data('sort'));
-				self._clearResults();
-				self._ajaxFetch();
+                }
 
-			});
+                _this._goToPage(pageIdx);
+                _this._ajaxFetch();
 
-			this.$body.on('click', '[data-filter]'+this.grid, function(e){
+            });
 
-				self._setFilter($(this).data('filter'), $(this).data('label'));
-				self._clearResults();
-				self._goToPage(1);
-				self._ajaxFetch();
+            this.$pagination.on('click', '[data-throttle]', function(e) {
 
-			});
+                _this.opt.throttle += _this.opt.pagiThrottle;
+                _this.$pagination.empty();
+                _this._clearResults();
+                _this._ajaxFetch();
 
-			this.$pagination.on('click', '[data-page]', function(e){
+            });
 
-				e.preventDefault();
+            this.$filters.on('click', '> *', function(e) {
 
-				var pageIdx;
+                _this._removeFilters($(this).index());
+                _this._ajaxFetch();
 
-				if(self.opt.type === 'single' || self.opt.type === 'multiple'){
+            });
 
-					pageIdx = $(this).data('page');
-					self.opt.tmpl.pagination.clear();
-					self._clearResults();
+            var timeout;
+            this.$body.on('submit keyup', '[data-search]'+this.grid, function(e){
 
-				}
+                e.preventDefault();
 
-				if(self.opt.type === 'infinite'){
+                var $input = $(this).find('input');
+                var $select = $(this).find('select');
 
-					pageIdx = $(this).data('page');
-					$(this).data('page', ++pageIdx);
+                if(e.type === 'submit'){
 
-				}
+                    if(!$.trim($input.val()).length){
+                        return;
+                    }
 
-				self._goToPage(pageIdx);
-				self._ajaxFetch();
+                    _this.isActive = true;
 
-			});
+                    clearTimeout(timeout);
 
-			this.$pagination.on('click', '[data-throttle]', function(e){
+                    _this._setFilter($select.val()+':'+$input.val());
+                    _this._clearResults();
+                    _this._goToPage(1);
+                    _this._ajaxFetch();
 
-				self.opt.throttle += self.opt.pagiThrottle;
-				self.opt.tmpl.pagination.clear();
-				self._clearResults();
-				self._ajaxFetch();
+                    $input.val('').data('old', '');
+                    $select.prop('selectedIndex',0);
 
-			});
+                    return false;
 
-			this.$filters.on('click', '[data-template]', function(e){
+                }
 
-				self._removeFilter($(this).index());
-				self._ajaxFetch();
+                if(e.type === 'keyup' && e.keyCode !== 13){
 
-			});
+                    if(_this.opt.isActive){
+                        return;
+                    }
 
-			var timeout;
-			this.$body.on('submit keyup', '[data-search]'+this.grid, function(e){
+                    clearTimeout(timeout);
 
-				e.preventDefault();
+                    timeout = setTimeout(function(){
 
-				var $input = $(this).find('input');
-				var $select = $(this).find('select');
+                        _this._liveSearch($input.val(), $input.data('old'), $select.val());
+                        $input.data('old', $input.val());
 
-				if(e.type === 'submit'){
+                        _this._goToPage(1);
+                        _this._ajaxFetch();
 
-					if(!$.trim($input.val()).length){
-						return;
-					}
+                    }, _this.opt.searchThreshold);
 
-					self.isActive = true;
+                }
 
-					clearTimeout(timeout);
+            });
 
-					self._setFilter($select.val()+':'+$input.val());
-					self._clearResults();
-					self._goToPage(1);
-					self._ajaxFetch();
+            this.$body.on('click', '[data-reset]'+this.grid, function(e) {
+                e.preventDefault();
+                _this._reset();
+                _this._ajaxFetch();
+            });
 
-					$input.val('').data('old', '');
-					$select.prop('selectedIndex',0);
+        },
 
-					return false;
+        _liveSearch: function(curr, old, column) {
 
-				}
+            this.opt.throttle = this.opt.pagiThrottle;
 
-				if(e.type === 'keyup' && e.keyCode !== 13){
+            if(curr !== old){
 
-					if(self.opt.isActive){
-						return;
-					}
+                for(var i = 0; i < this.opt.appliedFilters.length; i++){
 
-					clearTimeout(timeout);
+                    if(this.opt.appliedFilters[i].value === old){
 
-					timeout = setTimeout(function(){
+                        this.opt.appliedFilters.splice(i, 1);
 
-						self._liveSearch($input.val(), $input.data('old'), $select.val());
-						$input.data('old', $input.val());
+                    }
 
-						self._goToPage(1);
-						self._ajaxFetch();
+                }
 
-					}, self.opt.searchThreshold);
+                if(curr.length){
 
-				}
+                    this.opt.appliedFilters.push({
+                        column: column === 'all' ? 'all' : column,
+                        columnLabel: column === 'all' ? 'all' : column,
+                        value: curr,
+                        valueLabel: curr,
+                        type: 'live'
+                    });
 
+                }
 
-			});
+                this._clearResults();
 
-			this.$body.on('click', '[data-reset]'+this.grid, function(e){
-				e.preventDefault();
-				self._reset();
-				self._ajaxFetch();
-			});
+            }
 
-		},
+        },
 
-		_liveSearch: function(curr, old, column){
+        _setFilter: function(filter, label) {
 
-			this.opt.throttle = this.opt.pagiThrottle;
+            this.opt.throttle = this.opt.pagiThrottle;
 
-			if(curr !== old){
+            var arr = filter.split(', ');
 
-				for(var i = 0; i < this.opt.appliedFilters.length; i++){
+            for(var i = 0; i < arr.length; i++){
 
-					if(this.opt.appliedFilters[i].value === old){
+                var values = arr[i].split(':');
 
-						this.opt.appliedFilters.splice(i, 1);
+                //Check to See if its appled
+                for(var j = 0; j < this.opt.appliedFilters.length; j++){
 
-					}
+                    if(this.opt.appliedFilters[j].value === values[1]){
 
-				}
+                        if(this.opt.appliedFilters[j].type === 'live'){
+                            this.opt.appliedFilters.splice(j, 1);
+                        }else{
+                            values.splice(j, 2);
+                        }
 
-				if(curr.length){
+                    }
 
-					this.opt.appliedFilters.push({
-						column: column === 'all' ? undefined : column,
-						columnLabel: column === 'all' ? undefined : column,
-						value: curr,
-						valueLabel: curr,
-						type: 'live'
-					});
+                }
 
-				}
+                if(typeof label !== 'undefined'){
 
-				this._clearResults();
+                    var larr = label.split(', ');
 
-			}
+                    for(var k = 0; k < larr.length; k++){
 
-		},
+                        var labels = larr[k].split(':');
 
-		_setFilter: function(filter, label){
+                        if(values[0] === labels[0]){
+                            values[2] = labels[1];
+                        }
 
-			this.opt.throttle = this.opt.pagiThrottle;
+                        if(values[1] === labels[0]){
+                            values[3] = labels[1];
+                        }
 
-			var arr = filter.split(', ');
+                    }
 
-			for(var i = 0; i < arr.length; i++){
+                }
 
-				var values = arr[i].split(':');
 
-				//Check to See if its appled
-				for(var j = 0; j < this.opt.appliedFilters.length; j++){
+                if(values.length){
 
-					if(this.opt.appliedFilters[j].value === values[1]){
+                    this.opt.appliedFilters.push({
+                        column: values[0] === 'all' ? 'all' : values[0],
+                        columnLabel: typeof values[2] === 'undefined' ? values[0] : values[2],
+                        value: values[1],
+                        valueLabel: typeof values[3] === 'undefined' ? values[1] : values[3],
+                        type: 'normal'
+                    });
 
-						if(this.opt.appliedFilters[j].type === 'live'){
-							this.opt.appliedFilters.splice(j, 1);
-						}else{
-							values.splice(j, 2);
-						}
+                    this.$filters.html( this.opt.tmpl['filters']( { filters: this.opt.appliedFilters } ) );
 
-					}
+                }
 
-				}
+            }
 
-				if(typeof label !== 'undefined'){
+        },
 
-					var larr = label.split(', ');
+        _setSortDirection: function(el) {
 
-					for(var k = 0; k < larr.length; k++){
+            $('[data-sort]'+this.grid).not(el).removeClass(this.opt.ascClass);
+            $('[data-sort]'+this.grid).not(el).removeClass(this.opt.descClass);
 
-						var labels = larr[k].split(':');
+            if( el.hasClass(this.opt.ascClass) ) {
+                el.removeClass(this.opt.ascClass).addClass(this.opt.descCLass);
+            }else{
+                el.removeClass(this.opt.descClass).addClass(this.opt.ascClass);
+            }
 
-						if(values[0] === labels[0]){
-							values[2] = labels[1];
-						}
+        },
 
-						if(values[1] === labels[0]){
-							values[3] = labels[1];
-						}
+        _setSort: function(sort) {
 
-					}
+            var arr = sort.split(':'),
+                direction = typeof arr[1] !== 'undefined' ? arr[1] : 'asc';
 
-				}
+            if( arr[0] === this.opt.sort.column ) {
 
+                this.opt.sort.direction = (this.opt.sort.direction === 'asc') ? 'desc' : 'asc';
 
-				if(values.length){
+            }else{
 
-					this.opt.appliedFilters.push({
-						column: values[0] === 'all' ? undefined : values[0],
-						columnLabel: typeof values[2] === 'undefined' ? values[0] : values[2],
-						value: values[1],
-						valueLabel: typeof values[3] === 'undefined' ? values[1] : values[3],
-						type: 'normal'
-					});
+                this.opt.sort.column = arr[0];
+                this.opt.sort.direction = direction;
 
+            }
 
-					this.opt.tmpl.appliedFilters.render(this.opt.appliedFilters);
+        },
 
-				}
+        _ajaxFetch: function() {
 
-			}
+            var _this = this;
 
-		},
+            this._loading();
 
-		_setSort: function(sort){
+            $.ajax({
+                url: this.opt.source,
+                dataType: 'json',
+                data: this._buildFetchData()
+            })
+            .done(function(json) {
 
-			var arr = sort.split(':'),
-				direction = typeof arr[1] !== 'undefined' ? arr[1] : 'asc';
+                _this.opt.isActive = false;
 
-			if(arr[0] === this.opt.sort.column){
+                _this.opt.totalCount = json.total_count;
+                _this.opt.filterCount = json.filtered_count;
+                _this.opt.nextIdx = json.next_page;
+                _this.opt.prevIdx = json.previous_page;
+                _this.opt.totalPages = json.pages_count;
 
-				this.opt.sort.direction = (this.opt.sort.direction === 'asc') ? 'desc' : 'asc';
+                if( _this.opt.type !== 'infinite' ) {
+                    _this.$results.empty();
+                }
 
-			}else{
+                if( _this.opt.type === 'single' || _this.opt.type === 'multiple' ) {
+                    _this.$results.html( _this.opt.tmpl['results'](json) );
+                }else{
+                    _this.$results.append( _this.opt.tmpl['results'](json) );
+                }
 
-				this.opt.sort.column = arr[0];
-				this.opt.sort.direction = direction;
+                _this.$pagination.html( _this.opt.tmpl['pagination']( { pagination: _this._buildPagination(json) } ));
 
-			}
+                if(json.pages_count <= 1 && _this.opt.type === 'infinite') {
+                    _this.$results.empty();
+                }
 
-		},
+                _this._loading();
+                _this._callback()
 
-		_setSortDirection: function(el){
+            })
+            .error(function(jqXHR, textStatus, errorThrown) {
+                _this._log('ajaxFetch ' + jqXHR.status, errorThrown);
+            });
 
-			$('[data-sort]'+this.grid).not(el).removeClass('asc desc');
+        },
 
-			if(el.hasClass('asc')){
-				el.removeClass('asc').addClass('desc');
-			}else{
-				el.removeClass('desc').addClass('asc');
-			}
+        _buildFetchData: function() {
 
-		},
+            var params = {};
 
-		_ajaxFetch: function(){
+            params.page = this.opt.pageIdx;
+            params.dividend = this.opt.dividend;
+            params.threshold = this.opt.threshold;
+            params.throttle = this.opt.throttle;
+            params.filters = [];
 
-			this._loading();
+            for( var i = 0; i < this.opt.appliedFilters.length; i++) {
 
-			var self = this;
+                if( this.opt.appliedFilters[i].column === 'all' ) {
 
-			$.ajax({
-				url: this.opt.source,
-				dataType: 'json',
-				data: this._buildFetchData()
-			})
-			.done(function(json){
+                    params.filters.push(this.opt.appliedFilters[i].value);
 
-				self.opt.isActive = false;
+                }else{
 
-				self.opt.totalCount = json.total_count;
-				self.opt.filterCount = json.filtered_count;
-				self.opt.nextIdx = json.next_page;
-				self.opt.prevIdx = json.previous_page;
-				self.opt.totalPages = json.pages_count;
+                    var filter = {};
+                    filter[this.opt.appliedFilters[i].column] = this.opt.appliedFilters[i].value;
+                    params.filters.push(filter);
 
-				if(self.opt.type !== 'infinite'){
-					self.opt.tmpl.results.clear();
-				}
+                }
 
-				if(self.opt.type === 'single' || self.opt.type === 'multiple'){
-					self.opt.tmpl.results.render(json.results);
-				}else{
-					self.opt.tmpl.results.append(json.results);
-				}
+            }
 
-				self.opt.tmpl.pagination.render(self._buildPagination(json.page, json.next_page, json.previous_page, json.pages_count));
+            if( typeof this.opt.sort.column !== 'undefined' && typeof this.opt.sort.direction !== 'undefined') {
+                params.sort = this.opt.sort.column;
+                params.direction = this.opt.sort.direction;
+            }
 
-				if(json.pages_count <= 1 && self.opt.type === 'infinite'){
-					self.opt.tmpl.pagination.clear();
-				}
+            return $.param(params);
 
-				if(!json.results.length){
-					self.$results.find('[data-results-fallback]').show();
-				}else{
-					self.$results.find('[data-results-fallback]').hide();
-				}
+        },
 
-				self._loading();
-				self._callback();
+        _buildPagination: function(json) {
 
-			})
-			.error(function(jqXHR, textStatus, errorThrown) {
-				self._logError('ajaxFetch '+jqXHR.status ,errorThrown);
-			});
+            var page = json.page,
+                next = json.next_page,
+                prev = json.previous_page,
+                total = json.pages_count;
 
-		},
+            var paginationNav = [];
 
-		_clearResults: function(){
+            if( this.opt.type === 'single' ) {
 
-			if(this.opt.type === 'infinite'){
-				this.opt.tmpl.results.clear();
-			}
+                return this._buildSinglePagination(page, next, prev, total);
 
-		},
+            }
 
-		_buildFetchData: function(){
+            if( this.opt.type === 'multiple' ) {
 
-			var params = {};
+                return this._buildMultiplePagination(page, next, prev, total);
 
-			params.page = this.opt.pageIdx;
-			params.dividend = this.opt.dividend;
-			params.threshold = this.opt.threshold;
-			params.throttle = this.opt.throttle;
-			params.filters = [];
+            }
 
-			for(var i = 0; i < this.opt.appliedFilters.length; i++){
+            if( this.opt.type === 'infinite' ) {
 
-				if(typeof this.opt.appliedFilters[i].column === 'undefined'){
+                return this._buildInfinitePagination(page, next, prev, total);
 
-					params.filters.push(this.opt.appliedFilters[i].value);
+            }
 
-				}else{
+        },
 
-					var filter = {};
-					filter[this.opt.appliedFilters[i].column] = this.opt.appliedFilters[i].value;
-					params.filters.push(filter);
+        _buildSinglePagination: function(page, next, prev, total) {
 
-				}
+            var params, perPage, paginationNav = [];
 
-			}
+            if( this.opt.filterCount !== this.opt.totalCount ) {
+                perPage = this._resultsPerPage(this.opt.filterCount, total);
+            }else{
+                perPage = this._resultsPerPage(this.opt.totalCount, total);
+            }
 
-			if(typeof this.opt.sort.column !== 'undefined' && typeof this.opt.sort.direction !== 'undefined'){
-				params.sort = this.opt.sort.column;
-				params.direction = this.opt.sort.direction;
-			}
 
-			return $.param(params);
+            params = {
+                pageStart: perPage === 0 ? 0 : (this.opt.pageIdx === 1 ? 1 : (perPage * (this.opt.pageIdx - 1) + 1)),
+                pageLimit: this.opt.pageIdx === 1 ? perPage : (this.opt.totalCount < (perPage * this.opt.pageIdx)) ? this.opt.totalCount : perPage * this.opt.pageIdx,
+                prevPage: prev,
+                nextPage: next,
+                page: page,
+                active: true,
+                totalPages: total,
+                single: true
+            };
 
-		},
+            paginationNav.push(params);
 
-		_buildPagination: function(page, next, prev, total){
+            return paginationNav;
 
-			var paginationNav = [],
-				params,
-				perPage,
-				i;
+        },
 
-			if(this.opt.type === 'single'){
+        _buildMultiplePagination: function(page, next, prev, total) {
 
-				if(this.opt.filterCount !== this.opt.totalCount){
-					perPage = this._resultsPerPage(this.opt.filterCount, total);
-				}else{
-					perPage = this._resultsPerPage(this.opt.totalCount, total);
-				}
+            var params, perPage, paginationNav = [];
 
-				params = {
-					pageStart: perPage === 0 ? 0 : (this.opt.pageIdx === 1 ? 1 : (perPage * (this.opt.pageIdx - 1) + 1)),
-					pageLimit: this.opt.pageIdx === 1 ? perPage : (this.opt.totalCount < (perPage * this.opt.pageIdx)) ? this.opt.totalCount : perPage * this.opt.pageIdx,
-					prevPage: prev,
-					nextPage: next,
-					page: page,
-					active: true,
-					totalPages: total,
-					single: true
-				};
+            if( (this.opt.totalCount > this.opt.throttle) && (this.opt.filterCount > this.opt.throttle) ) {
 
-				paginationNav.push(params);
+                perPage = this._resultsPerPage( this.opt.throttle, this.opt.dividend );
 
+                for(var i = 1; i <= this.opt.dividend; i++) {
 
-			}
+                    params = {
+                        pageStart: perPage === 0 ? 0 : ( i === 1 ? 1 : (perPage * (i - 1) + 1)),
+                        pageLimit: i === 1 ? perPage : (this.opt.totalCount < this.opt.throttle && i === this.opt.dividend) ? this.opt.totalCount : perPage * i,
+                        prevPage: prev,
+                        nextPage: next,
+                        page: i,
+                        active: this.opt.pageIdx === i ? true : false,
+                        throttle: false
+                    };
 
-			if(this.opt.type === 'multiple'){
+                    paginationNav.push(params);
 
-				if( (this.opt.totalCount > this.opt.throttle) && (this.opt.filterCount > this.opt.throttle) ){
+                }
 
-					perPage = this._resultsPerPage(this.opt.throttle, this.opt.dividend);
+                if( this.opt.totalCount > this.opt.throttle ) {
+                    params = {
+                        throttle: true
+                    };
 
-					for(i = 1; i <= this.opt.dividend; i++){
+                    paginationNav.push(params);
+                }
 
-						params = {
-							pageStart: perPage === 0 ? 0 : ( i === 1 ? 1 : (perPage * (i - 1) + 1)),
-							pageLimit: i === 1 ? perPage : (this.opt.totalCount < this.opt.throttle && i === this.opt.dividend) ? this.opt.totalCount : perPage * i,
-							prevPage: prev,
-							nextPage: next,
-							page: i,
-							active: this.opt.pageIdx === i ? true : false,
-							throttle: false
-						};
+            }else{
 
-						paginationNav.push(params);
+                if( this.opt.filterCount !== this.opt.totalCount ) {
+                    perPage = this._resultsPerPage( this.opt.filterCount, total);
+                }else{
+                    perPage = this._resultsPerPage( this.opt.totalCount, total);
+                }
 
-					}
+                for(var i = 1; i <= total; i++) {
 
-					if(this.opt.totalCount > this.opt.throttle){
+                    params = {
+                        pageStart: perPage === 0 ? 0 : ( i === 1 ? 1 : (perPage * (i - 1) + 1)),
+                        pageLimit: i === 1 ? perPage : (this.opt.totalCount < (perPage * i)) ? this.opt.totalCount : perPage * i,
+                        prevPage: prev,
+                        nextPage: next,
+                        page: i,
+                        active: this.opt.pageIdx === i ? true : false
+                    };
 
-						params = {
-							throttle: true
-						};
+                    paginationNav.push(params);
 
-						paginationNav.push(params);
+                }
 
-					}
+            }
 
-				}else{
+            return paginationNav;
 
-					if(this.opt.filterCount !== this.opt.totalCount){
-						perPage = this._resultsPerPage(this.opt.filterCount, total);
-					}else{
-						perPage = this._resultsPerPage(this.opt.totalCount, total);
-					}
+        },
 
-					for(i = 1; i <= total; i++){
+        _buildInfinitePagination: function(page, next, prev, total) {
 
-						params = {
-							pageStart: perPage === 0 ? 0 : ( i === 1 ? 1 : (perPage * (i - 1) + 1)),
-							pageLimit: i === 1 ? perPage : (this.opt.totalCount < (perPage * i)) ? this.opt.totalCount : perPage * i,
-							prevPage: prev,
-							nextPage: next,
-							page: i,
-							active: this.opt.pageIdx === i ? true : false
-						};
+            var params, paginationNav = [];
 
-						paginationNav.push(params);
+            params = {
+                page: page,
+                infinite: true
+            };
 
-					}
+            paginationNav.push(params);
 
-				}
+            return paginationNav;
 
-			}
+        },
 
-			if(this.opt.type === 'infinite'){
+        _clearResults: function() {
 
-				params = {
-					page: page,
-					infinite: true
-				};
+            if(this.opt.type === 'infinite') {
+                this.$results.empty();
+            }
 
-				paginationNav.push(params);
+        },
 
-			}
+        _goToPage: function(idx) {
 
-			return paginationNav;
+            if(isNaN(idx = parseInt(idx, 10))){
+                idx = 1;
+            }
 
-		},
+            this.opt.pageIdx = idx;
 
-		_goToPage: function(idx){
+        },
 
-			if(isNaN(idx = parseInt(idx, 10))){
-				idx = 1;
-			}
+        _removeFilters: function(idx) {
 
-			this.opt.pageIdx = idx;
+            var newFilters = [];
 
-		},
+            this.$filters.empty();
+            this._clearResults();
+            this.opt.appliedFilters.splice(idx, 1);
 
-		_removeFilter: function(idx){
+            for(var i = 0; i < this.opt.appliedFilters.length; i++){
 
-			this.opt.tmpl.appliedFilters.clear();
-			this._clearResults();
-			this.opt.appliedFilters.splice(idx, 1);
+                if(this.opt.appliedFilters[i].type === 'normal'){
 
-			for(var i = 0; i < this.opt.appliedFilters.length; i++){
+                    newFilters.push(this.opt.appliedFilters[i]);
 
-				if(this.opt.appliedFilters[i].type === 'normal'){
+                }
 
-					this.opt.tmpl.appliedFilters.append(this.opt.appliedFilters[i]);
+            }
 
-				}
+            this.$filters.append( this.opt.tmpl['filters']({ filters: newFilters }));
 
-			}
+        },
 
-		},
+        _reset: function() {
 
-		_resultsPerPage: function(dividend, divisor){
-			return Math.ceil(dividend / divisor);
-		},
+            this.$body.find('[data-sort]').removeClass('asc desc');
+            this.$body.find('[data-search]').find('input').val('');
+            this.$body.find('[data-search]').find('select').prop('selectedIndex', 0);
 
-		_reset: function(){
+            this.opt.appliedFilters = [];
+            this.opt.sort = {};
+            this.opt.pageIdx = 1;
 
-			this.$body.find('[data-sort]').removeClass('asc desc');
-			this.$body.find('[data-search]').find('input').val('');
-			this.$body.find('[data-search]').find('select').prop('selectedIndex', 0);
+            this.$filters.empty();
+            this.$results.empty();
 
-			this.opt.appliedFilters = [];
-			this.opt.sort = {};
-			this.opt.pageIdx = 1;
+        },
 
-			this.opt.tmpl.appliedFilters.clear();
-			this.opt.tmpl.results.clear();
-		},
+        _resultsPerPage: function(dividend, divisor) {
+            return Math.ceil(dividend / divisor);
+        },
 
-		_loading: function(){
+        _loading: function() {
 
-			if ($(this.opt.loader).is(':visible')){
-				$(this.opt.loader).fadeOut();
-			}else{
-				$(this.opt.loader).fadeIn();
-			}
+            if( $(this.opt.loader).is(':visible') ) {
+                $(this.opt.loader).fadeOut();
+            }else{
+                $(this.opt.loader).fadeIn();
+            }
 
-		},
+        },
 
-		_log: function(msg, type, args){
-			if(window.console && console[type]){
-				console[type]('DataGrid :: ' + type, args);
-			}
-		},
+        _log: function() {
+            var values;
 
-		_logDebug: function(msg){
+            values = 1 <= arguments.length ? [].slice.call(arguments, 0) : [];
 
-			if(this.debug){
-				this._log(msg, 'log', arguments);
-			}
+            if(typeof console !== 'undefined' && console !== null) {
+                console.log.apply(console, ['DataGrid »'].concat([].slice.call(values)));
+            }
+        },
 
-		},
+        _callback: function() {
 
-		_logError: function(msg){
+            if( this.opt.callback !== undefined && $.isFunction(this.opt.callback)) {
 
-			this._log(msg, 'error', arguments);
+                this.opt.callback(this.opt);
 
-		},
+            }
 
-		_logWarn: function(msg){
+        }
 
-			this._log(msg, 'warn', arguments);
+    };
 
-		},
-
-		_callback: function(){
-
-			if(this.opt.callback !== undefined && $.isFunction(this.opt.callback)){
-
-				this.opt.callback(this.opt);
-
-			}
-
-		}
-
-	};
-
-	$.datagrid = function(grid, results, pagination, filters, options){
-		return new DataGrid(grid, results, pagination, filters, options);
-	};
+    $.datagrid = function(grid, results, pagination, filters, options) {
+        return new DataGrid(grid, results, pagination, filters, options);
+    };
 
 })(jQuery, window, document);
