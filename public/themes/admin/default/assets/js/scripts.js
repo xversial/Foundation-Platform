@@ -1,5 +1,11 @@
 $(function() {
 
+	$('ul li.active').each(function() {
+
+		$(this).parent().parent().addClass('active');
+
+	});
+
 	// Activate tooltips
 	$('.tip, .tooltip, [data-toggle="tooltip"]').tooltip();
 
