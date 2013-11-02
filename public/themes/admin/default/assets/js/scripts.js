@@ -35,7 +35,7 @@ $(function() {
 	});
 
 	// Activate tabs
-	$('[data-toogle="tab"] a').click(function(event) {
+	$('[data-toggle="tab"] a').click(function(event) {
 		event.preventDefault();
 
 		$(this).tab('show');
