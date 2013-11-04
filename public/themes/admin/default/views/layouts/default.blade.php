@@ -16,11 +16,7 @@
 		<meta name="base_url" content="{{ URL::to('/') }}">
 
 		{{-- Queue assets --}}
-		{{-- Workaround, until the LESS PHP Compiler get's update FFS! --}}
-		{{ Asset::queue('bootstrap', 'css/bootstrap/bootstrap.css') }}
-		{{ Asset::queue('font-awesome', 'css/font-awesome/font-awesome.css') }}
-		{{ Asset::queue('style', 'css/style.css') }}
-		{{-- Asset::queue('style', 'less/style.less') --}}
+		{{ Asset::queue('style', 'less/style.less') }}
 
 		{{ Asset::queue('modernizr', 'js/modernizr/modernizr.js') }}
 		{{ Asset::queue('jquery', 'js/jquery/jquery.js') }}
