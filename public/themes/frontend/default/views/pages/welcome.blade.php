@@ -15,15 +15,11 @@
 
 <div class="jumbotron">
 
-	<div class="container">
+	<div class="text-center">
 
-		<div class="text-center">
+		<img src="{{ Asset::getUrl('img/brand-logo.png') }}" alt="Platform 2 Logo" />
 
-			<img src="{{ Asset::getUrl('img/brand-logo.png') }}" alt="Platform 2 Logo" />
-
-			@content('synopsis')
-
-		</div>
+		@content('synopsis')
 
 	</div>
 
