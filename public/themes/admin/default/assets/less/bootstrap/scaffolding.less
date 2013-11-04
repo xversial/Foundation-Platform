@@ -4,6 +4,7 @@
 
 
 // Reset the box-sizing
+// -------------------------
 
 *,
 *:before,
@@ -13,6 +14,7 @@
 
 
 // Body reset
+// -------------------------
 
 html {
   font-size: 62.5%;
@@ -37,37 +39,26 @@ textarea {
   line-height: inherit;
 }
 
-// Reset unusual Firefox-on-Android default style.
-//
-// See https://github.com/necolas/normalize.css/issues/214
-
-button,
-input,
-select[multiple],
-textarea {
-  background-image: none;
-}
-
 
 // Links
+// -------------------------
 
 a {
   color: @link-color;
   text-decoration: none;
-
-  &:hover,
-  &:focus {
-    color: @link-hover-color;
-    text-decoration: underline;
-  }
-
-  &:focus {
-    .tab-focus();
-  }
+}
+a:hover,
+a:focus {
+  color: @link-hover-color;
+  text-decoration: underline;
+}
+a:focus {
+  .tab-focus();
 }
 
 
 // Images
+// -------------------------
 
 img {
   vertical-align: middle;
@@ -75,7 +66,9 @@ img {
 
 // Responsive images (ensure images don't scale beyond their parents)
 .img-responsive {
-  .img-responsive();
+  display: inline-block;
+  max-width: 100%; // Part 1: Set a maximum relative to the parent
+  height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
 }
 
 // Rounded corners
@@ -84,19 +77,7 @@ img {
 }
 
 // Image thumbnails
-//
-// Heads up! This is mixin-ed into thumbnails.less for `.thumbnail`.
-.img-thumbnail {
-  padding: @thumbnail-padding;
-  line-height: @line-height-base;
-  background-color: @thumbnail-bg;
-  border: 1px solid @thumbnail-border;
-  border-radius: @thumbnail-border-radius;
-  .transition(all .2s ease-in-out);
-
-  // Keep them at most 100% wide
-  .img-responsive(inline-block);
-}
+// See thumbnails.less for `.img-thumbnail`
 
 // Perfect circle
 .img-circle {
@@ -105,6 +86,7 @@ img {
 
 
 // Horizontal rules
+// -------------------------
 
 hr {
   margin-top:    @line-height-computed;
@@ -113,10 +95,9 @@ hr {
   border-top: 1px solid @hr-border;
 }
 
-
 // Only display content to screen readers
-//
 // See: http://a11yproject.com/posts/how-to-hide-content/
+// -------------------------
 
 .sr-only {
   position: absolute;
