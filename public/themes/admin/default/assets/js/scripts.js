@@ -34,11 +34,4 @@ $(function() {
 
 	});
 
-	// Activate tabs
-	$('[data-toggle="tab"] a').click(function(event) {
-		event.preventDefault();
-
-		$(this).tab('show');
-	});
-
 });
