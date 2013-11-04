@@ -8,7 +8,7 @@
   .container-fixed();
 }
 
-// mobile first defaults
+// Mobile-first defaults
 .row {
   .make-row();
 }
@@ -76,7 +76,7 @@
 // Grid classes for extra small devices like smartphones. No offset, push, or
 // pull classes are present here due to the size of the target.
 //
-// Note that `.col-xs-12` doesn't get floated on purpose--there's no need since
+// Note that `.col-xs-12` doesn't get floated on purpose—there's no need since
 // it's full-width.
 
 .col-xs-1,
@@ -111,12 +111,12 @@
 // Columns, offsets, pushes, and pulls for the small device range, from phones
 // to tablets.
 //
-// Note that `.col-sm-12` doesn't get floated on purpose--there's no need since
+// Note that `.col-sm-12` doesn't get floated on purpose—there's no need since
 // it's full-width.
 
-@media (min-width: @screen-sm-min) {
+@media (min-width: @screen-tablet) {
   .container {
-    width: @container-sm;
+    max-width: @container-tablet;
   }
 
   .col-sm-1,
@@ -189,12 +189,12 @@
 //
 // Columns, offsets, pushes, and pulls for the desktop device range.
 //
-// Note that `.col-md-12` doesn't get floated on purpose--there's no need since
+// Note that `.col-md-12` doesn't get floated on purpose—there's no need since
 // it's full-width.
 
-@media (min-width: @screen-md-min) {
+@media (min-width: @screen-desktop) {
   .container {
-    width: @container-md;
+    max-width: @container-desktop;
   }
   .col-md-1,
   .col-md-2,
@@ -223,7 +223,6 @@
   .col-md-12 { width: 100%; }
 
   // Push and pull columns for source order changes
-  .col-md-push-0  { left: auto; }
   .col-md-push-1  { left: percentage((1 / @grid-columns)); }
   .col-md-push-2  { left: percentage((2 / @grid-columns)); }
   .col-md-push-3  { left: percentage((3 / @grid-columns)); }
@@ -236,7 +235,6 @@
   .col-md-push-10 { left: percentage((10/ @grid-columns)); }
   .col-md-push-11 { left: percentage((11/ @grid-columns)); }
 
-  .col-md-pull-0  { right: auto; }
   .col-md-pull-1  { right: percentage((1 / @grid-columns)); }
   .col-md-pull-2  { right: percentage((2 / @grid-columns)); }
   .col-md-pull-3  { right: percentage((3 / @grid-columns)); }
@@ -250,7 +248,6 @@
   .col-md-pull-11 { right: percentage((11/ @grid-columns)); }
 
   // Offsets
-  .col-md-offset-0  { margin-left: 0; }
   .col-md-offset-1  { margin-left: percentage((1 / @grid-columns)); }
   .col-md-offset-2  { margin-left: percentage((2 / @grid-columns)); }
   .col-md-offset-3  { margin-left: percentage((3 / @grid-columns)); }
@@ -269,12 +266,12 @@
 //
 // Columns, offsets, pushes, and pulls for the large desktop device range.
 //
-// Note that `.col-lg-12` doesn't get floated on purpose--there's no need since
+// Note that `.col-lg-12` doesn't get floated on purpose—there's no need since
 // it's full-width.
 
-@media (min-width: @screen-lg-min) {
+@media (min-width: @screen-large-desktop) {
   .container {
-    width: @container-lg;
+    max-width: @container-large-desktop;
   }
 
   .col-lg-1,
@@ -304,7 +301,6 @@
   .col-lg-12 { width: 100%; }
 
   // Push and pull columns for source order changes
-  .col-lg-push-0  { left: auto; }
   .col-lg-push-1  { left: percentage((1 / @grid-columns)); }
   .col-lg-push-2  { left: percentage((2 / @grid-columns)); }
   .col-lg-push-3  { left: percentage((3 / @grid-columns)); }
@@ -317,7 +313,6 @@
   .col-lg-push-10 { left: percentage((10/ @grid-columns)); }
   .col-lg-push-11 { left: percentage((11/ @grid-columns)); }
 
-  .col-lg-pull-0  { right: auto; }
   .col-lg-pull-1  { right: percentage((1 / @grid-columns)); }
   .col-lg-pull-2  { right: percentage((2 / @grid-columns)); }
   .col-lg-pull-3  { right: percentage((3 / @grid-columns)); }
@@ -331,7 +326,6 @@
   .col-lg-pull-11 { right: percentage((11/ @grid-columns)); }
 
   // Offsets
-  .col-lg-offset-0  { margin-left: 0; }
   .col-lg-offset-1  { margin-left: percentage((1 / @grid-columns)); }
   .col-lg-offset-2  { margin-left: percentage((2 / @grid-columns)); }
   .col-lg-offset-3  { margin-left: percentage((3 / @grid-columns)); }

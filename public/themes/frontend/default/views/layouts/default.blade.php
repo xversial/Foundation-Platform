@@ -16,11 +16,7 @@
 		<meta name="base_url" content="{{ URL::to('/') }}">
 
 		{{-- Queue template assets --}}
-		{{-- Workaround, until the LESS PHP Compiler get's update FFS! --}}
-		{{ Asset::queue('bootstrap', 'css/bootstrap/bootstrap.css') }}
-		{{ Asset::queue('font-awesome', 'css/font-awesome/font-awesome.css') }}
-		{{ Asset::queue('style', 'css/style.css') }}
-		{{-- Asset::queue('style', 'less/style.less') --}}
+		{{ Asset::queue('style', 'less/style.less') }}
 
 		{{ Asset::queue('modernizr', 'js/modernizr/modernizr.js') }}
 		{{ Asset::queue('jquery', 'js/jquery/jquery.js') }}
@@ -55,27 +51,42 @@
 		<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
 		<![endif]-->
 
-		<nav class="navbar navbar-default navbar-static-top" role="navigation">
-			<div class="container">
-				<!-- Brand and toggle get grouped for better mobile display -->
+
+		<div class="container">
+
+			<!-- Static navbar -->
+			<div class="navbar navbar-default">
 				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-						<span class="sr-only">Toggle navigation</span>
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
 					<a class="navbar-brand" href="{{ URL::to('/') }}">@setting('platform.site.title')</a>
 				</div>
-
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse navbar-ex1-collapse">
-					@widget('platform/menus::nav.show', array('main', 0, 'nav navbar-nav'))
-				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Action</a></li>
+								<li><a href="#">Another action</a></li>
+								<li><a href="#">Something else here</a></li>
+								<li class="divider"></li>
+								<li class="dropdown-header">Nav header</li>
+								<li><a href="#">Separated link</a></li>
+								<li><a href="#">One more separated link</a></li>
+							</ul>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						@widget('platform/menus::nav.show', array('main', 0, 'nav navbar-nav'))
+					</ul>
+				</div><!--/.nav-collapse -->
 			</div>
-		</nav>
-
-		<div class="container">
 
 			{{-- Notifications --}}
 			@include('partials/notifications')
@@ -84,7 +95,8 @@
 			@section('content')
 			@show
 
-		</div>
+		</div> <!-- /container -->
+
 
 		{{-- Compiled scripts --}}
 		@foreach (Asset::getCompiledScripts() as $script)
