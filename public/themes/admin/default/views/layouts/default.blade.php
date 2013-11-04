@@ -67,7 +67,10 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="{{ URL::toAdmin('/') }}">@setting('platform.site.title')</a>
+						<a class="navbar-brand" href="{{ URL::toAdmin('/') }}">
+							<img class="brand-sm" src="{{ Asset::getUrl('img/brand-sm.png') }}" alt="Cartalyst LLC" />
+							@setting('platform.site.title')
+						</a>
 					</div>
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
