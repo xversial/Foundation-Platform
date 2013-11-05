@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/alchemy-fr/Zippy.git",
-                "reference": "fc286e2a4e46699f6391bc21e010a58f5d444a38"
+                "reference": "4aaaf44f8c7a71d6b579dbd974836c475d971d4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/alchemy-fr/Zippy/zipball/fc286e2a4e46699f6391bc21e010a58f5d444a38",
-                "reference": "fc286e2a4e46699f6391bc21e010a58f5d444a38",
+                "url": "https://api.github.com/repos/alchemy-fr/Zippy/zipball/4aaaf44f8c7a71d6b579dbd974836c475d971d4a",
+                "reference": "4aaaf44f8c7a71d6b579dbd974836c475d971d4a",
                 "shasum": ""
             },
             "require": {
@@ -29,6 +29,7 @@
             },
             "require-dev": {
                 "ext-zip": "*",
+                "phpunit/phpunit": "~3.7",
                 "sami/sami": "dev-master@dev",
                 "symfony/finder": "~2.0"
             },
@@ -64,7 +65,7 @@
                 "tar",
                 "zip"
             ],
-            "time": "2013-10-01 14:26:03"
+            "time": "2013-11-05 13:02:15"
         },
         {
             "name": "cartalyst/api",
@@ -1522,7 +1523,8 @@
                 {
                     "name": "Jonathan Wage",
                     "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/"
+                    "homepage": "http://www.jwage.com/",
+                    "role": "Creator"
                 },
                 {
                     "name": "Guilherme Blanco",
@@ -2431,12 +2433,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "9bc8a753d3f076ea7e77c6b6162fb8805746303b"
+                "reference": "5076824d4c0d4299522010ddb0bf03e7c96278ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/9bc8a753d3f076ea7e77c6b6162fb8805746303b",
-                "reference": "9bc8a753d3f076ea7e77c6b6162fb8805746303b",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/5076824d4c0d4299522010ddb0bf03e7c96278ec",
+                "reference": "5076824d4c0d4299522010ddb0bf03e7c96278ec",
                 "shasum": ""
             },
             "require": {
@@ -2536,7 +2538,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-11-04 16:56:46"
+            "time": "2013-11-05 01:52:53"
         },
         {
             "name": "leafo/lessphp",
@@ -2726,12 +2728,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-loep/oauth2-client.git",
-                "reference": "8335c7f0fb792b7d36ad7da245d19063862faefa"
+                "reference": "059f050b3b2d3129ce2045895bb4cf57b332d602"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-loep/oauth2-client/zipball/8335c7f0fb792b7d36ad7da245d19063862faefa",
-                "reference": "8335c7f0fb792b7d36ad7da245d19063862faefa",
+                "url": "https://api.github.com/repos/php-loep/oauth2-client/zipball/059f050b3b2d3129ce2045895bb4cf57b332d602",
+                "reference": "059f050b3b2d3129ce2045895bb4cf57b332d602",
                 "shasum": ""
             },
             "require": {
@@ -2772,7 +2774,7 @@
                 "oauth2",
                 "single sign on"
             ],
-            "time": "2013-10-22 14:09:57"
+            "time": "2013-11-05 04:03:31"
         },
         {
             "name": "lmammino/jsmin4assetic",
@@ -3020,16 +3022,16 @@
         },
         {
             "name": "patchwork/utf8",
-            "version": "v1.1.13",
+            "version": "v1.1.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nicolas-grekas/Patchwork-UTF8.git",
-                "reference": "92376c92e7edc281a2ca4e3384f3da9237415db6"
+                "reference": "af1d74b154bc62fab79b428877a9b5ab15f9418a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nicolas-grekas/Patchwork-UTF8/zipball/92376c92e7edc281a2ca4e3384f3da9237415db6",
-                "reference": "92376c92e7edc281a2ca4e3384f3da9237415db6",
+                "url": "https://api.github.com/repos/nicolas-grekas/Patchwork-UTF8/zipball/af1d74b154bc62fab79b428877a9b5ab15f9418a",
+                "reference": "af1d74b154bc62fab79b428877a9b5ab15f9418a",
                 "shasum": ""
             },
             "require": {
@@ -3067,7 +3069,7 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2013-10-12 09:48:20"
+            "time": "2013-11-04 16:58:59"
         },
         {
             "name": "pimple/pimple",
@@ -3521,12 +3523,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-menus.git",
-                "reference": "4a43f53dfd7a511e49f079add16ab8f8994ef66e"
+                "reference": "a6ab1eaea6316d94eef96c6773a638527093b4ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/4a43f53dfd7a511e49f079add16ab8f8994ef66e",
-                "reference": "4a43f53dfd7a511e49f079add16ab8f8994ef66e",
+                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/a6ab1eaea6316d94eef96c6773a638527093b4ba",
+                "reference": "a6ab1eaea6316d94eef96c6773a638527093b4ba",
                 "shasum": ""
             },
             "require": {
@@ -3593,7 +3595,7 @@
                 "source": "https://github.com/cartalyst/platform-menus/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-menus/issues"
             },
-            "time": "2013-11-05 01:26:04"
+            "time": "2013-11-05 16:55:24"
         },
         {
             "name": "platform/operations",
@@ -3680,12 +3682,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-pages.git",
-                "reference": "6ced49728948dad5d72cf0ef46b651d9d53287bb"
+                "reference": "a6ac7fbe43e727a0da5763212ccbab8c16821f03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/6ced49728948dad5d72cf0ef46b651d9d53287bb",
-                "reference": "6ced49728948dad5d72cf0ef46b651d9d53287bb",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/a6ac7fbe43e727a0da5763212ccbab8c16821f03",
+                "reference": "a6ac7fbe43e727a0da5763212ccbab8c16821f03",
                 "shasum": ""
             },
             "require": {
@@ -3753,7 +3755,7 @@
                 "source": "https://github.com/cartalyst/platform-pages/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2013-11-05 01:25:20"
+            "time": "2013-11-05 01:47:49"
         },
         {
             "name": "platform/routing",
