@@ -20,6 +20,9 @@
 
 return array(
 
+	'error'   => 'Error',
+	'success' => 'Success',
+
 	'yes'      => 'Yes',
 	'no'       => 'No',
 	'all'      => 'All',
