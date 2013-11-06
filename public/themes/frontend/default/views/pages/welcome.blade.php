@@ -17,7 +17,7 @@
 
 	<div class="text-center">
 
-		<img src="{{ Asset::getUrl('img/brand-logo.png') }}" alt="Platform 2 Logo" />
+		<h1>Platform RC3</h1>
 
 		@content('synopsis')
 
@@ -25,7 +25,7 @@
 
 </div>
 
-<div class="row">
+<div class="row text-center">
 
 	<div class="col-lg-4">@content('packages')</div>
 
