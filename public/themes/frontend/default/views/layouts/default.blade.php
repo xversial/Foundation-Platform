@@ -75,9 +75,7 @@
 			</div>
 
 			{{-- Notifications --}}
-			<div class="col-lg-12">
-				@include('partials/notifications')
-			</div>
+			@include('partials/notifications')
 
 			{{-- Page content --}}
 			@section('content')
