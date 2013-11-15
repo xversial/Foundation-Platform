@@ -64,11 +64,9 @@
 	// Pagination
 	var pagi = {
 		pageIdx: 1,
-		nextIdx: null,
-		prevIdx: null,
-		totalPages: null,
 		totalCount: null,
-		filteredCount: null
+		filteredCount: null,
+		baseTrottle: null
 	};
 
 	function DataGrid(grid, results, pagination, filters, options) {
@@ -92,11 +90,13 @@
 				_this.$results = $(results + this.grid).find('tbody');
 			}
 
-			// Setup Default Hash
-			defaultHash = _this.key;
-
 			// Options
 			_this.opt = $.extend({}, defaults, options);
+
+			// Setup Default Hash
+			defaultHash = _this.key;
+			// Setup Base Throttle
+			pagi.baseTrottle = _this.opt.throttle;
 
 		this._checkDependencies(results, pagination, filters);
 
@@ -110,6 +110,8 @@
 
 			this._addEventListeners();
 
+			this._loading();
+
 			this._checkHash();
 
 		},
@@ -118,9 +120,7 @@
 
 			if (typeof window._ === 'undefined')
 			{
-				console.log('Underscore is not defined. DataGrid Requires UnderscoreJS v 1.5.2 or later to run!');
-
-				return false;
+				throw new Error('Underscore is not defined. DataGrid Requires UnderscoreJS v 1.5.2 or later to run!');
 			}
 
 			// Set _ templates interpolate
@@ -190,6 +190,7 @@
 
 			this.$body.on('click', '[data-sort]'+this.grid, function(){
 
+				_this.$results.empty(); //safty
 				_this._extractSortsFromClick($(this) , $(this).data('sort'));
 
 			});
@@ -197,7 +198,7 @@
 			this.$body.on('click', '[data-filter]'+this.grid, function(e) {
 
 				e.preventDefault();
-
+				_this.$results.empty(); //safty
 				_this._extractFiltersFromClick($(this).data('filter'), $(this).data('label'));
 
 			});
@@ -205,16 +206,25 @@
 			this.$filters.on('click', '> *', function(e) {
 
 				e.preventDefault();
-
+				_this.$results.empty(); //safty
 				_this._removeFilters($(this).index());
 
 			});
 
-			this.$pagination.on('click', '[data-page]'+this.grid, function(e) {
+			this.$pagination.on('click', '[data-page]', function(e) {
 
 				e.preventDefault();
 
 				_this._handlePageChange($(this));
+
+			});
+
+			this.$pagination.on('click', '[data-throttle]', function(e) {
+				e.preventDefault();
+
+				_this.opt.throttle += pagi.baseTrottle;
+
+				$(_this).trigger('dg:update');
 
 			});
 
@@ -431,8 +441,6 @@
 				this.opt.paginationType === 'multiple')
 			{
 				idx = el.data('page');
-
-				this.$pagination.empty();
 			}
 
 			if (this.opt.paginationType === 'infinite')
@@ -481,7 +489,14 @@
 
 			var pageArr = page.split('-');
 
-			pagi.pageIdx = pageArr[1];
+			if (pageArr[1] === '' || pageArr[1] <= 0)
+			{
+				pagi.pageIdx = 1;
+			}
+			else
+			{
+				pagi.pageIdx = parseInt(pageArr[1], 10);
+			}
 
 		},
 
@@ -599,11 +614,43 @@
 
 			var _this = this;
 
+			var labels = $('[data-label]'+this.grid);
+
 			for (var i = 0; i < routeArr.length; i++)
 			{
 
-				// Check to see if a filter is already set
-				if (_this._searchForValue( routeArr[i].split('-')[1], appliedFilters) === -1)
+				var filters = routeArr[i].split('-');
+
+				for (var x = 0; x < labels.length; x++)
+				{
+
+					if( $(labels[x]).data('label').indexOf( filters[0] ) !== -1 ||
+						$(labels[x]).data('label').indexOf( filters[1] ) !== -1 )
+					{
+						var matchedLabel = $(labels[x]).data('label').split(':');
+						var key = _this._indexOf(filters, matchedLabel[0]);
+
+						// Map Filter that is equal to the returned key
+						// to the label value for renaming
+						filters[key] = matchedLabel[1];
+
+						// Check to make sure filter isn't already set.
+						if (_this._searchForValue( filters[1], appliedFilters) === -1)
+						{
+							// if its not already set, lets set the filter
+							_this._applyFilter({
+								column: filters[0],
+								value: filters[1],
+								mask: (key === 0 ? 'column' : 'value'),
+								maskOrg: matchedLabel[0]
+							});
+						}
+
+					}
+				}
+
+				// Check to  make sure filter isn't already set
+				if (_this._searchForValue( filters[1], appliedFilters) === -1)
 				{
 					// If its not already set, lets set the filter
 					_this._applyFilter({
@@ -762,7 +809,6 @@
 		_ajaxFetchResults: function() {
 
 			var _this = this;
-			this._loading();
 
 			$.ajax({
 				url: _this.source,
@@ -771,15 +817,22 @@
 			})
 			.done(function(response) {
 
+				if (pagi.pageIdx > response.pages_count)
+				{
+					pagi.pageIdx = response.pages_count;
+					$(_this).trigger('dg:update');
+					return false;
+				}
+
 				pagi.filteredCount = response.filtered_count;
 				pagi.totalCount = response.total_count;
 
-				if (_this.opt.type !== 'infinite')
+				if (_this.opt.paginationType !== 'infinite')
 				{
 					_this.$results.empty();
 				}
 
-				if (_this.opt.type === 'single' || _this.opt.type === 'multiple')
+				if (_this.opt.paginationType === 'single' || _this.opt.paginationType === 'multiple')
 				{
 					_this.$results.html(_this.tmpl['results'](response));
 				}
@@ -796,7 +849,6 @@
 				}
 
 				_this._updatedCurrentHash();
-				_this._loading();
 				_this._callback();
 
 			})
@@ -831,7 +883,17 @@
 					}
 					else
 					{
-						params.filters.push(appliedFilters[i].maskOrg);
+
+						if (appliedFilters[i].column === 'all')
+						{
+							params.filters.push(appliedFilters[i].maskOrg);
+						}
+						else
+						{
+							filter[appliedFilters[i].column] = appliedFilters[i].maskOrg;
+							params.filters.push(filter);
+						}
+
 					}
 				}
 				else
@@ -929,9 +991,10 @@
 
 				for (var i = 1; i <= this.opt.dividend; i++)
 				{
+
 					params = {
 						pageStart: perPage === 0 ? 0 : ( i === 1 ? 1 : (perPage * (i - 1) + 1)),
-						pageLimit: i === 1 ? perPage : ( pagi.totalCount < this.opt.throttle && i === this.opt.dividend),
+						pageLimit: i === 1 ? perPage : (pagi.totalCount < this.opt.throttle && i === this.opt.dividend) ? pagi.totalCount : perPage * i,
 						nextPage: next,
 						prevPage: prev,
 						page: i,
@@ -984,7 +1047,8 @@
 
 			}
 
-			return rect;
+			return { pagination: rect };
+
 
 		},
 
@@ -1000,7 +1064,7 @@
 
 			rect.push(params);
 
-			return rect;
+			return { pagination: rect };
 
 		},
 
@@ -1016,6 +1080,7 @@
 
 			// TODO: See about removing this
 			this.$filters.html( this.tmpl['filters']({ filters: appliedFilters }));
+			this._goToPage(1);
 			$(this).trigger('dg:update');
 
 		},
@@ -1035,19 +1100,11 @@
 
 			var _this = this;
 
-			if ($(this.opt.loader).is(':visible'))
-			{
-				setTimeout(function(){
-					$(_this.opt.loader).fadeOut();
-				}, 100);
-			}
-			else
-			{
-				setTimeout(function(){
-					$(_this.opt.loader).fadeIn();
-				}, 100);
-			}
-
+			$(document).ajaxStart(function() {
+				$(_this.opt.loader).fadeIn();
+			}).ajaxStop(function() {
+				$(_this.opt.loader).fadeOut();
+			});
 		},
 
 		_reset: function() {
@@ -1080,10 +1137,11 @@
 
 		_callback: function() {
 
-			// TODO: Figure out what we should pass back in the callback.
+			var callbackObject = $.extend({}, pagi, currentSort, appliedFilters);
+
 			if (this.opt.callback !== undefined && $.isFunction(this.opt.callback))
 			{
-				this.opt.callback();
+				this.opt.callback(callbackObject);
 			}
 
 		}
