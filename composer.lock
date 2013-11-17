@@ -723,12 +723,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/media.git",
-                "reference": "0b1282feb71482993ac1981083ceec2f0774b5f7"
+                "reference": "24c0f9c50961b3db0e68575281ff65f20d75a3bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/media/zipball/0b1282feb71482993ac1981083ceec2f0774b5f7",
-                "reference": "0b1282feb71482993ac1981083ceec2f0774b5f7",
+                "url": "https://api.github.com/repos/cartalyst/media/zipball/24c0f9c50961b3db0e68575281ff65f20d75a3bc",
+                "reference": "24c0f9c50961b3db0e68575281ff65f20d75a3bc",
                 "shasum": ""
             },
             "require": {
@@ -781,7 +781,7 @@
                 "source": "https://github.com/cartalyst/media/tree/master",
                 "issues": "https://github.com/cartalyst/media/issues"
             },
-            "time": "2013-11-15 04:42:03"
+            "time": "2013-11-16 04:09:30"
         },
         {
             "name": "cartalyst/nested-sets",
@@ -1518,7 +1518,8 @@
                 {
                     "name": "Jonathan Wage",
                     "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/"
+                    "homepage": "http://www.jwage.com/",
+                    "role": "Creator"
                 },
                 {
                     "name": "Guilherme Blanco",
@@ -1657,9 +1658,10 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/"
+                    "homepage": "http://www.jwage.com/",
+                    "role": "Creator"
                 },
                 {
                     "name": "Guilherme Blanco",
@@ -1729,9 +1731,10 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/"
+                    "homepage": "http://www.jwage.com/",
+                    "role": "Creator"
                 },
                 {
                     "name": "Guilherme Blanco",
@@ -1747,7 +1750,7 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -1864,9 +1867,10 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/"
+                    "homepage": "http://www.jwage.com/",
+                    "role": "Creator"
                 },
                 {
                     "name": "Guilherme Blanco",
@@ -1884,7 +1888,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -2008,21 +2012,22 @@
         },
         {
             "name": "frenkynet/flysystem",
-            "version": "0.1.5",
+            "version": "0.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FrenkyNet/Flysystem.git",
-                "reference": "7840fc9c55e9b7d60e8278d3a1412f8154f57796"
+                "reference": "ca0783d52cb52a300cd0a45fd049adceabaa19aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FrenkyNet/Flysystem/zipball/7840fc9c55e9b7d60e8278d3a1412f8154f57796",
-                "reference": "7840fc9c55e9b7d60e8278d3a1412f8154f57796",
+                "url": "https://api.github.com/repos/FrenkyNet/Flysystem/zipball/ca0783d52cb52a300cd0a45fd049adceabaa19aa",
+                "reference": "ca0783d52cb52a300cd0a45fd049adceabaa19aa",
                 "shasum": ""
             },
             "require-dev": {
                 "aws/aws-sdk-php": "~2.4.7",
                 "dropbox/dropbox-sdk": "~1.1.1",
+                "league/phpunit-coverage-listener": "~1.0",
                 "mockery/mockery": "~0.8.0",
                 "predis/predis": "~0.8.4"
             },
@@ -2055,7 +2060,7 @@
                 "filesystem",
                 "s3"
             ],
-            "time": "2013-11-12 10:40:09"
+            "time": "2013-11-16 15:13:05"
         },
         {
             "name": "guzzle/guzzle",
@@ -3106,12 +3111,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "700847e2951942200b479c413aa2984b5364799b"
+                "reference": "7f4ab26732c6c0dcfeef98ee94452977ac26e82c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/700847e2951942200b479c413aa2984b5364799b",
-                "reference": "700847e2951942200b479c413aa2984b5364799b",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/7f4ab26732c6c0dcfeef98ee94452977ac26e82c",
+                "reference": "7f4ab26732c6c0dcfeef98ee94452977ac26e82c",
                 "shasum": ""
             },
             "require": {
@@ -3143,7 +3148,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2013-09-28 11:21:30"
+            "time": "2013-11-15 19:27:56"
         },
         {
             "name": "patchwork/utf8",
@@ -3325,12 +3330,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-attributes.git",
-                "reference": "bb77ad8aa763e2650fd729f6f759ffb28ca9f0fe"
+                "reference": "ef2707c31a3608e1c93a9d0642f9ab876acd1fd3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-attributes/zipball/bb77ad8aa763e2650fd729f6f759ffb28ca9f0fe",
-                "reference": "bb77ad8aa763e2650fd729f6f759ffb28ca9f0fe",
+                "url": "https://api.github.com/repos/cartalyst/platform-attributes/zipball/ef2707c31a3608e1c93a9d0642f9ab876acd1fd3",
+                "reference": "ef2707c31a3608e1c93a9d0642f9ab876acd1fd3",
                 "shasum": ""
             },
             "require": {
@@ -3395,7 +3400,7 @@
                 "source": "https://github.com/cartalyst/platform-attributes/tree/master",
                 "issues": "https://github.com/cartalyst/platform-attributes/issues"
             },
-            "time": "2013-11-12 19:21:59"
+            "time": "2013-11-17 01:27:48"
         },
         {
             "name": "platform/content",
@@ -3648,12 +3653,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-media.git",
-                "reference": "85b788050ed5cbb5c4c05140fb3dea9bbbced8a9"
+                "reference": "84d7deed584f3e5e7357b70175af60c168f0f853"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/85b788050ed5cbb5c4c05140fb3dea9bbbced8a9",
-                "reference": "85b788050ed5cbb5c4c05140fb3dea9bbbced8a9",
+                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/84d7deed584f3e5e7357b70175af60c168f0f853",
+                "reference": "84d7deed584f3e5e7357b70175af60c168f0f853",
                 "shasum": ""
             },
             "require": {
@@ -3718,7 +3723,7 @@
                 "source": "https://github.com/cartalyst/platform-media/tree/master",
                 "issues": "https://github.com/cartalyst/platform-media/issues"
             },
-            "time": "2013-11-15 21:03:06"
+            "time": "2013-11-16 04:12:32"
         },
         {
             "name": "platform/menus",

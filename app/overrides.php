@@ -56,22 +56,26 @@ if (function_exists('admin_uri'))
 |
 */
 
+// Extension: platform/attributes
+// $app['Platform\Attributes\Models\Attribute'] = new My\Platform\Attributes\Models\Attribute;
+// $app['Platform\Attributes\Models\Value']     = new My\Platform\Attributes\Models\Value;
+
 // Extension: platform/content
-// $app['Platform\Content\Models\Content'] = new My\Platform\Content\Models\Content;
+// $app['Platform\Content\Models\Content']      = new My\Platform\Content\Models\Content;
 
 // Extension: platform/menus
-// $app['Platform\Menus\Models\Menu']      = new My\Platform\Menus\Models\Menu;
+// $app['Platform\Menus\Models\Menu']           = new My\Platform\Menus\Models\Menu;
 
 // Extension: platform/pages
-// $app['Platform\Pages\Models\Page']      = new My\Platform\Pages\Models\Page;
+// $app['Platform\Pages\Models\Page']           = new My\Platform\Pages\Models\Page;
 
 // Extension: platform/tags
-// $app['Platform\Tags\Models\Tag']        = new My\Platform\Tags\Models\Tag;
+// $app['Platform\Tags\Models\Tag']             = new My\Platform\Tags\Models\Tag;
 
 // Extension: platform/users
-// $app['Platform\Users\Models\Group']     = new My\Platform\Users\Models\Group;
-// $app['Platform\Users\Models\Throttle']  = new My\Platform\Users\Models\Throttle;
-// $app['Platform\Users\Models\User']      = new My\Platform\Users\Models\User;
+// $app['Platform\Users\Models\Group']          = new My\Platform\Users\Models\Group;
+// $app['Platform\Users\Models\Throttle']       = new My\Platform\Users\Models\Throttle;
+// $app['Platform\Users\Models\User']           = new My\Platform\Users\Models\User;
 
 /*
 |--------------------------------------------------------------------------
