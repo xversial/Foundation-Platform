@@ -25,8 +25,8 @@ return array(
 	| Active Theme
 	|--------------------------------------------------------------------------
 	|
-	| Here you can specify the default active theme for your application, or
-	| set to null if none is defined.
+	| Here you can specify the default active theme for your application,
+	| or set to null if none is defined.
 	|
 	*/
 
@@ -37,8 +37,8 @@ return array(
 	| Fallback Theme
 	|--------------------------------------------------------------------------
 	|
-	| Here you can specify the default fallback theme for your application, or
-	| set to null if none is defined.
+	| Here you can specify the default fallback theme for your application,
+	| or set to null if none is defined.
 	|
 	*/
 
@@ -50,13 +50,13 @@ return array(
 	|--------------------------------------------------------------------------
 	|
 	| Here you set the default theme paths for your application. Paths should
-	| also be set relative to a publically accessible directory so assets can
-	| be resolved.
+	| also be set relative to a publically accessible directory so assets
+	| can be resolved.
 	|
 	*/
 
 	'paths' => array(
-		__DIR__.'/../../../../../public/themes',
+		public_path().'/themes',
 	),
 
 	/*
@@ -210,5 +210,29 @@ return array(
 	*/
 
 	'debug' => null,
+
+	/*
+	|--------------------------------------------------------------------------
+	| Force Recompile
+	|--------------------------------------------------------------------------
+	|
+	| If you want your assets to be recompiled on every page load, set
+	| this option to true.
+	|
+	*/
+
+	'force_recompile' => false,
+
+	/*
+	|--------------------------------------------------------------------------
+	| Auto Clear assets
+	|--------------------------------------------------------------------------
+	|
+	| If you want to completely remove all the compiled assets on
+	| every page load, set this option to true.
+	|
+	*/
+
+	'auto_clear' => false,
 
 );
