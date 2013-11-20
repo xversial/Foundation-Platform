@@ -25,8 +25,8 @@
 	var defaults = {
 			source: null,
 			dividend: 1,
-			threshold: 100,
-			throttle: 100,
+			threshold: 50,
+			throttle: 50,
 			paginationType: 'single',
 			sortClasses: {
 				asc: 'asc',
@@ -190,7 +190,7 @@
 
 			this.$body.on('click', '[data-sort]'+this.grid, function(){
 
-				_this.$results.empty(); //safty
+				// _this.$results.empty(); //safty
 				_this._extractSortsFromClick($(this) , $(this).data('sort'));
 
 			});
@@ -476,7 +476,7 @@
 			else
 			{
 				// get the oppsite class from which is set
-				var remove = currentSort.direction === 'asc' ? 'desc' : 'asc';
+				var remove = currentSort.direction === 'asc' ? this.opt.sortClasses.desc : this.opt.sortClasses.asc;
 
 				el.removeClass(remove);
 
@@ -742,13 +742,13 @@
 				base += page;
 			}
 
-			if (this._checkIE() < 9)
+			if (this._checkIE() <= 9)
 			{
 				window.location.hash = base;
 			}
 			else
 			{
-				var defaultURI = window.location.origin + window.location.pathname;
+				var defaultURI = window.location.protocol + '//' + window.location.host + window.location.pathname;
 
 				window.history.pushState(null, null, defaultURI +'#'+ base);
 			}
@@ -1131,6 +1131,12 @@
 			this.$filters.empty();
 
 			// Updated
+			$(this).trigger('dg:update');
+
+		},
+
+		_refresh: function() {
+
 			$(this).trigger('dg:update');
 
 		},
