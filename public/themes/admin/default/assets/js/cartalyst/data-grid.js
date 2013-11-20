@@ -206,7 +206,7 @@
 			this.$filters.on('click', '> *', function(e) {
 
 				e.preventDefault();
-				_this.$results.empty(); //safty
+				//_this.$results.empty(); //safty
 				_this._removeFilters($(this).index());
 
 			});
