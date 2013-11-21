@@ -73,12 +73,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/api.git",
-                "reference": "cfb3d9c8c1a842ee4cc7acf246350adf30d5cd05"
+                "reference": "dd8d4671b724444770b6ebf48788a3194c33a14c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/api/zipball/cfb3d9c8c1a842ee4cc7acf246350adf30d5cd05",
-                "reference": "cfb3d9c8c1a842ee4cc7acf246350adf30d5cd05",
+                "url": "https://api.github.com/repos/cartalyst/api/zipball/dd8d4671b724444770b6ebf48788a3194c33a14c",
+                "reference": "dd8d4671b724444770b6ebf48788a3194c33a14c",
                 "shasum": ""
             },
             "require": {
@@ -142,10 +142,10 @@
                 "laravel 4"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/api/tree/v1.0.1",
+                "source": "https://github.com/cartalyst/api/tree/v1.0.2",
                 "issues": "https://github.com/cartalyst/api/issues"
             },
-            "time": "2013-08-23 01:14:03"
+            "time": "2013-11-20 23:25:21"
         },
         {
             "name": "cartalyst/assetic-filters",
@@ -561,12 +561,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/extensions.git",
-                "reference": "7bb1734f700e667a3ec062e26c6d2317e3e49076"
+                "reference": "f7130997b0980824870171e290a84eae71f4c687"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/extensions/zipball/7bb1734f700e667a3ec062e26c6d2317e3e49076",
-                "reference": "7bb1734f700e667a3ec062e26c6d2317e3e49076",
+                "url": "https://api.github.com/repos/cartalyst/extensions/zipball/f7130997b0980824870171e290a84eae71f4c687",
+                "reference": "f7130997b0980824870171e290a84eae71f4c687",
                 "shasum": ""
             },
             "require": {
@@ -630,7 +630,7 @@
                 "source": "https://github.com/cartalyst/extensions/tree/1.0",
                 "issues": "https://github.com/cartalyst/extensions/issues"
             },
-            "time": "2013-11-19 17:20:09"
+            "time": "2013-11-21 04:20:01"
         },
         {
             "name": "cartalyst/interpret",
@@ -1590,7 +1590,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/",
                     "role": "Creator"
@@ -2558,12 +2558,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "d4008b0ad4058f6d112b90732a4d2dc33c034b86"
+                "reference": "31fb3d8e18a02fd10877cfc16045f673d9e7cfc3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/d4008b0ad4058f6d112b90732a4d2dc33c034b86",
-                "reference": "d4008b0ad4058f6d112b90732a4d2dc33c034b86",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/31fb3d8e18a02fd10877cfc16045f673d9e7cfc3",
+                "reference": "31fb3d8e18a02fd10877cfc16045f673d9e7cfc3",
                 "shasum": ""
             },
             "require": {
@@ -2663,7 +2663,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-11-20 14:44:26"
+            "time": "2013-11-21 02:34:54"
         },
         {
             "name": "leafo/lessphp",
@@ -3252,12 +3252,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-admin.git",
-                "reference": "fa5ffdb5040955d87235891998f976475c76e7fe"
+                "reference": "e8a77b0b821f7991009f59018c5d03be9441c52a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-admin/zipball/fa5ffdb5040955d87235891998f976475c76e7fe",
-                "reference": "fa5ffdb5040955d87235891998f976475c76e7fe",
+                "url": "https://api.github.com/repos/cartalyst/platform-admin/zipball/e8a77b0b821f7991009f59018c5d03be9441c52a",
+                "reference": "e8a77b0b821f7991009f59018c5d03be9441c52a",
                 "shasum": ""
             },
             "require": {
@@ -3280,7 +3280,7 @@
                 },
                 "classmap": [
                     "controllers",
-                    "database/migrations",
+                    "migrations",
                     "models",
                     "tests",
                     "widgets"
@@ -3321,7 +3321,7 @@
                 "source": "https://github.com/cartalyst/platform-admin/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-admin/issues"
             },
-            "time": "2013-11-07 18:05:29"
+            "time": "2013-11-21 04:28:24"
         },
         {
             "name": "platform/attributes",
@@ -3329,12 +3329,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-attributes.git",
-                "reference": "afb381afb60932b1a44c7371204b03db44bc10d6"
+                "reference": "b03a7e317fac3e1bb9794bc4275d91c642db923e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-attributes/zipball/afb381afb60932b1a44c7371204b03db44bc10d6",
-                "reference": "afb381afb60932b1a44c7371204b03db44bc10d6",
+                "url": "https://api.github.com/repos/cartalyst/platform-attributes/zipball/b03a7e317fac3e1bb9794bc4275d91c642db923e",
+                "reference": "b03a7e317fac3e1bb9794bc4275d91c642db923e",
                 "shasum": ""
             },
             "require": {
@@ -3399,7 +3399,7 @@
                 "source": "https://github.com/cartalyst/platform-attributes/tree/master",
                 "issues": "https://github.com/cartalyst/platform-attributes/issues"
             },
-            "time": "2013-11-20 17:33:38"
+            "time": "2013-11-21 00:45:09"
         },
         {
             "name": "platform/content",
@@ -3407,12 +3407,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-content.git",
-                "reference": "d6798088f258f652a74c264738e6e88b2095ad1a"
+                "reference": "119be8bbb2427549b9f0579c9522bb50f8d2d2b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/d6798088f258f652a74c264738e6e88b2095ad1a",
-                "reference": "d6798088f258f652a74c264738e6e88b2095ad1a",
+                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/119be8bbb2427549b9f0579c9522bb50f8d2d2b0",
+                "reference": "119be8bbb2427549b9f0579c9522bb50f8d2d2b0",
                 "shasum": ""
             },
             "require": {
@@ -3434,7 +3434,7 @@
             "autoload": {
                 "classmap": [
                     "controllers",
-                    "database/migrations",
+                    "migrations",
                     "models",
                     "tests",
                     "widgets"
@@ -3477,7 +3477,7 @@
                 "source": "https://github.com/cartalyst/platform-content/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-content/issues"
             },
-            "time": "2013-11-20 17:32:44"
+            "time": "2013-11-21 04:28:29"
         },
         {
             "name": "platform/foundation",
@@ -3652,12 +3652,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-media.git",
-                "reference": "35d677354cc5e59cdcbf177f25c240e039706522"
+                "reference": "6068bd561629e3eb8e269125ca0cda4c61c52945"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/35d677354cc5e59cdcbf177f25c240e039706522",
-                "reference": "35d677354cc5e59cdcbf177f25c240e039706522",
+                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/6068bd561629e3eb8e269125ca0cda4c61c52945",
+                "reference": "6068bd561629e3eb8e269125ca0cda4c61c52945",
                 "shasum": ""
             },
             "require": {
@@ -3679,7 +3679,7 @@
             "autoload": {
                 "classmap": [
                     "controllers",
-                    "database/migrations",
+                    "migrations",
                     "models",
                     "tests",
                     "widgets"
@@ -3721,7 +3721,7 @@
                 "source": "https://github.com/cartalyst/platform-media/tree/master",
                 "issues": "https://github.com/cartalyst/platform-media/issues"
             },
-            "time": "2013-11-20 17:34:22"
+            "time": "2013-11-21 04:28:31"
         },
         {
             "name": "platform/menus",
@@ -3729,12 +3729,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-menus.git",
-                "reference": "5701b86ca99a5995ec428bf177143bcbe64b7d9b"
+                "reference": "dff8cda8842a4c7466f118a9d82ad6da86844580"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/5701b86ca99a5995ec428bf177143bcbe64b7d9b",
-                "reference": "5701b86ca99a5995ec428bf177143bcbe64b7d9b",
+                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/dff8cda8842a4c7466f118a9d82ad6da86844580",
+                "reference": "dff8cda8842a4c7466f118a9d82ad6da86844580",
                 "shasum": ""
             },
             "require": {
@@ -3756,7 +3756,7 @@
             "autoload": {
                 "classmap": [
                     "controllers",
-                    "database/migrations",
+                    "migrations",
                     "models",
                     "tests",
                     "widgets"
@@ -3801,7 +3801,7 @@
                 "source": "https://github.com/cartalyst/platform-menus/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-menus/issues"
             },
-            "time": "2013-11-20 17:32:35"
+            "time": "2013-11-21 04:28:33"
         },
         {
             "name": "platform/operations",
@@ -3809,12 +3809,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-operations.git",
-                "reference": "7d84346d5213cd7200922f17bbc4d6e33bb8fdec"
+                "reference": "2b5dc02b29807f43b7c06cd0553778fa18ec0aaf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/7d84346d5213cd7200922f17bbc4d6e33bb8fdec",
-                "reference": "7d84346d5213cd7200922f17bbc4d6e33bb8fdec",
+                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/2b5dc02b29807f43b7c06cd0553778fa18ec0aaf",
+                "reference": "2b5dc02b29807f43b7c06cd0553778fa18ec0aaf",
                 "shasum": ""
             },
             "require": {
@@ -3840,7 +3840,7 @@
                 },
                 "classmap": [
                     "controllers",
-                    "database/migrations",
+                    "migrations",
                     "tests",
                     "widgets"
                 ]
@@ -3880,7 +3880,7 @@
                 "source": "https://github.com/cartalyst/platform-operations/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-operations/issues"
             },
-            "time": "2013-11-20 17:32:28"
+            "time": "2013-11-21 04:28:38"
         },
         {
             "name": "platform/pages",
@@ -3888,12 +3888,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-pages.git",
-                "reference": "c621e2c0a45378313a6053745e78e31c88448a22"
+                "reference": "bb612c79c36e730e8111a17dc68c4a4f46afa74f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/c621e2c0a45378313a6053745e78e31c88448a22",
-                "reference": "c621e2c0a45378313a6053745e78e31c88448a22",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/bb612c79c36e730e8111a17dc68c4a4f46afa74f",
+                "reference": "bb612c79c36e730e8111a17dc68c4a4f46afa74f",
                 "shasum": ""
             },
             "require": {
@@ -3915,7 +3915,7 @@
             "autoload": {
                 "classmap": [
                     "controllers",
-                    "database/migrations",
+                    "migrations",
                     "models",
                     "tests",
                     "widgets"
@@ -3961,7 +3961,7 @@
                 "source": "https://github.com/cartalyst/platform-pages/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2013-11-20 17:32:50"
+            "time": "2013-11-21 04:28:34"
         },
         {
             "name": "platform/routing",
@@ -4049,12 +4049,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-settings.git",
-                "reference": "d7882e0f600fcfcad9326c098f3618abc4c02b34"
+                "reference": "00c435ae7c5f9aa544c7c2a1b1ae8d74d07a5585"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-settings/zipball/d7882e0f600fcfcad9326c098f3618abc4c02b34",
-                "reference": "d7882e0f600fcfcad9326c098f3618abc4c02b34",
+                "url": "https://api.github.com/repos/cartalyst/platform-settings/zipball/00c435ae7c5f9aa544c7c2a1b1ae8d74d07a5585",
+                "reference": "00c435ae7c5f9aa544c7c2a1b1ae8d74d07a5585",
                 "shasum": ""
             },
             "require": {
@@ -4076,7 +4076,7 @@
             "autoload": {
                 "classmap": [
                     "controllers",
-                    "database/migrations",
+                    "migrations",
                     "models",
                     "tests",
                     "widgets"
@@ -4121,7 +4121,7 @@
                 "source": "https://github.com/cartalyst/platform-settings/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-settings/issues"
             },
-            "time": "2013-11-20 17:33:14"
+            "time": "2013-11-21 04:28:40"
         },
         {
             "name": "platform/users",
@@ -4129,12 +4129,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-users.git",
-                "reference": "2cca4ba233be44582bdffbe63e1254dd6ec7a429"
+                "reference": "d79eaf148be32cd6b77cb0693bf9929136f502c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/2cca4ba233be44582bdffbe63e1254dd6ec7a429",
-                "reference": "2cca4ba233be44582bdffbe63e1254dd6ec7a429",
+                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/d79eaf148be32cd6b77cb0693bf9929136f502c5",
+                "reference": "d79eaf148be32cd6b77cb0693bf9929136f502c5",
                 "shasum": ""
             },
             "require": {
@@ -4156,7 +4156,7 @@
             "autoload": {
                 "classmap": [
                     "controllers",
-                    "database/migrations",
+                    "migrations",
                     "models",
                     "tests",
                     "widgets"
@@ -4198,7 +4198,7 @@
                 "source": "https://github.com/cartalyst/platform-users/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-users/issues"
             },
-            "time": "2013-11-20 17:32:57"
+            "time": "2013-11-21 04:28:36"
         },
         {
             "name": "predis/predis",
