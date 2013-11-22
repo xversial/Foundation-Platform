@@ -20,6 +20,7 @@
 
 		{{ Asset::queue('modernizr', 'js/modernizr/modernizr.js') }}
 		{{ Asset::queue('jquery', 'js/jquery/jquery.js') }}
+		{{ Asset::queue('bootstrap.alert', 'js/bootstrap/alert.js', array('jquery')) }}
 		{{ Asset::queue('bootstrap.collapse', 'js/bootstrap/collapse.js', array('jquery')) }}
 		{{ Asset::queue('bootstrap.dropdown', 'js/bootstrap/dropdown.js', array('jquery')) }}
 		{{ Asset::queue('bootstrap.modal', 'js/bootstrap/modal.js', array('jquery')) }}

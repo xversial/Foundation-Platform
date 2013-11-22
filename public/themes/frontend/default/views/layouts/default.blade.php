@@ -21,8 +21,9 @@
 		{{ Asset::queue('modernizr', 'js/modernizr/modernizr.js') }}
 		{{ Asset::queue('jquery', 'js/jquery/jquery.js') }}
 		{{ Asset::queue('platform', 'js/platform/platform.js', array('jquery')) }}
-		{{ Asset::queue('collapse', 'js/bootstrap/collapse.js', array('jquery')) }}
-		{{ Asset::queue('dropdown', 'js/bootstrap/dropdown.js', array('jquery')) }}
+		{{ Asset::queue('bootstrap.alert', 'js/bootstrap/alert.js', array('jquery')) }}
+		{{ Asset::queue('bootstrap.collapse', 'js/bootstrap/collapse.js', array('jquery')) }}
+		{{ Asset::queue('bootstrap.dropdown', 'js/bootstrap/dropdown.js', array('jquery')) }}
 
 		{{-- HTML5 shim, for IE6-8 support of HTML5 elements --}}
 		<!--[if lt IE 9]>
