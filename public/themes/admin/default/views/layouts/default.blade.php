@@ -78,7 +78,7 @@
 					<div class="collapse navbar-collapse navbar-ex1-collapse">
 						@widget('platform/menus::nav.show', array('admin', 0, 'nav navbar-nav', admin_uri()))
 
-						@widget('platform/menus::nav.show', array('system', 0, 'nav navbar-nav navbar-right'))
+						@widget('platform/menus::nav.show', array('system', 0, 'nav navbar-nav navbar-right', null, 'nav/system'))
 					</div>
 
 				</div>

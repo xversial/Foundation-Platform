@@ -7,15 +7,15 @@ $(function() {
 	});
 
 	// Activate tooltips
-	$('.tip, .tooltip, [data-toggle="tooltip"]').tooltip();
+	$('.tip, .tooltip, [data-tooltip], [data-toggle="tooltip"]').tooltip();
 
 	// Activate popovers
-	$('.popover, [data-toggle="popover"]').popover({
+	$('.popover, [data-popover], [data-toggle="popover"]').popover({
 		trigger : 'hover'
 	});
 
 	// Activate modal windows
-	$(document).on('click', '[data-toggle="modal"]', function(event) {
+	$(document).on('click', '[data-modal], [data-toggle="modal"]', function(event) {
 
 		event.preventDefault();
 
