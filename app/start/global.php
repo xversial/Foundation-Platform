@@ -40,8 +40,8 @@ Log::useDailyFiles(storage_path().'/logs/'.$logFile);
 | Require The Errors File
 |--------------------------------------------------------------------------
 |
-| Next we will load the file responsible for error handling. This allows us
-| to have error handling setup before we boot our app.
+| Next we'll load the file responsible for error handling. This allow
+| us to have error handling setup before we boot our application.
 |
 */
 
@@ -68,9 +68,9 @@ App::down(function()
 | Require The Functions File
 |--------------------------------------------------------------------------
 |
-| We'll require a file which you can define any custom functions for your
-| application, before any usage of these functions occurs. This is just
-| a convenient way to organize your code.
+| We will require a file which you can define any custom functions for
+| your application, before any usage of these functions occurs. This
+| is just  a convenient way to organize your code.
 |
 */
 
@@ -106,8 +106,7 @@ require app_path().'/overrides.php';
 | Boot Platform
 |--------------------------------------------------------------------------
 |
-| Now that we have our functions and hooks registered, we'll boot Platform
-| before we include our overrides (and eventually, routes).
+| Now that we have our functions and hooks registered, we'll boot Platform.
 |
 */
 
@@ -125,3 +124,15 @@ Platform::boot();
 */
 
 require app_path().'/filters.php';
+
+/*
+|--------------------------------------------------------------------------
+| Require The Widgets File
+|--------------------------------------------------------------------------
+|
+| Next we will load the widgets file for the application. This gives
+| us a nice separate location to register our custom widgets.
+|
+*/
+
+require app_path().'/widgets.php';

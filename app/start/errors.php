@@ -40,10 +40,11 @@ if (App::environment() === 'production' or Config::get('app.debug') === false)
 	{
 		Log::error($exception);
 
-		// If the API is throwing a 404 status, we'll actually return a 500 error.
-		// The reason for this, is that the app should be handling all possible
-		// API Exceptions that are thrown. If one bubbles back to the user,
-		// there is definitely an "internal server error". Bam.
+		// If the API is throwing a 404 status, we'll actually return a
+		// 500 error. The main reason for this, is that the app should
+		// be handling all possible API Exceptions that are thrown.
+		// If one bubbles back to the user, there is definitely
+		// an "internal server error".
 		if (($statusCode = $exception->getStatusCode()) == 404)
 		{
 			$statusCode = 500;
