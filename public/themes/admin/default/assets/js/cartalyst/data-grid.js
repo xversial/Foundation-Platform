@@ -190,7 +190,10 @@
 
 			this.$body.on('click', '[data-sort]'+this.grid, function(){
 
-				// _this.$results.empty(); //safty
+				if(_this.opt.paginationType === 'infinite')
+				{
+					_this.$results.empty(); //safty
+				}
 				_this._extractSortsFromClick($(this) , $(this).data('sort'));
 
 			});
@@ -206,7 +209,10 @@
 			this.$filters.on('click', '> *', function(e) {
 
 				e.preventDefault();
-				//_this.$results.empty(); //safty
+				if(_this.opt.paginationType === 'infinite')
+				{
+					_this.$results.empty(); //safty
+				}
 				_this._removeFilters($(this).index());
 
 			});
@@ -371,6 +377,12 @@
 				value: $input.val()
 			});
 
+			// Safety
+			if(this.opt.paginationType === 'infinite')
+			{
+				this.$results.empty();
+			}
+
 			// Reset
 			$input.val('').data('old', '');
 			this._goToPage(1);
@@ -421,6 +433,12 @@
 						value: curr,
 						type: 'live'
 					});
+				}
+
+				// Safety
+				if(_this.opt.paginationType === 'infinite')
+				{
+					_this.$results.empty();
 				}
 
 				$input.data('old', curr);
@@ -841,7 +859,10 @@
 					_this.$results.append(_this.tmpl['results'](response));
 				}
 
-				_this.$pagination.html(_this.tmpl['pagination'](_this._buildPagination(response)));
+				if( response.pages_count > 1 )
+				{
+					_this.$pagination.html(_this.tmpl['pagination'](_this._buildPagination(response)));
+				}
 
 				if ( ! response.results.length)
 				{
