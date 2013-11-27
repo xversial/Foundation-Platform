@@ -1521,7 +1521,8 @@
                 {
                     "name": "Jonathan Wage",
                     "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/"
+                    "homepage": "http://www.jwage.com/",
+                    "role": "Creator"
                 },
                 {
                     "name": "Guilherme Blanco",
@@ -1593,7 +1594,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/",
                     "role": "Creator"
@@ -1612,7 +1613,7 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -1660,9 +1661,10 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/"
+                    "homepage": "http://www.jwage.com/",
+                    "role": "Creator"
                 },
                 {
                     "name": "Guilherme Blanco",
@@ -1868,9 +1870,10 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/"
+                    "homepage": "http://www.jwage.com/",
+                    "role": "Creator"
                 },
                 {
                     "name": "Guilherme Blanco",
@@ -1888,7 +1891,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -3336,12 +3339,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-attributes.git",
-                "reference": "fc6d8ebc3886fdfb1eaeebc487d039757c369836"
+                "reference": "317ef7e902582c4f5db01a354169bd23b5f24f19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-attributes/zipball/fc6d8ebc3886fdfb1eaeebc487d039757c369836",
-                "reference": "fc6d8ebc3886fdfb1eaeebc487d039757c369836",
+                "url": "https://api.github.com/repos/cartalyst/platform-attributes/zipball/317ef7e902582c4f5db01a354169bd23b5f24f19",
+                "reference": "317ef7e902582c4f5db01a354169bd23b5f24f19",
                 "shasum": ""
             },
             "require": {
@@ -3404,7 +3407,7 @@
                 "source": "https://github.com/cartalyst/platform-attributes/tree/master",
                 "issues": "https://github.com/cartalyst/platform-attributes/issues"
             },
-            "time": "2013-11-26 04:17:12"
+            "time": "2013-11-26 22:48:04"
         },
         {
             "name": "platform/content",
@@ -3412,12 +3415,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-content.git",
-                "reference": "74cc3859b9bfaacf9b2712ea0f5003b54fb793c2"
+                "reference": "2dd06f18fdad3a0850a1a5b0de55e8dadea295a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/74cc3859b9bfaacf9b2712ea0f5003b54fb793c2",
-                "reference": "74cc3859b9bfaacf9b2712ea0f5003b54fb793c2",
+                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/2dd06f18fdad3a0850a1a5b0de55e8dadea295a0",
+                "reference": "2dd06f18fdad3a0850a1a5b0de55e8dadea295a0",
                 "shasum": ""
             },
             "require": {
@@ -3484,7 +3487,7 @@
                 "source": "https://github.com/cartalyst/platform-content/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-content/issues"
             },
-            "time": "2013-11-26 04:56:20"
+            "time": "2013-11-26 22:59:15"
         },
         {
             "name": "platform/foundation",
@@ -3895,12 +3898,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-pages.git",
-                "reference": "8e90ae2b47889323193ce661c7b1e2e2f9f76d8f"
+                "reference": "41c68fdf284b3f801e98b1d075f10ed70f127587"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/8e90ae2b47889323193ce661c7b1e2e2f9f76d8f",
-                "reference": "8e90ae2b47889323193ce661c7b1e2e2f9f76d8f",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/41c68fdf284b3f801e98b1d075f10ed70f127587",
+                "reference": "41c68fdf284b3f801e98b1d075f10ed70f127587",
                 "shasum": ""
             },
             "require": {
@@ -3966,7 +3969,7 @@
                 "source": "https://github.com/cartalyst/platform-pages/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2013-11-26 18:36:30"
+            "time": "2013-11-26 22:59:43"
         },
         {
             "name": "platform/routing",
