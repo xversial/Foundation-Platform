@@ -18,7 +18,7 @@
  * @link       http://cartalyst.com
  */
 
-use Platform\Menus\Models\Menu;
+use Platform\Menus\Menu;
 
 /*
 |--------------------------------------------------------------------------
