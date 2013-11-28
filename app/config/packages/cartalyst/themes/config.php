@@ -153,28 +153,28 @@ return array(
 		'css' => array(
 
 			'Assetic\Filter\CssImportFilter',
-			'Basset\Filter\UriRewriteFilter',
+			'Cartalyst\AsseticFilters\UriRewriteFilter',
 
 		),
 
 		'less' => array(
 
 			'Assetic\Filter\LessphpFilter',
-			'Basset\Filter\UriRewriteFilter',
+			'Cartalyst\AsseticFilters\UriRewriteFilter',
 
 		),
 
 		'sass' => array(
 
 			'Cartalyst\AsseticFilters\SassphpFilter',
-			'Basset\Filter\UriRewriteFilter',
+			'Cartalyst\AsseticFilters\UriRewriteFilter',
 
 		),
 
 		'scss' => array(
 
 			'Assetic\Filter\ScssphpFilter',
-			'Basset\Filter\UriRewriteFilter',
+			'Cartalyst\AsseticFilters\UriRewriteFilter',
 
 		),
 

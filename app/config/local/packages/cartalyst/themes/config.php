@@ -34,28 +34,28 @@ return array(
 		'css' => array(
 
 			'Assetic\Filter\CssImportFilter',
-			'Basset\Filter\UriRewriteFilter',
+			'Cartalyst\AsseticFilters\UriRewriteFilter',
 
 		),
 
 		'less' => array(
 
 			'Assetic\Filter\LessphpFilter',
-			'Basset\Filter\UriRewriteFilter',
+			'Cartalyst\AsseticFilters\UriRewriteFilter',
 
 		),
 
 		'sass' => array(
 
 			'Assetic\Filter\Sass\SassFilter',
-			'Basset\Filter\UriRewriteFilter',
+			'Cartalyst\AsseticFilters\UriRewriteFilter',
 
 		),
 
 		'scss' => array(
 
 			'Assetic\Filter\Sass\ScssFilter',
-			'Basset\Filter\UriRewriteFilter',
+			'Cartalyst\AsseticFilters\UriRewriteFilter',
 
 		),
 
