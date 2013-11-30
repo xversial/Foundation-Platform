@@ -142,12 +142,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/attributes.git",
-                "reference": "f9c9f3d33b9fd408579c9c1731b0f2d577a8d343"
+                "reference": "b6a62bbb222baeb009290cc08d4cd1008d27ab75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/attributes/zipball/f9c9f3d33b9fd408579c9c1731b0f2d577a8d343",
-                "reference": "f9c9f3d33b9fd408579c9c1731b0f2d577a8d343",
+                "url": "https://api.github.com/repos/cartalyst/attributes/zipball/b6a62bbb222baeb009290cc08d4cd1008d27ab75",
+                "reference": "b6a62bbb222baeb009290cc08d4cd1008d27ab75",
                 "shasum": ""
             },
             "require": {
@@ -203,7 +203,7 @@
                 "source": "https://github.com/cartalyst/attributes/tree/master",
                 "issues": "https://github.com/cartalyst/attributes/issues"
             },
-            "time": "2013-11-28 06:13:33"
+            "time": "2013-11-30 03:06:11"
         },
         {
             "name": "cartalyst/composer-installers",
@@ -1138,12 +1138,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/workshop.git",
-                "reference": "6d13d479a2c83f3517da8df330e97a41356af085"
+                "reference": "bfbb71738cc604a2cf084d2d98607ab1a5eca860"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/workshop/zipball/6d13d479a2c83f3517da8df330e97a41356af085",
-                "reference": "6d13d479a2c83f3517da8df330e97a41356af085",
+                "url": "https://api.github.com/repos/cartalyst/workshop/zipball/bfbb71738cc604a2cf084d2d98607ab1a5eca860",
+                "reference": "bfbb71738cc604a2cf084d2d98607ab1a5eca860",
                 "shasum": ""
             },
             "require": {
@@ -1201,7 +1201,7 @@
                 "source": "https://github.com/cartalyst/workshop/tree/master",
                 "issues": "https://github.com/cartalyst/workshop/issues"
             },
-            "time": "2013-11-28 03:07:59"
+            "time": "2013-11-29 23:36:43"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -1567,10 +1567,9 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan H. Wage",
+                    "name": "Jonathan Wage",
                     "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/",
-                    "role": "Creator"
+                    "homepage": "http://www.jwage.com/"
                 },
                 {
                     "name": "Guilherme Blanco",
@@ -2161,7 +2160,7 @@
             "authors": [
                 {
                     "name": "Anthony Ferrara",
-                    "email": "ircmaxell@ircmaxell.com",
+                    "email": "ircmaxell@php.net",
                     "homepage": "http://blog.ircmaxell.com"
                 }
             ],
@@ -2410,12 +2409,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "c98c285695a252a93dc85bd5382cf3d736630385"
+                "reference": "8bb9ef514a7e107bd232210e5de275ad85095ff1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/c98c285695a252a93dc85bd5382cf3d736630385",
-                "reference": "c98c285695a252a93dc85bd5382cf3d736630385",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/8bb9ef514a7e107bd232210e5de275ad85095ff1",
+                "reference": "8bb9ef514a7e107bd232210e5de275ad85095ff1",
                 "shasum": ""
             },
             "require": {
@@ -2518,7 +2517,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-11-29 02:27:29"
+            "time": "2013-11-29 17:58:56"
         },
         {
             "name": "leafo/lessphp",
@@ -3064,12 +3063,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "399407fdefedb766dfa2d4996d6998aa4a15c1d6"
+                "reference": "c85aa97d5eaa56a6b923767b2e08dc115ce37aa7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/399407fdefedb766dfa2d4996d6998aa4a15c1d6",
-                "reference": "399407fdefedb766dfa2d4996d6998aa4a15c1d6",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/c85aa97d5eaa56a6b923767b2e08dc115ce37aa7",
+                "reference": "c85aa97d5eaa56a6b923767b2e08dc115ce37aa7",
                 "shasum": ""
             },
             "require": {
@@ -3111,6 +3110,21 @@
                 {
                     "name": "Jim Wigginton",
                     "email": "terrafrost@php.net",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Patrick Monnerat",
+                    "email": "pm@datasphere.ch",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Andreas Fischer",
+                    "email": "bantu@phpbb.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Hans-Jürgen Petrich",
+                    "email": "petrich@tronic-media.com",
                     "role": "Developer"
                 }
             ],
@@ -3135,7 +3149,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2013-11-26 19:09:30"
+            "time": "2013-11-29 22:07:12"
         },
         {
             "name": "pimple/pimple",
@@ -3189,12 +3203,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-admin.git",
-                "reference": "ff816fc4e54e98bee983454951037f7657a9be9b"
+                "reference": "08718212e370e1109d5c2ff63a12e401972a71b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-admin/zipball/ff816fc4e54e98bee983454951037f7657a9be9b",
-                "reference": "ff816fc4e54e98bee983454951037f7657a9be9b",
+                "url": "https://api.github.com/repos/cartalyst/platform-admin/zipball/08718212e370e1109d5c2ff63a12e401972a71b7",
+                "reference": "08718212e370e1109d5c2ff63a12e401972a71b7",
                 "shasum": ""
             },
             "require": {
@@ -3256,7 +3270,7 @@
                 "source": "https://github.com/cartalyst/platform-admin/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-admin/issues"
             },
-            "time": "2013-11-28 23:11:42"
+            "time": "2013-11-30 01:11:30"
         },
         {
             "name": "platform/attributes",
@@ -3264,12 +3278,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-attributes.git",
-                "reference": "1085e46754ab19d831c8e9e2532d5c5e7e65a8f5"
+                "reference": "86875f8a2d241840615765791c10da6e2bb113af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-attributes/zipball/1085e46754ab19d831c8e9e2532d5c5e7e65a8f5",
-                "reference": "1085e46754ab19d831c8e9e2532d5c5e7e65a8f5",
+                "url": "https://api.github.com/repos/cartalyst/platform-attributes/zipball/86875f8a2d241840615765791c10da6e2bb113af",
+                "reference": "86875f8a2d241840615765791c10da6e2bb113af",
                 "shasum": ""
             },
             "require": {
@@ -3332,7 +3346,7 @@
                 "source": "https://github.com/cartalyst/platform-attributes/tree/master",
                 "issues": "https://github.com/cartalyst/platform-attributes/issues"
             },
-            "time": "2013-11-29 04:40:47"
+            "time": "2013-11-30 03:31:15"
         },
         {
             "name": "platform/content",
@@ -3340,12 +3354,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-content.git",
-                "reference": "f1976bb2f9b044dc8f381b54cbe232220877a97d"
+                "reference": "6dadcec845c5749fc854d83b554ecddb80bcf3da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/f1976bb2f9b044dc8f381b54cbe232220877a97d",
-                "reference": "f1976bb2f9b044dc8f381b54cbe232220877a97d",
+                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/6dadcec845c5749fc854d83b554ecddb80bcf3da",
+                "reference": "6dadcec845c5749fc854d83b554ecddb80bcf3da",
                 "shasum": ""
             },
             "require": {
@@ -3412,7 +3426,7 @@
                 "source": "https://github.com/cartalyst/platform-content/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-content/issues"
             },
-            "time": "2013-11-29 04:32:54"
+            "time": "2013-11-29 18:11:25"
         },
         {
             "name": "platform/foundation",
@@ -3588,12 +3602,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-media.git",
-                "reference": "c1fe36ca39b452d5139ea5689b9d98b60b2bc348"
+                "reference": "0cbb74f635a38369d81344cd44af9b40acfb68d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/c1fe36ca39b452d5139ea5689b9d98b60b2bc348",
-                "reference": "c1fe36ca39b452d5139ea5689b9d98b60b2bc348",
+                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/0cbb74f635a38369d81344cd44af9b40acfb68d0",
+                "reference": "0cbb74f635a38369d81344cd44af9b40acfb68d0",
                 "shasum": ""
             },
             "require": {
@@ -3658,7 +3672,7 @@
                 "source": "https://github.com/cartalyst/platform-media/tree/master",
                 "issues": "https://github.com/cartalyst/platform-media/issues"
             },
-            "time": "2013-11-29 00:17:57"
+            "time": "2013-11-29 17:22:55"
         },
         {
             "name": "platform/menus",
@@ -3666,12 +3680,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-menus.git",
-                "reference": "9f4f363136b09be9014e0635845e95cc499d573d"
+                "reference": "46c25017902403829f28d42defc678b56996045a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/9f4f363136b09be9014e0635845e95cc499d573d",
-                "reference": "9f4f363136b09be9014e0635845e95cc499d573d",
+                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/46c25017902403829f28d42defc678b56996045a",
+                "reference": "46c25017902403829f28d42defc678b56996045a",
                 "shasum": ""
             },
             "require": {
@@ -3736,7 +3750,7 @@
                 "source": "https://github.com/cartalyst/platform-menus/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-menus/issues"
             },
-            "time": "2013-11-29 04:32:36"
+            "time": "2013-11-29 18:33:52"
         },
         {
             "name": "platform/operations",
@@ -3744,12 +3758,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-operations.git",
-                "reference": "40f73c9087c0a23cde758d32812bd37a0099107e"
+                "reference": "fade19750e1842e5792c11ee94ca3e7588c358ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/40f73c9087c0a23cde758d32812bd37a0099107e",
-                "reference": "40f73c9087c0a23cde758d32812bd37a0099107e",
+                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/fade19750e1842e5792c11ee94ca3e7588c358ee",
+                "reference": "fade19750e1842e5792c11ee94ca3e7588c358ee",
                 "shasum": ""
             },
             "require": {
@@ -3814,7 +3828,7 @@
                 "source": "https://github.com/cartalyst/platform-operations/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-operations/issues"
             },
-            "time": "2013-11-28 23:09:38"
+            "time": "2013-11-29 23:32:54"
         },
         {
             "name": "platform/pages",
@@ -3822,12 +3836,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-pages.git",
-                "reference": "68c9d04bbec9b5a2e9ec80e0c3fea1be9354ae85"
+                "reference": "edb663c189cb9926c6c1bcda789b1776dfe527d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/68c9d04bbec9b5a2e9ec80e0c3fea1be9354ae85",
-                "reference": "68c9d04bbec9b5a2e9ec80e0c3fea1be9354ae85",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/edb663c189cb9926c6c1bcda789b1776dfe527d8",
+                "reference": "edb663c189cb9926c6c1bcda789b1776dfe527d8",
                 "shasum": ""
             },
             "require": {
@@ -3893,7 +3907,7 @@
                 "source": "https://github.com/cartalyst/platform-pages/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2013-11-29 04:31:46"
+            "time": "2013-11-30 03:39:25"
         },
         {
             "name": "platform/settings",
@@ -3979,12 +3993,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-users.git",
-                "reference": "e660875daa49436fce16567b03c7979b7a459039"
+                "reference": "496b05846cbf7a5ab7e8a05e2858f47334bdff1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/e660875daa49436fce16567b03c7979b7a459039",
-                "reference": "e660875daa49436fce16567b03c7979b7a459039",
+                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/496b05846cbf7a5ab7e8a05e2858f47334bdff1e",
+                "reference": "496b05846cbf7a5ab7e8a05e2858f47334bdff1e",
                 "shasum": ""
             },
             "require": {
@@ -4049,7 +4063,7 @@
                 "source": "https://github.com/cartalyst/platform-users/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-users/issues"
             },
-            "time": "2013-11-29 04:45:13"
+            "time": "2013-11-30 00:26:00"
         },
         {
             "name": "predis/predis",
@@ -4057,12 +4071,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nrk/predis.git",
-                "reference": "4e664c6c90824bc5161aea1981235adf315a6949"
+                "reference": "5192005862523f31891a1b0f384dffbeece42d9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nrk/predis/zipball/4e664c6c90824bc5161aea1981235adf315a6949",
-                "reference": "4e664c6c90824bc5161aea1981235adf315a6949",
+                "url": "https://api.github.com/repos/nrk/predis/zipball/5192005862523f31891a1b0f384dffbeece42d9a",
+                "reference": "5192005862523f31891a1b0f384dffbeece42d9a",
                 "shasum": ""
             },
             "require": {
@@ -4096,7 +4110,7 @@
                 "predis",
                 "redis"
             ],
-            "time": "2013-11-22 14:17:50"
+            "time": "2013-11-29 22:41:05"
         },
         {
             "name": "psr/log",
