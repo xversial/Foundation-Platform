@@ -2,7 +2,8 @@
 
 {{-- Page title --}}
 @section('title')
-{{{ $page->meta_title }}}
+{{{ $page->meta_title }}} ::
+@parent
 @stop
 
 {{-- Meta description --}}
