@@ -15,15 +15,17 @@
 		<meta name="viewport" content="width=device-width">
 		<meta name="base_url" content="{{ URL::to('/') }}">
 
-		{{-- Queue template assets --}}
+		{{-- Queue assets --}}
 		{{ Asset::queue('style', 'less/style.less') }}
 
 		{{ Asset::queue('modernizr', 'js/modernizr/modernizr.js') }}
 		{{ Asset::queue('jquery', 'js/jquery/jquery.js') }}
-		{{ Asset::queue('platform', 'js/platform/platform.js', array('jquery')) }}
 		{{ Asset::queue('bootstrap.alert', 'js/bootstrap/alert.js', array('jquery')) }}
 		{{ Asset::queue('bootstrap.collapse', 'js/bootstrap/collapse.js', array('jquery')) }}
 		{{ Asset::queue('bootstrap.dropdown', 'js/bootstrap/dropdown.js', array('jquery')) }}
+		{{ Asset::queue('bootstrap.tooltip', 'js/bootstrap/tooltip.js', array('jquery')) }}
+		{{ Asset::queue('bootstrap.popover', 'js/bootstrap/popover.js', array('bootstrap.tooltip')) }}
+		{{ Asset::queue('platform', 'js/platform/platform.js', array('jquery')) }}
 
 		{{-- HTML5 shim, for IE6-8 support of HTML5 elements --}}
 		<!--[if lt IE 9]>
@@ -54,26 +56,30 @@
 
 		<div class="container">
 
-			<!-- Static navbar -->
-			<div class="navbar navbar-default">
+			<nav class="navbar navbar-default" role="navigation">
+
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
 					<a class="navbar-brand" href="{{ URL::to('/') }}">@setting('platform.site.title')</a>
 				</div>
-				<div class="navbar-collapse collapse">
+
+				<div class="collapse navbar-collapse">
+
 					<ul class="nav navbar-nav">
 						<li><a href="https://www.cartalyst.com/licence">Licence</a></li>
 						<li><a href="https://www.cartalyst.com/manual/platform">Documentation</a></li>
 					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						@widget('platform/menus::nav.show', array('main', 0, 'nav navbar-nav'))
-					</ul>
-				</div><!--/.nav-collapse -->
-			</div>
+
+					@widget('platform/menus::nav.show', array('main', 0, 'nav navbar-nav navbar-right'))
+
+				</div>
+
+			</nav>
 
 			{{-- Notifications --}}
 			@include('partials/notifications')
@@ -82,7 +88,7 @@
 			@section('content')
 			@show
 
-		</div> <!-- /container -->
+		</div>
 
 		{{-- Compiled scripts --}}
 		@foreach (Asset::getCompiledScripts() as $script)
