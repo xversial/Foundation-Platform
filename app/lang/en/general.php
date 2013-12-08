@@ -28,7 +28,6 @@ return array(
 	'all'      => 'All',
 	'enabled'  => 'Enabled',
 	'disabled' => 'Disabled',
-	'warning'  => 'Warning',
 
 	'delete_record' => 'You are about to delete this record, do you want to continue?',
 
