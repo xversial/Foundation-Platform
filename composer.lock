@@ -2148,12 +2148,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/justinrainbow/json-schema.git",
-                "reference": "91ed23e496ea7aacd8e89f07a4b4fd4bfe8ad1d2"
+                "reference": "ad8b959e5962624004738d50a2d8e83c5668e143"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/91ed23e496ea7aacd8e89f07a4b4fd4bfe8ad1d2",
-                "reference": "91ed23e496ea7aacd8e89f07a4b4fd4bfe8ad1d2",
+                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/ad8b959e5962624004738d50a2d8e83c5668e143",
+                "reference": "ad8b959e5962624004738d50a2d8e83c5668e143",
                 "shasum": ""
             },
             "require": {
@@ -2161,7 +2161,8 @@
             },
             "require-dev": {
                 "json-schema/json-schema-test-suite": "1.1.0",
-                "phpunit/phpunit": "~3.7.0"
+                "phpdocumentor/phpdocumentor": "~2",
+                "phpunit/phpunit": "~3.7"
             },
             "bin": [
                 "bin/validate-json"
@@ -2207,7 +2208,7 @@
                 "json",
                 "schema"
             ],
-            "time": "2013-12-07 00:39:51"
+            "time": "2013-12-08 21:17:57"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -2286,12 +2287,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "a55cbe9d962a16be1fe9490492657807fc82afe5"
+                "reference": "c1473157164ac289815462c80418393213a344bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/a55cbe9d962a16be1fe9490492657807fc82afe5",
-                "reference": "a55cbe9d962a16be1fe9490492657807fc82afe5",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/c1473157164ac289815462c80418393213a344bc",
+                "reference": "c1473157164ac289815462c80418393213a344bc",
                 "shasum": ""
             },
             "require": {
@@ -2394,7 +2395,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-12-08 04:33:56"
+            "time": "2013-12-08 21:34:00"
         },
         {
             "name": "leafo/lessphp",
@@ -3155,12 +3156,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-attributes.git",
-                "reference": "09597bded763ab86841353f6901fd439082df6c1"
+                "reference": "adabb807d81b840e9e574f2f81cb15fe27735d26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-attributes/zipball/09597bded763ab86841353f6901fd439082df6c1",
-                "reference": "09597bded763ab86841353f6901fd439082df6c1",
+                "url": "https://api.github.com/repos/cartalyst/platform-attributes/zipball/adabb807d81b840e9e574f2f81cb15fe27735d26",
+                "reference": "adabb807d81b840e9e574f2f81cb15fe27735d26",
                 "shasum": ""
             },
             "require": {
@@ -3223,7 +3224,7 @@
                 "source": "https://github.com/cartalyst/platform-attributes/tree/master",
                 "issues": "https://github.com/cartalyst/platform-attributes/issues"
             },
-            "time": "2013-12-06 23:12:54"
+            "time": "2013-12-08 22:38:52"
         },
         {
             "name": "platform/content",
@@ -3231,12 +3232,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-content.git",
-                "reference": "5bc4e2e696a2eabfe45066a9197ec38d5761b285"
+                "reference": "982d613b1beb66780c2d33b8882a10a84b135fb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/5bc4e2e696a2eabfe45066a9197ec38d5761b285",
-                "reference": "5bc4e2e696a2eabfe45066a9197ec38d5761b285",
+                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/982d613b1beb66780c2d33b8882a10a84b135fb8",
+                "reference": "982d613b1beb66780c2d33b8882a10a84b135fb8",
                 "shasum": ""
             },
             "require": {
@@ -3303,7 +3304,7 @@
                 "source": "https://github.com/cartalyst/platform-content/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-content/issues"
             },
-            "time": "2013-12-06 18:04:52"
+            "time": "2013-12-08 22:39:07"
         },
         {
             "name": "platform/foundation",
@@ -3479,12 +3480,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-menus.git",
-                "reference": "d6185949f0b467ef0f43d77a9b8b5b192178208c"
+                "reference": "03412c0fda730179e02cb5dac509e69793c640f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/d6185949f0b467ef0f43d77a9b8b5b192178208c",
-                "reference": "d6185949f0b467ef0f43d77a9b8b5b192178208c",
+                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/03412c0fda730179e02cb5dac509e69793c640f0",
+                "reference": "03412c0fda730179e02cb5dac509e69793c640f0",
                 "shasum": ""
             },
             "require": {
@@ -3549,7 +3550,7 @@
                 "source": "https://github.com/cartalyst/platform-menus/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-menus/issues"
             },
-            "time": "2013-12-06 18:05:20"
+            "time": "2013-12-08 22:38:59"
         },
         {
             "name": "platform/operations",
@@ -3557,12 +3558,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-operations.git",
-                "reference": "5b02d63be291e1a88522147c9c072becb64c787b"
+                "reference": "4400b307d26b0ba4e077ffb226f89684ad72fcbb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/5b02d63be291e1a88522147c9c072becb64c787b",
-                "reference": "5b02d63be291e1a88522147c9c072becb64c787b",
+                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/4400b307d26b0ba4e077ffb226f89684ad72fcbb",
+                "reference": "4400b307d26b0ba4e077ffb226f89684ad72fcbb",
                 "shasum": ""
             },
             "require": {
@@ -3627,7 +3628,7 @@
                 "source": "https://github.com/cartalyst/platform-operations/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-operations/issues"
             },
-            "time": "2013-12-06 23:13:06"
+            "time": "2013-12-08 22:40:59"
         },
         {
             "name": "platform/pages",
@@ -3635,12 +3636,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-pages.git",
-                "reference": "f554af3f3feb5d5713e26020563de54fee7480df"
+                "reference": "96374c63f2691fc46e0d6a2e56ae4e1bbab183cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/f554af3f3feb5d5713e26020563de54fee7480df",
-                "reference": "f554af3f3feb5d5713e26020563de54fee7480df",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/96374c63f2691fc46e0d6a2e56ae4e1bbab183cb",
+                "reference": "96374c63f2691fc46e0d6a2e56ae4e1bbab183cb",
                 "shasum": ""
             },
             "require": {
@@ -3706,7 +3707,7 @@
                 "source": "https://github.com/cartalyst/platform-pages/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2013-12-06 18:05:16"
+            "time": "2013-12-08 22:39:03"
         },
         {
             "name": "platform/settings",
@@ -3792,12 +3793,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-users.git",
-                "reference": "3448a39761c135ee54895ada154542da5617d5ee"
+                "reference": "f285e2c7b693386a889cbc46a467015cc7b95dab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/3448a39761c135ee54895ada154542da5617d5ee",
-                "reference": "3448a39761c135ee54895ada154542da5617d5ee",
+                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/f285e2c7b693386a889cbc46a467015cc7b95dab",
+                "reference": "f285e2c7b693386a889cbc46a467015cc7b95dab",
                 "shasum": ""
             },
             "require": {
@@ -3862,7 +3863,7 @@
                 "source": "https://github.com/cartalyst/platform-users/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-users/issues"
             },
-            "time": "2013-12-08 13:54:13"
+            "time": "2013-12-08 22:43:31"
         },
         {
             "name": "predis/predis",
@@ -3870,12 +3871,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nrk/predis.git",
-                "reference": "381023ad8f019eb4859550538e4affdb5bb9a68b"
+                "reference": "73780da52dc36ac8c24b720e2bfa334d266b80a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nrk/predis/zipball/381023ad8f019eb4859550538e4affdb5bb9a68b",
-                "reference": "381023ad8f019eb4859550538e4affdb5bb9a68b",
+                "url": "https://api.github.com/repos/nrk/predis/zipball/73780da52dc36ac8c24b720e2bfa334d266b80a6",
+                "reference": "73780da52dc36ac8c24b720e2bfa334d266b80a6",
                 "shasum": ""
             },
             "require": {
@@ -3909,7 +3910,7 @@
                 "predis",
                 "redis"
             ],
-            "time": "2013-12-02 10:44:40"
+            "time": "2013-12-08 14:57:15"
         },
         {
             "name": "psr/log",
