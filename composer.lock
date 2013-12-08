@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "4777ef57c2e251ae674fbfc609194ecc",
+    "hash": "5e9dab2cc51e8ec0504cb35312810196",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -628,71 +628,6 @@
             "time": "2013-11-27 05:41:52"
         },
         {
-            "name": "cartalyst/media",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:cartalyst/media.git",
-                "reference": "a0fac936728520db1adaf8a3cff520b0cc212d3a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/media/zipball/a0fac936728520db1adaf8a3cff520b0cc212d3a",
-                "reference": "a0fac936728520db1adaf8a3cff520b0cc212d3a",
-                "shasum": ""
-            },
-            "require": {
-                "frenkynet/flysystem": "dev-master",
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "extra": {
-                "component": "package",
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Cartalyst\\Media\\": "src/"
-                }
-            },
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Cartalyst LLC",
-                    "email": "help@cartalyst.com"
-                },
-                {
-                    "name": "Ben Corlett",
-                    "email": "ben.corlett@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Bruno Gaspar",
-                    "email": "bruno.gaspar@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Dan Syme",
-                    "email": "dan.syme@cartalyst.com",
-                    "role": "Project Lead"
-                }
-            ],
-            "description": "Media",
-            "keywords": [
-                "laravel",
-                "media"
-            ],
-            "support": {
-                "source": "https://github.com/cartalyst/media/tree/master",
-                "issues": "https://github.com/cartalyst/media/issues"
-            },
-            "time": "2013-11-28 00:23:13"
-        },
-        {
             "name": "cartalyst/nested-sets",
             "version": "dev-master",
             "source": {
@@ -780,23 +715,23 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cartalyst/sentry.git",
-                "reference": "96a25f8453b0078b1ace01e831b476803c6f48dd"
+                "reference": "7a870aaa1aab0a06cee3c75248c51c66e1cd7518"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/96a25f8453b0078b1ace01e831b476803c6f48dd",
-                "reference": "96a25f8453b0078b1ace01e831b476803c6f48dd",
+                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/7a870aaa1aab0a06cee3c75248c51c66e1cd7518",
+                "reference": "7a870aaa1aab0a06cee3c75248c51c66e1cd7518",
                 "shasum": ""
             },
             "require": {
-                "illuminate/events": "~4",
-                "illuminate/support": "~4",
+                "illuminate/events": ">=4.0.9,<4.2",
+                "illuminate/support": ">=4.0.9,<4.2",
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "illuminate/cookie": "~4",
-                "illuminate/database": "~4",
-                "illuminate/session": "~4",
+                "illuminate/cookie": ">=4.0.9,<4.2",
+                "illuminate/database": ">=4.0.9,<4.2",
+                "illuminate/session": ">=4.0.9,<4.2",
                 "ircmaxell/password-compat": "1.0.*",
                 "mockery/mockery": "0.7.2"
             },
@@ -873,7 +808,7 @@
                 "source": "https://github.com/cartalyst/sentry/tree/develop",
                 "issues": "https://github.com/cartalyst/sentry/issues"
             },
-            "time": "2013-12-02 21:41:25"
+            "time": "2013-12-07 21:08:12"
         },
         {
             "name": "cartalyst/sentry-social",
@@ -1924,75 +1859,17 @@
             "time": "2013-10-28 22:06:33"
         },
         {
-            "name": "frenkynet/flysystem",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/FrenkyNet/Flysystem.git",
-                "reference": "cb879134296febcadea65f8536cf8d5304bb452e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/FrenkyNet/Flysystem/zipball/cb879134296febcadea65f8536cf8d5304bb452e",
-                "reference": "cb879134296febcadea65f8536cf8d5304bb452e",
-                "shasum": ""
-            },
-            "require-dev": {
-                "aws/aws-sdk-php": "~2.4.7",
-                "dropbox/dropbox-sdk": "~1.1.1",
-                "league/phpunit-coverage-listener": "~1.0",
-                "mockery/mockery": "~0.8.0",
-                "phpseclib/phpseclib": "~0.3.5",
-                "predis/predis": "~0.8.4",
-                "sabre/dav": "~1.8.7"
-            },
-            "suggest": {
-                "aws/aws-sdk-php": "Allows you to use AWS S3 storage",
-                "dropbox/dropbox-sdk": "Allows you to use Dropbox storage",
-                "phpseclib/phpseclib": "Allows SFTP server storage",
-                "predis/predis": "Allows you to use Predis for caching",
-                "sabre/dav": "Enables WebDav support"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Flysystem": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Frank de Jonge",
-                    "email": "info@frenky.net"
-                }
-            ],
-            "description": "Filesystem abstraction, but easy.",
-            "keywords": [
-                "aws",
-                "dropbox",
-                "filesystem",
-                "ftp",
-                "remote",
-                "s3",
-                "sftp"
-            ],
-            "time": "2013-12-03 21:21:45"
-        },
-        {
             "name": "guzzle/guzzle",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "9d7f54a6ecc7d5ec9f13762bcc44fe5f59b78b50"
+                "reference": "0305bcc94724b0a1b229d0f140c6363b108abc26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/9d7f54a6ecc7d5ec9f13762bcc44fe5f59b78b50",
-                "reference": "9d7f54a6ecc7d5ec9f13762bcc44fe5f59b78b50",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/0305bcc94724b0a1b229d0f140c6363b108abc26",
+                "reference": "0305bcc94724b0a1b229d0f140c6363b108abc26",
                 "shasum": ""
             },
             "require": {
@@ -2041,8 +1918,8 @@
             },
             "autoload": {
                 "psr-0": {
-                    "Guzzle\\Tests": "tests/",
-                    "Guzzle": "src/"
+                    "Guzzle": "src/",
+                    "Guzzle\\Tests": "tests/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2071,7 +1948,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2013-12-06 22:21:18"
+            "time": "2013-12-07 22:55:19"
         },
         {
             "name": "herrera-io/json",
@@ -2178,12 +2055,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jasonlewis/resource-watcher.git",
-                "reference": "e13620019eff20d9c6d09abc9ac1ed83dc5e2d3a"
+                "reference": "876e6cc381fa312d31806c35f9ce5e39c6e81122"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jasonlewis/resource-watcher/zipball/e13620019eff20d9c6d09abc9ac1ed83dc5e2d3a",
-                "reference": "e13620019eff20d9c6d09abc9ac1ed83dc5e2d3a",
+                "url": "https://api.github.com/repos/jasonlewis/resource-watcher/zipball/876e6cc381fa312d31806c35f9ce5e39c6e81122",
+                "reference": "876e6cc381fa312d31806c35f9ce5e39c6e81122",
                 "shasum": ""
             },
             "require": {
@@ -2215,7 +2092,7 @@
                 "laravel",
                 "resource"
             ],
-            "time": "2013-11-27 04:43:32"
+            "time": "2013-12-08 01:49:16"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -2271,12 +2148,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/justinrainbow/json-schema.git",
-                "reference": "22d97c25185386a40d929c7110b786e787b09b84"
+                "reference": "91ed23e496ea7aacd8e89f07a4b4fd4bfe8ad1d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/22d97c25185386a40d929c7110b786e787b09b84",
-                "reference": "22d97c25185386a40d929c7110b786e787b09b84",
+                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/91ed23e496ea7aacd8e89f07a4b4fd4bfe8ad1d2",
+                "reference": "91ed23e496ea7aacd8e89f07a4b4fd4bfe8ad1d2",
                 "shasum": ""
             },
             "require": {
@@ -2330,7 +2207,7 @@
                 "json",
                 "schema"
             ],
-            "time": "2013-09-11 14:27:11"
+            "time": "2013-12-07 00:39:51"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -2409,12 +2286,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "d3bf82dcd790f339b56a09131fe383032c0bce1a"
+                "reference": "a55cbe9d962a16be1fe9490492657807fc82afe5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/d3bf82dcd790f339b56a09131fe383032c0bce1a",
-                "reference": "d3bf82dcd790f339b56a09131fe383032c0bce1a",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/a55cbe9d962a16be1fe9490492657807fc82afe5",
+                "reference": "a55cbe9d962a16be1fe9490492657807fc82afe5",
                 "shasum": ""
             },
             "require": {
@@ -2517,7 +2394,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-12-06 21:30:03"
+            "time": "2013-12-08 04:33:56"
         },
         {
             "name": "leafo/lessphp",
@@ -3008,16 +2885,16 @@
         },
         {
             "name": "patchwork/utf8",
-            "version": "v1.1.15",
+            "version": "v1.1.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nicolas-grekas/Patchwork-UTF8.git",
-                "reference": "2b13126f572501ce9806846349344f1c6b20b545"
+                "reference": "bc719e850b57791c1024d06f9fe7d474348e7ba6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nicolas-grekas/Patchwork-UTF8/zipball/2b13126f572501ce9806846349344f1c6b20b545",
-                "reference": "2b13126f572501ce9806846349344f1c6b20b545",
+                "url": "https://api.github.com/repos/nicolas-grekas/Patchwork-UTF8/zipball/bc719e850b57791c1024d06f9fe7d474348e7ba6",
+                "reference": "bc719e850b57791c1024d06f9fe7d474348e7ba6",
                 "shasum": ""
             },
             "require": {
@@ -3055,7 +2932,7 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2013-11-23 12:47:40"
+            "time": "2013-12-07 12:20:20"
         },
         {
             "name": "phpseclib/phpseclib",
@@ -3597,84 +3474,6 @@
             "time": "2013-12-06 16:16:23"
         },
         {
-            "name": "platform/media",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:cartalyst/platform-media.git",
-                "reference": "bdfba2b6f06a42cae1dd7e0a6a38e2986484f856"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/bdfba2b6f06a42cae1dd7e0a6a38e2986484f856",
-                "reference": "bdfba2b6f06a42cae1dd7e0a6a38e2986484f856",
-                "shasum": ""
-            },
-            "require": {
-                "cartalyst/composer-installers": "1.0.*",
-                "cartalyst/media": "1.0.*",
-                "php": ">=5.3.0",
-                "platform/admin": "dev-develop"
-            },
-            "require-dev": {
-                "mockery/mockery": "0.7.*"
-            },
-            "type": "platform-extension",
-            "extra": {
-                "component": "extension",
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "classmap": [
-                    "controllers",
-                    "migrations",
-                    "widgets"
-                ],
-                "psr-0": {
-                    "Platform\\Media": "src/"
-                }
-            },
-            "license": [
-                "BSD License (3-clause)"
-            ],
-            "authors": [
-                {
-                    "name": "Cartalyst LLC",
-                    "email": "help@cartalyst.com"
-                },
-                {
-                    "name": "Ben Corlett",
-                    "email": "ben.corlett@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Bruno Gaspar",
-                    "email": "bruno.gaspar@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Dan Syme",
-                    "email": "dan.syme@cartalyst.com",
-                    "role": "Creator & Designer"
-                }
-            ],
-            "description": "Media management for Platform.",
-            "keywords": [
-                "cartalyst",
-                "extension",
-                "laravel",
-                "media",
-                "platform"
-            ],
-            "support": {
-                "source": "https://github.com/cartalyst/platform-media/tree/master",
-                "issues": "https://github.com/cartalyst/platform-media/issues"
-            },
-            "time": "2013-12-06 23:13:12"
-        },
-        {
             "name": "platform/menus",
             "version": "dev-develop",
             "source": {
@@ -3993,12 +3792,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-users.git",
-                "reference": "e2c5bfe444630f86a584dc5188ab25d651c533f1"
+                "reference": "3448a39761c135ee54895ada154542da5617d5ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/e2c5bfe444630f86a584dc5188ab25d651c533f1",
-                "reference": "e2c5bfe444630f86a584dc5188ab25d651c533f1",
+                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/3448a39761c135ee54895ada154542da5617d5ee",
+                "reference": "3448a39761c135ee54895ada154542da5617d5ee",
                 "shasum": ""
             },
             "require": {
@@ -4063,7 +3862,7 @@
                 "source": "https://github.com/cartalyst/platform-users/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-users/issues"
             },
-            "time": "2013-12-06 23:14:21"
+            "time": "2013-12-08 13:54:13"
         },
         {
             "name": "predis/predis",
@@ -5000,7 +4799,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "platform/content": 20,
-        "platform/media": 20,
         "platform/menus": 20,
         "platform/operations": 20,
         "platform/pages": 20,
