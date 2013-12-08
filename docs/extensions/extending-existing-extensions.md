@@ -6,7 +6,7 @@ Extending existing extensions can be done by simply creating a new extension and
 
 ---
 
-You can follow the instructions for creating a new extension [here](/platform2/extensions/creating-extensions). There are two things you need to keep in mind: the uri needs to be the same as the extension you're extending and you'll need to list the extension you're extending in the dependencies (or the `require` array if you're creating the extension manually).
+You can follow the instructions for creating a new extension [here]({url}/extensions/creating-extensions). There are two things you need to keep in mind: the uri needs to be the same as the extension you're extending and you'll need to list the extension you're extending in the dependencies (or the `require` array if you're creating the extension manually).
 
 ### How Does It Work? {#how-does-it-work}
 

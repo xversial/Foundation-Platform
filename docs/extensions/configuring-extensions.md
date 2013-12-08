@@ -58,28 +58,8 @@ If platform is defined, your extension receives convention autoloading based on 
 
 If a Closure is defined, it should take two parameters as defined below:
 
-	object Composer\Autoload\ClassLoader      $loader
-	object Illuminate\Foundation\Application  $app
-
-
-### uri {#uri}
-
----
-
-You can specify the URI that this extension will respond to.
-
-You can choose to specify a single string, where the URI will be matched on the 'admin' and 'public' sections of Platform.
-
-	'uri' => 'users',
-
-Or you can provide an array with the 'admin' and 'public' keys to specify a different URI for admin and public sections, you can have as many keys as you need in case your applications needs them.
-
-	'uri' => array(
-		'admin'  => 'users',
-		'public' => 'accounts',
-	),
-
-You can provide an 'override' which is an array of extensions this extension overrides it's URI from.
+	object \Composer\Autoload\ClassLoader      $loader
+	object \Illuminate\Foundation\Application  $app
 
 
 ### register {#register}
@@ -90,8 +70,8 @@ Much like Laravel's service providers, the `register` key is where all the custo
 
 The closure parameters are:
 
-	object Cartalyst\Extensions\ExtensionInterface  $extension
-	object Illuminate\Foundation\Application        $app
+	object \Cartalyst\Extensions\ExtensionInterface  $extension
+	object \Illuminate\Foundation\Application        $app
 
 
 ### boot {#boot}
@@ -102,8 +82,8 @@ The boot method can be used to override application logic or initialize custom f
 
 The closure parameters are:
 
-	object Cartalyst\Extensions\ExtensionInterface  $extension
-	object Illuminate\Foundation\Application        $app
+	object \Cartalyst\Extensions\ExtensionInterface  $extension
+	object \Illuminate\Foundation\Application        $app
 
 
 ### routes {#routes}
@@ -114,51 +94,52 @@ Your custom extension routes. This is done exactly the same way as you'd registe
 
 The closure parameters are:
 
-	object Cartalyst\Extensions\ExtensionInterface  $extension
-	object Illuminate\Foundation\Application        $app
+	object \Cartalyst\Extensions\ExtensionInterface  $extension
+	object \Illuminate\Foundation\Application        $app
 
 ### permissions {#permissions}
 
 ---
+List of permissions this extension has. These are shown in the user management area to build a graphical interface where permissions can be selected to allow or deny user access.
 
-List of permissions this extension has. These are shown in the user management area to build a graphical interface where permissions may be selected.
+You can protect single or multiple controller methods at once.
 
-The admin controllers state that permissions should follow the following structure:
+When writing permissions, if you put a 'key' => 'value' pair, the 'value' will be the label for the permission which is going to be displayed when editing the permissions.
 
-	vendor/extension::area.controller@method
+The permissions should follow the following structure:
 
-For example:
+    vendor/extension::area.controller@method
+    vendor/extension::area.controller@method1,method2, ...
 
-	platform/users::admin.usersController@index
-	Platform\Users\Controllers\Admin\UsersController@getIndex
+Examples:
 
-These are automatically generated for controller routes however you are free to add your own permissions and check against them at any time.
+   Platform\Users\Controllers\Admin\UsersController@index
 
-When writing permissions, if you put a `'key' => 'value'` pair, the `'value'` will be the label for the permission which is displayed when editing permissions.
+     =>  platform/users::admin.usersController@index
+
+   Platform\Users\Controllers\Admin\UsersController@index
+   Platform\Users\Controllers\Admin\UsersController@grid
+
+     =>  platform/users::admin.usersController@index,grid
 
 For example, a part of the permissions array in the `extension.php` file for the Platform 2 Users extension looks like the following:
 
 	'permissions' => function()
 	{
 		return array(
-			'platform/users::admin.usersController@index'  => Lang::get('platform/users::users/permissions.index'),
-			'platform/users::admin.usersController@create' => Lang::get('platform/users::users/permissions.create'),
-			'platform/users::admin.usersController@edit'   => Lang::get('platform/users::users/permissions.edit'),
-			'platform/users::admin.usersController@delete' => Lang::get('platform/users::users/permissions.delete'),
+			'platform/users::admin.usersController@index,grid'   => Lang::get('platform/users::users/permissions.index'),
+			'platform/users::admin.usersController@create,store' => Lang::get('platform/users::users/permissions.create'),
+			'platform/users::admin.usersController@edit,update'  => Lang::get('platform/users::users/permissions.edit'),
+			'platform/users::admin.usersController@delete'       => Lang::get('platform/users::users/permissions.delete'),
 		);
 	},
+
 
 ### widgets {#widgets}
 
 ---
 
 List of custom widgets associated with the extension. Like routes, the value for the widget key may either be a closure or a class & method name (joined with an @ symbol). Of course, Platform will guess the widget class for you, this is just for custom widgets or if you do not wish to make a new class for a very small widget.
-
-### plugins {#plugins}
-
----
-
-Is configured exactly the same as widgets (see above).
 
 
 ### settings {#settings}
