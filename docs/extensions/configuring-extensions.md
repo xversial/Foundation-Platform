@@ -104,33 +104,22 @@ List of permissions this extension has. These are shown in the user management a
 
 You can protect single or multiple controller methods at once.
 
-When writing permissions, if you put a 'key' => 'value' pair, the 'value' will be the label for the permission which is going to be displayed when editing the permissions.
+When writing permissions, if you put a 'key' => 'value' pair, the 'value' will be the label for the permission which is going to be displayed when editing the permissions and when access is denied.
 
 The permissions should follow the following structure:
 
-    vendor/extension::area.controller@method
-    vendor/extension::area.controller@method1,method2, ...
-
-Examples:
-
-   Platform\Users\Controllers\Admin\UsersController@index
-
-     =>  platform/users::admin.usersController@index
-
-   Platform\Users\Controllers\Admin\UsersController@index
-   Platform\Users\Controllers\Admin\UsersController@grid
-
-     =>  platform/users::admin.usersController@index,grid
+    Vendor\Namespace\Controller@method
+    Vendor\Namespace\Controller@method1,method2, ...
 
 For example, a part of the permissions array in the `extension.php` file for the Platform 2 Users extension looks like the following:
 
 	'permissions' => function()
 	{
 		return array(
-			'platform/users::admin.usersController@index,grid'   => Lang::get('platform/users::users/permissions.index'),
-			'platform/users::admin.usersController@create,store' => Lang::get('platform/users::users/permissions.create'),
-			'platform/users::admin.usersController@edit,update'  => Lang::get('platform/users::users/permissions.edit'),
-			'platform/users::admin.usersController@delete'       => Lang::get('platform/users::users/permissions.delete'),
+			'Platform\Users\Controllers\Admin\UsersController@index,grid'   => Lang::get('platform/users::permissions.users.index'),
+			'Platform\Users\Controllers\Admin\UsersController@create,store' => Lang::get('platform/users::permissions.users.create'),
+			'Platform\Users\Controllers\Admin\UsersController@edit,update'  => Lang::get('platform/users::permissions.users.edit'),
+			'Platform\Users\Controllers\Admin\UsersController@delete'       => Lang::get('platform/users::permissions.users.delete'),
 		);
 	},
 
