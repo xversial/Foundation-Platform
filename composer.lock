@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "5e9dab2cc51e8ec0504cb35312810196",
+    "hash": "5a26c71c95d8461eb3675217281619e1",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -715,12 +715,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cartalyst/sentry.git",
-                "reference": "7a870aaa1aab0a06cee3c75248c51c66e1cd7518"
+                "reference": "32ffb4f68435ac8180af8cb1d25212de5451c965"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/7a870aaa1aab0a06cee3c75248c51c66e1cd7518",
-                "reference": "7a870aaa1aab0a06cee3c75248c51c66e1cd7518",
+                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/32ffb4f68435ac8180af8cb1d25212de5451c965",
+                "reference": "32ffb4f68435ac8180af8cb1d25212de5451c965",
                 "shasum": ""
             },
             "require": {
@@ -808,7 +808,7 @@
                 "source": "https://github.com/cartalyst/sentry/tree/develop",
                 "issues": "https://github.com/cartalyst/sentry/issues"
             },
-            "time": "2013-12-07 21:08:12"
+            "time": "2013-12-09 05:45:18"
         },
         {
             "name": "cartalyst/sentry-social",
@@ -1454,7 +1454,7 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -1502,9 +1502,10 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/"
+                    "homepage": "http://www.jwage.com/",
+                    "role": "Creator"
                 },
                 {
                     "name": "Guilherme Blanco",
@@ -1715,7 +1716,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan H. Wage",
+                    "name": "Jonathan Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/",
                     "role": "Creator"
@@ -1734,7 +1735,7 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -1864,12 +1865,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "0305bcc94724b0a1b229d0f140c6363b108abc26"
+                "reference": "50c5393062bc9035d0a872b9b2af8221f264ea19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/0305bcc94724b0a1b229d0f140c6363b108abc26",
-                "reference": "0305bcc94724b0a1b229d0f140c6363b108abc26",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/50c5393062bc9035d0a872b9b2af8221f264ea19",
+                "reference": "50c5393062bc9035d0a872b9b2af8221f264ea19",
                 "shasum": ""
             },
             "require": {
@@ -1948,7 +1949,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2013-12-07 22:55:19"
+            "time": "2013-12-09 04:01:52"
         },
         {
             "name": "herrera-io/json",
@@ -3081,12 +3082,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-admin.git",
-                "reference": "9c3637cc4b3f1597bf03daeaf2d1651b3ed9bd4e"
+                "reference": "0e55ce8c75573302a4933cdd2fc6a9ec0b460636"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-admin/zipball/9c3637cc4b3f1597bf03daeaf2d1651b3ed9bd4e",
-                "reference": "9c3637cc4b3f1597bf03daeaf2d1651b3ed9bd4e",
+                "url": "https://api.github.com/repos/cartalyst/platform-admin/zipball/0e55ce8c75573302a4933cdd2fc6a9ec0b460636",
+                "reference": "0e55ce8c75573302a4933cdd2fc6a9ec0b460636",
                 "shasum": ""
             },
             "require": {
@@ -3148,7 +3149,7 @@
                 "source": "https://github.com/cartalyst/platform-admin/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-admin/issues"
             },
-            "time": "2013-12-06 23:02:43"
+            "time": "2013-12-09 06:28:40"
         },
         {
             "name": "platform/attributes",
@@ -3156,12 +3157,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-attributes.git",
-                "reference": "adabb807d81b840e9e574f2f81cb15fe27735d26"
+                "reference": "35a3391415b179485a15523ccd8f089b7e46dce4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-attributes/zipball/adabb807d81b840e9e574f2f81cb15fe27735d26",
-                "reference": "adabb807d81b840e9e574f2f81cb15fe27735d26",
+                "url": "https://api.github.com/repos/cartalyst/platform-attributes/zipball/35a3391415b179485a15523ccd8f089b7e46dce4",
+                "reference": "35a3391415b179485a15523ccd8f089b7e46dce4",
                 "shasum": ""
             },
             "require": {
@@ -3224,7 +3225,7 @@
                 "source": "https://github.com/cartalyst/platform-attributes/tree/master",
                 "issues": "https://github.com/cartalyst/platform-attributes/issues"
             },
-            "time": "2013-12-08 22:38:52"
+            "time": "2013-12-09 06:30:21"
         },
         {
             "name": "platform/content",
@@ -3232,12 +3233,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-content.git",
-                "reference": "982d613b1beb66780c2d33b8882a10a84b135fb8"
+                "reference": "867c5da2206884ac8267ff37648059ccd49e0ed8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/982d613b1beb66780c2d33b8882a10a84b135fb8",
-                "reference": "982d613b1beb66780c2d33b8882a10a84b135fb8",
+                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/867c5da2206884ac8267ff37648059ccd49e0ed8",
+                "reference": "867c5da2206884ac8267ff37648059ccd49e0ed8",
                 "shasum": ""
             },
             "require": {
@@ -3304,7 +3305,7 @@
                 "source": "https://github.com/cartalyst/platform-content/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-content/issues"
             },
-            "time": "2013-12-08 22:39:07"
+            "time": "2013-12-09 06:29:29"
         },
         {
             "name": "platform/foundation",
@@ -3312,12 +3313,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-foundation.git",
-                "reference": "2be14cd46b4a6e5544cb7ff557d15305a831953b"
+                "reference": "02173e3c47235db96f9b35a8d314ee7ef285cce8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/2be14cd46b4a6e5544cb7ff557d15305a831953b",
-                "reference": "2be14cd46b4a6e5544cb7ff557d15305a831953b",
+                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/02173e3c47235db96f9b35a8d314ee7ef285cce8",
+                "reference": "02173e3c47235db96f9b35a8d314ee7ef285cce8",
                 "shasum": ""
             },
             "require": {
@@ -3391,20 +3392,20 @@
                 "source": "https://github.com/cartalyst/platform-foundation/tree/master",
                 "issues": "https://github.com/cartalyst/platform-foundation/issues"
             },
-            "time": "2013-12-06 21:45:42"
+            "time": "2013-12-09 06:29:50"
         },
         {
             "name": "platform/installer",
-            "version": "dev-master",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-installer.git",
-                "reference": "0ada6637aed87c3384332f3873f96cea17fd0cdc"
+                "reference": "695be8611b3d42a4a02edcb341dc2eb5493b7d23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-installer/zipball/0ada6637aed87c3384332f3873f96cea17fd0cdc",
-                "reference": "0ada6637aed87c3384332f3873f96cea17fd0cdc",
+                "url": "https://api.github.com/repos/cartalyst/platform-installer/zipball/695be8611b3d42a4a02edcb341dc2eb5493b7d23",
+                "reference": "695be8611b3d42a4a02edcb341dc2eb5493b7d23",
                 "shasum": ""
             },
             "require": {
@@ -3469,10 +3470,10 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-installer/tree/master",
+                "source": "https://github.com/cartalyst/platform-installer/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-installer/issues"
             },
-            "time": "2013-12-06 16:16:23"
+            "time": "2013-12-09 06:04:05"
         },
         {
             "name": "platform/menus",
@@ -3480,12 +3481,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-menus.git",
-                "reference": "03412c0fda730179e02cb5dac509e69793c640f0"
+                "reference": "b2b51cd256012163098e4c359312da6f3b302a45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/03412c0fda730179e02cb5dac509e69793c640f0",
-                "reference": "03412c0fda730179e02cb5dac509e69793c640f0",
+                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/b2b51cd256012163098e4c359312da6f3b302a45",
+                "reference": "b2b51cd256012163098e4c359312da6f3b302a45",
                 "shasum": ""
             },
             "require": {
@@ -3550,7 +3551,7 @@
                 "source": "https://github.com/cartalyst/platform-menus/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-menus/issues"
             },
-            "time": "2013-12-08 22:38:59"
+            "time": "2013-12-09 06:29:16"
         },
         {
             "name": "platform/operations",
@@ -3558,12 +3559,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-operations.git",
-                "reference": "4400b307d26b0ba4e077ffb226f89684ad72fcbb"
+                "reference": "4d6ea022b0727f36122a32d17ed5c326b766ff4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/4400b307d26b0ba4e077ffb226f89684ad72fcbb",
-                "reference": "4400b307d26b0ba4e077ffb226f89684ad72fcbb",
+                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/4d6ea022b0727f36122a32d17ed5c326b766ff4a",
+                "reference": "4d6ea022b0727f36122a32d17ed5c326b766ff4a",
                 "shasum": ""
             },
             "require": {
@@ -3628,7 +3629,7 @@
                 "source": "https://github.com/cartalyst/platform-operations/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-operations/issues"
             },
-            "time": "2013-12-08 22:40:59"
+            "time": "2013-12-09 06:31:13"
         },
         {
             "name": "platform/pages",
@@ -3636,12 +3637,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-pages.git",
-                "reference": "96374c63f2691fc46e0d6a2e56ae4e1bbab183cb"
+                "reference": "8d60d6db1e2b6dafd3adbdadcd9ef501724cbc25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/96374c63f2691fc46e0d6a2e56ae4e1bbab183cb",
-                "reference": "96374c63f2691fc46e0d6a2e56ae4e1bbab183cb",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/8d60d6db1e2b6dafd3adbdadcd9ef501724cbc25",
+                "reference": "8d60d6db1e2b6dafd3adbdadcd9ef501724cbc25",
                 "shasum": ""
             },
             "require": {
@@ -3707,7 +3708,7 @@
                 "source": "https://github.com/cartalyst/platform-pages/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2013-12-08 22:39:03"
+            "time": "2013-12-09 06:29:01"
         },
         {
             "name": "platform/settings",
@@ -3715,12 +3716,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-settings.git",
-                "reference": "e41174d2bd4cd0aa46e6215e74495a2a5215d7f7"
+                "reference": "5bb2d81b33554b7ef148440987d952959507fb4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-settings/zipball/e41174d2bd4cd0aa46e6215e74495a2a5215d7f7",
-                "reference": "e41174d2bd4cd0aa46e6215e74495a2a5215d7f7",
+                "url": "https://api.github.com/repos/cartalyst/platform-settings/zipball/5bb2d81b33554b7ef148440987d952959507fb4c",
+                "reference": "5bb2d81b33554b7ef148440987d952959507fb4c",
                 "shasum": ""
             },
             "require": {
@@ -3785,7 +3786,7 @@
                 "source": "https://github.com/cartalyst/platform-settings/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-settings/issues"
             },
-            "time": "2013-12-06 18:05:44"
+            "time": "2013-12-09 06:31:36"
         },
         {
             "name": "platform/users",
@@ -3793,12 +3794,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-users.git",
-                "reference": "f285e2c7b693386a889cbc46a467015cc7b95dab"
+                "reference": "c67ce0db8cbce80752e2505289e9ea60aea0243a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/f285e2c7b693386a889cbc46a467015cc7b95dab",
-                "reference": "f285e2c7b693386a889cbc46a467015cc7b95dab",
+                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/c67ce0db8cbce80752e2505289e9ea60aea0243a",
+                "reference": "c67ce0db8cbce80752e2505289e9ea60aea0243a",
                 "shasum": ""
             },
             "require": {
@@ -3863,7 +3864,7 @@
                 "source": "https://github.com/cartalyst/platform-users/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-users/issues"
             },
-            "time": "2013-12-08 22:43:31"
+            "time": "2013-12-09 06:28:22"
         },
         {
             "name": "predis/predis",
@@ -4799,6 +4800,7 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
+        "platform/installer": 20,
         "platform/content": 20,
         "platform/menus": 20,
         "platform/operations": 20,
