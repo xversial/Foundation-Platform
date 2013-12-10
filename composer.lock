@@ -715,12 +715,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cartalyst/sentry.git",
-                "reference": "0e7eda1c366219c4cfdfa47171ea14d02c00a119"
+                "reference": "c8d91e9dfc3e8860f29374b5fd9668d30946e34f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/0e7eda1c366219c4cfdfa47171ea14d02c00a119",
-                "reference": "0e7eda1c366219c4cfdfa47171ea14d02c00a119",
+                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/c8d91e9dfc3e8860f29374b5fd9668d30946e34f",
+                "reference": "c8d91e9dfc3e8860f29374b5fd9668d30946e34f",
                 "shasum": ""
             },
             "require": {
@@ -734,7 +734,8 @@
                 "illuminate/http": ">=4.0.9,<4.2",
                 "illuminate/session": ">=4.0.9,<4.2",
                 "ircmaxell/password-compat": "1.0.*",
-                "mockery/mockery": "0.7.2"
+                "mockery/mockery": "0.7.2",
+                "swiftidentity/php-toolkit": "1.0.*"
             },
             "suggest": {
                 "happydemon/txt": "Required Text helpers when using the Kohana implementation",
@@ -809,7 +810,7 @@
                 "source": "https://github.com/cartalyst/sentry/tree/develop",
                 "issues": "https://github.com/cartalyst/sentry/issues"
             },
-            "time": "2013-12-09 16:37:10"
+            "time": "2013-12-10 10:08:38"
         },
         {
             "name": "cartalyst/sentry-social",
@@ -2288,12 +2289,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "8856a70f7f82da8e370769d3cf7973e6af38853e"
+                "reference": "e3be0deb504cf219544e99f881d2b39a0664e9e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/8856a70f7f82da8e370769d3cf7973e6af38853e",
-                "reference": "8856a70f7f82da8e370769d3cf7973e6af38853e",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/e3be0deb504cf219544e99f881d2b39a0664e9e1",
+                "reference": "e3be0deb504cf219544e99f881d2b39a0664e9e1",
                 "shasum": ""
             },
             "require": {
@@ -2396,7 +2397,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-12-09 21:43:44"
+            "time": "2013-12-10 03:31:04"
         },
         {
             "name": "leafo/lessphp",
@@ -2942,12 +2943,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "10b47a1e5af46d0a32a2edabf14c4bf1201f4d34"
+                "reference": "ffa1393a4c886bd999fb777ac108b5974db4790f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/10b47a1e5af46d0a32a2edabf14c4bf1201f4d34",
-                "reference": "10b47a1e5af46d0a32a2edabf14c4bf1201f4d34",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/ffa1393a4c886bd999fb777ac108b5974db4790f",
+                "reference": "ffa1393a4c886bd999fb777ac108b5974db4790f",
                 "shasum": ""
             },
             "require": {
@@ -3028,7 +3029,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2013-12-06 11:20:36"
+            "time": "2013-12-10 11:42:19"
         },
         {
             "name": "pimple/pimple",
@@ -3795,12 +3796,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-users.git",
-                "reference": "2a8fd894b803d9ff07bf2c25468c7804f1b51402"
+                "reference": "aaaf8c82706b148218b078278e1c041f4f99b74f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/2a8fd894b803d9ff07bf2c25468c7804f1b51402",
-                "reference": "2a8fd894b803d9ff07bf2c25468c7804f1b51402",
+                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/aaaf8c82706b148218b078278e1c041f4f99b74f",
+                "reference": "aaaf8c82706b148218b078278e1c041f4f99b74f",
                 "shasum": ""
             },
             "require": {
@@ -3866,7 +3867,7 @@
                 "source": "https://github.com/cartalyst/platform-users/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-users/issues"
             },
-            "time": "2013-12-09 23:40:21"
+            "time": "2013-12-10 18:13:55"
         },
         {
             "name": "predis/predis",
