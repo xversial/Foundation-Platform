@@ -142,12 +142,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/attributes.git",
-                "reference": "9a8011099e38c50b7f419b568620d06d4016bb9b"
+                "reference": "0726e252dea4988679cb3f9963c499ea4337bec5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/attributes/zipball/9a8011099e38c50b7f419b568620d06d4016bb9b",
-                "reference": "9a8011099e38c50b7f419b568620d06d4016bb9b",
+                "url": "https://api.github.com/repos/cartalyst/attributes/zipball/0726e252dea4988679cb3f9963c499ea4337bec5",
+                "reference": "0726e252dea4988679cb3f9963c499ea4337bec5",
                 "shasum": ""
             },
             "require": {
@@ -203,7 +203,7 @@
                 "source": "https://github.com/cartalyst/attributes/tree/master",
                 "issues": "https://github.com/cartalyst/attributes/issues"
             },
-            "time": "2013-12-12 03:33:44"
+            "time": "2013-12-13 15:26:20"
         },
         {
             "name": "cartalyst/composer-installers",
@@ -1326,16 +1326,16 @@
         },
         {
             "name": "doctrine/annotations",
-            "version": "v1.1.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "40db0c96985aab2822edbc4848b3bd2429e02670"
+                "reference": "97b4a00c5a40c42d8c0b789dabc04b3332c788ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/40db0c96985aab2822edbc4848b3bd2429e02670",
-                "reference": "40db0c96985aab2822edbc4848b3bd2429e02670",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/97b4a00c5a40c42d8c0b789dabc04b3332c788ab",
+                "reference": "97b4a00c5a40c42d8c0b789dabc04b3332c788ab",
                 "shasum": ""
             },
             "require": {
@@ -1348,7 +1348,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.2.x-dev"
                 }
             },
             "autoload": {
@@ -1394,7 +1394,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2013-06-16 21:33:03"
+            "time": "2013-12-13 21:02:36"
         },
         {
             "name": "doctrine/cache",
@@ -1618,12 +1618,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "116031ffff5e1c1e510b4124bfb862688e56abf0"
+                "reference": "390db30f686f3a7ab555178ac22d3f94198e378f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/116031ffff5e1c1e510b4124bfb862688e56abf0",
-                "reference": "116031ffff5e1c1e510b4124bfb862688e56abf0",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/390db30f686f3a7ab555178ac22d3f94198e378f",
+                "reference": "390db30f686f3a7ab555178ac22d3f94198e378f",
                 "shasum": ""
             },
             "require": {
@@ -1681,7 +1681,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2013-12-11 23:30:58"
+            "time": "2013-12-13 22:32:11"
         },
         {
             "name": "doctrine/inflector",
@@ -2150,12 +2150,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/justinrainbow/json-schema.git",
-                "reference": "ad8b959e5962624004738d50a2d8e83c5668e143"
+                "reference": "01949f6d2130e9737ffae5d3952909a8de70d114"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/ad8b959e5962624004738d50a2d8e83c5668e143",
-                "reference": "ad8b959e5962624004738d50a2d8e83c5668e143",
+                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/01949f6d2130e9737ffae5d3952909a8de70d114",
+                "reference": "01949f6d2130e9737ffae5d3952909a8de70d114",
                 "shasum": ""
             },
             "require": {
@@ -2210,7 +2210,7 @@
                 "json",
                 "schema"
             ],
-            "time": "2013-12-08 21:17:57"
+            "time": "2013-12-13 15:21:04"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -2289,12 +2289,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "5bb5cede49d17aaf4f5e45fbe24719c1a42a909a"
+                "reference": "4c7dd3c0eddc471b20bf57f7ea7789c2ecab248e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/5bb5cede49d17aaf4f5e45fbe24719c1a42a909a",
-                "reference": "5bb5cede49d17aaf4f5e45fbe24719c1a42a909a",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/4c7dd3c0eddc471b20bf57f7ea7789c2ecab248e",
+                "reference": "4c7dd3c0eddc471b20bf57f7ea7789c2ecab248e",
                 "shasum": ""
             },
             "require": {
@@ -2320,6 +2320,7 @@
                 "symfony/http-foundation": "2.4.*",
                 "symfony/http-kernel": "2.4.*",
                 "symfony/process": "2.4.*",
+                "symfony/routing": "2.4.*",
                 "symfony/translation": "2.4.*"
             },
             "replace": {
@@ -2397,7 +2398,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-12-12 16:50:30"
+            "time": "2013-12-13 18:42:36"
         },
         {
             "name": "leafo/lessphp",
@@ -3796,12 +3797,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-users.git",
-                "reference": "f681b9bac38da1bcaf160e426121b851272e1f22"
+                "reference": "c9a6681ba0484d0c768d959dff5205206c96fcdb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/f681b9bac38da1bcaf160e426121b851272e1f22",
-                "reference": "f681b9bac38da1bcaf160e426121b851272e1f22",
+                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/c9a6681ba0484d0c768d959dff5205206c96fcdb",
+                "reference": "c9a6681ba0484d0c768d959dff5205206c96fcdb",
                 "shasum": ""
             },
             "require": {
@@ -3867,7 +3868,7 @@
                 "source": "https://github.com/cartalyst/platform-users/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-users/issues"
             },
-            "time": "2013-12-12 16:40:24"
+            "time": "2013-12-13 22:46:35"
         },
         {
             "name": "predis/predis",
@@ -4738,6 +4739,72 @@
             "description": "Symfony Process Component",
             "homepage": "http://symfony.com",
             "time": "2013-11-26 16:40:27"
+        },
+        {
+            "name": "symfony/routing",
+            "version": "2.4.x-dev",
+            "target-dir": "Symfony/Component/Routing",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Routing.git",
+                "reference": "a7a665e2a0e3a203ca9a690c021066e76295bf6a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Routing/zipball/a7a665e2a0e3a203ca9a690c021066e76295bf6a",
+                "reference": "a7a665e2a0e3a203ca9a690c021066e76295bf6a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "doctrine/annotations": "~1.0",
+                "psr/log": "~1.0",
+                "symfony/config": "~2.2",
+                "symfony/expression-language": "~2.4",
+                "symfony/yaml": "~2.0"
+            },
+            "suggest": {
+                "doctrine/annotations": "For using the annotation loader",
+                "symfony/config": "For using the all-in-one router or any loader",
+                "symfony/expression-language": "For using expression matching",
+                "symfony/yaml": "For using the YAML loader"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Routing\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Routing Component",
+            "homepage": "http://symfony.com",
+            "keywords": [
+                "router",
+                "routing",
+                "uri",
+                "url"
+            ],
+            "time": "2013-11-22 17:42:00"
         },
         {
             "name": "symfony/translation",
