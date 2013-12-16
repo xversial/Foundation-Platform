@@ -22,6 +22,7 @@ return array(
 
 	'error'   => 'Error',
 	'success' => 'Success',
+	'warning' => 'Warning',
 
 	'yes'      => 'Yes',
 	'no'       => 'No',
