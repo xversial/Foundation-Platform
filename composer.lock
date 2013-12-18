@@ -715,12 +715,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cartalyst/sentry.git",
-                "reference": "b53914e5a41c94b9ec944fc9f4b831fb44a1efb5"
+                "reference": "151df1fa1b852a8f975d1b51039bb240c6edeb31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/b53914e5a41c94b9ec944fc9f4b831fb44a1efb5",
-                "reference": "b53914e5a41c94b9ec944fc9f4b831fb44a1efb5",
+                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/151df1fa1b852a8f975d1b51039bb240c6edeb31",
+                "reference": "151df1fa1b852a8f975d1b51039bb240c6edeb31",
                 "shasum": ""
             },
             "require": {
@@ -810,7 +810,7 @@
                 "source": "https://github.com/cartalyst/sentry/tree/develop",
                 "issues": "https://github.com/cartalyst/sentry/issues"
             },
-            "time": "2013-12-17 16:34:08"
+            "time": "2013-12-18 19:30:56"
         },
         {
             "name": "cartalyst/sentry-social",
@@ -818,12 +818,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/sentry-social.git",
-                "reference": "52c8a8b7ecc9a4ac73c61cb5acb1d5e12e3fedcc"
+                "reference": "74cd984e6976854946d84fcda5f4c34971a7fb39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentry-social/zipball/52c8a8b7ecc9a4ac73c61cb5acb1d5e12e3fedcc",
-                "reference": "52c8a8b7ecc9a4ac73c61cb5acb1d5e12e3fedcc",
+                "url": "https://api.github.com/repos/cartalyst/sentry-social/zipball/74cd984e6976854946d84fcda5f4c34971a7fb39",
+                "reference": "74cd984e6976854946d84fcda5f4c34971a7fb39",
                 "shasum": ""
             },
             "require": {
@@ -901,7 +901,7 @@
                 "source": "https://github.com/cartalyst/sentry-social/tree/develop",
                 "issues": "https://github.com/cartalyst/sentry-social/issues"
             },
-            "time": "2013-12-12 19:04:34"
+            "time": "2013-12-18 20:16:31"
         },
         {
             "name": "cartalyst/themes",
@@ -1330,12 +1330,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "97b4a00c5a40c42d8c0b789dabc04b3332c788ab"
+                "reference": "4f5eee18b4cecbecd43cee7cd6ca9e8209467332"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/97b4a00c5a40c42d8c0b789dabc04b3332c788ab",
-                "reference": "97b4a00c5a40c42d8c0b789dabc04b3332c788ab",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/4f5eee18b4cecbecd43cee7cd6ca9e8209467332",
+                "reference": "4f5eee18b4cecbecd43cee7cd6ca9e8209467332",
                 "shasum": ""
             },
             "require": {
@@ -1394,7 +1394,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2013-12-13 21:02:36"
+            "time": "2013-12-18 17:19:23"
         },
         {
             "name": "doctrine/cache",
@@ -1402,12 +1402,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "ff36d4216fef8242c3d8ee97fceee977e3c9b9a6"
+                "reference": "36c4eee5051629524389da376ba270f15765e49f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/ff36d4216fef8242c3d8ee97fceee977e3c9b9a6",
-                "reference": "ff36d4216fef8242c3d8ee97fceee977e3c9b9a6",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/36c4eee5051629524389da376ba270f15765e49f",
+                "reference": "36c4eee5051629524389da376ba270f15765e49f",
                 "shasum": ""
             },
             "require": {
@@ -1437,7 +1437,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan H. Wage",
+                    "name": "Jonathan Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/",
                     "role": "Creator"
@@ -1456,7 +1456,7 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -1468,7 +1468,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2013-11-23 16:10:06"
+            "time": "2013-12-18 17:21:03"
         },
         {
             "name": "doctrine/collections",
@@ -1476,12 +1476,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "bcb53776a096a0c64579cc8d8ec0db62f1109fbc"
+                "reference": "76c33a25070ffb39a65f6db1e1a050051d0d91b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/bcb53776a096a0c64579cc8d8ec0db62f1109fbc",
-                "reference": "bcb53776a096a0c64579cc8d8ec0db62f1109fbc",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/76c33a25070ffb39a65f6db1e1a050051d0d91b8",
+                "reference": "76c33a25070ffb39a65f6db1e1a050051d0d91b8",
                 "shasum": ""
             },
             "require": {
@@ -1506,7 +1506,8 @@
                 {
                     "name": "Jonathan Wage",
                     "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/"
+                    "homepage": "http://www.jwage.com/",
+                    "role": "Creator"
                 },
                 {
                     "name": "Guilherme Blanco",
@@ -1535,7 +1536,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2013-08-29 16:56:45"
+            "time": "2013-12-18 17:20:08"
         },
         {
             "name": "doctrine/common",
@@ -1618,12 +1619,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "390db30f686f3a7ab555178ac22d3f94198e378f"
+                "reference": "28264a15a404496155d84a0abfa3404d01302905"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/390db30f686f3a7ab555178ac22d3f94198e378f",
-                "reference": "390db30f686f3a7ab555178ac22d3f94198e378f",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/28264a15a404496155d84a0abfa3404d01302905",
+                "reference": "28264a15a404496155d84a0abfa3404d01302905",
                 "shasum": ""
             },
             "require": {
@@ -1681,7 +1682,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2013-12-13 22:32:11"
+            "time": "2013-12-18 18:35:15"
         },
         {
             "name": "doctrine/inflector",
@@ -1689,12 +1690,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "8b4b3ccec7aafc596e2fc1e593c9f2e78f939c8c"
+                "reference": "561a11ef25981a73d2ec29b07d0091cad390e3cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/8b4b3ccec7aafc596e2fc1e593c9f2e78f939c8c",
-                "reference": "8b4b3ccec7aafc596e2fc1e593c9f2e78f939c8c",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/561a11ef25981a73d2ec29b07d0091cad390e3cc",
+                "reference": "561a11ef25981a73d2ec29b07d0091cad390e3cc",
                 "shasum": ""
             },
             "require": {
@@ -1717,7 +1718,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan H. Wage",
+                    "name": "Jonathan Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/",
                     "role": "Creator"
@@ -1736,7 +1737,7 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -1750,7 +1751,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2013-04-10 16:14:30"
+            "time": "2013-12-18 17:22:13"
         },
         {
             "name": "doctrine/lexer",
@@ -2528,12 +2529,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-loep/oauth1-client.git",
-                "reference": "c8954793a7aa6d4dcc96a7383601d701bdf7e91a"
+                "reference": "bac11657818c3438e9672070fb6f047e23d8b324"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-loep/oauth1-client/zipball/c8954793a7aa6d4dcc96a7383601d701bdf7e91a",
-                "reference": "c8954793a7aa6d4dcc96a7383601d701bdf7e91a",
+                "url": "https://api.github.com/repos/php-loep/oauth1-client/zipball/bac11657818c3438e9672070fb6f047e23d8b324",
+                "reference": "bac11657818c3438e9672070fb6f047e23d8b324",
                 "shasum": ""
             },
             "require": {
@@ -2580,7 +2581,7 @@
                 "oauth1",
                 "single sign on"
             ],
-            "time": "2013-12-03 09:43:32"
+            "time": "2013-12-17 22:44:18"
         },
         {
             "name": "league/oauth2-client",
@@ -3797,12 +3798,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-users.git",
-                "reference": "6a380a0462636d4da0bc7cec4de9d5916ac5c644"
+                "reference": "7dd72f6506d0504d273e8a25b4b35509abe31953"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/6a380a0462636d4da0bc7cec4de9d5916ac5c644",
-                "reference": "6a380a0462636d4da0bc7cec4de9d5916ac5c644",
+                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/7dd72f6506d0504d273e8a25b4b35509abe31953",
+                "reference": "7dd72f6506d0504d273e8a25b4b35509abe31953",
                 "shasum": ""
             },
             "require": {
@@ -3868,7 +3869,7 @@
                 "source": "https://github.com/cartalyst/platform-users/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-users/issues"
             },
-            "time": "2013-12-17 15:45:13"
+            "time": "2013-12-18 20:14:11"
         },
         {
             "name": "predis/predis",
@@ -3876,12 +3877,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nrk/predis.git",
-                "reference": "56627f30f83e1adf5e27c8d44bf0f55eaeab801a"
+                "reference": "b7cba070147e9c430e813fa411d2851cac3e2b96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nrk/predis/zipball/56627f30f83e1adf5e27c8d44bf0f55eaeab801a",
-                "reference": "56627f30f83e1adf5e27c8d44bf0f55eaeab801a",
+                "url": "https://api.github.com/repos/nrk/predis/zipball/b7cba070147e9c430e813fa411d2851cac3e2b96",
+                "reference": "b7cba070147e9c430e813fa411d2851cac3e2b96",
                 "shasum": ""
             },
             "require": {
@@ -3915,7 +3916,7 @@
                 "predis",
                 "redis"
             ],
-            "time": "2013-12-17 12:00:39"
+            "time": "2013-12-18 15:09:01"
         },
         {
             "name": "psr/log",
