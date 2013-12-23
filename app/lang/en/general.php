@@ -43,6 +43,6 @@ return array(
 	'loading'       => 'Loading',
 	'search'        => 'Search',
 	'load_more'     => 'Load more',
-	'remove_filter' => 'Remover filter',
+	'remove_filter' => 'Remove filter',
 
 );
