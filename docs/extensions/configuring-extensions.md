@@ -1,41 +1,33 @@
-## Configuring Extensions
+# Configuring Extensions
 
 Below we'll go over all of the configuration options for a Platform 2 extension. All configuration options can be set in the `extension.php` file. This works exactly as any other Laravel 4 configuration file. The titles for these configuration options represent the key which can be set in the configuration array.
 
-### name {#name}
-
----
+## name {#name}
 
 The name for your extension.
 
 
-### slug {#slug}
-
----
+## slug {#slug}
 
 This is your extension unique identifier and should not be changed as it will be recognized as a new extension. Ideally, this should match the folder structure within the extensions folder, but this is completely optional.
 
-### author {#author}
 
----
+## author {#author}
 
 The author of the extension.
 
-### description {#description}
 
----
+## description {#description}
 
 One or two sentences describing the extension for users to view when they are managing the extension.
 
-### version {#version}
 
----
+## version {#version}
 
 Version should be a string that can be used with the `version_compare` function. This is how the extension's versions are compared.
 
-### require {#require}
 
----
+## require {#require}
 
 You should list here all the extensions this extension requires to work properly. This is used in conjunction with Composer, so you should put the same extension dependencies on your composer.json require key so that they get resolved using composer, however you can use without composer, at which point you'll have to ensure that the required extensions are available.
 
@@ -46,9 +38,7 @@ You should list here all the extensions this extension requires to work properly
 	),
 
 
-### autoload {#autoload}
-
----
+## autoload {#autoload}
 
 Here you can define your extension's autoloading logic. It may either be `composer`, `platform` or a Closure.
 
@@ -62,9 +52,7 @@ If a Closure is defined, it should take two parameters as defined below:
 	object \Illuminate\Foundation\Application  $app
 
 
-### register {#register}
-
----
+## register {#register}
 
 Much like Laravel's service providers, the `register` key is where all the custom logic goes when registering extension functionality. You're required to register them through a closure.
 
@@ -74,9 +62,7 @@ The closure parameters are:
 	object \Illuminate\Foundation\Application        $app
 
 
-### boot {#boot}
-
----
+## boot {#boot}
 
 The boot method can be used to override application logic or initialize custom functionality. Again, you can do this by providing a closure.
 
@@ -86,9 +72,7 @@ The closure parameters are:
 	object \Illuminate\Foundation\Application        $app
 
 
-### routes {#routes}
-
----
+## routes {#routes}
 
 Your custom extension routes. This is done exactly the same way as you'd register routes in your `routes.php` file. Just provide the route through a closure.
 
@@ -97,9 +81,7 @@ The closure parameters are:
 	object \Cartalyst\Extensions\ExtensionInterface  $extension
 	object \Illuminate\Foundation\Application        $app
 
-### permissions {#permissions}
-
----
+## permissions {#permissions}
 List of permissions this extension has. These are shown in the user management area to build a graphical interface where permissions can be selected to allow or deny user access.
 
 You can protect single or multiple controller methods at once.
@@ -116,24 +98,20 @@ For example, a part of the permissions array in the `extension.php` file for the
 	'permissions' => function()
 	{
 		return array(
-			'Platform\Users\Controllers\Admin\UsersController@index,grid'   => Lang::get('platform/users::permissions.users.index'),
-			'Platform\Users\Controllers\Admin\UsersController@create,store' => Lang::get('platform/users::permissions.users.create'),
-			'Platform\Users\Controllers\Admin\UsersController@edit,update'  => Lang::get('platform/users::permissions.users.edit'),
-			'Platform\Users\Controllers\Admin\UsersController@delete'       => Lang::get('platform/users::permissions.users.delete'),
+			'Platform\Users\Controllers\Admin\UsersController@index,grid'	=> 'List Users',
+			'Platform\Users\Controllers\Admin\UsersController@create,store'	=> 'Create Users',
+			'Platform\Users\Controllers\Admin\UsersController@edit,update'	=> 'Update Users',
+			'Platform\Users\Controllers\Admin\UsersController@delete'		=> 'Delete Users',
 		);
 	},
 
 
-### widgets {#widgets}
-
----
+## widgets {#widgets}
 
 List of custom widgets associated with the extension. Like routes, the value for the widget key may either be a closure or a class & method name (joined with an @ symbol). Of course, Platform will guess the widget class for you, this is just for custom widgets or if you do not wish to make a new class for a very small widget.
 
 
-### settings {#settings}
-
----
+## settings {#settings}
 
 Register any settings for your extension. You can also configure the namespace and group that a setting belongs to.
 
@@ -170,9 +148,7 @@ For example, part of the Platform 2 Users's extension settings looks like the fo
 	},
 
 
-### menus {#menus}
-
----
+## menus {#menus}
 
 You may specify the default various menu hierarchy for your extension. You can provide a recursive array of menu children and their children. These will be created upon installation, synchronized upon upgrading and removed upon uninstallation.
 

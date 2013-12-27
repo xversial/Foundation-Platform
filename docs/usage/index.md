@@ -1,4 +1,4 @@
-## Basics
+# Basics
 
 Platform 2 isn't just a CMS system. It's a flexible and extensible application which provides a solid base.
 
@@ -6,18 +6,14 @@ By default you can quickly get started by managing users, content and your setti
 
 This documentation will get you quick-started with Platform 2's basic functionality and will help you build your own custom Platform 2 extensions.
 
-### Dashboard {#dashboard}
-
----
+## Dashboard {#dashboard}
 
 The back-end dashboard which comes with the Platform 2 application gives you a good starting point for managing your site. It's a flexible CMS on which you can build your own functionality.
 
 By default the dashboard provides functionality for managing pages, content, users, menus, extensions and your settings. You can add more functionality or alter functionality by adding your own extensions.
 
 
-### Settings {#settings}
-
----
+## Settings {#settings}
 
 By default, Platform 2 offers some configuration which you can manage in the settings panel. Add your own settings through your custom extensions.
 

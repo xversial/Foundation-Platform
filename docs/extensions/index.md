@@ -1,4 +1,4 @@
-## Basics
+# Extensions
 
 Extensions allow you to extend Platform 2 beyond its basic functionality. The
 default extensions for Platform 2 are actually composer packages. If you want,
@@ -23,9 +23,8 @@ are based on extensions.
 There is no need to modify the installer for any custom extensions you may have.
 This makes distributing your own apps or sites that run on Platform 2 a breeze.
 
-### Requirements {#requirements}
 
----
+## Requirements {#requirements}
 
 **composer.json**
 

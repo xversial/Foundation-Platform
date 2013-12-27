@@ -1,12 +1,10 @@
-## Hooks {#hooks}
+# Hooks {#hooks}
 
 Platform 2 hooks are events which are fired at various occasions throughout certain Platform 2 actions.
 
 They give you the oportunity to do something when the event is fired. You can find these hooks in the `app/hooks.php` file.
 
-### Operation Hooks  {#operation-hooks}
-
----
+## Operation Hooks  {#operation-hooks}
 
 Hook into the installation / upgrading of your Platform installation. Registered with the `Installer::<event>` convention.
 
@@ -23,9 +21,7 @@ For example:
 	});
 
 
-### Platform Hooks {#platform-hooks}
-
----
+## Platform Hooks {#platform-hooks}
 
 Hooks for events of Platform itself. Registered with the `Platform::<event>` convention.
 
@@ -43,9 +39,7 @@ For example:
 	});
 
 
-### Extension Hooks {#extension-hooks}
-
----
+## Extension Hooks {#extension-hooks}
 
 Hooks for various stages of an Extension's lifecycle. You can access the individual extension properties through `$extension->getSlug()`. Registered with the `Extension::<event>` convention.
 
