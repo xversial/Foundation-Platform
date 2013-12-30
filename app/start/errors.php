@@ -15,13 +15,6 @@
 
 if (App::environment() === 'production' or Config::get('app.debug') === false)
 {
-	App::error(function(Exception $exception, $code)
-	{
-		Log::error($exception);
-
-		return show_error_page(500);
-	});
-
 	App::error(function(Symfony\Component\HttpKernel\Exception\HttpException $exception, $code)
 	{
 		Log::error($exception);
@@ -51,6 +44,13 @@ if (App::environment() === 'production' or Config::get('app.debug') === false)
 		}
 
 		return show_error_page($statusCode);
+	});
+
+	App::error(function(Exception $exception, $code)
+	{
+		Log::error($exception);
+
+		return show_error_page(500);
 	});
 }
 else
