@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "5a26c71c95d8461eb3675217281619e1",
+    "hash": "98acdc85cd6f6950d7a36575dac19486",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -66,6 +66,82 @@
                 "zip"
             ],
             "time": "2013-11-05 13:02:15"
+        },
+        {
+            "name": "cartalyst/api",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:cartalyst/api.git",
+                "reference": "dc7ce6d80ebaef7eee58f8a27c88030efa326d65"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cartalyst/api/zipball/dc7ce6d80ebaef7eee58f8a27c88030efa326d65",
+                "reference": "dc7ce6d80ebaef7eee58f8a27c88030efa326d65",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/container": "4.1.*",
+                "illuminate/http": "4.1.*",
+                "illuminate/routing": "4.1.*",
+                "illuminate/support": "4.1.*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.7.2"
+            },
+            "type": "library",
+            "extra": {
+                "component": "package",
+                "frameworks": [
+                    "Laravel 4"
+                ],
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Cartalyst\\Api": "src"
+                }
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Cartalyst LLC",
+                    "email": "help@cartalyst.com"
+                },
+                {
+                    "name": "Ben Corlett",
+                    "email": "ben.corlett@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Bruno Gaspar",
+                    "email": "bruno.gaspar@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dan Syme",
+                    "email": "dan.syme@cartalyst.com",
+                    "role": "Creator & Designer"
+                }
+            ],
+            "description": "A RESTful web api that developer's will love.",
+            "keywords": [
+                "REST",
+                "RESTful",
+                "api",
+                "laravel 4"
+            ],
+            "support": {
+                "source": "https://github.com/cartalyst/api/tree/master",
+                "issues": "https://github.com/cartalyst/api/issues"
+            },
+            "time": "2013-12-30 10:18:13"
         },
         {
             "name": "cartalyst/assetic-filters",
@@ -1618,12 +1694,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "24c1e7541e3d5af873fdacbbe6e83cad139f424c"
+                "reference": "9ec63e25b572db79c09cacccb844e33ed435e479"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/24c1e7541e3d5af873fdacbbe6e83cad139f424c",
-                "reference": "24c1e7541e3d5af873fdacbbe6e83cad139f424c",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/9ec63e25b572db79c09cacccb844e33ed435e479",
+                "reference": "9ec63e25b572db79c09cacccb844e33ed435e479",
                 "shasum": ""
             },
             "require": {
@@ -1681,7 +1757,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2013-12-29 22:15:26"
+            "time": "2013-12-30 07:54:23"
         },
         {
             "name": "doctrine/inflector",
@@ -4872,6 +4948,7 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
+        "cartalyst/api": 20,
         "platform/installer": 20,
         "platform/content": 20,
         "platform/menus": 20,
