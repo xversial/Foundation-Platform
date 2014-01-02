@@ -1,4 +1,4 @@
-<?php
+<?php namespace App\Widgets;
 /**
  * Part of the Platform application.
  *
@@ -18,14 +18,19 @@
  * @link       http://cartalyst.com
  */
 
-/*
-|--------------------------------------------------------------------------
-| Application Widgets
-|--------------------------------------------------------------------------
-|
-| Here is where you can map all of the widgets that you can use
-| throughout your application.
-|
-*/
+class HelloWidget {
 
-Widget::map('hello', 'App\Widgets\HelloWidget@show');
+	/**
+	 * Show a welcome message.
+	 *
+	 * @param  string  $name
+	 * @return string
+	 */
+	public function show($name = null)
+	{
+		$name = $name ?: 'stranger';
+
+		return "Hello {$name}!";
+	}
+
+}
