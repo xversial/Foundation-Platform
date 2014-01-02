@@ -107,6 +107,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
+		'Cartalyst\Api\Laravel\ApiServiceProvider',
 		'Cartalyst\Sentry\Laravel\SentryServiceProvider',
 		'Cartalyst\DataGrid\DataGridServiceProvider',
 		'Cartalyst\Extensions\ExtensionsServiceProvider',
@@ -184,6 +185,8 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
 
 		'Activation'    => 'Cartalyst\Sentry\Laravel\Facades\Activation',
+		'API'           => 'Cartalyst\Api\Laravel\Facades\API',
+		'ApiResponse'   => 'Cartalyst\Api\Response',
 		'Asset'         => 'Cartalyst\Themes\Facades\Asset',
 		'Auth'          => 'Cartalyst\Sentry\Laravel\Facades\Sentry',
 		'DataGrid'      => 'Cartalyst\DataGrid\Facades\DataGrid',

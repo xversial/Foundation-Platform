@@ -71,8 +71,8 @@
 				<div class="collapse navbar-collapse">
 
 					<ul class="nav navbar-nav">
-						<li><a href="https://www.cartalyst.com/licence">Licence</a></li>
-						<li><a href="https://www.cartalyst.com/manual/platform">Documentation</a></li>
+						<li><a target="_blank" href="https://www.cartalyst.com/licence">Licence</a></li>
+						<li><a target="_blank" href="https://www.cartalyst.com/manual/platform">Documentation</a></li>
 					</ul>
 
 					@widget('platform/menus::nav.show', array('main', 0, 'nav navbar-nav navbar-right'))

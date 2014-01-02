@@ -1,7 +1,8 @@
 ## Install & Configure
 
 - [Installation]({url}/installation)
-	- [Get Platform](#get-platform)
+	- [Requirements](#requirements)
+	- [Download](#download)
 	- [Composer](#composer)
 	- [Configure Laravel](#configure-laravel)
 	- [Permissions](#permissions)

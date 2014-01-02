@@ -22,6 +22,7 @@ return array(
 
 	'error'   => 'Error',
 	'success' => 'Success',
+	'warning' => 'Warning',
 
 	'yes'      => 'Yes',
 	'no'       => 'No',
@@ -34,12 +35,14 @@ return array(
 	'not_logged_in' => 'You are not logged in.',
 
 	// Search & Pagination
-	'showing'   => 'Showing',
-	'to'        => 'to',
-	'in'        => 'in',
-	'of'        => 'of',
-	'loading'   => 'Loading',
-	'search'    => 'Search',
-	'load_more' => 'Load more',
+	'showing'       => 'Showing',
+	'to'            => 'to',
+	'in'            => 'in',
+	'of'            => 'of',
+	'entries'       => 'entries',
+	'loading'       => 'Loading',
+	'search'        => 'Search',
+	'load_more'     => 'Load more',
+	'remove_filter' => 'Remove filter',
 
 );

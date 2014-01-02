@@ -58,6 +58,8 @@ $framework = $app['path.base'].'/vendor/laravel/framework/src';
 
 require $framework.'/Illuminate/Foundation/start.php';
 
+require_once $app['path.base'].'/vendor/cartalyst/api/src/start.php';
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application

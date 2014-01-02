@@ -1,10 +1,8 @@
-## Widgets
+# Widgets
 
 Widgets are pieces of views which can be re-used throughout your Platform 2 application. An example could be a menu widget for your custom navigation or a Twitter feed widget. Widgets can both be created directly into your app in the `app/widgets` folder or through extensions.
 
-### Creating Widgets {#creating-widgets}
-
----
+## Creating Widgets {#creating-widgets}
 
 Widgets should best be created in the `app/widgets` folder. Widgets preferable are stand-alone classes which contain all of the functionality to build pieces of views or content.
 
@@ -21,22 +19,18 @@ For example, you may have a `TwitterFeed` class widget.
 
 	}
 
-### Registering Widgets {#registering-widgets}
-
----
+## Registering Widgets {#registering-widgets}
 
 You can register your widgets anywhere in your application with the `Widget::map` function. Let's register our twitter feed widget.
 
 	Widget::map('twitterfeed', 'App\Widgets\TwitterFeed@show');
 
-### Using Widgets {#using-widgets}
-
----
+## Using Widgets {#using-widgets}
 
 You can use widgets by using the `Widget` alias and the `make` function.
 
-	echo Widget::make('twitterfeed', array $parameters);
+	echo Widget::make('twitterfeed', $parameters);
 
 Or use the provided blade shortcut.
 
-	@widget('twitterfeed', array $parameters)
+	@widget('twitterfeed', $parameters)

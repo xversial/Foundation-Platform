@@ -57,25 +57,21 @@ if (function_exists('admin_uri'))
 */
 
 // Extension: platform/attributes
-// $app['Platform\Attributes\Models\Attribute'] = new My\Platform\Attributes\Models\Attribute;
-// $app['Platform\Attributes\Models\Value']     = new My\Platform\Attributes\Models\Value;
+// $app['Platform\Attributes\Attribute'] = new My\Platform\Attributes\Attribute;
+// $app['Platform\Attributes\Value']     = new My\Platform\Attributes\Value;
 
 // Extension: platform/content
-// $app['Platform\Content\Models\Content']      = new My\Platform\Content\Models\Content;
+// $app['Platform\Content\Content'] = new My\Platform\Content\Content;
 
 // Extension: platform/menus
-// $app['Platform\Menus\Models\Menu']           = new My\Platform\Menus\Models\Menu;
+// $app['Platform\Menus\Menu'] = new My\Platform\Menus\Menu;
 
 // Extension: platform/pages
-// $app['Platform\Pages\Models\Page']           = new My\Platform\Pages\Models\Page;
-
-// Extension: platform/tags
-// $app['Platform\Tags\Models\Tag']             = new My\Platform\Tags\Models\Tag;
+// $app['Platform\Pages\Page'] = new My\Platform\Pages\Page;
 
 // Extension: platform/users
-// $app['Platform\Users\Models\Group']          = new My\Platform\Users\Models\Group;
-// $app['Platform\Users\Models\Throttle']       = new My\Platform\Users\Models\Throttle;
-// $app['Platform\Users\Models\User']           = new My\Platform\Users\Models\User;
+// $app['Platform\Users\Group'] = new My\Platform\Users\Group;
+// $app['Platform\Users\User']  = new My\Platform\Users\User;
 
 /*
 |--------------------------------------------------------------------------
