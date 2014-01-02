@@ -1,5 +1,15 @@
 <?php
 
+/*
+|--------------------------------------------------------------------------
+| Override Request Class
+|--------------------------------------------------------------------------
+|
+| By overriding our request class to that of the API package, we are able
+| to inspect input as runtime objects rather than serialized strings.
+|
+*/
+
 require_once __DIR__.'/../vendor/cartalyst/api/src/start.php';
 
 /*
