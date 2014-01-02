@@ -73,12 +73,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/api.git",
-                "reference": "2dd7e113b5b070cd2201a706d1926d1412b8c9cc"
+                "reference": "94986ab3842aad8472bd169e16360e088288c02d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/api/zipball/2dd7e113b5b070cd2201a706d1926d1412b8c9cc",
-                "reference": "2dd7e113b5b070cd2201a706d1926d1412b8c9cc",
+                "url": "https://api.github.com/repos/cartalyst/api/zipball/94986ab3842aad8472bd169e16360e088288c02d",
+                "reference": "94986ab3842aad8472bd169e16360e088288c02d",
                 "shasum": ""
             },
             "require": {
@@ -141,7 +141,7 @@
                 "source": "https://github.com/cartalyst/api/tree/master",
                 "issues": "https://github.com/cartalyst/api/issues"
             },
-            "time": "2013-12-31 18:16:43"
+            "time": "2014-01-02 04:58:46"
         },
         {
             "name": "cartalyst/assetic-filters",
@@ -790,12 +790,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cartalyst/sentry.git",
-                "reference": "4ba20391034da44154a67d441dd053cf8471a547"
+                "reference": "bff9842e506da0840a332a6da5a6cbb8d263da55"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/4ba20391034da44154a67d441dd053cf8471a547",
-                "reference": "4ba20391034da44154a67d441dd053cf8471a547",
+                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/bff9842e506da0840a332a6da5a6cbb8d263da55",
+                "reference": "bff9842e506da0840a332a6da5a6cbb8d263da55",
                 "shasum": ""
             },
             "require": {
@@ -885,7 +885,7 @@
                 "source": "https://github.com/cartalyst/sentry/tree/develop",
                 "issues": "https://github.com/cartalyst/sentry/issues"
             },
-            "time": "2013-12-22 22:41:33"
+            "time": "2014-01-02 07:38:20"
         },
         {
             "name": "cartalyst/sentry-social",
@@ -2965,26 +2965,26 @@
         },
         {
             "name": "patchwork/utf8",
-            "version": "v1.1.16",
+            "version": "v1.1.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nicolas-grekas/Patchwork-UTF8.git",
-                "reference": "bc719e850b57791c1024d06f9fe7d474348e7ba6"
+                "reference": "1396fedf134f71d479236fce0833dc4c88079391"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nicolas-grekas/Patchwork-UTF8/zipball/bc719e850b57791c1024d06f9fe7d474348e7ba6",
-                "reference": "bc719e850b57791c1024d06f9fe7d474348e7ba6",
+                "url": "https://api.github.com/repos/nicolas-grekas/Patchwork-UTF8/zipball/1396fedf134f71d479236fce0833dc4c88079391",
+                "reference": "1396fedf134f71d479236fce0833dc4c88079391",
                 "shasum": ""
             },
             "require": {
-                "lib-pcre": "*",
+                "lib-pcre": ">=7.9",
                 "php": ">=5.3.0"
             },
             "suggest": {
-                "ext-mbstring": "Use Mbstring for best performance",
-                "lib-iconv": "Use iconv for best performance",
-                "lib-icu": "Use Intl for best performance"
+                "ext-iconv": "Use iconv for best performance",
+                "ext-intl": "Use Intl for best performance",
+                "ext-mbstring": "Use Mbstring for best performance"
             },
             "type": "library",
             "autoload": {
@@ -3012,7 +3012,7 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2013-12-07 12:20:20"
+            "time": "2014-01-02 10:19:36"
         },
         {
             "name": "phpseclib/phpseclib",
@@ -3873,12 +3873,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-users.git",
-                "reference": "e17c15a58af5106257bfe791e4dc8b3f6e524aff"
+                "reference": "85fb0e9e1f1288071e4a75934a34bad8e885ab3c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/e17c15a58af5106257bfe791e4dc8b3f6e524aff",
-                "reference": "e17c15a58af5106257bfe791e4dc8b3f6e524aff",
+                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/85fb0e9e1f1288071e4a75934a34bad8e885ab3c",
+                "reference": "85fb0e9e1f1288071e4a75934a34bad8e885ab3c",
                 "shasum": ""
             },
             "require": {
@@ -3944,7 +3944,7 @@
                 "source": "https://github.com/cartalyst/platform-users/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-users/issues"
             },
-            "time": "2013-12-30 20:12:50"
+            "time": "2014-01-02 06:11:05"
         },
         {
             "name": "predis/predis",
