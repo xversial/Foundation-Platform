@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__.'/../vendor/cartalyst/api/src/start.php';
+
 /*
 |--------------------------------------------------------------------------
 | Create The Application
@@ -57,8 +59,6 @@ $app->bindInstallPaths(require __DIR__.'/paths.php');
 $framework = $app['path.base'].'/vendor/laravel/framework/src';
 
 require $framework.'/Illuminate/Foundation/start.php';
-
-require_once $app['path.base'].'/vendor/cartalyst/api/src/start.php';
 
 /*
 |--------------------------------------------------------------------------
