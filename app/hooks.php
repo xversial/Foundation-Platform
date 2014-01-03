@@ -44,7 +44,6 @@ Installer::after(function()
 		set_menu_order('admin', Config::get('platform.admin.menu'));
 		set_menu_order('main', Config::get('platform.frontend.menu'));
 	}
-
 });
 
 /*
