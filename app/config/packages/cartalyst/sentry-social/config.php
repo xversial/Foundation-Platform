@@ -88,6 +88,13 @@ return array(
 			'secret'     => '',
 		),
 
+		'vkontakte' => array(
+			'driver'     => 'Vkontakte',
+			'identifier' => '',
+			'secret'     => '',
+			'scopes'     => array(),
+		),
+
 	),
 
 	/*
@@ -140,13 +147,6 @@ return array(
 		// 	'scopes'     => array(),
 		// ),
 
-		// 'vkontakte' => array(
-		// 	'driver'     => 'Vkontakte',
-		// 	'identifier' => '',
-		// 	'secret'     => '',
-		// 	'scopes'     => array(),
-		// ),
-
 		// 'linkedin' => array(
 		// 	'driver'     => 'LinkedIn',
 		// 	'identifier' => '',
@@ -165,6 +165,6 @@ return array(
 	|
 	*/
 
-	'link' => 'Cartalyst\SentrySocial\Links\Eloquent\Link',
+	'link' => 'Cartalyst\SentrySocial\Links\EloquentLink',
 
 );
