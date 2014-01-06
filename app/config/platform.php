@@ -107,6 +107,7 @@ return array(
 		'menu' => array(
 
 			'main-home',
+			'main-dashboard',
 			'main-login',
 			'main-logout',
 
@@ -143,6 +144,7 @@ return array(
 
 			'admin-pages',
 			'admin-content',
+			'admin-attributes',
 			'admin-menus',
 			'admin-operations',
 			'admin-users',
