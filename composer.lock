@@ -790,16 +790,15 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cartalyst/sentry.git",
-                "reference": "fc73b77375b381850b1b4234e990fbf1ca024d66"
+                "reference": "ba8edafd16adaed16bbbb26834351cd8d86a85f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/fc73b77375b381850b1b4234e990fbf1ca024d66",
-                "reference": "fc73b77375b381850b1b4234e990fbf1ca024d66",
+                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/ba8edafd16adaed16bbbb26834351cd8d86a85f2",
+                "reference": "ba8edafd16adaed16bbbb26834351cd8d86a85f2",
                 "shasum": ""
             },
             "require": {
-                "illuminate/events": ">=4.0.9,<4.2",
                 "illuminate/support": ">=4.0.9,<4.2",
                 "php": ">=5.3.3"
             },
@@ -813,8 +812,8 @@
                 "swiftidentity/php-toolkit": "1.0.*"
             },
             "suggest": {
-                "happydemon/txt": "Required Text helpers when using the Kohana implementation",
-                "illuminate/database": "Default sentry user, group and throttling implementations.",
+                "illuminate/database": "By default, Sentry utilizes the powerful Illuminate database layer.",
+                "illuminate/events": "To hook into various events across Sentry, we recommend using Illuminate's event dispatcher.",
                 "ircmaxell/password-compat": "Default hashing uses PHP 5.5 password_* functions, with forward-compatible support."
             },
             "type": "library",
@@ -885,7 +884,7 @@
                 "source": "https://github.com/cartalyst/sentry/tree/develop",
                 "issues": "https://github.com/cartalyst/sentry/issues"
             },
-            "time": "2014-01-06 02:17:00"
+            "time": "2014-01-06 11:05:54"
         },
         {
             "name": "cartalyst/sentry-social",
@@ -893,12 +892,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/sentry-social.git",
-                "reference": "9ecf59330dd24b44efc7173949252f142ee461a4"
+                "reference": "f5ff1cb06a1c7e99ae1e08a7920debbd9de2b25b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentry-social/zipball/9ecf59330dd24b44efc7173949252f142ee461a4",
-                "reference": "9ecf59330dd24b44efc7173949252f142ee461a4",
+                "url": "https://api.github.com/repos/cartalyst/sentry-social/zipball/f5ff1cb06a1c7e99ae1e08a7920debbd9de2b25b",
+                "reference": "f5ff1cb06a1c7e99ae1e08a7920debbd9de2b25b",
                 "shasum": ""
             },
             "require": {
@@ -976,7 +975,7 @@
                 "source": "https://github.com/cartalyst/sentry-social/tree/develop",
                 "issues": "https://github.com/cartalyst/sentry-social/issues"
             },
-            "time": "2013-12-22 22:37:00"
+            "time": "2014-01-06 22:58:28"
         },
         {
             "name": "cartalyst/themes",
@@ -1346,12 +1345,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dflydev/dflydev-markdown.git",
-                "reference": "6baed9b50f29c980795b6656d43722aadb126f7e"
+                "reference": "dee1f7a6b60776a94c10efa8340ccd486ec834b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dflydev/dflydev-markdown/zipball/6baed9b50f29c980795b6656d43722aadb126f7e",
-                "reference": "6baed9b50f29c980795b6656d43722aadb126f7e",
+                "url": "https://api.github.com/repos/dflydev/dflydev-markdown/zipball/dee1f7a6b60776a94c10efa8340ccd486ec834b7",
+                "reference": "dee1f7a6b60776a94c10efa8340ccd486ec834b7",
                 "shasum": ""
             },
             "require": {
@@ -1392,12 +1391,12 @@
                     "homepage": "http://daringfireball.net"
                 }
             ],
-            "description": "PHP Markdown & Extra",
+            "description": "PHP Markdown & Extra - DEPRECATED",
             "homepage": "http://github.com/dflydev/dflydev-markdown",
             "keywords": [
                 "markdown"
             ],
-            "time": "2013-09-23 12:00:18"
+            "time": "2014-01-06 23:32:02"
         },
         {
             "name": "doctrine/collections",
@@ -1947,12 +1946,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "c472ca9b043c373230ded1363dd05d1478effca4"
+                "reference": "a49d68a0c048718d442855f52c4c68b97d76fd89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/c472ca9b043c373230ded1363dd05d1478effca4",
-                "reference": "c472ca9b043c373230ded1363dd05d1478effca4",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/a49d68a0c048718d442855f52c4c68b97d76fd89",
+                "reference": "a49d68a0c048718d442855f52c4c68b97d76fd89",
                 "shasum": ""
             },
             "require": {
@@ -2056,7 +2055,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-01-06 02:22:05"
+            "time": "2014-01-07 02:54:25"
         },
         {
             "name": "leafo/lessphp",
@@ -3142,12 +3141,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-menus.git",
-                "reference": "20be9640e63c361db639877a847de581a66b7298"
+                "reference": "7384a67954274735cfc1e9cd7728b94249bb53e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/20be9640e63c361db639877a847de581a66b7298",
-                "reference": "20be9640e63c361db639877a847de581a66b7298",
+                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/7384a67954274735cfc1e9cd7728b94249bb53e3",
+                "reference": "7384a67954274735cfc1e9cd7728b94249bb53e3",
                 "shasum": ""
             },
             "require": {
@@ -3212,7 +3211,7 @@
                 "source": "https://github.com/cartalyst/platform-menus/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-menus/issues"
             },
-            "time": "2014-01-06 04:14:18"
+            "time": "2014-01-06 21:13:26"
         },
         {
             "name": "platform/operations",
@@ -3298,12 +3297,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-pages.git",
-                "reference": "737d6580e40e17411fdd02e7bed5e1f2c95fd1b7"
+                "reference": "aa3c2475c4d593daaa935f87ec0a8e484287b1a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/737d6580e40e17411fdd02e7bed5e1f2c95fd1b7",
-                "reference": "737d6580e40e17411fdd02e7bed5e1f2c95fd1b7",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/aa3c2475c4d593daaa935f87ec0a8e484287b1a2",
+                "reference": "aa3c2475c4d593daaa935f87ec0a8e484287b1a2",
                 "shasum": ""
             },
             "require": {
@@ -3369,7 +3368,7 @@
                 "source": "https://github.com/cartalyst/platform-pages/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2014-01-03 19:45:45"
+            "time": "2014-01-07 02:02:13"
         },
         {
             "name": "platform/settings",
@@ -4089,12 +4088,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "6a30cf4f7951794e2179c29b3ce30fb478019cd8"
+                "reference": "f2ab66ab36bbbb0d07ae61637c73283074b91bf9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/6a30cf4f7951794e2179c29b3ce30fb478019cd8",
-                "reference": "6a30cf4f7951794e2179c29b3ce30fb478019cd8",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/f2ab66ab36bbbb0d07ae61637c73283074b91bf9",
+                "reference": "f2ab66ab36bbbb0d07ae61637c73283074b91bf9",
                 "shasum": ""
             },
             "require": {
@@ -4136,7 +4135,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
-            "time": "2014-01-01 09:18:08"
+            "time": "2014-01-06 07:29:39"
         },
         {
             "name": "symfony/filesystem",
