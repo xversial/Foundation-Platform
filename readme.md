@@ -66,7 +66,7 @@ Channel: #cartalyst
 License
 ---------------------
 
-Copyright (c) 2011-2013, Cartalyst LLC
+Copyright (c) 2011-2014, Cartalyst LLC
 
 All rights reserved.
 
