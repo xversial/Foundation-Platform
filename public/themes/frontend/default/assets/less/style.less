@@ -72,12 +72,52 @@ body {
 	margin-bottom: 0;
 }
 
+
 .loading {
-	background: url('../img/ajax-loader.gif') no-repeat center;
-	height: 30px;
-	margin-right: 10px;
-	width: 30px;
+	background-color: rgba(0,0,0,0);
+	opacity: .8;
+	border-radius: 50px;
+	margin:0 auto;
+	animation: loading 1s infinite linear;
+	-moz-animation: loading 1s infinite linear;
+	-webkit-animation: loading 1s infinite linear;
+	border: 4px solid #fff;
+	border-top: 5px solid rgba(0,0,0,1);
+	border-left: 5px solid rgba(0,0,0,1);
+	width: 20px;
+	height: 20px;
 }
+
+@keyframes loading {
+	0% {
+		-moz-transform: rotate(0deg);
+	}
+
+	100% {
+		-moz-transform: rotate(360deg);
+	};
+}
+
+@-moz-keyframes loading {
+	0% {
+		-moz-transform: rotate(0deg);
+	}
+
+	100% {
+		-moz-transform: rotate(360deg);
+	};
+}
+
+@-webkit-keyframes loading {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+	};
+}
+
 
 .pagination-sm {
 	margin-top: 0;
@@ -86,6 +126,7 @@ body {
 [data-toggle="popover"], [data-toggle="tooltip"] {
 	cursor: pointer;
 }
+
 label .popover-content {
 	font-weight: normal;
 	width: 276px;
@@ -104,4 +145,3 @@ table.table thead .sortable.desc { background: url('../img/sort_desc.png') no-re
 
 
 .well-borderless { border: none; border-radius: none; box-shadow: none; }
-
