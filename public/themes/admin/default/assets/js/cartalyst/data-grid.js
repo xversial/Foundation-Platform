@@ -768,6 +768,20 @@
 			{
 				var defaultURI = window.location.protocol + '//' + window.location.host + window.location.pathname;
 
+
+				if( window.location.href.indexOf('?') > -1 )
+				{
+					console.log('true');
+					var indexOfQuery = window.location.href.indexOf('?');
+					var indexOfHash = window.location.href.indexOf('#');
+
+					if( indexOfHash > -1 ) {
+						defaultURI += window.location.href.slice( indexOfQuery, indexOfHash);
+					}else{
+						defaultURI += window.location.href.substr(indexOfQuery);
+					}
+				}
+
 				window.history.pushState(null, null, defaultURI +'#'+ base);
 			}
 
@@ -859,7 +873,7 @@
 					_this.$results.append(_this.tmpl['results'](response));
 				}
 
-				if( response.pages_count > 1 || _this.opt.paginationType !== 'infinite' )
+				if( response.pages_count > 1 )
 				{
 					_this.$pagination.html(_this.tmpl['pagination'](_this._buildPagination(response)));
 				}
