@@ -10,7 +10,8 @@
 |
 */
 
-require_once __DIR__.'/../vendor/cartalyst/api/src/start.php';
+$paths = require __DIR__.'/paths.php';
+require_once $paths['base'].'/vendor/cartalyst/api/src/start.php';
 
 /*
 |--------------------------------------------------------------------------
