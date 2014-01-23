@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "450bd98a37edf73ced4c5942f96389ae",
+    "hash": "ecfab2a8baa2a9e1bbec6caa23aeeeeb",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -711,6 +711,82 @@
             "time": "2014-01-03 19:10:29"
         },
         {
+            "name": "cartalyst/media",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:cartalyst/media.git",
+                "reference": "b5e7069921c75aa631bcb1be862f8095e0d4fc6a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cartalyst/media/zipball/b5e7069921c75aa631bcb1be862f8095e0d4fc6a",
+                "reference": "b5e7069921c75aa631bcb1be862f8095e0d4fc6a",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/events": "~4",
+                "intervention/image": "dev-master",
+                "intervention/imagecache": "dev-master",
+                "league/flysystem": "dev-master",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "illuminate/events": "~4",
+                "mockery/mockery": "0.8.*",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "extra": {
+                "component": "package",
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/Cartalyst/Media/Exceptions.php"
+                ],
+                "psr-0": {
+                    "Cartalyst\\Media\\": "src/"
+                }
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Cartalyst LLC",
+                    "email": "help@cartalyst.com"
+                },
+                {
+                    "name": "Ben Corlett",
+                    "email": "ben.corlett@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Bruno Gaspar",
+                    "email": "bruno.gaspar@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dan Syme",
+                    "email": "dan.syme@cartalyst.com",
+                    "role": "Project Lead"
+                }
+            ],
+            "description": "Media",
+            "keywords": [
+                "laravel",
+                "media"
+            ],
+            "support": {
+                "source": "https://github.com/cartalyst/media/tree/master",
+                "issues": "https://github.com/cartalyst/media/issues"
+            },
+            "time": "2014-01-20 21:02:55"
+        },
+        {
             "name": "cartalyst/nested-sets",
             "version": "dev-master",
             "source": {
@@ -798,12 +874,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cartalyst/sentry.git",
-                "reference": "1cca07af34f3d783d7b25ffdb81b7ffb8d4631ca"
+                "reference": "a0a00df646575bdae1f830016364b745e5edbf83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/1cca07af34f3d783d7b25ffdb81b7ffb8d4631ca",
-                "reference": "1cca07af34f3d783d7b25ffdb81b7ffb8d4631ca",
+                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/a0a00df646575bdae1f830016364b745e5edbf83",
+                "reference": "a0a00df646575bdae1f830016364b745e5edbf83",
                 "shasum": ""
             },
             "require": {
@@ -881,7 +957,7 @@
                 "source": "https://github.com/cartalyst/sentry/tree/develop",
                 "issues": "https://github.com/cartalyst/sentry/issues"
             },
-            "time": "2014-01-20 23:48:08"
+            "time": "2014-01-21 22:05:32"
         },
         {
             "name": "cartalyst/sentry-social",
@@ -1520,12 +1596,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "cd97afb9dd564869d607eb18abf8ec84be647e87"
+                "reference": "028195b32bb2e096b168baebe07c704473db81d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/cd97afb9dd564869d607eb18abf8ec84be647e87",
-                "reference": "cd97afb9dd564869d607eb18abf8ec84be647e87",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/028195b32bb2e096b168baebe07c704473db81d4",
+                "reference": "028195b32bb2e096b168baebe07c704473db81d4",
                 "shasum": ""
             },
             "require": {
@@ -1604,7 +1680,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2014-01-15 23:31:19"
+            "time": "2014-01-23 18:29:07"
         },
         {
             "name": "herrera-io/json",
@@ -1665,6 +1741,104 @@
                 "validate"
             ],
             "time": "2013-10-30 16:51:34"
+        },
+        {
+            "name": "intervention/image",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/image.git",
+                "reference": "c56d00ff732ae7a0e1a2150faa9b24cb4da2f680"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/c56d00ff732ae7a0e1a2150faa9b24cb4da2f680",
+                "reference": "c56d00ff732ae7a0e1a2150faa9b24cb4da2f680",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gd": "*",
+                "illuminate/support": "4.*",
+                "php": ">=5.3.0"
+            },
+            "suggest": {
+                "intervention/imagecache": "Caching extension for the Intervention Image library"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Intervention\\Image": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@olivervogel.net",
+                    "homepage": "http://olivervogel.net/"
+                }
+            ],
+            "description": "Image handling and manipulation library with support for Laravel 4 integration",
+            "homepage": "http://intervention.olivervogel.net/image/",
+            "keywords": [
+                "gd",
+                "image",
+                "laravel",
+                "thumbnail",
+                "watermark"
+            ],
+            "time": "2014-01-16 14:29:33"
+        },
+        {
+            "name": "intervention/imagecache",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/imagecache.git",
+                "reference": "4baef9bf6128223483aba86ede3adc1da1a320da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/imagecache/zipball/4baef9bf6128223483aba86ede3adc1da1a320da",
+                "reference": "4baef9bf6128223483aba86ede3adc1da1a320da",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/cache": "4.*",
+                "illuminate/filesystem": "4.*",
+                "illuminate/support": "4.*",
+                "intervention/image": ">=1.3",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Intervention\\Image": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@olivervogel.net",
+                    "homepage": "http://olivervogel.net/"
+                }
+            ],
+            "description": "Caching extension for the Intervention Image Class",
+            "homepage": "http://intervention.olivervogel.net/image/advanced/caching",
+            "keywords": [
+                "cache",
+                "gd",
+                "image",
+                "laravel"
+            ],
+            "time": "2014-01-11 14:14:56"
         },
         {
             "name": "ircmaxell/password-compat",
@@ -1943,12 +2117,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "24c9aafb913ea7aeb0c2522428025477b77f235c"
+                "reference": "da9970de40d99e58843b27e9f01f56bfcf1789ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/24c9aafb913ea7aeb0c2522428025477b77f235c",
-                "reference": "24c9aafb913ea7aeb0c2522428025477b77f235c",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/da9970de40d99e58843b27e9f01f56bfcf1789ff",
+                "reference": "da9970de40d99e58843b27e9f01f56bfcf1789ff",
                 "shasum": ""
             },
             "require": {
@@ -2052,7 +2226,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-01-20 04:32:11"
+            "time": "2014-01-23 04:37:24"
         },
         {
             "name": "leafo/lessphp",
@@ -2177,21 +2351,80 @@
             "time": "2012-08-02 02:04:32"
         },
         {
+            "name": "league/flysystem",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/flysystem.git",
+                "reference": "882e6a1580d5ae54435bc2cfcad568be24e737df"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/882e6a1580d5ae54435bc2cfcad568be24e737df",
+                "reference": "882e6a1580d5ae54435bc2cfcad568be24e737df",
+                "shasum": ""
+            },
+            "require-dev": {
+                "aws/aws-sdk-php": "~2.4.7",
+                "dropbox/dropbox-sdk": "~1.1.1",
+                "league/phpunit-coverage-listener": "~1.0",
+                "mockery/mockery": "~0.8.0",
+                "phpseclib/phpseclib": "~0.3.5",
+                "predis/predis": "~0.8.4",
+                "sabre/dav": "~1.8.7"
+            },
+            "suggest": {
+                "aws/aws-sdk-php": "Allows you to use AWS S3 storage",
+                "dropbox/dropbox-sdk": "Allows you to use Dropbox storage",
+                "phpseclib/phpseclib": "Allows SFTP server storage",
+                "predis/predis": "Allows you to use Predis for caching",
+                "sabre/dav": "Enables WebDav support"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "League\\Flysystem": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Frank de Jonge",
+                    "email": "info@frenky.net"
+                }
+            ],
+            "description": "Filesystem abstraction, but easy.",
+            "keywords": [
+                "WebDAV",
+                "aws",
+                "dropbox",
+                "filesystem",
+                "ftp",
+                "remote",
+                "s3",
+                "sftp"
+            ],
+            "time": "2014-01-21 17:10:02"
+        },
+        {
             "name": "league/oauth1-client",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/php-loep/oauth1-client.git",
-                "reference": "dd3f23e9c90df654dcaadc13f5a20aa61a55d90b"
+                "url": "https://github.com/thephpleague/oauth1-client.git",
+                "reference": "6fbdf7a616ecaf0ffd34902d7d88887109d5ab29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-loep/oauth1-client/zipball/dd3f23e9c90df654dcaadc13f5a20aa61a55d90b",
-                "reference": "dd3f23e9c90df654dcaadc13f5a20aa61a55d90b",
+                "url": "https://api.github.com/repos/thephpleague/oauth1-client/zipball/6fbdf7a616ecaf0ffd34902d7d88887109d5ab29",
+                "reference": "6fbdf7a616ecaf0ffd34902d7d88887109d5ab29",
                 "shasum": ""
             },
             "require": {
-                "guzzle/guzzle": "*",
+                "guzzle/guzzle": "3.*",
                 "php": ">=5.3.0",
                 "symfony/http-foundation": "~2"
             },
@@ -2223,7 +2456,6 @@
                 }
             ],
             "description": "OAuth 1.0 Client Library",
-            "homepage": "https://github.com/php-loep/oauth1-client",
             "keywords": [
                 "Authentication",
                 "SSO",
@@ -2234,7 +2466,7 @@
                 "oauth1",
                 "single sign on"
             ],
-            "time": "2014-01-10 20:05:35"
+            "time": "2014-01-22 16:31:32"
         },
         {
             "name": "league/oauth2-client",
@@ -2598,12 +2830,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "211e237090842f0bc1813b639633e05267fb0444"
+                "reference": "8876c820c3b31eb3f435ab6419f75aecef4b5412"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/211e237090842f0bc1813b639633e05267fb0444",
-                "reference": "211e237090842f0bc1813b639633e05267fb0444",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/8876c820c3b31eb3f435ab6419f75aecef4b5412",
+                "reference": "8876c820c3b31eb3f435ab6419f75aecef4b5412",
                 "shasum": ""
             },
             "require": {
@@ -2684,7 +2916,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2014-01-18 17:51:33"
+            "time": "2014-01-22 03:16:33"
         },
         {
             "name": "pimple/pimple",
@@ -3131,6 +3363,84 @@
                 "issues": "https://github.com/cartalyst/platform-installer/issues"
             },
             "time": "2014-01-12 14:06:48"
+        },
+        {
+            "name": "platform/media",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:cartalyst/platform-media.git",
+                "reference": "6455c71556d1e26c3242052d5cedef8f5f75f85f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/6455c71556d1e26c3242052d5cedef8f5f75f85f",
+                "reference": "6455c71556d1e26c3242052d5cedef8f5f75f85f",
+                "shasum": ""
+            },
+            "require": {
+                "cartalyst/composer-installers": "1.0.*",
+                "cartalyst/media": "1.0.*",
+                "php": ">=5.3.0",
+                "platform/admin": "dev-develop"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.7.*"
+            },
+            "type": "platform-extension",
+            "extra": {
+                "component": "extension",
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "controllers",
+                    "migrations",
+                    "widgets"
+                ],
+                "psr-0": {
+                    "Platform\\Media": "src/"
+                }
+            },
+            "license": [
+                "BSD License (3-clause)"
+            ],
+            "authors": [
+                {
+                    "name": "Cartalyst LLC",
+                    "email": "help@cartalyst.com"
+                },
+                {
+                    "name": "Ben Corlett",
+                    "email": "ben.corlett@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Bruno Gaspar",
+                    "email": "bruno.gaspar@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dan Syme",
+                    "email": "dan.syme@cartalyst.com",
+                    "role": "Creator & Designer"
+                }
+            ],
+            "description": "Media management for Platform.",
+            "keywords": [
+                "cartalyst",
+                "extension",
+                "laravel",
+                "media",
+                "platform"
+            ],
+            "support": {
+                "source": "https://github.com/cartalyst/platform-media/tree/master",
+                "issues": "https://github.com/cartalyst/platform-media/issues"
+            },
+            "time": "2014-01-23 17:59:33"
         },
         {
             "name": "platform/menus",
