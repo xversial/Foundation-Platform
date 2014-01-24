@@ -129,7 +129,7 @@ return array(
 	|
 	*/
 
-	'cache_path' => 'assets/cache',
+	'cache_path' => 'cache/assets',
 
 	/*
 	|--------------------------------------------------------------------------
