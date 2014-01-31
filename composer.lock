@@ -874,12 +874,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cartalyst/sentry.git",
-                "reference": "a0a00df646575bdae1f830016364b745e5edbf83"
+                "reference": "ec1dbcc32cf0fbd4080c5b766a200b195904169b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/a0a00df646575bdae1f830016364b745e5edbf83",
-                "reference": "a0a00df646575bdae1f830016364b745e5edbf83",
+                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/ec1dbcc32cf0fbd4080c5b766a200b195904169b",
+                "reference": "ec1dbcc32cf0fbd4080c5b766a200b195904169b",
                 "shasum": ""
             },
             "require": {
@@ -911,8 +911,8 @@
                 "classmap": [
                     "src/migrations"
                 ],
-                "psr-0": {
-                    "Cartalyst\\Sentry": "src/"
+                "psr-4": {
+                    "Cartalyst\\Sentry\\": "src/"
                 }
             },
             "license": [
@@ -957,7 +957,7 @@
                 "source": "https://github.com/cartalyst/sentry/tree/develop",
                 "issues": "https://github.com/cartalyst/sentry/issues"
             },
-            "time": "2014-01-21 22:05:32"
+            "time": "2014-01-31 15:21:31"
         },
         {
             "name": "cartalyst/sentry-social",
@@ -1596,12 +1596,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "028195b32bb2e096b168baebe07c704473db81d4"
+                "reference": "dce090bdeeea701bb95f68f2ea66b4e532c68207"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/028195b32bb2e096b168baebe07c704473db81d4",
-                "reference": "028195b32bb2e096b168baebe07c704473db81d4",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/dce090bdeeea701bb95f68f2ea66b4e532c68207",
+                "reference": "dce090bdeeea701bb95f68f2ea66b4e532c68207",
                 "shasum": ""
             },
             "require": {
@@ -1680,7 +1680,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2014-01-23 18:29:07"
+            "time": "2014-01-29 18:20:08"
         },
         {
             "name": "herrera-io/json",
@@ -2117,12 +2117,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "633cd6aee8a69d190cc261a00d19dde9ce5b5002"
+                "reference": "5a5a2e4042cab0b4c62b1fa9056fa59b47513c9d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/633cd6aee8a69d190cc261a00d19dde9ce5b5002",
-                "reference": "633cd6aee8a69d190cc261a00d19dde9ce5b5002",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/5a5a2e4042cab0b4c62b1fa9056fa59b47513c9d",
+                "reference": "5a5a2e4042cab0b4c62b1fa9056fa59b47513c9d",
                 "shasum": ""
             },
             "require": {
@@ -2226,7 +2226,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-01-28 21:33:44"
+            "time": "2014-01-31 16:32:15"
         },
         {
             "name": "leafo/lessphp",
@@ -2830,12 +2830,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "8876c820c3b31eb3f435ab6419f75aecef4b5412"
+                "reference": "8664b69e105a43fc707e0ee94d650c11a32a12b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/8876c820c3b31eb3f435ab6419f75aecef4b5412",
-                "reference": "8876c820c3b31eb3f435ab6419f75aecef4b5412",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/8664b69e105a43fc707e0ee94d650c11a32a12b2",
+                "reference": "8664b69e105a43fc707e0ee94d650c11a32a12b2",
                 "shasum": ""
             },
             "require": {
@@ -2847,7 +2847,7 @@
             "suggest": {
                 "ext-gmp": "Install the GMP (GNU Multiple Precision) extension in order to speed up arbitrary precision integer arithmetic operations.",
                 "ext-mcrypt": "Install the Mcrypt extension in order to speed up a wide variety of cryptographic operations.",
-                "pear-pear/PHP_Compat": "Install PHP_Compat to get phpseclib working on PHP >= 4.3.3."
+                "pear-pear/PHP_Compat": "Install PHP_Compat to get phpseclib working on PHP < 4.3.3."
             },
             "type": "library",
             "extra": {
@@ -2916,7 +2916,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2014-01-22 03:16:33"
+            "time": "2014-01-30 14:21:47"
         },
         {
             "name": "pimple/pimple",
@@ -3370,12 +3370,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-media.git",
-                "reference": "c5188c7349771e5dc9bbf1ac384eebfccef7e31c"
+                "reference": "1b8f418c77c6ae1f7c3e6b7b83e7274be683fe2b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/c5188c7349771e5dc9bbf1ac384eebfccef7e31c",
-                "reference": "c5188c7349771e5dc9bbf1ac384eebfccef7e31c",
+                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/1b8f418c77c6ae1f7c3e6b7b83e7274be683fe2b",
+                "reference": "1b8f418c77c6ae1f7c3e6b7b83e7274be683fe2b",
                 "shasum": ""
             },
             "require": {
@@ -3440,7 +3440,7 @@
                 "source": "https://github.com/cartalyst/platform-media/tree/master",
                 "issues": "https://github.com/cartalyst/platform-media/issues"
             },
-            "time": "2014-01-28 02:55:03"
+            "time": "2014-01-29 04:40:18"
         },
         {
             "name": "platform/menus",
@@ -3448,12 +3448,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-menus.git",
-                "reference": "65b6dbbf1b5ddcb6183b91d1332a35755fa3a827"
+                "reference": "d5190b9ced34622a39d1fe888411c1c966876f43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/65b6dbbf1b5ddcb6183b91d1332a35755fa3a827",
-                "reference": "65b6dbbf1b5ddcb6183b91d1332a35755fa3a827",
+                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/d5190b9ced34622a39d1fe888411c1c966876f43",
+                "reference": "d5190b9ced34622a39d1fe888411c1c966876f43",
                 "shasum": ""
             },
             "require": {
@@ -3518,7 +3518,7 @@
                 "source": "https://github.com/cartalyst/platform-menus/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-menus/issues"
             },
-            "time": "2014-01-28 02:28:34"
+            "time": "2014-01-31 03:20:43"
         },
         {
             "name": "platform/operations",
