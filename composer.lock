@@ -149,12 +149,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/assetic-filters.git",
-                "reference": "20a42f9a63b4a108fd881a005389a26049abbcdd"
+                "reference": "e5c99ddb48380d76fa59e962e27624f2171ba9d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/assetic-filters/zipball/20a42f9a63b4a108fd881a005389a26049abbcdd",
-                "reference": "20a42f9a63b4a108fd881a005389a26049abbcdd",
+                "url": "https://api.github.com/repos/cartalyst/assetic-filters/zipball/e5c99ddb48380d76fa59e962e27624f2171ba9d7",
+                "reference": "e5c99ddb48380d76fa59e962e27624f2171ba9d7",
                 "shasum": ""
             },
             "require": {
@@ -210,7 +210,7 @@
                 "source": "https://github.com/cartalyst/assetic-filters/tree/master",
                 "issues": "https://github.com/cartalyst/assetic-filters/issues"
             },
-            "time": "2014-01-03 19:16:53"
+            "time": "2014-02-04 23:28:24"
         },
         {
             "name": "cartalyst/attributes",
@@ -1056,12 +1056,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/themes.git",
-                "reference": "0043cbcb95ce364426132f872adbe678dd9667be"
+                "reference": "a39c31cf53a3183434be53c33b4224cdee3b8779"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/themes/zipball/0043cbcb95ce364426132f872adbe678dd9667be",
-                "reference": "0043cbcb95ce364426132f872adbe678dd9667be",
+                "url": "https://api.github.com/repos/cartalyst/themes/zipball/a39c31cf53a3183434be53c33b4224cdee3b8779",
+                "reference": "a39c31cf53a3183434be53c33b4224cdee3b8779",
                 "shasum": ""
             },
             "require": {
@@ -1082,11 +1082,11 @@
             },
             "suggest": {
                 "cartalyst/assetic-filters": "CoffeeScript & SASS PHP compiler.",
-                "leafo/lessphp": "LESS PHP compiler.",
                 "leafo/scssphp": "SCSS PHP compiler.",
                 "leafo/scssphp-compass": "Compass support for SCSS PHP compiler.",
                 "lmammino/jsmin4assetic": "JavaScript PHP minification.",
-                "natxet/CssMin": "CSS PHP minification."
+                "natxet/CssMin": "CSS PHP minification.",
+                "oyejorge/less.php": "LESS PHP compiler."
             },
             "type": "library",
             "extra": {
@@ -1143,7 +1143,7 @@
                 "source": "https://github.com/cartalyst/themes/tree/master",
                 "issues": "https://github.com/cartalyst/themes/issues"
             },
-            "time": "2014-01-12 13:33:42"
+            "time": "2014-02-04 23:29:47"
         },
         {
             "name": "cartalyst/widgets",
@@ -2229,47 +2229,6 @@
             "time": "2014-02-04 20:00:14"
         },
         {
-            "name": "leafo/lessphp",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/leafo/lessphp.git",
-                "reference": "704823f6213a8839b83ca7e8fb5874c5f02aba76"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/leafo/lessphp/zipball/704823f6213a8839b83ca7e8fb5874c5f02aba76",
-                "reference": "704823f6213a8839b83ca7e8fb5874c5f02aba76",
-                "shasum": ""
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.4.x-dev"
-                }
-            },
-            "autoload": {
-                "classmap": [
-                    "lessc.inc.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT",
-                "GPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Leaf Corcoran",
-                    "email": "leafot@gmail.com",
-                    "homepage": "http://leafo.net"
-                }
-            ],
-            "description": "lessphp is a compiler for LESS written in PHP.",
-            "homepage": "http://leafo.net/lessphp/",
-            "time": "2014-01-08 03:01:15"
-        },
-        {
             "name": "leafo/scssphp",
             "version": "dev-master",
             "source": {
@@ -2775,6 +2734,62 @@
             "time": "2014-01-24 19:27:42"
         },
         {
+            "name": "oyejorge/less.php",
+            "version": "1.6.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/oyejorge/less.php.git",
+                "reference": "c1dc5793fa3aaf672a30a5095dad47d91075537e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/oyejorge/less.php/zipball/c1dc5793fa3aaf672a30a5095dad47d91075537e",
+                "reference": "c1dc5793fa3aaf672a30a5095dad47d91075537e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Less": "lib/"
+                },
+                "classmap": [
+                    "lessc.inc.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Matt Agar",
+                    "homepage": "https://github.com/agar"
+                },
+                {
+                    "name": "Martin Jantošovič",
+                    "homepage": "https://github.com/Mordred"
+                },
+                {
+                    "name": "Josh Schmidt",
+                    "homepage": "https://github.com/oyejorge"
+                }
+            ],
+            "description": "PHP port of the Javascript version of LESS http://lesscss.org",
+            "homepage": "http://lessphp.gpeasy.com",
+            "keywords": [
+                "css",
+                "less",
+                "less.js",
+                "lesscss",
+                "php",
+                "stylesheet"
+            ],
+            "time": "2014-02-01 22:29:13"
+        },
+        {
             "name": "patchwork/utf8",
             "version": "v1.1.18",
             "source": {
@@ -3203,12 +3218,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-foundation.git",
-                "reference": "bbd4d13256176a33be04645bb3d3b430b8d51a56"
+                "reference": "78785d17a94c91bddebd3ad77d82cbe510e39bf2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/bbd4d13256176a33be04645bb3d3b430b8d51a56",
-                "reference": "bbd4d13256176a33be04645bb3d3b430b8d51a56",
+                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/78785d17a94c91bddebd3ad77d82cbe510e39bf2",
+                "reference": "78785d17a94c91bddebd3ad77d82cbe510e39bf2",
                 "shasum": ""
             },
             "require": {
@@ -3220,11 +3235,11 @@
                 "illuminate/config": "~4",
                 "illuminate/container": "~4",
                 "illuminate/http": "~4",
-                "leafo/lessphp": "dev-master",
                 "leafo/scssphp": "dev-master",
                 "leafo/scssphp-compass": "dev-master",
                 "lmammino/jsmin4assetic": "dev-master",
                 "natxet/cssmin": "dev-master",
+                "oyejorge/less.php": "1.6.*",
                 "php": ">=5.3.0",
                 "symfony/http-kernel": "~2"
             },
@@ -3282,7 +3297,7 @@
                 "source": "https://github.com/cartalyst/platform-foundation/tree/master",
                 "issues": "https://github.com/cartalyst/platform-foundation/issues"
             },
-            "time": "2014-01-28 02:37:53"
+            "time": "2014-02-04 23:29:02"
         },
         {
             "name": "platform/installer",
