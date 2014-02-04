@@ -20,13 +20,13 @@
 
 		{{ Asset::queue('modernizr', 'modernizr/js/modernizr.js') }}
 		{{ Asset::queue('jquery', 'jquery/js/jquery.js') }}
-		{{ Asset::queue('bootstrap.alert', 'bootstrap/js/alert.js', array('jquery')) }}
-		{{ Asset::queue('bootstrap.collapse', 'bootstrap/js/collapse.js', array('jquery')) }}
-		{{ Asset::queue('bootstrap.dropdown', 'bootstrap/js/dropdown.js', array('jquery')) }}
-		{{ Asset::queue('bootstrap.modal', 'bootstrap/js/modal.js', array('jquery')) }}
-		{{ Asset::queue('bootstrap.tooltip', 'bootstrap/js/tooltip.js', array('jquery')) }}
-		{{ Asset::queue('bootstrap.popover', 'bootstrap/js/popover.js', array('bootstrap.tooltip')) }}
-		{{ Asset::queue('scripts', 'platform/js/scripts.js', array('jquery')) }}
+		{{ Asset::queue('bootstrap.alert', 'bootstrap/js/alert.js', 'jquery') }}
+		{{ Asset::queue('bootstrap.collapse', 'bootstrap/js/collapse.js', 'jquery') }}
+		{{ Asset::queue('bootstrap.dropdown', 'bootstrap/js/dropdown.js', 'jquery') }}
+		{{ Asset::queue('bootstrap.modal', 'bootstrap/js/modal.js', 'jquery') }}
+		{{ Asset::queue('bootstrap.tooltip', 'bootstrap/js/tooltip.js', 'jquery') }}
+		{{ Asset::queue('bootstrap.popover', 'bootstrap/js/popover.js', 'bootstrap.tooltip') }}
+		{{ Asset::queue('scripts', 'platform/js/scripts.js', 'jquery') }}
 
 		{{-- HTML5 shim, for IE6-8 support of HTML5 elements --}}
 		<!--[if lt IE 9]>
