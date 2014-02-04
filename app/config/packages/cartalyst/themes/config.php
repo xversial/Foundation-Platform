@@ -159,7 +159,7 @@ return array(
 
 		'less' => array(
 
-			'Assetic\Filter\LessphpFilter',
+			'Cartalyst\AsseticFilters\LessphpFilter',
 			'Cartalyst\AsseticFilters\UriRewriteFilter',
 
 		),
