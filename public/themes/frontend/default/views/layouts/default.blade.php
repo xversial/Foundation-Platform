@@ -16,27 +16,27 @@
 		<meta name="base_url" content="{{ URL::to('/') }}">
 
 		{{-- Queue assets --}}
-		{{ Asset::queue('style', 'less/style.less') }}
+		{{ Asset::queue('style', 'platform/less/style.less') }}
 
-		{{ Asset::queue('modernizr', 'js/modernizr/modernizr.js') }}
-		{{ Asset::queue('jquery', 'js/jquery/jquery.js') }}
-		{{ Asset::queue('bootstrap.alert', 'js/bootstrap/alert.js', array('jquery')) }}
-		{{ Asset::queue('bootstrap.collapse', 'js/bootstrap/collapse.js', array('jquery')) }}
-		{{ Asset::queue('bootstrap.dropdown', 'js/bootstrap/dropdown.js', array('jquery')) }}
-		{{ Asset::queue('bootstrap.tooltip', 'js/bootstrap/tooltip.js', array('jquery')) }}
-		{{ Asset::queue('bootstrap.popover', 'js/bootstrap/popover.js', array('bootstrap.tooltip')) }}
-		{{ Asset::queue('platform', 'js/platform/platform.js', array('jquery')) }}
+		{{ Asset::queue('modernizr', 'modernizr/js/modernizr.js') }}
+		{{ Asset::queue('jquery', 'jquery/js/jquery.js') }}
+		{{ Asset::queue('bootstrap.alert', 'bootstrap/js/alert.js', 'jquery') }}
+		{{ Asset::queue('bootstrap.collapse', 'bootstrap/js/collapse.js', 'jquery') }}
+		{{ Asset::queue('bootstrap.dropdown', 'bootstrap/js/dropdown.js', 'jquery') }}
+		{{ Asset::queue('bootstrap.tooltip', 'bootstrap/js/tooltip.js', 'jquery') }}
+		{{ Asset::queue('bootstrap.popover', 'bootstrap/js/popover.js', 'bootstrap.tooltip') }}
+		{{ Asset::queue('platform', 'platform/js/platform.js', 'jquery') }}
 
 		{{-- HTML5 shim, for IE6-8 support of HTML5 elements --}}
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 
-		<link rel="shortcut icon" href="{{ Asset::getUrl('img/favicon.png') }}">
-		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ Asset::getUrl('img/apple-touch-icon-144x144-precomposed.png') }}">
-		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ Asset::getUrl('img/apple-touch-icon-114x114-precomposed.png') }}">
-		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ Asset::getUrl('img/apple-touch-icon-72x72-precomposed.png') }}">
-		<link rel="apple-touch-icon-precomposed" href="{{ Asset::getUrl('img/apple-touch-icon-precomposed.png') }}">
+		<link rel="shortcut icon" href="{{ Asset::getUrl('platform/img/favicon.png') }}">
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ Asset::getUrl('platform/img/apple-touch-icon-144x144-precomposed.png') }}">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ Asset::getUrl('platform/img/apple-touch-icon-114x114-precomposed.png') }}">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ Asset::getUrl('platform/img/apple-touch-icon-72x72-precomposed.png') }}">
+		<link rel="apple-touch-icon-precomposed" href="{{ Asset::getUrl('platform/img/apple-touch-icon-precomposed.png') }}">
 
 		{{-- Compiled styles --}}
 		@foreach (Asset::getCompiledStyles() as $style)
