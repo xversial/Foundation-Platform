@@ -10,10 +10,9 @@
   height: 0;
   margin-left: 2px;
   vertical-align: middle;
-  border-top:   @caret-width-base solid @dropdown-caret-color;
+  border-top:   @caret-width-base solid;
   border-right: @caret-width-base solid transparent;
   border-left:  @caret-width-base solid transparent;
-  content: "";
 }
 
 // The dropdown wrapper (div)
@@ -47,6 +46,8 @@
   background-clip: padding-box;
 
   // Aligns the dropdown menu to right
+  //
+  // Deprecated as of 3.1.0 in favor of `.dropdown-menu-[dir]`
   &.pull-right {
     right: 0;
     left: auto;
@@ -75,8 +76,7 @@
   &:focus {
     text-decoration: none;
     color: @dropdown-link-hover-color;
-    #gradient > .vertical(@start-color: @dropdown-link-hover-bg; @end-color: darken(@dropdown-link-hover-bg, 5%));
-    background-color: darken(@dropdown-link-hover-bg, 5%);
+    background-color: @dropdown-link-hover-bg;
   }
 }
 
@@ -88,8 +88,7 @@
     color: @dropdown-link-active-color;
     text-decoration: none;
     outline: 0;
-    #gradient > .vertical(@start-color: @dropdown-link-active-bg; @end-color: darken(@dropdown-link-active-bg, 5%));
-    background-color: darken(@dropdown-link-active-bg, 5%);
+    background-color: @dropdown-link-active-bg;
   }
 }
 
@@ -129,6 +128,25 @@
   }
 }
 
+// Menu positioning
+//
+// Add extra class to `.dropdown-menu` to flip the alignment of the dropdown
+// menu with the parent.
+.dropdown-menu-right {
+  left: auto; // Reset the default from `.dropdown-menu`
+  right: 0;
+}
+// With v3, we enabled auto-flipping if you have a dropdown within a right
+// aligned nav component. To enable the undoing of that, we provide an override
+// to restore the default dropdown menu alignment.
+//
+// This is only for left-aligning a dropdown menu within a `.navbar-right` or
+// `.pull-right` nav component.
+.dropdown-menu-left {
+  left: 0;
+  right: auto;
+}
+
 // Dropdown section headers
 .dropdown-header {
   display: block;
@@ -145,7 +163,7 @@
   right: 0;
   bottom: 0;
   top: 0;
-  z-index: @zindex-dropdown - 10;
+  z-index: (@zindex-dropdown - 10);
 }
 
 // Right aligned dropdowns
@@ -164,7 +182,7 @@
   // Reverse the caret
   .caret {
     border-top: 0;
-    border-bottom: 4px solid @dropdown-caret-color;
+    border-bottom: @caret-width-base solid;
     content: "";
   }
   // Different positioning for bottom up menu
@@ -174,3 +192,22 @@
     margin-bottom: 1px;
   }
 }
+
+
+// Component alignment
+//
+// Reiterate per navbar.less and the modified component alignment there.
+
+@media (min-width: @grid-float-breakpoint) {
+  .navbar-right {
+    .dropdown-menu {
+      .dropdown-menu-right();
+    }
+    // Necessary for overrides of the default right aligned menu.
+    // Will remove come v4 in all likelihood.
+    .dropdown-menu-left {
+      .dropdown-menu-left();
+    }
+  }
+}
+
