@@ -47,14 +47,14 @@ return array(
 
 		'sass' => array(
 
-			'Assetic\Filter\Sass\SassFilter',
+			'Assetic\Filter\SassFilter',
 			'Cartalyst\AsseticFilters\UriRewriteFilter',
 
 		),
 
 		'scss' => array(
 
-			'Assetic\Filter\Sass\ScssFilter',
+			'Assetic\Filter\ScssphpFilter',
 			'Cartalyst\AsseticFilters\UriRewriteFilter',
 
 		),
