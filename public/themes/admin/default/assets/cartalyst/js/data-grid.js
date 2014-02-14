@@ -1065,7 +1065,7 @@
 
 					params = {
 						pageStart: perPage === 0 ? 0 : ( i === 1 ? 1 : (perPage * (i - 1) + 1)),
-						pageLimit: i === 1 ? perPage : ( pagi.totalCount < (perPage * i)) ? pagi.totalCount : perPage * 1,
+						pageLimit: i === 1 ? perPage : (pagi.totalCount < this.opt.throttle && i === this.opt.dividend) ? pagi.totalCount : perPage * i,
 						nextPage: next,
 						prevPage: prev,
 						page: i,
