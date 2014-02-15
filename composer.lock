@@ -873,12 +873,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cartalyst/sentry.git",
-                "reference": "9e0f9d638cec58f591796e80f531e3990abd6efe"
+                "reference": "ebac1cef4f8e24da3086f5143ab31c196b2f8c41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/9e0f9d638cec58f591796e80f531e3990abd6efe",
-                "reference": "9e0f9d638cec58f591796e80f531e3990abd6efe",
+                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/ebac1cef4f8e24da3086f5143ab31c196b2f8c41",
+                "reference": "ebac1cef4f8e24da3086f5143ab31c196b2f8c41",
                 "shasum": ""
             },
             "require": {
@@ -956,7 +956,7 @@
                 "source": "https://github.com/cartalyst/sentry/tree/develop",
                 "issues": "https://github.com/cartalyst/sentry/issues"
             },
-            "time": "2014-02-14 03:13:24"
+            "time": "2014-02-15 12:37:36"
         },
         {
             "name": "cartalyst/sentry-social",
@@ -1866,7 +1866,7 @@
             "authors": [
                 {
                     "name": "Anthony Ferrara",
-                    "email": "ircmaxell@php.net",
+                    "email": "ircmaxell@ircmaxell.com",
                     "homepage": "http://blog.ircmaxell.com"
                 }
             ],
@@ -2116,12 +2116,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "2ad9eb54166e4121ebf76ea4d08bfa46e801fb2e"
+                "reference": "3b2f77e3c65c02c0245dd359f9d5ea1fbc6da6a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/2ad9eb54166e4121ebf76ea4d08bfa46e801fb2e",
-                "reference": "2ad9eb54166e4121ebf76ea4d08bfa46e801fb2e",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/3b2f77e3c65c02c0245dd359f9d5ea1fbc6da6a2",
+                "reference": "3b2f77e3c65c02c0245dd359f9d5ea1fbc6da6a2",
                 "shasum": ""
             },
             "require": {
@@ -2181,8 +2181,8 @@
             },
             "require-dev": {
                 "aws/aws-sdk-php": "2.5.*",
-                "iron-io/iron_mq": "1.4.*",
-                "mockery/mockery": "0.8.0",
+                "iron-io/iron_mq": "1.5.*",
+                "mockery/mockery": "0.9.*",
                 "pda/pheanstalk": "2.1.*",
                 "phpunit/phpunit": "3.7.*"
             },
@@ -2225,7 +2225,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-02-14 03:03:37"
+            "time": "2014-02-15 18:07:56"
         },
         {
             "name": "leafo/scssphp",
@@ -2968,9 +2968,7 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
+                    "email": "fabien@symfony.com"
                 }
             ],
             "description": "Pimple is a simple Dependency Injection Container for PHP 5.3",
@@ -2987,12 +2985,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-admin.git",
-                "reference": "d1271d505924141dd550fafce9a65fdb5cd1cf60"
+                "reference": "fa1fd2a7eb8ec9a646932e99a45426cea0442886"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-admin/zipball/d1271d505924141dd550fafce9a65fdb5cd1cf60",
-                "reference": "d1271d505924141dd550fafce9a65fdb5cd1cf60",
+                "url": "https://api.github.com/repos/cartalyst/platform-admin/zipball/fa1fd2a7eb8ec9a646932e99a45426cea0442886",
+                "reference": "fa1fd2a7eb8ec9a646932e99a45426cea0442886",
                 "shasum": ""
             },
             "require": {
@@ -3054,7 +3052,7 @@
                 "source": "https://github.com/cartalyst/platform-admin/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-admin/issues"
             },
-            "time": "2014-02-14 04:05:16"
+            "time": "2014-02-15 20:01:00"
         },
         {
             "name": "platform/attributes",
@@ -3387,12 +3385,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-media.git",
-                "reference": "4679a60372a50790dcc4748efc6af812f0daee77"
+                "reference": "b67083e962fec8a787a320d8a0f820389015b255"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/4679a60372a50790dcc4748efc6af812f0daee77",
-                "reference": "4679a60372a50790dcc4748efc6af812f0daee77",
+                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/b67083e962fec8a787a320d8a0f820389015b255",
+                "reference": "b67083e962fec8a787a320d8a0f820389015b255",
                 "shasum": ""
             },
             "require": {
@@ -3457,7 +3455,7 @@
                 "source": "https://github.com/cartalyst/platform-media/tree/master",
                 "issues": "https://github.com/cartalyst/platform-media/issues"
             },
-            "time": "2014-02-14 03:53:33"
+            "time": "2014-02-14 21:49:20"
         },
         {
             "name": "platform/menus",
@@ -3621,12 +3619,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-pages.git",
-                "reference": "e4b96361d6362c96eb79da4acea22d8e1811f73c"
+                "reference": "23cf9a57637d077ef36de6e54fdde1e75b70641c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/e4b96361d6362c96eb79da4acea22d8e1811f73c",
-                "reference": "e4b96361d6362c96eb79da4acea22d8e1811f73c",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/23cf9a57637d077ef36de6e54fdde1e75b70641c",
+                "reference": "23cf9a57637d077ef36de6e54fdde1e75b70641c",
                 "shasum": ""
             },
             "require": {
@@ -3692,7 +3690,7 @@
                 "source": "https://github.com/cartalyst/platform-pages/tree/develop",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2014-02-08 00:05:16"
+            "time": "2014-02-15 20:02:09"
         },
         {
             "name": "platform/settings",
@@ -4182,9 +4180,7 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
+                    "email": "fabien@symfony.com"
                 },
                 {
                     "name": "Symfony Community",
@@ -4509,9 +4505,7 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
+                    "email": "fabien@symfony.com"
                 },
                 {
                     "name": "Symfony Community",
@@ -4558,9 +4552,7 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
+                    "email": "fabien@symfony.com"
                 },
                 {
                     "name": "Symfony Community",
@@ -4857,9 +4849,7 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
+                    "email": "fabien@symfony.com"
                 },
                 {
                     "name": "Symfony Community",
