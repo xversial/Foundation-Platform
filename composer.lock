@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "737d4414905812923c742a009b9211c9",
+    "hash": "ecfab2a8baa2a9e1bbec6caa23aeeeeb",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1595,12 +1595,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "edbcaaa5d38267a499289da215d3a9702c65ab1f"
+                "reference": "5d90ff3b75ce6617395c47e5c20e0aae2fae9be7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/edbcaaa5d38267a499289da215d3a9702c65ab1f",
-                "reference": "edbcaaa5d38267a499289da215d3a9702c65ab1f",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/5d90ff3b75ce6617395c47e5c20e0aae2fae9be7",
+                "reference": "5d90ff3b75ce6617395c47e5c20e0aae2fae9be7",
                 "shasum": ""
             },
             "require": {
@@ -1679,7 +1679,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2014-02-26 01:49:03"
+            "time": "2014-02-28 21:59:47"
         },
         {
             "name": "herrera-io/json",
@@ -2112,16 +2112,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v4.1.22",
+            "version": "4.1.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "a18a892c9d768464249baa1d16117fe52e0a7004"
+                "reference": "c3d48902789543d7466ebd6385b6c9820c81d2b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/a18a892c9d768464249baa1d16117fe52e0a7004",
-                "reference": "a18a892c9d768464249baa1d16117fe52e0a7004",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/c3d48902789543d7466ebd6385b6c9820c81d2b6",
+                "reference": "c3d48902789543d7466ebd6385b6c9820c81d2b6",
                 "shasum": ""
             },
             "require": {
@@ -2225,7 +2225,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-02-20 15:13:32"
+            "time": "2014-02-28 21:26:20"
         },
         {
             "name": "leafo/scssphp",
@@ -2848,12 +2848,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "76c9692908a6c25601df2db373043fcbb335332e"
+                "reference": "0ea31d9b65d49a8661e93bec19f44e989bd34c69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/76c9692908a6c25601df2db373043fcbb335332e",
-                "reference": "76c9692908a6c25601df2db373043fcbb335332e",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/0ea31d9b65d49a8661e93bec19f44e989bd34c69",
+                "reference": "0ea31d9b65d49a8661e93bec19f44e989bd34c69",
                 "shasum": ""
             },
             "require": {
@@ -2878,7 +2878,8 @@
                     "Crypt": "phpseclib/",
                     "File": "phpseclib/",
                     "Math": "phpseclib/",
-                    "Net": "phpseclib/"
+                    "Net": "phpseclib/",
+                    "System": "phpseclib/"
                 },
                 "files": [
                     "phpseclib/Crypt/Random.php"
@@ -2934,7 +2935,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2014-02-23 01:03:22"
+            "time": "2014-02-28 16:05:05"
         },
         {
             "name": "pimple/pimple",
