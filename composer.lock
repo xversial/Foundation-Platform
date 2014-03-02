@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "ecfab2a8baa2a9e1bbec6caa23aeeeeb",
+    "hash": "71bf8a04f1e33b48c7de5199bbbed421",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -418,16 +418,16 @@
         },
         {
             "name": "cartalyst/data-grid",
-            "version": "dev-master",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/data-grid.git",
-                "reference": "30422973c6d810c9609fce373170c4258c2e119b"
+                "reference": "6aedb25877c2f0f9700c50e0e140c2b0718830d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/data-grid/zipball/30422973c6d810c9609fce373170c4258c2e119b",
-                "reference": "30422973c6d810c9609fce373170c4258c2e119b",
+                "url": "https://api.github.com/repos/cartalyst/data-grid/zipball/6aedb25877c2f0f9700c50e0e140c2b0718830d7",
+                "reference": "6aedb25877c2f0f9700c50e0e140c2b0718830d7",
                 "shasum": ""
             },
             "require": {
@@ -481,10 +481,10 @@
                 "laravel"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/data-grid/tree/master",
+                "source": "https://github.com/cartalyst/data-grid/tree/develop",
                 "issues": "https://github.com/cartalyst/data-grid/issues"
             },
-            "time": "2014-01-08 04:57:57"
+            "time": "2014-02-28 14:33:42"
         },
         {
             "name": "cartalyst/dependencies",
@@ -2116,12 +2116,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "c3d48902789543d7466ebd6385b6c9820c81d2b6"
+                "reference": "fdbfe869982ab3c1e6a9dc4a3495ac4ea9eae422"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/c3d48902789543d7466ebd6385b6c9820c81d2b6",
-                "reference": "c3d48902789543d7466ebd6385b6c9820c81d2b6",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/fdbfe869982ab3c1e6a9dc4a3495ac4ea9eae422",
+                "reference": "fdbfe869982ab3c1e6a9dc4a3495ac4ea9eae422",
                 "shasum": ""
             },
             "require": {
@@ -2225,7 +2225,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-02-28 21:26:20"
+            "time": "2014-03-01 00:25:14"
         },
         {
             "name": "leafo/scssphp",
@@ -2793,16 +2793,16 @@
         },
         {
             "name": "patchwork/utf8",
-            "version": "v1.1.18",
+            "version": "v1.1.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nicolas-grekas/Patchwork-UTF8.git",
-                "reference": "66a936cc633fe13378c91f81030d5193be968480"
+                "reference": "aea0de833cba7cf2c25239be71f2787edaee36d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nicolas-grekas/Patchwork-UTF8/zipball/66a936cc633fe13378c91f81030d5193be968480",
-                "reference": "66a936cc633fe13378c91f81030d5193be968480",
+                "url": "https://api.github.com/repos/nicolas-grekas/Patchwork-UTF8/zipball/aea0de833cba7cf2c25239be71f2787edaee36d5",
+                "reference": "aea0de833cba7cf2c25239be71f2787edaee36d5",
                 "shasum": ""
             },
             "require": {
@@ -2840,7 +2840,7 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2014-02-02 17:09:49"
+            "time": "2014-03-01 20:01:07"
         },
         {
             "name": "phpseclib/phpseclib",
@@ -2848,12 +2848,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "0ea31d9b65d49a8661e93bec19f44e989bd34c69"
+                "reference": "c1597f453342212ba72a0ce3359a2f766edc17de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/0ea31d9b65d49a8661e93bec19f44e989bd34c69",
-                "reference": "0ea31d9b65d49a8661e93bec19f44e989bd34c69",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/c1597f453342212ba72a0ce3359a2f766edc17de",
+                "reference": "c1597f453342212ba72a0ce3359a2f766edc17de",
                 "shasum": ""
             },
             "require": {
@@ -2935,7 +2935,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2014-02-28 16:05:05"
+            "time": "2014-03-01 00:40:28"
         },
         {
             "name": "pimple/pimple",
@@ -3221,17 +3221,18 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-foundation.git",
-                "reference": "8bbb860f19f57db96fc8ab7845c938378eb5ced7"
+                "reference": "c0faa7ddca13018e00b6ffb37166e427859906a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/8bbb860f19f57db96fc8ab7845c938378eb5ced7",
-                "reference": "8bbb860f19f57db96fc8ab7845c938378eb5ced7",
+                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/c0faa7ddca13018e00b6ffb37166e427859906a4",
+                "reference": "c0faa7ddca13018e00b6ffb37166e427859906a4",
                 "shasum": ""
             },
             "require": {
+                "cartalyst/api": "2.0.*@dev",
                 "cartalyst/assetic-filters": "1.1.*",
-                "cartalyst/data-grid": "1.1.*",
+                "cartalyst/data-grid": "dev-develop",
                 "cartalyst/extensions": "1.0.*",
                 "cartalyst/themes": "2.0.*",
                 "cartalyst/widgets": "1.0.*",
@@ -3300,7 +3301,7 @@
                 "source": "https://github.com/cartalyst/platform-foundation/tree/master",
                 "issues": "https://github.com/cartalyst/platform-foundation/issues"
             },
-            "time": "2014-02-14 03:54:56"
+            "time": "2014-03-02 15:10:57"
         },
         {
             "name": "platform/installer",
@@ -4202,12 +4203,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "43717a2ba9a8695dac525b928134d1b6d620f13a"
+                "reference": "ef20f1f58d7f693ee888353962bd2db336e3bbcb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/43717a2ba9a8695dac525b928134d1b6d620f13a",
-                "reference": "43717a2ba9a8695dac525b928134d1b6d620f13a",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/ef20f1f58d7f693ee888353962bd2db336e3bbcb",
+                "reference": "ef20f1f58d7f693ee888353962bd2db336e3bbcb",
                 "shasum": ""
             },
             "require": {
@@ -4248,7 +4249,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2014-02-18 15:41:06"
+            "time": "2014-03-01 17:35:04"
         },
         {
             "name": "symfony/css-selector",
@@ -4310,12 +4311,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Debug.git",
-                "reference": "23b5f4fcad883679d9a6e1cbc568247fe606d8ee"
+                "reference": "412b76458b60a645a9daacdd49f57d704c84c4d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Debug/zipball/23b5f4fcad883679d9a6e1cbc568247fe606d8ee",
-                "reference": "23b5f4fcad883679d9a6e1cbc568247fe606d8ee",
+                "url": "https://api.github.com/repos/symfony/Debug/zipball/412b76458b60a645a9daacdd49f57d704c84c4d4",
+                "reference": "412b76458b60a645a9daacdd49f57d704c84c4d4",
                 "shasum": ""
             },
             "require": {
@@ -4358,7 +4359,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "http://symfony.com",
-            "time": "2014-02-11 13:52:09"
+            "time": "2014-03-01 17:35:04"
         },
         {
             "name": "symfony/dom-crawler",
@@ -4527,12 +4528,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder.git",
-                "reference": "d712f4a26737300b4d7546705a4fb15feeb3e96f"
+                "reference": "ab301c7d21f536c34ab6c2c79dba8d465104c518"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/d712f4a26737300b4d7546705a4fb15feeb3e96f",
-                "reference": "d712f4a26737300b4d7546705a4fb15feeb3e96f",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/ab301c7d21f536c34ab6c2c79dba8d465104c518",
+                "reference": "ab301c7d21f536c34ab6c2c79dba8d465104c518",
                 "shasum": ""
             },
             "require": {
@@ -4567,7 +4568,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "http://symfony.com",
-            "time": "2014-02-24 16:20:54"
+            "time": "2014-03-01 17:35:04"
         },
         {
             "name": "symfony/http-foundation",
@@ -4875,7 +4876,6 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "cartalyst/api": 20,
         "platform/installer": 20,
         "platform/content": 20,
         "platform/menus": 20,
