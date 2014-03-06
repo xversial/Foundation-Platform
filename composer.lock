@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "3c525a508b27c7e0cbfb41a61a8322a4",
+    "hash": "319846d9a087ce6d73dea64f1f21e1b0",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -708,6 +708,80 @@
                 "issues": "https://github.com/cartalyst/interpret/issues"
             },
             "time": "2014-01-03 19:10:29"
+        },
+        {
+            "name": "cartalyst/localisation",
+            "version": "dev-lab/localisation",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:cartalyst/labs.git",
+                "reference": "5a0c50ab530f7a2b4761a018ddd02a5fe6dd76e5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cartalyst/labs/zipball/5a0c50ab530f7a2b4761a018ddd02a5fe6dd76e5",
+                "reference": "5a0c50ab530f7a2b4761a018ddd02a5fe6dd76e5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "component": "package",
+                "frameworks": [
+                    "Laravel 4"
+                ],
+                "versions": {
+                    "1": "master"
+                },
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/migrations"
+                ],
+                "psr-0": {
+                    "Cartalyst\\Localisation": "src/"
+                }
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Cartalyst LLC",
+                    "email": "help@cartalyst.com"
+                },
+                {
+                    "name": "Ben Corlett",
+                    "email": "ben.corlett@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Bruno Gaspar",
+                    "email": "bruno.gaspar@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dan Syme",
+                    "email": "dan.syme@cartalyst.com",
+                    "role": "Project Lead"
+                }
+            ],
+            "description": "Localisation package.",
+            "keywords": [
+                "cities",
+                "countries",
+                "laravel"
+            ],
+            "support": {
+                "source": "https://github.com/cartalyst/labs/tree/lab/localisation",
+                "issues": "https://github.com/cartalyst/labs/issues"
+            },
+            "time": "2014-03-06 03:29:55"
         },
         {
             "name": "cartalyst/media",
@@ -2116,12 +2190,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "9f66bad1e2807d98b620bd11eca3b914f1e0c98a"
+                "reference": "d65fc52f094c580e170e5573cf6e09a2df3d2689"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/9f66bad1e2807d98b620bd11eca3b914f1e0c98a",
-                "reference": "9f66bad1e2807d98b620bd11eca3b914f1e0c98a",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/d65fc52f094c580e170e5573cf6e09a2df3d2689",
+                "reference": "d65fc52f094c580e170e5573cf6e09a2df3d2689",
                 "shasum": ""
             },
             "require": {
@@ -2225,7 +2299,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-03-05 19:37:12"
+            "time": "2014-03-06 03:35:58"
         },
         {
             "name": "leafo/scssphp",
@@ -3136,6 +3210,78 @@
             "time": "2014-02-18 22:01:27"
         },
         {
+            "name": "platform/categories",
+            "version": "dev-lab/platform-categories",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:cartalyst/labs.git",
+                "reference": "dd822ad4e09a567807d340c46c7648c7d7195f95"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cartalyst/labs/zipball/dd822ad4e09a567807d340c46c7648c7d7195f95",
+                "reference": "dd822ad4e09a567807d340c46c7648c7d7195f95",
+                "shasum": ""
+            },
+            "require": {
+                "cartalyst/composer-installers": "1.0.*",
+                "cartalyst/nested-sets": "dev-master",
+                "php": ">=5.3.0",
+                "platform/admin": "dev-develop"
+            },
+            "type": "platform-extension",
+            "extra": {
+                "component": "extension",
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "migrations"
+                ],
+                "psr-4": {
+                    "Platform\\Categories\\": "/"
+                }
+            },
+            "license": [
+                "BSD License (3-clause)"
+            ],
+            "authors": [
+                {
+                    "name": "Cartalyst LLC",
+                    "email": "help@cartalyst.com"
+                },
+                {
+                    "name": "Ben Corlett",
+                    "email": "ben.corlett@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Bruno Gaspar",
+                    "email": "bruno.gaspar@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dan Syme",
+                    "email": "dan.syme@cartalyst.com",
+                    "role": "Creator & Designer"
+                }
+            ],
+            "keywords": [
+                "cartalyst",
+                "categories",
+                "extension",
+                "laravel",
+                "platform"
+            ],
+            "support": {
+                "source": "https://github.com/cartalyst/labs/tree/lab/platform-categories",
+                "issues": "https://github.com/cartalyst/labs/issues"
+            },
+            "time": "2014-02-26 22:24:29"
+        },
+        {
             "name": "platform/content",
             "version": "dev-feature/psr-4-php-54",
             "source": {
@@ -3380,17 +3526,104 @@
             "time": "2014-01-28 02:41:15"
         },
         {
+            "name": "platform/localisation",
+            "version": "dev-lab/platform-localisation",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:cartalyst/labs.git",
+                "reference": "584666a634947b789896d1292463ecf9d45b1dba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cartalyst/labs/zipball/584666a634947b789896d1292463ecf9d45b1dba",
+                "reference": "584666a634947b789896d1292463ecf9d45b1dba",
+                "shasum": ""
+            },
+            "require": {
+                "cartalyst/composer-installers": "1.0.*",
+                "cartalyst/localisation": "dev-lab/localisation",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.7.*"
+            },
+            "type": "platform-extension",
+            "extra": {
+                "component": "extension",
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Platform\\Localisation": "models"
+                },
+                "classmap": [
+                    "controllers",
+                    "database/migrations",
+                    "models",
+                    "plugins",
+                    "tests",
+                    "widgets"
+                ]
+            },
+            "license": [
+                "BSD License (3-clause)"
+            ],
+            "authors": [
+                {
+                    "name": "Cartalyst LLC",
+                    "email": "help@cartalyst.com"
+                },
+                {
+                    "name": "Ben Corlett",
+                    "email": "ben.corlett@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Bruno Gaspar",
+                    "email": "bruno.gaspar@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dan Syme",
+                    "email": "dan.syme@cartalyst.com",
+                    "role": "Creator & Designer"
+                }
+            ],
+            "description": "Manage your system languages, countries, currencies and timezones.",
+            "keywords": [
+                "cartalyst",
+                "countries",
+                "country",
+                "extension",
+                "language",
+                "languages",
+                "laravel",
+                "locale",
+                "localisation",
+                "localization",
+                "platform",
+                "regions"
+            ],
+            "support": {
+                "source": "https://github.com/cartalyst/labs/tree/lab/platform-localisation",
+                "issues": "https://github.com/cartalyst/labs/issues"
+            },
+            "time": "2014-03-06 03:42:14"
+        },
+        {
             "name": "platform/media",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-media.git",
-                "reference": "5ff0ef9f7e9c6fdde7c9f45ba99472201ee9b4cc"
+                "reference": "125434198f874df12182ae9590ae693021f2afdc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/5ff0ef9f7e9c6fdde7c9f45ba99472201ee9b4cc",
-                "reference": "5ff0ef9f7e9c6fdde7c9f45ba99472201ee9b4cc",
+                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/125434198f874df12182ae9590ae693021f2afdc",
+                "reference": "125434198f874df12182ae9590ae693021f2afdc",
                 "shasum": ""
             },
             "require": {
@@ -3455,7 +3688,7 @@
                 "source": "https://github.com/cartalyst/platform-media/tree/master",
                 "issues": "https://github.com/cartalyst/platform-media/issues"
             },
-            "time": "2014-03-05 19:50:14"
+            "time": "2014-03-05 22:27:56"
         },
         {
             "name": "platform/menus",
@@ -4867,7 +5100,9 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "platform/installer": 20,
+        "platform/categories": 20,
         "platform/content": 20,
+        "platform/localisation": 20,
         "platform/menus": 20,
         "platform/operations": 20,
         "platform/pages": 20,
