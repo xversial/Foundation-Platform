@@ -715,36 +715,27 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/labs.git",
-                "reference": "5a0c50ab530f7a2b4761a018ddd02a5fe6dd76e5"
+                "reference": "857cbf038a013aaccc7604653ef65e0e9298fc7c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/labs/zipball/5a0c50ab530f7a2b4761a018ddd02a5fe6dd76e5",
-                "reference": "5a0c50ab530f7a2b4761a018ddd02a5fe6dd76e5",
+                "url": "https://api.github.com/repos/cartalyst/labs/zipball/857cbf038a013aaccc7604653ef65e0e9298fc7c",
+                "reference": "857cbf038a013aaccc7604653ef65e0e9298fc7c",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": ">=5.4.0"
             },
             "type": "library",
             "extra": {
                 "component": "package",
-                "frameworks": [
-                    "Laravel 4"
-                ],
-                "versions": {
-                    "1": "master"
-                },
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "1.0.x-dev"
                 }
             },
             "autoload": {
-                "classmap": [
-                    "src/migrations"
-                ],
-                "psr-0": {
-                    "Cartalyst\\Localisation": "src/"
+                "psr-4": {
+                    "Cartalyst\\Localisation\\": "src/"
                 }
             },
             "license": [
@@ -773,15 +764,17 @@
             ],
             "description": "Localisation package.",
             "keywords": [
+                "cartalyst",
                 "cities",
                 "countries",
-                "laravel"
+                "laravel",
+                "php"
             ],
             "support": {
                 "source": "https://github.com/cartalyst/labs/tree/lab/localisation",
                 "issues": "https://github.com/cartalyst/labs/issues"
             },
-            "time": "2014-03-06 03:29:55"
+            "time": "2014-03-06 05:54:29"
         },
         {
             "name": "cartalyst/media",
@@ -2190,12 +2183,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "d65fc52f094c580e170e5573cf6e09a2df3d2689"
+                "reference": "9274773270126d8d24fb40a0da3b4d9dec3485e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/d65fc52f094c580e170e5573cf6e09a2df3d2689",
-                "reference": "d65fc52f094c580e170e5573cf6e09a2df3d2689",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/9274773270126d8d24fb40a0da3b4d9dec3485e4",
+                "reference": "9274773270126d8d24fb40a0da3b4d9dec3485e4",
                 "shasum": ""
             },
             "require": {
@@ -2299,7 +2292,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-03-06 03:35:58"
+            "time": "2014-03-06 04:01:20"
         },
         {
             "name": "leafo/scssphp",
@@ -3531,41 +3524,33 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/labs.git",
-                "reference": "584666a634947b789896d1292463ecf9d45b1dba"
+                "reference": "236f0f97ccc729d9baf0068860c0c922102dd269"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/labs/zipball/584666a634947b789896d1292463ecf9d45b1dba",
-                "reference": "584666a634947b789896d1292463ecf9d45b1dba",
+                "url": "https://api.github.com/repos/cartalyst/labs/zipball/236f0f97ccc729d9baf0068860c0c922102dd269",
+                "reference": "236f0f97ccc729d9baf0068860c0c922102dd269",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "1.0.*",
                 "cartalyst/localisation": "dev-lab/localisation",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "0.7.*"
+                "php": ">=5.4.0"
             },
             "type": "platform-extension",
             "extra": {
                 "component": "extension",
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "2.0.x-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Platform\\Localisation": "models"
-                },
                 "classmap": [
-                    "controllers",
-                    "database/migrations",
-                    "models",
-                    "plugins",
-                    "tests",
-                    "widgets"
-                ]
+                    "migrations"
+                ],
+                "psr-4": {
+                    "Platform\\Localisation\\": "src/"
+                }
             },
             "license": [
                 "BSD License (3-clause)"
@@ -3610,7 +3595,7 @@
                 "source": "https://github.com/cartalyst/labs/tree/lab/platform-localisation",
                 "issues": "https://github.com/cartalyst/labs/issues"
             },
-            "time": "2014-03-06 03:42:14"
+            "time": "2014-03-06 04:53:24"
         },
         {
             "name": "platform/media",
@@ -3618,12 +3603,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-media.git",
-                "reference": "125434198f874df12182ae9590ae693021f2afdc"
+                "reference": "d792e90aa99a1e8368c42fc73bd6854fef252820"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/125434198f874df12182ae9590ae693021f2afdc",
-                "reference": "125434198f874df12182ae9590ae693021f2afdc",
+                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/d792e90aa99a1e8368c42fc73bd6854fef252820",
+                "reference": "d792e90aa99a1e8368c42fc73bd6854fef252820",
                 "shasum": ""
             },
             "require": {
@@ -3688,7 +3673,7 @@
                 "source": "https://github.com/cartalyst/platform-media/tree/master",
                 "issues": "https://github.com/cartalyst/platform-media/issues"
             },
-            "time": "2014-03-05 22:27:56"
+            "time": "2014-03-06 04:31:15"
         },
         {
             "name": "platform/menus",
