@@ -115,6 +115,8 @@ return array(
 		'Cartalyst\Themes\ThemeServiceProvider',
 		'Cartalyst\Widgets\WidgetsServiceProvider',
 
+		'Cartalyst\Localisation\Laravel\LocalisationServiceProvider',
+
 		'Platform\Installer\InstallerServiceProvider',
 		'Platform\Foundation\PlatformServiceProvider',
 
@@ -199,7 +201,7 @@ return array(
 		'Widget'        => 'Cartalyst\Widgets\Facades\Widget',
 
 		'Installer'     => 'Platform\Installer\Facades\Installer',
-		'Page'          => 'Platform\Pages\Page',
+		'Page'          => 'Platform\Pages\Models\Page',
 		'Platform'      => 'Platform\Foundation\Facades\Platform',
 
 	),
