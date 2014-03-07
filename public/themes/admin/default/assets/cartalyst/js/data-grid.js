@@ -17,135 +17,166 @@
  * @link       http://cartalyst.com
  */
 
-;(function ($, window, document, undefined) {
+;(function ($, window, document, undefined)
+{
 
 	'use strict';
 
-	// Overwritable Values
+	/**
+	 * Default settings
+	 *
+	 * @var array
+	 */
 	var defaults = {
-			source: null,
-			dividend: 1,
-			threshold: 50,
-			throttle: 50,
-			paginationType: 'single',
-			sortClasses: {
-				asc: 'asc',
-				desc: 'desc'
-			},
-			defaultSort: {},
-			templateSettings : {
-				evaluate    : /<%([\s\S]+?)%>/g,
-				interpolate : /<%=([\s\S]+?)%>/g,
-				escape      : /<%-([\s\S]+?)%>/g
-			},
-			searchTimeout: 800,
-			loader: undefined,
-			callback: undefined
-		};
+		source: null,
+		dividend: 1,
+		threshold: 50,
+		throttle: 50,
+		method: 'single',
+		sortClasses: {
+			asc: 'asc',
+			desc: 'desc'
+		},
+		delimiter: ':',
+		dateFormatAttribute: 'format',
+		sort: {},
+		templateSettings: {
+			evaluate    : /<%([\s\S]+?)%>/g,
+			interpolate : /<%=([\s\S]+?)%>/g,
+			escape      : /<%-([\s\S]+?)%>/g
+		},
+		scroll: null,
+		searchTimeout: 800,
+		hash: true,
+		loader: undefined,
+		callback: undefined
+	};
 
 	// Hash Settings
-	var route = '';
 	var defaultHash = '';
-
-	// Sort
-	var currentSort = {
-		column: null,
-		direction: null,
-		index: 0
-	};
 
 	// Search
 	var searchTimeout;
 	var isSearchActive = false;
 
-	// Global Applied Filters Array
-	var appliedFilters = [];
+	function DataGrid(grid, results, pagination, filters, options)
+	{
+		var self = this;
 
-	// Pagination
-	var pagi = {
-		pageIdx: 1,
-		totalCount: null,
-		filteredCount: null,
-		baseTrottle: null
-	};
+		self.key = grid;
 
-	function DataGrid(grid, results, pagination, filters, options) {
+		self.grid = '[data-grid="' + grid + '"]';
 
-		var _this = this;
-			_this.key = grid;
-			_this.grid = '[data-grid="'+_this.key+'"]';
+		self.appliedFilters = [];
 
-			// Our Main Elements
-			_this.$results      = $(results + _this.grid);
-			_this.$pagination   = $(pagination + _this.grid);
-			_this.$filters      = $(filters + _this.grid);
-			_this.$body         = $(document.body);
+		self.currentSort = {
+			column: null,
+			direction: null,
+			index: 0
+		};
 
-			// Source
-			_this.source = _this.$results.data('source') || _this.opt.source;
+		self.pagination = {
+			pageIdx: 1,
+			totalCount: null,
+			filteredCount: null,
+			baseThrottle: null
+		};
 
-			// Safty Check
-			if (_this.$results.get(0).tagName.toLowerCase() === 'table')
-			{
-				_this.$results = $(results + this.grid).find('tbody');
-			}
+		// Our Main Elements
+		self.$results    = $(results + self.grid);
+		self.$pagination = $(pagination + self.grid);
+		self.$filters    = $(filters + self.grid);
+		self.$body       = $(document.body);
 
-			// Options
-			_this.opt = $.extend({}, defaults, options);
+		// Options
+		self.opt = $.extend({}, defaults, options);
 
-			// Setup Default Hash
-			defaultHash = _this.key;
-			// Setup Base Throttle
-			pagi.baseTrottle = _this.opt.throttle;
+		// Source
+		self.source = self.$results.data('source') || self.opt.source;
 
-		this._checkDependencies(results, pagination, filters);
+		// Safety Check
+		if (self.$results.get(0).tagName.toLowerCase() === 'table')
+		{
+			self.$results = $(results + self.grid).find('tbody');
+		}
 
-		this._init();
+		// Setup Default Hash
+		defaultHash = grid;
 
+		// Setup Base Throttle
+		self.pagination.baseThrottle = self.opt.throttle;
+
+		// Check our dependencies
+		self.checkDependencies();
+
+		// Initialize Data Grid
+		self.init();
 	}
 
 	DataGrid.prototype = {
 
-		_init: function() {
+		/**
+		 * Initializes Data Grid.
+		 *
+		 * @return void
+		 */
+		init: function()
+		{
+			// Initialize the event listeners
+			this.events();
 
-			this._addEventListeners();
-
-			this._loading();
-
-			this._checkHash();
-
-		},
-
-		_checkDependencies: function (results, pagination, filters) {
-
-			if (typeof window._ === 'undefined')
+			// Set throttle, dividend by method
+			switch(this.opt.method)
 			{
-				throw new Error('Underscore is not defined. DataGrid Requires UnderscoreJS v 1.5.2 or later to run!');
+				case 'single':
+
+					this.single(this.opt.throttle);
+
+					break;
+
+				case 'group':
+
+					this.group(this.opt.throttle);
+
+					break;
 			}
 
-			// Set _ templates interpolate
-			_.templateSettings = {
-				evaluate    : this.opt.templateSettings.evaluate,
-				interpolate : this.opt.templateSettings.interpolate,
-				escape      : this.opt.templateSettings.escape
-			};
-
-			// Build Template Selectors based on classes set
-			results     = $('#'+results.substr(1)+'-tmpl' + this.grid);
-			pagination  = $('#'+pagination.substr(1)+'-tmpl' + this.grid);
-			filters     = $('#'+filters.substr(1)+'-tmpl' + this.grid);
-
-			// Cache Underscore Templates
-			this.tmpl = {
-				results:    _.template(results.html()),
-				pagination: _.template(pagination.html()),
-				filters:    _.template(filters.html()),
-				empty:      _.template($('#no-results-tmpl'+ this.grid).html())
-			};
-
+			this.checkHash();
 		},
 
-		_checkIE: function() {
+		/**
+		 * Checks the Data Grid dependencies.
+		 *
+		 * @return void
+		 */
+		checkDependencies: function ()
+		{
+			if (typeof window._ === 'undefined')
+			{
+				throw new Error('Underscore is not defined. DataGrid Requires UnderscoreJS v1.5.2 or later to run!');
+			}
+
+			var grid = this.grid;
+
+			// Set _ templates interpolate
+			_.templateSettings = this.opt.templateSettings;
+
+			// Cache the Underscore Templates
+			this.tmpl = {
+				results:    _.template($('[data-template="results"]' + grid).html()),
+				pagination: _.template($('[data-template="pagination"]' + grid).html()),
+				filters:    _.template($('[data-template="filters"]' + grid).html()),
+				empty:      _.template($('[data-template="no-results"]' + grid).html())
+			};
+		},
+
+		/**
+		 * Checks the Internet Explorer version.
+		 *
+		 * @return mixed
+		 */
+		checkIE: function()
+		{
 			var undef,
 				v = 3,
 				div = document.createElement('div'),
@@ -159,591 +190,274 @@
 			return v > 4 ? v : undef;
 		},
 
-		_checkHash: function() {
+		/**
+		 * Initializes all the event listeners.
+		 *
+		 * @return void
+		 */
+		events: function()
+		{
+			var self = this;
 
-			var newPath = window.location.hash;
-				newPath = String(newPath.slice(3));
+			var grid = self.grid;
 
-			if (newPath === '')
+			var options = self.opt;
+
+			$(this).on('dg:update', this.fetchResults);
+
+			if (options.hash)
 			{
-				newPath = defaultHash;
+				$(this).on('dg:hashchange', this.pushHash);
 			}
 
-			if (newPath !== route)
+			$(window).on('hashchange', function()
 			{
-				this._handleHashChange(newPath);
-			}
+				var routeArr = String(window.location.hash.slice(3)).split('/');
 
-		},
-
-		_addEventListeners: function() {
-
-			var _this = this;
-
-			$(this).on('dg:update', this._ajaxFetchResults);
-
-			$(window).on('hashchange', function() {
-
-				_this._checkHash();
-
+				self.updateOnHash(routeArr);
 			});
 
-			this.$body.on('click', '[data-sort]'+this.grid, function(){
-
-				if(_this.opt.paginationType === 'infinite')
+			this.$body.on('click', '[data-sort]' + grid + ',' + grid + ' [data-sort]', function()
+			{
+				if (options.method === 'infinite')
 				{
-					_this.$results.empty(); //safty
+					self.$results.empty();
 				}
-				_this._extractSortsFromClick($(this) , $(this).data('sort'));
 
+				self.extractSortsFromClick($(this), $(this).data('sort'));
 			});
 
-			this.$body.on('click', '[data-filter]'+this.grid, function(e) {
-
+			this.$body.on('click', '[data-filter]' + grid, function(e)
+			{
 				e.preventDefault();
-				_this.$results.empty(); //safty
-				_this._extractFiltersFromClick($(this).data('filter'), $(this).data('label'));
 
-			});
+				self.applyScroll();
 
-			this.$filters.on('click', '> *', function(e) {
-
-				e.preventDefault();
-				if(_this.opt.paginationType === 'infinite')
+				if ($(this).data('single-filter') !== undefined)
 				{
-					_this.$results.empty(); //safty
+					self.appliedFilters = [];
 				}
-				_this._removeFilters($(this).index());
 
+				if (options.method === 'infinite')
+				{
+					self.$results.empty();
+
+					self.pagination.pageIdx = 1;
+				}
+
+				self.extractFiltersFromClick($(this));
 			});
 
-			this.$pagination.on('click', '[data-page]', function(e) {
+			var dateRangeEl = this.$body.find('[data-range-filter]' + grid + ',' + grid + ' [data-range-filter]');
 
+			$(dateRangeEl).on('change', function(e)
+			{
+				self.removeRangeFilters($(this));
+
+				self.rangeFilter($(this));
+			});
+
+			this.$filters.on('click', '> *', function(e)
+			{
 				e.preventDefault();
 
-				_this._handlePageChange($(this));
+				self.removeFilters($(this).index());
 
+				if (options.method === 'infinite')
+				{
+					self.$results.empty();
+				}
+
+				self.$body.find('[data-select-filter]' + grid).find('option:eq(0)').prop('selected', true);
+
+				self.refresh();
 			});
 
-			this.$pagination.on('click', '[data-throttle]', function(e) {
+			this.$body.on('change', '[data-select-filter]' + grid, function()
+			{
+				self.removeSelectFilter($(this));
+
+				self.selectFilter($(this));
+			});
+
+			this.$pagination.on('click', '[data-page]', function(e)
+			{
 				e.preventDefault();
 
-				_this.opt.throttle += pagi.baseTrottle;
+				self.applyScroll();
 
-				$(_this).trigger('dg:update');
-
+				self.handlePageChange($(this));
 			});
 
-			this.$body.on('submit keyup', '[data-search]', function(e){
+			this.$pagination.on('click', '[data-throttle]', function(e)
+			{
+				e.preventDefault();
 
+				options.throttle += self.pagination.baseThrottle;
+
+				self.refresh();
+			});
+
+			this.$body.on('submit keyup', '[data-search]' + grid, function(e)
+			{
 				e.preventDefault();
 
 				if (e.type === 'submit')
 				{
-					_this._handleSearchOnSubmit($(this));
+					self.handleSearchOnSubmit($(this));
 				}
-				else if (e.type === 'keyup' && e.keyCode !== 13)
+				else if (e.type === 'keyup' && e.keyCode !== 13 && $(this).find('input').val())
 				{
-					_this._handeLiveSearch($(this));
+					self.handleLiveSearch($(this));
 				}
-
 			});
-
 		},
 
-		_applyFilter: function(filters) {
+		/**
+		 * Check hash.
+		 *
+		 * @return void
+		 */
+		checkHash: function()
+		{
+			var path = String(window.location.hash.slice(3));
 
-			var without = [];
+			var routes = path.split('/');
 
-			// Apply filters to our global array.
-			appliedFilters.push(filters);
+			routes = _.compact(routes);
 
-			// Create A New Array Without any livesearch items
-			for (var i = 0; i < appliedFilters.length; i++)
+			this.updateOnHash(routes);
+		},
+
+		/**
+		 * Update on hash change.
+		 *
+		 * @param  array  routes
+		 * @return void
+		 */
+		updateOnHash: function(routes)
+		{
+			// Reset grid
+			this.reset();
+
+			var self = this;
+
+			var curIndex = _.indexOf(routes, self.key);
+
+			var curRoute = '/' + routes.join('/');
+
+			var routes = _.compact(curRoute.split('/grid/'));
+
+			_.each(routes, function(route)
 			{
-				if (appliedFilters[i].type !== 'live')
+				var parsedRoute = route.split('/');
+
+				parsedRoute = _.compact(parsedRoute);
+
+				if (parsedRoute[0] === self.key)
 				{
-					without.push(appliedFilters[i]);
-				}
-			}
+					// Build Array For Sorts
+					var lastItem = parsedRoute[(parsedRoute.length - 1)];
+					var nextItem = parsedRoute[(parsedRoute.length - 2)];
 
-			// Render Our Filters
-			this.$filters.html(this.tmpl['filters']({ filters: without }));
-
-		},
-
-		_handleHashChange: function(hash) {
-
-			if (hash !== route)
-			{
-				route = hash;
-
-				var routeArr = route.split('/');
-
-				if (routeArr[0] === this.key)
-				{
-					this._updateOnHash(routeArr);
-				}
-			}
-
-		},
-
-		_updateOnHash: function(routeArr) {
-
-			// Remove Key From Array
-			routeArr = routeArr.splice(1);
-
-			// Build Array For Sorts
-			var lastItem = routeArr[(routeArr.length - 1)];
-			var nextItem = routeArr[(routeArr.length - 2)];
-
-			// Use test to return true/false
-			if (/page/g.test(lastItem))
-			{
-				// Remove Page From routeArr
-				routeArr = routeArr.splice(0, (routeArr.length - 1));
-				this._extractPageFromRoute(lastItem);
-			}
-
-			if ((/desc/g.test(nextItem)) || (/asc/g.test(nextItem)))
-			{
-				// Remove Sort From routeArr
-				routeArr = routeArr.splice(0, (routeArr.length - 1));
-				this._extractSortsFromRoute(nextItem);
-			}
-			else if (this.opt.defaultSort.hasOwnProperty('column') &&
-					this.opt.defaultSort.hasOwnProperty('direction'))
-			{
-				// Convert Object to string
-				var str = this.opt.defaultSort.column+'-'+this.opt.defaultSort.direction;
-
-				this._extractSortsFromRoute(str);
-			}
-
-			// Build Array For Filters
-			if (routeArr.length !== 0 )
-			{
-				// We Must Reset then rebuild.
-				appliedFilters = [];
-
-				this._extractFiltersFromRoute(routeArr);
-			}
-			else
-			{
-				// Reset Applied Filters if none are set via the hash
-				appliedFilters = [];
-
-				this.$filters.empty();
-			}
-
-			$(this).trigger('dg:update');
-
-		},
-
-		_handleSearchOnSubmit: function(el) {
-
-			var $input = el.find('input');
-			var column = 'all';
-			var rect = [];
-
-			// Make sure we arn't submiting white space only
-			if ( ! $.trim($input.val()).length)
-			{
-				return;
-			}
-
-			this.isSearchActive = true;
-
-			clearTimeout(searchTimeout);
-
-			if (el.find('select').length)
-			{
-				column = el.find('select').val();
-
-				el.find('select').prop('selectedIndex', 0);
-			}
-
-			// If theres a live search item with the same value
-			// we remove the live search item
-			if (this._searchForValue( $input.val(), appliedFilters) > -1)
-			{
-				var idx = this._searchForValue($input.val(), appliedFilters);
-
-				appliedFilters.splice(idx, 1);
-			}
-
-			this._applyFilter({
-				column: column,
-				value: $input.val()
-			});
-
-			// Safety
-			if(this.opt.paginationType === 'infinite')
-			{
-				this.$results.empty();
-			}
-
-			// Reset
-			$input.val('').data('old', '');
-			this._goToPage(1);
-			$(this).trigger('dg:update');
-
-		},
-
-		_handeLiveSearch: function(el) {
-
-			var rect = [];
-			var column = 'all';
-			var _this = this;
-
-			if (isSearchActive)
-			{
-				return;
-			}
-
-			clearTimeout(searchTimeout);
-
-			searchTimeout = setTimeout(function()
-			{
-
-				if (el.find('select').length)
-				{
-					column = el.find('select').val();
-				}
-
-				var $input = el.find('input');
-				var curr = $input.val();
-				var old = $input.data('old');
-
-				// Remove the old term from the applied filters
-				for (var i = 0; i < appliedFilters.length; i++)
-				{
-
-					if(appliedFilters[i].value === old)
+					// Use test to return true/false
+					if (/page/g.test(lastItem))
 					{
-						appliedFilters.splice(i, 1);
-					}
+						// Remove Page From parsedRoute
+						parsedRoute = parsedRoute.splice(0, (parsedRoute.length - 1));
 
-				}
-
-				if (curr.length > 0)
-				{
-					_this._applyFilter({
-						column: column,
-						value: curr,
-						type: 'live'
-					});
-				}
-
-				// Safety
-				if(_this.opt.paginationType === 'infinite')
-				{
-					_this.$results.empty();
-				}
-
-				$input.data('old', curr);
-
-				_this._goToPage(1);
-
-				$(_this).trigger('dg:update');
-
-			}, this.opt.searchTimeout);
-
-		},
-
-		_handlePageChange: function(el) {
-
-			var idx;
-
-			if (this.opt.paginationType === 'single' ||
-				this.opt.paginationType === 'multiple')
-			{
-				idx = el.data('page');
-			}
-
-			if (this.opt.paginationType === 'infinite')
-			{
-				idx = el.data('page');
-
-				el.data('page', ++idx);
-			}
-
-			this._goToPage(idx);
-
-			$(this).trigger('dg:update');
-
-		},
-
-		_setSortDirection: function(el) {
-
-			// Remove All Classes from other sorts
-			$('[data-sort]').not(el).removeClass(this.opt.sortClasses.asc);
-			$('[data-sort]').not(el).removeClass(this.opt.sortClasses.desc);
-
-			if (currentSort.index === 3)
-			{
-				el.removeClass(this.opt.sortClasses.asc);
-
-				el.removeClass(this.opt.sortClasses.desc);
-
-				// reset our sorting index back to 0
-				// and set the column to nothing
-				currentSort.index = 0;
-				currentSort.column = '';
-			}
-			else
-			{
-				// get the oppsite class from which is set
-				var remove = currentSort.direction === 'asc' ? this.opt.sortClasses.desc : this.opt.sortClasses.asc;
-
-				el.removeClass(remove);
-
-				el.addClass(this.opt.sortClasses[currentSort.direction]);
-			}
-
-		},
-
-		_extractPageFromRoute: function(page) {
-
-			var pageArr = page.split('-');
-
-			if (pageArr[1] === '' || pageArr[1] <= 0)
-			{
-				pagi.pageIdx = 1;
-			}
-			else
-			{
-				pagi.pageIdx = parseInt(pageArr[1], 10);
-			}
-
-		},
-
-		_extractFiltersFromClick: function(filters, labels) {
-
-			var _this = this;
-			var rect = [];
-
-			var filtersArr = filters.split(', ');
-
-			for (var i = 0; i < filtersArr.length; i++)
-			{
-				var filter = filtersArr[i].split(':');
-
-				if (_this._searchForValue(filter[1], appliedFilters) > -1)
-				{
-					return true;
-				}
-
-				if (typeof labels !== 'undefined')
-				{
-					var labelsArr = labels.split(', ');
-
-					if (typeof labelsArr[i] !== 'undefined')
-					{
-						var label = labelsArr[i].split(':');
-
-						// Return -1 if no match else return index at match
-						var key = _this._indexOf(filter, label[0]);
-
-						// Map Filter that is equal to the returned key
-						// to the label value for renaming
-						filter[key] = label[1];
-
-						_this._applyFilter({
-							column: filter[0],
-							value: filter[1],
-							mask: (key === 0 ? 'column' : 'value'),
-							maskOrg: label[0]
-						});
+						self.extractPageFromRoute(lastItem);
 					}
 					else
 					{
-						_this._applyFilter({
-							column: filter[0],
-							value: filter[1]
-						});
+						self.pagination.pageIdx = 1;
 					}
-				}
-				else
-				{
-					_this._applyFilter({
-						column: filter[0],
-						value: filter[1]
-					});
-				}
-			}
 
-			$(this).trigger('dg:update');
-
-			this._goToPage(1);
-
-		},
-
-		_extractSortsFromClick: function(el, sort) {
-
-			var sortArr = sort.split(':');
-			var direction = 'asc';
-
-			if (currentSort.column === sortArr[0])
-			{
-				currentSort.index++;
-			}
-			else
-			{
-				// Column Changed so set to first order
-				currentSort.index = 1;
-			}
-
-			if (typeof sortArr[1] !== 'undefined')
-			{
-
-				direction = sortArr[1];
-
-			}
-
-			if (sortArr[0] === currentSort.column)
-			{
-
-				if (currentSort.direction === 'asc' && currentSort.index !== 3)
-				{
-					currentSort.direction = 'desc';
-				}
-				else if (currentSort.index !== 3)
-				{
-					currentSort.direction = 'asc';
-				}
-				else
-				{
-					currentSort.direction = '';
-				}
-			}
-			else
-			{
-				currentSort.column = sortArr[0];
-				currentSort.direction = direction;
-			}
-
-			this._setSortDirection(el);
-			$(this).trigger('dg:update');
-
-		},
-
-		_extractFiltersFromRoute: function(routeArr) {
-
-			var _this = this;
-
-			var labels = $('[data-label]'+this.grid);
-
-			for (var i = 0; i < routeArr.length; i++)
-			{
-
-				var filters = routeArr[i].split('-');
-
-				for (var x = 0; x < labels.length; x++)
-				{
-
-					if( $(labels[x]).data('label').indexOf( filters[0] ) !== -1 ||
-						$(labels[x]).data('label').indexOf( filters[1] ) !== -1 )
+					if ((/desc/g.test(nextItem)) || (/asc/g.test(nextItem)))
 					{
-						var matchedLabel = $(labels[x]).data('label').split(':');
-						var key = _this._indexOf(filters, matchedLabel[0]);
+						// Remove Sort From parsedRoute
+						parsedRoute = parsedRoute.splice(0, (parsedRoute.length - 1));
 
-						// Map Filter that is equal to the returned key
-						// to the label value for renaming
-						filters[key] = matchedLabel[1];
-
-						// Check to make sure filter isn't already set.
-						if (_this._searchForValue( filters[1], appliedFilters) === -1)
-						{
-							// if its not already set, lets set the filter
-							_this._applyFilter({
-								column: filters[0],
-								value: filters[1],
-								mask: (key === 0 ? 'column' : 'value'),
-								maskOrg: matchedLabel[0]
-							});
-						}
-
+						self.extractSortsFromRoute(nextItem);
 					}
-				}
-
-				// Check to  make sure filter isn't already set
-				if (_this._searchForValue( filters[1], appliedFilters) === -1)
-				{
-					// If its not already set, lets set the filter
-					_this._applyFilter({
-						column: routeArr[i].split('-')[0],
-						value: routeArr[i].split('-')[1],
-					});
-				}
-
-			}
-
-		},
-
-		_searchForValue: function(key, arr) {
-
-			for (var i = 0; i < arr.length; i++)
-			{
-				if ((arr[i].value === key) ||
-					(arr[i].maskOrg === key))
-				{
-					return i;
-				}
-			}
-
-			return -1;
-
-		},
-
-		_indexOf: function(array, item) {
-
-			if (this._checkIE() < 9)
-			{
-				if (array === null)
-				{
-					return -1;
-				}
-
-				for (var i = 0; i < array.length; i++)
-				{
-					if (array[i] === item)
+					else if ((/desc/g.test(lastItem)) || (/asc/g.test(lastItem)))
 					{
-						return i;
+						// Remove Sort From parsedRoute
+						parsedRoute = parsedRoute.splice(0, (parsedRoute.length - 1));
+
+						self.extractSortsFromRoute(lastItem);
+					}
+					else if (self.opt.sort.hasOwnProperty('column') &&
+							self.opt.sort.hasOwnProperty('direction'))
+					{
+						// Convert Object to string
+						var str = self.opt.sort.column + self.opt.delimiter + self.opt.sort.direction;
+
+						self.extractSortsFromRoute(str);
+					}
+					else
+					{
+						self.currentSort.direction = '';
+						self.currentSort.column = '';
+					}
+
+					// Build Array For Filters
+					if (parsedRoute.length !== 0 )
+					{
+						// We Must Reset then rebuild.
+						self.appliedFilters = [];
+
+						self.extractFiltersFromRoute(parsedRoute);
+					}
+					else
+					{
+						// Reset Applied Filters if none are set via the hash
+						self.appliedFilters = [];
+
+						self.$filters.empty();
 					}
 				}
+			});
 
-				return -1;
-			}
+			var routePath = routes.join('/grid/'),
+				currentHash = String(window.location.hash.slice(3));
 
-			return array.indexOf(item);
-
-		},
-
-		_extractSortsFromRoute: function(lastItem) {
-
-			var sort = lastItem.split('-');
-
-			// Setup Sort and put index at 1
-			if (currentSort.column !== sort[0])
+			if (currentHash.indexOf(this.key) === -1)
 			{
-				currentSort.index = 1;
+				if (this.opt.sort.hasOwnProperty('column') && this.opt.sort.hasOwnProperty('direction'))
+				{
+					var str = this.opt.sort.column+this.opt.delimiter+this.opt.sort.direction;
+
+					this.extractSortsFromRoute(str);
+				}
 			}
 
-			currentSort.column = sort[0];
-			currentSort.direction = sort[1];
-
-			this._setSortDirection($('[data-sort="'+sort[0]+'"]'+this.grid));
-
+			this.refresh();
 		},
 
-		_updatedCurrentHash: function() {
+		/**
+		 * Push hash state.
+		 *
+		 * @return void
+		 */
+		pushHash: function()
+		{
+			var self = this,
+				base = '',
+				parsedRoute = '',
+				key = '',
+				appended = false,
+				path = '',
+				finalPath = '',
+				currentRoutes = '',
+				routesArr = '',
+				rtIndex = '',
+				currentHash = window.location.hash.slice(3);
 
-			// #!/grid/column-value/column-sort
-			var base    = '!/'+this.key;
-			var filters = this._buildFilterFragment();
-			var sort    = this._buildSortFragment();
-			var page    = this._buildPageFragment();
+			// #!/grid/key/filters/sorts/page
+			var filters = self.buildFilterFragment(),
+				sort    = self.buildSortFragment(),
+				page    = self.buildPageFragment();
 
 			if (filters.length > 1)
 			{
@@ -755,202 +469,1098 @@
 				base += sort;
 			}
 
-			if (pagi.pageIdx >= 1)
+			if (self.pagination.pageIdx > 1 && page !== undefined)
 			{
 				base += page;
 			}
 
-			if (this._checkIE() <= 9)
+			if ( ! filters.length > 1 || ! sort.length > 1 || ! self.pagination.pageIdx > 1 && base !== '')
 			{
-				window.location.hash = base;
+				base = '';
 			}
 			else
 			{
-				var defaultURI = window.location.protocol + '//' + window.location.host + window.location.pathname;
+				base = base.length > 1 ? this.key + base : '';
+			}
 
+			currentRoutes = String(window.location.hash.slice(3));
+			routesArr = _.compact(currentRoutes.split('grid/'));
+			rtIndex = -1;
 
-				if( window.location.href.indexOf('?') > -1 )
+			_.each(routesArr, function(route)
+			{
+				parsedRoute = route.split('/');
+				key = parsedRoute[0];
+
+				// hash exists
+				if (key === self.key)
 				{
-					console.log('true');
-					var indexOfQuery = window.location.href.indexOf('?');
-					var indexOfHash = window.location.href.indexOf('#');
+					// keep track of hash index for building the new hash
+					rtIndex = _.indexOf(routesArr, route);
 
-					if( indexOfHash > -1 ) {
-						defaultURI += window.location.href.slice( indexOfQuery, indexOfHash);
-					}else{
-						defaultURI += window.location.href.substr(indexOfQuery);
+					// remove existing hash
+					routesArr = _.without(routesArr, route);
+				}
+			});
+
+			routesArr = _.compact(routesArr);
+
+			for(var i = 0; i < routesArr.length; i++)
+			{
+				if (i === rtIndex)
+				{
+					finalPath += base !== '' ? 'grid/' + base : '';
+
+					appended = true;
+				}
+
+				finalPath += 'grid/' + routesArr[i];
+			}
+
+			finalPath += ! appended && base !== '' ? 'grid/' + base : '';
+
+			path = _.isEmpty(routesArr) ? base : finalPath;
+
+			if (path.length > 1 && path.substr(0, 4) !== 'grid')
+			{
+				path = 'grid/' + path;
+			}
+
+			if (path !== '')
+			{
+				path = path.replace('//', '/');
+
+				if (currentHash !== path)
+				{
+					window.history.pushState(null, null, '#!/' + path);
+				}
+			}
+			else
+			{
+				if (currentHash !== '')
+				{
+					var defaultURI = window.location.protocol + '//' + window.location.host + window.location.pathname;
+
+					window.history.pushState(null, null, defaultURI);
+				}
+			}
+		},
+
+		/**
+		 * Apply a filter.
+		 *
+		 * @param  object  filter
+		 * @return void
+		 */
+		applyFilter: function(filters)
+		{
+			if (this.searchForFilter(filters) === -1)
+			{
+				var without = [],
+					exists  = false;
+
+				_.each(this.appliedFilters, function(filter)
+				{
+					if (JSON.stringify(filter) === JSON.stringify(filters))
+					{
+						exists = true;
+					}
+				});
+
+				if ( ! exists)
+				{
+					// Apply filters to our global array.
+					this.appliedFilters.push(filters);
+				}
+
+				// Create a new array without livesearch items
+				for (var i = 0; i < this.appliedFilters.length; i++)
+				{
+					if (this.appliedFilters[i].type !== 'live')
+					{
+						without.push(this.appliedFilters[i]);
 					}
 				}
 
-				window.history.pushState(null, null, defaultURI +'#'+ base);
+				// Render our filters
+				this.$filters.html(this.tmpl['filters']({ filters: without }));
+			}
+		},
+
+		/**
+		 * Remove filter at index.
+		 *
+		 * @param  int  idx
+		 * @return void
+		 */
+		removeFilters: function(idx)
+		{
+			var grid = this.grid;
+
+			if (this.appliedFilters[idx].type === 'range')
+			{
+				this.$body.find('[data-range-filter="' + this.appliedFilters[idx].column + '"]' + grid + ',' + grid + ' [data-range-filter="' + this.appliedFilters[idx].column + '"]').val('');
 			}
 
+			this.appliedFilters.splice(idx, 1);
+
+			this.$filters.html(this.tmpl['filters']({ filters: this.appliedFilters }));
+
+			this.goToPage(1);
 		},
 
-		_buildPageFragment: function() {
+		/**
+		 * Exctracts the current page from the route.
+		 *
+		 * @param  string  page
+		 * @return void
+		 */
+		extractPageFromRoute: function(page)
+		{
+			var pageArr = page.split(this.opt.delimiter);
 
-			return '/page-'+pagi.pageIdx;
-
-		},
-
-		_buildFilterFragment: function() {
-
-			var filterFragment = '';
-
-			for (var i = 0; i < appliedFilters.length; i++)
+			if (pageArr[1] === '' || pageArr[1] <= 0)
 			{
+				this.pagination.pageIdx = 1;
+			}
+			else
+			{
+				this.pagination.pageIdx = parseInt(pageArr[1], 10);
+			}
+		},
 
-				if (appliedFilters[i].type !== 'live')
+		/**
+		 * Handles the page change from the pagination.
+		 *
+		 * @param  object  el
+		 * @return void
+		 */
+		handlePageChange: function(el)
+		{
+			var idx;
+
+			switch (this.opt.method)
+			{
+				case 'single':
+				case 'group':
+
+					idx = el.data('page');
+
+				break;
+
+				case 'infinite':
+
+					idx = el.data('page');
+
+					el.data('page', ++idx);
+
+				break;
+			}
+
+			this.goToPage(idx);
+
+			this.refresh();
+		},
+
+		/**
+		 * Navigates to the given page.
+		 *
+		 * @param  int  page
+		 * @return void
+		 */
+		goToPage: function(page)
+		{
+			this.pagination.pageIdx = isNaN(page = parseInt(page, 10)) ? 1 : page;
+		},
+
+		/**
+		 * Handles the search on submit.
+		 *
+		 * @param  object  el
+		 * @return void
+		 */
+		handleSearchOnSubmit: function(el)
+		{
+			var $input = el.find('input'),
+				column = 'all',
+				rect = [];
+
+			// Make sure we arn't submiting white space only
+			if ( ! $.trim($input.val()).length) return;
+
+			this.isSearchActive = true;
+
+			clearTimeout(searchTimeout);
+
+			var searchSelect = el.find('select:not([data-select-filter])');
+
+			if (searchSelect.length)
+			{
+				column = searchSelect.val();
+
+				searchSelect.prop('selectedIndex', 0);
+			}
+
+			// If theres a live search item with the same value
+			// we remove the live search item
+			if (this.searchForValue( $input.val(), this.appliedFilters) > -1)
+			{
+				var idx = this.searchForValue($input.val(), this.appliedFilters);
+
+				this.appliedFilters.splice(idx, 1);
+			}
+
+			this.applyFilter({
+				column: column,
+				value: $('<p/>').text($input.val()).html()
+			});
+
+			// Clear results for infinite grids
+			if (this.opt.method === 'infinite') this.$results.empty();
+
+			// Reset
+			$input.val('').data('old', '');
+
+			this.goToPage(1);
+
+			this.refresh();
+		},
+
+		/**
+		 * Handles the live search.
+		 *
+		 * @param  object  el
+		 * @return void
+		 */
+		handleLiveSearch: function(el)
+		{
+			var rect = [],
+				column = 'all',
+				self = this;
+
+			if (isSearchActive) return;
+
+			clearTimeout(searchTimeout);
+
+			searchTimeout = setTimeout(function()
+			{
+				var searchSelect = el.find('select:not([data-select-filter])');
+
+				if (searchSelect.length)
 				{
+					column = searchSelect.val();
+				}
 
-					if (appliedFilters[i].mask === 'column')
+				var $input = el.find('input'),
+					curr = $input.val(),
+					old = $input.data('old');
+
+				// Remove the old term from the applied filters
+				for (var i = 0; i < self.appliedFilters.length; i++)
+				{
+					if (self.appliedFilters[i].value === old && self.appliedFilters[i] !== undefined && old !== undefined)
 					{
-						filterFragment += '/'+appliedFilters[i].maskOrg+'-'+appliedFilters[i].value;
+						self.appliedFilters.splice(i, 1);
 					}
-					else if (appliedFilters[i].mask === 'value')
+				}
+
+				if (curr.length > 0)
+				{
+					self.applyFilter({
+						column: column,
+						value: $('<p/>').text(curr).html(),
+						type: 'live'
+					});
+				}
+
+				// Clear results for infinite grids
+				if (self.opt.method === 'infinite')
+				{
+					self.$results.empty();
+				}
+
+				$input.data('old', curr);
+
+				self.goToPage(1);
+
+				self.refresh();
+
+			}, this.opt.searchTimeout);
+		},
+
+		/**
+		 * Sets the sort direction on the given element.
+		 *
+		 * @param  object  el
+		 * @return void
+		 */
+		setSortDirection: function(el)
+		{
+			var grid = this.grid,
+				options = this.opt,
+				$el = $('[data-sort]' + grid + ',' + grid + ' [data-sort]'),
+				ascClass = options.sortClasses.asc,
+				descClass = options.sortClasses.desc;
+
+			// Remove All Classes from other sorts
+			$el.not(el).removeClass(ascClass);
+			$el.not(el).removeClass(descClass);
+
+			if (this.currentSort.index === 3)
+			{
+				el.removeClass(ascClass);
+
+				el.removeClass(descClass);
+
+				// reset our sorting index back to 0
+				// and set the column to nothing
+				this.currentSort.index = 0;
+				this.currentSort.column = '';
+			}
+			else
+			{
+				// get the oppsite class from which is set
+				var remove = this.currentSort.direction === 'asc' ? descClass : ascClass;
+
+				el.removeClass(remove);
+
+				el.addClass(options.sortClasses[this.currentSort.direction]);
+			}
+		},
+
+		/**
+		 * Extracts range filters
+		 *
+		 * @param  object  filter
+		 * @return void
+		 */
+		extractRangeFilters: function(filter)
+		{
+			var curFilter = filter.find('[data-range-filter]').data('range-filter') || filter.data('range-filter'),
+				startFilterEl = this.$body.find('[data-range-start][data-range-filter="' + curFilter + '"]' + this.grid + ',' + this.grid + ' [data-range-start][data-range-filter="' + curFilter + '"]'),
+				endFilterEl   = this.$body.find('[data-range-end][data-range-filter="' + curFilter + '"]' + this.grid + ',' + this.grid + ' [data-range-end][data-range-filter="' + curFilter + '"]');
+
+			var startRangeFilter = startFilterEl.data('range-filter'),
+				startVal         = startFilterEl.val(),
+				endVal           = endFilterEl.val(),
+				startLabel       = startFilterEl.data('label'),
+				dateFormat       = startFilterEl.data(this.opt.dateFormatAttribute),
+				dbFormat         = 'YYYY-MM-DD',
+				column           = startRangeFilter,
+				from             = startVal,
+				to               = endVal,
+				filterData;
+
+			if (dateFormat !== null && dateFormat !== undefined && window.moment !== undefined)
+			{
+				from   = moment(from).format(dbFormat);
+				to     = moment(to).format(dbFormat);
+			}
+
+			var filterData = {
+				column: startRangeFilter,
+				from: from,
+				to: to,
+				label: startLabel,
+				type: 'range'
+			}
+
+			this.applyFilter(filterData);
+
+			this.refresh();
+
+			this.goToPage(1);
+		},
+
+		/**
+		 * Extracts filters from click.
+		 *
+		 * @param  string  filters
+		 * @return void
+		 */
+		extractFiltersFromClick: function(filterEl)
+		{
+			var filtersArr = $(filterEl).data('filter').split(', '),
+				labels = $(filterEl).data('label'),
+				filter,
+				operator,
+				filterData,
+				labelsArr,
+				index,
+				label,
+				key;
+
+			for (var i = 0; i < filtersArr.length; i++)
+			{
+				filter = filtersArr[i].split(':');
+
+				if (/>|<|!=|=|<=|>=/.test(filter[1]))
+				{
+					operator = filter[1];
+
+					filter.splice(1, 1);
+				}
+
+				filterData = {
+					column: filter[0],
+					value: filter[1],
+					operator: operator
+				};
+
+				if (this.searchForFilter(filterData) !== -1)
+				{
+					return true;
+				}
+
+				if (typeof labels !== 'undefined')
+				{
+					labelsArr = labels.split(', ');
+
+					if (index !== -1)
 					{
-						filterFragment += '/'+appliedFilters[i].column+'-'+appliedFilters[i].maskOrg;
+						label = labelsArr[i].split(':');
+
+						filterData = {
+							column: filter[0],
+							value: $('<p/>').text(filter[1]).html(),
+							colMask: label[1],
+							valMask: label[2],
+							operator: operator
+						};
+
+						this.applyFilter(filterData);
 					}
 					else
 					{
-						filterFragment += '/'+appliedFilters[i].column+'-'+appliedFilters[i].value;
+						filterData = {
+							column: filter[0],
+							value: $('<p/>').text(filter[1]).html(),
+							operator: operator
+						};
+
+						this.applyFilter(filterData);
 					}
-
-				}
-
-			}
-
-			return filterFragment;
-
-		},
-
-		_buildSortFragment: function() {
-
-			var sortFragment = '';
-
-			if (currentSort.column !== null && currentSort.direction !== '')
-			{
-				sortFragment += '/'+currentSort.column+'-'+currentSort.direction;
-				return sortFragment;
-			}
-
-			return '/';
-
-		},
-
-		_ajaxFetchResults: function() {
-
-			var _this = this;
-
-			$.ajax({
-				url: _this.source,
-				dataType : 'json',
-				data: _this._buildAjaxURI()
-			})
-			.done(function(response) {
-
-				if (pagi.pageIdx > response.pages_count)
-				{
-					pagi.pageIdx = response.pages_count;
-					$(_this).trigger('dg:update');
-					return false;
-				}
-
-				pagi.filteredCount = response.filtered_count;
-				pagi.totalCount = response.total_count;
-
-				if (_this.opt.paginationType !== 'infinite')
-				{
-					_this.$results.empty();
-				}
-
-				if (_this.opt.paginationType === 'single' || _this.opt.paginationType === 'multiple')
-				{
-					_this.$results.html(_this.tmpl['results'](response));
 				}
 				else
 				{
-					_this.$results.append(_this.tmpl['results'](response));
+					filterData = {
+						column: filter[0],
+						value: $('<p/>').text(filter[1]).html(),
+						operator: operator
+					};
+
+					this.applyFilter(filterData);
 				}
+			}
 
-				_this.$pagination.html(_this.tmpl['pagination'](_this._buildPagination(response)));
+			this.refresh();
 
-				if ( ! response.results.length)
-				{
-					_this.$results.html(_this.tmpl['empty']());
-				}
-
-				_this._updatedCurrentHash();
-				_this._callback();
-
-			})
-			.error(function(jqXHR, textStatus, errorThrown) {
-
-				console.log('_ajaxFetchResults' + jqXHR.status, errorThrown);
-
-			});
-
+			this.goToPage(1);
 		},
 
-		_buildAjaxURI: function() {
+		/**
+		 * Extracts sorts from click.
+		 *
+		 * @param  object  el
+		 * @param  string  sort
+		 * @return void
+		 */
+		extractSortsFromClick: function(el, sort)
+		{
+			var sortArr = sort.split(':'),
+				direction = 'asc';
 
-			var params = {};
-				params.filters      = [];
-				params.page         = pagi.pageIdx;
-				params.dividend     = this.opt.dividend;
-				params.threshold    = this.opt.threshold;
-				params.throttle     = this.opt.throttle;
-
-			for (var i = 0; i < appliedFilters.length; i++)
+			if (this.currentSort.column === sortArr[0])
 			{
-				var filter = {};
+				this.currentSort.index++;
+			}
+			else
+			{
+				this.currentSort.index = 1;
+			}
 
-				if ('mask' in appliedFilters[i])
+			if (typeof sortArr[1] !== 'undefined') direction = sortArr[1];
+
+			if (sortArr[0] === this.currentSort.column)
+			{
+				if (this.currentSort.direction === 'asc' && this.currentSort.index !== 3)
 				{
+					this.currentSort.direction = 'desc';
+				}
+				else if (this.currentSort.index !== 3)
+				{
+					this.currentSort.direction = 'asc';
+				}
+				else
+				{
+					this.currentSort.direction = '';
+				}
+			}
+			else
+			{
+				this.currentSort.column = sortArr[0];
 
-					if (appliedFilters[i].mask === 'column')
+				this.currentSort.direction = direction;
+			}
+
+			this.setSortDirection(el);
+
+			this.refresh();
+		},
+
+		/**
+		 * Extracts filters from route.
+		 *
+		 * @param  array  routeArr
+		 * @return void
+		 */
+		extractFiltersFromRoute: function(routeArr)
+		{
+			var self = this,
+				grid = this.grid,
+				labels,
+				filters;
+
+			routeArr = routeArr.splice(1);
+
+			this.appliedFilters = [];
+
+			labels = $('[data-label][data-filter]' + grid + ',' + grid + ' [data-label][data-filter]');
+
+			for (var i = 0; i < routeArr.length; i++)
+			{
+				filters = routeArr[i].split(this.opt.delimiter);
+
+				for (var x = 0; x < labels.length; x++)
+				{
+					var label  = $(labels[x]).data('label').split(', '),
+						filter = $(labels[x]).data('filter').split(', ');
+
+					for (var j = 0; j < label.length; j++)
 					{
-						filter[appliedFilters[i].maskOrg] = appliedFilters[i].value;
-						params.filters.push(filter);
+						if (filter[j].indexOf(filters[0]) !== -1 && filter[j].indexOf(filters[1]) !== -1)
+						{
+							var	matchedLabel = label[j].split(':');
+
+							// Check for contained operators
+							var hasOperator = false;
+
+							if (/>|<|!=|=|<=|>=/.test(filters[1]))
+							{
+								hasOperator = true;
+							}
+
+							if (hasOperator)
+							{
+								var operator = filters[1];
+
+								var filterData = {
+									column: filters[0],
+									value: $('<p/>').text(filters[2]).html(),
+									operator: operator,
+									colMask: matchedLabel[1],
+									valMask: matchedLabel[2]
+								};
+
+								self.applyFilter(filterData);
+							}
+							else
+							{
+								var filterData = {
+									column: filters[0],
+									value: $('<p/>').text(filters[1]).html(),
+									colMask: matchedLabel[1],
+									valMask: matchedLabel[2]
+								};
+
+								self.applyFilter(filterData);
+							}
+						}
+					}
+				}
+
+				// Check to  make sure filter isn't already set
+				if (self.searchForValue( filters[1], self.appliedFilters) === -1)
+				{
+					var curFilter = filters[0];
+
+					var startFilterEl = this.$body.find('[data-range-start][data-range-filter="' + curFilter + '"]' + grid + ',' + grid + ' [data-range-start][data-range-filter="' + curFilter + '"]'),
+						endFilterEl   = this.$body.find('[data-range-end][data-range-filter="' + curFilter + '"]' + grid + ',' + grid + ' [data-range-end][data-range-filter="' + curFilter + '"]');
+
+					var start      = startFilterEl.data('range-filter'),
+						startLabel = startFilterEl.data('label'),
+						dateFormat = startFilterEl.data(this.opt.dateFormatAttribute),
+						dbFormat   = 'YYYY-MM-DD',
+						column     = routeArr[i].split(this.opt.delimiter)[0],
+						from       = routeArr[i].split(this.opt.delimiter)[1],
+						to         = routeArr[i].split(this.opt.delimiter)[2];
+
+					if (dateFormat !== null && dateFormat !== undefined && window.moment !== undefined)
+					{
+						from = moment(from).format(dbFormat);
+						to   = moment(to).format(dbFormat);
+					}
+
+					if (window.moment !== undefined && dateFormat)
+					{
+						startFilterEl.val(moment(from).format(dateFormat));
+						endFilterEl.val(moment(to).format(dateFormat));
 					}
 					else
 					{
+						startFilterEl.val(from);
+						endFilterEl.val(to);
+					}
 
-						if (appliedFilters[i].column === 'all')
+					if (curFilter === start)
+					{
+						var filterData = {
+							column: column,
+							from: from,
+							to: to,
+							label: startLabel,
+							type: 'range'
+						};
+
+						self.applyFilter(filterData);
+					}
+					else
+					{
+						var filterEl = $('[data-filter="' +  filters.join(self.opt.delimiter) + '"]');
+
+						if (routeArr[i].split(this.opt.delimiter)[2] !== undefined)
 						{
-							params.filters.push(appliedFilters[i].maskOrg);
+							var column     = routeArr[i].split(this.opt.delimiter)[0],
+								operator   = routeArr[i].split(this.opt.delimiter)[1],
+								value      = routeArr[i].split(this.opt.delimiter)[2];
+
+							var filterData = {
+								column: column,
+								value: $('<p/>').text(value).html(),
+								operator: operator
+							};
+
+							self.applyFilter(filterData);
 						}
 						else
 						{
-							filter[appliedFilters[i].column] = appliedFilters[i].maskOrg;
-							params.filters.push(filter);
+							var filterData = {
+								column: routeArr[i].split(this.opt.delimiter)[0],
+								value: $('<p/>').text(routeArr[i].split(this.opt.delimiter)[1]).html(),
+							};
+
+							self.applyFilter(filterData);
+						}
+					}
+				}
+			}
+		},
+
+		/**
+		 * Search for the given value.
+		 *
+		 * @param  string  key
+		 * @param  array   arr
+		 * @return int
+		 */
+		searchForValue: function(key, arr)
+		{
+			for (var i = 0; i < arr.length; i++)
+			{
+				if ((arr[i].value === key) || (arr[i].maskOrg === key))
+				{
+					return i;
+				}
+			}
+
+			return -1;
+		},
+
+		/**
+		 * Search for the given filter.
+		 *
+		 * @param  object  filter
+		 * @return int
+		 */
+		searchForFilter: function(filter)
+		{
+			var filters = this.appliedFilters;
+
+			for (var i = 0; i < filters.length; i++)
+			{
+				if (filters[i].value === filter.value &&
+					filters[i].operator === filter.operator &&
+					(filters[i].column === filter.column || filters[i].maskOrg === filter.column) &&
+					filters[i].type === filter.type &&
+					filters[i].from === filter.from &&
+					filters[i].to === filter.to)
+				{
+					return i;
+				}
+			}
+
+			return -1;
+		},
+
+		/**
+		 * Returns the item index from an array.
+		 *
+		 * @param  array   array
+		 * @param  string  item
+		 * @return int
+		 */
+		_indexOf: function(array, item)
+		{
+			if (this.checkIE() < 9)
+			{
+				if (array === null) return -1;
+
+				for (var i = 0; i < array.length; i++)
+				{
+					if (array[i] === item) return i;
+				}
+
+				return -1;
+			}
+
+			return array.indexOf(item);
+		},
+
+		/**
+		 * Extracts sorts from route.
+		 *
+		 * @param  array  routeArr
+		 * @return void
+		 */
+		extractSortsFromRoute: function(lastItem)
+		{
+			var sort = lastItem.split(this.opt.delimiter);
+
+			var grid = this.grid;
+
+			var column = sort[0];
+
+			var direction = sort[1];
+
+			// Setup Sort and put index at 1
+			if (this.currentSort.column !== column)
+			{
+				this.currentSort.index = 1;
+			}
+
+			this.currentSort.column = column;
+
+			this.currentSort.direction = direction;
+
+			var el = $('[data-sort^="' + column + '"]' + grid + ',' + grid + ' [data-sort="' + column + '"]');
+
+			this.setSortDirection(el);
+		},
+
+		/**
+		 * Build page fragment.
+		 *
+		 * @return string
+		 */
+		buildPageFragment: function()
+		{
+			if (this.pagination.pageIdx !== 1 && this.opt.method !== 'infinite')
+			{
+				return '/page' + this.opt.delimiter + this.pagination.pageIdx + '/';
+			}
+
+			return;
+		},
+
+		/**
+		 * Build filter fragment.
+		 *
+		 * @return string
+		 */
+		buildFilterFragment: function()
+		{
+			var filterFragment = '';
+
+			var delimiter = this.opt.delimiter;
+
+			for (var i = 0; i < this.appliedFilters.length; i++)
+			{
+				var index = this.appliedFilters[i];
+
+				if (index.type !== 'live')
+				{
+					var parsedValue = $('<p/>').html(index.value).text();
+
+					if (index.mask === 'column')
+					{
+						if (index.operator !== '' && index.operator !== undefined)
+						{
+							filterFragment += '/' + index.maskOrg + delimiter + index.operator + delimiter + parsedValue;
+						}
+						else
+						{
+							filterFragment += '/' + index.maskOrg + delimiter + parsedValue;
+						}
+					}
+					else if (index.mask === 'value')
+					{
+						if (index.operator !== '' && index.operator !== undefined)
+						{
+							filterFragment += '/' + index.maskOrg + delimiter + index.operator + delimiter + parsedValue;
+						}
+						else
+						{
+							filterFragment += '/' + index.column + delimiter + index.maskOrg;
+						}
+					}
+					else if (index.type === 'range')
+					{
+						filterFragment += '/' + index.column + delimiter + index.from + delimiter + index.to;
+					}
+					else if (index.operator !== undefined && index.operator !== '')
+					{
+						filterFragment += '/' + index.column + delimiter + index.operator + delimiter + parsedValue;
+					}
+					else
+					{
+						filterFragment += '/' + index.column + delimiter + parsedValue;
+					}
+				}
+			}
+
+			return filterFragment + '/';
+		},
+
+		/**
+		 * Build sort fragment.
+		 *
+		 * @return string
+		 */
+		buildSortFragment: function()
+		{
+			var sortFragment = '';
+
+			var currentColumn = this.currentSort.column;
+
+			var currentDirection = this.currentSort.direction;
+
+			if (currentColumn !== null && currentDirection !== '')
+			{
+				if (currentColumn !== this.opt.sort.column || currentDirection !== this.opt.sort.direction)
+				{
+					sortFragment += '/' + currentColumn + this.opt.delimiter + currentDirection;
+
+					return sortFragment + '/';
+				}
+			}
+
+			return '/';
+		},
+
+		/**
+		 * Grabs all the results from the server.
+		 *
+		 * @return void
+		 */
+		fetchResults: function()
+		{
+			var self = this;
+
+			this.showLoader();
+
+			$.ajax({
+				url: self.source,
+				dataType : 'json',
+				data: self.buildAjaxURI()
+			})
+			.done(function(response)
+			{
+				if (self.pagination.pageIdx > response.pages_count)
+				{
+					self.pagination.pageIdx = response.pages_count;
+
+					self.refresh();
+
+					return false;
+				}
+
+				self.pagination.filteredCount = response.filtered_count;
+
+				self.pagination.totalCount = response.total_count;
+
+				// Keep infinite results to append load more
+				if (self.opt.method !== 'infinite')
+				{
+					self.$results.empty();
+				}
+
+				if (self.opt.method === 'single' || self.opt.method === 'single')
+				{
+					self.$results.html(self.tmpl['results'](response));
+				}
+				else
+				{
+					self.$results.append(self.tmpl['results'](response));
+				}
+
+				self.$pagination.html(self.tmpl['pagination'](self.buildPagination(response)));
+
+				if ( ! response.results.length)
+				{
+					self.$results.html(self.tmpl['empty']());
+				}
+
+				self.hideLoader();
+
+				self.callback();
+
+				$(self).trigger('dg:hashchange');
+			})
+			.error(function(jqXHR, textStatus, errorThrown)
+			{
+
+				console.log('fetchResults' + jqXHR.status, errorThrown);
+
+			});
+		},
+
+		/**
+		 * Builds the ajax uri.
+		 *
+		 * @return string
+		 */
+		buildAjaxURI: function()
+		{
+			var self = this;
+
+			var params = {};
+				params.filters   = [];
+				params.page      = this.pagination.pageIdx;
+				params.dividend  = this.opt.dividend;
+				params.threshold = this.opt.threshold;
+				params.throttle  = this.opt.throttle;
+
+			for (var i = 0; i < this.appliedFilters.length; i++)
+			{
+				var filter = {};
+
+				if ('mask' in this.appliedFilters[i])
+				{
+					if (this.appliedFilters[i].mask === 'column')
+					{
+						if (this.appliedFilters[i].operator !== undefined && this.appliedFilters[i].operator !== '')
+						{
+							filter[this.appliedFilters[i].maskOrg] =
+								'|' +
+								this.appliedFilters[i].operator +
+								$('<p/>').html(this.appliedFilters[i].value).text() +
+								'|';
+						}
+						else if (this.appliedFilters[i].type === 'range')
+						{
+							if (window.moment !== undefined)
+							{
+								var dbFormat = 'YYYY-MM-DD',
+									from     = moment(this.appliedFilters[i].from).format(dbFormat),
+									to       = moment(this.appliedFilters[i].to).format(dbFormat);
+							}
+							else
+							{
+								var from = this.appliedFilters[i].from,
+									to   = this.appliedFilters[i].to;
+							}
+
+							filter[this.appliedFilters[i].maskOrg] = '|' + '>' + from + '|' + '<' + to +'|';
+						}
+						else
+						{
+							filter[this.appliedFilters[i].maskOrg] = $('<p/>').html(this.appliedFilters[i].value).text();
 						}
 
+						params.filters.push(filter);
+					}
+					else
+					{
+						if (this.appliedFilters[i].column === 'all')
+						{
+							params.filters.push(this.appliedFilters[i].maskOrg);
+						}
+						else
+						{
+							if (this.appliedFilters[i].operator !== undefined && this.appliedFilters[i].operator !== null)
+							{
+								filter[this.appliedFilters[i].column] = '|' + this.appliedFilters[i].operator + this.appliedFilters[i].maskOrg + '|';
+								params.filters.push(filter);
+							}
+							else
+							{
+								filter[this.appliedFilters[i].column] = this.appliedFilters[i].maskOrg;
+								params.filters.push(filter);
+							}
+						}
 					}
 				}
 				else
 				{
-					if (appliedFilters[i].column === 'all')
+					if (this.appliedFilters[i].column === 'all')
 					{
-						params.filters.push(appliedFilters[i].value);
+						params.filters.push($('<p/>').html(this.appliedFilters[i].value).text());
 					}
 					else
 					{
-						filter[appliedFilters[i].column] = appliedFilters[i].value;
+
+						if (this.appliedFilters[i].operator !== undefined && this.appliedFilters[i].operator !== '')
+						{
+							filter[this.appliedFilters[i].column] =
+								'|' +
+								this.appliedFilters[i].operator +
+								$('<p/>').html(this.appliedFilters[i].value).text() +
+								'|';
+						}
+						else if (this.appliedFilters[i].type === 'range')
+						{
+							if (window.moment !== undefined && /[0-9]{4}-[0-9]{2}-[0-9]{2}/g.test(this.appliedFilters[i].from))
+							{
+								var dbFormat = 'YYYY-MM-DD',
+									from     = moment(this.appliedFilters[i].from).format(dbFormat),
+									to       = moment(this.appliedFilters[i].to).format(dbFormat);
+							}
+							else
+							{
+								var from = this.appliedFilters[i].from,
+									to   = this.appliedFilters[i].to;
+							}
+
+							filter[this.appliedFilters[i].column] = '|' + '>' + from + '|' + '<' + to +'|';
+						}
+						else
+						{
+							filter[this.appliedFilters[i].column] = $('<p/>').html(this.appliedFilters[i].value).text();
+						}
+
 						params.filters.push(filter);
 					}
 				}
 			}
 
-			params.sort = currentSort.column;
-			params.direction = currentSort.direction;
+			if (this.currentSort.column !== '')
+			{
+				params.sort = this.currentSort.column;
+				params.direction = this.currentSort.direction;
+			}
 
 			return $.param(params);
 		},
 
-		_buildPagination: function(json) {
-
-			var _this = this;
+		/**
+		 * Builds the pagination.
+		 *
+		 * @param  object  json
+		 * @return object
+		 */
+		buildPagination: function(json)
+		{
+			var self = this;
 			var rect;
 
 			var page = json.page,
@@ -958,134 +1568,81 @@
 				prev = json.previous_page,
 				total = json.pages_count;
 
-			switch (this.opt.paginationType)
+			switch (this.opt.method)
 			{
-				case 'single' :
-					rect = _this._buildSinglePagination(page, next, prev, total);
+				case 'single':
+				case 'group':
+
+					rect = self.buildRegularPagination(page, next, prev, total);
+
 				break;
 
-				case 'multiple' :
-					rect = _this._buildMultiplePagination(page, next, prev, total);
-				break;
+				case 'infinite':
 
-				case 'infinite' :
-					rect = _this._buildInfinitePagination(page, next, prev, total);
+					rect = self.buildInfinitePagination(page, next, prev, total);
+
 				break;
 			}
 
 			return rect;
-
 		},
 
-		_buildSinglePagination: function(page, next, prev, total) {
-
+		/**
+		 * Builds regular pagination.
+		 *
+		 * @param  int  page
+		 * @param  int  next
+		 * @param  int  prev
+		 * @param  int  total
+		 * @return object
+		 */
+		buildRegularPagination: function(page, next, prev, total)
+		{
 			var params,
 				perPage,
 				rect = [];
 
-			if (pagi.filteredCount !== pagi.totalCount)
+			if (this.pagination.filteredCount !== this.pagination.totalCount)
 			{
-				perPage = this._resultsPerPage(pagi.filteredCount, total);
+				perPage = this.resultsPerPage(this.pagination.filteredCount, total);
 			}
 			else
 			{
-				perPage = this._resultsPerPage(pagi.totalCount, total);
+				perPage = this.resultsPerPage(this.pagination.totalCount, total);
 			}
 
 			params = {
-				pageStart: perPage === 0 ? 0 : ( pagi.pageIdx === 1 ? 1 : ( perPage * (pagi.pageIdx - 1 ) + 1)),
-				pageLimit: pagi.pageIdx === 1 ? perPage : ( pagi.totalCount < (perPage * pagi.pageIdx )) ? pagi.totalCount : perPage * pagi.pageIdx,
+				pageStart: perPage === 0 ? 0 : ( this.pagination.pageIdx === 1 ? 1 : ( perPage * (this.pagination.pageIdx - 1 ) + 1)),
+				pageLimit: this.pagination.pageIdx === 1 ? perPage : ( this.pagination.totalCount < (perPage * this.pagination.pageIdx )) ? this.pagination.filteredCount : perPage * this.pagination.pageIdx < this.pagination.filteredCount ? perPage * this.pagination.pageIdx : this.pagination.filteredCount,
 				nextPage: next,
 				prevPage: prev,
 				page: page,
 				active: true,
-				single: true,
 				totalPages: total,
-				totalCount: pagi.totalCount,
-				filteredCount: pagi.filteredCount
+				totalCount: this.pagination.totalCount,
+				filteredCount: this.pagination.filteredCount,
+				throttle: this.opt.throttle,
+				dividend: this.opt.dividend,
+				threshold: this.opt.threshold,
+				perPage: perPage
 			};
 
 			rect.push(params);
 
 			return { pagination: rect };
-
 		},
 
-		_buildMultiplePagination: function(page, next, prev, total) {
-
-			var params,
-				perPage,
-				rect = [];
-
-			if ((pagi.totalCount > this.opt.throttle) && (pagi.filteredCount > this.opt.throttle))
-			{
-				perPage = this._resultsPerPage(this.opt.throttle, this.opt.dividend);
-
-				for (var i = 1; i <= this.opt.dividend; i++)
-				{
-
-					params = {
-						pageStart: perPage === 0 ? 0 : ( i === 1 ? 1 : (perPage * (i - 1) + 1)),
-						pageLimit: i === 1 ? perPage : (pagi.totalCount < this.opt.throttle && i === this.opt.dividend) ? pagi.totalCount : perPage * i,
-						nextPage: next,
-						prevPage: prev,
-						page: i,
-						active: pagi.pageIdx === i ? true : false,
-						throttle: false,
-						totalCount: pagi.totalCount,
-						filteredCount: pagi.filteredCount
-					};
-
-					rect.push(params);
-				}
-
-				if (pagi.totalCount > this.opt.throttle)
-				{
-					params = {
-						throttle: true
-					};
-
-					rect.push(params);
-				}
-			}
-			else
-			{
-
-				if (pagi.filteredCount !== pagi.totalCount)
-				{
-					perPage = this._resultsPerPage(pagi.filteredCount, total);
-				}
-				else
-				{
-					perPage = this._resultsPerPage(pagi.totalCount, total);
-				}
-
-				for (var i = 1; i <= total; i++)
-				{
-
-					params = {
-						pageStart: perPage === 0 ? 0 : ( i === 1 ? 1 : (perPage * (i - 1) + 1)),
-						pageLimit: i === 1 ? perPage : (pagi.totalCount < this.opt.throttle && i === this.opt.dividend) ? pagi.totalCount : perPage * i,
-						nextPage: next,
-						prevPage: prev,
-						page: i,
-						active: pagi.pageIdx === i ? true : false,
-						totalCount: pagi.totalCount,
-						filteredCount: pagi.filteredCount
-					};
-
-					rect.push(params);
-				}
-
-			}
-
-			return { pagination: rect };
-
-
-		},
-
-		_buildInfinitePagination: function(page, next, prev, total) {
-
+		/**
+		 * Builds the infinite pagination.
+		 *
+		 * @param  int  page
+		 * @param  int  next
+		 * @param  int  prev
+		 * @param  int  total
+		 * @return object
+		 */
+		buildInfinitePagination: function(page, next, prev, total)
+		{
 			var params,
 				rect = [];
 
@@ -1096,97 +1653,367 @@
 
 			rect.push(params);
 
-			return { pagination: rect };
-
-		},
-
-		_resultsPerPage: function(dividend, divisor) {
-
-			return Math.ceil(dividend / divisor);
-
-		},
-
-		_removeFilters: function(idx) {
-
-			appliedFilters.splice(idx, 1);
-
-			// TODO: See about removing this
-			this.$filters.html( this.tmpl['filters']({ filters: appliedFilters }));
-			this._goToPage(1);
-			$(this).trigger('dg:update');
-
-		},
-
-		_goToPage: function(idx) {
-
-			if (isNaN(idx = parseInt(idx, 10)))
+			if (next === null)
 			{
-				idx = 1;
+				return { pagination: null };
 			}
 
-			pagi.pageIdx = idx;
-
+			return { pagination: rect };
 		},
 
-		_loading: function() {
+		/**
+		 * Calculate results per page.
+		 *
+		 * @param  int  dividend
+		 * @param  int  divisor
+		 * @return int
+		 */
+		resultsPerPage: function(dividend, divisor)
+		{
+			var pp = Math.ceil(dividend / this.opt.dividend);
 
-			var _this = this;
+			var max = Math.floor(this.opt.throttle / this.opt.dividend);
 
-			$(document).ajaxStart(function() {
-				$(_this.opt.loader).fadeIn();
-			}).ajaxStop(function() {
-				$(_this.opt.loader).fadeOut();
-			});
+			if (pp > max && max !== 0)
+			{
+				pp = max;
+			}
+
+			return pp;
 		},
 
-		_reset: function() {
+		/**
+		 * Removes a range filter.
+		 *
+		 * @param  object  filter
+		 * @return void
+		 */
+		removeRangeFilters: function(filter)
+		{
+			var grid = this.grid;
+
+			var startRangeFilter = filter.find('[data-range-start]').data('range-filter') || filter.data('range-filter');
+
+			var endRangeFilter = filter.find('[data-range-end]').data('range-filter') || filter.data('range-filter');
+
+			for (var i = 0; i < this.appliedFilters.length; i++)
+			{
+				if (this.appliedFilters[i].type === 'range' && (this.appliedFilters[i].column === startRangeFilter || this.appliedFilters[i].column === endRangeFilter))
+				{
+					this.appliedFilters.splice(i, 1);
+				}
+			};
+		},
+
+		/**
+		 * Removes a select filter.
+		 *
+		 * @param  object  filter
+		 * @return void
+		 */
+		removeSelectFilter: function(filter)
+		{
+			var selectFilter     = $(filter).find(':selected').data('filter'),
+				label            = $(filter).find(':selected').data('label'),
+				operator         = $(filter).find(':selected').data('operator');
+
+			if (selectFilter !== undefined)
+			{
+				var filterArr = selectFilter.split(':');
+
+				for (var i = 0; i < this.appliedFilters.length; i++)
+				{
+					if (this.appliedFilters[i].column === filterArr[0]) this.removeFilters(i);
+				};
+			}
+			else
+			{
+				var col = $(filter).data('select-filter');
+
+				for (var i = 0; i < this.appliedFilters.length; i++)
+				{
+					if (this.appliedFilters[i].column === col) this.removeFilters(i);
+				};
+			}
+		},
+
+		/**
+		 * Applies a select filter.
+		 *
+		 * @param  object  el
+		 * @return void
+		 */
+		selectFilter: function(el)
+		{
+			var filter = $(el).find(':selected').data('filter'),
+				label = $(el).find(':selected').data('label'),
+				operator = $(el).find(':selected').data('operator');
+
+			if (filter !== undefined)
+			{
+				var filterArr = filter.split(':');
+
+				if (label !== undefined)
+				{
+					var key = this._indexOf(filter, filter[0]);
+
+					var filterData = {
+						column: label,
+						value: filterArr[1],
+						mask: (key === 0 ? 'column' : 'value'),
+						maskOrg: filterArr[0],
+					};
+
+					this.applyFilter(filterData);
+				}
+				else
+				{
+					var filterData = {
+						column: filterArr[0],
+						value: filterArr[1]
+					};
+
+					this.applyFilter(filterData);
+				}
+			}
+			else
+			{
+				this.removeSelectFilter($(el));
+			}
+
+			this.refresh();
+		},
+
+		/**
+		 * Applies a range filter.
+		 *
+		 * @param  object  filter
+		 * @return void
+		 */
+		rangeFilter: function(filter)
+		{
+			var curFilter     = filter.find('[data-range-filter]').data('range-filter') || filter.data('range-filter'),
+				startFilterEl = this.$body.find('[data-range-start][data-range-filter^="' + curFilter + '"]' + this.grid + ',' + this.grid + ' [data-range-start][data-range-filter="' + curFilter + '"]'),
+				endFilterEl   = this.$body.find('[data-range-end][data-range-filter^="' + curFilter + '"]' + this.grid + ',' + this.grid + ' [data-range-end][data-range-filter="' + curFilter + '"]');
+
+			var startVal = startFilterEl.val(),
+				endVal   = endFilterEl.val()
+
+			if (startVal && endVal)
+			{
+				this.extractRangeFilters(filter);
+			}
+		},
+
+		/**
+		 * Shows the loading bar.
+		 *
+		 * @return void
+		 */
+		showLoader: function()
+		{
+			var grid   = this.grid,
+				loader = this.opt.loader;
+
+			this.$body.find(grid + loader + ',' + grid + ' ' + loader).fadeIn();
+		},
+
+		/**
+		 * Hides the loading bar.
+		 *
+		 * @return void
+		 */
+		hideLoader: function()
+		{
+			var grid   = this.grid,
+				loader = this.opt.loader;
+
+			this.$body.find(grid + loader + ',' + grid + ' ' + loader).fadeOut();
+		},
+
+		/**
+		 * Resets Data Grid.
+		 *
+		 * @return void
+		 */
+		reset: function()
+		{
+			var grid    = this.grid,
+				options = this.opt;
 
 			// Elements
-			this.$body.find('[data-sort]'+this.grid).removeClass(this.opt.sortClasses.asc);
-			this.$body.find('[data-sort]'+this.grid).removeClass(this.opt.sortClasses.desc);
-			this.$body.find('[data-search]'+this.grid).find('input').val('');
-			this.$body.find('[data-search]'+this.grid).find('select').prop('selectedIndex', 0);
+			this.$body.find('[data-sort]'+ grid).removeClass(options.sortClasses.asc);
+			this.$body.find('[data-sort]'+ grid).removeClass(options.sortClasses.desc);
+			this.$body.find('[data-search]'+ grid).find('input').val('');
+			this.$body.find('[data-search]'+ grid).find('select').prop('selectedIndex', 0);
+			this.$body.find('[data-range-filter]' + grid + ',' + grid +' [data-range-filter]').find('input').val('');
 
 			// Filters
-			appliedFilters = [];
+			this.appliedFilters = [];
 
 			// Sort
-			currentSort.index = 0;
-			currentSort.direction = '';
-			currentSort.column = '';
+			this.currentSort.index = 0;
+			this.currentSort.direction = '';
+			this.currentSort.column = '';
 
 			// Pagination
-			pagi.pageIdx = 1;
+			this.pagination.pageIdx = 1;
 
 			// Remove all rendered content
-			this.$results.empty();
 			this.$filters.empty();
 
-			// Updated
-			$(this).trigger('dg:update');
-
-		},
-
-		_refresh: function() {
-
-			$(this).trigger('dg:update');
-
-		},
-
-		_callback: function() {
-
-			var callbackObject = $.extend({}, pagi, currentSort, appliedFilters);
-
-			if (this.opt.callback !== undefined && $.isFunction(this.opt.callback))
+			if (this.opt.method === 'infinite')
 			{
-				this.opt.callback(callbackObject);
+				this.$results.empty();
 			}
+		},
 
-		}
+		/**
+		 * Refreshes Data Grid
+		 *
+		 * @return void
+		 */
+		refresh: function()
+		{
+			$(this).trigger('dg:update');
+		},
+
+		/**
+		 * Data grid callback.
+		 *
+		 * @return void
+		 */
+		callback: function()
+		{
+			var self = this;
+
+			var callback = this.opt.callback;
+
+			if (callback !== undefined && $.isFunction(callback))
+			{
+				callback(self);
+			}
+		},
+
+		/**
+		 * Applies the scroll feature animation.
+		 *
+		 * @return void
+		 */
+		applyScroll: function()
+		{
+			var options = this.opt;
+
+			if (options.scroll)
+			{
+				$(document.body).animate({ scrollTop: $(options.scroll).offset().top }, 200);
+			}
+		},
+
+		/**
+		 * Sets the scroll value.
+		 *
+		 * @param  string  element
+		 * @return void
+		 */
+		setScroll: function(element)
+		{
+			this.opt.scroll = element;
+		},
+
+		/**
+		 * Returns the dividend.
+		 *
+		 * @return int
+		 */
+		getDividend: function()
+		{
+			return this.opt.dividend;
+		},
+
+		/**
+		 * Sets the dividend.
+		 *
+		 * @param  int  value
+		 * @return void
+		 */
+		setDividend: function(value)
+		{
+			this.opt.dividend = value;
+		},
+
+		/**
+		 * Returns the throttle.
+		 *
+		 * @return int
+		 */
+		getThrottle: function()
+		{
+			return this.opt.throttle;
+		},
+
+		/**
+		 * Sets the throttle.
+		 *
+		 * @param  int  value
+		 * @return void
+		 */
+		setThrottle: function(value)
+		{
+			this.opt.throttle = value;
+		},
+
+		/**
+		 * Returns the threshold.
+		 *
+		 * @return int
+		 */
+		getThreshold: function()
+		{
+			return this.opt.threshold;
+		},
+
+		/**
+		 * Sets the threshold.
+		 *
+		 * @param  int  value
+		 * @return void
+		 */
+		setThreshold: function(value)
+		{
+			this.opt.threshold = value;
+		},
+
+		/**
+		 * Apply single method.
+		 *
+		 * @param  int num
+		 * @return void
+		 */
+		single: function(num)
+		{
+			this.setDividend(1);
+
+			this.setThrottle(num);
+		},
+
+		/**
+		 * Apply group method.
+		 *
+		 * @param  int num
+		 * @return void
+		 */
+		group: function(num)
+		{
+			this.setDividend(num);
+
+			this.setThrottle(1);
+		},
 
 	};
 
-	$.datagrid = function(grid, results, pagination, filters, options) {
+	$.datagrid = function(grid, results, pagination, filters, options)
+	{
 		return new DataGrid(grid, results, pagination, filters, options);
 	};
 
