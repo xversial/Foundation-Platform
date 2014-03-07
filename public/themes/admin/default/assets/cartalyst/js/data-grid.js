@@ -19,7 +19,6 @@
 
 ;(function ($, window, document, undefined)
 {
-
 	'use strict';
 
 	/**
@@ -29,7 +28,6 @@
 	 */
 	var defaults = {
 		source: null,
-		dividend: 1,
 		threshold: 50,
 		throttle: 50,
 		method: 'single',
@@ -122,24 +120,7 @@
 		 */
 		init: function()
 		{
-			// Initialize the event listeners
 			this.events();
-
-			// Set throttle, dividend by method
-			switch(this.opt.method)
-			{
-				case 'single':
-
-					this.single(this.opt.throttle);
-
-					break;
-
-				case 'group':
-
-					this.group(this.opt.throttle);
-
-					break;
-			}
 
 			this.checkHash();
 		},
@@ -311,6 +292,15 @@
 					self.handleLiveSearch($(this));
 				}
 			});
+
+			this.$body.on('click', '[data-download]', function(e)
+			{
+				e.preventDefault();
+
+				var type = $(this).data('download');
+
+				document.location = self.source + '?' + self.buildAjaxURI(type);
+			});
 		},
 
 		/**
@@ -342,11 +332,17 @@
 
 			var self = this;
 
+			var options = self.opt;
+
 			var curIndex = _.indexOf(routes, self.key);
 
 			var curRoute = '/' + routes.join('/');
 
 			var routes = _.compact(curRoute.split('/grid/'));
+
+			var sortedColumn = options.sort.hasOwnProperty('column');
+
+			var sortedDirection = options.sort.hasOwnProperty('direction');
 
 			_.each(routes, function(route)
 			{
@@ -387,8 +383,7 @@
 
 						self.extractSortsFromRoute(lastItem);
 					}
-					else if (self.opt.sort.hasOwnProperty('column') &&
-							self.opt.sort.hasOwnProperty('direction'))
+					else if (sortedColumn && sortedDirection)
 					{
 						// Convert Object to string
 						var str = self.opt.sort.column + self.opt.delimiter + self.opt.sort.direction;
@@ -419,20 +414,19 @@
 				}
 			});
 
-			var routePath = routes.join('/grid/'),
-				currentHash = String(window.location.hash.slice(3));
+			var currentHash = String(window.location.hash.slice(3));
 
-			if (currentHash.indexOf(this.key) === -1)
+			if (currentHash.indexOf(self.key) === -1)
 			{
-				if (this.opt.sort.hasOwnProperty('column') && this.opt.sort.hasOwnProperty('direction'))
+				if (sortedColumn && sortedDirection)
 				{
-					var str = this.opt.sort.column+this.opt.delimiter+this.opt.sort.direction;
+					var str = options.sort.column + options.delimiter + options.sort.direction;
 
-					this.extractSortsFromRoute(str);
+					self.extractSortsFromRoute(str);
 				}
 			}
 
-			this.refresh();
+			self.refresh();
 		},
 
 		/**
@@ -505,7 +499,7 @@
 
 			routesArr = _.compact(routesArr);
 
-			for(var i = 0; i < routesArr.length; i++)
+			for (var i = 0; i < routesArr.length; i++)
 			{
 				if (i === rtIndex)
 				{
@@ -639,22 +633,15 @@
 		{
 			var idx;
 
-			switch (this.opt.method)
+			if (this.opt.method === 'infinite')
 			{
-				case 'single':
-				case 'group':
+				idx = el.data('page');
 
-					idx = el.data('page');
-
-				break;
-
-				case 'infinite':
-
-					idx = el.data('page');
-
-					el.data('page', ++idx);
-
-				break;
+				el.data('page', ++idx);
+			}
+			else
+			{
+				idx = el.data('page');
 			}
 
 			this.goToPage(idx);
@@ -894,7 +881,7 @@
 			{
 				filter = filtersArr[i].split(':');
 
-				if (/>|<|!=|=|<=|>=/.test(filter[1]))
+				if (this.checkOperator(filter[1]))
 				{
 					operator = filter[1];
 
@@ -1040,12 +1027,17 @@
 					{
 						if (filter[j].indexOf(filters[0]) !== -1 && filter[j].indexOf(filters[1]) !== -1)
 						{
+							if (filters[2] !== undefined)
+							{
+								if (filter[j].indexOf(filters[2]) === -1) continue;
+							}
+
 							var	matchedLabel = label[j].split(':');
 
 							// Check for contained operators
 							var hasOperator = false;
 
-							if (/>|<|!=|=|<=|>=/.test(filters[1]))
+							if (this.checkOperator(filters[1]))
 							{
 								hasOperator = true;
 							}
@@ -1429,14 +1421,14 @@
 		 *
 		 * @return string
 		 */
-		buildAjaxURI: function()
+		buildAjaxURI: function(download)
 		{
 			var self = this;
 
 			var params = {};
 				params.filters   = [];
 				params.page      = this.pagination.pageIdx;
-				params.dividend  = this.opt.dividend;
+				params.method    = this.opt.method;
 				params.threshold = this.opt.threshold;
 				params.throttle  = this.opt.throttle;
 
@@ -1549,6 +1541,11 @@
 				params.direction = this.currentSort.direction;
 			}
 
+			if (download)
+			{
+				params.download = download;
+			}
+
 			return $.param(params);
 		},
 
@@ -1602,14 +1599,7 @@
 				perPage,
 				rect = [];
 
-			if (this.pagination.filteredCount !== this.pagination.totalCount)
-			{
-				perPage = this.resultsPerPage(this.pagination.filteredCount, total);
-			}
-			else
-			{
-				perPage = this.resultsPerPage(this.pagination.totalCount, total);
-			}
+			perPage = this.calculatePagination();
 
 			params = {
 				pageStart: perPage === 0 ? 0 : ( this.pagination.pageIdx === 1 ? 1 : ( perPage * (this.pagination.pageIdx - 1 ) + 1)),
@@ -1622,7 +1612,6 @@
 				totalCount: this.pagination.totalCount,
 				filteredCount: this.pagination.filteredCount,
 				throttle: this.opt.throttle,
-				dividend: this.opt.dividend,
 				threshold: this.opt.threshold,
 				perPage: perPage
 			};
@@ -1664,22 +1653,21 @@
 		/**
 		 * Calculate results per page.
 		 *
-		 * @param  int  dividend
-		 * @param  int  divisor
 		 * @return int
 		 */
-		resultsPerPage: function(dividend, divisor)
+		calculatePagination: function()
 		{
-			var pp = Math.ceil(dividend / this.opt.dividend);
-
-			var max = Math.floor(this.opt.throttle / this.opt.dividend);
-
-			if (pp > max && max !== 0)
+			switch (this.opt.method)
 			{
-				pp = max;
-			}
+				case 'single':
+				case 'infinite':
 
-			return pp;
+					return this.opt.throttle;
+
+				case 'group':
+
+					return Math.ceil(this.pagination.filteredCount / this.opt.throttle);
+			}
 		},
 
 		/**
@@ -1902,12 +1890,26 @@
 		 */
 		applyScroll: function()
 		{
-			var options = this.opt;
+			var _scroll = this.opt.scroll;
 
-			if (options.scroll)
+			if (_scroll !== undefined && $.isFunction(_scroll))
 			{
-				$(document.body).animate({ scrollTop: $(options.scroll).offset().top }, 200);
+				_scroll();
 			}
+
+			else if (_scroll)
+			{
+				$(document.body).animate({ scrollTop: $(_scroll).offset().top }, 200);
+			}
+		},
+
+		/**
+		 * Check for operators.
+		 *
+		 */
+		checkOperator: function(value)
+		{
+			return />|<|!=|=|<=|>=|<>/.test(value);
 		},
 
 		/**
@@ -1919,27 +1921,6 @@
 		setScroll: function(element)
 		{
 			this.opt.scroll = element;
-		},
-
-		/**
-		 * Returns the dividend.
-		 *
-		 * @return int
-		 */
-		getDividend: function()
-		{
-			return this.opt.dividend;
-		},
-
-		/**
-		 * Sets the dividend.
-		 *
-		 * @param  int  value
-		 * @return void
-		 */
-		setDividend: function(value)
-		{
-			this.opt.dividend = value;
 		},
 
 		/**
@@ -1982,32 +1963,6 @@
 		setThreshold: function(value)
 		{
 			this.opt.threshold = value;
-		},
-
-		/**
-		 * Apply single method.
-		 *
-		 * @param  int num
-		 * @return void
-		 */
-		single: function(num)
-		{
-			this.setDividend(1);
-
-			this.setThrottle(num);
-		},
-
-		/**
-		 * Apply group method.
-		 *
-		 * @param  int num
-		 * @return void
-		 */
-		group: function(num)
-		{
-			this.setDividend(num);
-
-			this.setThrottle(1);
 		},
 
 	};
