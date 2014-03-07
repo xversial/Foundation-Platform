@@ -29,16 +29,15 @@ return array(
 	'all'      => 'All',
 	'enabled'  => 'Enabled',
 	'disabled' => 'Disabled',
-
-	'actions'    => 'Actions',
-	'status'     => 'Status',
-	'no_results' => 'No Results',
+	'actions'  => 'Actions',
+	'status'   => 'Status',
 
 	'delete_record' => 'You are about to delete this record, do you want to continue?',
 
 	'not_logged_in' => 'You are not logged in.',
 
 	// Search, Filter & Pagination
+	'no_results'    => 'No Results',
 	'showing'       => 'Showing',
 	'to'            => 'to',
 	'in'            => 'in',
