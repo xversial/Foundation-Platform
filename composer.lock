@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "319846d9a087ce6d73dea64f1f21e1b0",
+    "hash": "d184816da7aad5faa1145cc828978cf6",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -418,19 +418,20 @@
         },
         {
             "name": "cartalyst/data-grid",
-            "version": "dev-develop",
+            "version": "dev-feature/refactor-php",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/data-grid.git",
-                "reference": "c3f0787698f0b30f5610ac94eb752e83e4346d0e"
+                "reference": "ddd450382013fb34def612730a968e6946de0d87"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/data-grid/zipball/c3f0787698f0b30f5610ac94eb752e83e4346d0e",
-                "reference": "c3f0787698f0b30f5610ac94eb752e83e4346d0e",
+                "url": "https://api.github.com/repos/cartalyst/data-grid/zipball/ddd450382013fb34def612730a968e6946de0d87",
+                "reference": "ddd450382013fb34def612730a968e6946de0d87",
                 "shasum": ""
             },
             "require": {
+                "dompdf/dompdf": "0.6.*",
                 "illuminate/http": "~4",
                 "illuminate/support": "~4",
                 "php": ">=5.3.0"
@@ -447,8 +448,8 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Cartalyst\\DataGrid": "src"
+                "psr-4": {
+                    "Cartalyst\\DataGrid\\": "src"
                 }
             },
             "license": [
@@ -481,10 +482,10 @@
                 "laravel"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/data-grid/tree/develop",
+                "source": "https://github.com/cartalyst/data-grid/tree/feature/refactor-php",
                 "issues": "https://github.com/cartalyst/data-grid/issues"
             },
-            "time": "2014-03-04 03:50:50"
+            "time": "2014-03-07 21:09:27"
         },
         {
             "name": "cartalyst/dependencies",
@@ -1606,6 +1607,47 @@
             "time": "2014-02-03 23:07:43"
         },
         {
+            "name": "dompdf/dompdf",
+            "version": "v0.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dompdf/dompdf.git",
+                "reference": "fbb288daad0096350cdead591dd8d450e490fbd0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dompdf/dompdf/zipball/fbb288daad0096350cdead591dd8d450e490fbd0",
+                "reference": "fbb288daad0096350cdead591dd8d450e490fbd0",
+                "shasum": ""
+            },
+            "require": {
+                "phenx/php-font-lib": "0.2.*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "include/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Ménager",
+                    "email": "fabien.menager@gmail.com"
+                },
+                {
+                    "name": "Brian Sweeney",
+                    "email": "eclecticgeek@gmail.com"
+                }
+            ],
+            "description": "DOMPDF is a CSS 2.1 compliant HTML to PDF converter",
+            "homepage": "https://github.com/dompdf/dompdf",
+            "time": "2014-02-07 02:58:53"
+        },
+        {
             "name": "filp/whoops",
             "version": "1.0.10",
             "source": {
@@ -2183,12 +2225,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "16542f7a37ae7636f665ace09cfa98d9f260b711"
+                "reference": "55f804e8247ad4cef24aa484ed66ac5b4d9923e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/16542f7a37ae7636f665ace09cfa98d9f260b711",
-                "reference": "16542f7a37ae7636f665ace09cfa98d9f260b711",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/55f804e8247ad4cef24aa484ed66ac5b4d9923e5",
+                "reference": "55f804e8247ad4cef24aa484ed66ac5b4d9923e5",
                 "shasum": ""
             },
             "require": {
@@ -2292,7 +2334,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-03-07 14:46:07"
+            "time": "2014-03-07 20:16:11"
         },
         {
             "name": "leafo/scssphp",
@@ -2435,6 +2477,54 @@
                 "sftp"
             ],
             "time": "2014-03-04 16:58:11"
+        },
+        {
+            "name": "league/fractal",
+            "version": "0.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/fractal.git",
+                "reference": "9e217bfb344b2c9958025a202a6938419d6b694b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/9e217bfb344b2c9958025a202a6938419d6b694b",
+                "reference": "9e217bfb344b2c9958025a202a6938419d6b694b",
+                "shasum": ""
+            },
+            "require-dev": {
+                "illuminate/pagination": "~4.1",
+                "league/phpunit-coverage-listener": "~1.1",
+                "mockery/mockery": "dev-master@dev",
+                "silex/silex": "~1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "League\\Fractal\\": "src",
+                    "League\\Fractal\\Tests\\": "tests"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Phil Sturgeon",
+                    "email": "email@philsturgeon.co.uk",
+                    "homepage": "http://philsturgeon.co.uk/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Handle the output of complex data structures ready for JSON output.",
+            "homepage": "https://github.com/thephpleague/fractal",
+            "keywords": [
+                "api",
+                "json",
+                "league"
+            ],
+            "time": "2014-01-31 22:08:53"
         },
         {
             "name": "league/oauth1-client",
@@ -2910,6 +3000,40 @@
             "time": "2014-03-01 20:01:07"
         },
         {
+            "name": "phenx/php-font-lib",
+            "version": "0.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PhenX/php-font-lib.git",
+                "reference": "c30c7fc00a6b0d863e9bb4c5d5dd015298b2dc82"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PhenX/php-font-lib/zipball/c30c7fc00a6b0d863e9bb4c5d5dd015298b2dc82",
+                "reference": "c30c7fc00a6b0d863e9bb4c5d5dd015298b2dc82",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "classes/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Ménager",
+                    "email": "fabien.menager@gmail.com"
+                }
+            ],
+            "description": "A library to read, parse, export and make subsets of different types of font files.",
+            "homepage": "https://github.com/PhenX/php-font-lib",
+            "time": "2014-02-01 15:22:28"
+        },
+        {
             "name": "phpseclib/phpseclib",
             "version": "dev-master",
             "source": {
@@ -3280,12 +3404,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-content.git",
-                "reference": "2fdb6b21f07d1f5d8063912c0f5cf83b4b76bf8b"
+                "reference": "805a0e62394ecb43dac06d3636f0d75651bb6097"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/2fdb6b21f07d1f5d8063912c0f5cf83b4b76bf8b",
-                "reference": "2fdb6b21f07d1f5d8063912c0f5cf83b4b76bf8b",
+                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/805a0e62394ecb43dac06d3636f0d75651bb6097",
+                "reference": "805a0e62394ecb43dac06d3636f0d75651bb6097",
                 "shasum": ""
             },
             "require": {
@@ -3347,26 +3471,26 @@
                 "source": "https://github.com/cartalyst/platform-content/tree/feature/psr-4-php-54",
                 "issues": "https://github.com/cartalyst/platform-content/issues"
             },
-            "time": "2014-03-07 17:34:06"
+            "time": "2014-03-07 22:19:04"
         },
         {
             "name": "platform/foundation",
-            "version": "dev-master",
+            "version": "dev-feature/php-54",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-foundation.git",
-                "reference": "39c56fc2e49cf76af26ea669c606a90420c7b4b8"
+                "reference": "6cfc28fd0c0377fe524a577c46d6ace94ebc859d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/39c56fc2e49cf76af26ea669c606a90420c7b4b8",
-                "reference": "39c56fc2e49cf76af26ea669c606a90420c7b4b8",
+                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/6cfc28fd0c0377fe524a577c46d6ace94ebc859d",
+                "reference": "6cfc28fd0c0377fe524a577c46d6ace94ebc859d",
                 "shasum": ""
             },
             "require": {
-                "cartalyst/api": "2.0.*@dev",
+                "cartalyst/api": "~2",
                 "cartalyst/assetic-filters": "1.1.*",
-                "cartalyst/data-grid": "dev-develop",
+                "cartalyst/data-grid": "dev-feature/refactor-php",
                 "cartalyst/extensions": "1.0.*",
                 "cartalyst/themes": "2.0.*",
                 "cartalyst/widgets": "1.0.*",
@@ -3375,10 +3499,11 @@
                 "illuminate/http": "~4",
                 "leafo/scssphp": "dev-master",
                 "leafo/scssphp-compass": "dev-master",
+                "league/fractal": "0.7.*",
                 "lmammino/jsmin4assetic": "dev-master",
                 "natxet/cssmin": "dev-master",
                 "oyejorge/less.php": "1.6.*",
-                "php": ">=5.3.0",
+                "php": ">=5.4.0",
                 "symfony/http-kernel": "~2"
             },
             "require-dev": {
@@ -3392,15 +3517,12 @@
                 }
             },
             "autoload": {
-                "classmap": [
-                    "src/controllers"
-                ],
-                "psr-0": {
-                    "Platform\\Foundation": "src"
-                },
                 "files": [
                     "src/helpers.php"
-                ]
+                ],
+                "psr-4": {
+                    "Platform\\Foundation\\": "src"
+                }
             },
             "license": [
                 "BSD-3-Clause"
@@ -3432,23 +3554,23 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-foundation/tree/master",
+                "source": "https://github.com/cartalyst/platform-foundation/tree/feature/php-54",
                 "issues": "https://github.com/cartalyst/platform-foundation/issues"
             },
-            "time": "2014-03-02 15:41:43"
+            "time": "2014-03-07 22:57:19"
         },
         {
             "name": "platform/installer",
-            "version": "dev-develop",
+            "version": "dev-feature/php-54",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-installer.git",
-                "reference": "990fdfd6078ea7c8b0df6925b235cbf608534579"
+                "reference": "dcf408574a2b851a79c070eb8f7d64717c4be522"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-installer/zipball/990fdfd6078ea7c8b0df6925b235cbf608534579",
-                "reference": "990fdfd6078ea7c8b0df6925b235cbf608534579",
+                "url": "https://api.github.com/repos/cartalyst/platform-installer/zipball/dcf408574a2b851a79c070eb8f7d64717c4be522",
+                "reference": "dcf408574a2b851a79c070eb8f7d64717c4be522",
                 "shasum": ""
             },
             "require": {
@@ -3461,7 +3583,7 @@
                 "illuminate/foundation": "~4",
                 "illuminate/validation": "~4",
                 "php": ">=5.3.0",
-                "platform/foundation": "1.0.*"
+                "platform/foundation": "dev-feature/php-54"
             },
             "require-dev": {
                 "mockery/mockery": "0.7.2"
@@ -3513,10 +3635,10 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-installer/tree/develop",
+                "source": "https://github.com/cartalyst/platform-installer/tree/feature/php-54",
                 "issues": "https://github.com/cartalyst/platform-installer/issues"
             },
-            "time": "2014-01-28 02:41:15"
+            "time": "2014-03-07 22:12:36"
         },
         {
             "name": "platform/localisation",
@@ -5084,6 +5206,7 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
+        "platform/foundation": 20,
         "platform/installer": 20,
         "platform/categories": 20,
         "platform/content": 20,
