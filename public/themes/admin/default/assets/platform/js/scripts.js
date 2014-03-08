@@ -1,11 +1,5 @@
-$(function() {
-
-	$('ul li.active').each(function() {
-
-		$(this).parent().parent().addClass('active');
-
-	});
-
+$(function()
+{
 	// Activate tooltips
 	$('.tip, .tooltip, [data-tooltip], [data-toggle="tooltip"]').tooltip();
 
@@ -15,9 +9,9 @@ $(function() {
 	});
 
 	// Activate modal windows
-	$(document).on('click', '[data-modal], [data-toggle="modal"]', function(event) {
-
-		event.preventDefault();
+	$(document).on('click', '[data-modal], [data-toggle="modal"]', function(e)
+	{
+		e.preventDefault();
 
 		// Get the modal target
 		var target = $(this).data('target');
@@ -27,11 +21,12 @@ $(function() {
 		{
 			$('#modal-confirm .confirm').attr('href', $(this).attr('href'));
 
-			$('#modal-confirm').modal({show:true, remote:false});
+			$('#modal-confirm').modal({
+				show: true,
+				remote: false
+			});
 
 			return false;
 		}
-
 	});
-
 });
