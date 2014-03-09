@@ -36,7 +36,7 @@
 		"platform/foundation": "dev-feature/php-54",
 		"platform/installer": "dev-feature/php-54",
 
-		"platform/attributes": "1.0.*",
+		"platform/attributes": "dev-feature/php-54",
 		"platform/categories": "dev-lab/platform-categories",
 		"platform/content": "dev-feature/psr-4-php-54",
 		"platform/localisation": "dev-lab/platform-localisation",
@@ -45,7 +45,7 @@
 		"platform/operations": "dev-develop",
 		"platform/pages": "dev-feature/psr-4-php-54",
 		"platform/settings": "dev-develop",
-		"platform/users": "dev-develop"
+		"platform/users": "dev-feature/php-54"
 	},
 	"autoload": {
 		"classmap": [
