@@ -941,25 +941,27 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cartalyst/sentry.git",
-                "reference": "ebac1cef4f8e24da3086f5143ab31c196b2f8c41"
+                "reference": "979db46677cf878c6d3dc3e49167e40d85f7b3c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/ebac1cef4f8e24da3086f5143ab31c196b2f8c41",
-                "reference": "ebac1cef4f8e24da3086f5143ab31c196b2f8c41",
+                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/979db46677cf878c6d3dc3e49167e40d85f7b3c0",
+                "reference": "979db46677cf878c6d3dc3e49167e40d85f7b3c0",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": ">=4.0.9,<4.2",
-                "php": ">=5.3.3"
+                "illuminate/support": ">=4.0.9,<4.3",
+                "machuga/authority": "dev-master",
+                "php": ">=5.4.0"
             },
             "require-dev": {
-                "illuminate/cookie": ">=4.0.9,<4.2",
-                "illuminate/database": ">=4.0.9,<4.2",
-                "illuminate/http": ">=4.0.9,<4.2",
-                "illuminate/session": ">=4.0.9,<4.2",
+                "illuminate/cookie": ">=4.0.9,<4.3",
+                "illuminate/database": ">=4.0.9,<4.3",
+                "illuminate/http": ">=4.0.9,<4.3",
+                "illuminate/session": ">=4.0.9,<4.3",
                 "ircmaxell/password-compat": "1.0.*",
-                "mockery/mockery": "0.7.2",
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "4.0.*",
                 "swipeidentity/php-toolkit": "1.0.*"
             },
             "suggest": {
@@ -1011,7 +1013,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "PHP 5.3+ Fully-featured Authentication & Authorization System",
+            "description": "PHP 5.4+ Fully-featured Authentication & Authorization System",
             "keywords": [
                 "auth",
                 "codeigniter",
@@ -1024,7 +1026,7 @@
                 "source": "https://github.com/cartalyst/sentry/tree/develop",
                 "issues": "https://github.com/cartalyst/sentry/issues"
             },
-            "time": "2014-02-15 12:37:36"
+            "time": "2014-03-11 19:27:49"
         },
         {
             "name": "cartalyst/sentry-social",
@@ -1356,24 +1358,24 @@
         },
         {
             "name": "classpreloader/classpreloader",
-            "version": "1.0.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mtdowling/ClassPreloader.git",
-                "reference": "1a50f7945b725ff2c60f234e51407d1d6e7c77c5"
+                "reference": "2c9f3bcbab329570c57339895bd11b5dd3b00877"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mtdowling/ClassPreloader/zipball/1a50f7945b725ff2c60f234e51407d1d6e7c77c5",
-                "reference": "1a50f7945b725ff2c60f234e51407d1d6e7c77c5",
+                "url": "https://api.github.com/repos/mtdowling/ClassPreloader/zipball/2c9f3bcbab329570c57339895bd11b5dd3b00877",
+                "reference": "2c9f3bcbab329570c57339895bd11b5dd3b00877",
                 "shasum": ""
             },
             "require": {
-                "nikic/php-parser": "*",
+                "nikic/php-parser": "~0.9",
                 "php": ">=5.3.3",
-                "symfony/console": ">2.0",
-                "symfony/filesystem": ">2.0",
-                "symfony/finder": ">2.0"
+                "symfony/console": "~2.1",
+                "symfony/filesystem": "~2.1",
+                "symfony/finder": "~2.1"
             },
             "bin": [
                 "classpreloader.php"
@@ -1381,7 +1383,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.0-dev"
+                    "dev-master": "1.0-dev"
                 }
             },
             "autoload": {
@@ -1399,7 +1401,7 @@
                 "class",
                 "preload"
             ],
-            "time": "2013-06-24 22:58:34"
+            "time": "2014-03-12 00:05:31"
         },
         {
             "name": "coffeescript/coffeescript",
@@ -1608,16 +1610,16 @@
         },
         {
             "name": "dompdf/dompdf",
-            "version": "v0.6.0",
+            "version": "v0.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dompdf/dompdf.git",
-                "reference": "fbb288daad0096350cdead591dd8d450e490fbd0"
+                "reference": "cf7d8a0a27270418850cc7d7ea532159e5eeb3eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dompdf/dompdf/zipball/fbb288daad0096350cdead591dd8d450e490fbd0",
-                "reference": "fbb288daad0096350cdead591dd8d450e490fbd0",
+                "url": "https://api.github.com/repos/dompdf/dompdf/zipball/cf7d8a0a27270418850cc7d7ea532159e5eeb3eb",
+                "reference": "cf7d8a0a27270418850cc7d7ea532159e5eeb3eb",
                 "shasum": ""
             },
             "require": {
@@ -1645,7 +1647,7 @@
             ],
             "description": "DOMPDF is a CSS 2.1 compliant HTML to PDF converter",
             "homepage": "https://github.com/dompdf/dompdf",
-            "time": "2014-02-07 02:58:53"
+            "time": "2014-03-11 01:59:52"
         },
         {
             "name": "filp/whoops",
@@ -2225,12 +2227,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "85428c311b38cf91d6a80a22712a65643920fed4"
+                "reference": "3589115ab1c057dde28c10a3a08ec90f5af2bd96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/85428c311b38cf91d6a80a22712a65643920fed4",
-                "reference": "85428c311b38cf91d6a80a22712a65643920fed4",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/3589115ab1c057dde28c10a3a08ec90f5af2bd96",
+                "reference": "3589115ab1c057dde28c10a3a08ec90f5af2bd96",
                 "shasum": ""
             },
             "require": {
@@ -2334,7 +2336,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-03-09 03:15:08"
+            "time": "2014-03-11 03:33:57"
         },
         {
             "name": "leafo/scssphp",
@@ -2689,6 +2691,60 @@
             ],
             "description": "Library for minifying JavaScript files using jsmin with assetic and composer",
             "time": "2013-02-28 12:04:54"
+        },
+        {
+            "name": "machuga/authority",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/machuga/authority.git",
+                "reference": "b5f111d503e32c02aa07693c84a88ee0db3ee5a7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/machuga/authority/zipball/b5f111d503e32c02aa07693c84a88ee0db3ee5a7",
+                "reference": "b5f111d503e32c02aa07693c84a88ee0db3ee5a7",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/events": "~4",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.7.*",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Authority": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "mit"
+            ],
+            "authors": [
+                {
+                    "name": "Matthew Machuga",
+                    "email": "machuga@gmail.com"
+                },
+                {
+                    "name": "Koen Schmeets",
+                    "email": "hello@koenschmeets.nl"
+                },
+                {
+                    "name": "Jesse O'Brien",
+                    "email": "jesse@jesse-obrien.ca"
+                }
+            ],
+            "description": "A simple and flexible authorization system for PHP",
+            "time": "2014-01-21 05:35:49"
         },
         {
             "name": "monolog/monolog",
@@ -3960,12 +4016,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-pages.git",
-                "reference": "0e478e8d0665ba0dee5f98cf014300ada3e6c537"
+                "reference": "0661f96fd955f54764fa0a0d5abf071359f4927f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/0e478e8d0665ba0dee5f98cf014300ada3e6c537",
-                "reference": "0e478e8d0665ba0dee5f98cf014300ada3e6c537",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/0661f96fd955f54764fa0a0d5abf071359f4927f",
+                "reference": "0661f96fd955f54764fa0a0d5abf071359f4927f",
                 "shasum": ""
             },
             "require": {
@@ -4026,7 +4082,7 @@
                 "source": "https://github.com/cartalyst/platform-pages/tree/feature/psr-4-php-54",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2014-03-08 21:19:57"
+            "time": "2014-03-12 02:20:44"
         },
         {
             "name": "platform/settings",
