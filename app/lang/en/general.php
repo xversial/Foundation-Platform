@@ -29,12 +29,15 @@ return array(
 	'all'      => 'All',
 	'enabled'  => 'Enabled',
 	'disabled' => 'Disabled',
+	'actions'  => 'Actions',
+	'status'   => 'Status',
 
 	'delete_record' => 'You are about to delete this record, do you want to continue?',
 
 	'not_logged_in' => 'You are not logged in.',
 
-	// Search & Pagination
+	// Search, Filter & Pagination
+	'no_results'    => 'No Results',
 	'showing'       => 'Showing',
 	'to'            => 'to',
 	'in'            => 'in',
@@ -42,7 +45,12 @@ return array(
 	'entries'       => 'entries',
 	'loading'       => 'Loading',
 	'search'        => 'Search',
-	'load_more'     => 'Load more',
+	'filters'       => 'Filters',
 	'remove_filter' => 'Remove filter',
+	'show_all'      => 'Show all',
+	'show_enabled'  => 'Show enabled',
+	'show_disabled' => 'Show disabled',
+	'all_enabled'   => 'All Enabled',
+	'all_disabled'  => 'All Disabled',
 
 );
