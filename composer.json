@@ -33,19 +33,17 @@
 	"require": {
 		"laravel/framework": "4.1.*",
 
-		"platform/foundation": "dev-feature/php-54",
-		"platform/installer": "dev-feature/php-54",
+		"platform/foundation": "dev-master",
+		"platform/installer": "dev-master",
 
-		"platform/attributes": "dev-feature/php-54",
-		"platform/categories": "dev-lab/platform-categories",
-		"platform/content": "dev-feature/psr-4-php-54",
-		"platform/localisation": "dev-lab/platform-localisation",
-		"platform/media": "1.0.*",
-		"platform/menus": "dev-develop",
-		"platform/operations": "dev-develop",
-		"platform/pages": "dev-feature/psr-4-php-54",
-		"platform/settings": "dev-develop",
-		"platform/users": "dev-feature/php-54"
+		"platform/attributes": "dev-master",
+		"platform/content": "dev-master",
+		"platform/media": "dev-master",
+		"platform/menus": "dev-master",
+		"platform/operations": "dev-master",
+		"platform/pages": "dev-master",
+		"platform/settings": "dev-master",
+		"platform/users": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
