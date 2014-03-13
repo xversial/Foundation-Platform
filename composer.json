@@ -31,17 +31,19 @@
 		}
 	],
 	"require": {
-		"laravel/framework": "4.0.*",
+		"laravel/framework": "4.1.*",
 
-		"platform/foundation": "1.0.*",
-		"platform/installer": "1.0.*",
+		"platform/foundation": "dev-master",
+		"platform/installer": "dev-master",
 
-		"platform/content": "1.0.*",
-		"platform/menus": "1.0.*",
-		"platform/operations": "1.0.*",
-		"platform/pages": "1.0.*",
-		"platform/settings": "1.0.*",
-		"platform/users": "1.0.*"
+		"platform/attributes": "dev-master",
+		"platform/content": "dev-master",
+		"platform/media": "dev-master",
+		"platform/menus": "dev-master",
+		"platform/operations": "dev-master",
+		"platform/pages": "dev-master",
+		"platform/settings": "dev-master",
+		"platform/users": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
@@ -57,8 +59,8 @@
 	},
 	"scripts": {
 		"post-install-cmd": [
+			"php artisan clear-compiled",
 			"php artisan optimize",
-			"php artisan key:generate",
 			"php artisan theme:publish --extensions",
 			"php artisan asset:publish platform/installer"
 		],
@@ -67,9 +69,6 @@
 			"php artisan optimize",
 			"php artisan theme:publish --extensions",
 			"php artisan asset:publish platform/installer"
-		],
-		"post-create-project-cmd": [
-			"php artisan key:generate"
 		]
 	},
 	"config": {

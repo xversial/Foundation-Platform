@@ -1,3 +1,3 @@
 ###Extension Based
 
-Extensions are packages built specifically for Platform allowing vendors to manage and distribute extensions for Platform 2. Install, upgrade, enable or disable individual extensions with ease!
+Extensions are built to allow vendors to manage and distribute extensions for Platform. Install, upgrade, enable or disable individual extensions with ease!

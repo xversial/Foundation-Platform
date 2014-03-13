@@ -14,7 +14,7 @@
  * @version    2.0.0
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
- * @copyright  (c) 2011 - 2013, Cartalyst LLC
+ * @copyright  (c) 2011-2014, Cartalyst LLC
  * @link       http://cartalyst.com
  */
 
@@ -25,8 +25,8 @@ return array(
 	| Active Theme
 	|--------------------------------------------------------------------------
 	|
-	| Here you can specify the default active theme for your application, or
-	| set to null if none is defined.
+	| Here you can specify the default active theme for your application,
+	| or set to null if none is defined.
 	|
 	*/
 
@@ -37,8 +37,8 @@ return array(
 	| Fallback Theme
 	|--------------------------------------------------------------------------
 	|
-	| Here you can specify the default fallback theme for your application, or
-	| set to null if none is defined.
+	| Here you can specify the default fallback theme for your application,
+	| or set to null if none is defined.
 	|
 	*/
 
@@ -50,13 +50,13 @@ return array(
 	|--------------------------------------------------------------------------
 	|
 	| Here you set the default theme paths for your application. Paths should
-	| also be set relative to a publically accessible directory so assets can
-	| be resolved.
+	| also be set relative to a publically accessible directory so assets
+	| can be resolved.
 	|
 	*/
 
 	'paths' => array(
-		__DIR__.'/../../../../../public/themes',
+		public_path().'/themes',
 	),
 
 	/*
@@ -129,7 +129,7 @@ return array(
 	|
 	*/
 
-	'cache_path' => 'assets/cache',
+	'cache_path' => 'cache/assets',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -153,28 +153,28 @@ return array(
 		'css' => array(
 
 			'Assetic\Filter\CssImportFilter',
-			'Basset\Filter\UriRewriteFilter',
+			'Cartalyst\AsseticFilters\UriRewriteFilter',
 
 		),
 
 		'less' => array(
 
-			'Assetic\Filter\LessphpFilter',
-			'Basset\Filter\UriRewriteFilter',
+			'Cartalyst\AsseticFilters\LessphpFilter',
+			'Cartalyst\AsseticFilters\UriRewriteFilter',
 
 		),
 
 		'sass' => array(
 
 			'Cartalyst\AsseticFilters\SassphpFilter',
-			'Basset\Filter\UriRewriteFilter',
+			'Cartalyst\AsseticFilters\UriRewriteFilter',
 
 		),
 
 		'scss' => array(
 
 			'Assetic\Filter\ScssphpFilter',
-			'Basset\Filter\UriRewriteFilter',
+			'Cartalyst\AsseticFilters\UriRewriteFilter',
 
 		),
 
@@ -210,5 +210,29 @@ return array(
 	*/
 
 	'debug' => null,
+
+	/*
+	|--------------------------------------------------------------------------
+	| Force Recompile
+	|--------------------------------------------------------------------------
+	|
+	| If you want your assets to be recompiled on every page load, set
+	| this option to true.
+	|
+	*/
+
+	'force_recompile' => false,
+
+	/*
+	|--------------------------------------------------------------------------
+	| Auto Clear assets
+	|--------------------------------------------------------------------------
+	|
+	| If you want to completely remove all the compiled assets on
+	| every page load, set this option to true.
+	|
+	*/
+
+	'auto_clear' => false,
 
 );

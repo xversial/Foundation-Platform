@@ -14,7 +14,7 @@
  * @version    2.0.0
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
- * @copyright  (c) 2011 - 2013, Cartalyst LLC
+ * @copyright  (c) 2011-2014, Cartalyst LLC
  * @link       http://cartalyst.com
  */
 
@@ -31,20 +31,22 @@ return array(
 	|
 	*/
 
-	'add'       => 'Add',
-	'remove'    => 'Remove',
-	'cancel'    => 'Cancel',
-	'delete'    => 'Delete',
-	'edit'      => 'Edit',
-	'update'    => 'Save Changes',
-	'create'    => 'Create',
-	'submit'    => 'Submit',
-	'save'      => 'Save',
-	'enable'    => 'Enable',
-	'disable'   => 'Disable',
-	'install'   => 'Install',
-	'uninstall' => 'Uninstall',
-	'copy'      => 'Copy',
-	'close'     => 'Close',
+	'add'             => 'Add',
+	'create'          => 'Create',
+	'remove'          => 'Remove',
+	'cancel'          => 'Cancel',
+	'delete'          => 'Delete',
+	'delete_selected' => 'Delete Selected',
+	'edit'            => 'Edit',
+	'update'          => 'Save Changes',
+	'submit'          => 'Submit',
+	'save'            => 'Save',
+	'enable'          => 'Enable',
+	'disable'         => 'Disable',
+	'install'         => 'Install',
+	'uninstall'       => 'Uninstall',
+	'copy'            => 'Copy',
+	'close'           => 'Close',
+	'upload'          => 'Upload',
 
 );

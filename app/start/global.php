@@ -27,21 +27,19 @@ ClassLoader::addDirectories(array(
 |
 | Here we will configure the error logger setup for the application which
 | is built on top of the wonderful Monolog library. By default we will
-| build a rotating log file setup which creates a new file each day.
+| build a basic log file setup which creates a single file for logs.
 |
 */
 
-$logFile = 'log-'.php_sapi_name().'.txt';
-
-Log::useDailyFiles(storage_path().'/logs/'.$logFile);
+Log::useFiles(storage_path().'/logs/laravel.log');
 
 /*
 |--------------------------------------------------------------------------
 | Require The Errors File
 |--------------------------------------------------------------------------
 |
-| Next we will load the file responsible for error handling. This allows us
-| to have error handling setup before we boot our app.
+| Next we'll load the file responsible for error handling. This allow
+| us to have error handling setup before we boot our application.
 |
 */
 
@@ -54,7 +52,7 @@ require __DIR__.'/errors.php';
 |
 | The "down" Artisan command gives you the ability to put an application
 | into maintenance mode. Here, you will define what is displayed back
-| to the user if maintenace mode is in effect for this application.
+| to the user if maintenance mode is in effect for the application.
 |
 */
 
@@ -68,9 +66,9 @@ App::down(function()
 | Require The Functions File
 |--------------------------------------------------------------------------
 |
-| We'll require a file which you can define any custom functions for your
-| application, before any usage of these functions occurs. This is just
-| a convenient way to organize your code.
+| We will require a file which you can define any custom functions for
+| your application, before any usage of these functions occurs. This
+| is just  a convenient way to organize your code.
 |
 */
 
@@ -106,8 +104,7 @@ require app_path().'/overrides.php';
 | Boot Platform
 |--------------------------------------------------------------------------
 |
-| Now that we have our functions and hooks registered, we'll boot Platform
-| before we include our overrides (and eventually, routes).
+| Now that we have our functions and hooks registered, we'll boot Platform.
 |
 */
 
@@ -125,3 +122,15 @@ Platform::boot();
 */
 
 require app_path().'/filters.php';
+
+/*
+|--------------------------------------------------------------------------
+| Require The Widgets File
+|--------------------------------------------------------------------------
+|
+| Next we will load the widgets file for the application. This gives
+| us a nice separate location to register our custom widgets.
+|
+*/
+
+require app_path().'/widgets.php';

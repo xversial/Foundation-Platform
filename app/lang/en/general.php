@@ -14,28 +14,43 @@
  * @version    2.0.0
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
- * @copyright  (c) 2011 - 2013, Cartalyst LLC
+ * @copyright  (c) 2011-2014, Cartalyst LLC
  * @link       http://cartalyst.com
  */
 
 return array(
+
+	'error'   => 'Error',
+	'success' => 'Success',
+	'warning' => 'Warning',
 
 	'yes'      => 'Yes',
 	'no'       => 'No',
 	'all'      => 'All',
 	'enabled'  => 'Enabled',
 	'disabled' => 'Disabled',
-	'warning'  => 'Warning',
+	'actions'  => 'Actions',
+	'status'   => 'Status',
 
-	'delete_record' => 'You are about to delete this record, do you want to Continue?',
+	'delete_record' => 'You are about to delete this record, do you want to continue?',
 
 	'not_logged_in' => 'You are not logged in.',
 
-	// Search & Pagination
-	'in'        => 'in',
-	'of'        => 'of',
-	'loading'   => 'Loading',
-	'search'    => 'Search',
-	'load_more' => 'Load more',
+	// Search, Filter & Pagination
+	'no_results'    => 'No Results',
+	'showing'       => 'Showing',
+	'to'            => 'to',
+	'in'            => 'in',
+	'of'            => 'of',
+	'entries'       => 'entries',
+	'loading'       => 'Loading',
+	'search'        => 'Search',
+	'filters'       => 'Filters',
+	'remove_filter' => 'Remove filter',
+	'show_all'      => 'Show all',
+	'show_enabled'  => 'Show enabled',
+	'show_disabled' => 'Show disabled',
+	'all_enabled'   => 'All Enabled',
+	'all_disabled'  => 'All Disabled',
 
 );

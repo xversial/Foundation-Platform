@@ -14,7 +14,7 @@
  * @version    2.0.0
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
- * @copyright  (c) 2011 - 2013, Cartalyst LLC
+ * @copyright  (c) 2011-2014, Cartalyst LLC
  * @link       http://cartalyst.com
  */
 
@@ -75,7 +75,7 @@ return array(
 		|
 		*/
 
-		'copyright' => 'Copyright (c) 2011-2013, Cartalyst LLC',
+		'copyright' => 'Copyright (c) 2011-2014, Cartalyst LLC',
 
 	),
 
@@ -107,6 +107,7 @@ return array(
 		'menu' => array(
 
 			'main-home',
+			'main-dashboard',
 			'main-login',
 			'main-logout',
 
@@ -143,6 +144,7 @@ return array(
 
 			'admin-pages',
 			'admin-content',
+			'admin-attributes',
 			'admin-menus',
 			'admin-operations',
 			'admin-users',

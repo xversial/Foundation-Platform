@@ -1,1 +1,1 @@
-Platform is an application base, a bootstrap for Laravel. The fundamentals + a few essentials that allow you to focus on the features that make your application unique.
+Platform is an application base on Laravel.

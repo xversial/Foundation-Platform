@@ -35,13 +35,13 @@ App::after(function($request, $response)
 
 Route::filter('auth', function()
 {
-	if ( ! Sentry::check())
-	{
-		// Store the current URI
-		Session::flash('redirect', Request::getPathInfo());
+	if (Auth::guest()) return Redirect::guest('login')->withErrors(Lang::get('general.not_logged_in'));
+});
 
-		return Redirect::route('login')->withErrors(Lang::get('general.not_logged_in'));
-	}
+
+Route::filter('auth.basic', function()
+{
+	return Auth::basic();
 });
 
 /*
@@ -57,7 +57,7 @@ Route::filter('auth', function()
 
 Route::filter('guest', function()
 {
-	if (Sentry::check()) return Redirect::to('/');
+	if (Auth::check()) return Redirect::to('/');
 });
 
 /*

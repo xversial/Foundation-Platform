@@ -1,21 +1,53 @@
-## Laravel PHP Framework
+# Platform
 
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/version.png)](https://packagist.org/packages/laravel/framework) [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.png)](https://packagist.org/packages/laravel/framework) [![Build Status](https://travis-ci.org/laravel/framework.png)](https://travis-ci.org/laravel/framework)
+Platform is not just another CMS, it's a starting point for you to build your application providing the tools you need to get the job done as easy as possible.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
+- Laravel 4.1
+- Authentication & Authorization
+- Social Authentication (OAuth, OAuth 2)
+- Bootstrap 3.1.0 Ready
+- Frontend/Backend/Custom Themes
+- User/Group management + permissions
+- Content Management
+- Menu manager
+- Settings
+- Themes manager
+- Dashboard
+- Extension manager
+- Localisation
+- Developer Tools (extension creator)
+- Powerful Extension System
+- Widgets
+- Plugins
+- API
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
+[Official website & documentation](http://cartalyst.com/manual/platform)
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+Part of the Cartalyst Arsenal & licensed [OSI BSD 3](license.txt). Code well, rock on.
 
-## Official Documentation
+## Versioning
 
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
+Platform will be maintained under the [Semantic Versioning](http://semver.org/) guidelines as much as possible.
 
-### Contributing To Laravel
+Releases will be numbered with the following format:
 
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
+`<major>.<minor>.<patch>`
 
-### License
+And constructed with the following guidelines:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+* Breaking backward compatibility bumps the major (and resets the minor and patch)
+* New additions without breaking backward compatibility bumps the minor (and resets the patch)
+* Bug fixes and misc changes bumps the patch
+
+## Support
+
+Have a bug? Please create an issue here on GitHub that conforms with [necolas's guidelines](https://github.com/necolas/issue-guidelines).
+
+https://github.com/cartalyst/platform/issues
+
+Follow us on Twitter, [@cartalyst](http://twitter.com/cartalyst).
+
+Join us for a chat on IRC.
+
+Server: irc.freenode.net
+Channel: #cartalyst

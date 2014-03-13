@@ -14,7 +14,7 @@
  * @version    2.0.0
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
- * @copyright  (c) 2011 - 2013, Cartalyst LLC
+ * @copyright  (c) 2011-2014, Cartalyst LLC
  * @link       http://cartalyst.com
  */
 
@@ -39,12 +39,11 @@ Installer::after(function()
 	// If we have the platform/menus extension installed, we'll
 	// set the order of the admin menu according to the
 	// specific application requirements.
-	if (class_exists('Platform\Menus\Models\Menu'))
+	if (class_exists('Platform\Menus\Menu'))
 	{
 		set_menu_order('admin', Config::get('platform.admin.menu'));
 		set_menu_order('main', Config::get('platform.frontend.menu'));
 	}
-
 });
 
 /*

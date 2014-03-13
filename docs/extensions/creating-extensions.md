@@ -1,10 +1,8 @@
-## Creating Extensions
+# Creating Extensions
 
 Because extensions are basically separated app folders there really is no limit to what you can build with them. You could write a media manager extension or a notification handler extension which you can re-use on different Platform 2 applications.
 
-### Using The Workshop Extension {#using-the-workshop-extension}
-
----
+## Using The Workshop Extension {#using-the-workshop-extension}
 
 The easiest way to get started with an extension is to create one though the Workshop extension. To get started browse to `admin/operations/workshop` in your Platform 2 back-end.
 
@@ -21,10 +19,6 @@ These define the namespace for your extension. The Vendor name is a unique ident
 **Description**
 
 Your extension's description.
-
-**URI**
-
-The uri for your extension, f.e. `admin/media`.
 
 **Dependencies**
 
@@ -43,27 +37,21 @@ Automatic install will install the component in the workbench directory in your 
 You can also choose to download a zip file of your generated extension and install it manually in the extensions or workbench directory.
 
 
-### Manually Creating Extensions {#manually-creating-extensions}
-
----
+## Manually Creating Extensions {#manually-creating-extensions}
 
 Manually creating an extensions takes a bit more work. There are two required files for creating extensions: the `composer.json` file and the `extension.php` file.
 
 See [requirements]({url}/extensions#requirements) for more info.
 
 
-### Enabling An Extension {#enabling-an-extension}
-
----
+## Enabling an Extension {#enabling-an-extension}
 
 After that your extension is added to the extensions folder you can install and enable it through the admin back-end under the operations section. Your extension will be listed amongst the other extensions. Click the edit button to install and enable your extension.
 
 Remember that you can always go back here to disable or uninstall your extension.
 
 
-### Registering Widgets {#registering-widgets}
-
----
+## Registering Widgets {#registering-widgets}
 
 Widgets can be used to provide small pieces of views which can be easily re-used throughout your application or extension.
 

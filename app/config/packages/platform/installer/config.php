@@ -14,7 +14,7 @@
  * @version    2.0.0
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
- * @copyright  (c) 2011 - 2013, Cartalyst LLC
+ * @copyright  (c) 2011-2014, Cartalyst LLC
  * @link       http://cartalyst.com
  */
 
@@ -25,7 +25,7 @@ return array(
 	| Trusted IPs
 	|--------------------------------------------------------------------------
 	|
-	| Here, you may add entries for IP addresses who are allowed to undertake
+	| Here you may define all the IP addresses that are eligible to undertake
 	| operations (such as installing and updating) through the web interface.
 	|
 	| We accept hard-coded IP addresses, partial or full wildcard "*" entries.
@@ -36,8 +36,13 @@ return array(
 
 		'127.0.0.1',
 
-		// // Allow all IP address'
+		// // Allow all IP addresses
 		// '*',
+
+		// // Allow ranges of IP addresses
+		// '127.0.0.*'
+		// '127.0.*'
+		// '127.*'
 
 	),
 
