@@ -53,6 +53,10 @@
 	// Hash Settings
 	var defaultHash = '';
 
+	// Database date formats
+	var dbTimestampFormat     = 'YYYY-MM-DD HH:mm:ss',
+		dbDateFormat          = 'YYYY-MM-DD';
+
 	// Search
 	var searchTimeout;
 	var isSearchActive = false;
@@ -65,10 +69,11 @@
 
 		self.grid = '[data-grid="' + grid + '"]';
 
+		self.defaultFilters = [];
 		self.appliedFilters = [];
 
-		self.defaultColumn;
-		self.defaultDirection;
+		self.defaultColumn = '';
+		self.defaultDirection = '';
 
 		self.currentSort = {
 			column: null,
@@ -137,7 +142,7 @@
 		{
 			if (typeof window._ === 'undefined')
 			{
-				throw new Error('Underscore is not defined. DataGrid Requires UnderscoreJS v1.5.2 or later to run!');
+				throw new Error('Underscore is not defined. DataGrid Requires UnderscoreJS v1.6.0 or later to run!');
 			}
 
 			var grid = this.grid;
@@ -169,7 +174,7 @@
 			while (
 				div.innerHTML = '<!--[if gt IE ' + (++v) + ']><i></i><![endif]-->',
 				all[0]
-			);
+			) {}
 
 			return v > 4 ? v : undef;
 		},
@@ -213,7 +218,16 @@
 				self.refresh();
 			});
 
-			this.$body.on('click', '[data-filter]' + grid, function(e)
+			this.$body.on('click', '[data-filter-default]' + grid  + ',' + grid + ' [data-filter-default]', function(e)
+			{
+				e.preventDefault();
+
+				self.reset();
+
+				self.extractFilters($(this));
+			});
+
+			this.$body.on('click', '[data-filter]' + grid + ':not([data-filter-default]),' + grid + ' [data-filter]:not([data-filter-default])', function(e)
 			{
 				e.preventDefault();
 
@@ -231,12 +245,12 @@
 					self.pagination.pageIdx = 1;
 				}
 
-				self.extractFiltersFromClick($(this));
+				self.extractFilters($(this));
 			});
 
 			var dateRangeEl = this.$body.find('[data-range-filter]' + grid + ',' + grid + ' [data-range-filter]');
 
-			$(dateRangeEl).on('change', function(e)
+			$(dateRangeEl).on('change', function()
 			{
 				self.removeRangeFilters($(this));
 
@@ -249,7 +263,7 @@
 
 				var idx = $(this).index();
 
-				if (self.appliedFilters[idx].type === 'range')
+				if (self.appliedFilters[idx].type === 'range' || self.appliedFilters[idx].type === 'ranges')
 				{
 					self.$body.find('[data-range-filter="' + self.appliedFilters[idx].column + '"]' + grid + ',' + grid + ' [data-range-filter="' + self.appliedFilters[idx].column + '"]').val('');
 				}
@@ -261,17 +275,39 @@
 					self.$results.empty();
 				}
 
-				self.$body.find('[data-select-filter]' + grid).find('option:eq(0)').prop('selected', true);
-
 				self.refresh();
 			});
 
 			this.$body.on('change', '[data-select-filter]' + grid, function()
 			{
-				self.removeSelectFilter($(this));
-
-				self.selectFilter($(this));
+				if ($(this).find(':selected').data('filter') !== undefined)
+				{
+					self.extractFilters($(this).find(':selected'));
+				}
+				else
+				{
+					self.refresh();
+				}
 			});
+
+			if (this.opt.infiniteScroll && this.opt.method === 'infinite')
+			{
+				var offset = this.opt.scrollOffset || 400;
+
+				var throttled = _.throttle(function()
+				{
+					if ($(window).scrollTop() >= $(document).height() - $(window).height() - offset)
+					{
+						var page = self.pagination.pageIdx + 1;
+
+						self.goToPage(page);
+
+						self.refresh();
+					}
+				}, 800);
+
+				$(window).scroll(throttled);
+			}
 
 			this.$pagination.on('click', '[data-page]', function(e)
 			{
@@ -341,9 +377,8 @@
 		 */
 		checkHash: function()
 		{
-			var path = String(window.location.hash.slice(3));
-
-			var routes = path.split('/');
+			var path = String(window.location.hash.slice(3)),
+				routes = path.split('/');
 
 			routes = _.compact(routes);
 
@@ -358,34 +393,31 @@
 		 */
 		updateOnHash: function(routes)
 		{
-			// Reset grid
+			var self            = this,
+				options         = self.opt,
+				curRoute        = '/' + routes.join('/'),
+				currentHash     = String(window.location.hash.slice(3)),
+				sortedColumn    = options.sort.hasOwnProperty('column'),
+				sortedDirection = options.sort.hasOwnProperty('direction'),
+				parsedRoute,
+				nextItem,
+				lastItem;
+
+			routes = _.compact(curRoute.split('/grid/'));
+
 			this.reset();
 
-			var self = this;
-
-			var options = self.opt;
-
-			var curIndex = _.indexOf(routes, self.key);
-
-			var curRoute = '/' + routes.join('/');
-
-			var routes = _.compact(curRoute.split('/grid/'));
-
-			var sortedColumn = options.sort.hasOwnProperty('column');
-
-			var sortedDirection = options.sort.hasOwnProperty('direction');
+			this.initDefaultFilters();
 
 			_.each(routes, function(route)
 			{
-				var parsedRoute = route.split('/');
-
-				parsedRoute = _.compact(parsedRoute);
+				parsedRoute = _.compact(route.split('/'));
 
 				if (parsedRoute[0] === self.key)
 				{
 					// Build Array For Sorts
-					var lastItem = parsedRoute[(parsedRoute.length - 1)];
-					var nextItem = parsedRoute[(parsedRoute.length - 2)];
+					lastItem = parsedRoute[(parsedRoute.length - 1)];
+					nextItem = parsedRoute[(parsedRoute.length - 2)];
 
 					// Use test to return true/false
 					if (/page/g.test(lastItem))
@@ -416,7 +448,7 @@
 					}
 					else if (sortedColumn && sortedDirection)
 					{
-						// Convert Object to string
+						// Convert sort to string
 						var str = self.opt.sort.column + self.opt.delimiter + self.opt.sort.direction;
 
 						self.extractSortsFromRoute(str);
@@ -424,28 +456,26 @@
 					else
 					{
 						self.currentSort.direction = '';
-						self.currentSort.column = '';
+						self.currentSort.column    = '';
 					}
 
 					// Build Array For Filters
 					if (parsedRoute.length !== 0 )
 					{
-						// We Must Reset then rebuild.
+						// Reset filters then rebuild.
 						self.appliedFilters = [];
 
 						self.extractFiltersFromRoute(parsedRoute);
 					}
 					else
 					{
-						// Reset Applied Filters if none are set via the hash
+						// Reset applied filters if none are set via the hash
 						self.appliedFilters = [];
 
 						self.$filters.empty();
 					}
 				}
 			});
-
-			var currentHash = String(window.location.hash.slice(3));
 
 			if (currentHash.indexOf(self.key) === -1)
 			{
@@ -479,7 +509,7 @@
 				rtIndex = '',
 				currentHash = window.location.hash.slice(3);
 
-			// #!/grid/key/filters/sorts/page
+			// #!/grid/key/filters/sorts/page/
 			var filters = self.buildFilterFragment(),
 				sort    = self.buildSortFragment(),
 				page    = self.buildPageFragment();
@@ -499,7 +529,7 @@
 				base += page;
 			}
 
-			if ( ! filters.length > 1 || ! sort.length > 1 || ! self.pagination.pageIdx > 1 && base !== '')
+			if (filters.length < 1 || sort.length < 1 || self.pagination.pageIdx < 1 && base !== '')
 			{
 				base = '';
 			}
@@ -553,7 +583,7 @@
 
 			if (path !== '')
 			{
-				path = path.replace('//', '/');
+				path = path.replace(/\/\//g, '/');
 
 				if (currentHash !== path)
 				{
@@ -577,18 +607,18 @@
 		 * @param  object  filter
 		 * @return void
 		 */
-		applyFilter: function(filters)
+		applyFilter: function(filter)
 		{
-			if (this.searchForFilter(filters) === -1)
+			if (this.searchForFilter(filter) === -1)
 			{
 				$(this).trigger('dg:applying', this);
 
 				var without = [],
 					exists  = false;
 
-				_.each(this.appliedFilters, function(filter)
+				_.each(this.appliedFilters, function(_filter)
 				{
-					if (JSON.stringify(filter) === JSON.stringify(filters))
+					if (JSON.stringify(_filter) === JSON.stringify(filter))
 					{
 						exists = true;
 					}
@@ -597,7 +627,7 @@
 				if ( ! exists)
 				{
 					// Apply filters to our global array.
-					this.appliedFilters.push(filters);
+					this.appliedFilters.push(filter);
 				}
 
 				// Create a new array without livesearch items
@@ -610,9 +640,55 @@
 				}
 
 				// Render our filters
-				this.$filters.html(this.tmpl['filters']({ filters: without }));
+				this.$filters.html(this.tmpl.filters({ filters: without }));
 
 				$(this).trigger('dg:applied', this);
+			}
+		},
+
+		/**
+		 * Apply a default filter.
+		 *
+		 * @param  object  filter
+		 * @return void
+		 */
+		applyDefaultFilter: function(filter)
+		{
+			$(this).trigger('dg:applyingDefault', this);
+
+			var exists = false;
+
+			_.each(this.defaultFilters, function(_filter)
+			{
+				if (JSON.stringify(_filter) === JSON.stringify(filter))
+				{
+					exists = true;
+				}
+			});
+
+			if ( ! exists)
+			{
+				this.defaultFilters.push(filter);
+			}
+
+			$(this).trigger('dg:appliedDefault', this);
+		},
+
+		/**
+		 * Initialize default filters.
+		 *
+		 * @return void
+		 */
+		initDefaultFilters: function()
+		{
+			var self = this;
+
+			if (window.location.hash === '')
+			{
+				_.each($('[data-filter-default]' + self.grid + ', ' + self.grid + ' [data-filter-default]'), function(defaultFilter)
+				{
+					self.extractFilters($(defaultFilter));
+				});
 			}
 		},
 
@@ -626,15 +702,88 @@
 		{
 			$(this).trigger('dg:removing', this);
 
-			var grid = this.grid;
+			var grid       = this.grid,
+				filterData = this.appliedFilters[idx],
+				el;
+
+			if (filterData.type === 'range')
+			{
+				el = $(grid + '[data-filter*="' + filterData.column + ':' + filterData.from + ':' + filterData.to + '"],' + grid + ' [data-filter*="' + filterData.column + ':' + filterData.from + ':' + filterData.to + '"]');
+			}
+			else
+			{
+				el = $(grid + '[data-filter*="' + filterData.column + ':' + filterData.value + '"],' + grid + ' [data-filter*="' + filterData.column + ':' + filterData.value + '"]');
+			}
+
+			if (el.prop('tagName') === 'OPTION')
+			{
+				el.parent().find(':eq(0)').prop('selected', true);
+			}
 
 			this.appliedFilters.splice(idx, 1);
 
-			this.$filters.html(this.tmpl['filters']({ filters: this.appliedFilters }));
+			this.$filters.html(this.tmpl.filters({ filters: this.appliedFilters }));
 
 			this.goToPage(1);
 
 			$(this).trigger('dg:removed', this);
+		},
+
+		/**
+		 * Remove filters from group.
+		 *
+		 * @param  object filters
+		 * @return void
+		 */
+		removeGroupFilters: function(filters)
+		{
+			var self  = this,
+				index = -1,
+				filterData,
+				termsCount,
+				operator;
+
+			filters = filters.find('[data-filter]');
+
+			_.each(filters, function(filter)
+			{
+				filter     = $(filter).data('filter');
+				termsCount = filter.match(/:/g).length;
+				filter     = filter.split(':');
+				operator   = self.checkOperator(filter[1]) ? filter[1] : null;
+
+				if (termsCount === 2 && operator === null)
+				{
+					filterData = {
+						column: filter[0],
+						from: filter[1],
+						to: filter[2],
+						type: 'range'
+					};
+				}
+				else if (termsCount === 2 && operator !== undefined)
+				{
+					filterData = {
+						column: filter[0],
+						value: $('<p/>').text(filter[2]).html(),
+						operator: operator
+					};
+				}
+				else
+				{
+					filterData = {
+						column: filter[0],
+						value: $('<p/>').text(filter[1]).html()
+					};
+				}
+
+				index = self.searchForFilter(filterData);
+
+				if (index !== -1)
+				{
+					self.removeFilters(index);
+				}
+			});
 		},
 
 		/**
@@ -698,16 +847,21 @@
 		 * Handles the search on submit.
 		 *
 		 * @param  object  el
+		 * @param  bool    refresh
 		 * @return void
 		 */
-		handleSearchOnSubmit: function(el)
+		handleSearchOnSubmit: function(el, refresh)
 		{
+			refresh = refresh !== undefined ? refresh : true;
+
 			var $input = el.find('input'),
-				column = 'all',
-				rect = [];
+				column = 'all';
 
 			// Make sure we arn't submiting white space only
-			if ( ! $.trim($input.val()).length) return;
+			if ( ! $.trim($input.val()).length)
+			{
+				return;
+			}
 
 			this.isSearchActive = true;
 
@@ -737,14 +891,19 @@
 			});
 
 			// Clear results for infinite grids
-			if (this.opt.method === 'infinite') this.$results.empty();
+			if (this.opt.method === 'infinite')
+			{
+				this.$results.empty();
+			}
 
 			// Reset
 			$input.val('').data('old', '');
 
-			this.goToPage(1);
-
-			this.refresh();
+			if (refresh)
+			{
+				this.goToPage(1);
+				this.refresh();
+			}
 		},
 
 		/**
@@ -755,11 +914,13 @@
 		 */
 		handleLiveSearch: function(el)
 		{
-			var rect = [],
-				column = 'all',
+			var column = 'all',
 				self = this;
 
-			if (isSearchActive) return;
+			if (isSearchActive)
+			{
+				return;
+			}
 
 			clearTimeout(searchTimeout);
 
@@ -813,6 +974,7 @@
 		 * Sets the sort direction on the given element.
 		 *
 		 * @param  object  el
+		 * @param  string  direction
 		 * @return void
 		 */
 		setSortDirection: function(el, direction)
@@ -856,56 +1018,66 @@
 				endVal           = endFilterEl.val(),
 				startLabel       = startFilterEl.data('label'),
 				dateFormat       = startFilterEl.data(this.opt.dateFormatAttribute),
-				dbFormat         = 'YYYY-MM-DD',
-				column           = startRangeFilter,
 				from             = startVal,
 				to               = endVal,
 				filterData;
 
 			if (dateFormat !== null && dateFormat !== undefined && window.moment !== undefined)
 			{
-				from   = moment(from).format(dbFormat);
-				to     = moment(to).format(dbFormat);
+				from = moment(from).format(dbDateFormat);
+				to   = moment(to).format(dbDateFormat);
 			}
 
-			var filterData = {
+			filterData = {
 				column: startRangeFilter,
 				from: from,
 				to: to,
 				label: startLabel,
-				type: 'range'
-			}
+				type: 'ranges'
+			};
 
 			this.applyFilter(filterData);
-
-			this.refresh();
-
-			this.goToPage(1);
 		},
 
 		/**
-		 * Extracts filters from click.
+		 * Extracts filters from element.
 		 *
 		 * @param  string  filters
+		 * @param  bool    refresh
 		 * @return void
 		 */
-		extractFiltersFromClick: function(filterEl)
+		extractFilters: function(filterEl, refresh)
 		{
-			var filtersArr = $(filterEl).data('filter').split(', '),
-				labels = $(filterEl).data('label'),
+			refresh = refresh !== undefined ? refresh : true;
+
+			if (filterEl.data('filter-reset') !== undefined)
+			{
+				this.reset();
+			}
+			else if (filterEl.parent().data('filter-reset') !== undefined)
+			{
+				this.removeGroupFilters(filterEl.parent());
+			}
+			else if (filterEl.parent().parent().data('filter-reset') !== undefined)
+			{
+				this.removeGroupFilters(filterEl.parent().parent());
+			}
+
+			var filtersArr = filterEl.data('filter').split(', '),
+				labels = filterEl.data('label'),
 				filter,
 				operator,
 				filterData,
 				labelsArr,
-				index,
 				label,
-				key;
+				termsCount;
 
 			for (var i = 0; i < filtersArr.length; i++)
 			{
 				filter = filtersArr[i].split(':');
+				termsCount = filtersArr[i].match(/:/g).length;
 
-				if (this.checkOperator(filter[1]))
+				if (this.checkOperator(filtersArr[i]))
 				{
 					operator = filter[1];
 
@@ -914,23 +1086,37 @@
 
 				filterData = {
 					column: filter[0],
-					value: filter[1],
+					value: $('<p/>').text(filter[1]).html(),
 					operator: operator
 				};
 
 				if (this.searchForFilter(filterData) !== -1)
 				{
-					return true;
+					continue;
 				}
 
-				if (typeof labels !== 'undefined')
+				if (labels !== undefined)
 				{
 					labelsArr = labels.split(', ');
 
-					if (index !== -1)
+					if (labelsArr[i] !== undefined)
 					{
 						label = labelsArr[i].split(':');
+					}
 
+					if (termsCount === 2 && operator === undefined)
+					{
+						filterData = {
+							column: filter[0],
+							from: filter[1],
+							to: filter[2],
+							colMask: label[1],
+							valMask: label[2],
+							type: 'range'
+						};
+					}
+					else if (termsCount === 2 && operator !== undefined)
+					{
 						filterData = {
 							column: filter[0],
 							value: $('<p/>').text(filter[1]).html(),
@@ -938,8 +1124,46 @@
 							valMask: label[2],
 							operator: operator
 						};
+					}
+					else
+					{
+						filterData = {
+							column: filter[0],
+							value: $('<p/>').text(filter[1]).html(),
+							colMask: label[1],
+							valMask: label[2],
+							operator: operator
+						};
+					}
 
+					if (filterEl.data('filter-default') === undefined)
+					{
 						this.applyFilter(filterData);
+					}
+					else
+					{
+						this.applyDefaultFilter(filterData);
+					}
+
+				}
+				else
+				{
+					if (termsCount === 2 && operator === undefined)
+					{
+						filterData = {
+							column: filter[0],
+							from: filter[1],
+							to: filter[2],
+							type: 'range'
+						};
+					}
+					else if (termsCount === 2 && operator !== undefined)
+					{
+						filterData = {
+							column: filter[0],
+							value: $('<p/>').text(filter[1]).html(),
+							operator: operator
+						};
 					}
 					else
 					{
@@ -948,25 +1172,24 @@
 							value: $('<p/>').text(filter[1]).html(),
 							operator: operator
 						};
+					}
 
+					if (filterEl.data('filter-default') === undefined)
+					{
 						this.applyFilter(filterData);
 					}
-				}
-				else
-				{
-					filterData = {
-						column: filter[0],
-						value: $('<p/>').text(filter[1]).html(),
-						operator: operator
-					};
-
-					this.applyFilter(filterData);
+					else
+					{
+						this.applyDefaultFilter(filterData);
+					}
 				}
 			}
 
-			this.refresh();
-
-			this.goToPage(1);
+			if (refresh)
+			{
+				this.goToPage(1);
+				this.refresh();
+			}
 		},
 
 		/**
@@ -1001,7 +1224,10 @@
 				this.currentSort.index = 1;
 			}
 
-			if (typeof sortArr[1] !== 'undefined') direction = sortArr[1];
+			if (typeof sortArr[1] !== 'undefined')
+			{
+				direction = sortArr[1];
+			}
 
 			if (sortArr[0] === this.currentSort.column)
 			{
@@ -1041,146 +1267,95 @@
 		extractFiltersFromRoute: function(routeArr)
 		{
 			var self = this,
-				grid = this.grid,
-				labels,
-				filters;
+				grid = this.grid;
 
 			routeArr = routeArr.splice(1);
 
 			this.appliedFilters = [];
 
-			labels = $('[data-label][data-filter]' + grid + ',' + grid + ' [data-label][data-filter]');
-
 			for (var i = 0; i < routeArr.length; i++)
 			{
-				filters = routeArr[i].split(this.opt.delimiter);
+				var filterEl   = $('[data-filter*="' + routeArr[i] + '"]' + grid + ',' + grid + ' [data-filter*="' + routeArr[i] + '"]'),
+					filter     = routeArr[i].split(':'),
+					termsCount = routeArr[i].match(/:/g).length,
+					label;
 
-				for (var x = 0; x < labels.length; x++)
+				if ( ! filterEl.length && termsCount === 2)
 				{
-					var label  = $(labels[x]).data('label').split(', '),
-						filter = $(labels[x]).data('filter').split(', ');
+					// Range filters
+					var startFilterEl = this.$body.find('[data-range-start][data-range-filter="' + filter[0] + '"]' + grid + ',' + grid + ' [data-range-start][data-range-filter="' + filter[0] + '"]'),
+						endFilterEl   = this.$body.find('[data-range-end][data-range-filter="' + filter[0] + '"]' + grid + ',' + grid + ' [data-range-end][data-range-filter="' + filter[0] + '"]'),
+						dateFormat    = startFilterEl.data(this.opt.dateFormatAttribute);
 
-					for (var j = 0; j < label.length; j++)
+					if (window.moment !== undefined && dateFormat !== undefined)
 					{
-						if (filter[j].indexOf(filters[0]) !== -1 && filter[j].indexOf(filters[1]) !== -1)
-						{
-							if (filters[2] !== undefined)
-							{
-								if (filter[j].indexOf(filters[2]) === -1) continue;
-							}
-
-							var	matchedLabel = label[j].split(':');
-
-							// Check for contained operators
-							var hasOperator = false;
-
-							if (this.checkOperator(filters[1]))
-							{
-								hasOperator = true;
-							}
-
-							if (hasOperator)
-							{
-								var operator = filters[1];
-
-								var filterData = {
-									column: filters[0],
-									value: $('<p/>').text(filters[2]).html(),
-									operator: operator,
-									colMask: matchedLabel[1],
-									valMask: matchedLabel[2]
-								};
-
-								self.applyFilter(filterData);
-							}
-							else
-							{
-								var filterData = {
-									column: filters[0],
-									value: $('<p/>').text(filters[1]).html(),
-									colMask: matchedLabel[1],
-									valMask: matchedLabel[2]
-								};
-
-								self.applyFilter(filterData);
-							}
-						}
+						startFilterEl.val(moment(filter[1]).format(dateFormat));
+						endFilterEl.val(moment(filter[2]).format(dateFormat));
 					}
+					else
+					{
+						startFilterEl.val(filter[1]);
+						endFilterEl.val(filter[2]);
+					}
+
+					self.rangeFilter(startFilterEl, false);
 				}
-
-				// Check to  make sure filter isn't already set
-				if (self.searchForValue( filters[1], self.appliedFilters) === -1)
+				else if (termsCount === 1 && ! filterEl.length)
 				{
-					var curFilter = filters[0];
+					// Search
+					var searchEl = $('[data-search]' + grid);
 
-					var startFilterEl = this.$body.find('[data-range-start][data-range-filter="' + curFilter + '"]' + grid + ',' + grid + ' [data-range-start][data-range-filter="' + curFilter + '"]'),
-						endFilterEl   = this.$body.find('[data-range-end][data-range-filter="' + curFilter + '"]' + grid + ',' + grid + ' [data-range-end][data-range-filter="' + curFilter + '"]');
+					searchEl.find('[value="' + filter[0] + '"]').prop('selected', true);
+					searchEl.find('input').val(filter[1]);
 
-					var start      = startFilterEl.data('range-filter'),
-						startLabel = startFilterEl.data('label'),
-						dateFormat = startFilterEl.data(this.opt.dateFormatAttribute),
-						dbFormat   = 'YYYY-MM-DD',
-						column     = routeArr[i].split(this.opt.delimiter)[0],
-						from       = routeArr[i].split(this.opt.delimiter)[1],
-						to         = routeArr[i].split(this.opt.delimiter)[2];
-
-					if (dateFormat !== null && dateFormat !== undefined && window.moment !== undefined)
+					self.handleSearchOnSubmit($('[data-search]' + grid), false);
+				}
+				else
+				{
+					// Select drop down filters
+					if ($(filterEl).prop('tagName') === 'OPTION')
 					{
-						from = moment(from).format(dbFormat);
-						to   = moment(to).format(dbFormat);
+						$(filterEl).prop('selected', true);
 					}
 
-					if (window.moment !== undefined && dateFormat)
+					// All other filters
+					filter     = $(filterEl).data('filter');
+					label      = $(filterEl).data('label');
+					termsCount = filter.match(/:/g).length;
+					filter     = filter.split(':');
+
+					var fil = $(filterEl).clone();
+
+					$(fil).attr('data-filter', routeArr[i]);
+
+					if ($(filterEl).data('label'))
 					{
-						startFilterEl.val(moment(from).format(dateFormat));
-						endFilterEl.val(moment(to).format(dateFormat));
-					}
-					else
-					{
-						startFilterEl.val(from);
-						endFilterEl.val(to);
+						label = label.split(', ');
 					}
 
-					if (curFilter === start)
-					{
-						var filterData = {
-							column: column,
-							from: from,
-							to: to,
-							label: startLabel,
-							type: 'range'
-						};
+					var dataLabel = '';
 
-						self.applyFilter(filterData);
-					}
-					else
+					if (label !== undefined)
 					{
-						var filterEl = $('[data-filter="' +  filters.join(self.opt.delimiter) + '"]');
-
-						if (routeArr[i].split(this.opt.delimiter)[2] !== undefined)
+						for(var j = 0; j < label.length; j++)
 						{
-							var column     = routeArr[i].split(this.opt.delimiter)[0],
-								operator   = routeArr[i].split(this.opt.delimiter)[1],
-								value      = routeArr[i].split(this.opt.delimiter)[2];
+							var labelArr  = label[j].split(':'),
+								filterArr = routeArr[i].split(':');
 
-							var filterData = {
-								column: column,
-								value: $('<p/>').text(value).html(),
-								operator: operator
-							};
+							if (labelArr[0] === filterArr[0])
+							{
+								dataLabel = label[j];
 
-							self.applyFilter(filterData);
-						}
-						else
-						{
-							var filterData = {
-								column: routeArr[i].split(this.opt.delimiter)[0],
-								value: $('<p/>').text(routeArr[i].split(this.opt.delimiter)[1]).html(),
-							};
-
-							self.applyFilter(filterData);
+								break;
+							}
 						}
 					}
+
+					$(fil).attr('data-label', dataLabel);
+
+					dataLabel = '';
+
+					self.extractFilters($(fil), false);
 				}
 			}
 		},
@@ -1242,11 +1417,17 @@
 		{
 			if (this.checkIE() < 9)
 			{
-				if (array === null) return -1;
+				if (array === null)
+				{
+					return -1;
+				}
 
 				for (var i = 0; i < array.length; i++)
 				{
-					if (array[i] === item) return i;
+					if (array[i] === item)
+					{
+						return i;
+					}
 				}
 
 				return -1;
@@ -1258,18 +1439,15 @@
 		/**
 		 * Extracts sorts from route.
 		 *
-		 * @param  array  routeArr
+		 * @param  string  sort
 		 * @return void
 		 */
-		extractSortsFromRoute: function(lastItem)
+		extractSortsFromRoute: function(sort)
 		{
-			var sort = lastItem.split(this.opt.delimiter);
+			sort = sort.split(this.opt.delimiter);
 
-			var grid = this.grid;
-
-			var column = sort[0];
-
-			var direction = sort[1];
+			var column    = sort[0],
+				direction = sort[1];
 
 			// Setup Sort and put index at 1
 			if (this.currentSort.column !== column)
@@ -1308,9 +1486,21 @@
 
 			var delimiter = this.opt.delimiter;
 
-			for (var i = 0; i < this.appliedFilters.length; i++)
+			var filters = [];
+
+			_.each(this.defaultFilters, function(filter)
 			{
-				var index = this.appliedFilters[i];
+				filters.push(filter);
+			});
+
+			_.each(this.appliedFilters, function(filter)
+			{
+				filters.push(filter);
+			});
+
+			for (var i = 0; i < filters.length; i++)
+			{
+				var index = filters[i];
 
 				if (index.type !== 'live')
 				{
@@ -1338,7 +1528,7 @@
 							filterFragment += '/' + index.column + delimiter + index.maskOrg;
 						}
 					}
-					else if (index.type === 'range')
+					else if (index.type === 'range' || index.type === 'ranges')
 					{
 						filterFragment += '/' + index.column + delimiter + index.from + delimiter + index.to;
 					}
@@ -1402,18 +1592,18 @@
 			})
 			.done(function(response)
 			{
-				if (self.pagination.pageIdx > response.pages_count)
+				if (self.pagination.pageIdx > response.pages)
 				{
-					self.pagination.pageIdx = response.pages_count;
+					self.pagination.pageIdx = response.pages;
 
 					self.refresh();
 
 					return false;
 				}
 
-				self.pagination.filteredCount = response.filtered_count;
+				self.pagination.filteredCount = response.filtered;
 
-				self.pagination.totalCount = response.total_count;
+				self.pagination.totalCount = response.total;
 
 				// Keep infinite results to append load more
 				if (self.opt.method !== 'infinite')
@@ -1423,18 +1613,18 @@
 
 				if (self.opt.method === 'single' || self.opt.method === 'single')
 				{
-					self.$results.html(self.tmpl['results'](response));
+					self.$results.html(self.tmpl.results(response));
 				}
 				else
 				{
-					self.$results.append(self.tmpl['results'](response));
+					self.$results.append(self.tmpl.results(response));
 				}
 
-				self.$pagination.html(self.tmpl['pagination'](self.buildPagination(response)));
+				self.$pagination.html(self.tmpl.pagination(self.buildPagination(response)));
 
 				if ( ! response.results.length)
 				{
-					self.$results.html(self.tmpl['empty']());
+					self.$results.html(self.tmpl.empty());
 				}
 
 				if (response.sort !== '')
@@ -1479,70 +1669,83 @@
 		 */
 		buildAjaxURI: function(download)
 		{
-			var self = this;
+			var self = this,
+				params = {},
+				from,
+				to;
 
-			var params = {};
-				params.filters   = [];
-				params.page      = this.pagination.pageIdx;
-				params.method    = this.opt.method;
-				params.threshold = this.opt.threshold;
-				params.throttle  = this.opt.throttle;
+			params.filters   = [];
+			params.page      = this.pagination.pageIdx;
+			params.method    = this.opt.method;
+			params.threshold = this.opt.threshold;
+			params.throttle  = this.opt.throttle;
 
-			for (var i = 0; i < this.appliedFilters.length; i++)
+			var filters = [];
+
+			_.each(this.defaultFilters, function(filter)
+			{
+				filters.push(filter);
+			});
+
+			_.each(this.appliedFilters, function(filter)
+			{
+				filters.push(filter);
+			});
+
+			for (var i = 0; i < filters.length; i++)
 			{
 				var filter = {};
 
-				if ('mask' in this.appliedFilters[i])
+				if ('mask' in filters[i])
 				{
-					if (this.appliedFilters[i].mask === 'column')
+					if (filters[i].mask === 'column')
 					{
-						if (this.appliedFilters[i].operator !== undefined && this.appliedFilters[i].operator !== '')
+						if (filters[i].operator !== undefined && filters[i].operator !== '')
 						{
-							filter[this.appliedFilters[i].maskOrg] =
+							filter[filters[i].maskOrg] =
 								'|' +
-								this.appliedFilters[i].operator +
-								$('<p/>').html(this.appliedFilters[i].value).text() +
+								filters[i].operator +
+								$('<p/>').html(filters[i].value).text() +
 								'|';
 						}
-						else if (this.appliedFilters[i].type === 'range')
+						else if (filters[i].type === 'range' || index.type === 'ranges')
 						{
 							if (window.moment !== undefined)
 							{
-								var dbFormat = 'YYYY-MM-DD',
-									from     = moment(this.appliedFilters[i].from).format(dbFormat),
-									to       = moment(this.appliedFilters[i].to).format(dbFormat);
+								from = moment(filters[i].from).startOf('day').format(dbTimestampFormat);
+								to   = moment(filters[i].to).endOf('day').format(dbTimestampFormat);
 							}
 							else
 							{
-								var from = this.appliedFilters[i].from,
-									to   = this.appliedFilters[i].to;
+								from = filters[i].from;
+								to   = filters[i].to;
 							}
 
-							filter[this.appliedFilters[i].maskOrg] = '|' + '>' + from + '|' + '<' + to +'|';
+							filter[filters[i].maskOrg] = '|' + '>=' + from + '|' + '<=' + to +'|';
 						}
 						else
 						{
-							filter[this.appliedFilters[i].maskOrg] = $('<p/>').html(this.appliedFilters[i].value).text();
+							filter[filters[i].maskOrg] = $('<p/>').html(filters[i].value).text();
 						}
 
 						params.filters.push(filter);
 					}
 					else
 					{
-						if (this.appliedFilters[i].column === 'all')
+						if (filters[i].column === 'all')
 						{
-							params.filters.push(this.appliedFilters[i].maskOrg);
+							params.filters.push(filters[i].maskOrg);
 						}
 						else
 						{
-							if (this.appliedFilters[i].operator !== undefined && this.appliedFilters[i].operator !== null)
+							if (filters[i].operator !== undefined && filters[i].operator !== null)
 							{
-								filter[this.appliedFilters[i].column] = '|' + this.appliedFilters[i].operator + this.appliedFilters[i].maskOrg + '|';
+								filter[filters[i].column] = '|' + filters[i].operator + filters[i].maskOrg + '|';
 								params.filters.push(filter);
 							}
 							else
 							{
-								filter[this.appliedFilters[i].column] = this.appliedFilters[i].maskOrg;
+								filter[filters[i].column] = filters[i].maskOrg;
 								params.filters.push(filter);
 							}
 						}
@@ -1550,40 +1753,49 @@
 				}
 				else
 				{
-					if (this.appliedFilters[i].column === 'all')
+					if (filters[i].column === 'all')
 					{
-						params.filters.push($('<p/>').html(this.appliedFilters[i].value).text());
+						params.filters.push($('<p/>').html(filters[i].value).text());
 					}
 					else
 					{
-
-						if (this.appliedFilters[i].operator !== undefined && this.appliedFilters[i].operator !== '')
+						if (filters[i].operator !== undefined && filters[i].operator !== '')
 						{
-							filter[this.appliedFilters[i].column] =
+							var value = filters[i].value;
+
+							if (self.checkDate(value) && filters[i].operator === '>=')
+							{
+								value = moment(value).startOf('day').format(dbTimestampFormat);
+							}
+							else if (self.checkDate(value) && filters[i].operator === '<=')
+							{
+								value = moment(value).endOf('day').format(dbTimestampFormat);
+							}
+
+							filter[filters[i].column] =
 								'|' +
-								this.appliedFilters[i].operator +
-								$('<p/>').html(this.appliedFilters[i].value).text() +
+								filters[i].operator +
+								$('<p/>').html(value).text() +
 								'|';
 						}
-						else if (this.appliedFilters[i].type === 'range')
+						else if (filters[i].type === 'range' || filters[i].type === 'ranges')
 						{
-							if (window.moment !== undefined && /[0-9]{4}-[0-9]{2}-[0-9]{2}/g.test(this.appliedFilters[i].from))
+							if (window.moment !== undefined && self.checkDate(filters[i].from))
 							{
-								var dbFormat = 'YYYY-MM-DD',
-									from     = moment(this.appliedFilters[i].from).format(dbFormat),
-									to       = moment(this.appliedFilters[i].to).format(dbFormat);
+								from = moment(filters[i].from).startOf('day').format(dbTimestampFormat);
+								to   = moment(filters[i].to).endOf('day').format(dbTimestampFormat);
 							}
 							else
 							{
-								var from = this.appliedFilters[i].from,
-									to   = this.appliedFilters[i].to;
+								from = filters[i].from;
+								to   = filters[i].to;
 							}
 
-							filter[this.appliedFilters[i].column] = '|' + '>' + from + '|' + '<' + to +'|';
+							filter[filters[i].column] = '|' + '>=' + from + '|' + '<=' + to +'|';
 						}
 						else
 						{
-							filter[this.appliedFilters[i].column] = $('<p/>').html(this.appliedFilters[i].value).text();
+							filter[filters[i].column] = $('<p/>').html(filters[i].value).text();
 						}
 
 						params.filters.push(filter);
@@ -1618,13 +1830,12 @@
 		 */
 		buildPagination: function(json)
 		{
-			var self = this;
-			var rect;
-
-			var page = json.page,
-				next = json.next_page,
-				prev = json.previous_page,
-				total = json.pages_count;
+			var self = this,
+				rect,
+				page = json.page,
+				next = json.nextPage,
+				prev = json.previousPage,
+				total = json.pages;
 
 			switch (this.opt.method)
 			{
@@ -1633,13 +1844,13 @@
 
 					rect = self.buildRegularPagination(page, next, prev, total);
 
-				break;
+					break;
 
 				case 'infinite':
 
-					rect = self.buildInfinitePagination(page, next, prev, total);
+					rect = self.buildInfinitePagination(page, next, total);
 
-				break;
+					break;
 			}
 
 			return rect;
@@ -1658,13 +1869,23 @@
 		{
 			var params,
 				perPage,
+				pageLimit,
 				rect = [];
 
 			perPage = this.calculatePagination();
 
+			if (this.opt.threshold > this.pagination.filteredCount)
+			{
+				pageLimit = this.pagination.filteredCount;
+			}
+			else
+			{
+				pageLimit = this.pagination.pageIdx === 1 ? perPage > this.pagination.filteredCount ? this.pagination.filteredCount : perPage : ( this.pagination.totalCount < (perPage * this.pagination.pageIdx )) ? this.pagination.filteredCount : perPage * this.pagination.pageIdx < this.pagination.filteredCount ? perPage * this.pagination.pageIdx : this.pagination.filteredCount;
+			}
+
 			params = {
 				pageStart: perPage === 0 ? 0 : ( this.pagination.pageIdx === 1 ? this.pagination.filteredCount > 0 ? 1 : 0 : ( perPage * (this.pagination.pageIdx - 1 ) + 1)),
-				pageLimit: this.pagination.pageIdx === 1 ? perPage > this.pagination.filteredCount ? this.pagination.filteredCount : perPage : ( this.pagination.totalCount < (perPage * this.pagination.pageIdx )) ? this.pagination.filteredCount : perPage * this.pagination.pageIdx < this.pagination.filteredCount ? perPage * this.pagination.pageIdx : this.pagination.filteredCount,
+				pageLimit: pageLimit,
 				nextPage: next,
 				prevPage: prev,
 				page: page,
@@ -1687,17 +1908,17 @@
 		 *
 		 * @param  int  page
 		 * @param  int  next
-		 * @param  int  prev
 		 * @param  int  total
 		 * @return object
 		 */
-		buildInfinitePagination: function(page, next, prev, total)
+		buildInfinitePagination: function(page, next, total)
 		{
 			var params,
 				rect = [];
 
 			params = {
 				page: page,
+				total: total,
 				infinite: true
 			};
 
@@ -1739,118 +1960,45 @@
 		 */
 		removeRangeFilters: function(filter)
 		{
-			var grid = this.grid;
-
-			var startRangeFilter = filter.find('[data-range-start]').data('range-filter') || filter.data('range-filter');
-
-			var endRangeFilter = filter.find('[data-range-end]').data('range-filter') || filter.data('range-filter');
+			var rangeStart = filter.find('[data-range-start]').data('range-filter') || filter.data('range-filter'),
+				rangeEned  = filter.find('[data-range-end]').data('range-filter') || filter.data('range-filter');
 
 			for (var i = 0; i < this.appliedFilters.length; i++)
 			{
-				if (this.appliedFilters[i].type === 'range' && (this.appliedFilters[i].column === startRangeFilter || this.appliedFilters[i].column === endRangeFilter))
+				if (this.appliedFilters[i].type === 'ranges' && (this.appliedFilters[i].column === rangeStart || this.appliedFilters[i].column === rangeEned))
 				{
 					this.removeFilters(i);
 				}
-			};
-		},
-
-		/**
-		 * Removes a select filter.
-		 *
-		 * @param  object  filter
-		 * @return void
-		 */
-		removeSelectFilter: function(filter)
-		{
-			var selectFilter     = $(filter).find(':selected').data('filter'),
-				label            = $(filter).find(':selected').data('label'),
-				operator         = $(filter).find(':selected').data('operator');
-
-			if (selectFilter !== undefined)
-			{
-				var filterArr = selectFilter.split(':');
-
-				for (var i = 0; i < this.appliedFilters.length; i++)
-				{
-					if (this.appliedFilters[i].column === filterArr[0]) this.removeFilters(i);
-				};
 			}
-			else
-			{
-				var col = $(filter).data('select-filter');
-
-				for (var i = 0; i < this.appliedFilters.length; i++)
-				{
-					if (this.appliedFilters[i].column === col) this.removeFilters(i);
-				};
-			}
-		},
-
-		/**
-		 * Applies a select filter.
-		 *
-		 * @param  object  el
-		 * @return void
-		 */
-		selectFilter: function(el)
-		{
-			var filter = $(el).find(':selected').data('filter'),
-				label = $(el).find(':selected').data('label'),
-				operator = $(el).find(':selected').data('operator');
-
-			if (filter !== undefined)
-			{
-				var filterArr = filter.split(':');
-
-				if (label !== undefined)
-				{
-					var key = this._indexOf(filter, filter[0]);
-
-					var filterData = {
-						column: label,
-						value: filterArr[1],
-						mask: (key === 0 ? 'column' : 'value'),
-						maskOrg: filterArr[0],
-					};
-
-					this.applyFilter(filterData);
-				}
-				else
-				{
-					var filterData = {
-						column: filterArr[0],
-						value: filterArr[1]
-					};
-
-					this.applyFilter(filterData);
-				}
-			}
-			else
-			{
-				this.removeSelectFilter($(el));
-			}
-
-			this.refresh();
 		},
 
 		/**
 		 * Applies a range filter.
 		 *
 		 * @param  object  filter
+		 * @param  bool    refresh
 		 * @return void
 		 */
-		rangeFilter: function(filter)
+		rangeFilter: function(filter, refresh)
 		{
+			refresh = refresh !== undefined ? refresh : true;
+
 			var curFilter     = filter.find('[data-range-filter]').data('range-filter') || filter.data('range-filter'),
 				startFilterEl = this.$body.find('[data-range-start][data-range-filter^="' + curFilter + '"]' + this.grid + ',' + this.grid + ' [data-range-start][data-range-filter="' + curFilter + '"]'),
 				endFilterEl   = this.$body.find('[data-range-end][data-range-filter^="' + curFilter + '"]' + this.grid + ',' + this.grid + ' [data-range-end][data-range-filter="' + curFilter + '"]');
 
 			var startVal = startFilterEl.val(),
-				endVal   = endFilterEl.val()
+				endVal   = endFilterEl.val();
 
 			if (startVal && endVal)
 			{
 				this.extractRangeFilters(filter);
+
+				if (refresh)
+				{
+					this.goToPage(1);
+					this.refresh();
+				}
 			}
 		},
 
@@ -1896,9 +2044,11 @@
 			this.$body.find('[data-search]'+ grid).find('input').val('');
 			this.$body.find('[data-search]'+ grid).find('select').prop('selectedIndex', 0);
 			this.$body.find('[data-range-filter]' + grid + ',' + grid +' [data-range-filter]').find('input').val('');
+			this.$body.find('[data-select-filter]' + grid + ',' + grid +' [data-select-filter]').find(':eq(0)').prop('selected', true);
 
 			// Filters
 			this.appliedFilters = [];
+			this.defaultFilters = [];
 
 			// Sort
 			this.currentSort.index = 0;
@@ -1971,6 +2121,15 @@
 		checkOperator: function(value)
 		{
 			return />|<|!=|=|<=|>=|<>/.test(value);
+		},
+
+		/**
+		 * Check for date.
+		 *
+		 */
+		checkDate: function(value)
+		{
+			return /[0-9]{4}-[0-9]{2}-[0-9]{2}/g.test(value);
 		},
 
 		/**
