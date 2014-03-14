@@ -418,7 +418,7 @@
         },
         {
             "name": "cartalyst/data-grid",
-            "version": "dev-feature/refactor-php",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/data-grid.git",
@@ -2160,12 +2160,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "ebac8ad3bcc7d30c00d3658045a9eefaaa7247e2"
+                "reference": "bd44f322f09c8a3537c012e17914369f9326bd6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/ebac8ad3bcc7d30c00d3658045a9eefaaa7247e2",
-                "reference": "ebac8ad3bcc7d30c00d3658045a9eefaaa7247e2",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/bd44f322f09c8a3537c012e17914369f9326bd6b",
+                "reference": "bd44f322f09c8a3537c012e17914369f9326bd6b",
                 "shasum": ""
             },
             "require": {
@@ -2269,7 +2269,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-03-14 18:29:21"
+            "time": "2014-03-14 21:46:05"
         },
         {
             "name": "leafo/scssphp",
@@ -3390,18 +3390,18 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-foundation.git",
-                "reference": "524e2b73a540a31fada16eeb3527e3e6c0aea68f"
+                "reference": "9d4231a8d860e590693054a8ea3ad271e53b816d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/524e2b73a540a31fada16eeb3527e3e6c0aea68f",
-                "reference": "524e2b73a540a31fada16eeb3527e3e6c0aea68f",
+                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/9d4231a8d860e590693054a8ea3ad271e53b816d",
+                "reference": "9d4231a8d860e590693054a8ea3ad271e53b816d",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/api": "~2",
                 "cartalyst/assetic-filters": "1.1.*",
-                "cartalyst/data-grid": "dev-feature/refactor-php",
+                "cartalyst/data-grid": "dev-develop",
                 "cartalyst/extensions": "1.0.*",
                 "cartalyst/themes": "2.0.*",
                 "cartalyst/widgets": "1.0.*",
@@ -3469,10 +3469,10 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-foundation/tree/feature/php-54",
+                "source": "https://github.com/cartalyst/platform-foundation/tree/master",
                 "issues": "https://github.com/cartalyst/platform-foundation/issues"
             },
-            "time": "2014-03-13 01:30:53"
+            "time": "2014-03-14 22:50:25"
         },
         {
             "name": "platform/installer",
