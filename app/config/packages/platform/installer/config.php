@@ -13,12 +13,12 @@
  * @package    Platform
  * @version    2.0.0
  * @author     Cartalyst LLC
- * @license    BSD License (3-clause)
+ * @license    BSD License (3-clause]
  * @copyright  (c) 2011-2014, Cartalyst LLC
  * @link       http://cartalyst.com
  */
 
-return array(
+return [
 
 	/*
 	|--------------------------------------------------------------------------
@@ -32,7 +32,7 @@ return array(
 	|
 	*/
 
-	'trusted_ips' => array(
+	'trusted_ips' => [
 
 		'127.0.0.1',
 
@@ -44,6 +44,6 @@ return array(
 		// '127.0.*'
 		// '127.*'
 
-	),
+	],
 
-);
+];
