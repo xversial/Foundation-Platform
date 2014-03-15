@@ -39,7 +39,7 @@ Installer::after(function()
 	// If we have the platform/menus extension installed, we'll
 	// set the order of the admin menu according to the
 	// specific application requirements.
-	if (class_exists('Platform\Menus\Menu'))
+	if (class_exists('Platform\Menus\Models\Menu'))
 	{
 		set_menu_order('admin', Config::get('platform.admin.menu'));
 		set_menu_order('main', Config::get('platform.frontend.menu'));
