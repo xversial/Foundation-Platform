@@ -3315,12 +3315,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-content.git",
-                "reference": "8b8664df77354b30994c38f3290b62cb39dce536"
+                "reference": "48c6e592dca945da9182d20628b4428beea7a76a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/8b8664df77354b30994c38f3290b62cb39dce536",
-                "reference": "8b8664df77354b30994c38f3290b62cb39dce536",
+                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/48c6e592dca945da9182d20628b4428beea7a76a",
+                "reference": "48c6e592dca945da9182d20628b4428beea7a76a",
                 "shasum": ""
             },
             "require": {
@@ -3382,7 +3382,7 @@
                 "source": "https://github.com/cartalyst/platform-content/tree/master",
                 "issues": "https://github.com/cartalyst/platform-content/issues"
             },
-            "time": "2014-03-15 03:00:04"
+            "time": "2014-03-15 05:49:17"
         },
         {
             "name": "platform/foundation",
@@ -3480,12 +3480,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-installer.git",
-                "reference": "7cb20b0b56e233640bab447285d785abab575a5e"
+                "reference": "0d7bcafbd4cfda5264c563c1536afbb0fa72180f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-installer/zipball/7cb20b0b56e233640bab447285d785abab575a5e",
-                "reference": "7cb20b0b56e233640bab447285d785abab575a5e",
+                "url": "https://api.github.com/repos/cartalyst/platform-installer/zipball/0d7bcafbd4cfda5264c563c1536afbb0fa72180f",
+                "reference": "0d7bcafbd4cfda5264c563c1536afbb0fa72180f",
                 "shasum": ""
             },
             "require": {
@@ -3497,11 +3497,12 @@
                 "illuminate/events": "~4",
                 "illuminate/foundation": "~4",
                 "illuminate/validation": "~4",
-                "php": ">=5.3.0",
+                "php": ">=5.4.0",
                 "platform/foundation": "dev-master"
             },
             "require-dev": {
-                "mockery/mockery": "0.7.2"
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "4.0.*"
             },
             "type": "library",
             "extra": {
@@ -3511,11 +3512,8 @@
                 }
             },
             "autoload": {
-                "classmap": [
-                    "src/controllers"
-                ],
-                "psr-0": {
-                    "Platform\\Installer": "src"
+                "psr-4": {
+                    "Platform\\Installer\\": "src"
                 }
             },
             "license": [
@@ -3544,8 +3542,9 @@
             ],
             "description": "Default installer for your Platform application.",
             "keywords": [
-                "bootstrap",
-                "ecommerce",
+                "cartalyst",
+                "extension",
+                "installer",
                 "laravel",
                 "platform"
             ],
@@ -3553,7 +3552,7 @@
                 "source": "https://github.com/cartalyst/platform-installer/tree/master",
                 "issues": "https://github.com/cartalyst/platform-installer/issues"
             },
-            "time": "2014-03-13 03:03:51"
+            "time": "2014-03-15 05:40:28"
         },
         {
             "name": "platform/media",
@@ -3790,12 +3789,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-pages.git",
-                "reference": "e579e133c2062f7e81afa0a253c0ef5f17226c29"
+                "reference": "a8fb94e76cc711f76024949c0f7312b3c4d0741b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/e579e133c2062f7e81afa0a253c0ef5f17226c29",
-                "reference": "e579e133c2062f7e81afa0a253c0ef5f17226c29",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/a8fb94e76cc711f76024949c0f7312b3c4d0741b",
+                "reference": "a8fb94e76cc711f76024949c0f7312b3c4d0741b",
                 "shasum": ""
             },
             "require": {
@@ -3856,7 +3855,7 @@
                 "source": "https://github.com/cartalyst/platform-pages/tree/master",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2014-03-15 05:09:24"
+            "time": "2014-03-15 05:49:07"
         },
         {
             "name": "platform/settings",
