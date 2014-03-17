@@ -227,6 +227,13 @@
 				self.extractFilters($(this));
 			});
 
+			this.$body.on('click', '[data-filter-reset]' + grid + ':not([data-filter]),' + grid + ' [data-filter-reset]:not([data-filter])', function(e)
+			{
+				self.reset();
+
+				self.refresh();
+			});
+
 			this.$body.on('click', '[data-filter]' + grid + ':not([data-filter-default]),' + grid + ' [data-filter]:not([data-filter-default])', function(e)
 			{
 				e.preventDefault();
@@ -1050,6 +1057,8 @@
 		{
 			refresh = refresh !== undefined ? refresh : true;
 
+			this.defaultFilters = [];
+
 			if (filterEl.data('filter-reset') !== undefined)
 			{
 				this.reset();
@@ -1648,9 +1657,9 @@
 
 				self.hideLoader();
 
-				self.callback();
-
 				$(self).trigger('dg:hashchange');
+
+				self.callback();
 
 				$(self).trigger('dg:fetched', self);
 			})
