@@ -363,12 +363,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/composite-config.git",
-                "reference": "a9f9ce06f94312e7f42f4c507cbb1d88347558a4"
+                "reference": "91356751a7b991933a2d459ee77f62256262789c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/composite-config/zipball/a9f9ce06f94312e7f42f4c507cbb1d88347558a4",
-                "reference": "a9f9ce06f94312e7f42f4c507cbb1d88347558a4",
+                "url": "https://api.github.com/repos/cartalyst/composite-config/zipball/91356751a7b991933a2d459ee77f62256262789c",
+                "reference": "91356751a7b991933a2d459ee77f62256262789c",
                 "shasum": ""
             },
             "require": {
@@ -414,7 +414,7 @@
                 "source": "https://github.com/cartalyst/composite-config/tree/master",
                 "issues": "https://github.com/cartalyst/composite-config/issues"
             },
-            "time": "2014-03-22 19:26:02"
+            "time": "2014-03-24 15:04:25"
         },
         {
             "name": "cartalyst/data-grid",
@@ -716,12 +716,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/media.git",
-                "reference": "bef925a65df40a24b29bc93703d8fe351bd5af85"
+                "reference": "5355f700c41d3dbd29dd3fd1a53efc39aa7d8267"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/media/zipball/bef925a65df40a24b29bc93703d8fe351bd5af85",
-                "reference": "bef925a65df40a24b29bc93703d8fe351bd5af85",
+                "url": "https://api.github.com/repos/cartalyst/media/zipball/5355f700c41d3dbd29dd3fd1a53efc39aa7d8267",
+                "reference": "5355f700c41d3dbd29dd3fd1a53efc39aa7d8267",
                 "shasum": ""
             },
             "require": {
@@ -784,7 +784,7 @@
                 "source": "https://github.com/cartalyst/media/tree/master",
                 "issues": "https://github.com/cartalyst/media/issues"
             },
-            "time": "2014-03-21 20:18:27"
+            "time": "2014-03-23 06:14:04"
         },
         {
             "name": "cartalyst/nested-sets",
@@ -1772,7 +1772,8 @@
                 {
                     "name": "Kevin Herrera",
                     "email": "kevin@herrera.io",
-                    "homepage": "http://kevin.herrera.io"
+                    "homepage": "http://kevin.herrera.io",
+                    "role": "Developer"
                 }
             ],
             "description": "A library for simplifying JSON linting and validation.",
@@ -1910,7 +1911,7 @@
             "authors": [
                 {
                     "name": "Anthony Ferrara",
-                    "email": "ircmaxell@ircmaxell.com",
+                    "email": "ircmaxell@php.net",
                     "homepage": "http://blog.ircmaxell.com"
                 }
             ],
@@ -2160,12 +2161,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "290487851e205b4da8665d0a69075e20a663abb9"
+                "reference": "70d94d57d76fac29f6e2f7136cb42a442059f83e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/290487851e205b4da8665d0a69075e20a663abb9",
-                "reference": "290487851e205b4da8665d0a69075e20a663abb9",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/70d94d57d76fac29f6e2f7136cb42a442059f83e",
+                "reference": "70d94d57d76fac29f6e2f7136cb42a442059f83e",
                 "shasum": ""
             },
             "require": {
@@ -2269,7 +2270,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-03-22 17:56:10"
+            "time": "2014-03-24 04:09:48"
         },
         {
             "name": "leafo/scssphp",
@@ -2358,12 +2359,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "89a1c355662a390e4bbe1ae51e6af9ea61b0cbc1"
+                "reference": "f5d9978f38828cdfa18da5930df7ebc4d30fa1da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/89a1c355662a390e4bbe1ae51e6af9ea61b0cbc1",
-                "reference": "89a1c355662a390e4bbe1ae51e6af9ea61b0cbc1",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/f5d9978f38828cdfa18da5930df7ebc4d30fa1da",
+                "reference": "f5d9978f38828cdfa18da5930df7ebc4d30fa1da",
                 "shasum": ""
             },
             "require-dev": {
@@ -2412,7 +2413,7 @@
                 "s3",
                 "sftp"
             ],
-            "time": "2014-03-16 21:59:05"
+            "time": "2014-03-22 21:53:52"
         },
         {
             "name": "league/fractal",
@@ -2685,12 +2686,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "db7e2aa311869aaf3c2cc76237b2beff05322629"
+                "reference": "98b2d0ba0a9a8f6d0e3b8fda31ce0fb227208fbd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/db7e2aa311869aaf3c2cc76237b2beff05322629",
-                "reference": "db7e2aa311869aaf3c2cc76237b2beff05322629",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/98b2d0ba0a9a8f6d0e3b8fda31ce0fb227208fbd",
+                "reference": "98b2d0ba0a9a8f6d0e3b8fda31ce0fb227208fbd",
                 "shasum": ""
             },
             "require": {
@@ -2718,7 +2719,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.7.x-dev"
+                    "dev-master": "1.8.x-dev"
                 }
             },
             "autoload": {
@@ -2745,7 +2746,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2014-03-14 09:32:58"
+            "time": "2014-03-24 11:36:34"
         },
         {
             "name": "natxet/CssMin",
@@ -3154,7 +3155,9 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
                 }
             ],
             "description": "Pimple is a simple Dependency Injection Container for PHP 5.3",
@@ -3785,12 +3788,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-pages.git",
-                "reference": "6c97999ac5b8febb52228256f4fc77aed1ebc074"
+                "reference": "eb0c1ee8e25bf79a631fa88701c84384c696e954"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/6c97999ac5b8febb52228256f4fc77aed1ebc074",
-                "reference": "6c97999ac5b8febb52228256f4fc77aed1ebc074",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/eb0c1ee8e25bf79a631fa88701c84384c696e954",
+                "reference": "eb0c1ee8e25bf79a631fa88701c84384c696e954",
                 "shasum": ""
             },
             "require": {
@@ -3852,7 +3855,7 @@
                 "source": "https://github.com/cartalyst/platform-pages/tree/master",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2014-03-20 03:28:59"
+            "time": "2014-03-22 23:25:48"
         },
         {
             "name": "platform/settings",
@@ -4278,7 +4281,9 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
                 },
                 {
                     "name": "Chris Corbyn"
@@ -4663,7 +4668,9 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
                 },
                 {
                     "name": "Symfony Community",
@@ -5012,7 +5019,9 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
                 },
                 {
                     "name": "Symfony Community",
