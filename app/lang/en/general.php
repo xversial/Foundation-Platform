@@ -20,18 +20,18 @@
 
 return array(
 
-	'error'       => 'Error',
-	'success'     => 'Success',
-	'warning'     => 'Warning',
-	'yes'         => 'Yes',
-	'no'          => 'No',
-	'all'         => 'All',
-	'enabled'     => 'Enabled',
-	'disabled'    => 'Disabled',
-	'installed'   => 'Installed',
-	'uninstalled' => 'Uninstalled',
-	'actions'     => 'Actions',
-	'status'      => 'Status',
+	'error'        => 'Error',
+	'success'      => 'Success',
+	'warning'      => 'Warning',
+	'yes'          => 'Yes',
+	'no'           => 'No',
+	'all'          => 'All',
+	'enabled'      => 'Enabled',
+	'disabled'     => 'Disabled',
+	'installed'    => 'Installed',
+	'uninstalled'  => 'Uninstalled',
+	'bulk_actions' => 'Bulk Actions',
+	'status'       => 'Status',
 
 	'delete_record' => 'You are about to delete this record, do you want to continue?',
 
