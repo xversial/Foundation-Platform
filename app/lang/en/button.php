@@ -18,7 +18,7 @@
  * @link       http://cartalyst.com
  */
 
-return array(
+return [
 
 	/*
 	|--------------------------------------------------------------------------
@@ -31,22 +31,27 @@ return array(
 	|
 	*/
 
-	'add'             => 'Add',
-	'create'          => 'Create',
-	'remove'          => 'Remove',
-	'cancel'          => 'Cancel',
-	'delete'          => 'Delete',
-	'delete_selected' => 'Delete Selected',
-	'edit'            => 'Edit',
-	'update'          => 'Save Changes',
-	'submit'          => 'Submit',
-	'save'            => 'Save',
-	'enable'          => 'Enable',
-	'disable'         => 'Disable',
-	'install'         => 'Install',
-	'uninstall'       => 'Uninstall',
-	'copy'            => 'Copy',
-	'close'           => 'Close',
-	'upload'          => 'Upload',
+	'add'       => 'Add',
+	'create'    => 'Create',
+	'remove'    => 'Remove',
+	'cancel'    => 'Cancel',
+	'delete'    => 'Delete',
+	'edit'      => 'Edit',
+	'update'    => 'Save Changes',
+	'submit'    => 'Submit',
+	'save'      => 'Save',
+	'enable'    => 'Enable',
+	'disable'   => 'Disable',
+	'install'   => 'Install',
+	'uninstall' => 'Uninstall',
+	'copy'      => 'Copy',
+	'close'     => 'Close',
+	'upload'    => 'Upload',
 
-);
+	'bulk' => [
+		'delete'  => 'Delete Selected',
+		'enable'  => 'Enable Selected',
+		'disable' => 'Disable Selected',
+	],
+
+];
