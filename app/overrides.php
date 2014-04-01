@@ -18,8 +18,6 @@
  * @link       http://cartalyst.com
  */
 
-$app = app();
-
 /*
 |--------------------------------------------------------------------------
 | Route Overrides
@@ -57,21 +55,21 @@ if (function_exists('admin_uri'))
 */
 
 // Extension: platform/attributes
-// $app['Platform\Attributes\Attribute'] = new My\Platform\Attributes\Attribute;
-// $app['Platform\Attributes\Value']     = new My\Platform\Attributes\Value;
+// $app['Platform\Attributes\Models\Attribute'] = new My\Platform\Attributes\Models\Attribute;
+// $app['Platform\Attributes\Models\Value']     = new My\Platform\Attributes\Models\Value;
 
 // Extension: platform/content
-// $app['Platform\Content\Content'] = new My\Platform\Content\Content;
+// $app['Platform\Content\Models\Content'] = new My\Platform\Content\Models\Content;
 
 // Extension: platform/menus
-// $app['Platform\Menus\Menu'] = new My\Platform\Menus\Menu;
+// $app['Platform\Menus\Models\Menu'] = new My\Platform\Menus\Models\Menu;
 
 // Extension: platform/pages
-// $app['Platform\Pages\Page'] = new My\Platform\Pages\Page;
+// $app['Platform\Pages\Models\Page'] = new My\Platform\Pages\Models\Page;
 
 // Extension: platform/users
-// $app['Platform\Users\Group'] = new My\Platform\Users\Group;
-// $app['Platform\Users\User']  = new My\Platform\Users\User;
+// $app['Platform\Users\Models\Group'] = new My\Platform\Users\Models\Group;
+// $app['Platform\Users\Models\User']  = new My\Platform\Users\Models\User;
 
 /*
 |--------------------------------------------------------------------------
