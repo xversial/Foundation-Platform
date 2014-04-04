@@ -30,6 +30,7 @@ return array(
 	'disabled'     => 'Disabled',
 	'installed'    => 'Installed',
 	'uninstalled'  => 'Uninstalled',
+	'actions'      => 'Actions',
 	'bulk_actions' => 'Bulk Actions',
 	'status'       => 'Status',
 
