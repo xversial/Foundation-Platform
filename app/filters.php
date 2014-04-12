@@ -78,3 +78,20 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+/*
+|--------------------------------------------------------------------------
+| Force SSL Filter
+|--------------------------------------------------------------------------
+|
+| The Force SSL filter forces any route to be accessed only over SSL.
+|
+*/
+
+Route::filter('ssl', function()
+{
+	if( ! Request::secure())
+	{
+		return Redirect::secure(Request::getRequestUri());
+	}
+});
