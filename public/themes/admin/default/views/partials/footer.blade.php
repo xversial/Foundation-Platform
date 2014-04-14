@@ -10,7 +10,7 @@
 				</a>
 			</span>
 
-			<span class="pull-right">Platform Version {{{ PLATFORM_VERSION }}}</span>
+			<span class="pull-right">Platform Version {{{ Platform::installedVersion() }}}</span>
 
 		</div>
 
