@@ -874,12 +874,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cartalyst/sentry.git",
-                "reference": "47ab6f3f779279f478d1fc4a7862579f197035e6"
+                "reference": "683f5fc80058e7000934bbae4470ce6834f1e060"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/47ab6f3f779279f478d1fc4a7862579f197035e6",
-                "reference": "47ab6f3f779279f478d1fc4a7862579f197035e6",
+                "url": "https://api.github.com/repos/cartalyst/sentry/zipball/683f5fc80058e7000934bbae4470ce6834f1e060",
+                "reference": "683f5fc80058e7000934bbae4470ce6834f1e060",
                 "shasum": ""
             },
             "require": {
@@ -956,10 +956,10 @@
                 "security"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/sentry/tree/v3.0.0-alpha7",
+                "source": "https://github.com/cartalyst/sentry/tree/develop",
                 "issues": "https://github.com/cartalyst/sentry/issues"
             },
-            "time": "2014-05-06 16:13:16"
+            "time": "2014-05-07 14:37:54"
         },
         {
             "name": "cartalyst/sentry-social",
@@ -1470,12 +1470,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "b99c5c46c87126201899afe88ec490a25eedd6a2"
+                "reference": "97475b2761f22cd9817c135283ad1079543a4586"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/b99c5c46c87126201899afe88ec490a25eedd6a2",
-                "reference": "b99c5c46c87126201899afe88ec490a25eedd6a2",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/97475b2761f22cd9817c135283ad1079543a4586",
+                "reference": "97475b2761f22cd9817c135283ad1079543a4586",
                 "shasum": ""
             },
             "require": {
@@ -1530,7 +1530,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2014-02-03 23:07:43"
+            "time": "2014-05-07 01:20:20"
         },
         {
             "name": "dompdf/dompdf",
@@ -2352,12 +2352,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "d462bc2672e13083c38c83ef84b2a2922ede2fb7"
+                "reference": "2420e2788d1f00f40a98b431eef16ae7e3b90fb5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/d462bc2672e13083c38c83ef84b2a2922ede2fb7",
-                "reference": "d462bc2672e13083c38c83ef84b2a2922ede2fb7",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/2420e2788d1f00f40a98b431eef16ae7e3b90fb5",
+                "reference": "2420e2788d1f00f40a98b431eef16ae7e3b90fb5",
                 "shasum": ""
             },
             "require-dev": {
@@ -2411,7 +2411,7 @@
                 "s3",
                 "sftp"
             ],
-            "time": "2014-05-03 22:37:18"
+            "time": "2014-05-07 13:37:59"
         },
         {
             "name": "league/fractal",
@@ -2419,12 +2419,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/fractal.git",
-                "reference": "040acc81a91ea6053b0c7ad9498e739474f52a85"
+                "reference": "9e1bd7195b7d0fbd8d4ae47ae1c1eb176817a24b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/040acc81a91ea6053b0c7ad9498e739474f52a85",
-                "reference": "040acc81a91ea6053b0c7ad9498e739474f52a85",
+                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/9e1bd7195b7d0fbd8d4ae47ae1c1eb176817a24b",
+                "reference": "9e1bd7195b7d0fbd8d4ae47ae1c1eb176817a24b",
                 "shasum": ""
             },
             "require": {
@@ -2432,7 +2432,6 @@
             },
             "require-dev": {
                 "illuminate/pagination": "~4.1",
-                "league/phpunit-coverage-listener": "~1.1",
                 "mockery/mockery": "~0.9",
                 "phpunit/phpunit": "~4.0",
                 "squizlabs/php_codesniffer": "~1.5"
@@ -2470,7 +2469,7 @@
                 "json",
                 "league"
             ],
-            "time": "2014-05-03 11:24:57"
+            "time": "2014-05-06 20:56:57"
         },
         {
             "name": "league/oauth1-client",
@@ -3951,12 +3950,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-users.git",
-                "reference": "68a0594e5ee0bc286b958794432e138693d3b51e"
+                "reference": "690db0ee6ddf37827011f7406e1955b4d472135a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/68a0594e5ee0bc286b958794432e138693d3b51e",
-                "reference": "68a0594e5ee0bc286b958794432e138693d3b51e",
+                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/690db0ee6ddf37827011f7406e1955b4d472135a",
+                "reference": "690db0ee6ddf37827011f7406e1955b4d472135a",
                 "shasum": ""
             },
             "require": {
@@ -4020,7 +4019,7 @@
                 "source": "https://github.com/cartalyst/platform-users/tree/master",
                 "issues": "https://github.com/cartalyst/platform-users/issues"
             },
-            "time": "2014-05-01 19:54:24"
+            "time": "2014-05-07 14:38:11"
         },
         {
             "name": "predis/predis",
