@@ -23,7 +23,7 @@ Platform is not just another CMS, it's a starting point for you to build your ap
 
 [Official website & documentation](http://cartalyst.com/manual/platform)
 
-Part of the Cartalyst Arsenal & licensed [OSI BSD 3](license.txt). Code well, rock on.
+Part of the Cartalyst Arsenal & licensed [Cartalyst PSL](license.txt). Code well, rock on.
 
 ## Versioning
 
