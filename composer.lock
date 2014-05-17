@@ -426,29 +426,30 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/data-grid.git",
-                "reference": "7144098d97b64985c51628c093301443f67b20e9"
+                "reference": "73ba783446673c7c5e3ab3599c4ef9a22bec6672"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/data-grid/zipball/7144098d97b64985c51628c093301443f67b20e9",
-                "reference": "7144098d97b64985c51628c093301443f67b20e9",
+                "url": "https://api.github.com/repos/cartalyst/data-grid/zipball/73ba783446673c7c5e3ab3599c4ef9a22bec6672",
+                "reference": "73ba783446673c7c5e3ab3599c4ef9a22bec6672",
                 "shasum": ""
             },
             "require": {
                 "dompdf/dompdf": "0.6.*",
-                "illuminate/http": "~4",
-                "illuminate/support": "~4",
+                "illuminate/http": "~4.1",
+                "illuminate/support": "~4.1",
                 "php": ">=5.3.0"
             },
             "require-dev": {
-                "illuminate/database": "~4",
-                "mockery/mockery": "0.7.2"
+                "illuminate/database": "~4.1",
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0"
             },
             "type": "library",
             "extra": {
                 "component": "package",
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "2.0.x-dev"
                 }
             },
             "autoload": {
@@ -465,11 +466,6 @@
                     "email": "help@cartalyst.com"
                 },
                 {
-                    "name": "Dan Syme",
-                    "email": "dan.syme@cartalyst.com",
-                    "role": "Creator & Designer"
-                },
-                {
                     "name": "Ben Corlett",
                     "email": "ben.corlett@cartalyst.com",
                     "role": "Developer"
@@ -478,18 +474,30 @@
                     "name": "Bruno Gaspar",
                     "email": "bruno.gaspar@cartalyst.com",
                     "role": "Developer"
+                },
+                {
+                    "name": "Dan Syme",
+                    "email": "dan.syme@cartalyst.com",
+                    "role": "Project Lead"
+                },
+                {
+                    "name": "Suhayb Wardany",
+                    "email": "su.wardany@cartalyst.com",
+                    "role": "Developer"
                 }
             ],
             "description": "HTML markup templating on the client side, simple API on the server side. Incredibly simple and easy to use.",
             "keywords": [
+                "cartalyst",
                 "data grid",
-                "laravel"
+                "laravel",
+                "php"
             ],
             "support": {
                 "source": "https://github.com/cartalyst/data-grid/tree/master",
                 "issues": "https://github.com/cartalyst/data-grid/issues"
             },
-            "time": "2014-05-15 21:45:40"
+            "time": "2014-05-15 23:53:13"
         },
         {
             "name": "cartalyst/dependencies",
@@ -3330,12 +3338,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-content.git",
-                "reference": "80ef8e0c04401d63d40a59e9152031b9741fd055"
+                "reference": "ed5c1c20e726fbc51b1384f9c43c3d7dfa1de290"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/80ef8e0c04401d63d40a59e9152031b9741fd055",
-                "reference": "80ef8e0c04401d63d40a59e9152031b9741fd055",
+                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/ed5c1c20e726fbc51b1384f9c43c3d7dfa1de290",
+                "reference": "ed5c1c20e726fbc51b1384f9c43c3d7dfa1de290",
                 "shasum": ""
             },
             "require": {
@@ -3398,7 +3406,7 @@
                 "source": "https://github.com/cartalyst/platform-content/tree/master",
                 "issues": "https://github.com/cartalyst/platform-content/issues"
             },
-            "time": "2014-05-08 16:59:14"
+            "time": "2014-05-15 23:05:08"
         },
         {
             "name": "platform/foundation",
@@ -3493,12 +3501,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-installer.git",
-                "reference": "201ec7b0678e83c6fed15f8ee511385101f17b32"
+                "reference": "9f7609f8772eb79b492c1303039272a5a9b15d86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-installer/zipball/201ec7b0678e83c6fed15f8ee511385101f17b32",
-                "reference": "201ec7b0678e83c6fed15f8ee511385101f17b32",
+                "url": "https://api.github.com/repos/cartalyst/platform-installer/zipball/9f7609f8772eb79b492c1303039272a5a9b15d86",
+                "reference": "9f7609f8772eb79b492c1303039272a5a9b15d86",
                 "shasum": ""
             },
             "require": {
@@ -3565,7 +3573,7 @@
                 "source": "https://github.com/cartalyst/platform-installer/tree/master",
                 "issues": "https://github.com/cartalyst/platform-installer/issues"
             },
-            "time": "2014-05-08 17:21:18"
+            "time": "2014-05-17 15:53:26"
         },
         {
             "name": "platform/media",
@@ -3944,12 +3952,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-users.git",
-                "reference": "5e07d82b83f82ff012dd61f5193ee0c4c67c6db8"
+                "reference": "3c8772b4b7444f5fea617a6be4b45d21d07b65cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/5e07d82b83f82ff012dd61f5193ee0c4c67c6db8",
-                "reference": "5e07d82b83f82ff012dd61f5193ee0c4c67c6db8",
+                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/3c8772b4b7444f5fea617a6be4b45d21d07b65cd",
+                "reference": "3c8772b4b7444f5fea617a6be4b45d21d07b65cd",
                 "shasum": ""
             },
             "require": {
@@ -4013,7 +4021,7 @@
                 "source": "https://github.com/cartalyst/platform-users/tree/master",
                 "issues": "https://github.com/cartalyst/platform-users/issues"
             },
-            "time": "2014-05-09 03:52:54"
+            "time": "2014-05-17 17:18:31"
         },
         {
             "name": "predis/predis",
@@ -4536,12 +4544,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/DomCrawler.git",
-                "reference": "e94b29c7cac964e58c406408d238ceeaa3604e78"
+                "reference": "446f3446e060014fc1510c72d7af29dfe11d383f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/e94b29c7cac964e58c406408d238ceeaa3604e78",
-                "reference": "e94b29c7cac964e58c406408d238ceeaa3604e78",
+                "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/446f3446e060014fc1510c72d7af29dfe11d383f",
+                "reference": "446f3446e060014fc1510c72d7af29dfe11d383f",
                 "shasum": ""
             },
             "require": {
@@ -4582,7 +4590,7 @@
             ],
             "description": "Symfony DomCrawler Component",
             "homepage": "http://symfony.com",
-            "time": "2014-04-18 20:37:09"
+            "time": "2014-05-13 08:58:07"
         },
         {
             "name": "symfony/event-dispatcher",
