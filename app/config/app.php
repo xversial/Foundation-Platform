@@ -122,7 +122,7 @@ return array(
 
 		'Cartalyst\Api\Laravel\ApiServiceProvider',
 		'Cartalyst\Sentry\Laravel\SentryServiceProvider',
-		'Cartalyst\DataGrid\DataGridServiceProvider',
+		'Cartalyst\DataGrid\Laravel\DataGridServiceProvider',
 		'Cartalyst\Extensions\ExtensionsServiceProvider',
 		'Cartalyst\NestedSets\NestedSetsServiceProvider',
 		'Cartalyst\Themes\ThemeServiceProvider',
@@ -202,7 +202,7 @@ return array(
 		'ApiResponse'   => 'Cartalyst\Api\Response',
 		'Asset'         => 'Cartalyst\Themes\Facades\Asset',
 		'Auth'          => 'Cartalyst\Sentry\Laravel\Facades\Sentry',
-		'DataGrid'      => 'Cartalyst\DataGrid\Facades\DataGrid',
+		'DataGrid'      => 'Cartalyst\DataGrid\Laravel\Facades\DataGrid',
 		'Extension'     => 'Cartalyst\Extensions\Extension',
 		'Extensions'    => 'Cartalyst\Extensions\Facades\Extensions',
 		'Reminder'      => 'Cartalyst\Sentry\Laravel\Facades\Reminder',
