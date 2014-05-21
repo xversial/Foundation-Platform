@@ -1,6 +1,6 @@
 <?php
 /**
- * Part of the Platform application.
+ * Part of the Themes package.
  *
  * NOTICE OF LICENSE
  *
@@ -10,11 +10,11 @@
  * bundled with this package in the LICENSE file.  It is also available at
  * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
  *
- * @package    Platform
+ * @package    Themes
  * @version    2.0.0
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
- * @copyright  (c) 2011-2014, Cartalyst LLC
+ * @copyright  (c) 2011 - 2013, Cartalyst LLC
  * @link       http://cartalyst.com
  */
 
@@ -198,12 +198,12 @@ return array(
 	| Debug Mode
 	|--------------------------------------------------------------------------
 	|
-	| You can specify if you want to force this package to run in debug mode.
+	| You can specify if you want to force the package to run in debug mode.
 	| Debug mode will change the way assets are compiled.
 	|
 	| By default, we guess whether you are in a production environment or not,
-	| and if you're not in production we will assume you're in debug mode. YOu
-	| can explicitly set this however below.
+	| and if you're not in production we will assume you're in debug mode.
+	| You can explicitly set this however below.
 	|
 	| Supported: null, true, false (where null is "automatic detection").
 	|
