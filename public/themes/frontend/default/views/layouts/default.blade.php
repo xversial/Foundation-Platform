@@ -71,7 +71,7 @@
 				<div class="collapse navbar-collapse">
 
 					<ul class="nav navbar-nav">
-						<li><a target="_blank" href="https://www.cartalyst.com/licence">License</a></li>
+						<li><a target="_blank" href="https://www.cartalyst.com/license">License</a></li>
 						<li><a target="_blank" href="https://www.cartalyst.com/manual/platform">Documentation</a></li>
 					</ul>
 

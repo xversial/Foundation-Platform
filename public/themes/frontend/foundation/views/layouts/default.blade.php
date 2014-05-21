@@ -64,9 +64,9 @@
 
 						<ul class="left">
 							<li class="divider"></li>
-							<li><a href="https://www.cartalyst.com/licence">Licence</a></li>
+							<li><a target="_blank" href="https://www.cartalyst.com/license">License</a></li>
 							<li class="divider"></li>
-							<li><a href="https://www.cartalyst.com/manual/platform">Documentation</a></li>
+							<li><a target="_blank" href="https://www.cartalyst.com/manual/platform">Documentation</a></li>
 						</ul>
 
 
