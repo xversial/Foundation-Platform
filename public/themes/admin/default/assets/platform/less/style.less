@@ -1,5 +1,5 @@
 /**
- * Part of the Platform package.
+ * Part of the Platform application.
  *
  * NOTICE OF LICENSE
  *
