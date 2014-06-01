@@ -41,27 +41,7 @@
 		}
 	],
 	"require": {
-		"laravel/framework": "4.2.*",
-
-		"platform/admin-default": "1.0.*",
-		"platform/frontend-default": "1.0.*",
-
-		"platform/foundation": "1.0.*",
-		"platform/installer": "1.0.*",
-
-		"platform/access": "1.0.*",
-		"platform/attributes": "1.0.*",
-		"platform/content": "1.0.*",
-		"platform/dashboard": "1.0.*",
-		"platform/media": "1.0.*",
-		"platform/menus": "1.0.*",
-		"platform/operations": "1.0.*",
-		"platform/pages": "1.0.*",
-		"platform/settings": "1.0.*",
-		"platform/themes": "1.0.*"
-	},
-	"require-dev": {
-		"doctrine/dbal": "~2.4"
+		"laravel/framework": "4.3.*"
 	},
 	"autoload": {
 		"classmap": [
