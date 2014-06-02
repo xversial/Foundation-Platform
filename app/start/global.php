@@ -88,6 +88,19 @@ require app_path().'/hooks.php';
 
 /*
 |--------------------------------------------------------------------------
+| Require The Overrides File
+|--------------------------------------------------------------------------
+|
+| Finally, we'll load the overrides file, which is a convenient place to
+| override functionality in Laravel, Platform, all packages and
+| Extensions.
+|
+*/
+
+require app_path().'/overrides.php';
+
+/*
+|--------------------------------------------------------------------------
 | Boot Platform
 |--------------------------------------------------------------------------
 |
@@ -96,19 +109,6 @@ require app_path().'/hooks.php';
 */
 
 Platform::boot();
-
-/*
-|--------------------------------------------------------------------------
-| Require The Overrides File
-|--------------------------------------------------------------------------
-|
-| Next we'll load the overrides file, which is a convenient place to
-| override functionality in Laravel, Platform, all packages and
-| Extensions.
-|
-*/
-
-require app_path().'/overrides.php';
 
 /*
 |--------------------------------------------------------------------------
