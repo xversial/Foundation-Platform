@@ -81,14 +81,14 @@ Route::filter('csrf', function()
 
 /*
 |--------------------------------------------------------------------------
-| Force SSL Filter
+| Force HTTPS Filter
 |--------------------------------------------------------------------------
 |
-| The Force SSL filter forces any route to be accessed only over SSL.
+| Forces any route to be accessed presented only over HTTPS.
 |
 */
 
-Route::filter('ssl', function()
+Route::filter('https', function()
 {
 	if( ! Request::secure())
 	{
