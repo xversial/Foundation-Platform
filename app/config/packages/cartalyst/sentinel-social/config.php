@@ -1,6 +1,6 @@
 <?php
 /**
- * Part of the Sentry Social package.
+ * Part of the Sentinel Social package.
  *
  * NOTICE OF LICENSE
  *
@@ -9,8 +9,8 @@
  * This source file is subject to the Cartalyst PSL License that is
  * bundled with this package in the license.txt file.
  *
- * @package    Sentry Social
- * @version    3.0.0
+ * @package    Sentinel Social
+ * @version    1.0.0
  * @author     Cartalyst LLC
  * @license    Cartalyst PSL
  * @copyright  (c) 2011-2014, Cartalyst LLC
@@ -25,7 +25,7 @@ return array(
 	|--------------------------------------------------------------------------
 	|
 	| Connections are simple. Each key is a unique slug for the connection. Use
-	| anything, just make it unique. This is how you reference it in Sentry
+	| anything, just make it unique. This is how you reference it in Sentinel
 	| Social. Each slug requires a driver, which must match a valid inbuilt
 	| driver or may match your own custom class name that inherits from a
 	| valid base driver.
@@ -164,6 +164,6 @@ return array(
 	|
 	*/
 
-	'link' => 'Cartalyst\SentrySocial\Links\EloquentLink',
+	'link' => 'Cartalyst\SentinelSocial\Links\EloquentLink',
 
 );
