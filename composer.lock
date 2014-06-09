@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a681ae0077de097e0e4436361bee8a77",
+    "hash": "f48cb30836d009938c9b471451c9f17c",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -294,39 +294,43 @@
         },
         {
             "name": "cartalyst/composer-installers",
-            "version": "1.0.x-dev",
+            "version": "1.1.x-dev",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/composer-installers.git",
-                "reference": "ad38a718d2cba81b0aaec75deffb4cd52dc692e5"
+                "reference": "aa4ddf525c2a8fe4d005e5f6fe9cddffc4665509"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/composer-installers/zipball/ad38a718d2cba81b0aaec75deffb4cd52dc692e5",
-                "reference": "ad38a718d2cba81b0aaec75deffb4cd52dc692e5",
+                "url": "https://api.github.com/repos/cartalyst/composer-installers/zipball/aa4ddf525c2a8fe4d005e5f6fe9cddffc4665509",
+                "reference": "aa4ddf525c2a8fe4d005e5f6fe9cddffc4665509",
                 "shasum": ""
             },
             "require": {
+                "composer-plugin-api": "1.0.0",
                 "php": ">=5.3.0"
             },
             "require-dev": {
                 "mockery/mockery": "0.7.2"
             },
-            "type": "composer-installer",
+            "type": "composer-plugin",
             "extra": {
                 "component": "package",
+                "class": [
+                    "Cartalyst\\ComposerInstallers\\ExtensionInstallerPlugin",
+                    "Cartalyst\\ComposerInstallers\\ThemeInstallerPlugin"
+                ],
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
-                },
-                "class": "Platform\\ComposerInstallers\\Installer"
+                    "dev-master": "1.2-dev"
+                }
             },
             "autoload": {
-                "psr-0": {
-                    "Platform\\ComposerInstallers": "src/"
+                "psr-4": {
+                    "Cartalyst\\ComposerInstallers\\": "src/"
                 }
             },
             "license": [
-                "BSD-3-Clause"
+                "proprietary"
             ],
             "authors": [
                 {
@@ -349,7 +353,7 @@
                     "role": "Creator & Designer"
                 }
             ],
-            "description": "Composer installers for various Cartalyst packages.",
+            "description": "Composer installers plugin for various Cartalyst packages.",
             "keywords": [
                 "bootstrap",
                 "ecommerce",
@@ -357,10 +361,10 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/composer-installers/tree/1.0",
+                "source": "https://github.com/cartalyst/composer-installers/tree/1.1",
                 "issues": "https://github.com/cartalyst/composer-installers/issues"
             },
-            "time": "2013-09-08 02:59:51"
+            "time": "2014-06-09 18:17:30"
         },
         {
             "name": "cartalyst/composite-config",
@@ -427,12 +431,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/data-grid.git",
-                "reference": "4cb15639fd6417da66ef5b7ca3a4f31e17d41096"
+                "reference": "33092fcfbe3f82e1167c95c58248f6b4bbaa2fc5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/data-grid/zipball/4cb15639fd6417da66ef5b7ca3a4f31e17d41096",
-                "reference": "4cb15639fd6417da66ef5b7ca3a4f31e17d41096",
+                "url": "https://api.github.com/repos/cartalyst/data-grid/zipball/33092fcfbe3f82e1167c95c58248f6b4bbaa2fc5",
+                "reference": "33092fcfbe3f82e1167c95c58248f6b4bbaa2fc5",
                 "shasum": ""
             },
             "require": {
@@ -500,10 +504,10 @@
                 "search"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/data-grid/tree/master",
+                "source": "https://github.com/cartalyst/data-grid/tree/2.0",
                 "issues": "https://github.com/cartalyst/data-grid/issues"
             },
-            "time": "2014-05-30 22:59:25"
+            "time": "2014-06-06 00:48:34"
         },
         {
             "name": "cartalyst/dependencies",
@@ -1069,16 +1073,16 @@
         },
         {
             "name": "cartalyst/themes",
-            "version": "2.1.x-dev",
+            "version": "2.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/themes.git",
-                "reference": "2e0a702cc696418a990a750cfecd6cd7344c2524"
+                "reference": "89162d972ecede1f2e133906f505da16ee49ae07"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/themes/zipball/2e0a702cc696418a990a750cfecd6cd7344c2524",
-                "reference": "2e0a702cc696418a990a750cfecd6cd7344c2524",
+                "url": "https://api.github.com/repos/cartalyst/themes/zipball/89162d972ecede1f2e133906f505da16ee49ae07",
+                "reference": "89162d972ecede1f2e133906f505da16ee49ae07",
                 "shasum": ""
             },
             "require": {
@@ -1117,7 +1121,7 @@
                     "2": "master"
                 },
                 "branch-alias": {
-                    "dev-master": "2.0-dev"
+                    "dev-master": "2.2-dev"
                 }
             },
             "autoload": {
@@ -1157,10 +1161,10 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/themes/tree/master",
+                "source": "https://github.com/cartalyst/themes/tree/2.2",
                 "issues": "https://github.com/cartalyst/themes/issues"
             },
-            "time": "2014-05-24 05:17:11"
+            "time": "2014-06-09 16:58:12"
         },
         {
             "name": "cartalyst/widgets",
@@ -1558,30 +1562,37 @@
         },
         {
             "name": "filp/whoops",
-            "version": "1.0.10",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "91e3fd4b0812017ffbeb24add55330664e1ea32a"
+                "reference": "ae05259236204ccf904a94e5b0d96df8d4351da5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/91e3fd4b0812017ffbeb24add55330664e1ea32a",
-                "reference": "91e3fd4b0812017ffbeb24add55330664e1ea32a",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/ae05259236204ccf904a94e5b0d96df8d4351da5",
+                "reference": "ae05259236204ccf904a94e5b0d96df8d4351da5",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
             "require-dev": {
-                "mockery/mockery": "dev-master",
-                "silex/silex": "1.0.*@dev"
+                "mockery/mockery": "0.9.*"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Whoops": "src/"
-                }
+                },
+                "classmap": [
+                    "src/deprecated"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1605,7 +1616,7 @@
                 "whoops",
                 "zf2"
             ],
-            "time": "2013-12-04 14:19:30"
+            "time": "2014-05-13 05:05:11"
         },
         {
             "name": "guzzle/guzzle",
@@ -1762,16 +1773,16 @@
         },
         {
             "name": "intervention/image",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Intervention/image.git",
-                "reference": "8692a77fb684515303f2a1d5e07d7108aaf589c8"
+                "reference": "bbdb310dfaa76c9756509d90f6badaf157117c28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/image/zipball/8692a77fb684515303f2a1d5e07d7108aaf589c8",
-                "reference": "8692a77fb684515303f2a1d5e07d7108aaf589c8",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/bbdb310dfaa76c9756509d90f6badaf157117c28",
+                "reference": "bbdb310dfaa76c9756509d90f6badaf157117c28",
                 "shasum": ""
             },
             "require": {
@@ -1816,7 +1827,7 @@
                 "thumbnail",
                 "watermark"
             ],
-            "time": "2014-05-31 09:37:00"
+            "time": "2014-06-08 21:56:29"
         },
         {
             "name": "intervention/imagecache",
@@ -2145,44 +2156,44 @@
         },
         {
             "name": "laravel/framework",
-            "version": "4.1.x-dev",
+            "version": "4.2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "1bbb6f16aa03c1de6d89ccbf4ca81bf98e1330ab"
+                "reference": "5c591f909bb5c47e1e9d2230b948445c4b572892"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/1bbb6f16aa03c1de6d89ccbf4ca81bf98e1330ab",
-                "reference": "1bbb6f16aa03c1de6d89ccbf4ca81bf98e1330ab",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/5c591f909bb5c47e1e9d2230b948445c4b572892",
+                "reference": "5c591f909bb5c47e1e9d2230b948445c4b572892",
                 "shasum": ""
             },
             "require": {
-                "classpreloader/classpreloader": "1.0.*",
-                "d11wtq/boris": "1.0.*",
-                "filp/whoops": "1.0.10",
-                "ircmaxell/password-compat": "1.0.*",
-                "jeremeamia/superclosure": "1.0.*",
-                "monolog/monolog": "1.*",
-                "nesbot/carbon": "1.*",
+                "classpreloader/classpreloader": "~1.0",
+                "d11wtq/boris": "~1.0",
+                "filp/whoops": "1.1.*",
+                "ircmaxell/password-compat": "~1.0",
+                "jeremeamia/superclosure": "~1.0",
+                "monolog/monolog": "~1.6",
+                "nesbot/carbon": "~1.0",
                 "patchwork/utf8": "1.1.*",
-                "php": ">=5.3.0",
+                "php": ">=5.4.0",
                 "phpseclib/phpseclib": "0.3.*",
                 "predis/predis": "0.8.*",
-                "stack/builder": "1.0.*",
-                "swiftmailer/swiftmailer": "~5.0",
-                "symfony/browser-kit": "2.4.*",
-                "symfony/console": "2.4.*",
-                "symfony/css-selector": "2.4.*",
-                "symfony/debug": "2.4.*",
-                "symfony/dom-crawler": "2.4.*",
-                "symfony/finder": "2.4.*",
-                "symfony/http-foundation": "2.4.*",
-                "symfony/http-kernel": "2.4.*",
-                "symfony/process": "2.4.*",
-                "symfony/routing": "2.4.*",
-                "symfony/security-core": "2.4.*",
-                "symfony/translation": "2.4.*"
+                "stack/builder": "~1.0",
+                "swiftmailer/swiftmailer": "~5.1",
+                "symfony/browser-kit": "2.5.*",
+                "symfony/console": "2.5.*",
+                "symfony/css-selector": "2.5.*",
+                "symfony/debug": "2.5.*",
+                "symfony/dom-crawler": "2.5.*",
+                "symfony/finder": "2.5.*",
+                "symfony/http-foundation": "2.5.*",
+                "symfony/http-kernel": "2.5.*",
+                "symfony/process": "2.5.*",
+                "symfony/routing": "2.5.*",
+                "symfony/security-core": "2.5.*",
+                "symfony/translation": "2.5.*"
             },
             "replace": {
                 "illuminate/auth": "self.version",
@@ -2215,11 +2226,11 @@
                 "illuminate/workbench": "self.version"
             },
             "require-dev": {
-                "aws/aws-sdk-php": "2.6.*",
-                "iron-io/iron_mq": "1.5.*",
-                "mockery/mockery": "0.9.*",
-                "pda/pheanstalk": "2.1.*",
-                "phpunit/phpunit": "4.0.*"
+                "aws/aws-sdk-php": "~2.6",
+                "iron-io/iron_mq": "~1.5",
+                "mockery/mockery": "~0.9",
+                "pda/pheanstalk": "~2.1",
+                "phpunit/phpunit": "~4.0"
             },
             "suggest": {
                 "doctrine/dbal": "Allow renaming columns and dropping SQLite columns."
@@ -2227,7 +2238,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.1-dev"
+                    "dev-master": "4.2-dev"
                 }
             },
             "autoload": {
@@ -2258,7 +2269,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-06-01 18:30:26"
+            "time": "2014-06-08 18:25:50"
         },
         {
             "name": "leafo/scssphp",
@@ -2347,12 +2358,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "c0ee38a2f0f53687d7fa862129da63494d498156"
+                "reference": "7e61164dd09d4d225e0bc7d5e0e1b8eed5ed18e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/c0ee38a2f0f53687d7fa862129da63494d498156",
-                "reference": "c0ee38a2f0f53687d7fa862129da63494d498156",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/7e61164dd09d4d225e0bc7d5e0e1b8eed5ed18e7",
+                "reference": "7e61164dd09d4d225e0bc7d5e0e1b8eed5ed18e7",
                 "shasum": ""
             },
             "require-dev": {
@@ -2377,7 +2388,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.4-dev"
+                    "dev-master": "0.5-dev"
                 }
             },
             "autoload": {
@@ -2406,7 +2417,7 @@
                 "s3",
                 "sftp"
             ],
-            "time": "2014-06-04 10:40:34"
+            "time": "2014-06-09 11:40:26"
         },
         {
             "name": "league/fractal",
@@ -2521,12 +2532,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/oauth2-client.git",
-                "reference": "0051451ce55fc2c5238797256852c9e9ea6c3d0a"
+                "reference": "2747bf0f70ac1afd98de78a7bd436666d2aa0635"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/oauth2-client/zipball/0051451ce55fc2c5238797256852c9e9ea6c3d0a",
-                "reference": "0051451ce55fc2c5238797256852c9e9ea6c3d0a",
+                "url": "https://api.github.com/repos/thephpleague/oauth2-client/zipball/2747bf0f70ac1afd98de78a7bd436666d2aa0635",
+                "reference": "2747bf0f70ac1afd98de78a7bd436666d2aa0635",
                 "shasum": ""
             },
             "require": {
@@ -2572,7 +2583,7 @@
                 "oauth2",
                 "single sign on"
             ],
-            "time": "2014-05-22 17:00:57"
+            "time": "2014-06-08 22:27:16"
         },
         {
             "name": "lmammino/jsmin4assetic",
@@ -2996,12 +3007,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "25d31e5867eff112d747a1f5e13d582b1a2392f8"
+                "reference": "6e796d091a31e391f59348188724a74d5802f1ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/25d31e5867eff112d747a1f5e13d582b1a2392f8",
-                "reference": "25d31e5867eff112d747a1f5e13d582b1a2392f8",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/6e796d091a31e391f59348188724a74d5802f1ec",
+                "reference": "6e796d091a31e391f59348188724a74d5802f1ec",
                 "shasum": ""
             },
             "require": {
@@ -3085,7 +3096,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2014-06-05 14:56:34"
+            "time": "2014-06-09 18:19:33"
         },
         {
             "name": "pimple/pimple",
@@ -3141,16 +3152,16 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-admin.git",
-                "reference": "bcbb85a8f37395b8fae442fc4d2d32586300d6a8"
+                "reference": "5354323771ac6998bd77e1316e1397528f88761c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-admin/zipball/bcbb85a8f37395b8fae442fc4d2d32586300d6a8",
-                "reference": "bcbb85a8f37395b8fae442fc4d2d32586300d6a8",
+                "url": "https://api.github.com/repos/cartalyst/platform-admin/zipball/5354323771ac6998bd77e1316e1397528f88761c",
+                "reference": "5354323771ac6998bd77e1316e1397528f88761c",
                 "shasum": ""
             },
             "require": {
-                "cartalyst/composer-installers": "1.0.*",
+                "cartalyst/composer-installers": "1.1.*",
                 "php": ">=5.4.0"
             },
             "type": "platform-extension",
@@ -3206,7 +3217,69 @@
                 "source": "https://github.com/cartalyst/platform-admin/tree/master",
                 "issues": "https://github.com/cartalyst/platform-admin/issues"
             },
-            "time": "2014-06-02 18:46:56"
+            "time": "2014-06-09 18:27:10"
+        },
+        {
+            "name": "platform/admin-default",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:cartalyst/theme-default-admin.git",
+                "reference": "31362d99a46b2ee678993389b0dba79889daf961"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cartalyst/theme-default-admin/zipball/31362d99a46b2ee678993389b0dba79889daf961",
+                "reference": "31362d99a46b2ee678993389b0dba79889daf961",
+                "shasum": ""
+            },
+            "require": {
+                "cartalyst/composer-installers": "1.1.*",
+                "php": ">=5.4.0"
+            },
+            "type": "platform-theme",
+            "extra": {
+                "component": "theme",
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Cartalyst LLC",
+                    "email": "help@cartalyst.com"
+                },
+                {
+                    "name": "Ben Corlett",
+                    "email": "ben.corlett@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Bruno Gaspar",
+                    "email": "bruno.gaspar@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dan Syme",
+                    "email": "dan.syme@cartalyst.com",
+                    "role": "Creator & Designer"
+                }
+            ],
+            "description": "Default admin theme.",
+            "keywords": [
+                "cartalyst",
+                "laravel",
+                "platform",
+                "theme"
+            ],
+            "support": {
+                "source": "https://github.com/cartalyst/theme-default-admin/tree/master",
+                "issues": "https://github.com/cartalyst/theme-default-admin/issues"
+            },
+            "time": "2014-06-09 18:21:01"
         },
         {
             "name": "platform/attributes",
@@ -3214,17 +3287,17 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-attributes.git",
-                "reference": "546abd00ca31d2e17315b99037a5bb95887966bd"
+                "reference": "0aee9fe12a08eb8e2c3ebb52912f5fd0c43026c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-attributes/zipball/546abd00ca31d2e17315b99037a5bb95887966bd",
-                "reference": "546abd00ca31d2e17315b99037a5bb95887966bd",
+                "url": "https://api.github.com/repos/cartalyst/platform-attributes/zipball/0aee9fe12a08eb8e2c3ebb52912f5fd0c43026c9",
+                "reference": "0aee9fe12a08eb8e2c3ebb52912f5fd0c43026c9",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/attributes": "1.0.*",
-                "cartalyst/composer-installers": "1.0.*",
+                "cartalyst/composer-installers": "1.1.*",
                 "php": ">=5.4.0",
                 "platform/admin": "dev-master"
             },
@@ -3279,7 +3352,7 @@
                 "source": "https://github.com/cartalyst/platform-attributes/tree/master",
                 "issues": "https://github.com/cartalyst/platform-attributes/issues"
             },
-            "time": "2014-06-02 15:23:34"
+            "time": "2014-06-09 18:27:45"
         },
         {
             "name": "platform/content",
@@ -3287,16 +3360,16 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-content.git",
-                "reference": "d26b4d38f57a700ccc5d09d7823e3ab9c7905a23"
+                "reference": "a521a6e1e810ad89b68127c71ec218159c7be679"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/d26b4d38f57a700ccc5d09d7823e3ab9c7905a23",
-                "reference": "d26b4d38f57a700ccc5d09d7823e3ab9c7905a23",
+                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/a521a6e1e810ad89b68127c71ec218159c7be679",
+                "reference": "a521a6e1e810ad89b68127c71ec218159c7be679",
                 "shasum": ""
             },
             "require": {
-                "cartalyst/composer-installers": "1.0.*",
+                "cartalyst/composer-installers": "1.1.*",
                 "cartalyst/interpret": "1.0.*",
                 "php": ">=5.4.0",
                 "platform/admin": "dev-master",
@@ -3355,7 +3428,7 @@
                 "source": "https://github.com/cartalyst/platform-content/tree/master",
                 "issues": "https://github.com/cartalyst/platform-content/issues"
             },
-            "time": "2014-06-02 15:25:18"
+            "time": "2014-06-09 18:28:08"
         },
         {
             "name": "platform/foundation",
@@ -3363,12 +3436,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-foundation.git",
-                "reference": "42d70fd503bb13401ad19c89dc99da3d63bf1c8d"
+                "reference": "d47db22f243d23fe83622bee7089ca5efdca3080"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/42d70fd503bb13401ad19c89dc99da3d63bf1c8d",
-                "reference": "42d70fd503bb13401ad19c89dc99da3d63bf1c8d",
+                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/d47db22f243d23fe83622bee7089ca5efdca3080",
+                "reference": "d47db22f243d23fe83622bee7089ca5efdca3080",
                 "shasum": ""
             },
             "require": {
@@ -3376,7 +3449,7 @@
                 "cartalyst/assetic-filters": "1.1.*",
                 "cartalyst/data-grid": "dev-master",
                 "cartalyst/extensions": "1.0.*",
-                "cartalyst/themes": "2.1.*",
+                "cartalyst/themes": "2.2.*",
                 "cartalyst/widgets": "1.0.*",
                 "illuminate/config": "~4",
                 "illuminate/container": "~4",
@@ -3439,10 +3512,72 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-foundation/tree/master",
+                "source": "https://github.com/cartalyst/platform-foundation/tree/feature/laravel-4.2",
                 "issues": "https://github.com/cartalyst/platform-foundation/issues"
             },
-            "time": "2014-06-05 17:09:22"
+            "time": "2014-06-09 17:23:51"
+        },
+        {
+            "name": "platform/frontend-default",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:cartalyst/theme-default-frontend.git",
+                "reference": "739e3227d03b1f3bc23b0c409a0979a09b2403f2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cartalyst/theme-default-frontend/zipball/739e3227d03b1f3bc23b0c409a0979a09b2403f2",
+                "reference": "739e3227d03b1f3bc23b0c409a0979a09b2403f2",
+                "shasum": ""
+            },
+            "require": {
+                "cartalyst/composer-installers": "1.1.*",
+                "php": ">=5.4.0"
+            },
+            "type": "platform-theme",
+            "extra": {
+                "component": "theme",
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Cartalyst LLC",
+                    "email": "help@cartalyst.com"
+                },
+                {
+                    "name": "Ben Corlett",
+                    "email": "ben.corlett@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Bruno Gaspar",
+                    "email": "bruno.gaspar@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dan Syme",
+                    "email": "dan.syme@cartalyst.com",
+                    "role": "Creator & Designer"
+                }
+            ],
+            "description": "Default frontend theme.",
+            "keywords": [
+                "cartalyst",
+                "laravel",
+                "platform",
+                "theme"
+            ],
+            "support": {
+                "source": "https://github.com/cartalyst/theme-default-frontend/tree/master",
+                "issues": "https://github.com/cartalyst/theme-default-frontend/issues"
+            },
+            "time": "2014-06-09 18:21:12"
         },
         {
             "name": "platform/installer",
@@ -3450,12 +3585,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-installer.git",
-                "reference": "cb431b13433b95ceeefd0e37def7f716c8ff02cf"
+                "reference": "a1b166676b00251dfe30496796c6d5369a652c97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-installer/zipball/cb431b13433b95ceeefd0e37def7f716c8ff02cf",
-                "reference": "cb431b13433b95ceeefd0e37def7f716c8ff02cf",
+                "url": "https://api.github.com/repos/cartalyst/platform-installer/zipball/a1b166676b00251dfe30496796c6d5369a652c97",
+                "reference": "a1b166676b00251dfe30496796c6d5369a652c97",
                 "shasum": ""
             },
             "require": {
@@ -3522,7 +3657,7 @@
                 "source": "https://github.com/cartalyst/platform-installer/tree/master",
                 "issues": "https://github.com/cartalyst/platform-installer/issues"
             },
-            "time": "2014-06-05 17:10:15"
+            "time": "2014-06-09 17:58:07"
         },
         {
             "name": "platform/media",
@@ -3530,16 +3665,16 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-media.git",
-                "reference": "3dd3388c5845573f4acf142e4a40e7ef66759de5"
+                "reference": "7c1501314b7fd672ba2526e886372af553f63fc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/3dd3388c5845573f4acf142e4a40e7ef66759de5",
-                "reference": "3dd3388c5845573f4acf142e4a40e7ef66759de5",
+                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/7c1501314b7fd672ba2526e886372af553f63fc2",
+                "reference": "7c1501314b7fd672ba2526e886372af553f63fc2",
                 "shasum": ""
             },
             "require": {
-                "cartalyst/composer-installers": "1.0.*",
+                "cartalyst/composer-installers": "1.1.*",
                 "cartalyst/media": "dev-master",
                 "intervention/image": "~2.0",
                 "intervention/imagecache": "~2.0",
@@ -3598,7 +3733,7 @@
                 "source": "https://github.com/cartalyst/platform-media/tree/master",
                 "issues": "https://github.com/cartalyst/platform-media/issues"
             },
-            "time": "2014-06-05 16:36:42"
+            "time": "2014-06-09 18:28:46"
         },
         {
             "name": "platform/menus",
@@ -3606,16 +3741,16 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-menus.git",
-                "reference": "3bbe3548135f6da886ee3340e086435e2a88db1b"
+                "reference": "aef24ff61bf8319e96f43e93ec65d37b2ec7c741"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/3bbe3548135f6da886ee3340e086435e2a88db1b",
-                "reference": "3bbe3548135f6da886ee3340e086435e2a88db1b",
+                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/aef24ff61bf8319e96f43e93ec65d37b2ec7c741",
+                "reference": "aef24ff61bf8319e96f43e93ec65d37b2ec7c741",
                 "shasum": ""
             },
             "require": {
-                "cartalyst/composer-installers": "1.0.*",
+                "cartalyst/composer-installers": "1.1.*",
                 "cartalyst/nested-sets": "dev-master",
                 "php": ">=5.4.0",
                 "platform/admin": "dev-master"
@@ -3672,7 +3807,7 @@
                 "source": "https://github.com/cartalyst/platform-menus/tree/master",
                 "issues": "https://github.com/cartalyst/platform-menus/issues"
             },
-            "time": "2014-06-05 16:40:05"
+            "time": "2014-06-09 18:21:52"
         },
         {
             "name": "platform/operations",
@@ -3680,17 +3815,17 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-operations.git",
-                "reference": "b66d8bbf58d3bddd5165ed3ae332f9f48ca0d937"
+                "reference": "7dfa45b39c86559afd91897623151f5717f33895"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/b66d8bbf58d3bddd5165ed3ae332f9f48ca0d937",
-                "reference": "b66d8bbf58d3bddd5165ed3ae332f9f48ca0d937",
+                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/7dfa45b39c86559afd91897623151f5717f33895",
+                "reference": "7dfa45b39c86559afd91897623151f5717f33895",
                 "shasum": ""
             },
             "require": {
                 "alchemy/zippy": "0.1.*",
-                "cartalyst/composer-installers": "1.0.*",
+                "cartalyst/composer-installers": "1.1.*",
                 "cartalyst/workshop": "dev-master",
                 "php": ">=5.4.0",
                 "platform/admin": "dev-master"
@@ -3746,7 +3881,7 @@
                 "source": "https://github.com/cartalyst/platform-operations/tree/master",
                 "issues": "https://github.com/cartalyst/platform-operations/issues"
             },
-            "time": "2014-06-02 15:29:48"
+            "time": "2014-06-09 18:29:16"
         },
         {
             "name": "platform/pages",
@@ -3754,16 +3889,16 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-pages.git",
-                "reference": "d5ff9d5be200e86ab5cfaccd56f1ff54e08b29a9"
+                "reference": "8d07943dae0e045313b81416fefde3d92e9375a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/d5ff9d5be200e86ab5cfaccd56f1ff54e08b29a9",
-                "reference": "d5ff9d5be200e86ab5cfaccd56f1ff54e08b29a9",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/8d07943dae0e045313b81416fefde3d92e9375a0",
+                "reference": "8d07943dae0e045313b81416fefde3d92e9375a0",
                 "shasum": ""
             },
             "require": {
-                "cartalyst/composer-installers": "1.0.*",
+                "cartalyst/composer-installers": "1.1.*",
                 "php": ">=5.4.0",
                 "platform/admin": "dev-master",
                 "platform/content": "dev-master"
@@ -3821,7 +3956,7 @@
                 "source": "https://github.com/cartalyst/platform-pages/tree/master",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2014-06-05 16:35:58"
+            "time": "2014-06-09 18:21:36"
         },
         {
             "name": "platform/settings",
@@ -3829,16 +3964,16 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-settings.git",
-                "reference": "04f6764db0c21ea8ddd3ebd80238241e55c4b870"
+                "reference": "3be453461015182ba2d2640e7d1377bedfcf9eb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-settings/zipball/04f6764db0c21ea8ddd3ebd80238241e55c4b870",
-                "reference": "04f6764db0c21ea8ddd3ebd80238241e55c4b870",
+                "url": "https://api.github.com/repos/cartalyst/platform-settings/zipball/3be453461015182ba2d2640e7d1377bedfcf9eb8",
+                "reference": "3be453461015182ba2d2640e7d1377bedfcf9eb8",
                 "shasum": ""
             },
             "require": {
-                "cartalyst/composer-installers": "1.0.*",
+                "cartalyst/composer-installers": "1.1.*",
                 "cartalyst/composite-config": "dev-master",
                 "php": ">=5.4.0",
                 "platform/admin": "dev-master"
@@ -3895,7 +4030,7 @@
                 "source": "https://github.com/cartalyst/platform-settings/tree/master",
                 "issues": "https://github.com/cartalyst/platform-settings/issues"
             },
-            "time": "2014-06-02 04:38:47"
+            "time": "2014-06-09 18:29:44"
         },
         {
             "name": "platform/users",
@@ -3903,16 +4038,16 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-users.git",
-                "reference": "f94098706610970e5d615594b5678765d8810b63"
+                "reference": "22783f541cbb23cb2b3309fd45dca8440a6a2723"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/f94098706610970e5d615594b5678765d8810b63",
-                "reference": "f94098706610970e5d615594b5678765d8810b63",
+                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/22783f541cbb23cb2b3309fd45dca8440a6a2723",
+                "reference": "22783f541cbb23cb2b3309fd45dca8440a6a2723",
                 "shasum": ""
             },
             "require": {
-                "cartalyst/composer-installers": "1.0.*",
+                "cartalyst/composer-installers": "1.1.*",
                 "cartalyst/sentinel-social": "dev-master",
                 "php": ">=5.4.0",
                 "platform/admin": "dev-master",
@@ -3972,7 +4107,7 @@
                 "source": "https://github.com/cartalyst/platform-users/tree/master",
                 "issues": "https://github.com/cartalyst/platform-users/issues"
             },
-            "time": "2014-06-05 21:51:44"
+            "time": "2014-06-09 18:22:08"
         },
         {
             "name": "predis/predis",
@@ -3980,12 +4115,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nrk/predis.git",
-                "reference": "a8862f0fdd716f0d99d6cce3b2eacbd1342b0132"
+                "reference": "1da827c0ae77c20997f3319a3c84fc7b6531c4bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nrk/predis/zipball/a8862f0fdd716f0d99d6cce3b2eacbd1342b0132",
-                "reference": "a8862f0fdd716f0d99d6cce3b2eacbd1342b0132",
+                "url": "https://api.github.com/repos/nrk/predis/zipball/1da827c0ae77c20997f3319a3c84fc7b6531c4bf",
+                "reference": "1da827c0ae77c20997f3319a3c84fc7b6531c4bf",
                 "shasum": ""
             },
             "require": {
@@ -4022,7 +4157,7 @@
                 "predis",
                 "redis"
             ],
-            "time": "2014-06-03 14:57:22"
+            "time": "2014-06-09 15:42:33"
         },
         {
             "name": "psr/log",
@@ -4271,17 +4406,17 @@
         },
         {
             "name": "symfony/browser-kit",
-            "version": "2.4.x-dev",
+            "version": "2.5.x-dev",
             "target-dir": "Symfony/Component/BrowserKit",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/BrowserKit.git",
-                "reference": "5c80003d5772de6120b5429f4b2f6e22957d4a07"
+                "reference": "cc1716dafa04277a0c987aee5bce8c3cf8939de3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/BrowserKit/zipball/5c80003d5772de6120b5429f4b2f6e22957d4a07",
-                "reference": "5c80003d5772de6120b5429f4b2f6e22957d4a07",
+                "url": "https://api.github.com/repos/symfony/BrowserKit/zipball/cc1716dafa04277a0c987aee5bce8c3cf8939de3",
+                "reference": "cc1716dafa04277a0c987aee5bce8c3cf8939de3",
                 "shasum": ""
             },
             "require": {
@@ -4298,7 +4433,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -4324,36 +4459,38 @@
             ],
             "description": "Symfony BrowserKit Component",
             "homepage": "http://symfony.com",
-            "time": "2014-05-12 09:27:48"
+            "time": "2014-05-12 09:28:39"
         },
         {
             "name": "symfony/console",
-            "version": "2.4.x-dev",
+            "version": "2.5.x-dev",
             "target-dir": "Symfony/Component/Console",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "24f723436e62598c9dddee2a8573d6992504dc5d"
+                "reference": "5e8b3e4e17102eeb807ccd65750302a5402863cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/24f723436e62598c9dddee2a8573d6992504dc5d",
-                "reference": "24f723436e62598c9dddee2a8573d6992504dc5d",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/5e8b3e4e17102eeb807ccd65750302a5402863cb",
+                "reference": "5e8b3e4e17102eeb807ccd65750302a5402863cb",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
+                "psr/log": "~1.0",
                 "symfony/event-dispatcher": "~2.1"
             },
             "suggest": {
+                "psr/log": "For using the console logger",
                 "symfony/event-dispatcher": ""
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -4379,21 +4516,21 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2014-05-14 21:48:29"
+            "time": "2014-06-03 20:33:46"
         },
         {
             "name": "symfony/css-selector",
-            "version": "2.4.x-dev",
+            "version": "2.5.x-dev",
             "target-dir": "Symfony/Component/CssSelector",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/CssSelector.git",
-                "reference": "268d0a51166edaf84dfcf043c57f273685cb7c93"
+                "reference": "bcdd62af59bd3137ede467946a06d41f8644048c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/CssSelector/zipball/268d0a51166edaf84dfcf043c57f273685cb7c93",
-                "reference": "268d0a51166edaf84dfcf043c57f273685cb7c93",
+                "url": "https://api.github.com/repos/symfony/CssSelector/zipball/bcdd62af59bd3137ede467946a06d41f8644048c",
+                "reference": "bcdd62af59bd3137ede467946a06d41f8644048c",
                 "shasum": ""
             },
             "require": {
@@ -4402,7 +4539,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -4432,21 +4569,21 @@
             ],
             "description": "Symfony CssSelector Component",
             "homepage": "http://symfony.com",
-            "time": "2014-05-12 09:27:48"
+            "time": "2014-05-12 09:28:39"
         },
         {
             "name": "symfony/debug",
-            "version": "2.4.x-dev",
+            "version": "2.5.x-dev",
             "target-dir": "Symfony/Component/Debug",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Debug.git",
-                "reference": "6e721ae2cd7bde0f8dfa9c3186808a6c4140469c"
+                "reference": "4ebbb9592cff9be49862c75348afd231b3ca6965"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Debug/zipball/6e721ae2cd7bde0f8dfa9c3186808a6c4140469c",
-                "reference": "6e721ae2cd7bde0f8dfa9c3186808a6c4140469c",
+                "url": "https://api.github.com/repos/symfony/Debug/zipball/4ebbb9592cff9be49862c75348afd231b3ca6965",
+                "reference": "4ebbb9592cff9be49862c75348afd231b3ca6965",
                 "shasum": ""
             },
             "require": {
@@ -4463,7 +4600,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -4489,21 +4626,21 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "http://symfony.com",
-            "time": "2014-04-30 06:22:28"
+            "time": "2014-06-02 07:03:03"
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "2.4.x-dev",
+            "version": "2.5.x-dev",
             "target-dir": "Symfony/Component/DomCrawler",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/DomCrawler.git",
-                "reference": "77881ef11c064a490515a9fb1729b695c632ffe5"
+                "reference": "6cda499120860286fe3d3d2fd631dacb7ae17f92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/77881ef11c064a490515a9fb1729b695c632ffe5",
-                "reference": "77881ef11c064a490515a9fb1729b695c632ffe5",
+                "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/6cda499120860286fe3d3d2fd631dacb7ae17f92",
+                "reference": "6cda499120860286fe3d3d2fd631dacb7ae17f92",
                 "shasum": ""
             },
             "require": {
@@ -4518,7 +4655,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -4544,7 +4681,7 @@
             ],
             "description": "Symfony DomCrawler Component",
             "homepage": "http://symfony.com",
-            "time": "2014-05-31 02:02:48"
+            "time": "2014-05-31 02:02:56"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -4656,17 +4793,17 @@
         },
         {
             "name": "symfony/finder",
-            "version": "2.4.x-dev",
+            "version": "2.5.x-dev",
             "target-dir": "Symfony/Component/Finder",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder.git",
-                "reference": "46295af1b1e24304b35d5f20f1bf1ec0c2c4934a"
+                "reference": "307aad2c541bbdf43183043645e186ef2cd6b973"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/46295af1b1e24304b35d5f20f1bf1ec0c2c4934a",
-                "reference": "46295af1b1e24304b35d5f20f1bf1ec0c2c4934a",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/307aad2c541bbdf43183043645e186ef2cd6b973",
+                "reference": "307aad2c541bbdf43183043645e186ef2cd6b973",
                 "shasum": ""
             },
             "require": {
@@ -4675,7 +4812,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -4701,21 +4838,21 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "http://symfony.com",
-            "time": "2014-05-22 13:46:01"
+            "time": "2014-05-22 13:47:45"
         },
         {
             "name": "symfony/http-foundation",
-            "version": "2.4.x-dev",
+            "version": "2.5.x-dev",
             "target-dir": "Symfony/Component/HttpFoundation",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpFoundation.git",
-                "reference": "138498f3d64981cfafcb5eec3b2b96fce44a178e"
+                "reference": "efa2b935a1305a578aef7fc22a28ad5204969927"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/138498f3d64981cfafcb5eec3b2b96fce44a178e",
-                "reference": "138498f3d64981cfafcb5eec3b2b96fce44a178e",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/efa2b935a1305a578aef7fc22a28ad5204969927",
+                "reference": "efa2b935a1305a578aef7fc22a28ad5204969927",
                 "shasum": ""
             },
             "require": {
@@ -4727,7 +4864,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -4756,27 +4893,27 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "http://symfony.com",
-            "time": "2014-05-22 16:21:00"
+            "time": "2014-06-06 03:57:03"
         },
         {
             "name": "symfony/http-kernel",
-            "version": "2.4.x-dev",
+            "version": "2.5.x-dev",
             "target-dir": "Symfony/Component/HttpKernel",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpKernel.git",
-                "reference": "1bf2554713702ed304a57cc12c4a674403dadd1f"
+                "reference": "e17c6c3d93070c0a3f0469de025d15201ab7d107"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/1bf2554713702ed304a57cc12c4a674403dadd1f",
-                "reference": "1bf2554713702ed304a57cc12c4a674403dadd1f",
+                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/e17c6c3d93070c0a3f0469de025d15201ab7d107",
+                "reference": "e17c6c3d93070c0a3f0469de025d15201ab7d107",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
                 "psr/log": "~1.0",
-                "symfony/debug": "~2.3",
+                "symfony/debug": "~2.5",
                 "symfony/event-dispatcher": "~2.1",
                 "symfony/http-foundation": "~2.4"
             },
@@ -4803,7 +4940,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -4829,21 +4966,21 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "http://symfony.com",
-            "time": "2014-06-01 15:15:23"
+            "time": "2014-06-03 15:24:49"
         },
         {
             "name": "symfony/process",
-            "version": "2.4.x-dev",
+            "version": "2.5.x-dev",
             "target-dir": "Symfony/Component/Process",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Process.git",
-                "reference": "a7118cb290c62068b3c8ecfbf8b2eda8421fb841"
+                "reference": "5d7d78e23894544740219e006320678cfa4cd45b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Process/zipball/a7118cb290c62068b3c8ecfbf8b2eda8421fb841",
-                "reference": "a7118cb290c62068b3c8ecfbf8b2eda8421fb841",
+                "url": "https://api.github.com/repos/symfony/Process/zipball/5d7d78e23894544740219e006320678cfa4cd45b",
+                "reference": "5d7d78e23894544740219e006320678cfa4cd45b",
                 "shasum": ""
             },
             "require": {
@@ -4852,7 +4989,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -4878,21 +5015,21 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "http://symfony.com",
-            "time": "2014-05-22 13:46:01"
+            "time": "2014-05-23 09:02:52"
         },
         {
             "name": "symfony/routing",
-            "version": "2.4.x-dev",
+            "version": "2.5.x-dev",
             "target-dir": "Symfony/Component/Routing",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Routing.git",
-                "reference": "74229f66e16bce6d2415ca44d4756f8e7ea880f8"
+                "reference": "99b4e8e2978e6a08c086fd771cc0aa66c9e80a56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Routing/zipball/74229f66e16bce6d2415ca44d4756f8e7ea880f8",
-                "reference": "74229f66e16bce6d2415ca44d4756f8e7ea880f8",
+                "url": "https://api.github.com/repos/symfony/Routing/zipball/99b4e8e2978e6a08c086fd771cc0aa66c9e80a56",
+                "reference": "99b4e8e2978e6a08c086fd771cc0aa66c9e80a56",
                 "shasum": ""
             },
             "require": {
@@ -4914,7 +5051,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -4946,21 +5083,21 @@
                 "uri",
                 "url"
             ],
-            "time": "2014-04-23 14:04:21"
+            "time": "2014-04-23 14:08:54"
         },
         {
             "name": "symfony/security-core",
-            "version": "2.4.x-dev",
+            "version": "2.5.x-dev",
             "target-dir": "Symfony/Component/Security/Core",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/security-core.git",
-                "reference": "1fbe80d10b7a5bcb619abe3e4cfede795d9958dc"
+                "reference": "de6e3aa1362d77f6bf91f17039cd403807ee5c27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/security-core/zipball/1fbe80d10b7a5bcb619abe3e4cfede795d9958dc",
-                "reference": "1fbe80d10b7a5bcb619abe3e4cfede795d9958dc",
+                "url": "https://api.github.com/repos/symfony/security-core/zipball/de6e3aa1362d77f6bf91f17039cd403807ee5c27",
+                "reference": "de6e3aa1362d77f6bf91f17039cd403807ee5c27",
                 "shasum": ""
             },
             "require": {
@@ -4984,7 +5121,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -5010,21 +5147,21 @@
             ],
             "description": "Symfony Security Component - Core Library",
             "homepage": "http://symfony.com",
-            "time": "2014-04-23 14:04:21"
+            "time": "2014-04-23 14:08:54"
         },
         {
             "name": "symfony/translation",
-            "version": "2.4.x-dev",
+            "version": "2.5.x-dev",
             "target-dir": "Symfony/Component/Translation",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Translation.git",
-                "reference": "9a3941444487ea57acd38f5c61bee1e0c3f69293"
+                "reference": "5f23265dcf8927a84be832608069c9edca3cf5f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Translation/zipball/9a3941444487ea57acd38f5c61bee1e0c3f69293",
-                "reference": "9a3941444487ea57acd38f5c61bee1e0c3f69293",
+                "url": "https://api.github.com/repos/symfony/Translation/zipball/5f23265dcf8927a84be832608069c9edca3cf5f4",
+                "reference": "5f23265dcf8927a84be832608069c9edca3cf5f4",
                 "shasum": ""
             },
             "require": {
@@ -5041,7 +5178,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -5067,7 +5204,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "http://symfony.com",
-            "time": "2014-05-22 13:46:01"
+            "time": "2014-05-22 13:47:45"
         }
     ],
     "packages-dev": [
@@ -5078,6 +5215,8 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
+        "platform/admin-default": 20,
+        "platform/frontend-default": 20,
         "platform/foundation": 20,
         "platform/installer": 20,
         "platform/attributes": 20,
