@@ -2,7 +2,7 @@
 
 Platform is not just another CMS, it's a starting point for you to build your application providing the tools you need to get the job done as easy as possible.
 
-- Laravel 4.1
+- Laravel 4.2
 - Authentication & Authorization
 - Social Authentication (OAuth, OAuth 2)
 - Bootstrap 3.1.1 Ready
