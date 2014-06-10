@@ -3360,12 +3360,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-content.git",
-                "reference": "a521a6e1e810ad89b68127c71ec218159c7be679"
+                "reference": "a3c6714739b3593018f656ada95681cc079979d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/a521a6e1e810ad89b68127c71ec218159c7be679",
-                "reference": "a521a6e1e810ad89b68127c71ec218159c7be679",
+                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/a3c6714739b3593018f656ada95681cc079979d2",
+                "reference": "a3c6714739b3593018f656ada95681cc079979d2",
                 "shasum": ""
             },
             "require": {
@@ -3373,7 +3373,7 @@
                 "cartalyst/interpret": "1.0.*",
                 "php": ">=5.4.0",
                 "platform/admin": "dev-master",
-                "platform/attributes": "1.0.*"
+                "platform/attributes": "dev-master"
             },
             "type": "platform-extension",
             "extra": {
@@ -3428,7 +3428,7 @@
                 "source": "https://github.com/cartalyst/platform-content/tree/master",
                 "issues": "https://github.com/cartalyst/platform-content/issues"
             },
-            "time": "2014-06-09 18:28:08"
+            "time": "2014-06-09 21:14:20"
         },
         {
             "name": "platform/foundation",
@@ -3964,12 +3964,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-settings.git",
-                "reference": "3be453461015182ba2d2640e7d1377bedfcf9eb8"
+                "reference": "9a3ddb332c0a50d244baaf9663c70dcfa29a7e1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-settings/zipball/3be453461015182ba2d2640e7d1377bedfcf9eb8",
-                "reference": "3be453461015182ba2d2640e7d1377bedfcf9eb8",
+                "url": "https://api.github.com/repos/cartalyst/platform-settings/zipball/9a3ddb332c0a50d244baaf9663c70dcfa29a7e1a",
+                "reference": "9a3ddb332c0a50d244baaf9663c70dcfa29a7e1a",
                 "shasum": ""
             },
             "require": {
@@ -4030,7 +4030,7 @@
                 "source": "https://github.com/cartalyst/platform-settings/tree/master",
                 "issues": "https://github.com/cartalyst/platform-settings/issues"
             },
-            "time": "2014-06-09 18:29:44"
+            "time": "2014-06-10 08:46:53"
         },
         {
             "name": "platform/users",
@@ -4038,12 +4038,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-users.git",
-                "reference": "22783f541cbb23cb2b3309fd45dca8440a6a2723"
+                "reference": "36e0b2c93bd34474fbe41e0949616e093d0b5a9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/22783f541cbb23cb2b3309fd45dca8440a6a2723",
-                "reference": "22783f541cbb23cb2b3309fd45dca8440a6a2723",
+                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/36e0b2c93bd34474fbe41e0949616e093d0b5a9e",
+                "reference": "36e0b2c93bd34474fbe41e0949616e093d0b5a9e",
                 "shasum": ""
             },
             "require": {
@@ -4051,7 +4051,7 @@
                 "cartalyst/sentinel-social": "dev-master",
                 "php": ">=5.4.0",
                 "platform/admin": "dev-master",
-                "platform/attributes": "1.0.*"
+                "platform/attributes": "dev-master"
             },
             "type": "platform-extension",
             "extra": {
@@ -4107,7 +4107,7 @@
                 "source": "https://github.com/cartalyst/platform-users/tree/master",
                 "issues": "https://github.com/cartalyst/platform-users/issues"
             },
-            "time": "2014-06-09 18:22:08"
+            "time": "2014-06-09 21:14:04"
         },
         {
             "name": "predis/predis",
