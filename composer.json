@@ -71,14 +71,14 @@
 			"php artisan optimize",
 			"php artisan theme:publish --extensions",
 			"php artisan asset:publish platform/installer",
-			"php artisan theme:compile"
+			"php artisan theme:compile --no-output"
 		],
 		"post-update-cmd": [
 			"php artisan clear-compiled",
 			"php artisan optimize",
 			"php artisan theme:publish --extensions",
 			"php artisan asset:publish platform/installer",
-			"php artisan theme:compile"
+			"php artisan theme:compile --no-output"
 		]
 	},
 	"config": {
