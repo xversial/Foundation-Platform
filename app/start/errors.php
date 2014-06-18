@@ -17,7 +17,7 @@ App::error(function(Exception $exception, $code)
 {
 	Log::error($exception);
 
-	if (App::environment() === 'production' or Config::get('app.debug') === false)
+	if (Config::get('app.debug') === false)
 	{
 		return show_error_page($code);
 	}
