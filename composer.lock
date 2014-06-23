@@ -2163,12 +2163,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "62c332f11ed963fc8d5bb3b198001921373af786"
+                "reference": "7febc5ee6b2630afcb752392cab9abfb2680aed3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/62c332f11ed963fc8d5bb3b198001921373af786",
-                "reference": "62c332f11ed963fc8d5bb3b198001921373af786",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/7febc5ee6b2630afcb752392cab9abfb2680aed3",
+                "reference": "7febc5ee6b2630afcb752392cab9abfb2680aed3",
                 "shasum": ""
             },
             "require": {
@@ -2272,7 +2272,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-06-21 18:02:38"
+            "time": "2014-06-22 19:18:51"
         },
         {
             "name": "leafo/scssphp",
@@ -3024,12 +3024,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "709c7c4d4818b2ee42df9bfaaf2aa0c4434d9e3c"
+                "reference": "949cfcc867f4761a25e0995f85b6e5782f3e2d67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/709c7c4d4818b2ee42df9bfaaf2aa0c4434d9e3c",
-                "reference": "709c7c4d4818b2ee42df9bfaaf2aa0c4434d9e3c",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/949cfcc867f4761a25e0995f85b6e5782f3e2d67",
+                "reference": "949cfcc867f4761a25e0995f85b6e5782f3e2d67",
                 "shasum": ""
             },
             "require": {
@@ -3113,7 +3113,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2014-06-19 14:08:59"
+            "time": "2014-06-23 14:37:55"
         },
         {
             "name": "pimple/pimple",
@@ -3453,12 +3453,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-foundation.git",
-                "reference": "f37f116fb65d15f983503e8358aca58f69a9e275"
+                "reference": "1114badbc750dc5623aba1e0d5ed0e77daf3e199"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/f37f116fb65d15f983503e8358aca58f69a9e275",
-                "reference": "f37f116fb65d15f983503e8358aca58f69a9e275",
+                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/1114badbc750dc5623aba1e0d5ed0e77daf3e199",
+                "reference": "1114badbc750dc5623aba1e0d5ed0e77daf3e199",
                 "shasum": ""
             },
             "require": {
@@ -3532,7 +3532,7 @@
                 "source": "https://github.com/cartalyst/platform-foundation/tree/master",
                 "issues": "https://github.com/cartalyst/platform-foundation/issues"
             },
-            "time": "2014-06-18 16:25:58"
+            "time": "2014-06-23 14:43:19"
         },
         {
             "name": "platform/frontend-default",
@@ -4132,12 +4132,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nrk/predis.git",
-                "reference": "18853d1dbb7d35f7c60bcb161447b16c0753e2a3"
+                "reference": "8373663486b836813987ab7f0ef03d388e8fc146"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nrk/predis/zipball/18853d1dbb7d35f7c60bcb161447b16c0753e2a3",
-                "reference": "18853d1dbb7d35f7c60bcb161447b16c0753e2a3",
+                "url": "https://api.github.com/repos/nrk/predis/zipball/8373663486b836813987ab7f0ef03d388e8fc146",
+                "reference": "8373663486b836813987ab7f0ef03d388e8fc146",
                 "shasum": ""
             },
             "require": {
@@ -4174,7 +4174,7 @@
                 "predis",
                 "redis"
             ],
-            "time": "2014-06-10 08:58:02"
+            "time": "2014-06-23 12:25:30"
         },
         {
             "name": "psr/log",
@@ -4485,12 +4485,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "49d74da6a86612df1a17d34ed04f2f0243a6c44a"
+                "reference": "5643ea04872456a975ca2101337a45ba7187d00a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/49d74da6a86612df1a17d34ed04f2f0243a6c44a",
-                "reference": "49d74da6a86612df1a17d34ed04f2f0243a6c44a",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/5643ea04872456a975ca2101337a45ba7187d00a",
+                "reference": "5643ea04872456a975ca2101337a45ba7187d00a",
                 "shasum": ""
             },
             "require": {
@@ -4533,7 +4533,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2014-06-19 16:27:19"
+            "time": "2014-06-20 17:38:20"
         },
         {
             "name": "symfony/css-selector",
@@ -4864,12 +4864,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpFoundation.git",
-                "reference": "bc23b721ae465a6bb73478e3b13a9eef5d06ef01"
+                "reference": "69f0f702c36d030c132d90991357bc2b84da50de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/bc23b721ae465a6bb73478e3b13a9eef5d06ef01",
-                "reference": "bc23b721ae465a6bb73478e3b13a9eef5d06ef01",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/69f0f702c36d030c132d90991357bc2b84da50de",
+                "reference": "69f0f702c36d030c132d90991357bc2b84da50de",
                 "shasum": ""
             },
             "require": {
@@ -4910,7 +4910,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "http://symfony.com",
-            "time": "2014-06-16 09:30:12"
+            "time": "2014-06-20 17:38:20"
         },
         {
             "name": "symfony/http-kernel",
