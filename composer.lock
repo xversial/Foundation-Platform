@@ -1243,12 +1243,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/workshop.git",
-                "reference": "6d6cb48d8f8577cbba13ea46c6fd1588cad277a0"
+                "reference": "118dd368ad715cda22fee8ef0203612e46ff3d1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/workshop/zipball/6d6cb48d8f8577cbba13ea46c6fd1588cad277a0",
-                "reference": "6d6cb48d8f8577cbba13ea46c6fd1588cad277a0",
+                "url": "https://api.github.com/repos/cartalyst/workshop/zipball/118dd368ad715cda22fee8ef0203612e46ff3d1c",
+                "reference": "118dd368ad715cda22fee8ef0203612e46ff3d1c",
                 "shasum": ""
             },
             "require": {
@@ -1308,7 +1308,7 @@
                 "source": "https://github.com/cartalyst/workshop/tree/master",
                 "issues": "https://github.com/cartalyst/workshop/issues"
             },
-            "time": "2014-06-29 22:18:22"
+            "time": "2014-06-30 14:50:47"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -1778,16 +1778,16 @@
         },
         {
             "name": "intervention/image",
-            "version": "2.0.4",
+            "version": "2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Intervention/image.git",
-                "reference": "edd507dacfacab7fcfcee6c5fcfad3335d0ec85f"
+                "reference": "fc0c20277260f09aa0bd172d66d8b39957c50078"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/image/zipball/edd507dacfacab7fcfcee6c5fcfad3335d0ec85f",
-                "reference": "edd507dacfacab7fcfcee6c5fcfad3335d0ec85f",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/fc0c20277260f09aa0bd172d66d8b39957c50078",
+                "reference": "fc0c20277260f09aa0bd172d66d8b39957c50078",
                 "shasum": ""
             },
             "require": {
@@ -1832,7 +1832,7 @@
                 "thumbnail",
                 "watermark"
             ],
-            "time": "2014-06-16 09:52:34"
+            "time": "2014-06-30 15:30:03"
         },
         {
             "name": "intervention/imagecache",
@@ -2715,17 +2715,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "f84030a0098dd70b149294a252bbdd7f6953e969"
+                "reference": "8228d1ee833dbec710161ac179d1fb9ff6cd6f28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/f84030a0098dd70b149294a252bbdd7f6953e969",
-                "reference": "f84030a0098dd70b149294a252bbdd7f6953e969",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/8228d1ee833dbec710161ac179d1fb9ff6cd6f28",
+                "reference": "8228d1ee833dbec710161ac179d1fb9ff6cd6f28",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0",
                 "psr/log": "~1.0"
+            },
+            "provide": {
+                "psr/log-implementation": "1.0.0"
             },
             "require-dev": {
                 "aws/aws-sdk-php": "~2.4, >2.4.8",
@@ -2775,7 +2778,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2014-06-29 10:53:44"
+            "time": "2014-06-30 13:24:53"
         },
         {
             "name": "natxet/CssMin",
@@ -3834,12 +3837,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-operations.git",
-                "reference": "8e030378d279b67a39e22150253bf09f1a54306a"
+                "reference": "e648bacf4e448c3628f5bebe6678ad8d9340f343"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/8e030378d279b67a39e22150253bf09f1a54306a",
-                "reference": "8e030378d279b67a39e22150253bf09f1a54306a",
+                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/e648bacf4e448c3628f5bebe6678ad8d9340f343",
+                "reference": "e648bacf4e448c3628f5bebe6678ad8d9340f343",
                 "shasum": ""
             },
             "require": {
@@ -3900,7 +3903,7 @@
                 "source": "https://github.com/cartalyst/platform-operations/tree/master",
                 "issues": "https://github.com/cartalyst/platform-operations/issues"
             },
-            "time": "2014-06-29 19:43:35"
+            "time": "2014-06-30 14:30:47"
         },
         {
             "name": "platform/pages",
