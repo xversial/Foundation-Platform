@@ -210,7 +210,6 @@ return array(
 		'Extensions'    => 'Cartalyst\Extensions\Facades\Extensions',
 		'Reminder'      => 'Cartalyst\Sentinel\Laravel\Facades\Reminder',
 		'Sentinel'      => 'Cartalyst\Sentinel\Laravel\Facades\Sentinel',
-		'SwiftIdentity' => 'Cartalyst\Sentinel\Laravel\Facades\SwiftIdentity',
 		'Theme'         => 'Cartalyst\Themes\Facades\Theme',
 		'Widget'        => 'Cartalyst\Widgets\Facades\Widget',
 
