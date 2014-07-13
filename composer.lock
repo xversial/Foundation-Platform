@@ -519,16 +519,16 @@
         },
         {
             "name": "cartalyst/extensions",
-            "version": "1.0.x-dev",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/extensions.git",
-                "reference": "b31d3ebbdd2b120932108b47955225a4457ebb5a"
+                "reference": "f5b72819a970099280d200cf5c6396b05622fd39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/extensions/zipball/b31d3ebbdd2b120932108b47955225a4457ebb5a",
-                "reference": "b31d3ebbdd2b120932108b47955225a4457ebb5a",
+                "url": "https://api.github.com/repos/cartalyst/extensions/zipball/f5b72819a970099280d200cf5c6396b05622fd39",
+                "reference": "f5b72819a970099280d200cf5c6396b05622fd39",
                 "shasum": ""
             },
             "require": {
@@ -548,7 +548,7 @@
             "extra": {
                 "component": "package",
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "1.0.x-dev"
                 }
             },
             "autoload": {
@@ -589,10 +589,10 @@
                 "laravel 4"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/extensions/tree/master",
+                "source": "https://github.com/cartalyst/extensions/tree/v1.0.4",
                 "issues": "https://github.com/cartalyst/extensions/issues"
             },
-            "time": "2014-07-05 22:58:38"
+            "time": "2014-07-13 14:37:00"
         },
         {
             "name": "cartalyst/interpret",
@@ -3222,19 +3222,19 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-foundation.git",
-                "reference": "1d910fc9883659f3627152fd91d4e3a995469380"
+                "reference": "02bf4a46da185976269b1f4d5d3e15dac77567a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/1d910fc9883659f3627152fd91d4e3a995469380",
-                "reference": "1d910fc9883659f3627152fd91d4e3a995469380",
+                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/02bf4a46da185976269b1f4d5d3e15dac77567a9",
+                "reference": "02bf4a46da185976269b1f4d5d3e15dac77567a9",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/api": "~2",
                 "cartalyst/assetic-filters": "1.1.*",
                 "cartalyst/data-grid": "dev-master",
-                "cartalyst/extensions": "1.0.*",
+                "cartalyst/extensions": "1.0.4",
                 "cartalyst/themes": "2.2.*",
                 "cartalyst/widgets": "1.0.*",
                 "illuminate/config": "~4",
@@ -3301,7 +3301,7 @@
                 "source": "https://github.com/cartalyst/platform-foundation/tree/master",
                 "issues": "https://github.com/cartalyst/platform-foundation/issues"
             },
-            "time": "2014-07-12 19:17:51"
+            "time": "2014-07-13 14:38:25"
         },
         {
             "name": "platform/frontend-default",
