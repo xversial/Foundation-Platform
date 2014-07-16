@@ -1,3 +1,3 @@
 ###Theme Ready
 
-A simple, &amp; powerful theme system that includes theme inheritance, fall back support, asset compilation, static asset caching and more!
+Platform themes supply the tools you need to bring your designs to life. Get busy writing your LESS, SASS or CoffeeScript, while the powerful asset pipeline takes care of caching and compilation for you.

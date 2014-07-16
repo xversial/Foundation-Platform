@@ -1,3 +1,3 @@
 ###Extension Based
 
-Extensions are built to allow vendors to manage and distribute extensions for Platform. Install, upgrade, enable or disable individual extensions with ease!
+We've worked tirelessly to provide all the nuances you would expect when extending Platform. We've even designed an interface through which your extensions build themselves.
