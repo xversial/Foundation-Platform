@@ -519,16 +519,16 @@
         },
         {
             "name": "cartalyst/extensions",
-            "version": "v1.0.4",
+            "version": "1.1.x-dev",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/extensions.git",
-                "reference": "f5b72819a970099280d200cf5c6396b05622fd39"
+                "reference": "0e0fffa0eab637d4e83d5e81ac6478562bcf0f13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/extensions/zipball/f5b72819a970099280d200cf5c6396b05622fd39",
-                "reference": "f5b72819a970099280d200cf5c6396b05622fd39",
+                "url": "https://api.github.com/repos/cartalyst/extensions/zipball/0e0fffa0eab637d4e83d5e81ac6478562bcf0f13",
+                "reference": "0e0fffa0eab637d4e83d5e81ac6478562bcf0f13",
                 "shasum": ""
             },
             "require": {
@@ -548,15 +548,15 @@
             "extra": {
                 "component": "package",
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.1.x-dev"
                 }
             },
             "autoload": {
                 "classmap": [
                     "src/migrations"
                 ],
-                "psr-0": {
-                    "Cartalyst\\Extensions": "src"
+                "psr-4": {
+                    "Cartalyst\\Extensions\\": "src"
                 }
             },
             "license": [
@@ -585,14 +585,16 @@
             ],
             "description": "A starter kit for building a modular, extensions-based application.",
             "keywords": [
+                "cartalyst",
                 "extensions",
-                "laravel 4"
+                "laravel",
+                "php"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/extensions/tree/v1.0.4",
+                "source": "https://github.com/cartalyst/extensions/tree/v1.1.0",
                 "issues": "https://github.com/cartalyst/extensions/issues"
             },
-            "time": "2014-07-13 14:37:00"
+            "time": "2014-07-17 18:30:18"
         },
         {
             "name": "cartalyst/interpret",
@@ -3222,19 +3224,19 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-foundation.git",
-                "reference": "53b1cb84a6a3fc893c45b978f43b8bb62c0d48c4"
+                "reference": "1b4c7cf6d1a183ba2ef3bab3b726a88482196ace"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/53b1cb84a6a3fc893c45b978f43b8bb62c0d48c4",
-                "reference": "53b1cb84a6a3fc893c45b978f43b8bb62c0d48c4",
+                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/1b4c7cf6d1a183ba2ef3bab3b726a88482196ace",
+                "reference": "1b4c7cf6d1a183ba2ef3bab3b726a88482196ace",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/api": "~2",
                 "cartalyst/assetic-filters": "1.1.*",
                 "cartalyst/data-grid": "dev-master",
-                "cartalyst/extensions": "1.0.4",
+                "cartalyst/extensions": "1.1.*",
                 "cartalyst/themes": "2.2.*",
                 "cartalyst/widgets": "1.0.2",
                 "illuminate/config": "~4",
@@ -3301,7 +3303,7 @@
                 "source": "https://github.com/cartalyst/platform-foundation/tree/master",
                 "issues": "https://github.com/cartalyst/platform-foundation/issues"
             },
-            "time": "2014-07-17 00:42:24"
+            "time": "2014-07-17 18:41:04"
         },
         {
             "name": "platform/frontend-default",
@@ -3371,16 +3373,16 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-installer.git",
-                "reference": "b31847e17bf06b75c135ffc815c1f69230a1026f"
+                "reference": "0983362afd69706e7ba850cb87eaba8bdc2c4668"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-installer/zipball/b31847e17bf06b75c135ffc815c1f69230a1026f",
-                "reference": "b31847e17bf06b75c135ffc815c1f69230a1026f",
+                "url": "https://api.github.com/repos/cartalyst/platform-installer/zipball/0983362afd69706e7ba850cb87eaba8bdc2c4668",
+                "reference": "0983362afd69706e7ba850cb87eaba8bdc2c4668",
                 "shasum": ""
             },
             "require": {
-                "cartalyst/extensions": "1.0.*",
+                "cartalyst/extensions": "1.1.*",
                 "cartalyst/sentinel": "dev-master",
                 "illuminate/console": "~4",
                 "illuminate/container": "~4",
@@ -3443,7 +3445,7 @@
                 "source": "https://github.com/cartalyst/platform-installer/tree/master",
                 "issues": "https://github.com/cartalyst/platform-installer/issues"
             },
-            "time": "2014-07-15 18:48:37"
+            "time": "2014-07-17 18:41:13"
         },
         {
             "name": "platform/media",
