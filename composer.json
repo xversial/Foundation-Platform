@@ -41,17 +41,17 @@
 		"platform/admin-default": "dev-master",
 		"platform/frontend-default": "dev-master",
 
-		"platform/foundation": "dev-master",
-		"platform/installer": "dev-master",
+		"platform/foundation": "dev-feature/traits",
+		"platform/installer": "dev-feature/traits",
 
-		"platform/attributes": "dev-master",
-		"platform/content": "dev-master",
+		"platform/attributes": "dev-feature/traits",
+		"platform/content": "dev-feature/traits",
 		"platform/media": "dev-master",
 		"platform/menus": "dev-master",
-		"platform/operations": "dev-master",
-		"platform/pages": "dev-master",
+		"platform/operations": "dev-feature/traits",
+		"platform/pages": "dev-feature/traits",
 		"platform/settings": "dev-master",
-		"platform/users": "dev-master"
+		"platform/users": "dev-feature/traits"
 	},
 	"autoload": {
 		"classmap": [
