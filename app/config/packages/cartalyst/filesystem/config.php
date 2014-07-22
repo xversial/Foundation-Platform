@@ -1,6 +1,6 @@
 <?php
 /**
- * Part of the Media package.
+ * Part of the Filesystem package.
  *
  * NOTICE OF LICENSE
  *
@@ -9,8 +9,8 @@
  * This source file is subject to the Cartalyst PSL License that is
  * bundled with this package in the license.txt file.
  *
- * @package    Media
- * @version    1.0.0
+ * @package    Filesystem
+ * @version    2.0.0
  * @author     Cartalyst LLC
  * @license    Cartalyst PSL
  * @copyright  (c) 2011-2014, Cartalyst LLC
@@ -39,7 +39,7 @@ return [
 	|
 	| Specify here all the allowed mime types that can be uploaded.
 	|
-	| Look at http://www.iana.org/assignments/media-types for a
+	| Look at http://www.iana.org/assignments/filesystem-types for a
 	| complete list of standard MIME types
 	|
 	*/
@@ -99,11 +99,11 @@ return [
 	|
 	|	'dispersion' => ':yyyy/:mm/'
 	|
-	|	All your media files will be stored, by default, on:
+	|	All your filesystem files will be stored, by default, on:
 	|
-	|		app/storage/media/2014/01/foo.jpg
-	|		app/storage/media/2014/01/bar.png
-	|		app/storage/media/2014/01/test.pdf
+	|		app/storage/filesystem/2014/01/foo.jpg
+	|		app/storage/filesystem/2014/01/bar.png
+	|		app/storage/filesystem/2014/01/test.pdf
 	|
 	*/
 
@@ -157,7 +157,7 @@ return [
 		'local' => [
 
 			'adapter' => 'local',
-			'path'    => storage_path().'/media',
+			'path'    => 'public/filesystem',
 
 		],
 
@@ -165,7 +165,7 @@ return [
 		'zip' => [
 
 			'adapter' => 'zip',
-			'path'    => storage_path().'/media/media.zip',
+			'path'    => 'public/filesystem/filesystem.zip',
 
 		],
 
