@@ -597,6 +597,81 @@
             "time": "2014-07-19 03:59:45"
         },
         {
+            "name": "cartalyst/filesystem",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:cartalyst/filesystem.git",
+                "reference": "b94c4b2f4398230db224ecde9f28d60388a72f09"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cartalyst/filesystem/zipball/b94c4b2f4398230db224ecde9f28d60388a72f09",
+                "reference": "b94c4b2f4398230db224ecde9f28d60388a72f09",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~4.1",
+                "league/flysystem": "dev-master",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "component": "package",
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/Exceptions.php"
+                ],
+                "psr-4": {
+                    "Cartalyst\\Filesystem\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Cartalyst LLC",
+                    "email": "help@cartalyst.com"
+                },
+                {
+                    "name": "Bruno Gaspar",
+                    "email": "bruno.gaspar@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dan Syme",
+                    "email": "dan.syme@cartalyst.com",
+                    "role": "Project Lead"
+                },
+                {
+                    "name": "Suhayb Wardany",
+                    "email": "su.wardany@cartalyst.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Filesystem",
+            "keywords": [
+                "cartalyst",
+                "filesystem",
+                "laravel",
+                "php"
+            ],
+            "support": {
+                "source": "https://github.com/cartalyst/filesystem/tree/master",
+                "issues": "https://github.com/cartalyst/filesystem/issues"
+            },
+            "time": "2014-07-22 02:34:48"
+        },
+        {
             "name": "cartalyst/interpret",
             "version": "dev-master",
             "source": {
@@ -1016,12 +1091,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/support.git",
-                "reference": "54acb5604ba30293cfcedcd6c92cd50342e1b542"
+                "reference": "973f347708e738a11ad2ac17089365d237041f2d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/support/zipball/54acb5604ba30293cfcedcd6c92cd50342e1b542",
-                "reference": "54acb5604ba30293cfcedcd6c92cd50342e1b542",
+                "url": "https://api.github.com/repos/cartalyst/support/zipball/973f347708e738a11ad2ac17089365d237041f2d",
+                "reference": "973f347708e738a11ad2ac17089365d237041f2d",
                 "shasum": ""
             },
             "require": {
@@ -1080,7 +1155,7 @@
                 "source": "https://github.com/cartalyst/support/tree/master",
                 "issues": "https://github.com/cartalyst/support/issues"
             },
-            "time": "2014-07-21 20:50:47"
+            "time": "2014-07-22 02:28:25"
         },
         {
             "name": "cartalyst/themes",
@@ -3298,12 +3373,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-foundation.git",
-                "reference": "8d03d32806f3836316a7ba7c2a3f5a95e8ed9ada"
+                "reference": "a9a1371daa172df16bd08fd15526810c9f0e6570"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/8d03d32806f3836316a7ba7c2a3f5a95e8ed9ada",
-                "reference": "8d03d32806f3836316a7ba7c2a3f5a95e8ed9ada",
+                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/a9a1371daa172df16bd08fd15526810c9f0e6570",
+                "reference": "a9a1371daa172df16bd08fd15526810c9f0e6570",
                 "shasum": ""
             },
             "require": {
@@ -3311,6 +3386,7 @@
                 "cartalyst/assetic-filters": "1.1.*",
                 "cartalyst/data-grid": "dev-master",
                 "cartalyst/extensions": "1.1.*",
+                "cartalyst/filesystem": "dev-master",
                 "cartalyst/themes": "2.3.*",
                 "cartalyst/widgets": "1.0.2",
                 "illuminate/config": "~4",
@@ -3377,7 +3453,7 @@
                 "source": "https://github.com/cartalyst/platform-foundation/tree/feature/traits",
                 "issues": "https://github.com/cartalyst/platform-foundation/issues"
             },
-            "time": "2014-07-18 05:48:55"
+            "time": "2014-07-22 02:27:43"
         },
         {
             "name": "platform/frontend-default",
