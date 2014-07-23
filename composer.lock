@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "80fca4fe03b1f07259e5033dd9e4f30c",
+    "hash": "c0e7eb29c830cb8fb2b9a9b9a971bb26",
     "packages": [
         {
             "name": "cartalyst/api",
@@ -602,12 +602,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/filesystem.git",
-                "reference": "b94c4b2f4398230db224ecde9f28d60388a72f09"
+                "reference": "e815beb7948c2642e16a410c2d6051638305964a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/filesystem/zipball/b94c4b2f4398230db224ecde9f28d60388a72f09",
-                "reference": "b94c4b2f4398230db224ecde9f28d60388a72f09",
+                "url": "https://api.github.com/repos/cartalyst/filesystem/zipball/e815beb7948c2642e16a410c2d6051638305964a",
+                "reference": "e815beb7948c2642e16a410c2d6051638305964a",
                 "shasum": ""
             },
             "require": {
@@ -669,7 +669,7 @@
                 "source": "https://github.com/cartalyst/filesystem/tree/master",
                 "issues": "https://github.com/cartalyst/filesystem/issues"
             },
-            "time": "2014-07-22 02:34:48"
+            "time": "2014-07-22 20:18:45"
         },
         {
             "name": "cartalyst/interpret",
@@ -747,81 +747,6 @@
                 "issues": "https://github.com/cartalyst/interpret/issues"
             },
             "time": "2014-07-05 23:01:50"
-        },
-        {
-            "name": "cartalyst/media",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:cartalyst/media.git",
-                "reference": "77c5d1c917170bd62331dae1c66210c44b008126"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/media/zipball/77c5d1c917170bd62331dae1c66210c44b008126",
-                "reference": "77c5d1c917170bd62331dae1c66210c44b008126",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "~4.1",
-                "league/flysystem": "dev-master",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "~0.9",
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "extra": {
-                "component": "package",
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/Exceptions.php"
-                ],
-                "psr-4": {
-                    "Cartalyst\\Media\\": "src/"
-                }
-            },
-            "license": [
-                "proprietary"
-            ],
-            "authors": [
-                {
-                    "name": "Cartalyst LLC",
-                    "email": "help@cartalyst.com"
-                },
-                {
-                    "name": "Ben Corlett",
-                    "email": "ben.corlett@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Bruno Gaspar",
-                    "email": "bruno.gaspar@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Dan Syme",
-                    "email": "dan.syme@cartalyst.com",
-                    "role": "Project Lead"
-                }
-            ],
-            "description": "Media",
-            "keywords": [
-                "cartalyst",
-                "laravel",
-                "media",
-                "php"
-            ],
-            "support": {
-                "source": "https://github.com/cartalyst/media/tree/master",
-                "issues": "https://github.com/cartalyst/media/issues"
-            },
-            "time": "2014-07-05 23:03:36"
         },
         {
             "name": "cartalyst/nested-sets",
@@ -1009,12 +934,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/sentinel-social.git",
-                "reference": "588ecd191f7d44f644251e979ec77bcd7a1ceae7"
+                "reference": "20c8be946a361e79c02a31f88b697fec2d55662b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentinel-social/zipball/588ecd191f7d44f644251e979ec77bcd7a1ceae7",
-                "reference": "588ecd191f7d44f644251e979ec77bcd7a1ceae7",
+                "url": "https://api.github.com/repos/cartalyst/sentinel-social/zipball/20c8be946a361e79c02a31f88b697fec2d55662b",
+                "reference": "20c8be946a361e79c02a31f88b697fec2d55662b",
                 "shasum": ""
             },
             "require": {
@@ -1083,7 +1008,7 @@
                 "source": "https://github.com/cartalyst/sentinel-social/tree/master",
                 "issues": "https://github.com/cartalyst/sentinel-social/issues"
             },
-            "time": "2014-06-05 21:55:41"
+            "time": "2014-07-23 00:06:24"
         },
         {
             "name": "cartalyst/support",
@@ -1329,12 +1254,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/workshop.git",
-                "reference": "12395c4c7eb64d013fab4d457fff6e70aff15b3d"
+                "reference": "12b52c4ef6bd57c9de486933904fec3b5e475aa3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/workshop/zipball/12395c4c7eb64d013fab4d457fff6e70aff15b3d",
-                "reference": "12395c4c7eb64d013fab4d457fff6e70aff15b3d",
+                "url": "https://api.github.com/repos/cartalyst/workshop/zipball/12b52c4ef6bd57c9de486933904fec3b5e475aa3",
+                "reference": "12b52c4ef6bd57c9de486933904fec3b5e475aa3",
                 "shasum": ""
             },
             "require": {
@@ -1394,7 +1319,7 @@
                 "source": "https://github.com/cartalyst/workshop/tree/feature/traits",
                 "issues": "https://github.com/cartalyst/workshop/issues"
             },
-            "time": "2014-07-18 19:59:37"
+            "time": "2014-07-22 03:33:44"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -2180,12 +2105,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "cdb5e9d99da0c54b7bdc94bb7cb3fad8ddb50e07"
+                "reference": "a3a7bb308f4f0aab74bcd6952b7a194b2276fa33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/cdb5e9d99da0c54b7bdc94bb7cb3fad8ddb50e07",
-                "reference": "cdb5e9d99da0c54b7bdc94bb7cb3fad8ddb50e07",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/a3a7bb308f4f0aab74bcd6952b7a194b2276fa33",
+                "reference": "a3a7bb308f4f0aab74bcd6952b7a194b2276fa33",
                 "shasum": ""
             },
             "require": {
@@ -2287,7 +2212,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-07-21 21:21:01"
+            "time": "2014-07-23 04:01:18"
         },
         {
             "name": "leafo/scssphp",
@@ -2376,12 +2301,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "9b0b94fb10bbe20d68538186896725435dcedd5a"
+                "reference": "4748597efdda753eeb9b6d29c3088517212003c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/9b0b94fb10bbe20d68538186896725435dcedd5a",
-                "reference": "9b0b94fb10bbe20d68538186896725435dcedd5a",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/4748597efdda753eeb9b6d29c3088517212003c7",
+                "reference": "4748597efdda753eeb9b6d29c3088517212003c7",
                 "shasum": ""
             },
             "require": {
@@ -2440,7 +2365,7 @@
                 "s3",
                 "sftp"
             ],
-            "time": "2014-07-21 17:15:28"
+            "time": "2014-07-22 21:01:29"
         },
         {
             "name": "league/fractal",
@@ -2989,12 +2914,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "36baab1db410601b9376e5964c44158f288b27c5"
+                "reference": "a0a23cbaf105f104d24000d718d0d850cdf41c1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/36baab1db410601b9376e5964c44158f288b27c5",
-                "reference": "36baab1db410601b9376e5964c44158f288b27c5",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/a0a23cbaf105f104d24000d718d0d850cdf41c1f",
+                "reference": "a0a23cbaf105f104d24000d718d0d850cdf41c1f",
                 "shasum": ""
             },
             "require": {
@@ -3079,7 +3004,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2014-07-21 21:53:33"
+            "time": "2014-07-22 14:09:14"
         },
         {
             "name": "platform/admin",
@@ -3599,21 +3524,21 @@
         },
         {
             "name": "platform/media",
-            "version": "dev-master",
+            "version": "dev-feature/traits",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-media.git",
-                "reference": "fb67290cfc98be382293ef31607f50b964ec1f02"
+                "reference": "0ee6de445efa95104ebe86c905606f09f2a82a44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/fb67290cfc98be382293ef31607f50b964ec1f02",
-                "reference": "fb67290cfc98be382293ef31607f50b964ec1f02",
+                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/0ee6de445efa95104ebe86c905606f09f2a82a44",
+                "reference": "0ee6de445efa95104ebe86c905606f09f2a82a44",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "1.1.*",
-                "cartalyst/media": "dev-master",
+                "cartalyst/filesystem": "2.0.*",
                 "intervention/image": "~2.0",
                 "intervention/imagecache": "~2.0",
                 "php": ">=5.4.0",
@@ -3668,10 +3593,10 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-media/tree/master",
+                "source": "https://github.com/cartalyst/platform-media/tree/feature/traits",
                 "issues": "https://github.com/cartalyst/platform-media/issues"
             },
-            "time": "2014-07-16 05:17:39"
+            "time": "2014-07-23 03:43:05"
         },
         {
             "name": "platform/menus",
@@ -4292,12 +4217,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "1471619d856da006a4de443355d6339325b3f46e"
+                "reference": "e27c50e6f768aecbc46666994ccc9b2f77fd8ade"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/1471619d856da006a4de443355d6339325b3f46e",
-                "reference": "1471619d856da006a4de443355d6339325b3f46e",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/e27c50e6f768aecbc46666994ccc9b2f77fd8ade",
+                "reference": "e27c50e6f768aecbc46666994ccc9b2f77fd8ade",
                 "shasum": ""
             },
             "require": {
@@ -4323,13 +4248,11 @@
             ],
             "authors": [
                 {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
+                    "name": "Chris Corbyn"
                 },
                 {
-                    "name": "Chris Corbyn"
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
                 }
             ],
             "description": "Swiftmailer, free feature-rich PHP mailer",
@@ -4338,7 +4261,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2014-07-03 13:54:59"
+            "time": "2014-07-22 15:44:41"
         },
         {
             "name": "symfony/browser-kit",
@@ -4838,12 +4761,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpKernel.git",
-                "reference": "bc645cd0e83008b15586dc60b6acc39fd09bcce3"
+                "reference": "b92a20b7610b7d5403210afdb2519ff51ece2002"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/bc645cd0e83008b15586dc60b6acc39fd09bcce3",
-                "reference": "bc645cd0e83008b15586dc60b6acc39fd09bcce3",
+                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/b92a20b7610b7d5403210afdb2519ff51ece2002",
+                "reference": "b92a20b7610b7d5403210afdb2519ff51ece2002",
                 "shasum": ""
             },
             "require": {
@@ -4890,19 +4813,17 @@
             ],
             "authors": [
                 {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
-                },
-                {
                     "name": "Symfony Community",
                     "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
                 }
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "http://symfony.com",
-            "time": "2014-07-15 15:39:46"
+            "time": "2014-07-15 20:52:32"
         },
         {
             "name": "symfony/process",
