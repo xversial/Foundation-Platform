@@ -26,7 +26,7 @@ return [
 	|
 	| Define here the maximum size of an uploaded file in bytes.
 	|
-	| Default value is 10 Mb.
+	| Default: 10 Mb.
 	|
 	*/
 
@@ -37,9 +37,9 @@ return [
 	| Allowed types of files
 	|--------------------------------------------------------------------------
 	|
-	| Specify here all the allowed mime types that can be uploaded.
+	| Define here all the allowed mime types that are allowed for upload.
 	|
-	| Look at http://www.iana.org/assignments/filesystem-types for a
+	| Look at http://www.iana.org/assignments/media-types for a
 	| complete list of standard MIME types
 	|
 	*/
@@ -68,12 +68,11 @@ return [
 	| This feature allows you to have a better and more organized file
 	| structure that you dictate using placeholders.
 	|
-	| To disable this feature just set a "false" boolean as value.
+	| To disable this feature just set a boolean of "false" as the value.
 	|
 	| Reserved placeholders:
 	|
 	|	Information from uploaded files
-	|		:name      -> foo
 	|		:extension -> jpg
 	|		:mime      -> image/jpeg
 	|
@@ -99,7 +98,7 @@ return [
 	|
 	|	'dispersion' => ':yyyy/:mm/'
 	|
-	|	All your filesystem files will be stored, by default, on:
+	|	All your files will be stored, by default, on:
 	|
 	|		app/storage/filesystem/2014/01/foo.jpg
 	|		app/storage/filesystem/2014/01/bar.png
@@ -147,7 +146,7 @@ return [
 	| Connections
 	|--------------------------------------------------------------------------
 	|
-	| Below are all the available connections that you can use.
+	| Below are all default connections for the various drivers you can use.
 	|
 	*/
 
@@ -157,7 +156,7 @@ return [
 		'local' => [
 
 			'adapter' => 'local',
-			'path'    => 'public/filesystem',
+			'path'    => public_path().'/files',
 
 		],
 
@@ -165,7 +164,7 @@ return [
 		'zip' => [
 
 			'adapter' => 'zip',
-			'path'    => 'public/filesystem/filesystem.zip',
+			'path'    => public_path().'/files/filesystem.zip',
 
 		],
 
@@ -178,6 +177,9 @@ return [
 			'bucket'  => null,
 			'prefix'  => null,
 			'region'  => null,
+			'options' => [
+
+			],
 
 		],
 
@@ -237,8 +239,8 @@ return [
 			'port'       => 22,
 			'username'   => 'username',
 			'password'   => 'password',
-			'privateKey' => 'path/to/or/contents/of/privatekey',
 			'root'       => '/path/to/root',
+			'privateKey' => 'path/to/or/contents/of/privatekey',
 			'timeout'    => 10,
 
 		],
