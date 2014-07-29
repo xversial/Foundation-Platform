@@ -53,6 +53,9 @@
 		"platform/settings": "dev-master",
 		"platform/users": "dev-master"
 	},
+	"require-dev": {
+		"doctrine/dbal": "~2.4"
+	},
 	"autoload": {
 		"classmap": [
 			"app/commands",

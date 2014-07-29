@@ -1,5 +1,7 @@
 # Platform
 
+[![Build Status](http://ci.cartalyst.com/build-status/svg/13)](http://ci.cartalyst.com/build-status/view/13)
+
 Platform is not just another CMS, it's a starting point for you to build your application providing the tools you need to get the job done as easy as possible.
 
 - Laravel 4.2
