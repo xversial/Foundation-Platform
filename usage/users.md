@@ -6,11 +6,11 @@ The users extension is used to find and edit information about your application'
 
 Platform 2 provides some basic user management functionality like adding, editing and deleting users as well as user registration and setting users to an inactive state.
 
-Besides the functionality that Platform 2 provides by default, the users extensions comes with a lot of additional functionality. Platform 2 comes with all of the power of [Sentry 3](http://cartalyst.com/manual/sentry), a simple and powerful authorization and authentication package which gives you even more functionality to interact with your users.
+Besides the functionality that Platform 2 provides by default, the users extensions comes with a lot of additional functionality. Platform 2 comes with all of the power of [Sentinel](https://cartalyst.com/manual/sentinel), a simple and powerful authorization and authentication package which gives you even more functionality to interact with your users.
 
 ### Groups
 
-Because Platform 2 comes with [Sentry 3](http://cartalyst.com/manual/sentry) installed, you also get easy group management over your users. You can assign users to groups by clicking on the edit button of a user. Later on you can add specific permissions to groups.
+Because Platform 2 comes with [Sentinel](https://cartalyst.com/manual/sentinel) installed, you also get easy group management over your users. You can assign users to groups by clicking on the edit button of a user. Later on you can add specific permissions to groups.
 
 ### Permissions
 
