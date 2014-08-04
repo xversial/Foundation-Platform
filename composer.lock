@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c571220b83665041fe787791779d638c",
+    "hash": "61f693ed10b612ff1683ec2153237447",
     "packages": [
         {
             "name": "cartalyst/api",
@@ -836,15 +836,16 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/sentinel.git",
-                "reference": "6749d286daab07a009a9cf38953e02c70e862889"
+                "reference": "17e8767622ae89a9dd477fc3ede47f01e32cbd90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentinel/zipball/6749d286daab07a009a9cf38953e02c70e862889",
-                "reference": "6749d286daab07a009a9cf38953e02c70e862889",
+                "url": "https://api.github.com/repos/cartalyst/sentinel/zipball/08d5c12adfef8ae886e66f3b370491b25e46b06a",
+                "reference": "17e8767622ae89a9dd477fc3ede47f01e32cbd90",
                 "shasum": ""
             },
             "require": {
+                "cartalyst/support": "~1",
                 "illuminate/support": ">=4.0.9,<4.3",
                 "php": ">=5.4.0"
             },
@@ -866,7 +867,7 @@
             "extra": {
                 "component": "package",
                 "branch-alias": {
-                    "dev-develop": "1.0.x-dev"
+                    "dev-master": "1.1.x-dev"
                 }
             },
             "autoload": {
@@ -901,11 +902,6 @@
                     "role": "Creator & Designer"
                 },
                 {
-                    "name": "Daniel Petrie",
-                    "email": "dan.petrie@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
                     "name": "Suhayb Wardany",
                     "email": "su.wardany@cartalyst.com",
                     "role": "Developer"
@@ -917,7 +913,6 @@
                 "cartalyst",
                 "codeigniter",
                 "fuelphp",
-                "kohana",
                 "laravel",
                 "php",
                 "security"
@@ -926,7 +921,7 @@
                 "source": "https://github.com/cartalyst/sentinel/tree/master",
                 "issues": "https://github.com/cartalyst/sentinel/issues"
             },
-            "time": "2014-07-28 17:08:50"
+            "time": "2014-08-04 17:59:23"
         },
         {
             "name": "cartalyst/sentinel-social",
@@ -1009,6 +1004,78 @@
                 "issues": "https://github.com/cartalyst/sentinel-social/issues"
             },
             "time": "2014-07-28 17:32:48"
+        },
+        {
+            "name": "cartalyst/support",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:cartalyst/support.git",
+                "reference": "33dde0275fc8e582d04dd7902ddb44f7156bf16b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cartalyst/support/zipball/33dde0275fc8e582d04dd7902ddb44f7156bf16b",
+                "reference": "33dde0275fc8e582d04dd7902ddb44f7156bf16b",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/events": "~4.1",
+                "illuminate/support": "~4.1",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "component": "package",
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Cartalyst\\Support\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Cartalyst LLC",
+                    "email": "help@cartalyst.com"
+                },
+                {
+                    "name": "Bruno Gaspar",
+                    "email": "bruno.gaspar@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dan Syme",
+                    "email": "dan.syme@cartalyst.com",
+                    "role": "Project Lead"
+                },
+                {
+                    "name": "Suhayb Wardany",
+                    "email": "su.wardany@cartalyst.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Support helpers.",
+            "keywords": [
+                "cartalyst",
+                "helper",
+                "laravel",
+                "support"
+            ],
+            "support": {
+                "source": "https://github.com/cartalyst/support/tree/master",
+                "issues": "https://github.com/cartalyst/support/issues"
+            },
+            "time": "2014-08-02 04:39:53"
         },
         {
             "name": "cartalyst/themes",
@@ -2033,12 +2100,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "59d461f0a8a21880eb0467514ab5a04775d8925a"
+                "reference": "60ff646d50fef973c8f9a49f047334e551ca8a94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/59d461f0a8a21880eb0467514ab5a04775d8925a",
-                "reference": "59d461f0a8a21880eb0467514ab5a04775d8925a",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/60ff646d50fef973c8f9a49f047334e551ca8a94",
+                "reference": "60ff646d50fef973c8f9a49f047334e551ca8a94",
                 "shasum": ""
             },
             "require": {
@@ -2140,7 +2207,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-08-02 04:00:42"
+            "time": "2014-08-04 01:09:30"
         },
         {
             "name": "leafo/scssphp",
@@ -2148,12 +2215,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/leafo/scssphp.git",
-                "reference": "76797bca1ba849cb9cd1420a9b68a4ef7472bc14"
+                "reference": "66ff686f7cfd938bb156aafaf7bcd380863ddebc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/leafo/scssphp/zipball/76797bca1ba849cb9cd1420a9b68a4ef7472bc14",
-                "reference": "76797bca1ba849cb9cd1420a9b68a4ef7472bc14",
+                "url": "https://api.github.com/repos/leafo/scssphp/zipball/66ff686f7cfd938bb156aafaf7bcd380863ddebc",
+                "reference": "66ff686f7cfd938bb156aafaf7bcd380863ddebc",
                 "shasum": ""
             },
             "require": {
@@ -2186,7 +2253,7 @@
             ],
             "description": "scssphp is a compiler for SCSS written in PHP.",
             "homepage": "http://leafo.net/scssphp/",
-            "time": "2014-07-07 23:27:37"
+            "time": "2014-08-04 20:39:08"
         },
         {
             "name": "leafo/scssphp-compass",
@@ -2229,12 +2296,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "2f306a8fb7557eeceef735c2c998d30c7c04cf28"
+                "reference": "1f19e69cf004d1b91fd9215f593a4ab4ac878e39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/2f306a8fb7557eeceef735c2c998d30c7c04cf28",
-                "reference": "2f306a8fb7557eeceef735c2c998d30c7c04cf28",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/1f19e69cf004d1b91fd9215f593a4ab4ac878e39",
+                "reference": "1f19e69cf004d1b91fd9215f593a4ab4ac878e39",
                 "shasum": ""
             },
             "require": {
@@ -2296,7 +2363,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2014-07-31 14:18:19"
+            "time": "2014-08-03 20:30:26"
         },
         {
             "name": "league/fractal",
@@ -2847,12 +2914,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "833a5950472d8df917837bd66ffd70da06b6040d"
+                "reference": "4d70e7eda14ee186eaf1634d993597c7758e4fc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/833a5950472d8df917837bd66ffd70da06b6040d",
-                "reference": "833a5950472d8df917837bd66ffd70da06b6040d",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/4d70e7eda14ee186eaf1634d993597c7758e4fc1",
+                "reference": "4d70e7eda14ee186eaf1634d993597c7758e4fc1",
                 "shasum": ""
             },
             "require": {
@@ -2937,7 +3004,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2014-08-01 16:09:14"
+            "time": "2014-08-04 11:13:37"
         },
         {
             "name": "platform/admin",
@@ -5461,9 +5528,7 @@
             "time": "2014-06-11 23:09:27"
         }
     ],
-    "aliases": [
-
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "platform/admin-default": 20,
@@ -5477,13 +5542,10 @@
         "platform/operations": 20,
         "platform/pages": 20,
         "platform/settings": 20,
-        "platform/users": 20
+        "platform/users": 20,
+        "cartalyst/sentinel": 20
     },
     "prefer-stable": false,
-    "platform": [
-
-    ],
-    "platform-dev": [
-
-    ]
+    "platform": [],
+    "platform-dev": []
 }
