@@ -157,21 +157,21 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/attributes.git",
-                "reference": "c58c8f054752d3e81bd5b13c7ee8936318fb35f8"
+                "reference": "70bae019daaf6f61e5e075ecfebfc81ac5d6603d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/attributes/zipball/c58c8f054752d3e81bd5b13c7ee8936318fb35f8",
-                "reference": "c58c8f054752d3e81bd5b13c7ee8936318fb35f8",
+                "url": "https://api.github.com/repos/cartalyst/attributes/zipball/70bae019daaf6f61e5e075ecfebfc81ac5d6603d",
+                "reference": "70bae019daaf6f61e5e075ecfebfc81ac5d6603d",
                 "shasum": ""
             },
             "require": {
-                "illuminate/database": "~4",
+                "illuminate/database": ">=4.1,<4.3",
                 "php": ">=5.4.0"
             },
             "require-dev": {
                 "mockery/mockery": "~0.9",
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "~4.1"
             },
             "type": "library",
             "extra": {
@@ -229,7 +229,7 @@
                 "source": "https://github.com/cartalyst/attributes/tree/feature/traits",
                 "issues": "https://github.com/cartalyst/attributes/issues"
             },
-            "time": "2014-07-17 03:21:10"
+            "time": "2014-08-19 01:46:22"
         },
         {
             "name": "cartalyst/composer-installers",
@@ -311,35 +311,36 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/composite-config.git",
-                "reference": "853e52ede9db006f77aa7230e062de5f811dd5d4"
+                "reference": "0932f68df397672c8af9ee0b2b2e29b41cb8835a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/composite-config/zipball/853e52ede9db006f77aa7230e062de5f811dd5d4",
-                "reference": "853e52ede9db006f77aa7230e062de5f811dd5d4",
+                "url": "https://api.github.com/repos/cartalyst/composite-config/zipball/0932f68df397672c8af9ee0b2b2e29b41cb8835a",
+                "reference": "0932f68df397672c8af9ee0b2b2e29b41cb8835a",
                 "shasum": ""
             },
             "require": {
-                "illuminate/config": "~4",
-                "illuminate/database": "~4",
+                "illuminate/config": ">=4.1,<4.3",
+                "illuminate/database": ">=4.1,<4.3",
                 "php": ">=5.3.0"
             },
             "require-dev": {
-                "mockery/mockery": "0.7.2"
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.1"
             },
             "type": "library",
             "extra": {
                 "component": "package",
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.1.x-dev"
                 }
             },
             "autoload": {
                 "classmap": [
                     "src/migrations"
                 ],
-                "psr-0": {
-                    "Cartalyst\\CompositeConfig": "src"
+                "psr-4": {
+                    "Cartalyst\\CompositeConfig\\": "src"
                 }
             },
             "license": [
@@ -348,21 +349,42 @@
             "authors": [
                 {
                     "name": "Cartalyst LLC",
-                    "email": "ben.corlett@cartalyst.com"
+                    "email": "help@cartalyst.com"
+                },
+                {
+                    "name": "Ben Corlett",
+                    "email": "ben.corlett@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Bruno Gaspar",
+                    "email": "bruno.gaspar@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dan Syme",
+                    "email": "dan.syme@cartalyst.com",
+                    "role": "Creator & Designer"
+                },
+                {
+                    "name": "Suhayb Wardany",
+                    "email": "su.wardany@cartalyst.com",
+                    "role": "Developer"
                 }
             ],
-            "description": "Composite configuration allowing you to override filesystem configuration in a database.",
+            "description": "Override illuminate/config filesystem configuration in a database.",
             "keywords": [
                 "bootstrap",
+                "config",
                 "ecommerce",
                 "laravel",
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/composite-config/tree/master",
+                "source": "https://github.com/cartalyst/composite-config/tree/1.1",
                 "issues": "https://github.com/cartalyst/composite-config/issues"
             },
-            "time": "2014-07-28 17:17:04"
+            "time": "2014-08-18 19:42:26"
         },
         {
             "name": "cartalyst/data-grid",
@@ -370,12 +392,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/data-grid.git",
-                "reference": "e598af5492accb675930fb6b44a31378cd91e93a"
+                "reference": "d53c768b8943e385d3327de61c742ab872b09b0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/data-grid/zipball/e598af5492accb675930fb6b44a31378cd91e93a",
-                "reference": "e598af5492accb675930fb6b44a31378cd91e93a",
+                "url": "https://api.github.com/repos/cartalyst/data-grid/zipball/d53c768b8943e385d3327de61c742ab872b09b0e",
+                "reference": "d53c768b8943e385d3327de61c742ab872b09b0e",
                 "shasum": ""
             },
             "require": {
@@ -447,7 +469,7 @@
                 "source": "https://github.com/cartalyst/data-grid/tree/2.0",
                 "issues": "https://github.com/cartalyst/data-grid/issues"
             },
-            "time": "2014-08-12 20:42:27"
+            "time": "2014-08-18 15:10:12"
         },
         {
             "name": "cartalyst/dependencies",
@@ -524,12 +546,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/extensions.git",
-                "reference": "fa6cf2ab1fd46dbabc94462ff516e913c25a974a"
+                "reference": "54d715a06cfa78757cee09e934959d6304e32482"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/extensions/zipball/fa6cf2ab1fd46dbabc94462ff516e913c25a974a",
-                "reference": "fa6cf2ab1fd46dbabc94462ff516e913c25a974a",
+                "url": "https://api.github.com/repos/cartalyst/extensions/zipball/54d715a06cfa78757cee09e934959d6304e32482",
+                "reference": "54d715a06cfa78757cee09e934959d6304e32482",
                 "shasum": ""
             },
             "require": {
@@ -595,7 +617,7 @@
                 "source": "https://github.com/cartalyst/extensions/tree/1.1",
                 "issues": "https://github.com/cartalyst/extensions/issues"
             },
-            "time": "2014-08-07 10:53:21"
+            "time": "2014-08-18 18:22:46"
         },
         {
             "name": "cartalyst/filesystem",
@@ -1248,12 +1270,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/workshop.git",
-                "reference": "12b52c4ef6bd57c9de486933904fec3b5e475aa3"
+                "reference": "5b491b229f3420effeb231a5d7d61c1e67fce756"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/workshop/zipball/12b52c4ef6bd57c9de486933904fec3b5e475aa3",
-                "reference": "12b52c4ef6bd57c9de486933904fec3b5e475aa3",
+                "url": "https://api.github.com/repos/cartalyst/workshop/zipball/5b491b229f3420effeb231a5d7d61c1e67fce756",
+                "reference": "5b491b229f3420effeb231a5d7d61c1e67fce756",
                 "shasum": ""
             },
             "require": {
@@ -1313,7 +1335,7 @@
                 "source": "https://github.com/cartalyst/workshop/tree/feature/traits",
                 "issues": "https://github.com/cartalyst/workshop/issues"
             },
-            "time": "2014-07-22 03:33:44"
+            "time": "2014-08-18 12:49:12"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -2096,12 +2118,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "41dea014476704c8f85c89329f63da47f8ccaf75"
+                "reference": "2d1be5b09e4fb3bff01efc6542a6537c9fcc909d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/41dea014476704c8f85c89329f63da47f8ccaf75",
-                "reference": "41dea014476704c8f85c89329f63da47f8ccaf75",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/2d1be5b09e4fb3bff01efc6542a6537c9fcc909d",
+                "reference": "2d1be5b09e4fb3bff01efc6542a6537c9fcc909d",
                 "shasum": ""
             },
             "require": {
@@ -2203,7 +2225,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-08-12 11:26:08"
+            "time": "2014-08-18 21:53:38"
         },
         {
             "name": "leafo/scssphp",
@@ -2301,12 +2323,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "9be44fbe3c658f65682382d4cda77f567ede7886"
+                "reference": "88434ee26eabeac8c2f5b0262ad5973f21b7f349"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/9be44fbe3c658f65682382d4cda77f567ede7886",
-                "reference": "9be44fbe3c658f65682382d4cda77f567ede7886",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/88434ee26eabeac8c2f5b0262ad5973f21b7f349",
+                "reference": "88434ee26eabeac8c2f5b0262ad5973f21b7f349",
                 "shasum": ""
             },
             "require": {
@@ -2369,7 +2391,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2014-08-13 07:00:27"
+            "time": "2014-08-19 01:04:01"
         },
         {
             "name": "league/fractal",
@@ -2377,12 +2399,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/fractal.git",
-                "reference": "93c5eab751b2067c122b4cc77fba19fdc4106116"
+                "reference": "f654509b69dc37ee15e79d9226345bf2c011f519"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/93c5eab751b2067c122b4cc77fba19fdc4106116",
-                "reference": "93c5eab751b2067c122b4cc77fba19fdc4106116",
+                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/f654509b69dc37ee15e79d9226345bf2c011f519",
+                "reference": "f654509b69dc37ee15e79d9226345bf2c011f519",
                 "shasum": ""
             },
             "require": {
@@ -2428,7 +2450,7 @@
                 "league",
                 "rest"
             ],
-            "time": "2014-08-08 14:34:04"
+            "time": "2014-08-14 14:25:42"
         },
         {
             "name": "league/oauth1-client",
@@ -2673,7 +2695,7 @@
         },
         {
             "name": "natxet/CssMin",
-            "version": "dev-master",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/natxet/CssMin.git",
@@ -2925,12 +2947,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "cb8f991752e583f0e0c505ee0528da2af4f26045"
+                "reference": "7696cbf8262684b438a3631e166cf0a949544e3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/cb8f991752e583f0e0c505ee0528da2af4f26045",
-                "reference": "cb8f991752e583f0e0c505ee0528da2af4f26045",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/7696cbf8262684b438a3631e166cf0a949544e3f",
+                "reference": "7696cbf8262684b438a3631e166cf0a949544e3f",
                 "shasum": ""
             },
             "require": {
@@ -3015,7 +3037,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2014-08-12 09:30:21"
+            "time": "2014-08-19 20:25:02"
         },
         {
             "name": "platform/admin",
@@ -3023,12 +3045,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-admin.git",
-                "reference": "b599853fcc3c41201de928c6b35c93ad16677ad5"
+                "reference": "60249f6bccb73c203b4ff1cf4cdbefd8375a0a8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-admin/zipball/b599853fcc3c41201de928c6b35c93ad16677ad5",
-                "reference": "b599853fcc3c41201de928c6b35c93ad16677ad5",
+                "url": "https://api.github.com/repos/cartalyst/platform-admin/zipball/60249f6bccb73c203b4ff1cf4cdbefd8375a0a8a",
+                "reference": "60249f6bccb73c203b4ff1cf4cdbefd8375a0a8a",
                 "shasum": ""
             },
             "require": {
@@ -3093,7 +3115,7 @@
                 "source": "https://github.com/cartalyst/platform-admin/tree/feature/traits",
                 "issues": "https://github.com/cartalyst/platform-admin/issues"
             },
-            "time": "2014-08-01 19:28:32"
+            "time": "2014-08-15 21:06:35"
         },
         {
             "name": "platform/admin-default",
@@ -3163,12 +3185,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-attributes.git",
-                "reference": "e18243a98df8f5fc273a9f86717a63bddc531b77"
+                "reference": "d7292f588b45ac4fac5a3e261516845498d1db12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-attributes/zipball/e18243a98df8f5fc273a9f86717a63bddc531b77",
-                "reference": "e18243a98df8f5fc273a9f86717a63bddc531b77",
+                "url": "https://api.github.com/repos/cartalyst/platform-attributes/zipball/d7292f588b45ac4fac5a3e261516845498d1db12",
+                "reference": "d7292f588b45ac4fac5a3e261516845498d1db12",
                 "shasum": ""
             },
             "require": {
@@ -3234,7 +3256,7 @@
                 "source": "https://github.com/cartalyst/platform-attributes/tree/feature/traits",
                 "issues": "https://github.com/cartalyst/platform-attributes/issues"
             },
-            "time": "2014-08-07 16:48:37"
+            "time": "2014-08-18 20:35:28"
         },
         {
             "name": "platform/content",
@@ -3242,12 +3264,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-content.git",
-                "reference": "16b9bb37bbb0e0786335b0080e5b9b2f06fdc348"
+                "reference": "4dc4038d8ff27501831db932ecb9e141f97dbdaf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/16b9bb37bbb0e0786335b0080e5b9b2f06fdc348",
-                "reference": "16b9bb37bbb0e0786335b0080e5b9b2f06fdc348",
+                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/4dc4038d8ff27501831db932ecb9e141f97dbdaf",
+                "reference": "4dc4038d8ff27501831db932ecb9e141f97dbdaf",
                 "shasum": ""
             },
             "require": {
@@ -3316,7 +3338,7 @@
                 "source": "https://github.com/cartalyst/platform-content/tree/feature/traits",
                 "issues": "https://github.com/cartalyst/platform-content/issues"
             },
-            "time": "2014-08-07 17:44:01"
+            "time": "2014-08-18 17:02:55"
         },
         {
             "name": "platform/foundation",
@@ -3324,37 +3346,37 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-foundation.git",
-                "reference": "cf8012ac84ff829a62a405ea91710dba5b09df7d"
+                "reference": "7bf72e4ab5b5007c9d5140493883eee7abebaa0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/cf8012ac84ff829a62a405ea91710dba5b09df7d",
-                "reference": "cf8012ac84ff829a62a405ea91710dba5b09df7d",
+                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/7bf72e4ab5b5007c9d5140493883eee7abebaa0c",
+                "reference": "7bf72e4ab5b5007c9d5140493883eee7abebaa0c",
                 "shasum": ""
             },
             "require": {
-                "cartalyst/api": "~2",
+                "cartalyst/api": "~2.0",
                 "cartalyst/assetic-filters": "1.1.*",
-                "cartalyst/data-grid": "dev-master",
+                "cartalyst/data-grid": "2.0.*",
                 "cartalyst/extensions": "1.1.*",
                 "cartalyst/filesystem": "2.0.*",
                 "cartalyst/themes": "2.3.*",
                 "cartalyst/widgets": "1.0.2",
-                "illuminate/config": "~4",
-                "illuminate/container": "~4",
-                "illuminate/http": "~4",
                 "leafo/scssphp": "dev-master",
                 "leafo/scssphp-compass": "dev-master",
                 "league/fractal": "0.9.*",
-                "lmammino/jsmin4assetic": "dev-master",
-                "natxet/cssmin": "dev-master",
+                "lmammino/jsmin4assetic": "~1.0",
+                "natxet/cssmin": "~3.0",
                 "oyejorge/less.php": "1.7.*",
-                "php": ">=5.4.0",
-                "symfony/http-kernel": "~2"
+                "php": ">=5.4.0"
             },
             "require-dev": {
-                "mockery/mockery": "0.9.*",
-                "phpunit/phpunit": "4.0.*"
+                "illuminate/config": "~4",
+                "illuminate/container": "~4",
+                "illuminate/http": "~4",
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0",
+                "symfony/http-kernel": "~2"
             },
             "type": "library",
             "extra": {
@@ -3409,7 +3431,7 @@
                 "source": "https://github.com/cartalyst/platform-foundation/tree/feature/traits",
                 "issues": "https://github.com/cartalyst/platform-foundation/issues"
             },
-            "time": "2014-08-13 15:49:35"
+            "time": "2014-08-14 18:45:01"
         },
         {
             "name": "platform/frontend-default",
@@ -3564,12 +3586,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-media.git",
-                "reference": "5bd21766c13ad0d6555e6fb3c7ca060a169cebbe"
+                "reference": "87a4873f3737dfe8f509d93580730075874f12ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/5bd21766c13ad0d6555e6fb3c7ca060a169cebbe",
-                "reference": "5bd21766c13ad0d6555e6fb3c7ca060a169cebbe",
+                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/87a4873f3737dfe8f509d93580730075874f12ef",
+                "reference": "87a4873f3737dfe8f509d93580730075874f12ef",
                 "shasum": ""
             },
             "require": {
@@ -3637,7 +3659,7 @@
                 "source": "https://github.com/cartalyst/platform-media/tree/feature/traits",
                 "issues": "https://github.com/cartalyst/platform-media/issues"
             },
-            "time": "2014-08-01 19:29:22"
+            "time": "2014-08-14 17:53:01"
         },
         {
             "name": "platform/menus",
@@ -3645,12 +3667,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-menus.git",
-                "reference": "106fa1259b6faa44f99b8cea5e79ea0aee85c2b4"
+                "reference": "c087ad4a5b8b48bda9733f784fc6c97b6b5e13e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/106fa1259b6faa44f99b8cea5e79ea0aee85c2b4",
-                "reference": "106fa1259b6faa44f99b8cea5e79ea0aee85c2b4",
+                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/c087ad4a5b8b48bda9733f784fc6c97b6b5e13e3",
+                "reference": "c087ad4a5b8b48bda9733f784fc6c97b6b5e13e3",
                 "shasum": ""
             },
             "require": {
@@ -3716,7 +3738,7 @@
                 "source": "https://github.com/cartalyst/platform-menus/tree/feature/traits",
                 "issues": "https://github.com/cartalyst/platform-menus/issues"
             },
-            "time": "2014-08-01 23:49:51"
+            "time": "2014-08-15 20:49:02"
         },
         {
             "name": "platform/operations",
@@ -3724,12 +3746,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-operations.git",
-                "reference": "960d87f61f0e9896edd9f94c35f30e270875a7c8"
+                "reference": "2bbebe335768e36236c263f41ed125104250af35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/960d87f61f0e9896edd9f94c35f30e270875a7c8",
-                "reference": "960d87f61f0e9896edd9f94c35f30e270875a7c8",
+                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/2bbebe335768e36236c263f41ed125104250af35",
+                "reference": "2bbebe335768e36236c263f41ed125104250af35",
                 "shasum": ""
             },
             "require": {
@@ -3794,7 +3816,7 @@
                 "source": "https://github.com/cartalyst/platform-operations/tree/feature/traits",
                 "issues": "https://github.com/cartalyst/platform-operations/issues"
             },
-            "time": "2014-08-01 19:29:41"
+            "time": "2014-08-16 04:55:17"
         },
         {
             "name": "platform/pages",
@@ -3802,12 +3824,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-pages.git",
-                "reference": "eba80a72d072259866725c3206ee59fbfd6e9dc2"
+                "reference": "33ad96d8cd987e38b61b8233cf96ff10bb6ba559"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/eba80a72d072259866725c3206ee59fbfd6e9dc2",
-                "reference": "eba80a72d072259866725c3206ee59fbfd6e9dc2",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/33ad96d8cd987e38b61b8233cf96ff10bb6ba559",
+                "reference": "33ad96d8cd987e38b61b8233cf96ff10bb6ba559",
                 "shasum": ""
             },
             "require": {
@@ -3874,7 +3896,7 @@
                 "source": "https://github.com/cartalyst/platform-pages/tree/feature/traits",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2014-08-01 19:29:48"
+            "time": "2014-08-15 18:08:57"
         },
         {
             "name": "platform/settings",
@@ -3882,17 +3904,17 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-settings.git",
-                "reference": "c458a604dfa89fd4d0390bc73c891db57bdeb78c"
+                "reference": "da0c5dbc70f93dba36806d7b6f5c0b7f0022c369"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-settings/zipball/c458a604dfa89fd4d0390bc73c891db57bdeb78c",
-                "reference": "c458a604dfa89fd4d0390bc73c891db57bdeb78c",
+                "url": "https://api.github.com/repos/cartalyst/platform-settings/zipball/da0c5dbc70f93dba36806d7b6f5c0b7f0022c369",
+                "reference": "da0c5dbc70f93dba36806d7b6f5c0b7f0022c369",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "1.1.*",
-                "cartalyst/composite-config": "dev-master",
+                "cartalyst/composite-config": "1.1.*",
                 "php": ">=5.4.0",
                 "platform/admin": "dev-feature/traits"
             },
@@ -3953,7 +3975,7 @@
                 "source": "https://github.com/cartalyst/platform-settings/tree/feature/traits",
                 "issues": "https://github.com/cartalyst/platform-settings/issues"
             },
-            "time": "2014-08-01 19:29:59"
+            "time": "2014-08-18 19:49:28"
         },
         {
             "name": "platform/users",
@@ -3961,12 +3983,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-users.git",
-                "reference": "812cf67a4505cec46db7ef18b938d9ca58b364b5"
+                "reference": "e0ec1243106210c0e0fdd5b11d6730ad5e41e64c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/812cf67a4505cec46db7ef18b938d9ca58b364b5",
-                "reference": "812cf67a4505cec46db7ef18b938d9ca58b364b5",
+                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/e0ec1243106210c0e0fdd5b11d6730ad5e41e64c",
+                "reference": "e0ec1243106210c0e0fdd5b11d6730ad5e41e64c",
                 "shasum": ""
             },
             "require": {
@@ -4036,7 +4058,7 @@
                 "source": "https://github.com/cartalyst/platform-users/tree/feature/traits",
                 "issues": "https://github.com/cartalyst/platform-users/issues"
             },
-            "time": "2014-08-13 15:33:34"
+            "time": "2014-08-20 18:08:36"
         },
         {
             "name": "predis/predis",
@@ -4391,12 +4413,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "cd2d1e4bac2206b337326b0140ff475fe9ad5f63"
+                "reference": "748beed2a1e73179c3f5154d33fe6ae100c1aeb1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/cd2d1e4bac2206b337326b0140ff475fe9ad5f63",
-                "reference": "cd2d1e4bac2206b337326b0140ff475fe9ad5f63",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/748beed2a1e73179c3f5154d33fe6ae100c1aeb1",
+                "reference": "748beed2a1e73179c3f5154d33fe6ae100c1aeb1",
                 "shasum": ""
             },
             "require": {
@@ -4437,7 +4459,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2014-08-05 09:00:40"
+            "time": "2014-08-14 16:10:54"
         },
         {
             "name": "symfony/css-selector",
@@ -4715,12 +4737,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder.git",
-                "reference": "bd39e22bb86af73e1d6d80f641a3be331221bc1c"
+                "reference": "01284e19f7d2ce4bcd00282bf760ba061ef69c2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/bd39e22bb86af73e1d6d80f641a3be331221bc1c",
-                "reference": "bd39e22bb86af73e1d6d80f641a3be331221bc1c",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/01284e19f7d2ce4bcd00282bf760ba061ef69c2e",
+                "reference": "01284e19f7d2ce4bcd00282bf760ba061ef69c2e",
                 "shasum": ""
             },
             "require": {
@@ -4753,7 +4775,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "http://symfony.com",
-            "time": "2014-08-08 15:50:54"
+            "time": "2014-08-14 16:10:54"
         },
         {
             "name": "symfony/http-foundation",
@@ -4762,12 +4784,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpFoundation.git",
-                "reference": "53296aa0794ebe1e3880e3f2c68fe10ddad6c3e3"
+                "reference": "66996cff6d0de1168f99e460464cd3fb35c192f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/53296aa0794ebe1e3880e3f2c68fe10ddad6c3e3",
-                "reference": "53296aa0794ebe1e3880e3f2c68fe10ddad6c3e3",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/66996cff6d0de1168f99e460464cd3fb35c192f5",
+                "reference": "66996cff6d0de1168f99e460464cd3fb35c192f5",
                 "shasum": ""
             },
             "require": {
@@ -4806,7 +4828,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "http://symfony.com",
-            "time": "2014-08-05 09:00:40"
+            "time": "2014-08-18 09:01:49"
         },
         {
             "name": "symfony/http-kernel",
@@ -4815,12 +4837,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpKernel.git",
-                "reference": "b4a977d5dc76928acf7b4b0cf4f9711ba114ffe7"
+                "reference": "c90d1811e3ed2f119de61aa63e7044cd5ca422a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/b4a977d5dc76928acf7b4b0cf4f9711ba114ffe7",
-                "reference": "b4a977d5dc76928acf7b4b0cf4f9711ba114ffe7",
+                "url": "https://api.github.com/repos/symfony/HttpKernel/zipball/c90d1811e3ed2f119de61aa63e7044cd5ca422a7",
+                "reference": "c90d1811e3ed2f119de61aa63e7044cd5ca422a7",
                 "shasum": ""
             },
             "require": {
@@ -4828,7 +4850,7 @@
                 "psr/log": "~1.0",
                 "symfony/debug": "~2.5",
                 "symfony/event-dispatcher": "~2.5",
-                "symfony/http-foundation": "~2.4"
+                "symfony/http-foundation": "~2.5"
             },
             "require-dev": {
                 "symfony/browser-kit": "~2.2",
@@ -4877,7 +4899,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "http://symfony.com",
-            "time": "2014-08-06 08:24:10"
+            "time": "2014-08-11 09:10:42"
         },
         {
             "name": "symfony/process",
@@ -5398,12 +5420,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "83f92c3f28e927917ddcb7cf214ce99c0b72004b"
+                "reference": "3eebba76d0fd7ec0f0b2ea78d4aa29468957941c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/83f92c3f28e927917ddcb7cf214ce99c0b72004b",
-                "reference": "83f92c3f28e927917ddcb7cf214ce99c0b72004b",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/3eebba76d0fd7ec0f0b2ea78d4aa29468957941c",
+                "reference": "3eebba76d0fd7ec0f0b2ea78d4aa29468957941c",
                 "shasum": ""
             },
             "require": {
@@ -5461,7 +5483,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2014-08-13 07:14:49"
+            "time": "2014-08-20 02:14:56"
         },
         {
             "name": "doctrine/inflector",
