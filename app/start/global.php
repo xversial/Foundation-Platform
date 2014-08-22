@@ -66,9 +66,9 @@ App::down(function()
 | Require The Functions File
 |--------------------------------------------------------------------------
 |
-| We will require a file which you can define any custom functions for
-| your application, before any usage of these functions occurs. This
-| is just  a convenient way to organize your code.
+| Require a file where you can define all of your application custom
+| functions before any usage of these functions occurs. This is just
+| a convenient way to organize your code.
 |
 */
 
@@ -79,12 +79,24 @@ require app_path().'/functions.php';
 | Require The Hooks File
 |--------------------------------------------------------------------------
 |
-| Next we will load the hooks file for your Platform application. This
+| Next we will load the hooks file for your Platform application, this
 | file contains a number of events which you can hook into.
 |
 */
 
 require app_path().'/hooks.php';
+
+/*
+|--------------------------------------------------------------------------
+| Require The Models Overrides File
+|--------------------------------------------------------------------------
+|
+| Next we'll load the models overrides file. This gives us a
+| nice separate location to register our models overrides.
+|
+*/
+
+require app_path().'/overrides/models.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -99,16 +111,15 @@ Platform::boot();
 
 /*
 |--------------------------------------------------------------------------
-| Require The Overrides File
+| Require The Repositories Overrides File
 |--------------------------------------------------------------------------
 |
-| Finally, we'll load the overrides file, which is a convenient place to
-| override functionality in Laravel, Platform, all packages and
-| Extensions.
+| Next we'll load the repositories overrides file. This gives us a
+| nice separate location to register our repositories overrides.
 |
 */
 
-require app_path().'/overrides.php';
+require app_path().'/overrides/repositories.php';
 
 /*
 |--------------------------------------------------------------------------
