@@ -145,3 +145,8 @@ require app_path().'/filters.php';
 */
 
 require app_path().'/widgets.php';
+
+
+// Temporary helpers file with some helper functions from Laravel 4.3
+
+require app_path().'/helpers.php';
