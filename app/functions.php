@@ -18,6 +18,7 @@
  */
 
 use Platform\Menus\Models\Menu;
+use Illuminate\Support\Facades\Response;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,80 @@ use Platform\Menus\Models\Menu;
 | application. We've included a couple to get you started.
 |
 */
+
+if ( ! function_exists('redirect'))
+{
+	/**
+	 * Get an instance of the redirector.
+	 *
+	 * @param  string|null  $to
+	 * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
+	 */
+	function redirect($to = null)
+	{
+		if ( ! is_null($to))
+		{
+			return app('redirect')->to($to);
+		}
+		else
+		{
+			return app('redirect');
+		}
+	}
+}
+
+if ( ! function_exists('request'))
+{
+	/**
+	 * Get an instance of the http request.
+	 *
+	 * @return \Illuminate\Http\Request
+	 */
+	function request()
+	{
+		return app('request');
+	}
+}
+
+if ( ! function_exists('response'))
+{
+	function response($message, $status = 200)
+	{
+		return Response::make($message, $status);
+	}
+}
+
+if ( ! function_exists('view'))
+{
+	/**
+	 * Get the evaluated view contents for the given view.
+	 *
+	 * @param  string  $view
+	 * @param  array   $data
+	 * @param  array   $mergeData
+	 * @return \Illuminate\View\View
+	 */
+	function view($view, $data = array(), $mergeData = array())
+	{
+		return app('view')->make($view, $data, $mergeData);
+	}
+}
+
+if ( ! function_exists('datagrid'))
+{
+	/**
+	 * Get the evaluated datagrid response for the given data.
+	 *
+	 * @param  mixed  $data
+	 * @param  array  $columns
+	 * @param  array  $settings
+	 * @return \Cartalyst\DataGrid\DataGrid
+	 */
+	function datagrid($data, $columns = [], $settings = [])
+	{
+		return app('datagrid')->make($data, $columns, $settings);
+	}
+}
 
 if ( ! function_exists('set_menu_order'))
 {
