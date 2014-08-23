@@ -96,11 +96,12 @@ if ( ! function_exists('datagrid'))
 	 * @param  mixed  $data
 	 * @param  array  $columns
 	 * @param  array  $settings
+	 * @param  \Closure  $transformer
 	 * @return \Cartalyst\DataGrid\DataGrid
 	 */
-	function datagrid($data, $columns = [], $settings = [])
+	function datagrid($data, $columns = [], $settings = [], Closure $transformer = null)
 	{
-		return app('datagrid')->make($data, $columns, $settings);
+		return app('datagrid')->make($data, $columns, $settings, $transformer);
 	}
 }
 
