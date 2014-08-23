@@ -111,15 +111,15 @@ Platform::boot();
 
 /*
 |--------------------------------------------------------------------------
-| Require The Repositories Overrides File
+| Require The Services Overrides File
 |--------------------------------------------------------------------------
 |
-| Next we'll load the repositories overrides file. This gives us a
-| nice separate location to register our repositories overrides.
+| Next we'll load the services overrides file. This gives us a
+| nice separate location to override various services.
 |
 */
 
-require app_path().'/overrides/repositories.php';
+require app_path().'/overrides/services.php';
 
 /*
 |--------------------------------------------------------------------------
