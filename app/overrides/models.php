@@ -5,9 +5,9 @@
 | Model Overrides
 |--------------------------------------------------------------------------
 |
-| The default Platform extensions use the IoC to resolve model instances.
-| You can override these here by simply returning your own model which
-| extends ours.
+| The Platform extensions uses the IoC to resolve model instances, you
+| can override these here by simply returning your own model which
+| should always extend the model you want to override.
 |
 */
 
