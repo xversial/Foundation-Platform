@@ -8,11 +8,11 @@ Part of the Cartalyst Arsenal & licensed [Cartalyst PSL](LICENSE). Code well, ro
 
 ## Documentation
 
-Reader-friendly Documentation can be found here. [Platform Manual](https://cartalyst.com/manual/platform).
+Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
 
-Raw files can be found via this projects docs/version branch.
+## Contributing
 
-- [2.0](https://github.com/cartalyst/platform/tree/docs/2.0)
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
 
 ## Changelog
 
