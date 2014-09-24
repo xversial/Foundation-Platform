@@ -30,6 +30,21 @@ use Illuminate\Support\Facades\Response;
 |
 */
 
+if ( ! function_exists('config'))
+{
+	/**
+	 * Get the specified configuration value.
+	 *
+	 * @param  string  $key
+	 * @param  mixed   $default
+	 * @return mixed
+	 */
+	function config($key, $default = null)
+	{
+		return app('config')->get($key, $default);
+	}
+}
+
 if ( ! function_exists('redirect'))
 {
 	/**
@@ -44,10 +59,8 @@ if ( ! function_exists('redirect'))
 		{
 			return app('redirect')->to($to);
 		}
-		else
-		{
-			return app('redirect');
-		}
+
+		return app('redirect');
 	}
 }
 
@@ -66,9 +79,17 @@ if ( ! function_exists('request'))
 
 if ( ! function_exists('response'))
 {
-	function response($message, $status = 200)
+	/**
+	 * Return a new response from the application.
+	 *
+	 * @param  string  $content
+	 * @param  int  $status
+	 * @param  array  $headers
+	 * @return \Symfony\Component\HttpFoundation\Response
+	 */
+	function response($content = '', $status = 200, array $headers = [])
 	{
-		return Response::make($message, $status);
+		return Response::make($content, $status, $headers);
 	}
 }
 
@@ -78,11 +99,11 @@ if ( ! function_exists('view'))
 	 * Get the evaluated view contents for the given view.
 	 *
 	 * @param  string  $view
-	 * @param  array   $data
-	 * @param  array   $mergeData
+	 * @param  array  $data
+	 * @param  array  $mergeData
 	 * @return \Illuminate\View\View
 	 */
-	function view($view, $data = array(), $mergeData = array())
+	function view($view, $data = [], $mergeData = [])
 	{
 		return app('view')->make($view, $data, $mergeData);
 	}
