@@ -100,6 +100,19 @@ require app_path().'/overrides/models.php';
 
 /*
 |--------------------------------------------------------------------------
+| Require The Filters File
+|--------------------------------------------------------------------------
+|
+| Next we will load the filters file for the application. This gives us
+| a nice separate location to store our route and application filter
+| definitions instead of putting them all in the main routes file.
+|
+*/
+
+require app_path().'/filters.php';
+
+/*
+|--------------------------------------------------------------------------
 | Boot Platform
 |--------------------------------------------------------------------------
 |
@@ -120,19 +133,6 @@ Platform::boot();
 */
 
 require app_path().'/overrides/services.php';
-
-/*
-|--------------------------------------------------------------------------
-| Require The Filters File
-|--------------------------------------------------------------------------
-|
-| Next we will load the filters file for the application. This gives us
-| a nice separate location to store our route and application filter
-| definitions instead of putting them all in the main routes file.
-|
-*/
-
-require app_path().'/filters.php';
 
 /*
 |--------------------------------------------------------------------------
