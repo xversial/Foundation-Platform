@@ -18,7 +18,6 @@
  */
 
 use Platform\Menus\Models\Menu;
-use Illuminate\Support\Facades\Response;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,102 +28,6 @@ use Illuminate\Support\Facades\Response;
 | application. We've included a couple to get you started.
 |
 */
-
-if ( ! function_exists('config'))
-{
-	/**
-	 * Get the specified configuration value.
-	 *
-	 * @param  string  $key
-	 * @param  mixed   $default
-	 * @return mixed
-	 */
-	function config($key, $default = null)
-	{
-		return app('config')->get($key, $default);
-	}
-}
-
-if ( ! function_exists('redirect'))
-{
-	/**
-	 * Get an instance of the redirector.
-	 *
-	 * @param  string|null  $to
-	 * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
-	 */
-	function redirect($to = null)
-	{
-		if ( ! is_null($to))
-		{
-			return app('redirect')->to($to);
-		}
-
-		return app('redirect');
-	}
-}
-
-if ( ! function_exists('request'))
-{
-	/**
-	 * Get an instance of the http request.
-	 *
-	 * @return \Illuminate\Http\Request
-	 */
-	function request()
-	{
-		return app('request');
-	}
-}
-
-if ( ! function_exists('response'))
-{
-	/**
-	 * Return a new response from the application.
-	 *
-	 * @param  string  $content
-	 * @param  int  $status
-	 * @param  array  $headers
-	 * @return \Symfony\Component\HttpFoundation\Response
-	 */
-	function response($content = '', $status = 200, array $headers = [])
-	{
-		return Response::make($content, $status, $headers);
-	}
-}
-
-if ( ! function_exists('view'))
-{
-	/**
-	 * Get the evaluated view contents for the given view.
-	 *
-	 * @param  string  $view
-	 * @param  array  $data
-	 * @param  array  $mergeData
-	 * @return \Illuminate\View\View
-	 */
-	function view($view, $data = [], $mergeData = [])
-	{
-		return app('view')->make($view, $data, $mergeData);
-	}
-}
-
-if ( ! function_exists('datagrid'))
-{
-	/**
-	 * Get the evaluated datagrid response for the given data.
-	 *
-	 * @param  mixed  $data
-	 * @param  array  $columns
-	 * @param  array  $settings
-	 * @param  \Closure  $transformer
-	 * @return \Cartalyst\DataGrid\DataGrid
-	 */
-	function datagrid($data, $columns = [], $settings = [], Closure $transformer = null)
-	{
-		return app('datagrid')->make($data, $columns, $settings, $transformer);
-	}
-}
 
 if ( ! function_exists('set_menu_order'))
 {
@@ -174,7 +77,7 @@ if ( ! function_exists('show_error_page'))
 	 * Show a production error page for the given status code.
 	 *
 	 * @param  int  $statsuCode
-	 * @return Illuminate\Http\Response
+	 * @return \Illuminate\Http\Response
 	 */
 	function show_error_page($statusCode)
 	{
@@ -184,7 +87,7 @@ if ( ! function_exists('show_error_page'))
 			// default theme ships with these views, but just for safety
 			// (in-case the theme system is what's causing the error)
 			// we also include duplicated views under app/views.
-			$string = View::make("errors/{$statusCode}");
+			$string = view("errors/{$statusCode}");
 		}
 		catch (Exception $e)
 		{
@@ -203,6 +106,6 @@ if ( ! function_exists('show_error_page'))
 			$string = '500 Internal Server Error';
 		}
 
-		return Response::make($string, $statusCode);
+		return response($string, $statusCode);
 	}
 }
