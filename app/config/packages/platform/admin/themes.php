@@ -21,26 +21,29 @@ return [
 
 	/*
 	|--------------------------------------------------------------------------
-	| Admin URI
+	| Active Theme
 	|--------------------------------------------------------------------------
 	|
-	| You can easily change the URI for your application's admin interface. If
-	| you would like to obscure it, feel free to edit the entry below.
+	| Here you can specify the default active admin theme for your
+	| application, or set to null if none is defined.
+	|
+	| See configuration for cartalyst/themes for the base active theme.
 	|
 	*/
 
-	'uri' => 'admin',
+	'active' => 'admin::default',
+
 
 	/*
 	|--------------------------------------------------------------------------
-	| Force SSL
+	| Fallback Theme
 	|--------------------------------------------------------------------------
 	|
-	| If set to true, we'll enforce all the "admin/*" routes to be
-	| accessed only over SSL.
+	| Here you can specify the default fallback admin theme for your
+	| application, or set to null if none is defined.
 	|
 	*/
 
-	'force_https' => false,
+	'fallback' => 'admin::default',
 
 ];
