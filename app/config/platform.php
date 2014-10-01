@@ -94,8 +94,8 @@ return [
 
 		'menu' => [
 
-			'main-home',
-			'main-dashboard',
+			'main-documentation',
+			'main-license',
 			'main-login',
 			'main-logout',
 
