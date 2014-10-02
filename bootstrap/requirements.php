@@ -166,14 +166,14 @@ class PublicPermissionsRequirement implements RequirementInterface {
 
 }
 
-class PHPExtensionsRequirement implements RequirementInterface {
+class McryptExtensionRequirement implements RequirementInterface {
 
 	/**
 	 * {@inheritDoc}
 	 */
 	public function check()
 	{
-		return extension_loaded('mcrypt') && extension_loaded('gd');
+		return extension_loaded('mcrypt');
 	}
 
 	/**
@@ -181,7 +181,7 @@ class PHPExtensionsRequirement implements RequirementInterface {
 	 */
 	public function title()
 	{
-		return 'PHP Extensions';
+		return 'Mcrypt PHP Extension';
 	}
 
 	/**
@@ -189,7 +189,63 @@ class PHPExtensionsRequirement implements RequirementInterface {
 	 */
 	public function message()
 	{
-		return 'Mcrypt and GD extensions are required.';
+		return 'Mcrypt extension is required.';
+	}
+
+}
+
+class GDExtensionRequirement implements RequirementInterface {
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public function check()
+	{
+		return extension_loaded('gd');
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public function title()
+	{
+		return 'GD PHP Extensions';
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public function message()
+	{
+		return 'GD extension is required.';
+	}
+
+}
+
+class PDOExtensionRequirement implements RequirementInterface {
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public function check()
+	{
+		return defined('PDO::ATTR_DRIVER_NAME');
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public function title()
+	{
+		return 'PDO PHP Extension';
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public function message()
+	{
+		return 'PDO extension is required.';
 	}
 
 }
@@ -265,9 +321,11 @@ $requirements = [
 	new StoragePermissionsRequirement,
 	new ConfigPermissionsRequirement,
 	new PublicPermissionsRequirement,
-	new PHPExtensionsRequirement,
+	new McryptExtensionRequirement,
+	new GDExtensionRequirement,
+	new PDOExtensionRequirement,
 	new PHPVersionRequirement,
-	new DummyRequirement,
+	//new DummyRequirement,
 ];
 
 /*
