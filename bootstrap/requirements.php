@@ -350,7 +350,6 @@ foreach ($requirements as $requirement)
 }
 
 ?>
-
 <?php if ( ! $pass): ?>
 
 	<!DOCTYPE html>
