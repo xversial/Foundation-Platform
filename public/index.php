@@ -8,10 +8,11 @@
 
 /*
 |--------------------------------------------------------------------------
-| Pre-Checks
+| Platform Installation Requirements
 |--------------------------------------------------------------------------
 |
-| TBD
+| Specific system critical requirements need to be met in order for
+| Platform to run. Additionally your own application might have requirements.
 |
 */
 

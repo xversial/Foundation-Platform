@@ -465,7 +465,7 @@ foreach ($requirements as $requirement)
 				<div class="page__wrapper">
 
 					<header>
-						<h1>Installing Platform</h1>
+						<h1>Installation Requirements</h1>
 						<h3 class="text-danger">Woah there high speed. We found a few issues.</h3>
 						<hr>
 					</header>
