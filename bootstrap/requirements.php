@@ -61,7 +61,7 @@ class DependenciesRequirement implements RequirementInterface {
 	 */
 	public function check()
 	{
-		return file_exists(realpath('../vendor'));
+		return file_exists(realpath(__DIR__.'/../vendor'));
 	}
 
 	/**
@@ -89,7 +89,7 @@ class StoragePermissionsRequirement implements RequirementInterface {
 	 */
 	public function check()
 	{
-		return     is_writable(realpath('../app/storage'));
+		return     is_writable(realpath(__DIR__.'/../app/storage'));
 	}
 
 	/**
@@ -117,7 +117,7 @@ class ConfigPermissionsRequirement implements RequirementInterface {
 	 */
 	public function check()
 	{
-		return is_writable(realpath('../app/config'));
+		return is_writable(realpath(__DIR__.'/../app/config'));
 	}
 
 	/**
@@ -145,7 +145,7 @@ class PublicPermissionsRequirement implements RequirementInterface {
 	 */
 	public function check()
 	{
-		return is_writable(realpath('../public/cache'));
+		return is_writable(realpath(__DIR__.'/../public/cache'));
 	}
 
 	/**
