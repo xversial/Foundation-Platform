@@ -8,6 +8,21 @@
 
 /*
 |--------------------------------------------------------------------------
+| Platform Installation Requirements
+|--------------------------------------------------------------------------
+|
+| Specific system critical requirements need to be met in order for
+| Platform to run. Additionally your own application might have requirements.
+|
+*/
+
+if (file_exists($requirements = __DIR__.'/../bootstrap/requirements.php'))
+{
+	require $requirements;
+}
+
+/*
+|--------------------------------------------------------------------------
 | Register The Auto Loader
 |--------------------------------------------------------------------------
 |
