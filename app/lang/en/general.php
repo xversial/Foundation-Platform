@@ -17,7 +17,7 @@
  * @link       http://cartalyst.com
  */
 
-return array(
+return [
 
 	'error'        => 'Error',
 	'success'      => 'Success',
@@ -32,6 +32,8 @@ return array(
 	'actions'      => 'Actions',
 	'bulk_actions' => 'Bulk Actions',
 	'status'       => 'Status',
+	'allow'        => 'Allow',
+	'deny'         => 'Deny',
 
 	'delete_record' => 'You are about to delete this record, do you want to continue?',
 
@@ -54,4 +56,10 @@ return array(
 	'all_enabled'   => 'All Enabled',
 	'all_disabled'  => 'All Disabled',
 
-);
+	'tabs' => [
+		'general'     => 'General',
+		'permissions' => 'Permissions',
+		'attributes'  => 'Attributes',
+	]
+
+];
