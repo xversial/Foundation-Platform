@@ -88,18 +88,6 @@ require app_path().'/hooks.php';
 
 /*
 |--------------------------------------------------------------------------
-| Require The Models Overrides File
-|--------------------------------------------------------------------------
-|
-| Next we'll load the models overrides file. This gives us a
-| nice separate location to register our models overrides.
-|
-*/
-
-require app_path().'/overrides/models.php';
-
-/*
-|--------------------------------------------------------------------------
 | Require The Filters File
 |--------------------------------------------------------------------------
 |
@@ -110,6 +98,18 @@ require app_path().'/overrides/models.php';
 */
 
 require app_path().'/filters.php';
+
+/*
+|--------------------------------------------------------------------------
+| Require The Models Overrides File
+|--------------------------------------------------------------------------
+|
+| Next we'll load the models overrides file. This gives us a
+| nice separate location to register our models overrides.
+|
+*/
+
+require app_path().'/overrides/models.php';
 
 /*
 |--------------------------------------------------------------------------
