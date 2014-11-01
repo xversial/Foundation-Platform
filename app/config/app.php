@@ -131,8 +131,8 @@ return array(
 		'Cartalyst\Themes\ThemeServiceProvider',
 		'Cartalyst\Widgets\WidgetsServiceProvider',
 
-		'Platform\Installer\Laravel\InstallerServiceProvider',
 		'Platform\Foundation\Laravel\PlatformServiceProvider',
+		'Platform\Installer\Laravel\InstallerServiceProvider',
 
 	),
 
