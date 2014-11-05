@@ -10,7 +10,7 @@
  * bundled with this package in the license.txt file.
  *
  * @package    Sentinel Social
- * @version    1.0.0
+ * @version    0.2.0
  * @author     Cartalyst LLC
  * @license    Cartalyst PSL
  * @copyright  (c) 2011-2014, Cartalyst LLC
@@ -48,14 +48,18 @@ return [
 			'driver'     => 'Facebook',
 			'identifier' => '',
 			'secret'     => '',
-			'scopes'     => ['email'],
+			'scopes'     => [
+				'email',
+			],
 		],
 
 		'github' => [
 			'driver'     => 'GitHub',
 			'identifier' => '',
 			'secret'     => '',
-			'scopes'     => ['user'],
+			'scopes'     => [
+				'user',
+			],
 		],
 
 		'google' => [
@@ -68,18 +72,33 @@ return [
 			],
 		],
 
+		'instagram' => [
+			'driver'     => 'Instagram',
+			'identifier' => '',
+			'secret'     => '',
+			'scopes'     => [
+				'basic',
+			],
+		],
+
 		'linkedin' => [
 			'driver'     => 'LinkedIn',
 			'identifier' => '',
 			'secret'     => '',
-			'scopes'     => ['r_fullprofile', 'r_emailaddress'],
+			'scopes'     => [
+				'r_fullprofile',
+				'r_emailaddress',
+			],
 		],
 
 		'microsoft' => [
 			'driver'     => 'Microsoft',
 			'identifier' => '',
 			'secret'     => '',
-			'scopes'     => ['wl.basic', 'wl.emails'],
+			'scopes'     => [
+				'wl.basic',
+				'wl.emails'
+			],
 		],
 
 		'twitter' => [
@@ -105,15 +124,15 @@ return [
 
 	/*
 	|--------------------------------------------------------------------------
-	| Social Link Model
+	| Link Model
 	|--------------------------------------------------------------------------
 	|
-	| When users are registered, a "social link provider" will map the social
+	| When users are registered, a "link repository" will map the social
 	| authentications with user instances. Feel free to use your own model
 	| with our provider.
 	|
 	*/
 
-	'link' => 'Cartalyst\SentinelSocial\Links\EloquentLink',
+	'link' => 'Cartalyst\Sentinel\Addons\Social\Models\Link',
 
 ];
