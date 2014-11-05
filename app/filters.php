@@ -71,9 +71,11 @@ Route::filter('guest', function()
 |
 */
 
-Route::filter('csrf', function()
+Route::filter('csrf', function($route, $request)
 {
-	if (Session::token() != Input::get('_token'))
+	$token = $request->ajax() ? $request->header('x-csrf-token') : $request->input('_token');
+
+	if ($request->session()->get('_token') != $token)
 	{
 		throw new Illuminate\Session\TokenMismatchException;
 	}
@@ -90,7 +92,7 @@ Route::filter('csrf', function()
 
 Route::filter('https', function()
 {
-	if( ! Request::secure())
+	if ( ! Request::secure())
 	{
 		return Redirect::secure(Request::getRequestUri());
 	}
