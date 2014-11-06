@@ -38,20 +38,20 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 
-		"platform/admin-default": "dev-master",
-		"platform/frontend-default": "dev-master",
+		"platform/admin-default": "0.1.*",
+		"platform/frontend-default": "0.1.*",
 
-		"platform/foundation": "dev-master",
-		"platform/installer": "dev-master",
+		"platform/foundation": "0.1.*",
+		"platform/installer": "0.1.*",
 
-		"platform/attributes": "dev-master",
-		"platform/content": "dev-master",
-		"platform/media": "dev-master",
-		"platform/menus": "dev-master",
-		"platform/operations": "dev-master",
-		"platform/pages": "dev-master",
-		"platform/settings": "dev-master",
-		"platform/users": "dev-master",
+		"platform/attributes": "0.1.*",
+		"platform/content": "0.1.*",
+		"platform/media": "0.1.*",
+		"platform/menus": "0.1.*",
+		"platform/operations": "0.1.*",
+		"platform/pages": "0.1.*",
+		"platform/settings": "0.1.*",
+		"platform/users": "0.1.*",
 
 		"cartalyst/sentinel": "dev-master#17e8767622ae89a9dd477fc3ede47f01e32cbd90"
 	},
@@ -91,5 +91,6 @@
 	"config": {
 		"preferred-install": "dist"
 	},
-	"minimum-stability": "dev"
+	"minimum-stability": "dev",
+	"prefer-stable": true
 }
