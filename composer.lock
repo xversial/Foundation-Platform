@@ -633,26 +633,30 @@
         },
         {
             "name": "cartalyst/filesystem",
-            "version": "v2.0.0-beta1",
+            "version": "v2.0.0-alpha1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/filesystem.git",
-                "reference": "7c9fdbd8389cc50b940d501ea81a946ec46dd10b"
+                "reference": "42567e935002a21cc34a02f783cd7c34b536c7fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/filesystem/zipball/7c9fdbd8389cc50b940d501ea81a946ec46dd10b",
-                "reference": "7c9fdbd8389cc50b940d501ea81a946ec46dd10b",
+                "url": "https://api.github.com/repos/cartalyst/filesystem/zipball/42567e935002a21cc34a02f783cd7c34b536c7fb",
+                "reference": "42567e935002a21cc34a02f783cd7c34b536c7fb",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "~4.1",
-                "league/flysystem": "dev-master",
+                "illuminate/support": "~4.1|5.0.*",
+                "league/flysystem": "0.5.*",
                 "php": ">=5.4.0"
             },
             "require-dev": {
+                "aws/aws-sdk-php": "~2.4",
+                "dropbox/dropbox-sdk": "~1.1.1",
                 "mockery/mockery": "~0.9",
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "~4.0",
+                "rackspace/php-opencloud": "~1.10.0",
+                "sabre/dav": "~2.0.2"
             },
             "type": "library",
             "extra": {
@@ -701,10 +705,10 @@
                 "php"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/filesystem/tree/v2.0.0-beta1",
+                "source": "https://github.com/cartalyst/filesystem/tree/master",
                 "issues": "https://github.com/cartalyst/filesystem/issues"
             },
-            "time": "2014-07-22 19:00:53"
+            "time": "2014-10-28 22:14:41"
         },
         {
             "name": "cartalyst/interpret",
@@ -875,7 +879,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentinel/zipball/91b0c366359a476e3d5ff7552c81295d8cbdf50e",
+                "url": "https://api.github.com/repos/cartalyst/sentinel/zipball/3193410d3c0e980d8c0faa69d018775bf7df1277",
                 "reference": "17e8767622ae89a9dd477fc3ede47f01e32cbd90",
                 "shasum": ""
             },
@@ -885,10 +889,10 @@
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "illuminate/cookie": "~4.1",
-                "illuminate/database": "~4.1",
-                "illuminate/http": "~4.1",
-                "illuminate/session": "~4.1",
+                "illuminate/cookie": "~4.1|5.0.*",
+                "illuminate/database": "~4.1|5.0.*",
+                "illuminate/http": "~4.1|5.0.*",
+                "illuminate/session": "~4.1|5.0.*",
                 "ircmaxell/password-compat": "~1.0",
                 "mockery/mockery": "~0.9",
                 "phpunit/phpunit": "~4.0"
@@ -956,7 +960,7 @@
                 "source": "https://github.com/cartalyst/sentinel/tree/master",
                 "issues": "https://github.com/cartalyst/sentinel/issues"
             },
-            "time": "2014-09-02 15:12:26"
+            "time": "2014-10-28 23:54:12"
         },
         {
             "name": "cartalyst/sentinel-social",
@@ -2329,7 +2333,7 @@
         },
         {
             "name": "league/flysystem",
-            "version": "dev-master",
+            "version": "0.5.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
