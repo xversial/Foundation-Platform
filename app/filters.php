@@ -75,7 +75,7 @@ Route::filter('csrf', function($route, $request)
 {
 	$token = $request->ajax() ? $request->header('x-csrf-token') : $request->input('_token');
 
-	if ($request->session()->get('_token') != $token)
+	if ($request->session()->get('_token') !== $token)
 	{
 		throw new Illuminate\Session\TokenMismatchException;
 	}
