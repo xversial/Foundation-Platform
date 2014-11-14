@@ -1,4 +1,4 @@
-# Basics
+## Basics
 
 Platform 2 isn't just a CMS system. It's a flexible and extensible application which provides a solid base.
 
