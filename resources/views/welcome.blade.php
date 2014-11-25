@@ -4,7 +4,7 @@
 <div id="welcome">
     <div class="jumbotron">
         <div class="container">
-            <h1 class="jumbotron__header">Welcome to Laravel 5.</h1>
+            <h1 class="jumbotron__header">You have arrived.</h1>
 
             <p class="jumbotron__body">
                 Laravel is a web application framework with expressive, elegant syntax. We believe development
