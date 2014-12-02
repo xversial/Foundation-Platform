@@ -33,9 +33,7 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase {
 	 */
 	protected function setUpPlatform()
 	{
-		// Migrations table
-		$this->app['artisan']->call('migrate');
-		$this->app['artisan']->call('migrate:reset');
+		$this->migrate();
 
 		// Installer instance
 		$installer = $this->app['platform.installer'];
@@ -43,25 +41,43 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase {
 		// Get database driver
 		$driver = $this->app['db']->connection()->getDriverName();
 
-		// Set database driver
-		$installer->getRepository()->setDatabaseDriver($driver);
-
 		// Get database config
 		$config = $this->app['config']->get("database.connections.{$driver}");
 
+		// Set test user data
+		$installer->setUserData([
+			'email'    => 'foo@example.com',
+			'password' => 'secret',
+		]);
+
 		// Set database config
-		$installer->getRepository()->setDatabaseConfig($driver, $config);
+		$installer->setDatabaseData($driver, $config);
 
 		// Migrate packages
-		$installer->migrateRequiredPackages();
+		$installer->install(true);
 
-		// Migrate platform
-		$installer->migrateFoundation();
-
-		// Migrate extensions
-		$installer->installExtensions();
+		// Migrate application.
+		$this->app['artisan']->call('migrate', ['--env' => 'testing']);
 
 		// Boot extensions
 		$this->app['platform']->bootExtensions();
 	}
+
+	/**
+	 * Resets the database and install the migration table.
+	 *
+	 * @return void
+	 */
+	protected function migrate()
+	{
+		$tableNames = Schema::getConnection()->getDoctrineSchemaManager()->listTableNames();
+
+		foreach ($tableNames as $table)
+		{
+			Schema::drop($table);
+		}
+
+		$this->app['artisan']->call('migrate:install', ['--env' => 'testing']);
+	}
+
 }
