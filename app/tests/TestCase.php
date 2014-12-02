@@ -44,12 +44,6 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase {
 		// Get database config
 		$config = $this->app['config']->get("database.connections.{$driver}");
 
-		// Set test user data
-		$installer->setUserData([
-			'email'    => 'foo@example.com',
-			'password' => 'secret',
-		]);
-
 		// Set database config
 		$installer->setDatabaseData($driver, $config);
 
