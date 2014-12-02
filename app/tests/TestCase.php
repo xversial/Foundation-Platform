@@ -34,8 +34,7 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase {
 	protected function setUpPlatform()
 	{
 		// Migrations table
-		$this->app['artisan']->call('migrate');
-		$this->app['artisan']->call('migrate:reset');
+		$this->migrate();
 
 		// Installer instance
 		$installer = $this->app['platform.installer'];
@@ -61,7 +60,28 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase {
 		// Migrate extensions
 		$installer->installExtensions();
 
+		// Migrate application
+		$this->app['artisan']->call('migrate', ['--env' => 'testing']);
+
 		// Boot extensions
 		$this->app['platform']->bootExtensions();
 	}
+
+	/**
+	 * Resets the database and install the migration table.
+	 *
+	 * @return void
+	 */
+	protected function migrate()
+	{
+		$tableNames = Schema::getConnection()->getDoctrineSchemaManager()->listTableNames();
+
+		foreach ($tableNames as $table)
+		{
+			Schema::drop($table);
+		}
+
+		$this->app['artisan']->call('migrate:install', ['--env' => 'testing']);
+	}
+
 }
