@@ -36,11 +36,23 @@ return [
 		|--------------------------------------------------------------------------
 		|
 		| Here you may specify the title of the site you are building, to be used
-		| throughout the templates (as an example).
+		| throughout your templates (as an example).
 		|
 		*/
 
 		'title' => 'Platform',
+
+		/*
+		|--------------------------------------------------------------------------
+		| Site Tagline
+		|--------------------------------------------------------------------------
+		|
+		| Here you may specify the tagline of the site you are building, to be used
+		| throughout your templates (as an example).
+		|
+		*/
+
+		'tagline' => 'An application base on Laravel',
 
 		/*
 		|--------------------------------------------------------------------------
@@ -95,9 +107,8 @@ return [
 		'menu' => [
 
 			'main-documentation',
+			'main-support',
 			'main-license',
-			'main-login',
-			'main-logout',
 
 		],
 
