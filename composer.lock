@@ -157,12 +157,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/assetic-filters.git",
-                "reference": "383cda8d7b2f30d800ff595c71c18c52bd646c07"
+                "reference": "3fcca3e9f2fbd8c7a190fdd989d4fe77abd228dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/assetic-filters/zipball/383cda8d7b2f30d800ff595c71c18c52bd646c07",
-                "reference": "383cda8d7b2f30d800ff595c71c18c52bd646c07",
+                "url": "https://api.github.com/repos/cartalyst/assetic-filters/zipball/3fcca3e9f2fbd8c7a190fdd989d4fe77abd228dd",
+                "reference": "3fcca3e9f2fbd8c7a190fdd989d4fe77abd228dd",
                 "shasum": ""
             },
             "require": {
@@ -226,7 +226,11 @@
                 "sass",
                 "themes"
             ],
-            "time": "2014-12-03 03:11:07"
+            "support": {
+                "source": "https://github.com/cartalyst/assetic-filters/tree/master",
+                "issues": "https://github.com/cartalyst/assetic-filters/issues"
+            },
+            "time": "2014-12-04 17:58:56"
         },
         {
             "name": "cartalyst/attributes",
