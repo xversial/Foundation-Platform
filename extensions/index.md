@@ -1,4 +1,4 @@
-# Extensions
+## Extensions
 
 Extensions allow you to extend Platform 2 beyond its basic functionality. The
 default extensions for Platform 2 are actually composer packages. If you want,
