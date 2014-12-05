@@ -156,7 +156,7 @@ return [
 		'local' => [
 
 			'adapter' => 'local',
-			'path'    => public_path().'/files',
+			'path'    => storage_path().'/files',
 
 		],
 
@@ -164,7 +164,7 @@ return [
 		'zip' => [
 
 			'adapter' => 'zip',
-			'path'    => public_path().'/files/filesystem.zip',
+			'path'    => storage_path().'/files/filesystem.zip',
 
 		],
 
