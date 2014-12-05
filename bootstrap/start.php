@@ -2,19 +2,6 @@
 
 /*
 |--------------------------------------------------------------------------
-| Override Request Class
-|--------------------------------------------------------------------------
-|
-| By overriding our request class to that of the API package, we are able
-| to inspect input as runtime objects rather than serialized strings.
-|
-*/
-
-$paths = require __DIR__.'/paths.php';
-require_once $paths['base'].'/vendor/cartalyst/api/src/start.php';
-
-/*
-|--------------------------------------------------------------------------
 | Create The Application
 |--------------------------------------------------------------------------
 |
