@@ -122,6 +122,9 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
+		'Cartalyst\Platform\Laravel\OverridesServiceProvider',
+		'Cartalyst\Platform\Laravel\DeferredOverridesServiceProvider',
+
 		'Cartalyst\Sentinel\Laravel\SentinelServiceProvider',
 		'Cartalyst\DataGrid\Laravel\DataGridServiceProvider',
 		'Cartalyst\Extensions\Laravel\ExtensionsServiceProvider',
