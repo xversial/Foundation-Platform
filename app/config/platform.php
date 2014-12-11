@@ -75,7 +75,7 @@ return [
 		|
 		*/
 
-		'copyright' => 'Copyright (c) 2011-2014, Cartalyst LLC',
+		'copyright' => '&copy; 2011-2014, Cartalyst LLC',
 
 	],
 
