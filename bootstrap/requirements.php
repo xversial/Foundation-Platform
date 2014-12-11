@@ -89,7 +89,7 @@ class StoragePermissionsRequirement implements RequirementInterface {
 	 */
 	public function check()
 	{
-		return     is_writable(realpath(__DIR__.'/../app/storage'));
+		return is_writable(realpath(__DIR__.'/../app/storage'));
 	}
 
 	/**
@@ -106,34 +106,6 @@ class StoragePermissionsRequirement implements RequirementInterface {
 	public function message()
 	{
 		return 'app/storage must be writable.';
-	}
-
-}
-
-class ConfigPermissionsRequirement implements RequirementInterface {
-
-	/**
-	 * {@inheritDoc}
-	 */
-	public function check()
-	{
-		return is_writable(realpath(__DIR__.'/../app/config'));
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	public function title()
-	{
-		return 'Public Write Permissions';
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	public function message()
-	{
-		return 'app/config must be writable.';
 	}
 
 }
@@ -319,7 +291,6 @@ class DummyRequirement implements RequirementInterface {
 $requirements = [
 	new DependenciesRequirement,
 	new StoragePermissionsRequirement,
-	new ConfigPermissionsRequirement,
 	new PublicPermissionsRequirement,
 	new McryptExtensionRequirement,
 	new GDExtensionRequirement,
