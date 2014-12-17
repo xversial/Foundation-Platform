@@ -131,7 +131,7 @@ return array(
 		'Cartalyst\Filesystem\Laravel\FilesystemServiceProvider',
 		'Cartalyst\NestedSets\NestedSetsServiceProvider',
 		'Cartalyst\Themes\ThemeServiceProvider',
-		'Cartalyst\Widgets\WidgetsServiceProvider',
+		'Cartalyst\Widgets\Laravel\WidgetsServiceProvider',
 
 		'Platform\Foundation\Laravel\PlatformServiceProvider',
 		'Platform\Installer\Laravel\InstallerServiceProvider',
@@ -213,7 +213,7 @@ return array(
 		'Reminder'          => 'Cartalyst\Sentinel\Laravel\Facades\Reminder',
 		'Sentinel'          => 'Cartalyst\Sentinel\Laravel\Facades\Sentinel',
 		'Theme'             => 'Cartalyst\Themes\Facades\Theme',
-		'Widget'            => 'Cartalyst\Widgets\Facades\Widget',
+		'Widget'            => 'Cartalyst\Widgets\Laravel\Facades\Widget',
 
 		'Installer'         => 'Platform\Installer\Laravel\Facades\Installer',
 		'Page'              => 'Platform\Pages\Models\Page',
