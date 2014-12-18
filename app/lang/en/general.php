@@ -35,6 +35,8 @@ return [
 	'allow'        => 'Allow',
 	'deny'         => 'Deny',
 	'inherit'      => 'Inherit',
+	'reset'        => 'Reset',
+	'refresh'      => 'Refresh',
 
 	'delete_record' => 'You are about to delete this record, do you want to continue?',
 
