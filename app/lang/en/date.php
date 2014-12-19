@@ -33,9 +33,9 @@ return [
 	'today'         => 'Today',
 	'tomorrow'      => 'Tomorrow',
 	'yesterday'     => 'Yesterday',
-	'this-month'    => 'This Month',
-	'last-month'    => 'Last Month',
-	'next-month'    => 'Next Month',
+	'this_month'    => 'This Month',
+	'last_month'    => 'Last Month',
+	'next_month'    => 'Next Month',
 
 	'months' => [
 	    'january'   => 'January',
