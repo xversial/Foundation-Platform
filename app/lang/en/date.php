@@ -30,6 +30,9 @@ return [
 	|
 	*/
 
+	'day'           => 'Day',
+	'week'          => 'Week',
+	'month'         => 'Month',
 	'today'         => 'Today',
 	'tomorrow'      => 'Tomorrow',
 	'yesterday'     => 'Yesterday',
