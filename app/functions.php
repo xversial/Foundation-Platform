@@ -47,7 +47,7 @@ if ( ! function_exists('set_menu_order'))
 
 		foreach ($slugs as $slug)
 		{
-			if ( ! $current = Menu::find($slug)) continue;
+			if ( ! $current = Menu::whereSlug($slug)->first()) continue;
 
 			// If we have a previous menu child, we're assigning
 			// this child as it's next sibling
@@ -62,7 +62,7 @@ if ( ! function_exists('set_menu_order'))
 			// be the first child
 			else
 			{
-				$admin = Menu::find($menuSlug);
+				$admin = Menu::whereSlug($menuSlug)->first();
 				$current->makeFirstChildOf($admin);
 			}
 

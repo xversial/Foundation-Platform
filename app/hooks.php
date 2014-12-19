@@ -41,6 +41,7 @@ Installer::after(function()
 	if (class_exists('Platform\Menus\Models\Menu'))
 	{
 		set_menu_order('admin', Config::get('platform.admin.menu'));
+
 		set_menu_order('main', Config::get('platform.frontend.menu'));
 	}
 });
