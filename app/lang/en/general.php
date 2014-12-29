@@ -39,7 +39,6 @@ return [
 	'refresh'      => 'Refresh',
 
 	'delete_record' => 'You are about to delete this record, do you want to continue?',
-
 	'not_logged_in' => 'You are not logged in.',
 
 	// Search, Filter & Pagination
@@ -58,6 +57,10 @@ return [
 	'show_disabled' => 'Show disabled',
 	'all_enabled'   => 'All Enabled',
 	'all_disabled'  => 'All Disabled',
+	'export'        => 'Export',
+	'json'          => 'JSON',
+	'csv'           => 'CSV',
+	'pdf'           => 'PDF',
 
 	'tabs' => [
 		'general'     => 'General',

@@ -143,10 +143,11 @@ return [
 
 			'admin-pages',
 			'admin-content',
+			'admin-media',
 			'admin-attributes',
 			'admin-menus',
+			'admin-access',
 			'admin-operations',
-			'admin-users',
 
 		],
 
