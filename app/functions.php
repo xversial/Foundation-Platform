@@ -76,7 +76,7 @@ if ( ! function_exists('show_error_page'))
 	/**
 	 * Show a production error page for the given status code.
 	 *
-	 * @param  int  $statsuCode
+	 * @param  int  $statusCode
 	 * @return \Illuminate\Http\Response
 	 */
 	function show_error_page($statusCode)
