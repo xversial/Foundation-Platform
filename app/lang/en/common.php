@@ -64,10 +64,4 @@ return [
 		'attributes'  => 'Attributes',
 	],
 
-	'id'         => 'Id',
-	'name'       => 'Name',
-	'slug'       => 'Slug',
-	'created_at' => 'Created at',
-	'updated_at' => 'Updated at',
-
 ];
