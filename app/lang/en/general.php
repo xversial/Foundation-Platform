@@ -57,15 +57,17 @@ return [
 	'show_disabled' => 'Show disabled',
 	'all_enabled'   => 'All Enabled',
 	'all_disabled'  => 'All Disabled',
-	'export'        => 'Export',
-	'json'          => 'JSON',
-	'csv'           => 'CSV',
-	'pdf'           => 'PDF',
 
 	'tabs' => [
 		'general'     => 'General',
 		'permissions' => 'Permissions',
 		'attributes'  => 'Attributes',
-	]
+	],
+
+	'id'         => 'Id',
+	'name'       => 'Name',
+	'slug'       => 'Slug',
+	'created_at' => 'Created at',
+	'updated_at' => 'Updated at',
 
 ];

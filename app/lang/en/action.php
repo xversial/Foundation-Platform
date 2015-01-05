@@ -19,17 +19,6 @@
 
 return [
 
-	/*
-	|--------------------------------------------------------------------------
-	| Button Language Lines
-	|--------------------------------------------------------------------------
-	|
-	| The following language lines are used throughout the whole application.
-	| You can change them to anything you want to customize your views to
-	| better match your application.
-	|
-	*/
-
 	'add'       => 'Add',
 	'create'    => 'Create',
 	'remove'    => 'Remove',
@@ -39,13 +28,15 @@ return [
 	'update'    => 'Save Changes',
 	'submit'    => 'Submit',
 	'save'      => 'Save',
+	'copy'      => 'Copy',
+	'update'    => 'Update',
 	'enable'    => 'Enable',
 	'disable'   => 'Disable',
 	'install'   => 'Install',
 	'uninstall' => 'Uninstall',
-	'copy'      => 'Copy',
 	'close'     => 'Close',
 	'upload'    => 'Upload',
+	'export'    => 'Export',
 
 	'bulk' => [
 		'delete'  => 'Delete Selected',
