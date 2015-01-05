@@ -31,7 +31,6 @@ return [
 	'uninstalled'  => 'Uninstalled',
 	'actions'      => 'Actions',
 	'bulk_actions' => 'Bulk Actions',
-	'status'       => 'Status',
 	'allow'        => 'Allow',
 	'deny'         => 'Deny',
 	'inherit'      => 'Inherit',

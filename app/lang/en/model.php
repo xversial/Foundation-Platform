@@ -24,5 +24,6 @@ return [
 	'slug'       => 'Slug',
 	'created_at' => 'Created at',
 	'updated_at' => 'Updated at',
+	'status'     => 'Status',
 
 ];
