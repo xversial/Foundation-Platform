@@ -35,7 +35,7 @@ class UrlGenerator extends \Illuminate\Routing\UrlGenerator {
 		$referer = $this->request->headers->get('referer', $fallback);
 
 		return $this->to(
-			app('request')->input('previous_url', $referer)
+			$this->request->input('previous_url', $referer)
 		);
 	}
 
