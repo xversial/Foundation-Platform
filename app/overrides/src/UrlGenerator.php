@@ -24,4 +24,19 @@ class UrlGenerator extends \Illuminate\Routing\UrlGenerator {
 
 	use AccessUrlGeneratorTrait, LocalizationUrlGeneratorTrait;
 
+	/**
+	 * Get the URL for the previous request.
+	 *
+	 * @param  string  $fallback
+	 * @return string
+	 */
+	public function previous($fallback = null)
+	{
+		$referer = $this->request->headers->get('referer', $fallback);
+
+		return $this->to(
+			app('request')->input('previous_url', $referer)
+		);
+	}
+
 }
