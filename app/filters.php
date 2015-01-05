@@ -38,7 +38,7 @@ Route::filter('auth', function()
 	if (Auth::guest())
 	{
 		return Redirect::guest('login')->withErrors(
-			trans('general.not_logged_in')
+			trans('message.not_logged_in')
 		);
 	}
 });
