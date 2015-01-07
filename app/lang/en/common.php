@@ -60,4 +60,12 @@ return [
 		'attributes'  => 'Attributes',
 	],
 
+	'help'  =>  [
+
+		'title'         => 'Help',
+		'documentation' => 'Read Manual',
+		'setting'       => 'Disable help panels in settings > general',
+
+	],
+
 ];
