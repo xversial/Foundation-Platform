@@ -34,7 +34,9 @@ return [
 	'disable'   => 'Disable',
 	'install'   => 'Install',
 	'uninstall' => 'Uninstall',
+	'open'      => 'Open',
 	'close'     => 'Close',
+	'collapse'  => 'Open/Close',
 	'upload'    => 'Upload',
 	'export'    => 'Export',
 
