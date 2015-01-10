@@ -21,7 +21,9 @@ return [
 
 	'error'        => 'Error',
 	'success'      => 'Success',
+	'info'         => 'Info',
 	'warning'      => 'Warning',
+	'danger'       => 'Danger',
 	'yes'          => 'Yes',
 	'no'           => 'No',
 	'all'          => 'All',
