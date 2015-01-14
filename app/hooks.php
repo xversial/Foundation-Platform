@@ -44,6 +44,14 @@ Installer::after(function()
 
 		set_menu_order('main', Config::get('platform.frontend.menu'));
 	}
+
+	// Create the registered role
+	$registeredRole = app('sentinel')->getRoleRepository()->createModel();
+	$registeredRole->fill([
+		'slug' => 'registered',
+		'name' => 'Registered',
+	]);
+	$registeredRole->save();
 });
 
 /*
