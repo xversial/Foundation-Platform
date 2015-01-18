@@ -67,11 +67,11 @@
 		],
 		"post-update-cmd": [
 			"php artisan clear-compiled",
-			"php artisan optimize",
-			"php artisan platform:upgrade",
-			"php artisan theme:publish --extensions",
-			"php artisan asset:publish platform/installer",
-			"php artisan theme:compile"
+			"php artisan optimize"
+		],
+		"post-create-project-cmd": [
+			"php -r \"copy('.env.example', '.env');\"",
+			"php artisan key:generate"
 		]
 	},
 	"config": {
