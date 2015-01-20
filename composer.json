@@ -38,22 +38,22 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 
-		"platform/admin-default": "dev-feature/refactor",
-		"platform/frontend-default": "dev-master",
+		"platform/admin-default": "1.0.*",
+		"platform/frontend-default": "1.0.*",
 
-		"platform/foundation": "dev-feature/traits",
-		"platform/installer": "dev-feature/traits",
+		"platform/foundation": "1.0.*",
+		"platform/installer": "1.0.*",
 
-		"platform/access": "~1.0",
-		"platform/dashboard": "~1.0",
-		"platform/attributes": "dev-feature/traits",
-		"platform/content": "dev-feature/traits",
-		"platform/media": "dev-feature/traits",
-		"platform/menus": "dev-feature/traits",
-		"platform/operations": "dev-feature/traits",
-		"platform/pages": "dev-feature/traits",
-		"platform/settings": "dev-feature/traits",
-		"platform/themes": "~1.0"
+		"platform/access": "1.0.*",
+		"platform/attributes": "1.0.*",
+		"platform/content": "1.0.*",
+		"platform/dashboard": "1.0.*",
+		"platform/media": "1.0.*",
+		"platform/menus": "1.0.*",
+		"platform/operations": "1.0.*",
+		"platform/pages": "1.0.*",
+		"platform/settings": "1.0.*",
+		"platform/themes": "1.0.*"
 	},
 	"require-dev": {
 		"doctrine/dbal": "~2.4"
