@@ -18,11 +18,10 @@
  */
 
 use Platform\Access\Traits\UrlGeneratorTrait as AccessUrlGeneratorTrait;
-use Cartalyst\Localization\Traits\UrlGeneratorTrait as LocalizationUrlGeneratorTrait;
 
 class UrlGenerator extends \Illuminate\Routing\UrlGenerator {
 
-	use AccessUrlGeneratorTrait, LocalizationUrlGeneratorTrait;
+	use AccessUrlGeneratorTrait;
 
 	/**
 	 * Get the URL for the previous request.

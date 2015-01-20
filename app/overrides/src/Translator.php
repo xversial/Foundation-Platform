@@ -17,10 +17,6 @@
  * @link       http://cartalyst.com
  */
 
-use Cartalyst\Localization\Traits\TranslatorTrait as LocalizationTranslatorTrait;
-
 class Translator extends \Illuminate\Translation\Translator {
-
-	use LocalizationTranslatorTrait;
 
 }

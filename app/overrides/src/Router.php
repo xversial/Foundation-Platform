@@ -17,10 +17,6 @@
  * @link       http://cartalyst.com
  */
 
-use Cartalyst\Localization\Traits\RouterTrait as LocalizationRouterTrait;
-
 class Router extends \Illuminate\Routing\Router {
-
-	use LocalizationRouterTrait;
 
 }
