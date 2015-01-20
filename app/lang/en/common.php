@@ -56,12 +56,6 @@ return [
 	'all_enabled'   => 'All Enabled',
 	'all_disabled'  => 'All Disabled',
 
-	'tabs' => [
-		'general'     => 'General',
-		'permissions' => 'Permissions',
-		'attributes'  => 'Attributes',
-	],
-
 	'help'  =>  [
 
 		'title'         => 'Help',
