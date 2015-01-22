@@ -7,7 +7,7 @@ Platform is not just another CMS, it's a starting point for you to build your ap
 - Laravel 4.2
 - Authentication & Authorization
 - Social Authentication (OAuth, OAuth 2)
-- Bootstrap 3.1.1 Ready
+- Bootstrap 3.3.1 Ready
 - Frontend/Backend/Custom Themes
 - User/Group management + permissions
 - Content Management
