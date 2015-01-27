@@ -37,6 +37,11 @@ Route::filter('auth', function()
 {
 	if (Auth::guest())
 	{
+		if (Request::ajax())
+		{
+			return Response::make('Unauthorized', 401);
+		}
+
 		return Redirect::guest('login')->withErrors(
 			trans('message.not_logged_in')
 		);
