@@ -122,16 +122,18 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
-		'Cartalyst\Api\Laravel\ApiServiceProvider',
+		'Cartalyst\Platform\Laravel\OverridesServiceProvider',
+
 		'Cartalyst\Sentinel\Laravel\SentinelServiceProvider',
 		'Cartalyst\DataGrid\Laravel\DataGridServiceProvider',
 		'Cartalyst\Extensions\Laravel\ExtensionsServiceProvider',
+		'Cartalyst\Filesystem\Laravel\FilesystemServiceProvider',
 		'Cartalyst\NestedSets\NestedSetsServiceProvider',
 		'Cartalyst\Themes\ThemeServiceProvider',
-		'Cartalyst\Widgets\WidgetsServiceProvider',
+		'Cartalyst\Widgets\Laravel\WidgetsServiceProvider',
 
-		'Platform\Installer\Laravel\InstallerServiceProvider',
 		'Platform\Foundation\Laravel\PlatformServiceProvider',
+		'Platform\Installer\Laravel\InstallerServiceProvider',
 
 	),
 
@@ -200,22 +202,21 @@ return array(
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
 
-		'Activation'    => 'Cartalyst\Sentinel\Laravel\Facades\Activation',
-		'API'           => 'Cartalyst\Api\Laravel\Facades\API',
-		'ApiResponse'   => 'Cartalyst\Api\Response',
-		'Asset'         => 'Cartalyst\Themes\Facades\Asset',
-		'Auth'          => 'Cartalyst\Sentinel\Laravel\Facades\Sentinel',
-		'DataGrid'      => 'Cartalyst\DataGrid\Laravel\Facades\DataGrid',
-		'Extension'     => 'Cartalyst\Extensions\Extension',
-		'Extensions'    => 'Cartalyst\Extensions\Laravel\Facades\Extensions',
-		'Reminder'      => 'Cartalyst\Sentinel\Laravel\Facades\Reminder',
-		'Sentinel'      => 'Cartalyst\Sentinel\Laravel\Facades\Sentinel',
-		'Theme'         => 'Cartalyst\Themes\Facades\Theme',
-		'Widget'        => 'Cartalyst\Widgets\Facades\Widget',
+		'Activation'        => 'Cartalyst\Sentinel\Laravel\Facades\Activation',
+		'Asset'             => 'Cartalyst\Themes\Facades\Asset',
+		'Auth'              => 'Cartalyst\Sentinel\Laravel\Facades\Sentinel',
+		'DataGrid'          => 'Cartalyst\DataGrid\Laravel\Facades\DataGrid',
+		'Extension'         => 'Cartalyst\Extensions\Extension',
+		'Extensions'        => 'Cartalyst\Extensions\Laravel\Facades\Extensions',
+		'Filesystem'        => 'Cartalyst\Filesystem\Laravel\Facades\Filesystem',
+		'Reminder'          => 'Cartalyst\Sentinel\Laravel\Facades\Reminder',
+		'Sentinel'          => 'Cartalyst\Sentinel\Laravel\Facades\Sentinel',
+		'Theme'             => 'Cartalyst\Themes\Facades\Theme',
+		'Widget'            => 'Cartalyst\Widgets\Laravel\Facades\Widget',
 
-		'Installer'     => 'Platform\Installer\Laravel\Facades\Installer',
-		'Page'          => 'Platform\Pages\Models\Page',
-		'Platform'      => 'Platform\Foundation\Laravel\Facades\Platform',
+		'Installer'         => 'Platform\Installer\Laravel\Facades\Installer',
+		'Page'              => 'Platform\Pages\Models\Page',
+		'Platform'          => 'Platform\Foundation\Laravel\Facades\Platform',
 
 	),
 

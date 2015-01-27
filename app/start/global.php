@@ -66,9 +66,9 @@ App::down(function()
 | Require The Functions File
 |--------------------------------------------------------------------------
 |
-| We will require a file which you can define any custom functions for
-| your application, before any usage of these functions occurs. This
-| is just  a convenient way to organize your code.
+| Require a file where you can define all of your application custom
+| functions before any usage of these functions occurs. This is just
+| a convenient way to organize your code.
 |
 */
 
@@ -79,7 +79,7 @@ require app_path().'/functions.php';
 | Require The Hooks File
 |--------------------------------------------------------------------------
 |
-| Next we will load the hooks file for your Platform application. This
+| Next we will load the hooks file for your Platform application, this
 | file contains a number of events which you can hook into.
 |
 */
@@ -88,16 +88,28 @@ require app_path().'/hooks.php';
 
 /*
 |--------------------------------------------------------------------------
-| Require The Overrides File
+| Require The Filters File
 |--------------------------------------------------------------------------
 |
-| Finally, we'll load the overrides file, which is a convenient place to
-| override functionality in Laravel, Platform, all packages and
-| Extensions.
+| Next we will load the filters file for the application. This gives us
+| a nice separate location to store our route and application filter
+| definitions instead of putting them all in the main routes file.
 |
 */
 
-require app_path().'/overrides.php';
+require app_path().'/filters.php';
+
+/*
+|--------------------------------------------------------------------------
+| Require The Models Overrides File
+|--------------------------------------------------------------------------
+|
+| Next we'll load the models overrides file. This gives us a
+| nice separate location to register our models overrides.
+|
+*/
+
+require app_path().'/overrides/models.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -112,16 +124,15 @@ Platform::boot();
 
 /*
 |--------------------------------------------------------------------------
-| Require The Filters File
+| Require The Services Overrides File
 |--------------------------------------------------------------------------
 |
-| Next we will load the filters file for the application. This gives us
-| a nice separate location to store our route and application filter
-| definitions instead of putting them all in the main routes file.
+| Next we'll load the services overrides file. This gives us a
+| nice separate location to override various services.
 |
 */
 
-require app_path().'/filters.php';
+require app_path().'/overrides/services.php';
 
 /*
 |--------------------------------------------------------------------------

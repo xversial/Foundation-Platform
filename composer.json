@@ -38,22 +38,22 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 
-		"platform/admin-default": "0.1.*",
-		"platform/frontend-default": "0.1.*",
+		"platform/admin-default": "1.0.*",
+		"platform/frontend-default": "1.0.*",
 
-		"platform/foundation": "0.1.*",
-		"platform/installer": "0.1.*",
+		"platform/foundation": "1.0.*",
+		"platform/installer": "1.0.*",
 
-		"platform/attributes": "0.1.*",
-		"platform/content": "0.1.*",
-		"platform/media": "0.1.*",
-		"platform/menus": "0.1.*",
-		"platform/operations": "0.1.*",
-		"platform/pages": "0.1.*",
-		"platform/settings": "0.1.*",
-		"platform/users": "0.1.*",
-
-		"cartalyst/sentinel": "dev-master#17e8767622ae89a9dd477fc3ede47f01e32cbd90"
+		"platform/access": "1.0.*",
+		"platform/attributes": "1.0.*",
+		"platform/content": "1.0.*",
+		"platform/dashboard": "1.0.*",
+		"platform/media": "1.0.*",
+		"platform/menus": "1.0.*",
+		"platform/operations": "1.0.*",
+		"platform/pages": "1.0.*",
+		"platform/settings": "1.0.*",
+		"platform/themes": "1.0.*"
 	},
 	"require-dev": {
 		"doctrine/dbal": "~2.4"

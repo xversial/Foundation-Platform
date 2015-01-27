@@ -17,14 +17,14 @@
  * @link       http://cartalyst.com
  */
 
-/*
-|--------------------------------------------------------------------------
-| Application Widgets
-|--------------------------------------------------------------------------
-|
-| Here is where you can map all of the widgets that you can use
-| throughout your application.
-|
-*/
+return [
 
-Widget::map('hello', 'App\Widgets\HelloWidget@show');
+	'id'         => 'Id',
+	'name'       => 'Name',
+	'slug'       => 'Slug',
+	'created_at' => 'Created at',
+	'updated_at' => 'Updated at',
+	'status'     => 'Status',
+	'namespace'  => 'Namespace',
+
+];

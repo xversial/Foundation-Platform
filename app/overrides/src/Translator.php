@@ -1,4 +1,4 @@
-<?php
+<?php namespace Cartalyst\Platform;
 /**
  * Part of the Platform application.
  *
@@ -17,14 +17,6 @@
  * @link       http://cartalyst.com
  */
 
-/*
-|--------------------------------------------------------------------------
-| Application Widgets
-|--------------------------------------------------------------------------
-|
-| Here is where you can map all of the widgets that you can use
-| throughout your application.
-|
-*/
+class Translator extends \Illuminate\Translation\Translator {
 
-Widget::map('hello', 'App\Widgets\HelloWidget@show');
+}

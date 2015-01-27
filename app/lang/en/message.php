@@ -17,14 +17,10 @@
  * @link       http://cartalyst.com
  */
 
-/*
-|--------------------------------------------------------------------------
-| Application Widgets
-|--------------------------------------------------------------------------
-|
-| Here is where you can map all of the widgets that you can use
-| throughout your application.
-|
-*/
+return [
 
-Widget::map('hello', 'App\Widgets\HelloWidget@show');
+	'delete_record' => 'You are about to delete this record, do you want to continue?',
+	'not_logged_in' => 'You are not logged in.',
+	'loading'       => 'Processing Request',
+
+];

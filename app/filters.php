@@ -35,7 +35,12 @@ App::after(function($request, $response)
 
 Route::filter('auth', function()
 {
-	if (Auth::guest()) return Redirect::guest('login')->withErrors(Lang::get('general.not_logged_in'));
+	if (Auth::guest())
+	{
+		return Redirect::guest('login')->withErrors(
+			trans('message.not_logged_in')
+		);
+	}
 });
 
 
@@ -71,9 +76,11 @@ Route::filter('guest', function()
 |
 */
 
-Route::filter('csrf', function()
+Route::filter('csrf', function($route, $request)
 {
-	if (Session::token() !== Input::get('_token'))
+	$token = $request->ajax() ? $request->header('x-csrf-token') : $request->input('_token');
+
+	if ($request->session()->token() !== $token)
 	{
 		throw new Illuminate\Session\TokenMismatchException;
 	}
@@ -88,10 +95,10 @@ Route::filter('csrf', function()
 |
 */
 
-Route::filter('https', function()
+Route::filter('https', function($route, $request)
 {
-	if( ! Request::secure())
+	if ( ! $request->secure())
 	{
-		return Redirect::secure(Request::getRequestUri());
+		return Redirect::secure($request->getRequestUri());
 	}
 });

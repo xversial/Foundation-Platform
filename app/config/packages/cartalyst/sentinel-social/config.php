@@ -10,14 +10,14 @@
  * bundled with this package in the license.txt file.
  *
  * @package    Sentinel Social
- * @version    1.0.0
+ * @version    0.2.0
  * @author     Cartalyst LLC
  * @license    Cartalyst PSL
  * @copyright  (c) 2011-2014, Cartalyst LLC
  * @link       http://cartalyst.com
  */
 
-return array(
+return [
 
 	/*
 	|--------------------------------------------------------------------------
@@ -42,128 +42,97 @@ return array(
 	|
 	*/
 
-	'connections' => array(
+	'connections' => [
 
-		'facebook' => array(
+		'facebook' => [
 			'driver'     => 'Facebook',
 			'identifier' => '',
 			'secret'     => '',
-			'scopes'     => array('email'),
-		),
+			'scopes'     => [
+				'email',
+			],
+		],
 
-		'github' => array(
+		'github' => [
 			'driver'     => 'GitHub',
 			'identifier' => '',
 			'secret'     => '',
-			'scopes'     => array('user'),
-		),
+			'scopes'     => [
+				'user',
+			],
+		],
 
-		'google' => array(
+		'google' => [
 			'driver'     => 'Google',
 			'identifier' => '',
 			'secret'     => '',
-			'scopes'     => array(
+			'scopes'     => [
 				'https://www.googleapis.com/auth/userinfo.profile',
 				'https://www.googleapis.com/auth/userinfo.email',
-			),
-		),
+			],
+		],
 
-		'microsoft' => array(
+		'instagram' => [
+			'driver'     => 'Instagram',
+			'identifier' => '',
+			'secret'     => '',
+			'scopes'     => [
+				'basic',
+			],
+		],
+
+		'linkedin' => [
+			'driver'     => 'LinkedIn',
+			'identifier' => '',
+			'secret'     => '',
+			'scopes'     => [
+				'r_fullprofile',
+				'r_emailaddress',
+			],
+		],
+
+		'microsoft' => [
 			'driver'     => 'Microsoft',
 			'identifier' => '',
 			'secret'     => '',
-			'scopes'     => array('wl.basic', 'wl.emails'),
-		),
+			'scopes'     => [
+				'wl.basic',
+				'wl.emails'
+			],
+		],
 
-		'twitter' => array(
+		'twitter' => [
 			'driver'     => 'Twitter',
 			'identifier' => '',
 			'secret'     => '',
-		),
+		],
 
-		'tumblr' => array(
+		'tumblr' => [
 			'driver'     => 'Tumblr',
 			'identifier' => '',
 			'secret'     => '',
-		),
+		],
 
-		'vkontakte' => array(
+		'vkontakte' => [
 			'driver'     => 'Vkontakte',
 			'identifier' => '',
 			'secret'     => '',
-			'scopes'     => array(),
-		),
+			'scopes'     => [],
+		],
 
-	),
-
-	/*
-	|--------------------------------------------------------------------------
-	| Coming Soon
-	|--------------------------------------------------------------------------
-	|
-	| The below connections are coming very soon. We're in the process of
-	| adding the requirements to the underlying OAuth packages,
-	| league/oauth1-client and league/oauth2-client. The
-	| requirements we're adding are UID, email and
-	| scren name fetching. As soon as they're
-	| added, these drivers will be
-	| available.
-	|
-	*/
-
-		// 'bitly' => array(
-		// 	'driver'     => 'bitly',
-		// 	'identifier' => '',
-		// 	'secret'     => '',
-		// 	'scopes'     => array(),
-		// ),
-
-		// 'fitbit' => array(
-		// 	'driver'     => 'Fitbit',
-		// 	'identifier' => '',
-		// 	'secret'     => '',
-		// ),
-
-		// 'foursquare' => array(
-		// 	'driver'     => 'Foursquare',
-		// 	'identifier' => '',
-		// 	'secret'     => '',
-		// 	'scopes'     => array(),
-		// ),
-
-		// 'soundcloud' => array(
-		// 	'driver'     => 'SoundCloud',
-		// 	'identifier' => '',
-		// 	'secret'     => '',
-		// 	'scopes'     => array(),
-		// ),
-
-
-		// 'yammer' => array(
-		// 	'driver'     => 'Yammer',
-		// 	'identifier' => '',
-		// 	'secret'     => '',
-		// 	'scopes'     => array(),
-		// ),
-
-		// 'linkedin' => array(
-		// 	'driver'     => 'LinkedIn',
-		// 	'identifier' => '',
-		// 	'secret'     => '',
-		// 	'scopes'     => array('r_fullprofile', 'r_emailaddress'),
-		// ),
+	],
 
 	/*
 	|--------------------------------------------------------------------------
-	| Social Link Model
+	| Link Model
 	|--------------------------------------------------------------------------
 	|
-	| When users are registered, a "social link provider" will map the social
+	| When users are registered, a "link repository" will map the social
 	| authentications with user instances. Feel free to use your own model
 	| with our provider.
 	|
 	*/
 
-	'link' => 'Cartalyst\SentinelSocial\Links\EloquentLink',
+	'link' => 'Cartalyst\Sentinel\Addons\Social\Models\Link',
 
-);
+];

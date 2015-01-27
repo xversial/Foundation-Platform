@@ -7,13 +7,13 @@
  * Licensed under the Cartalyst PSL License.
  *
  * This source file is subject to the Cartalyst PSL License that is
- * bundled with this package in the license.txt file.
+ * bundled with this package in the LICENSE file.
  *
  * @package    Platform
  * @version    2.0.0
  * @author     Cartalyst LLC
  * @license    Cartalyst PSL
- * @copyright  (c) 2011-2014, Cartalyst LLC
+ * @copyright  (c) 2011-2015, Cartalyst LLC
  * @link       http://cartalyst.com
  */
 
@@ -47,7 +47,7 @@ if ( ! function_exists('set_menu_order'))
 
 		foreach ($slugs as $slug)
 		{
-			if ( ! $current = Menu::find($slug)) continue;
+			if ( ! $current = Menu::whereSlug($slug)->first()) continue;
 
 			// If we have a previous menu child, we're assigning
 			// this child as it's next sibling
@@ -62,7 +62,7 @@ if ( ! function_exists('set_menu_order'))
 			// be the first child
 			else
 			{
-				$admin = Menu::find($menuSlug);
+				$admin = Menu::whereSlug($menuSlug)->first();
 				$current->makeFirstChildOf($admin);
 			}
 
@@ -76,8 +76,8 @@ if ( ! function_exists('show_error_page'))
 	/**
 	 * Show a production error page for the given status code.
 	 *
-	 * @param  int  $statsuCode
-	 * @return Illuminate\Http\Response
+	 * @param  int  $statusCode
+	 * @return \Illuminate\Http\Response
 	 */
 	function show_error_page($statusCode)
 	{
@@ -87,7 +87,7 @@ if ( ! function_exists('show_error_page'))
 			// default theme ships with these views, but just for safety
 			// (in-case the theme system is what's causing the error)
 			// we also include duplicated views under app/views.
-			$string = View::make("errors/{$statusCode}");
+			$string = view("errors/{$statusCode}");
 		}
 		catch (Exception $e)
 		{
@@ -106,6 +106,6 @@ if ( ! function_exists('show_error_page'))
 			$string = '500 Internal Server Error';
 		}
 
-		return Response::make($string, $statusCode);
+		return response($string, $statusCode);
 	}
 }

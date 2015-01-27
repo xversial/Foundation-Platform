@@ -7,13 +7,13 @@
  * Licensed under the Cartalyst PSL License.
  *
  * This source file is subject to the Cartalyst PSL License that is
- * bundled with this package in the license.txt file.
+ * bundled with this package in the LICENSE file.
  *
  * @package    Platform
  * @version    2.0.0
  * @author     Cartalyst LLC
  * @license    Cartalyst PSL
- * @copyright  (c) 2011-2014, Cartalyst LLC
+ * @copyright  (c) 2011-2015, Cartalyst LLC
  * @link       http://cartalyst.com
  */
 
@@ -21,22 +21,22 @@ return [
 
 	/*
 	|--------------------------------------------------------------------------
-	| Site
+	| App
 	|--------------------------------------------------------------------------
 	|
 	| Basic configuration for your Platform application.
 	|
 	*/
 
-	'site' => [
+	'app' => [
 
 		/*
 		|--------------------------------------------------------------------------
-		| Site Title
+		| App Title
 		|--------------------------------------------------------------------------
 		|
 		| Here you may specify the title of the site you are building, to be used
-		| throughout the templates (as an example).
+		| throughout your templates (as an example).
 		|
 		*/
 
@@ -44,7 +44,19 @@ return [
 
 		/*
 		|--------------------------------------------------------------------------
-		| Site Email
+		| App Tagline
+		|--------------------------------------------------------------------------
+		|
+		| Here you may specify the tagline of the site you are building, to be used
+		| throughout your templates (as an example).
+		|
+		*/
+
+		'tagline' => 'An application base on Laravel',
+
+		/*
+		|--------------------------------------------------------------------------
+		| App Email
 		|--------------------------------------------------------------------------
 		|
 		| Here you may specify your website general email address, this can be
@@ -56,14 +68,25 @@ return [
 
 		/*
 		|--------------------------------------------------------------------------
-		| Site Copyright
+		| App Copyright
 		|--------------------------------------------------------------------------
 		|
 		| Specify the copyright clause for your website
 		|
 		*/
 
-		'copyright' => 'Copyright (c) 2011-2014, Cartalyst LLC',
+		'copyright' => '&copy; 2011-2015, Cartalyst LLC',
+
+		/*
+		|--------------------------------------------------------------------------
+		| App Help
+		|--------------------------------------------------------------------------
+		|
+		| Enable or disable the help sections
+		|
+		*/
+
+		'help' => true,
 
 	],
 
@@ -94,10 +117,9 @@ return [
 
 		'menu' => [
 
-			'main-home',
-			'main-dashboard',
-			'main-login',
-			'main-logout',
+			'main-documentation',
+			'main-support',
+			'main-license',
 
 		],
 
@@ -132,10 +154,11 @@ return [
 
 			'admin-pages',
 			'admin-content',
+			'admin-media',
 			'admin-attributes',
 			'admin-menus',
+			'admin-access',
 			'admin-operations',
-			'admin-users',
 
 		],
 

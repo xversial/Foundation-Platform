@@ -19,12 +19,9 @@
 
 /*
 |--------------------------------------------------------------------------
-| Application Widgets
+| Repositories Overrides
 |--------------------------------------------------------------------------
 |
-| Here is where you can map all of the widgets that you can use
-| throughout your application.
+|
 |
 */
-
-Widget::map('hello', 'App\Widgets\HelloWidget@show');

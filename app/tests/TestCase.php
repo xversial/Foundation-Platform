@@ -33,7 +33,6 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase {
 	 */
 	protected function setUpPlatform()
 	{
-		// Migrations table
 		$this->migrate();
 
 		// Installer instance
@@ -42,25 +41,16 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase {
 		// Get database driver
 		$driver = $this->app['db']->connection()->getDriverName();
 
-		// Set database driver
-		$installer->getRepository()->setDatabaseDriver($driver);
-
 		// Get database config
 		$config = $this->app['config']->get("database.connections.{$driver}");
 
 		// Set database config
-		$installer->getRepository()->setDatabaseConfig($driver, $config);
+		$installer->setDatabaseData($driver, $config);
 
 		// Migrate packages
-		$installer->migrateRequiredPackages();
+		$installer->install(true);
 
-		// Migrate platform
-		$installer->migrateFoundation();
-
-		// Migrate extensions
-		$installer->installExtensions();
-
-		// Migrate application
+		// Migrate application.
 		$this->app['artisan']->call('migrate', ['--env' => 'testing']);
 
 		// Boot extensions

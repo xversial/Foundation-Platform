@@ -1,4 +1,4 @@
-<?php namespace App\Widgets;
+<?php namespace Cartalyst\Platform;
 /**
  * Part of the Platform application.
  *
@@ -17,19 +17,25 @@
  * @link       http://cartalyst.com
  */
 
-class HelloWidget {
+use Platform\Access\Traits\UrlGeneratorTrait as AccessUrlGeneratorTrait;
+
+class UrlGenerator extends \Illuminate\Routing\UrlGenerator {
+
+	use AccessUrlGeneratorTrait;
 
 	/**
-	 * Show a welcome message.
+	 * Get the URL for the previous request.
 	 *
-	 * @param  string  $name
+	 * @param  string  $fallback
 	 * @return string
 	 */
-	public function show($name = null)
+	public function previous($fallback = null)
 	{
-		$name = $name ?: 'stranger';
+		$referer = $this->request->headers->get('referer', $fallback);
 
-		return "Hello {$name}!";
+		return $this->to(
+			$this->request->input('previous_url', $referer)
+		);
 	}
 
 }
