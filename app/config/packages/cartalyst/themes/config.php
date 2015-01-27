@@ -25,7 +25,7 @@ return [
 	|--------------------------------------------------------------------------
 	|
 	| Here you set the default theme paths for your application. Paths should
-	| also be set relative to a publically accessible directory so assets
+	| also be set relative to a publicly accessible directory so assets
 	| can be resolved.
 	|
 	*/
