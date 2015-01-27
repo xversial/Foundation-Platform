@@ -12,7 +12,7 @@
 >
 	<testsuites>
 		<testsuite name="Platform Test Suite">
-			<directory suffix=".php">./app/tests/</directory>
+			<directory suffix="Test.php">./app/tests/</directory>
 		</testsuite>
 	</testsuites>
 </phpunit>
