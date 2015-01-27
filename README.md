@@ -4,52 +4,39 @@
 
 Platform is not just another CMS, it's a starting point for you to build your application providing the tools you need to get the job done as easy as possible.
 
-- Laravel 4.2
-- Authentication & Authorization
-- Social Authentication (OAuth, OAuth 2)
-- Bootstrap 3.3.1 Ready
-- Frontend/Backend/Custom Themes
-- User/Group management + permissions
-- Content Management
-- Menu manager
-- Settings
-- Themes manager
-- Dashboard
-- Extension manager
-- Localisation
-- Developer Tools (extension creator)
-- Powerful Extension System
-- Widgets
-- Plugins
-- API
+Part of the Cartalyst Arsenal & licensed [Cartalyst PSL](LICENSE). Code well, rock on.
 
-[Official website & documentation](http://cartalyst.com/manual/platform)
+## Documentation
 
-Part of the Cartalyst Arsenal & licensed [Cartalyst PSL](license.txt). Code well, rock on.
+Reader-friendly Documentation can be found here. [Platform Manual](https://cartalyst.com/manual/platform).
 
-## Versioning
+Raw files can be found via this projects docs/version branch.
 
-Platform will be maintained under the [Semantic Versioning](http://semver.org/) guidelines as much as possible.
+- [2.0](https://github.com/cartalyst/platform/tree/docs/2.0)
 
-Releases will be numbered with the following format:
+## Changelog
 
-`<major>.<minor>.<patch>`
+Important versions listed below. Refer to the [Changelog](CHANGELOG.md) for a full history of the project.
 
-And constructed with the following guidelines:
-
-* Breaking backward compatibility bumps the major (and resets the minor and patch)
-* New additions without breaking backward compatibility bumps the minor (and resets the patch)
-* Bug fixes and misc changes bumps the patch
+- [2.0](CHANGELOG.md) - TBA
 
 ## Support
 
-Have a bug? Please create an issue here on GitHub that conforms with [necolas's guidelines](https://github.com/necolas/issue-guidelines).
+The following support channels can be used for contact.
 
-https://github.com/cartalyst/platform/issues
+- [Twitter](https://cartalyst.com/@twitter)
+- [Email](mailto:help@cartalyst.com)
 
-Follow us on Twitter, [@cartalyst](http://twitter.com/cartalyst).
+Bug reports, feature requests, and pull requests can be submitted by following our [Contribution Guide](CONTRIBUTING.md).
 
-Join us for a chat on IRC.
+## Contributing & Protocols
 
-Server: irc.freenode.net
-Channel: #cartalyst
+- [Versioning](CONTRIBUTING.md#versioning)
+- [Coding Standards](CONTRIBUTING.md#coding-standards)
+- [Pull Requests](CONTRIBUTING.md#pull-requests)
+
+## License
+
+This software is released under the [Cartalyst PSL](LICENSE) License.
+
+© 2011-2015 Cartalyst LLC, All rights reserved.

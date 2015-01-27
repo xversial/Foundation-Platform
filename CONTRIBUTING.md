@@ -4,7 +4,7 @@ This project adheres to the following standards and practices.
 
 ## Versioning
 
-This Platform 2 is versioned under the [Semantic Versioning](http://semver.org/) guidelines as much as possible.
+Platform 2 is versioned under the [Semantic Versioning](http://semver.org/) guidelines as much as possible.
 
 Releases will be numbered with the following format:
 
@@ -18,7 +18,7 @@ And constructed with the following guidelines:
 
 ## Coding Standards
 
-This Platform 2 is compliant with the [PSR-1](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md) and [PSR-4](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md). If you notice any compliance oversights, please send a patch via pull request.
+Platform 2 is compliant with the [PSR-1](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md) and [PSR-4](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md). If you notice any compliance oversights, please send a patch via pull request.
 
 ## Pull Requests
 
