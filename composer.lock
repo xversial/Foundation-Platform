@@ -4,20 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b63e53b45b67d44a5c9cb5d3e687dd7f",
+    "hash": "767969a5e0127b3b586bee9f2a77b9c6",
     "packages": [
         {
             "name": "cartalyst/alerts",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/alerts.git",
-                "reference": "3a4ceb3d4d095c35ad4d9307dd3ce31a1372b3de"
+                "reference": "6dea04ed9f82a56964d1dc622270e5f3f6435b06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/alerts/zipball/3a4ceb3d4d095c35ad4d9307dd3ce31a1372b3de",
-                "reference": "3a4ceb3d4d095c35ad4d9307dd3ce31a1372b3de",
+                "url": "https://api.github.com/repos/cartalyst/alerts/zipball/6dea04ed9f82a56964d1dc622270e5f3f6435b06",
+                "reference": "6dea04ed9f82a56964d1dc622270e5f3f6435b06",
                 "shasum": ""
             },
             "require": {
@@ -77,11 +77,7 @@
                 "messages",
                 "php"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/alerts/tree/master",
-                "issues": "https://github.com/cartalyst/alerts/issues"
-            },
-            "time": "2015-01-27 05:08:08"
+            "time": "2015-01-28 19:41:56"
         },
         {
             "name": "cartalyst/assetic-filters",
@@ -89,12 +85,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/assetic-filters.git",
-                "reference": "6b81217d459ce0a799ffd4c4e396271f17ef9cfd"
+                "reference": "104bd88017abbb156cdecea12bfa0ccf8c27e07f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/assetic-filters/zipball/6b81217d459ce0a799ffd4c4e396271f17ef9cfd",
-                "reference": "6b81217d459ce0a799ffd4c4e396271f17ef9cfd",
+                "url": "https://api.github.com/repos/cartalyst/assetic-filters/zipball/104bd88017abbb156cdecea12bfa0ccf8c27e07f",
+                "reference": "104bd88017abbb156cdecea12bfa0ccf8c27e07f",
                 "shasum": ""
             },
             "require": {
@@ -158,24 +154,20 @@
                 "sass",
                 "themes"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/assetic-filters/tree/1.2",
-                "issues": "https://github.com/cartalyst/assetic-filters/issues"
-            },
             "time": "2014-09-25 19:05:30"
         },
         {
             "name": "cartalyst/attributes",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/attributes.git",
-                "reference": "b0681bb9e26dce06dad0856d7926634e32d905ca"
+                "reference": "54c1db3c390e581863e46c982430163b5a19b042"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/attributes/zipball/b0681bb9e26dce06dad0856d7926634e32d905ca",
-                "reference": "b0681bb9e26dce06dad0856d7926634e32d905ca",
+                "url": "https://api.github.com/repos/cartalyst/attributes/zipball/54c1db3c390e581863e46c982430163b5a19b042",
+                "reference": "54c1db3c390e581863e46c982430163b5a19b042",
                 "shasum": ""
             },
             "require": {
@@ -238,11 +230,7 @@
                 "laravel",
                 "php"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/attributes/tree/master",
-                "issues": "https://github.com/cartalyst/attributes/issues"
-            },
-            "time": "2015-01-22 04:49:27"
+            "time": "2015-01-28 19:44:58"
         },
         {
             "name": "cartalyst/composer-installers",
@@ -250,12 +238,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/composer-installers.git",
-                "reference": "161d07f3d5833b4648951cf49738fb0ffb123d1a"
+                "reference": "4536efe2f8f49f3ee36c4df36682616098757805"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/composer-installers/zipball/161d07f3d5833b4648951cf49738fb0ffb123d1a",
-                "reference": "161d07f3d5833b4648951cf49738fb0ffb123d1a",
+                "url": "https://api.github.com/repos/cartalyst/composer-installers/zipball/4536efe2f8f49f3ee36c4df36682616098757805",
+                "reference": "4536efe2f8f49f3ee36c4df36682616098757805",
                 "shasum": ""
             },
             "require": {
@@ -318,10 +306,6 @@
                 "laravel",
                 "platform"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/composer-installers/tree/1.2",
-                "issues": "https://github.com/cartalyst/composer-installers/issues"
-            },
             "time": "2014-09-25 19:46:19"
         },
         {
@@ -330,12 +314,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/composite-config.git",
-                "reference": "70b835381c30680a43d058730cda01dfb8c7271e"
+                "reference": "71160b72dc1ac096f151386a3e1cce82c78ac891"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/composite-config/zipball/70b835381c30680a43d058730cda01dfb8c7271e",
-                "reference": "70b835381c30680a43d058730cda01dfb8c7271e",
+                "url": "https://api.github.com/repos/cartalyst/composite-config/zipball/71160b72dc1ac096f151386a3e1cce82c78ac891",
+                "reference": "71160b72dc1ac096f151386a3e1cce82c78ac891",
                 "shasum": ""
             },
             "require": {
@@ -399,10 +383,6 @@
                 "laravel",
                 "platform"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/composite-config/tree/v1.1.1",
-                "issues": "https://github.com/cartalyst/composite-config/issues"
-            },
             "time": "2014-09-26 16:13:10"
         },
         {
@@ -484,10 +464,6 @@
                 "php",
                 "search"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/data-grid/tree/v2.0.3",
-                "issues": "https://github.com/cartalyst/data-grid/issues"
-            },
             "time": "2014-11-06 21:48:04"
         },
         {
@@ -553,24 +529,20 @@
                 "laravel",
                 "platform"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/dependencies/tree/v1.0.2",
-                "issues": "https://github.com/cartalyst/dependencies/issues"
-            },
             "time": "2014-01-03 19:16:35"
         },
         {
             "name": "cartalyst/extensions",
-            "version": "dev-master",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/extensions.git",
-                "reference": "0c8ce01daf359f1f8d6a6abcc7949443f2fd01a0"
+                "reference": "767d079ded87b4b28e708c41e98ab752aba32f56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/extensions/zipball/0c8ce01daf359f1f8d6a6abcc7949443f2fd01a0",
-                "reference": "0c8ce01daf359f1f8d6a6abcc7949443f2fd01a0",
+                "url": "https://api.github.com/repos/cartalyst/extensions/zipball/767d079ded87b4b28e708c41e98ab752aba32f56",
+                "reference": "767d079ded87b4b28e708c41e98ab752aba32f56",
                 "shasum": ""
             },
             "require": {
@@ -633,39 +605,36 @@
                 "laravel",
                 "php"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/extensions/tree/master",
-                "issues": "https://github.com/cartalyst/extensions/issues"
-            },
-            "time": "2015-01-27 02:43:40"
+            "time": "2015-01-28 19:53:16"
         },
         {
             "name": "cartalyst/filesystem",
-            "version": "v2.0.0-alpha2",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/filesystem.git",
-                "reference": "1f7257180720774baf6154e84af84566b6a617ad"
+                "reference": "af9d73ef42548f01319fc235f78cc1069db3d7b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/filesystem/zipball/1f7257180720774baf6154e84af84566b6a617ad",
-                "reference": "1f7257180720774baf6154e84af84566b6a617ad",
+                "url": "https://api.github.com/repos/cartalyst/filesystem/zipball/af9d73ef42548f01319fc235f78cc1069db3d7b7",
+                "reference": "af9d73ef42548f01319fc235f78cc1069db3d7b7",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "~4.1|5.0.*",
-                "league/flysystem": "0.5.*",
+                "illuminate/support": "~4.1",
+                "league/flysystem": "1.0.*",
                 "php": ">=5.4.0",
                 "symfony/http-foundation": "~2.5"
             },
             "require-dev": {
-                "aws/aws-sdk-php": "~2.4",
-                "dropbox/dropbox-sdk": "~1.1.1",
+                "league/flysystem-aws-s3-v2": "~1.0",
+                "league/flysystem-dropbox": "~1.0",
+                "league/flysystem-rackspace": "~1.0",
+                "league/flysystem-sftp": "~1.0",
+                "league/flysystem-webdav": "~1.0",
                 "mockery/mockery": "~0.9",
-                "phpunit/phpunit": "~4.0",
-                "rackspace/php-opencloud": "~1.10.0",
-                "sabre/dav": "~2.0.2"
+                "phpunit/phpunit": "~4.0"
             },
             "type": "library",
             "extra": {
@@ -713,18 +682,14 @@
                 "laravel",
                 "php"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/filesystem/tree/master",
-                "issues": "https://github.com/cartalyst/filesystem/issues"
-            },
-            "time": "2014-12-18 13:55:11"
+            "time": "2015-01-28 21:26:46"
         },
         {
             "name": "cartalyst/interpret",
             "version": "v1.1.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/cartalyst/interpret.git",
+                "url": "git@github.com:cartalyst/interpret.git",
                 "reference": "eb725bcc737206f425ad22b68ea0ef36fbc15203"
             },
             "dist": {
@@ -791,10 +756,6 @@
                 "markdown",
                 "php"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/interpret/tree/1.1",
-                "issues": "https://github.com/cartalyst/interpret/issues"
-            },
             "time": "2014-12-10 21:15:58"
         },
         {
@@ -873,10 +834,6 @@
                 "nested-sets",
                 "tags"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/nested-sets/tree/v2.0.2",
-                "issues": "https://github.com/cartalyst/nested-sets/issues"
-            },
             "time": "2014-01-07 05:40:04"
         },
         {
@@ -944,10 +901,6 @@
                 "permissions",
                 "php"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/permissions/tree/master",
-                "issues": "https://github.com/cartalyst/permissions/issues"
-            },
             "time": "2015-01-21 21:56:32"
         },
         {
@@ -956,12 +909,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/sentinel.git",
-                "reference": "b4221fdd0be0c8c0fa5c0a9061a8397eec813ea3"
+                "reference": "98a3324db9e9de11c6cee6fafb0656251754740b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentinel/zipball/b4221fdd0be0c8c0fa5c0a9061a8397eec813ea3",
-                "reference": "b4221fdd0be0c8c0fa5c0a9061a8397eec813ea3",
+                "url": "https://api.github.com/repos/cartalyst/sentinel/zipball/98a3324db9e9de11c6cee6fafb0656251754740b",
+                "reference": "98a3324db9e9de11c6cee6fafb0656251754740b",
                 "shasum": ""
             },
             "require": {
@@ -1037,31 +990,27 @@
                 "php",
                 "security"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/sentinel/tree/1.0",
-                "issues": "https://github.com/cartalyst/sentinel/issues"
-            },
             "time": "2015-01-23 00:37:50"
         },
         {
             "name": "cartalyst/sentinel-social",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/sentinel-social.git",
-                "reference": "18acf8dcbb93cbdf468b0f5cb371462454e7c7b3"
+                "reference": "65bf704a5625e35416524bb82e855993982e9cbe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentinel-social/zipball/18acf8dcbb93cbdf468b0f5cb371462454e7c7b3",
-                "reference": "18acf8dcbb93cbdf468b0f5cb371462454e7c7b3",
+                "url": "https://api.github.com/repos/cartalyst/sentinel-social/zipball/65bf704a5625e35416524bb82e855993982e9cbe",
+                "reference": "65bf704a5625e35416524bb82e855993982e9cbe",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/sentinel": "~1.0",
                 "cartalyst/support": "~1.0",
                 "league/oauth1-client": "1.0.*",
-                "league/oauth2-client": "0.4.*",
+                "league/oauth2-client": "0.7.*",
                 "php": ">=5.4.0"
             },
             "require-dev": {
@@ -1123,11 +1072,7 @@
                 "php",
                 "security"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/sentinel-social/tree/master",
-                "issues": "https://github.com/cartalyst/sentinel-social/issues"
-            },
-            "time": "2015-01-20 20:06:49"
+            "time": "2015-01-28 21:50:50"
         },
         {
             "name": "cartalyst/settings",
@@ -1197,10 +1142,6 @@
                 "php",
                 "settings"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/settings/tree/v1.0.0",
-                "issues": "https://github.com/cartalyst/settings/issues"
-            },
             "time": "2015-01-23 19:45:23"
         },
         {
@@ -1269,10 +1210,6 @@
                 "laravel",
                 "support"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/support/tree/v1.1.0",
-                "issues": "https://github.com/cartalyst/support/issues"
-            },
             "time": "2015-01-23 21:19:14"
         },
         {
@@ -1280,7 +1217,7 @@
             "version": "v1.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/cartalyst/tags.git",
+                "url": "git@github.com:cartalyst/tags.git",
                 "reference": "75835ce8751b99cb01af4c3dcd96d1f556a16615"
             },
             "dist": {
@@ -1344,24 +1281,20 @@
                 "php",
                 "tags"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/tags/tree/v1.0.1",
-                "issues": "https://github.com/cartalyst/tags/issues"
-            },
             "time": "2015-01-21 23:49:42"
         },
         {
             "name": "cartalyst/themes",
-            "version": "dev-master",
+            "version": "v2.2.4",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/themes.git",
-                "reference": "c707b4d28b78ce2c70b059412ba019fabf9f4bbf"
+                "reference": "a5c92d21faae9e1aca9104c41437e109cd28fc47"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/themes/zipball/c707b4d28b78ce2c70b059412ba019fabf9f4bbf",
-                "reference": "c707b4d28b78ce2c70b059412ba019fabf9f4bbf",
+                "url": "https://api.github.com/repos/cartalyst/themes/zipball/a5c92d21faae9e1aca9104c41437e109cd28fc47",
+                "reference": "a5c92d21faae9e1aca9104c41437e109cd28fc47",
                 "shasum": ""
             },
             "require": {
@@ -1400,7 +1333,7 @@
                     "2": "master"
                 },
                 "branch-alias": {
-                    "dev-master": "2.3-dev"
+                    "dev-master": "2.2-dev"
                 }
             },
             "autoload": {
@@ -1439,11 +1372,7 @@
                 "laravel",
                 "platform"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/themes/tree/master",
-                "issues": "https://github.com/cartalyst/themes/issues"
-            },
-            "time": "2015-01-27 01:09:05"
+            "time": "2015-01-28 17:32:11"
         },
         {
             "name": "cartalyst/widgets",
@@ -1510,24 +1439,20 @@
                 "laravel",
                 "platform"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/widgets/tree/master",
-                "issues": "https://github.com/cartalyst/widgets/issues"
-            },
             "time": "2014-12-17 03:47:42"
         },
         {
             "name": "cartalyst/workshop",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/workshop.git",
-                "reference": "72fa43dee56421f3f2fa570f78ac3310f823d584"
+                "reference": "2ce9f00c93add92b675f110f6b455fb4007ae066"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/workshop/zipball/72fa43dee56421f3f2fa570f78ac3310f823d584",
-                "reference": "72fa43dee56421f3f2fa570f78ac3310f823d584",
+                "url": "https://api.github.com/repos/cartalyst/workshop/zipball/2ce9f00c93add92b675f110f6b455fb4007ae066",
+                "reference": "2ce9f00c93add92b675f110f6b455fb4007ae066",
                 "shasum": ""
             },
             "require": {
@@ -1588,11 +1513,7 @@
                 "laravel",
                 "platform"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/workshop/tree/master",
-                "issues": "https://github.com/cartalyst/workshop/issues"
-            },
-            "time": "2015-01-27 19:28:47"
+            "time": "2015-01-28 19:49:45"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -2524,55 +2445,50 @@
         },
         {
             "name": "league/flysystem",
-            "version": "0.5.12",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "e046fe60d761e30691c642c9cc6a4089f724e805"
+                "reference": "efa1d394bb45b0984a863854c608c607b9c2a9a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/e046fe60d761e30691c642c9cc6a4089f724e805",
-                "reference": "e046fe60d761e30691c642c9cc6a4089f724e805",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/efa1d394bb45b0984a863854c608c607b9c2a9a4",
+                "reference": "efa1d394bb45b0984a863854c608c607b9c2a9a4",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "aws/aws-sdk-php": "~2.4",
-                "barracuda/copy": "~1.1.4",
-                "dropbox/dropbox-sdk": "~1.1.1",
                 "ext-fileinfo": "*",
-                "guzzlehttp/guzzle": "~4.0",
-                "league/event": "~1.0",
                 "league/phpunit-coverage-listener": "~1.1",
                 "mockery/mockery": "~0.9",
-                "phpseclib/phpseclib": "~0.3.5",
-                "phpspec/phpspec": "~2.0",
+                "phpspec/phpspec": "~2.0.0",
+                "phpspec/prophecy-phpunit": "~1.0",
                 "phpunit/phpunit": "~4.0",
                 "predis/predis": "~1.0",
-                "rackspace/php-opencloud": "~1.10.0",
-                "sabre/dav": "~2.0.2",
                 "tedivm/stash": "~0.12.0"
             },
             "suggest": {
-                "aws/aws-sdk-php": "Allows you to use AWS S3 storage",
-                "barracuda/copy": "Allows you to use Copy.com storage",
-                "dropbox/dropbox-sdk": "Allows you to use Dropbox storage",
                 "ext-fileinfo": "Required for MimeType",
-                "guzzlehttp/guzzle": "Allows you to use http files (reading only)",
-                "league/event": "Required for EventableFilesystem",
-                "phpseclib/phpseclib": "Allows SFTP server storage",
-                "predis/predis": "Allows you to use Predis for caching",
-                "rackspace/php-opencloud": "Allows you to use Rackspace Cloud Files",
-                "sabre/dav": "Enables WebDav support",
-                "tedivm/stash": "Allows you to use Stash as cache implementation"
+                "league/flysystem-aws-s3-v2": "Use S3 storage with AWS SDK v2",
+                "league/flysystem-aws-s3-v3": "Use S3 storage with AWS SDK v3",
+                "league/flysystem-azure": "Allows you to use Windows Azure Blob storage",
+                "league/flysystem-cached-adapter": "Flysystem adapter decorator for metadata caching",
+                "league/flysystem-copy": "Allows you to use Copy.com storage",
+                "league/flysystem-dropbox": "Use Dropbox storage",
+                "league/flysystem-eventable-filesystem": "Allows you to use EventableFilesystem",
+                "league/flysystem-rackspace": "Allows you to use Rackspace Cloud Files",
+                "league/flysystem-sftp": "Allows SFTP server storage via phpseclib",
+                "league/flysystem-webdav": "Allows you to use WebDAV storage",
+                "league/flysystem-ziparchive": "Allows you to use ZipArchive adapter",
+                "predis/predis": "Allows you to use Predis for caching"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.5-dev"
+                    "dev-master": "1.1-dev"
                 }
             },
             "autoload": {
@@ -2608,7 +2524,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2014-11-05 13:39:29"
+            "time": "2015-01-23 09:43:34"
         },
         {
             "name": "league/fractal",
@@ -2733,16 +2649,16 @@
         },
         {
             "name": "league/oauth2-client",
-            "version": "0.4.0",
+            "version": "0.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/oauth2-client.git",
-                "reference": "72a40463e3d9f34a342875401d6a31ddbea3bfe8"
+                "reference": "0a8e12a4f86302227991895a4166dfe22c28de03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/oauth2-client/zipball/72a40463e3d9f34a342875401d6a31ddbea3bfe8",
-                "reference": "72a40463e3d9f34a342875401d6a31ddbea3bfe8",
+                "url": "https://api.github.com/repos/thephpleague/oauth2-client/zipball/0a8e12a4f86302227991895a4166dfe22c28de03",
+                "reference": "0a8e12a4f86302227991895a4166dfe22c28de03",
                 "shasum": ""
             },
             "require": {
@@ -2752,12 +2668,12 @@
             "require-dev": {
                 "mockery/mockery": "~0.9",
                 "phpunit/phpunit": "~4.0",
-                "squizlabs/php_codesniffer": "~1.5"
+                "squizlabs/php_codesniffer": "~2.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.3-dev"
+                    "dev-master": "0.7.x-dev"
                 }
             },
             "autoload": {
@@ -2788,7 +2704,7 @@
                 "oauth2",
                 "single sign on"
             ],
-            "time": "2014-10-20 19:06:30"
+            "time": "2015-01-06 15:58:40"
         },
         {
             "name": "lmammino/jsmin4assetic",
@@ -3406,10 +3322,6 @@
                 "laravel",
                 "platform"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/platform-access/tree/v1.0.0",
-                "issues": "https://github.com/cartalyst/platform-access/issues"
-            },
             "time": "2015-01-20 21:54:09"
         },
         {
@@ -3468,10 +3380,6 @@
                 "platform",
                 "theme"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/theme-default-admin/tree/master",
-                "issues": "https://github.com/cartalyst/theme-default-admin/issues"
-            },
             "time": "2015-01-27 05:05:42"
         },
         {
@@ -3551,10 +3459,6 @@
                 "laravel",
                 "platform"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/platform-attributes/tree/v1.0.1",
-                "issues": "https://github.com/cartalyst/platform-attributes/issues"
-            },
             "time": "2015-01-26 23:17:32"
         },
         {
@@ -3638,10 +3542,6 @@
                 "laravel",
                 "platform"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/platform-content/tree/v1.0.1",
-                "issues": "https://github.com/cartalyst/platform-content/issues"
-            },
             "time": "2015-01-26 20:16:19"
         },
         {
@@ -3715,24 +3615,20 @@
                 "laravel",
                 "platform"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/platform-dashboard/tree/master",
-                "issues": "https://github.com/cartalyst/platform-dashboard/issues"
-            },
             "time": "2015-01-22 01:15:26"
         },
         {
             "name": "platform/foundation",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-foundation.git",
-                "reference": "a9842a0787112d9a476453f7958eabc0bfd828f3"
+                "reference": "6c17830d724fd853cbe3a64c3e30a79af6e39117"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/a9842a0787112d9a476453f7958eabc0bfd828f3",
-                "reference": "a9842a0787112d9a476453f7958eabc0bfd828f3",
+                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/6c17830d724fd853cbe3a64c3e30a79af6e39117",
+                "reference": "6c17830d724fd853cbe3a64c3e30a79af6e39117",
                 "shasum": ""
             },
             "require": {
@@ -3743,7 +3639,7 @@
                 "cartalyst/filesystem": "2.0.*",
                 "cartalyst/sentinel": "1.0.*",
                 "cartalyst/settings": "1.0.*",
-                "cartalyst/themes": "2.3.*",
+                "cartalyst/themes": "2.2.*",
                 "cartalyst/widgets": "1.1.*",
                 "dompdf/dompdf": "~0.6",
                 "illuminate/routing": "4.2.*",
@@ -3813,11 +3709,7 @@
                 "laravel",
                 "platform"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/platform-foundation/tree/v1.0.1",
-                "issues": "https://github.com/cartalyst/platform-foundation/issues"
-            },
-            "time": "2015-01-27 19:41:32"
+            "time": "2015-01-28 19:35:28"
         },
         {
             "name": "platform/frontend-default",
@@ -3870,10 +3762,6 @@
                 "platform",
                 "theme"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/theme-default-frontend/tree/master",
-                "issues": "https://github.com/cartalyst/theme-default-frontend/issues"
-            },
             "time": "2015-01-26 21:19:49"
         },
         {
@@ -3953,24 +3841,20 @@
                 "laravel",
                 "platform"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/platform-installer/tree/master",
-                "issues": "https://github.com/cartalyst/platform-installer/issues"
-            },
             "time": "2015-01-26 19:12:50"
         },
         {
             "name": "platform/media",
-            "version": "v1.0.0",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-media.git",
-                "reference": "50f6d39c6865eecc3fcbc4aa3ec43884c62e7034"
+                "reference": "c0dfd1f2dbc0c0cb368aff6033d15eaf0c001d4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/50f6d39c6865eecc3fcbc4aa3ec43884c62e7034",
-                "reference": "50f6d39c6865eecc3fcbc4aa3ec43884c62e7034",
+                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/c0dfd1f2dbc0c0cb368aff6033d15eaf0c001d4a",
+                "reference": "c0dfd1f2dbc0c0cb368aff6033d15eaf0c001d4a",
                 "shasum": ""
             },
             "require": {
@@ -4043,11 +3927,7 @@
                 "media",
                 "platform"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/platform-media/tree/v1.0.0",
-                "issues": "https://github.com/cartalyst/platform-media/issues"
-            },
-            "time": "2015-01-26 20:27:05"
+            "time": "2015-01-28 19:44:39"
         },
         {
             "name": "platform/menus",
@@ -4126,24 +4006,20 @@
                 "menus",
                 "platform"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/platform-menus/tree/v1.0.1",
-                "issues": "https://github.com/cartalyst/platform-menus/issues"
-            },
             "time": "2015-01-26 23:15:54"
         },
         {
             "name": "platform/operations",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-operations.git",
-                "reference": "27820348eec5b97b90cf78af8bfa5e1e12ad6b81"
+                "reference": "48d987510754e9f1ca28be58ecc791a0aeba2fd6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/27820348eec5b97b90cf78af8bfa5e1e12ad6b81",
-                "reference": "27820348eec5b97b90cf78af8bfa5e1e12ad6b81",
+                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/48d987510754e9f1ca28be58ecc791a0aeba2fd6",
+                "reference": "48d987510754e9f1ca28be58ecc791a0aeba2fd6",
                 "shasum": ""
             },
             "require": {
@@ -4204,11 +4080,7 @@
                 "laravel",
                 "platform"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/platform-operations/tree/master",
-                "issues": "https://github.com/cartalyst/platform-operations/issues"
-            },
-            "time": "2015-01-27 22:58:36"
+            "time": "2015-01-28 19:55:37"
         },
         {
             "name": "platform/pages",
@@ -4290,10 +4162,6 @@
                 "pages",
                 "platform"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/platform-pages/tree/v1.0.1",
-                "issues": "https://github.com/cartalyst/platform-pages/issues"
-            },
             "time": "2015-01-26 20:16:27"
         },
         {
@@ -4365,10 +4233,6 @@
                 "laravel",
                 "platform"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/platform-permissions/tree/v1.0.0",
-                "issues": "https://github.com/cartalyst/platform-permissions/issues"
-            },
             "time": "2015-01-23 06:12:35"
         },
         {
@@ -4443,10 +4307,6 @@
                 "platform",
                 "roles"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/platform-roles/tree/v1.0.0",
-                "issues": "https://github.com/cartalyst/platform-roles/issues"
-            },
             "time": "2015-01-23 19:00:46"
         },
         {
@@ -4526,10 +4386,6 @@
                 "platform",
                 "settings"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/platform-settings/tree/v1.0.0",
-                "issues": "https://github.com/cartalyst/platform-settings/issues"
-            },
             "time": "2015-01-23 06:14:52"
         },
         {
@@ -4605,29 +4461,25 @@
                 "platform",
                 "tags"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/platform-tags/tree/v1.0.1",
-                "issues": "https://github.com/cartalyst/platform-tags/issues"
-            },
             "time": "2015-01-26 20:01:39"
         },
         {
             "name": "platform/themes",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-themes.git",
-                "reference": "bfa26621c4e80ed048d3422e51d568c7ddc3d67c"
+                "reference": "248a1ab02a5c2199ff7ef4d6473107604d7b0ac0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-themes/zipball/bfa26621c4e80ed048d3422e51d568c7ddc3d67c",
-                "reference": "bfa26621c4e80ed048d3422e51d568c7ddc3d67c",
+                "url": "https://api.github.com/repos/cartalyst/platform-themes/zipball/248a1ab02a5c2199ff7ef4d6473107604d7b0ac0",
+                "reference": "248a1ab02a5c2199ff7ef4d6473107604d7b0ac0",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "1.2.*",
-                "cartalyst/themes": "~2.3",
+                "cartalyst/themes": "2.2.*",
                 "php": ">=5.4.0",
                 "platform/foundation": "1.0.*"
             },
@@ -4678,24 +4530,20 @@
                 "platform",
                 "themes"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/platform-themes/tree/v1.0.0",
-                "issues": "https://github.com/cartalyst/platform-themes/issues"
-            },
-            "time": "2015-01-22 02:07:26"
+            "time": "2015-01-28 20:06:15"
         },
         {
             "name": "platform/users",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-users.git",
-                "reference": "de598e6e85bd3e6f69db0adb8ad61fe6621d8405"
+                "reference": "0488b5102c7e8abb8debfed34212c52e68653c53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/de598e6e85bd3e6f69db0adb8ad61fe6621d8405",
-                "reference": "de598e6e85bd3e6f69db0adb8ad61fe6621d8405",
+                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/0488b5102c7e8abb8debfed34212c52e68653c53",
+                "reference": "0488b5102c7e8abb8debfed34212c52e68653c53",
                 "shasum": ""
             },
             "require": {
@@ -4767,11 +4615,7 @@
                 "user management",
                 "users"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/platform-users/tree/v1.0.1",
-                "issues": "https://github.com/cartalyst/platform-users/issues"
-            },
-            "time": "2015-01-23 23:17:39"
+            "time": "2015-01-28 04:37:10"
         },
         {
             "name": "predis/predis",
@@ -6322,9 +6166,9 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": [],
-    "prefer-stable": true,
+    "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
