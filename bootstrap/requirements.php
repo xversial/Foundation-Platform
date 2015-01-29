@@ -250,34 +250,6 @@ class PHPVersionRequirement implements RequirementInterface {
 
 }
 
-class DummyRequirement implements RequirementInterface {
-
-	/**
-	 * {@inheritDoc}
-	 */
-	public function check()
-	{
-		return false;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	public function title()
-	{
-		return 'Dummy';
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	public function message()
-	{
-		return 'I alaways fail :D';
-	}
-
-}
-
 /*
 |--------------------------------------------------------------------------
 | Register the desired requirements
@@ -296,7 +268,6 @@ $requirements = [
 	new GDExtensionRequirement,
 	new PDOExtensionRequirement,
 	new PHPVersionRequirement,
-	//new DummyRequirement,
 ];
 
 /*
