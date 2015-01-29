@@ -77,7 +77,7 @@ class DependenciesRequirement implements RequirementInterface {
 	 */
 	public function message()
 	{
-		return 'Composer dependencies missing';
+		return 'Composer dependencies missing.';
 	}
 
 }
