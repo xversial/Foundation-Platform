@@ -37,7 +37,7 @@ interface RequirementInterface {
 	 * @param  array  $paths
 	 * @return bool
 	 */
-	public function check($paths = []);
+	public function check($paths = array());
 
 	/**
 	 * Returns the title translation key.
@@ -60,7 +60,7 @@ class DependenciesRequirement implements RequirementInterface {
 	/**
 	 * {@inheritDoc}
 	 */
-	public function check($paths = [])
+	public function check($paths = array())
 	{
 		return file_exists(realpath(__DIR__.'/../vendor'));
 	}
@@ -88,7 +88,7 @@ class StoragePermissionsRequirement implements RequirementInterface {
 	/**
 	 * {@inheritDoc}
 	 */
-	public function check($paths = [])
+	public function check($paths = array())
 	{
 		return is_writable(realpath($paths['storage']));
 	}
@@ -116,7 +116,7 @@ class PublicPermissionsRequirement implements RequirementInterface {
 	/**
 	 * {@inheritDoc}
 	 */
-	public function check($paths = [])
+	public function check($paths = array())
 	{
 		return is_writable(realpath($paths['public'].'/cache'));
 	}
@@ -144,7 +144,7 @@ class McryptExtensionRequirement implements RequirementInterface {
 	/**
 	 * {@inheritDoc}
 	 */
-	public function check($paths = [])
+	public function check($paths = array())
 	{
 		return extension_loaded('mcrypt');
 	}
@@ -172,7 +172,7 @@ class GDExtensionRequirement implements RequirementInterface {
 	/**
 	 * {@inheritDoc}
 	 */
-	public function check($paths = [])
+	public function check($paths = array())
 	{
 		return extension_loaded('gd');
 	}
@@ -200,7 +200,7 @@ class PDOExtensionRequirement implements RequirementInterface {
 	/**
 	 * {@inheritDoc}
 	 */
-	public function check($paths = [])
+	public function check($paths = array())
 	{
 		return defined('PDO::ATTR_DRIVER_NAME');
 	}
@@ -228,7 +228,7 @@ class PHPVersionRequirement implements RequirementInterface {
 	/**
 	 * {@inheritDoc}
 	 */
-	public function check($paths = [])
+	public function check($paths = array())
 	{
 		return version_compare(PHP_VERSION, '5.4', '>=');
 	}
@@ -261,7 +261,7 @@ class PHPVersionRequirement implements RequirementInterface {
 |
 */
 
-$requirements = [
+$requirements = array(
 	new DependenciesRequirement,
 	new StoragePermissionsRequirement,
 	new PublicPermissionsRequirement,
@@ -269,7 +269,7 @@ $requirements = [
 	new GDExtensionRequirement,
 	new PDOExtensionRequirement,
 	new PHPVersionRequirement,
-];
+);
 
 /*
 |--------------------------------------------------------------------------
