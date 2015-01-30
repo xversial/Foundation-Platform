@@ -37,7 +37,7 @@ interface RequirementInterface {
 	 * @param  array  $paths
 	 * @return bool
 	 */
-	public function check($paths = array());
+	public function check($paths = []);
 
 	/**
 	 * Returns the title translation key.
@@ -60,7 +60,7 @@ class DependenciesRequirement implements RequirementInterface {
 	/**
 	 * {@inheritDoc}
 	 */
-	public function check($paths = array())
+	public function check($paths = [])
 	{
 		return file_exists(realpath(__DIR__.'/../vendor'));
 	}
@@ -88,7 +88,7 @@ class StoragePermissionsRequirement implements RequirementInterface {
 	/**
 	 * {@inheritDoc}
 	 */
-	public function check($paths = array())
+	public function check($paths = [])
 	{
 		return is_writable(realpath($paths['storage']));
 	}
@@ -116,7 +116,7 @@ class PublicPermissionsRequirement implements RequirementInterface {
 	/**
 	 * {@inheritDoc}
 	 */
-	public function check($paths = array())
+	public function check($paths = [])
 	{
 		return is_writable(realpath($paths['public'].'/cache'));
 	}
@@ -144,7 +144,7 @@ class McryptExtensionRequirement implements RequirementInterface {
 	/**
 	 * {@inheritDoc}
 	 */
-	public function check($paths = array())
+	public function check($paths = [])
 	{
 		return extension_loaded('mcrypt');
 	}
@@ -172,7 +172,7 @@ class GDExtensionRequirement implements RequirementInterface {
 	/**
 	 * {@inheritDoc}
 	 */
-	public function check($paths = array())
+	public function check($paths = [])
 	{
 		return extension_loaded('gd');
 	}
@@ -200,7 +200,7 @@ class PDOExtensionRequirement implements RequirementInterface {
 	/**
 	 * {@inheritDoc}
 	 */
-	public function check($paths = array())
+	public function check($paths = [])
 	{
 		return defined('PDO::ATTR_DRIVER_NAME');
 	}
@@ -223,34 +223,6 @@ class PDOExtensionRequirement implements RequirementInterface {
 
 }
 
-class PHPVersionRequirement implements RequirementInterface {
-
-	/**
-	 * {@inheritDoc}
-	 */
-	public function check($paths = array())
-	{
-		return version_compare(PHP_VERSION, '5.4', '>=');
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	public function title()
-	{
-		return 'PHP Version';
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	public function message()
-	{
-		return 'PHP version 5.4 or greater required.';
-	}
-
-}
-
 /*
 |--------------------------------------------------------------------------
 | Register the desired requirements
@@ -261,15 +233,14 @@ class PHPVersionRequirement implements RequirementInterface {
 |
 */
 
-$requirements = array(
+$requirements = [
 	new DependenciesRequirement,
 	new StoragePermissionsRequirement,
 	new PublicPermissionsRequirement,
 	new McryptExtensionRequirement,
 	new GDExtensionRequirement,
 	new PDOExtensionRequirement,
-	new PHPVersionRequirement,
-);
+];
 
 /*
 |--------------------------------------------------------------------------
