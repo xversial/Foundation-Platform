@@ -34,7 +34,7 @@ interface RequirementInterface {
 	/**
 	 * Performs the requirement check.
 	 *
-	 * @param  $paths
+	 * @param  array  $paths
 	 * @return bool
 	 */
 	public function check($paths = []);
