@@ -11,6 +11,21 @@ We do not give estimated times for completion on `Accepted` Proposals.
 
 ---
 
-### v2.0.0 - 2015-01-29
+### v2.0.0 - 2015-01-30
 
-- Initial stable release.
+- Authentication & Authorization
+- Role based user management & permissions
+- Social Authentication (OAuth, OAuth 2)
+- Powerful Theme System
+- Powerful Extension System
+- Twitter Bootstrap 3.3 ready
+- Pages
+- Content
+- Menus
+- Settings
+- Tags
+- Attributes
+- Scaffolding
+- Widgets
+- Media
+- Laravel 4.2
