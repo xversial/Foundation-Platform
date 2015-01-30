@@ -22,10 +22,10 @@
 | Platform requirement rules
 |--------------------------------------------------------------------------
 |
-| TBD
+| Conducts checks for several requirements that must be met in order
+| to run platform.
 |
-| Note: laravel hasn't been booted, you can't use composer or even a
-|       even a helper.
+| Note: laravel hasn't been booted, you can't use composer or a helper.
 |
 */
 
@@ -89,7 +89,9 @@ class StoragePermissionsRequirement implements RequirementInterface {
 	 */
 	public function check()
 	{
-		return is_writable(realpath(__DIR__.'/../app/storage'));
+		$paths = require __DIR__.'/paths.php';
+
+		return is_writable(realpath($paths['storage']));
 	}
 
 	/**
@@ -117,7 +119,9 @@ class PublicPermissionsRequirement implements RequirementInterface {
 	 */
 	public function check()
 	{
-		return is_writable(realpath(__DIR__.'/../public/cache'));
+		$paths = require __DIR__.'/paths.php';
+
+		return is_writable(realpath($paths['public'].'/cache'));
 	}
 
 	/**
