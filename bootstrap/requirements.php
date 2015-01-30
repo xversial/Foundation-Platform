@@ -34,9 +34,10 @@ interface RequirementInterface {
 	/**
 	 * Performs the requirement check.
 	 *
+	 * @param  $paths
 	 * @return bool
 	 */
-	public function check();
+	public function check($paths = []);
 
 	/**
 	 * Returns the title translation key.
@@ -59,7 +60,7 @@ class DependenciesRequirement implements RequirementInterface {
 	/**
 	 * {@inheritDoc}
 	 */
-	public function check()
+	public function check($paths = [])
 	{
 		return file_exists(realpath(__DIR__.'/../vendor'));
 	}
@@ -87,10 +88,8 @@ class StoragePermissionsRequirement implements RequirementInterface {
 	/**
 	 * {@inheritDoc}
 	 */
-	public function check()
+	public function check($paths = [])
 	{
-		$paths = require __DIR__.'/paths.php';
-
 		return is_writable(realpath($paths['storage']));
 	}
 
@@ -117,10 +116,8 @@ class PublicPermissionsRequirement implements RequirementInterface {
 	/**
 	 * {@inheritDoc}
 	 */
-	public function check()
+	public function check($paths = [])
 	{
-		$paths = require __DIR__.'/paths.php';
-
 		return is_writable(realpath($paths['public'].'/cache'));
 	}
 
@@ -129,7 +126,7 @@ class PublicPermissionsRequirement implements RequirementInterface {
 	 */
 	public function title()
 	{
-		return 'Public Write Permissions';
+		return 'Cache Write Permissions';
 	}
 
 	/**
@@ -147,7 +144,7 @@ class McryptExtensionRequirement implements RequirementInterface {
 	/**
 	 * {@inheritDoc}
 	 */
-	public function check()
+	public function check($paths = [])
 	{
 		return extension_loaded('mcrypt');
 	}
@@ -175,7 +172,7 @@ class GDExtensionRequirement implements RequirementInterface {
 	/**
 	 * {@inheritDoc}
 	 */
-	public function check()
+	public function check($paths = [])
 	{
 		return extension_loaded('gd');
 	}
@@ -203,7 +200,7 @@ class PDOExtensionRequirement implements RequirementInterface {
 	/**
 	 * {@inheritDoc}
 	 */
-	public function check()
+	public function check($paths = [])
 	{
 		return defined('PDO::ATTR_DRIVER_NAME');
 	}
@@ -231,7 +228,7 @@ class PHPVersionRequirement implements RequirementInterface {
 	/**
 	 * {@inheritDoc}
 	 */
-	public function check()
+	public function check($paths = [])
 	{
 		return version_compare(PHP_VERSION, '5.4', '>=');
 	}
@@ -284,11 +281,13 @@ $requirements = [
 |
 */
 
+$paths = require __DIR__.'/paths.php';
+
 $pass = true;
 
 foreach ($requirements as $requirement)
 {
-	if ( ! $requirement->check())
+	if ( ! $requirement->check($paths))
 	{
 		$pass = false;
 		break;
@@ -477,7 +476,7 @@ foreach ($requirements as $requirement)
 
 						<?php foreach ($requirements as $requirement): ?>
 
-							<?php if ( ! $requirement->check()): ?>
+							<?php if ( ! $requirement->check($paths)): ?>
 								<div class="alert alert-danger" role="alert"><?php echo $requirement->message(); ?></div>
 							<?php else: ?>
 								<div class="alert alert-success" role="alert"><?php echo $requirement->message(); ?></div>
