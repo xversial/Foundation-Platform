@@ -23,9 +23,9 @@
 |--------------------------------------------------------------------------
 |
 | Conducts checks for several requirements that must be met in order
-| to run platform.
+| to run Platform.
 |
-| Note: laravel hasn't been booted, you can't use composer or a helper.
+| Note: Laravel hasn't been booted, you can't use Composer or any helper.
 |
 */
 
@@ -228,8 +228,8 @@ class PDOExtensionRequirement implements RequirementInterface {
 | Register the desired requirements
 |--------------------------------------------------------------------------
 |
-| Once we have all our rules created, let's define which ones should be
-| run in other to boot our app.
+| Once we have all our rules created, let's define which ones should
+| run in order to boot our application.
 |
 */
 
@@ -247,7 +247,7 @@ $requirements = [
 | BOOM! Check the requirements
 |--------------------------------------------------------------------------
 |
-| Finally, let's run over all our requirement classes. If any of the them
+| Finally, let's run over all our requirement classes. If any of them
 | fails, we will stop the execution and return some raw HTML.
 |
 */
