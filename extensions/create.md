@@ -1,8 +1,8 @@
-## Creating Extensions
+### Create Extensions
 
 Because extensions are basically separated app folders there really is no limit to what you can build with them. You could write a media manager extension or a notification handler extension which you can re-use on different Platform 2 applications.
 
-### Using The Workshop Extension
+#### Using The Workshop Extension
 
 The easiest way to get started with an extension is to create one though the Workshop extension. To get started browse to `admin/operations/workshop` in your Platform 2 back-end.
 
@@ -34,24 +34,22 @@ After filling in the fields, you can choose to install your extension automatica
 
 Automatic install will install the component in the workbench directory in your application root. Make sure the folder exists and is writeable before you attempt this.
 
-You can also choose to download a zip file of your generated extension and install it manually in the extensions or workbench directory.
 
-
-### Manually Creating Extensions
+#### Manually Creating Extensions
 
 Manually creating an extensions takes a bit more work. There are two required files for creating extensions: the `composer.json` file and the `extension.php` file.
 
 See [requirements](#installation) for more info.
 
 
-### Enabling an Extension
+#### Enabling an Extension
 
 After that your extension is added to the extensions folder you can install and enable it through the admin back-end under the operations section. Your extension will be listed amongst the other extensions. Click the edit button to install and enable your extension.
 
 Remember that you can always go back here to disable or uninstall your extension.
 
 
-### Registering Widgets
+#### Registering Widgets
 
 Widgets can be used to provide small pieces of views which can be easily re-used throughout your application or extension.
 

@@ -13,7 +13,9 @@ Platform 2 was made to be even more extendable than Platform 1. A number of key 
 
  - `app/hooks.php`
  - `app/functions.php`
- - `app/overrides/models.php`
- - `app/overrides/services.php`
+ - `app/overrides/models.php` (1)
+ - `app/overrides/services.php` (1)
+
+ > **(1)** You can read more about overrides [here](#overrides).
 
 These files provide a number of templates and boilerplate code for you to override extension classes, hook into system events and add custom logic.

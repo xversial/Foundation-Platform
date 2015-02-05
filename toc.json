@@ -5,24 +5,38 @@
 		"concepts"
 	],
 	"setup": [
-		"installation",
-		"configuration"
+		"installation"
 	],
-	"usage": [
-		"index",
-		"themes",
-		"users",
-		"pages",
-		"content",
-		"widgets",
-		"hooks",
-		"overrides"
+	"basics": [
+		"index"
 	],
 	"extensions": [
 		"index",
-		"creating-extensions",
-		"configuring-extensions",
-		"extending-existing-extensions",
-		"distributing-extensions"
+		"default/index",
+		"default/access",
+		"default/dashboard",
+		"default/attributes",
+		"default/content",
+		"default/menus",
+		"default/media",
+		"default/pages",
+		"default/settings",
+		"create"
+	],
+	"themes": [
+		"index",
+		"default",
+		"create",
+		"assets"
+	],
+	"widgets": [
+		"index",
+		"create",
+		"registering",
+		"usage"
+	],
+	"other": [
+		"hooks",
+		"overrides"
 	]
 }

@@ -1,6 +1,6 @@
 ## Overrides
 
-Overrides in Platform 2 give you the ability to easily swap core functionality with your own custom functionality. You can register these overrides in the `app/overrides.php` file.
+Overrides in Platform 2 give you the ability to easily swap core functionality with your own custom functionality.
 
 ### Route Overrides
 
@@ -8,7 +8,7 @@ Because we use an internal REST API, you have the ability to override any route 
 
 For example, overriding the page slug route.
 
-	Route::group(array('prefix' => '{api}/v1'), function() use ($app)
+	Route::group([ 'prefix' => '{api}/v1' ], function() use ($app)
 	{
 		Route::get('page/{slug}', 'My\Custom\PagesController@show')->where('slug', '.*?');
 	});
