@@ -17,7 +17,6 @@
  * @link       http://cartalyst.com
  */
 
-use Cartalyst\Platform\Router;
 use Cartalyst\Platform\Redirector;
 use Cartalyst\Platform\UrlGenerator;
 use Illuminate\Support\ServiceProvider;
@@ -39,7 +38,6 @@ class OverridesServiceProvider extends ServiceProvider {
 	{
 		$this->registerRedirector();
 		$this->registerUrlGenerator();
-		$this->registerRouter();
 	}
 
 	/**
@@ -85,19 +83,6 @@ class OverridesServiceProvider extends ServiceProvider {
 			$urlGenerator->setAdminUri(admin_uri());
 
 			return $urlGenerator;
-		});
-	}
-
-	/**
-	 * Registers the router.
-	 *
-	 * @return void
-	 */
-	protected function registerRouter()
-	{
-		$this->app->bindShared('router', function($app)
-		{
-			return new Router($app['events'], $app);
 		});
 	}
 
