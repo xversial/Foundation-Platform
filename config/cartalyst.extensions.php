@@ -48,7 +48,7 @@ return array(
     |
     */
 
-    'auto_register' => true,
+    'auto_register' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -65,6 +65,6 @@ return array(
     |
     */
 
-    'auto_boot' => true,
+    'auto_boot' => false,
 
 );
