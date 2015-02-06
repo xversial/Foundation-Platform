@@ -252,7 +252,10 @@ $requirements = [
 |
 */
 
-$paths = require __DIR__.'/paths.php';
+$paths = [
+	'storage' => realpath(__DIR__.'/../storage'),
+	'public'  => realpath(__DIR__.'/../public'),
+];
 
 $pass = true;
 
