@@ -145,9 +145,7 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
 
-
 		'Cartalyst\Platform\Laravel\OverridesServiceProvider',
-
 		'Cartalyst\Sentinel\Laravel\SentinelServiceProvider',
 		'Cartalyst\DataGrid\Laravel\DataGridServiceProvider',
 		'Cartalyst\Extensions\Laravel\ExtensionsServiceProvider',
@@ -156,9 +154,8 @@ return [
 		'Cartalyst\Themes\ThemeServiceProvider',
 		'Cartalyst\Widgets\Laravel\WidgetsServiceProvider',
 
-		'Platform\Foundation\Laravel\PlatformServiceProvider',
 		'Platform\Installer\Laravel\InstallerServiceProvider',
-
+		'Platform\Foundation\Laravel\PlatformServiceProvider',
 
 	],
 
