@@ -40,9 +40,9 @@ Installer::after(function()
 	// specific application requirements.
 	if (class_exists('Platform\Menus\Models\Menu'))
 	{
-		set_menu_order('admin', Config::get('platform.admin.menu'));
+		set_menu_order('admin', config('platform.admin.menu'));
 
-		set_menu_order('main', Config::get('platform.frontend.menu'));
+		set_menu_order('main', config('platform.frontend.menu'));
 	}
 
 	// Create the registered role
