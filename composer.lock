@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "613a0c750038f16f9f2c477e56881205",
+    "hash": "d8d6f03f035eec27ca01a515ae4806bf",
     "packages": [
         {
             "name": "cartalyst/alerts",
@@ -4181,16 +4181,16 @@
         },
         {
             "name": "platform/admin-default",
-            "version": "dev-master",
+            "version": "dev-feature/laravel-5",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/theme-default-admin.git",
-                "reference": "66ed434b1b4fd6319a495aaed4a3383d65cb8b98"
+                "reference": "e9b2f640a7fcc843dc484b47a00879500f7b268e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/theme-default-admin/zipball/66ed434b1b4fd6319a495aaed4a3383d65cb8b98",
-                "reference": "66ed434b1b4fd6319a495aaed4a3383d65cb8b98",
+                "url": "https://api.github.com/repos/cartalyst/theme-default-admin/zipball/e9b2f640a7fcc843dc484b47a00879500f7b268e",
+                "reference": "e9b2f640a7fcc843dc484b47a00879500f7b268e",
                 "shasum": ""
             },
             "require": {
@@ -4236,10 +4236,10 @@
                 "theme"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/theme-default-admin/tree/v1.0.1",
+                "source": "https://github.com/cartalyst/theme-default-admin/tree/feature/laravel-5",
                 "issues": "https://github.com/cartalyst/theme-default-admin/issues"
             },
-            "time": "2015-01-28 22:33:01"
+            "time": "2015-02-06 21:25:28"
         },
         {
             "name": "platform/attributes",
@@ -4588,16 +4588,16 @@
         },
         {
             "name": "platform/frontend-default",
-            "version": "dev-master",
+            "version": "dev-feature/laravel-5",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/theme-default-frontend.git",
-                "reference": "52f01247ea2a05b60438e73150f7da6d97fce707"
+                "reference": "4796e995ef3e91a0df8230b98e15192b21109ea3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/theme-default-frontend/zipball/52f01247ea2a05b60438e73150f7da6d97fce707",
-                "reference": "52f01247ea2a05b60438e73150f7da6d97fce707",
+                "url": "https://api.github.com/repos/cartalyst/theme-default-frontend/zipball/4796e995ef3e91a0df8230b98e15192b21109ea3",
+                "reference": "4796e995ef3e91a0df8230b98e15192b21109ea3",
                 "shasum": ""
             },
             "require": {
@@ -4638,10 +4638,10 @@
                 "theme"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/theme-default-frontend/tree/1.0",
+                "source": "https://github.com/cartalyst/theme-default-frontend/tree/feature/laravel-5",
                 "issues": "https://github.com/cartalyst/theme-default-frontend/issues"
             },
-            "time": "2015-02-03 23:49:41"
+            "time": "2015-02-06 21:26:05"
         },
         {
             "name": "platform/installer",
@@ -7559,6 +7559,8 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
+        "platform/admin-default": 20,
+        "platform/frontend-default": 20,
         "platform/foundation": 20,
         "platform/installer": 20,
         "platform/pages": 20,
