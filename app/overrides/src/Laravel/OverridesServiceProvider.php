@@ -80,7 +80,6 @@ class OverridesServiceProvider extends ServiceProvider {
 			});
 
 			$urlGenerator = new UrlGenerator($routes, $request);
-			$urlGenerator->setAdminUri(admin_uri());
 
 			return $urlGenerator;
 		});
