@@ -30,4 +30,66 @@ class Kernel extends HttpKernel {
 		'guest' => 'App\Http\Middleware\RedirectIfAuthenticated',
 	];
 
+	/**
+	 * Temporary store for disabled middleware.
+	 *
+	 * @var array
+	 */
+	protected $disabledMiddleware = [];
+
+	/**
+	 * Temporary store for disabled route middleware.
+	 *
+	 * @var array
+	 */
+	protected $disabledRouteMiddleware = [];
+
+	/**
+	 * Disable middleware.
+	 *
+	 * @return void
+	 */
+	public function disableMiddleware()
+	{
+		$this->disabledMiddleware = $this->middleware;
+
+		$this->middleware = [];
+	}
+
+	/**
+	 * Enable middleware.
+	 *
+	 * @return void
+	 */
+	public function enableMiddleware()
+	{
+		$this->middleware = $this->disableMiddleware;
+
+		$this->disabledMiddleware = [];
+	}
+
+	/**
+	 * Disable route middleware.
+	 *
+	 * @return void
+	 */
+	public function disableRouteMiddleware()
+	{
+		$this->disabledRouteMiddleware = $this->routeMiddleware;
+
+		$this->routeMiddleware = [];
+	}
+
+	/**
+	 * Enable route middleware.
+	 *
+	 * @return void
+	 */
+	public function enableRouteMiddleware()
+	{
+		$this->routeMiddleware = $this->disableRouteMiddleware;
+
+		$this->disabledRouteMiddleware = [];
+	}
+
 }
