@@ -1,5 +1,6 @@
 <?php namespace App\Exceptions;
 
+use Closure;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
@@ -13,6 +14,25 @@ class Handler extends ExceptionHandler {
 	protected $dontReport = [
 		'Symfony\Component\HttpKernel\Exception\HttpException'
 	];
+
+	/**
+	 * Registered handlers.
+	 *
+	 * @var array
+	 */
+	protected $handlers = [];
+
+	/**
+	 * Registers a new exception handler.
+	 *
+	 * @param  string  $handle
+	 * @param  \Closure  $callback
+	 * @return void
+	 */
+	public function handle($handle, Closure $callback)
+	{
+		$this->handlers[$handle] = $callback;
+	}
 
 	/**
 	 * Report or log an exception.
@@ -36,6 +56,13 @@ class Handler extends ExceptionHandler {
 	 */
 	public function render($request, Exception $e)
 	{
+		$errorClass = get_class($e);
+
+		if (array_key_exists($errorClass, $this->handlers))
+		{
+			return call_user_func_array($this->handlers[$errorClass], [$e]);
+		}
+
 		if ($this->isHttpException($e))
 		{
 			return $this->renderHttpException($e);
