@@ -1,24 +1,24 @@
 <?php namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Contracts\Auth\Guard;
+use Cartalyst\Sentinel\Sentinel;
 
 class Authenticate {
 
 	/**
-	 * The Guard implementation.
+	 * The Sentinel instance.
 	 *
-	 * @var Guard
+	 * @var \Cartalyst\Sentinel\Sentinel
 	 */
 	protected $auth;
 
 	/**
 	 * Create a new filter instance.
 	 *
-	 * @param  Guard  $auth
+	 * @param  \Cartalyst\Sentinel\Sentinel  $auth
 	 * @return void
 	 */
-	public function __construct(Guard $auth)
+	public function __construct(Sentinel $auth)
 	{
 		$this->auth = $auth;
 	}
@@ -40,7 +40,7 @@ class Authenticate {
 			}
 			else
 			{
-				return redirect()->guest('auth/login');
+				return redirect()->guest('login');
 			}
 		}
 
