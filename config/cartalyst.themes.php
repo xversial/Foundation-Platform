@@ -17,7 +17,7 @@
  * @link       http://cartalyst.com
  */
 
-return array(
+return [
 
 	/*
 	|--------------------------------------------------------------------------
@@ -68,7 +68,7 @@ return array(
 	|
 	*/
 
-	'packages_path' => 'packages',
+	'packages_path' => 'extensions',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -147,50 +147,50 @@ return array(
 	|
 	*/
 
-	'filters' => array(
+	'filters' => [
 
-		'css' => array(
+		'css' => [
 
 			'Assetic\Filter\CssImportFilter',
 			'Cartalyst\AsseticFilters\UriRewriteFilter',
 
-		),
+		],
 
-		'less' => array(
+		'less' => [
 
 			'Cartalyst\AsseticFilters\LessphpFilter',
 			'Cartalyst\AsseticFilters\UriRewriteFilter',
 
-		),
+		],
 
-		'sass' => array(
+		'sass' => [
 
 			'Cartalyst\AsseticFilters\SassphpFilter',
 			'Cartalyst\AsseticFilters\UriRewriteFilter',
 
-		),
+		],
 
-		'scss' => array(
+		'scss' => [
 
 			'Assetic\Filter\ScssphpFilter',
 			'Cartalyst\AsseticFilters\UriRewriteFilter',
 
-		),
+		],
 
-		'js' => array(
+		'js' => [
 
 			'Assetic\Filter\JSMinFilter',
 
-		),
+		],
 
-		'coffee' => array(
+		'coffee' => [
 
 			'Cartalyst\AsseticFilters\CoffeeScriptphpFilter',
 			'Assetic\Filter\JSMinFilter',
 
-		),
+		],
 
-	),
+	],
 
 	/*
 	|--------------------------------------------------------------------------
@@ -234,4 +234,4 @@ return array(
 
 	'auto_clear' => false,
 
-);
+];
