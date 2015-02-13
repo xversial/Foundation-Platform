@@ -40,6 +40,8 @@ class Authenticate {
 			}
 			else
 			{
+				app('alerts')->error(trans('message.not_logged_in'));
+
 				return redirect()->guest('login');
 			}
 		}
