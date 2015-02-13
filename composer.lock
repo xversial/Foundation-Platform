@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4b101eb95baec811ac14a9bea0ce9dbd",
+    "hash": "0c14e37e3039e47e269be5abc55cf27f",
     "packages": [
         {
             "name": "cartalyst/alerts",
@@ -77,11 +77,7 @@
                 "messages",
                 "php"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/alerts/tree/feature/laravel-5",
-                "issues": "https://github.com/cartalyst/alerts/issues"
-            },
-            "time": "2015-02-04 21:26:08"
+            "time": "2015-02-04 21:10:41"
         },
         {
             "name": "cartalyst/assetic-filters",
@@ -158,10 +154,6 @@
                 "sass",
                 "themes"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/assetic-filters/tree/1.2",
-                "issues": "https://github.com/cartalyst/assetic-filters/issues"
-            },
             "time": "2015-01-21 00:15:33"
         },
         {
@@ -238,10 +230,6 @@
                 "laravel",
                 "php"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/attributes/tree/master",
-                "issues": "https://github.com/cartalyst/attributes/issues"
-            },
             "time": "2015-01-28 19:44:58"
         },
         {
@@ -318,10 +306,6 @@
                 "laravel",
                 "platform"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/composer-installers/tree/1.2",
-                "issues": "https://github.com/cartalyst/composer-installers/issues"
-            },
             "time": "2014-11-27 16:08:49"
         },
         {
@@ -399,10 +383,6 @@
                 "laravel",
                 "platform"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/composite-config/tree/feature/laravel-5",
-                "issues": "https://github.com/cartalyst/composite-config/issues"
-            },
             "time": "2015-02-12 18:27:28"
         },
         {
@@ -484,11 +464,7 @@
                 "php",
                 "search"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/data-grid/tree/feature/laravel-5",
-                "issues": "https://github.com/cartalyst/data-grid/issues"
-            },
-            "time": "2015-02-01 16:49:56"
+            "time": "2015-02-01 04:34:06"
         },
         {
             "name": "cartalyst/dependencies",
@@ -553,10 +529,6 @@
                 "laravel",
                 "platform"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/dependencies/tree/1.0",
-                "issues": "https://github.com/cartalyst/dependencies/issues"
-            },
             "time": "2015-01-30 18:55:38"
         },
         {
@@ -633,10 +605,6 @@
                 "laravel",
                 "php"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/extensions/tree/feature/laravel-5",
-                "issues": "https://github.com/cartalyst/extensions/issues"
-            },
             "time": "2015-02-06 02:18:05"
         },
         {
@@ -714,10 +682,6 @@
                 "laravel",
                 "php"
             ],
-            "support": {
-                "source": "https://github.com/cartalyst/filesystem/tree/feature/laravel-5",
-                "issues": "https://github.com/cartalyst/filesystem/issues"
-            },
             "time": "2015-02-05 04:03:41"
         },
         {
@@ -2229,16 +2193,16 @@
         },
         {
             "name": "intervention/image",
-            "version": "dev-master",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Intervention/image.git",
-                "reference": "a8c0e77447877a0a8591ff8e74ad0d14d3ca4c7e"
+                "reference": "949d4909d24f9656877ac38f8c90aecbf0a65091"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/image/zipball/a8c0e77447877a0a8591ff8e74ad0d14d3ca4c7e",
-                "reference": "a8c0e77447877a0a8591ff8e74ad0d14d3ca4c7e",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/949d4909d24f9656877ac38f8c90aecbf0a65091",
+                "reference": "949d4909d24f9656877ac38f8c90aecbf0a65091",
                 "shasum": ""
             },
             "require": {
@@ -2281,11 +2245,11 @@
                 "thumbnail",
                 "watermark"
             ],
-            "time": "2015-02-03 15:44:48"
+            "time": "2015-01-29 08:44:26"
         },
         {
             "name": "intervention/imagecache",
-            "version": "dev-master",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Intervention/imagecache.git",
@@ -2466,16 +2430,16 @@
         },
         {
             "name": "jasonlewis/resource-watcher",
-            "version": "dev-feature/laravel-5",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/suwardany/resource-watcher.git",
-                "reference": "8e87609d517ad5baa7d204a45b039c5159574a9f"
+                "url": "https://github.com/jasonlewis/resource-watcher.git",
+                "reference": "7b0cbdb19f0aeadc403b48b6fce94c6effd81077"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/suwardany/resource-watcher/zipball/8e87609d517ad5baa7d204a45b039c5159574a9f",
-                "reference": "8e87609d517ad5baa7d204a45b039c5159574a9f",
+                "url": "https://api.github.com/repos/jasonlewis/resource-watcher/zipball/7b0cbdb19f0aeadc403b48b6fce94c6effd81077",
+                "reference": "7b0cbdb19f0aeadc403b48b6fce94c6effd81077",
                 "shasum": ""
             },
             "require": {
@@ -2492,6 +2456,7 @@
                     "JasonLewis\\ResourceWatcher": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
                     "name": "Jason Lewis",
@@ -2504,10 +2469,7 @@
                 "laravel",
                 "resource"
             ],
-            "support": {
-                "source": "https://github.com/suwardany/resource-watcher/tree/feature/larave-5"
-            },
-            "time": "2015-02-04 23:26:29"
+            "time": "2015-02-13 08:35:01"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -3260,12 +3222,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/padraic/mockery.git",
-                "reference": "c095665779f4650c26408ada42959d79372d573b"
+                "reference": "06de684e349582cad2e1b76aee79dc4018bd0a89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/padraic/mockery/zipball/c095665779f4650c26408ada42959d79372d573b",
-                "reference": "c095665779f4650c26408ada42959d79372d573b",
+                "url": "https://api.github.com/repos/padraic/mockery/zipball/06de684e349582cad2e1b76aee79dc4018bd0a89",
+                "reference": "06de684e349582cad2e1b76aee79dc4018bd0a89",
                 "shasum": ""
             },
             "require": {
@@ -3318,7 +3280,7 @@
                 "test double",
                 "testing"
             ],
-            "time": "2015-02-12 20:00:07"
+            "time": "2015-02-13 10:36:42"
         },
         {
             "name": "monolog/monolog",
@@ -3535,12 +3497,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "1366e833a16c4267883187da6da7b317f0582dd7"
+                "reference": "53eac36a3f7a116103f50dee0669451ccec35a44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/1366e833a16c4267883187da6da7b317f0582dd7",
-                "reference": "1366e833a16c4267883187da6da7b317f0582dd7",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/53eac36a3f7a116103f50dee0669451ccec35a44",
+                "reference": "53eac36a3f7a116103f50dee0669451ccec35a44",
                 "shasum": ""
             },
             "require": {
@@ -3572,7 +3534,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2015-01-31 21:59:38"
+            "time": "2015-02-13 17:03:18"
         },
         {
             "name": "oyejorge/less.php",
@@ -4778,19 +4740,19 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-media.git",
-                "reference": "ed12aa9d455383396b5b35092aa4749f68ecb6d7"
+                "reference": "b5d1996c35bcb30661f1d9abf4137b4db0730309"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/ed12aa9d455383396b5b35092aa4749f68ecb6d7",
-                "reference": "ed12aa9d455383396b5b35092aa4749f68ecb6d7",
+                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/b5d1996c35bcb30661f1d9abf4137b4db0730309",
+                "reference": "b5d1996c35bcb30661f1d9abf4137b4db0730309",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "1.2.*",
                 "cartalyst/filesystem": "2.0.*",
-                "intervention/image": "2.0.*",
-                "intervention/imagecache": "2.0.*",
+                "intervention/image": "2.1.*",
+                "intervention/imagecache": "2.1.*",
                 "php": ">=5.4.0",
                 "platform/access": "1.0.*",
                 "platform/foundation": "1.0.*",
@@ -4856,7 +4818,11 @@
                 "media",
                 "platform"
             ],
-            "time": "2015-02-13 03:45:48"
+            "support": {
+                "source": "https://github.com/cartalyst/platform-media/tree/feature/laravel-5",
+                "issues": "https://github.com/cartalyst/platform-media/issues"
+            },
+            "time": "2015-02-13 18:29:06"
         },
         {
             "name": "platform/menus",
@@ -7506,7 +7472,7 @@
         {
             "alias": "1.1.9999",
             "alias_normalized": "1.1.9999.0",
-            "version": "dev-feature/laravel-5",
+            "version": "9999999-dev",
             "package": "jasonlewis/resource-watcher"
         },
         {
@@ -7586,18 +7552,6 @@
             "alias_normalized": "1.0.9999.0",
             "version": "dev-feature/laravel-5",
             "package": "cartalyst/tags"
-        },
-        {
-            "alias": "2.0.9999",
-            "alias_normalized": "2.0.9999.0",
-            "version": "9999999-dev",
-            "package": "intervention/image"
-        },
-        {
-            "alias": "2.0.9999",
-            "alias_normalized": "2.0.9999.0",
-            "version": "9999999-dev",
-            "package": "intervention/imagecache"
         }
     ],
     "minimum-stability": "dev",
@@ -7632,9 +7586,7 @@
         "cartalyst/workshop": 20,
         "cartalyst/widgets": 20,
         "cartalyst/themes": 20,
-        "cartalyst/tags": 20,
-        "intervention/image": 20,
-        "intervention/imagecache": 20
+        "cartalyst/tags": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
