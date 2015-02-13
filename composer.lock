@@ -4153,12 +4153,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-access.git",
-                "reference": "0c5984e3ca2dc6c64ebc54b9a61827a53bc6678c"
+                "reference": "b57025db24f2417908fe31b4377953388511cb3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-access/zipball/0c5984e3ca2dc6c64ebc54b9a61827a53bc6678c",
-                "reference": "0c5984e3ca2dc6c64ebc54b9a61827a53bc6678c",
+                "url": "https://api.github.com/repos/cartalyst/platform-access/zipball/b57025db24f2417908fe31b4377953388511cb3f",
+                "reference": "b57025db24f2417908fe31b4377953388511cb3f",
                 "shasum": ""
             },
             "require": {
@@ -4223,7 +4223,7 @@
                 "source": "https://github.com/cartalyst/platform-access/tree/feature/laravel-5",
                 "issues": "https://github.com/cartalyst/platform-access/issues"
             },
-            "time": "2015-02-12 18:11:12"
+            "time": "2015-02-13 01:15:12"
         },
         {
             "name": "platform/admin-default",
@@ -5340,6 +5340,10 @@
                 "platform",
                 "settings"
             ],
+            "support": {
+                "source": "https://github.com/cartalyst/platform-settings/tree/feature/laravel-5",
+                "issues": "https://github.com/cartalyst/platform-settings/issues"
+            },
             "time": "2015-02-12 18:38:13"
         },
         {
