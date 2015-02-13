@@ -38,10 +38,6 @@
 		{
 			"type": "composer",
 			"url": "http://packages.cartalyst.com"
-		},
-		{
-			"type": "vcs",
-			"url": "https://github.com/suwardany/resource-watcher.git"
 		}
 	],
 	"require": {
@@ -68,7 +64,7 @@
 		"platform/roles": "dev-feature/laravel-5 as 1.0.9999",
 		"platform/users": "dev-feature/laravel-5 as 1.0.9999",
 
-		"jasonlewis/resource-watcher": "dev-feature/laravel-5 as 1.1.9999",
+		"jasonlewis/resource-watcher": "dev-master as 1.1.9999",
 
 		"cartalyst/alerts": "dev-feature/laravel-5 as 1.0.9999",
 		"cartalyst/testing": "dev-feature/laravel-5 as 1.0.9999",
@@ -82,10 +78,7 @@
 		"cartalyst/workshop": "dev-feature/laravel-5 as 1.0.9999",
 		"cartalyst/widgets": "dev-feature/laravel-5 as 1.1.9999",
 		"cartalyst/themes": "dev-feature/laravel-5 as 2.2.9999",
-		"cartalyst/tags": "dev-feature/laravel-5 as 1.0.9999",
-
-		"intervention/image": "dev-master as 2.0.9999",
-		"intervention/imagecache": "dev-master as 2.0.9999"
+		"cartalyst/tags": "dev-feature/laravel-5 as 1.0.9999"
 	},
 	"require-dev": {
 		"doctrine/dbal": "~2.4"
