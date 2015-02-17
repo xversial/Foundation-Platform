@@ -1432,12 +1432,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/themes.git",
-                "reference": "1f8a4b2356e9ff8544804814001e43bd2f97308e"
+                "reference": "62f7a61e790d38d8a4446987e477f28afea35000"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/themes/zipball/1f8a4b2356e9ff8544804814001e43bd2f97308e",
-                "reference": "1f8a4b2356e9ff8544804814001e43bd2f97308e",
+                "url": "https://api.github.com/repos/cartalyst/themes/zipball/62f7a61e790d38d8a4446987e477f28afea35000",
+                "reference": "62f7a61e790d38d8a4446987e477f28afea35000",
                 "shasum": ""
             },
             "require": {
@@ -1446,14 +1446,14 @@
                 "illuminate/filesystem": "~5.0",
                 "illuminate/support": "~5.0",
                 "illuminate/view": "~5.0",
-                "jasonlewis/resource-watcher": "~1.1",
+                "jasonlewis/resource-watcher": "dev-master",
                 "kriswallsmith/assetic": "1.1.*",
                 "php": ">=5.3.0"
             },
             "require-dev": {
-                "illuminate/events": "~4.2",
-                "illuminate/routing": "~4.2",
-                "illuminate/view": "~4.2",
+                "illuminate/events": "~5.0",
+                "illuminate/routing": "~5.0",
+                "illuminate/view": "~5.0",
                 "mockery/mockery": "~0.9"
             },
             "suggest": {
@@ -1467,21 +1467,13 @@
             "type": "library",
             "extra": {
                 "component": "package",
-                "frameworks": [
-                    "Laravel 3",
-                    "Laravel 4"
-                ],
-                "versions": {
-                    "1": "1.0/master",
-                    "2": "master"
-                },
                 "branch-alias": {
-                    "dev-master": "2.2-dev"
+                    "dev-master": "3.0.x-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Cartalyst\\Themes": "src"
+                "psr-4": {
+                    "Cartalyst\\Themes\\": "src"
                 }
             },
             "license": [
@@ -1519,7 +1511,7 @@
                 "source": "https://github.com/cartalyst/themes/tree/feature/laravel-5",
                 "issues": "https://github.com/cartalyst/themes/issues"
             },
-            "time": "2015-02-05 00:04:09"
+            "time": "2015-02-17 02:14:21"
         },
         {
             "name": "cartalyst/widgets",
@@ -4538,12 +4530,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-foundation.git",
-                "reference": "fac4f47327ff0dac85da8c999b894c26c2dfb9ca"
+                "reference": "735e0700b2cc124501fe6bc55afbd250566b2086"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/fac4f47327ff0dac85da8c999b894c26c2dfb9ca",
-                "reference": "fac4f47327ff0dac85da8c999b894c26c2dfb9ca",
+                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/735e0700b2cc124501fe6bc55afbd250566b2086",
+                "reference": "735e0700b2cc124501fe6bc55afbd250566b2086",
                 "shasum": ""
             },
             "require": {
@@ -4628,7 +4620,7 @@
                 "source": "https://github.com/cartalyst/platform-foundation/tree/feature/laravel-5",
                 "issues": "https://github.com/cartalyst/platform-foundation/issues"
             },
-            "time": "2015-02-13 18:38:59"
+            "time": "2015-02-17 02:15:38"
         },
         {
             "name": "platform/frontend-default",
