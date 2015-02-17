@@ -151,7 +151,7 @@ return [
 		'Cartalyst\Extensions\Laravel\ExtensionsServiceProvider',
 		'Cartalyst\Filesystem\Laravel\FilesystemServiceProvider',
 		'Cartalyst\NestedSets\NestedSetsServiceProvider',
-		'Cartalyst\Themes\ThemeServiceProvider',
+		'Cartalyst\Themes\Laravel\ThemeServiceProvider',
 		'Cartalyst\Widgets\Laravel\WidgetsServiceProvider',
 
 		'Platform\Installer\Laravel\InstallerServiceProvider',
@@ -206,7 +206,7 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
 
 		'Activation' => 'Cartalyst\Sentinel\Laravel\Facades\Activation',
-		'Asset'      => 'Cartalyst\Themes\Facades\Asset',
+		'Asset'      => 'Cartalyst\Themes\Laravel\Facades\Asset',
 		'Auth'       => 'Cartalyst\Sentinel\Laravel\Facades\Sentinel',
 		'DataGrid'   => 'Cartalyst\DataGrid\Laravel\Facades\DataGrid',
 		'Extension'  => 'Cartalyst\Extensions\Extension',
@@ -214,7 +214,7 @@ return [
 		'Filesystem' => 'Cartalyst\Filesystem\Laravel\Facades\Filesystem',
 		'Reminder'   => 'Cartalyst\Sentinel\Laravel\Facades\Reminder',
 		'Sentinel'   => 'Cartalyst\Sentinel\Laravel\Facades\Sentinel',
-		'Theme'      => 'Cartalyst\Themes\Facades\Theme',
+		'Theme'      => 'Cartalyst\Themes\Laravel\Facades\Theme',
 		'Widget'     => 'Cartalyst\Widgets\Laravel\Facades\Widget',
 
 		'Installer'  => 'Platform\Installer\Laravel\Facades\Installer',
