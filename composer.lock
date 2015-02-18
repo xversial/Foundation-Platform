@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2286756fe87b7cdeb7cec609ae77e293",
+    "hash": "fb0fb6551f7539ab89fb9033856792f3",
     "packages": [
         {
             "name": "cartalyst/alerts",
@@ -407,16 +407,16 @@
         },
         {
             "name": "cartalyst/data-grid",
-            "version": "dev-feature/laravel-5",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/data-grid.git",
-                "reference": "6fc4dbeefe1b000da2dd4e5e464c68b4db12f0ee"
+                "reference": "64ca03554d9b2541f4c8fbbe0047977ab220aa6e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/data-grid/zipball/6fc4dbeefe1b000da2dd4e5e464c68b4db12f0ee",
-                "reference": "6fc4dbeefe1b000da2dd4e5e464c68b4db12f0ee",
+                "url": "https://api.github.com/repos/cartalyst/data-grid/zipball/64ca03554d9b2541f4c8fbbe0047977ab220aa6e",
+                "reference": "64ca03554d9b2541f4c8fbbe0047977ab220aa6e",
                 "shasum": ""
             },
             "require": {
@@ -485,10 +485,10 @@
                 "search"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/data-grid/tree/feature/laravel-5",
+                "source": "https://github.com/cartalyst/data-grid/tree/v3.0.0",
                 "issues": "https://github.com/cartalyst/data-grid/issues"
             },
-            "time": "2015-02-14 19:08:42"
+            "time": "2015-02-17 23:15:37"
         },
         {
             "name": "cartalyst/dependencies",
@@ -565,12 +565,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/extensions.git",
-                "reference": "e6f19d5ae454eee7420e27a6d2d3d98840e723fb"
+                "reference": "019285910c1853998f48b85b84b546c61ae5267c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/extensions/zipball/e6f19d5ae454eee7420e27a6d2d3d98840e723fb",
-                "reference": "e6f19d5ae454eee7420e27a6d2d3d98840e723fb",
+                "url": "https://api.github.com/repos/cartalyst/extensions/zipball/019285910c1853998f48b85b84b546c61ae5267c",
+                "reference": "019285910c1853998f48b85b84b546c61ae5267c",
                 "shasum": ""
             },
             "require": {
@@ -634,10 +634,10 @@
                 "php"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/extensions/tree/2.0",
+                "source": "https://github.com/cartalyst/extensions/tree/v2.0.0",
                 "issues": "https://github.com/cartalyst/extensions/issues"
             },
-            "time": "2015-02-17 20:59:53"
+            "time": "2015-02-17 23:24:23"
         },
         {
             "name": "cartalyst/filesystem",
@@ -645,12 +645,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/filesystem.git",
-                "reference": "9b19037eb9ebbf70517d89332fe7cd52e086d616"
+                "reference": "d849838d19d648f3349188f6b27e01245e617a52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/filesystem/zipball/9b19037eb9ebbf70517d89332fe7cd52e086d616",
-                "reference": "9b19037eb9ebbf70517d89332fe7cd52e086d616",
+                "url": "https://api.github.com/repos/cartalyst/filesystem/zipball/d849838d19d648f3349188f6b27e01245e617a52",
+                "reference": "d849838d19d648f3349188f6b27e01245e617a52",
                 "shasum": ""
             },
             "require": {
@@ -715,10 +715,10 @@
                 "php"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/filesystem/tree/3.0",
+                "source": "https://github.com/cartalyst/filesystem/tree/v3.0.1",
                 "issues": "https://github.com/cartalyst/filesystem/issues"
             },
-            "time": "2015-02-17 21:43:36"
+            "time": "2015-02-17 23:37:15"
         },
         {
             "name": "cartalyst/interpret",
@@ -1133,16 +1133,16 @@
         },
         {
             "name": "cartalyst/settings",
-            "version": "dev-feature/laravel-5",
+            "version": "2.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/settings.git",
-                "reference": "43fe1327650d7c17dfe09e503cdcfbce3682204f"
+                "reference": "69831d78d6f7006211d4d329210d1c30c0a4a339"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/settings/zipball/43fe1327650d7c17dfe09e503cdcfbce3682204f",
-                "reference": "43fe1327650d7c17dfe09e503cdcfbce3682204f",
+                "url": "https://api.github.com/repos/cartalyst/settings/zipball/69831d78d6f7006211d4d329210d1c30c0a4a339",
+                "reference": "69831d78d6f7006211d4d329210d1c30c0a4a339",
                 "shasum": ""
             },
             "require": {
@@ -1203,7 +1203,7 @@
                 "source": "https://github.com/cartalyst/settings/tree/feature/laravel-5",
                 "issues": "https://github.com/cartalyst/settings/issues"
             },
-            "time": "2015-02-05 04:04:31"
+            "time": "2015-02-17 22:33:06"
         },
         {
             "name": "cartalyst/support",
@@ -1354,16 +1354,16 @@
         },
         {
             "name": "cartalyst/themes",
-            "version": "dev-feature/laravel-5",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/themes.git",
-                "reference": "62f7a61e790d38d8a4446987e477f28afea35000"
+                "reference": "b0dfbd38ae970d24b98047ded655887869ac33ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/themes/zipball/62f7a61e790d38d8a4446987e477f28afea35000",
-                "reference": "62f7a61e790d38d8a4446987e477f28afea35000",
+                "url": "https://api.github.com/repos/cartalyst/themes/zipball/b0dfbd38ae970d24b98047ded655887869ac33ef",
+                "reference": "b0dfbd38ae970d24b98047ded655887869ac33ef",
                 "shasum": ""
             },
             "require": {
@@ -1437,7 +1437,7 @@
                 "source": "https://github.com/cartalyst/themes/tree/feature/laravel-5",
                 "issues": "https://github.com/cartalyst/themes/issues"
             },
-            "time": "2015-02-17 02:14:21"
+            "time": "2015-02-17 23:02:55"
         },
         {
             "name": "cartalyst/widgets",
@@ -1516,12 +1516,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/workshop.git",
-                "reference": "939163c2472d04dd5c47a5708e79c342d6de7836"
+                "reference": "222fdf588f4cb8dc26c5a245d3f5d1894b842164"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/workshop/zipball/939163c2472d04dd5c47a5708e79c342d6de7836",
-                "reference": "939163c2472d04dd5c47a5708e79c342d6de7836",
+                "url": "https://api.github.com/repos/cartalyst/workshop/zipball/222fdf588f4cb8dc26c5a245d3f5d1894b842164",
+                "reference": "222fdf588f4cb8dc26c5a245d3f5d1894b842164",
                 "shasum": ""
             },
             "require": {
@@ -1583,10 +1583,10 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/workshop/tree/master",
+                "source": "https://github.com/cartalyst/workshop/tree/v2.0.0",
                 "issues": "https://github.com/cartalyst/workshop/issues"
             },
-            "time": "2015-02-17 00:47:02"
+            "time": "2015-02-17 22:22:44"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -3856,23 +3856,23 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-foundation.git",
-                "reference": "5c82e3aff5478740e6e409728da827689d74fac9"
+                "reference": "333faae8052bdc3336b9fdd1ce42bf055796bc89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/5c82e3aff5478740e6e409728da827689d74fac9",
-                "reference": "5c82e3aff5478740e6e409728da827689d74fac9",
+                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/333faae8052bdc3336b9fdd1ce42bf055796bc89",
+                "reference": "333faae8052bdc3336b9fdd1ce42bf055796bc89",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/alerts": "2.0.*",
                 "cartalyst/assetic-filters": "1.2.*",
-                "cartalyst/data-grid": "2.0.*",
+                "cartalyst/data-grid": "3.0.*",
                 "cartalyst/extensions": "2.0.*",
                 "cartalyst/filesystem": "3.0.*",
                 "cartalyst/sentinel": "1.0.*",
-                "cartalyst/settings": "1.0.*",
-                "cartalyst/themes": "2.2.*",
+                "cartalyst/settings": "2.0.*",
+                "cartalyst/themes": "3.0.*",
                 "cartalyst/widgets": "1.1.*",
                 "dompdf/dompdf": "~0.6",
                 "illuminate/routing": "~5.0",
@@ -3946,7 +3946,7 @@
                 "source": "https://github.com/cartalyst/platform-foundation/tree/feature/laravel-5",
                 "issues": "https://github.com/cartalyst/platform-foundation/issues"
             },
-            "time": "2015-02-17 21:47:29"
+            "time": "2015-02-17 23:16:24"
         },
         {
             "name": "platform/frontend-default",
@@ -4094,12 +4094,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-media.git",
-                "reference": "1ae1f59674305da6039632ef676105b1bfbe02a5"
+                "reference": "8c3909d42e0d444e4fff7490678b6510b935ea0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/1ae1f59674305da6039632ef676105b1bfbe02a5",
-                "reference": "1ae1f59674305da6039632ef676105b1bfbe02a5",
+                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/8c3909d42e0d444e4fff7490678b6510b935ea0c",
+                "reference": "8c3909d42e0d444e4fff7490678b6510b935ea0c",
                 "shasum": ""
             },
             "require": {
@@ -4176,7 +4176,7 @@
                 "source": "https://github.com/cartalyst/platform-media/tree/feature/laravel-5",
                 "issues": "https://github.com/cartalyst/platform-media/issues"
             },
-            "time": "2015-02-17 21:48:02"
+            "time": "2015-02-18 00:01:30"
         },
         {
             "name": "platform/menus",
@@ -4747,17 +4747,17 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-themes.git",
-                "reference": "65d2b9568339b9d9ba1d858e19fac366f0c760bd"
+                "reference": "dbc491180ea95bc6de6345ade0b07d010ad7a2fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-themes/zipball/65d2b9568339b9d9ba1d858e19fac366f0c760bd",
-                "reference": "65d2b9568339b9d9ba1d858e19fac366f0c760bd",
+                "url": "https://api.github.com/repos/cartalyst/platform-themes/zipball/dbc491180ea95bc6de6345ade0b07d010ad7a2fc",
+                "reference": "dbc491180ea95bc6de6345ade0b07d010ad7a2fc",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "1.2.*",
-                "cartalyst/themes": "2.2.*",
+                "cartalyst/themes": "3.0.*",
                 "php": ">=5.4.0",
                 "platform/foundation": "1.0.*"
             },
@@ -4812,7 +4812,7 @@
                 "source": "https://github.com/cartalyst/platform-themes/tree/feature/laravel-5",
                 "issues": "https://github.com/cartalyst/platform-themes/issues"
             },
-            "time": "2015-02-17 17:37:35"
+            "time": "2015-02-17 23:05:01"
         },
         {
             "name": "platform/users",
@@ -6418,12 +6418,6 @@
             "package": "cartalyst/sentinel"
         },
         {
-            "alias": "2.0.9999",
-            "alias_normalized": "2.0.9999.0",
-            "version": "dev-feature/laravel-5",
-            "package": "cartalyst/data-grid"
-        },
-        {
             "alias": "1.0.9999",
             "alias_normalized": "1.0.9999.0",
             "version": "dev-feature/laravel-5",
@@ -6434,18 +6428,6 @@
             "alias_normalized": "1.1.9999.0",
             "version": "dev-feature/laravel-5",
             "package": "cartalyst/composite-config"
-        },
-        {
-            "alias": "1.0.9999",
-            "alias_normalized": "1.0.9999.0",
-            "version": "dev-feature/laravel-5",
-            "package": "cartalyst/settings"
-        },
-        {
-            "alias": "2.2.9999",
-            "alias_normalized": "2.2.9999.0",
-            "version": "dev-feature/laravel-5",
-            "package": "cartalyst/themes"
         }
     ],
     "minimum-stability": "dev",
@@ -6469,11 +6451,8 @@
         "platform/users": 20,
         "jasonlewis/resource-watcher": 20,
         "cartalyst/sentinel": 20,
-        "cartalyst/data-grid": 20,
         "cartalyst/sentinel-social": 20,
-        "cartalyst/composite-config": 20,
-        "cartalyst/settings": 20,
-        "cartalyst/themes": 20
+        "cartalyst/composite-config": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
