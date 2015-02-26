@@ -46,8 +46,8 @@
 		"platform/admin-default": "dev-feature/laravel-5",
 		"platform/frontend-default": "dev-feature/laravel-5",
 
-		"platform/foundation": "dev-feature/laravel-5 as 2.0.9999",
-		"platform/installer": "dev-feature/laravel-5 as 2.0.9999",
+		"platform/foundation": "2.0.*",
+		"platform/installer": "2.0.*",
 
 		"platform/pages": "dev-feature/laravel-5 as 2.0.9999",
 		"platform/media": "dev-feature/laravel-5 as 2.0.9999",
@@ -63,8 +63,6 @@
 		"platform/tags": "dev-feature/laravel-5 as 2.0.9999",
 		"platform/roles": "dev-feature/laravel-5 as 2.0.9999",
 		"platform/users": "dev-feature/laravel-5 as 2.0.9999",
-
-		"cartalyst/nested-sets": "dev-feautre/traits as 3.0.9999",
 
 		"jasonlewis/resource-watcher": "dev-master as 1.1.9999"
 	},
