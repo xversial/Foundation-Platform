@@ -150,7 +150,7 @@ return [
 		'Cartalyst\DataGrid\Laravel\DataGridServiceProvider',
 		'Cartalyst\Extensions\Laravel\ExtensionsServiceProvider',
 		'Cartalyst\Filesystem\Laravel\FilesystemServiceProvider',
-		'Cartalyst\NestedSets\NestedSetsServiceProvider',
+		'Cartalyst\NestedSets\Laravel\NestedSetsServiceProvider',
 		'Cartalyst\Themes\Laravel\ThemeServiceProvider',
 		'Cartalyst\Widgets\Laravel\WidgetsServiceProvider',
 
