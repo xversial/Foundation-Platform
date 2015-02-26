@@ -46,28 +46,27 @@
 		"platform/admin-default": "dev-feature/laravel-5",
 		"platform/frontend-default": "dev-feature/laravel-5",
 
-		"platform/foundation": "dev-feature/laravel-5 as 1.0.9999",
-		"platform/installer": "dev-feature/laravel-5 as 1.0.9999",
+		"platform/foundation": "dev-feature/laravel-5 as 2.0.9999",
+		"platform/installer": "dev-feature/laravel-5 as 2.0.9999",
 
-		"platform/pages": "dev-feature/laravel-5 as 1.0.9999",
-		"platform/media": "dev-feature/laravel-5 as 1.0.9999",
-		"platform/access": "dev-feature/laravel-5 as 1.0.9999",
-		"platform/attributes": "dev-feature/laravel-5 as 1.0.9999",
-		"platform/permissions": "dev-feature/laravel-5 as 1.0.9999",
-		"platform/operations": "dev-feature/laravel-5 as 1.0.9999",
-		"platform/dashboard": "1.0.*",
-		"platform/settings": "dev-feature/laravel-5 as 1.0.9999",
-		"platform/content": "dev-feature/laravel-5 as 1.0.9999",
-		"platform/themes": "dev-feature/laravel-5 as 1.0.9999",
-		"platform/menus": "dev-feature/laravel-5 as 1.0.9999",
-		"platform/tags": "dev-feature/laravel-5 as 1.0.9999",
-		"platform/roles": "dev-feature/laravel-5 as 1.0.9999",
-		"platform/users": "dev-feature/laravel-5 as 1.0.9999",
+		"platform/pages": "dev-feature/laravel-5 as 2.0.9999",
+		"platform/media": "dev-feature/laravel-5 as 2.0.9999",
+		"platform/access": "dev-feature/laravel-5 as 2.0.9999",
+		"platform/attributes": "dev-feature/laravel-5 as 2.0.9999",
+		"platform/permissions": "dev-feature/laravel-5 as 2.0.9999",
+		"platform/operations": "dev-feature/laravel-5 as 2.0.9999",
+		"platform/dashboard": "dev-feature/laravel-5 as 2.0.9999",
+		"platform/settings": "dev-feature/laravel-5 as 2.0.9999",
+		"platform/content": "dev-feature/laravel-5 as 2.0.9999",
+		"platform/themes": "dev-feature/laravel-5 as 2.0.9999",
+		"platform/menus": "dev-feature/laravel-5 as 2.0.9999",
+		"platform/tags": "dev-feature/laravel-5 as 2.0.9999",
+		"platform/roles": "dev-feature/laravel-5 as 2.0.9999",
+		"platform/users": "dev-feature/laravel-5 as 2.0.9999",
 
-		"jasonlewis/resource-watcher": "dev-master as 1.1.9999",
+		"cartalyst/nested-sets": "dev-feautre/traits as 3.0.9999",
 
-		"cartalyst/sentinel-social": "dev-feature/laravel-5 as 2.0.9999",
-		"cartalyst/composite-config": "dev-feature/laravel-5 as 2.0.9999"
+		"jasonlewis/resource-watcher": "dev-master as 1.1.9999"
 	},
 	"require-dev": {
 		"doctrine/dbal": "~2.4"
