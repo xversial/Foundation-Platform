@@ -23,7 +23,7 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase {
 	{
 		parent::setUp();
 
-		$this->app['router']->enableFilters();
+		$this->app['Illuminate\Contracts\Http\Kernel']->disableMiddleware();
 
 		$this->setUpPlatform();
 	}
@@ -33,25 +33,25 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase {
 	 */
 	protected function setUpPlatform()
 	{
-		$this->migrate();
+		$this->app['config']->set('database.connections.sqlite.database', ':memory:');
+		$this->app['config']->set('database.default', 'sqlite');
 
 		// Installer instance
 		$installer = $this->app['platform.installer'];
 
-		// Get database driver
-		$driver = $this->app['db']->connection()->getDriverName();
-
 		// Get database config
-		$config = $this->app['config']->get("database.connections.{$driver}");
+		$config = $this->app['config']->get("database.connections.sqlite");
+
+		$this->migrate();
 
 		// Set database config
-		$installer->setDatabaseData($driver, $config);
+		$installer->setDatabaseData('sqlite', $config);
 
 		// Migrate packages
 		$installer->install(true);
 
 		// Migrate application.
-		$this->app['artisan']->call('migrate', ['--env' => 'testing']);
+		$this->app['Illuminate\Contracts\Console\Kernel']->call('migrate', ['--env' => 'testing']);
 
 		// Boot extensions
 		$this->app['platform']->bootExtensions();
@@ -71,7 +71,7 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase {
 			Schema::drop($table);
 		}
 
-		$this->app['artisan']->call('migrate:install', ['--env' => 'testing']);
+		$this->app['Illuminate\Contracts\Console\Kernel']->call('migrate:install', ['--env' => 'testing']);
 	}
 
 }
