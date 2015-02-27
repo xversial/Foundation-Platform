@@ -43,26 +43,22 @@
 	"require": {
 		"laravel/framework": "5.0.*",
 
-		"platform/admin-default": "dev-feature/laravel-5",
-		"platform/frontend-default": "dev-feature/laravel-5",
+		"platform/admin-default": "2.0.*",
+		"platform/frontend-default": "2.0.*",
 
 		"platform/foundation": "2.0.*",
 		"platform/installer": "2.0.*",
 
-		"platform/pages": "2.0.*",
-		"platform/media": "2.0.*",
 		"platform/access": "2.0.*",
 		"platform/attributes": "2.0.*",
-		"platform/permissions": "2.0.*",
-		"platform/operations": "2.0.*",
-		"platform/dashboard": "2.0.*",
-		"platform/settings": "2.0.*",
 		"platform/content": "2.0.*",
-		"platform/themes": "2.0.*",
+		"platform/dashboard": "2.0.*",
+		"platform/media": "2.0.*",
 		"platform/menus": "2.0.*",
-		"platform/tags": "2.0.*",
-		"platform/roles": "2.0.*",
-		"platform/users": "2.0.*",
+		"platform/operations": "2.0.*",
+		"platform/pages": "2.0.*",
+		"platform/settings": "2.0.*",
+		"platform/themes": "2.0.*",
 
 		"jasonlewis/resource-watcher": "dev-master as 1.1.9999"
 	},
