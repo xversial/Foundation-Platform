@@ -19,13 +19,13 @@ Platform can also be installed by simply [downloading a copy from GitHub](https:
 
 ### Install Dependencies
 
-After downloading Platform 2, you can install all of Platform's dependencies by running a composer install command in your CLI. Navigate to your Platform folder and run the following command:
+After downloading Platform 3, you can install all of Platform's dependencies by running a composer install command in your CLI. Navigate to your Platform folder and run the following command:
 
 	composer install
 
 ### Configure Laravel
 
-Before you can get started with Platform, you'll still have to configure the Laravel 4 framework. Platform is built with Laravel 4 so some configuration is necessary. Please follow all steps detailed in [the Laravel 4 configuration documentation](http://laravel.com/docs/installation#configuration).
+Before you can get started with Platform, you'll still have to configure the Laravel 5 framework. Platform is built with Laravel 5 so some configuration is necessary. Please follow all steps detailed in [the Laravel 5 configuration documentation](http://laravel.com/docs/installation#configuration).
 
 ### Permissions
 
@@ -38,7 +38,7 @@ Platform requires the following folders to have write access by the web server:
 
 ### Install
 
-Platform 2 ships with 2 ways of installation and if required you add your own custom installer.
+Platform 3 ships with 2 ways of installation and if required you add your own custom installer.
 
 #### The CLI Installer
 

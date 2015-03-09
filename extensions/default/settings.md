@@ -1,7 +1,6 @@
 #### Settings
 
-
-By default, Platform 2 offers some configuration which you can manage in the settings panel. Add your own settings through your custom extensions.
+By default, Platform 3 offers some configuration which you can manage in the settings panel. Add your own settings through your custom extensions.
 
 **Themes**
 
@@ -9,7 +8,7 @@ Here you can select your currently active front- and back-end theme. Your own cu
 
 **General Settings**
 
-The main settings for your Platform 2 application. Here you can edit your site title and tagline as well as the email settings which your application will be using for sending external e-mails.
+The main settings for your Platform 3 application. Here you can edit your site title and tagline as well as the email settings which your application will be using for sending external e-mails.
 
 **Users**
 

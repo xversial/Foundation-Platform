@@ -17,4 +17,4 @@ Platform is not just another CMS, it's a starting point for you to build your ap
 - Scaffolding
 - Widgets
 - Media
-- Laravel 4.2
+- Laravel 5.0

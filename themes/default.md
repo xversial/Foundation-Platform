@@ -1,6 +1,6 @@
 ### Default Themes
 
-Platform 2 ships with 2 default themes, one for each area, Frontend and Admin.
+Platform 3 ships with 2 default themes, one for each area, Frontend and Admin.
 
 #### Admin Theme
 

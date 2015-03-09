@@ -1,6 +1,6 @@
 ## Configuring Extensions
 
-Below we'll go over all of the configuration options for a Platform 2 extension. All configuration options can be set in the `extension.php` file. This works exactly as any other Laravel 4 configuration file. The titles for these configuration options represent the key which can be set in the configuration array.
+Below we'll go over all of the configuration options for a Platform 3 extension. All configuration options can be set in the `extension.php` file. This works exactly as any other Laravel 5 configuration file. The titles for these configuration options represent the key which can be set in the configuration array.
 
 ### name
 
@@ -93,7 +93,7 @@ The permissions should follow the following structure:
     Vendor\Namespace\Controller@method
     Vendor\Namespace\Controller@method1,method2, ...
 
-For example, a part of the permissions array in the `extension.php` file for the Platform 2 Users extension looks like the following:
+For example, a part of the permissions array in the `extension.php` file for the Platform 3 Users extension looks like the following:
 
 	'permissions' => function()
 	{
@@ -115,7 +115,7 @@ List of custom widgets associated with the extension. Like routes, the value for
 
 Register any settings for your extension. You can also configure the namespace and group that a setting belongs to.
 
-For example, part of the Platform 2 Users's extension settings looks like the following:
+For example, part of the Platform 3 Users's extension settings looks like the following:
 
 	'settings' => function()
 	{
@@ -156,7 +156,7 @@ Menu children are automatically put at the end of the menu for extensions instal
 
 The default order (for extensions installed initially) can be found by editing `app/config/platform.php`.
 
-For example, the menu structure for the Platform 2 Users extension looks like the following:
+For example, the menu structure for the Platform 3 Users extension looks like the following:
 
 	'menus' => array(
 
