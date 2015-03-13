@@ -75,7 +75,7 @@ return [
 	| Namespaces Path
 	|--------------------------------------------------------------------------
 	|
-	| We even let you theme up Laravel 4 view namespaces. You can register a
+	| We even let you theme up Laravel 5 view namespaces. You can register a
 	| namespace for a view, for example:
 	|
 	|	View::addNamespace('foo/bar', '/var/www/some/namespace');
