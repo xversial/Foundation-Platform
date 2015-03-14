@@ -50,6 +50,8 @@ The easiest way to install Platform is to run the CLI installer. Just run the fo
 
 You should see the Platform installer when you navigate to the project in your browser. Follow the on screen instructions.
 
+> You will need to update the Application URL in `app/config/app.php` for theme compiling to resolve the font icon dependencies.
+
 #### Custom Installer
 
 You may also choose to use your own installer by extending ours or completely replacing it.
