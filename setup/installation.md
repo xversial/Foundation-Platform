@@ -31,10 +31,12 @@ Before you can get started with Platform, you'll still have to configure the Lar
 
 Platform requires the following folders to have write access by the web server:
 
-- The `app/config` folder (necessary for writing the Platform config files).
-- The `app/storage` folder and its sub-folders.
+- The `config` folder (necessary for writing the Platform config files).
 - The `public/cache` folder and its sub-folders.
 - The `public/media` folder and its sub-folders.
+- The `storage` folder required by Laravel and its sub-folders.
+- The `vendor` folder required by Laravel.
+- The `workbench` folder required when scalfolding extensions.
 
 ### Install
 
