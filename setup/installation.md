@@ -36,7 +36,6 @@ Platform requires the following folders to have write access by the web server:
 - The `public/media` folder and its sub-folders.
 - The `storage` folder required by Laravel and its sub-folders.
 - The `vendor` folder required by Laravel.
-- The `workbench` folder required when scalfolding extensions.
 
 ### Install
 
