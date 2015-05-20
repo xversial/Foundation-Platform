@@ -106,7 +106,7 @@ class StoragePermissionsRequirement implements RequirementInterface {
 	 */
 	public function message()
 	{
-		return 'app/storage must be writable.';
+		return 'storage must be writable.';
 	}
 
 }
