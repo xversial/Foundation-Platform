@@ -1,94 +1,95 @@
-<?php namespace App\Http;
+<?php
+
+namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
-class Kernel extends HttpKernel {
+class Kernel extends HttpKernel
+{
+    /**
+     * The application's global HTTP middleware stack.
+     *
+     * @var array
+     */
+    protected $middleware = [
+        \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
+        \App\Http\Middleware\EncryptCookies::class,
+        \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+        \Illuminate\Session\Middleware\StartSession::class,
+        \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+        \App\Http\Middleware\VerifyCsrfToken::class,
+    ];
 
-	/**
-	 * The application's global HTTP middleware stack.
-	 *
-	 * @var array
-	 */
-	protected $middleware = [
-		'Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode',
-		'Illuminate\Cookie\Middleware\EncryptCookies',
-		'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
-		'Illuminate\Session\Middleware\StartSession',
-		'Illuminate\View\Middleware\ShareErrorsFromSession',
-		'App\Http\Middleware\VerifyCsrfToken',
-	];
+    /**
+     * Temporary store for disabled middleware.
+     *
+     * @var array
+     */
+    protected $disabledMiddleware = [];
 
-	/**
-	 * The application's route middleware.
-	 *
-	 * @var array
-	 */
-	protected $routeMiddleware = [
-		'auth' => 'App\Http\Middleware\Authenticate',
-		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
-		'guest' => 'App\Http\Middleware\RedirectIfAuthenticated',
-	];
+    /**
+     * Temporary store for disabled route middleware.
+     *
+     * @var array
+     */
+    protected $disabledRouteMiddleware = [];
 
-	/**
-	 * Temporary store for disabled middleware.
-	 *
-	 * @var array
-	 */
-	protected $disabledMiddleware = [];
+    /**
+     * Disable middleware.
+     *
+     * @return void
+     */
+    public function disableMiddleware()
+    {
+        $this->disabledMiddleware = $this->middleware;
 
-	/**
-	 * Temporary store for disabled route middleware.
-	 *
-	 * @var array
-	 */
-	protected $disabledRouteMiddleware = [];
+        $this->middleware = [];
+    }
 
-	/**
-	 * Disable middleware.
-	 *
-	 * @return void
-	 */
-	public function disableMiddleware()
-	{
-		$this->disabledMiddleware = $this->middleware;
+    /**
+     * Enable middleware.
+     *
+     * @return void
+     */
+    public function enableMiddleware()
+    {
+        $this->middleware = $this->disableMiddleware;
 
-		$this->middleware = [];
-	}
+        $this->disabledMiddleware = [];
+    }
 
-	/**
-	 * Enable middleware.
-	 *
-	 * @return void
-	 */
-	public function enableMiddleware()
-	{
-		$this->middleware = $this->disableMiddleware;
+    /**
+     * Disable route middleware.
+     *
+     * @return void
+     */
+    public function disableRouteMiddleware()
+    {
+        $this->disabledRouteMiddleware = $this->routeMiddleware;
 
-		$this->disabledMiddleware = [];
-	}
+        $this->routeMiddleware = [];
+    }
 
-	/**
-	 * Disable route middleware.
-	 *
-	 * @return void
-	 */
-	public function disableRouteMiddleware()
-	{
-		$this->disabledRouteMiddleware = $this->routeMiddleware;
+    /**
+     * Enable route middleware.
+     *
+     * @return void
+     */
+    public function enableRouteMiddleware()
+    {
+        $this->routeMiddleware = $this->disableRouteMiddleware;
 
-		$this->routeMiddleware = [];
-	}
+        $this->disabledRouteMiddleware = [];
+    }
 
-	/**
-	 * Enable route middleware.
-	 *
-	 * @return void
-	 */
-	public function enableRouteMiddleware()
-	{
-		$this->routeMiddleware = $this->disableRouteMiddleware;
-
-		$this->disabledRouteMiddleware = [];
-	}
-
+    /**
+     * The application's route middleware.
+     *
+     * @var array
+     */
+    protected $routeMiddleware = [
+        'auth' => \App\Http\Middleware\Authenticate::class,
+        'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
+    ];
 }
