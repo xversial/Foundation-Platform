@@ -401,16 +401,16 @@
         },
         {
             "name": "cartalyst/data-grid",
-            "version": "v3.0.2",
+            "version": "v3.0.3",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/data-grid.git",
-                "reference": "600077e9ff41432b8ddb03e8af14935720f39ff6"
+                "reference": "b8e1528c240452f4ed186362227e8fbc30acefbb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/data-grid/zipball/600077e9ff41432b8ddb03e8af14935720f39ff6",
-                "reference": "600077e9ff41432b8ddb03e8af14935720f39ff6",
+                "url": "https://api.github.com/repos/cartalyst/data-grid/zipball/b8e1528c240452f4ed186362227e8fbc30acefbb",
+                "reference": "b8e1528c240452f4ed186362227e8fbc30acefbb",
                 "shasum": ""
             },
             "require": {
@@ -479,10 +479,10 @@
                 "search"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/data-grid/tree/v3.0.2",
+                "source": "https://github.com/cartalyst/data-grid/tree/v3.0.3",
                 "issues": "https://github.com/cartalyst/data-grid/issues"
             },
-            "time": "2015-02-24 18:32:32"
+            "time": "2015-07-02 22:57:32"
         },
         {
             "name": "cartalyst/dependencies",
@@ -1305,20 +1305,20 @@
         },
         {
             "name": "cartalyst/tags",
-            "version": "v1.0.2",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cartalyst/tags.git",
-                "reference": "19010b6325d2daaee37549f1fbf412a3fec02032"
+                "reference": "7487ac51443d6f33fc67ef881da1deb7f9007a42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/tags/zipball/19010b6325d2daaee37549f1fbf412a3fec02032",
-                "reference": "19010b6325d2daaee37549f1fbf412a3fec02032",
+                "url": "https://api.github.com/repos/cartalyst/tags/zipball/7487ac51443d6f33fc67ef881da1deb7f9007a42",
+                "reference": "7487ac51443d6f33fc67ef881da1deb7f9007a42",
                 "shasum": ""
             },
             "require": {
-                "illuminate/database": "~4.2|~5.0",
+                "illuminate/database": "5.1.*",
                 "php": ">=5.4.0"
             },
             "require-dev": {
@@ -1330,7 +1330,7 @@
             "extra": {
                 "component": "package",
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "2.0.x-dev"
                 }
             },
             "autoload": {
@@ -1373,7 +1373,7 @@
                 "php",
                 "tags"
             ],
-            "time": "2015-02-15 14:11:30"
+            "time": "2015-06-12 17:47:22"
         },
         {
             "name": "cartalyst/themes",
@@ -4030,12 +4030,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-media.git",
-                "reference": "19b6c57202925d63ce7b7550cb882986bb849dbc"
+                "reference": "d7a738e395f0d325e27b7a71dbaf938ee59b3c86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/19b6c57202925d63ce7b7550cb882986bb849dbc",
-                "reference": "19b6c57202925d63ce7b7550cb882986bb849dbc",
+                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/d7a738e395f0d325e27b7a71dbaf938ee59b3c86",
+                "reference": "d7a738e395f0d325e27b7a71dbaf938ee59b3c86",
                 "shasum": ""
             },
             "require": {
@@ -4112,7 +4112,7 @@
                 "source": "https://github.com/cartalyst/platform-media/tree/master",
                 "issues": "https://github.com/cartalyst/platform-media/issues"
             },
-            "time": "2015-07-02 21:23:27"
+            "time": "2015-07-02 23:03:27"
         },
         {
             "name": "platform/menus",
@@ -4120,12 +4120,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-menus.git",
-                "reference": "4231a992d37e55326a36870513a6d04c5ff6af71"
+                "reference": "27e14cb528d91b73f8569e2ede045e72031eb020"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/4231a992d37e55326a36870513a6d04c5ff6af71",
-                "reference": "4231a992d37e55326a36870513a6d04c5ff6af71",
+                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/27e14cb528d91b73f8569e2ede045e72031eb020",
+                "reference": "27e14cb528d91b73f8569e2ede045e72031eb020",
                 "shasum": ""
             },
             "require": {
@@ -4195,7 +4195,7 @@
                 "source": "https://github.com/cartalyst/platform-menus/tree/master",
                 "issues": "https://github.com/cartalyst/platform-menus/issues"
             },
-            "time": "2015-07-02 21:23:34"
+            "time": "2015-07-02 22:52:44"
         },
         {
             "name": "platform/operations",
@@ -4282,12 +4282,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-pages.git",
-                "reference": "31f2fba7c47dd1853ae920b0a42c592fc7f1ff76"
+                "reference": "89bac75b311adf11f90012289754f5148fc9d6bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/31f2fba7c47dd1853ae920b0a42c592fc7f1ff76",
-                "reference": "31f2fba7c47dd1853ae920b0a42c592fc7f1ff76",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/89bac75b311adf11f90012289754f5148fc9d6bc",
+                "reference": "89bac75b311adf11f90012289754f5148fc9d6bc",
                 "shasum": ""
             },
             "require": {
@@ -4360,7 +4360,7 @@
                 "source": "https://github.com/cartalyst/platform-pages/tree/master",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2015-07-02 21:23:48"
+            "time": "2015-07-02 23:15:31"
         },
         {
             "name": "platform/permissions",
@@ -4604,17 +4604,17 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-tags.git",
-                "reference": "136e2403b37a303ad363f070594476162933303f"
+                "reference": "6b5741afdc73ae35d6a7dd80e24f2eb7d13fe7b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-tags/zipball/136e2403b37a303ad363f070594476162933303f",
-                "reference": "136e2403b37a303ad363f070594476162933303f",
+                "url": "https://api.github.com/repos/cartalyst/platform-tags/zipball/6b5741afdc73ae35d6a7dd80e24f2eb7d13fe7b6",
+                "reference": "6b5741afdc73ae35d6a7dd80e24f2eb7d13fe7b6",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "1.2.*",
-                "cartalyst/tags": "1.0.*",
+                "cartalyst/tags": "2.0.*",
                 "php": ">=5.5.9",
                 "platform/access": "3.0.*",
                 "platform/foundation": "3.0.*"
@@ -4675,7 +4675,7 @@
                 "source": "https://github.com/cartalyst/platform-tags/tree/master",
                 "issues": "https://github.com/cartalyst/platform-tags/issues"
             },
-            "time": "2015-07-02 21:24:14"
+            "time": "2015-07-02 22:53:29"
         },
         {
             "name": "platform/themes",
