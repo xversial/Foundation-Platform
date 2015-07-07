@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY', '--PLATFORM--IS--NOT--INSTALLED--'),
+    'key' => env('APP_KEY', 'SomeRandomString'),
 
     'cipher' => 'AES-256-CBC',
 
