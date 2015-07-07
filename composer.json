@@ -86,11 +86,9 @@
         ]
     },
     "scripts": {
-        "pre-install-cmd": [
-            "php artisan platform:check-env-file"
-        ],
         "post-install-cmd": [
             "php artisan clear-compiled",
+            "php artisan platform:check-env-file",
             "php artisan optimize",
             "php artisan platform:upgrade",
             "php artisan theme:publish --extensions",
@@ -98,10 +96,10 @@
             "php artisan theme:compile"
         ],
         "pre-update-cmd": [
-            "php artisan clear-compiled",
-            "php artisan platform:check-env-file"
+            "php artisan clear-compiled"
         ],
         "post-update-cmd": [
+            "php artisan platform:check-env-file",
             "php artisan optimize",
             "php artisan platform:upgrade",
             "php artisan theme:publish --extensions",
@@ -115,6 +113,5 @@
     "extra": {
         "component": "application"
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "minimum-stability": "stable"
 }
