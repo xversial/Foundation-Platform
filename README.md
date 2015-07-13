@@ -8,10 +8,11 @@ Part of the Cartalyst Arsenal & licensed [Cartalyst PSL](LICENSE). Code well, ro
 
 ## Documentation
 
-Reader-friendly Documentation can be found here. [Platform Manual](https://cartalyst.com/manual/platform).
+Reader-friendly Documentation can be found here. [Platform Manual](https://cartalyst.com/manual/platform/4.0).
 
 Raw files can be found via this projects docs/version branch.
 
+- [4.0](https://github.com/cartalyst/platform/tree/docs/4.0)
 - [3.0](https://github.com/cartalyst/platform/tree/docs/3.0)
 - [2.0](https://github.com/cartalyst/platform/tree/docs/2.0)
 
@@ -19,6 +20,7 @@ Raw files can be found via this projects docs/version branch.
 
 Important versions listed below. Refer to the [Changelog](CHANGELOG.md) for a full history of the project.
 
+- [4.0](CHANGELOG.md) - 2015-07-13
 - [3.0](CHANGELOG.md) - 2015-03-09
 - [2.0](CHANGELOG.md) - 2015-01-30
 
