@@ -5,7 +5,7 @@ The `app` folder is almost identical to a stock-standard Laravel 5 `app` folder,
 
 The end result? You can continue to make any application you would like without having to conform to Platform "standards" or "practices".
 
-Want to install Platform for an administration area but build a completely custom website? Sure, just start working with `app/routes.php` as you normally would. Utilize our API, data and extensions where you need, they won't get in your way.
+Want to install Platform for an administration area but build a completely custom website? Sure, just start working with `app/Http/routes.php` as you normally would. Utilize our API, data and extensions where you need, they won't get in your way.
 
 #### Extensibility
 
