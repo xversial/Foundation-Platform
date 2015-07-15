@@ -1,10 +1,10 @@
 ### Create Extensions
 
-Because extensions are basically separated app folders there really is no limit to what you can build with them. You could write a media manager extension or a notification handler extension which you can re-use on different Platform 3 applications.
+Because extensions are basically separated app folders there really is no limit to what you can build with them. You could write a media manager extension or a notification handler extension which you can re-use on different Platform 4 applications.
 
 #### Using The Workshop Extension
 
-The easiest way to get started with an extension is to create one though the Workshop extension. To get started browse to `admin/operations/workshop` in your Platform 3 back-end.
+The easiest way to get started with an extension is to create one though the Workshop extension. To get started browse to `admin/operations/workshop` in your Platform 4 back-end.
 
 You'll notice a series of input fields which will be needed to generate your extension files. We'll go over each one of them.
 
@@ -62,7 +62,7 @@ If you want to register a small widget but don't want to create a class for it y
 		}
 	),
 
-If you'd like to create a separate class for the widget to have some extra functionality you can create a class in the `widgets` folder. By default, Platform 3 will register your widgets by using your class name as the widget key. You can override this by registering the widget in the `extension.php` file.
+If you'd like to create a separate class for the widget to have some extra functionality you can create a class in the `widgets` folder. By default, Platform 4 will register your widgets by using your class name as the widget key. You can override this by registering the widget in the `extension.php` file.
 
 	'widgets' => array(
 		'foo' => 'My\Widget\Namespace\Foo@someMethod',

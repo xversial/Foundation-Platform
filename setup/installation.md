@@ -2,7 +2,7 @@
 
 ### Requirements
 
-Platform is essentially just a series of components that work with Laravel 5.0. So the requirements are virtually the same. However some components may require dependencies with their own set of minimum requirments.
+Platform is essentially just a series of components that work with Laravel 5.1. So the requirements are virtually the same. However some components may require dependencies with their own set of minimum requirments.
 
 - PHP >= 5.4.0
 - MCrypt PHP Extension
@@ -11,15 +11,15 @@ Platform is essentially just a series of components that work with Laravel 5.0. 
 
 You can get Platform by cloning the repository from GitHub.
 
-	git clone -b 3.0 git@github.com:cartalyst/platform.git My_Project
+	git clone -b 4.0 git@github.com:cartalyst/platform.git My_Project
 
-Platform can also be installed by simply [downloading a copy from GitHub](https://github.com/cartalyst/platform/archive/3.0.zip). After downloading, unzip the `.zip` file into a location that suits you.
+Platform can also be installed by simply [downloading a copy from GitHub](https://github.com/cartalyst/platform/archive/4.0.zip). After downloading, unzip the `.zip` file into a location that suits you.
 
 > Installing by cloning from the GitHub repository is the preferred method as this gives you an easy way to update Platform by merging changes from the original GitHub repository.
 
 ### Install Dependencies
 
-After downloading Platform 3, you can install all of Platform's dependencies by running a composer install command in your CLI. Navigate to your Platform folder and run the following command:
+After downloading Platform 4, you can install all of Platform's dependencies by running a composer install command in your CLI. Navigate to your Platform folder and run the following command:
 
 	composer install
 
@@ -39,7 +39,7 @@ Platform requires the following folders to have write access by the web server:
 
 ### Install
 
-Platform 3 ships with 2 ways of installation and if required you add your own custom installer.
+Platform 4 ships with 2 ways of installation and if required you add your own custom installer.
 
 #### The CLI Installer
 

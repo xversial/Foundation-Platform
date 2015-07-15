@@ -9,7 +9,7 @@ Want to install Platform for an administration area but build a completely custo
 
 #### Extensibility
 
-Platform 3 was made to be even more extendable than Platform 1. A number of key files to get you off the ground with extending Platform are:
+Platform 4 was made to be even more extendable than Platform 1. A number of key files to get you off the ground with extending Platform are:
 
  - `app/hooks.php`
  - `app/functions.php`

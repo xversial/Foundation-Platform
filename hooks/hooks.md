@@ -1,6 +1,6 @@
 ## Hooks
 
-Platform 3 hooks are events which are fired at various occasions throughout certain Platform 3 actions.
+Platform 4 hooks are events which are fired at various occasions throughout certain Platform 4 actions.
 
 They give you the oportunity to do something when the event is fired. You can find these hooks in the `app/hooks.php` file.
 

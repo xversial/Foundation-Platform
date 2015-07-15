@@ -1,10 +1,10 @@
 ## Overrides
 
-Overrides in Platform 3 give you the ability to easily swap core functionality with your own custom functionality.
+Overrides in Platform 4 give you the ability to easily swap core functionality with your own custom functionality.
 
 ### Route Overrides
 
-Because we use an internal REST API, you have the ability to override any route for an API call to your own logic. This makes extending Platform 3 extremely easy and can be done from anywhere.
+Because we use an internal REST API, you have the ability to override any route for an API call to your own logic. This makes extending Platform 4 extremely easy and can be done from anywhere.
 
 To override them open the `app/routes.php`.
 
@@ -18,7 +18,7 @@ The default Platform extensions use the IoC to resolve model instances. You can 
 
 To override them open the `app/overrides/models.php`.
 
-For example, overriding the default Platform 3 Content model.
+For example, overriding the default Platform 4 Content model.
 
 	$app['Platform\Content\Models\Content'] = new My\Custom\Models\Content;
 

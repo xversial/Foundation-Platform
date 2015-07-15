@@ -8,16 +8,16 @@ Besides the functionality that this extension provides by default, it comes with
 
 ##### Users
 
-Platform 3 provides some basic user management functionality like adding, editing and deleting users as well as user registration and setting users to an inactive state.
+Platform 4 provides some basic user management functionality like adding, editing and deleting users as well as user registration and setting users to an inactive state.
 
 ##### Roles
 
-Because Platform 3 comes with [Cartalyst Sentinel](https://cartalyst.com/manual/sentinel) installed, you also get easy role management over your users. You can assign users to roles by clicking on the edit button of a user. Later on you can add specific permissions to roles.
+Because Platform 4 comes with [Cartalyst Sentinel](https://cartalyst.com/manual/sentinel) installed, you also get easy role management over your users. You can assign users to roles by clicking on the edit button of a user. Later on you can add specific permissions to roles.
 
 ##### Permissions
 
 Permissions can both be set on users and roles. You can assign permissions by editing a user or a role and clicking on the permissions tab.
 
-Here you'll get a listing of all the available permissions for your Platform 3 application.
+Here you'll get a listing of all the available permissions for your Platform 4 application.
 
 Permissions are usually added through extensions. You can read more about how to add permissions through extensions [here](#configuring-extensions).

@@ -1,3 +1,3 @@
 ### Default Extensions
 
-Platform 3 by default ships with a handful of extensions.
+Platform 4 by default ships with a handful of extensions.
