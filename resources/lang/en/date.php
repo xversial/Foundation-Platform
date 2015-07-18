@@ -19,50 +19,50 @@
 
 return [
 
-	/*
-	|--------------------------------------------------------------------------
-	| Date Language Lines
-	|--------------------------------------------------------------------------
-	|
-	| The following language lines are used throughout the whole application.
-	| You can change them to anything you want to customize your views to
-	| better match your application.
-	|
-	*/
+    /*
+    |--------------------------------------------------------------------------
+    | Date Language Lines
+    |--------------------------------------------------------------------------
+    |
+    | The following language lines are used throughout the whole application.
+    | You can change them to anything you want to customize your views to
+    | better match your application.
+    |
+    */
 
-	'day'           => 'Day',
-	'week'          => 'Week',
-	'month'         => 'Month',
-	'today'         => 'Today',
-	'tomorrow'      => 'Tomorrow',
-	'yesterday'     => 'Yesterday',
-	'this_month'    => 'This Month',
-	'last_month'    => 'Last Month',
-	'next_month'    => 'Next Month',
+    'day'           => 'Day',
+    'week'          => 'Week',
+    'month'         => 'Month',
+    'today'         => 'Today',
+    'tomorrow'      => 'Tomorrow',
+    'yesterday'     => 'Yesterday',
+    'this_month'    => 'This Month',
+    'last_month'    => 'Last Month',
+    'next_month'    => 'Next Month',
 
-	'months' => [
-		'january'   => 'January',
-		'february'  => 'February',
-		'march'     => 'March',
-		'april'     => 'April',
-		'may'       => 'May',
-		'june'      => 'June',
-		'july'      => 'July',
-		'august'    => 'August',
-		'september' => 'September',
-		'october'   => 'October',
-		'november'  => 'November',
-		'december'  => 'December',
-	],
+    'months' => [
+        'january'   => 'January',
+        'february'  => 'February',
+        'march'     => 'March',
+        'april'     => 'April',
+        'may'       => 'May',
+        'june'      => 'June',
+        'july'      => 'July',
+        'august'    => 'August',
+        'september' => 'September',
+        'october'   => 'October',
+        'november'  => 'November',
+        'december'  => 'December',
+    ],
 
-	'days' => [
-		'monday'    => 'Monday',
-		'tuesday'   => 'Tuesday',
-		'wednesday' => 'Wednesday',
-		'thursday'  => 'Thursday',
-		'friday'    => 'Friday',
-		'saturday'  => 'Saturday',
-		'sunday'    => 'Sunday',
-	],
+    'days' => [
+        'monday'    => 'Monday',
+        'tuesday'   => 'Tuesday',
+        'wednesday' => 'Wednesday',
+        'thursday'  => 'Thursday',
+        'friday'    => 'Friday',
+        'saturday'  => 'Saturday',
+        'sunday'    => 'Sunday',
+    ],
 
 ];

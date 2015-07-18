@@ -1,4 +1,5 @@
-<?php namespace Cartalyst\Platform\Laravel;
+<?php
+
 /**
  * Part of the Platform application.
  *
@@ -17,72 +18,68 @@
  * @link       http://cartalyst.com
  */
 
+namespace Cartalyst\Platform\Laravel;
+
 use Cartalyst\Platform\Redirector;
 use Cartalyst\Platform\UrlGenerator;
 use Illuminate\Support\ServiceProvider;
 
-class OverridesServiceProvider extends ServiceProvider {
+class OverridesServiceProvider extends ServiceProvider
+{
+    /**
+     * {@inheritDoc}
+     */
+    public function boot()
+    {
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function boot()
-	{
+    /**
+     * {@inheritDoc}
+     */
+    public function register()
+    {
+        $this->registerRedirector();
+        $this->registerUrlGenerator();
+    }
 
-	}
+    /**
+     * Registers the Redirector.
+     *
+     * @return void
+     */
+    protected function registerRedirector()
+    {
+        $this->app->bindShared('redirect', function ($app) {
+            $redirector = new Redirector($app['url']);
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function register()
-	{
-		$this->registerRedirector();
-		$this->registerUrlGenerator();
-	}
+            // If the session is set on the application instance, we'll inject it into
+            // the redirector instance. This allows the redirect responses to allow
+            // for the quite convenient "with" methods that flash to the session.
+            if (isset($app['session.store'])) {
+                $redirector->setSession($app['session.store']);
+            }
 
-	/**
-	 * Registers the Redirector.
-	 *
-	 * @return void
-	 */
-	protected function registerRedirector()
-	{
-		$this->app->bindShared('redirect', function($app)
-		{
-			$redirector = new Redirector($app['url']);
+            return $redirector;
+        });
+    }
 
-			// If the session is set on the application instance, we'll inject it into
-			// the redirector instance. This allows the redirect responses to allow
-			// for the quite convenient "with" methods that flash to the session.
-			if (isset($app['session.store']))
-			{
-				$redirector->setSession($app['session.store']);
-			}
+    /**
+     * Registers the UrlGenerator.
+     *
+     * @return void
+     */
+    protected function registerUrlGenerator()
+    {
+        $this->app->bindShared('url', function ($app) {
+            $routes = $app['router']->getRoutes();
 
-			return $redirector;
-		});
-	}
+            $request = $app->rebinding('request', function ($app, $request) {
+                $app['url']->setRequest($request);
+            });
 
-	/**
-	 * Registers the UrlGenerator.
-	 *
-	 * @return void
-	 */
-	protected function registerUrlGenerator()
-	{
-		$this->app->bindShared('url', function($app)
-		{
-			$routes = $app['router']->getRoutes();
+            $urlGenerator = new UrlGenerator($routes, $request);
 
-			$request = $app->rebinding('request', function($app, $request)
-			{
-				$app['url']->setRequest($request);
-			});
-
-			$urlGenerator = new UrlGenerator($routes, $request);
-
-			return $urlGenerator;
-		});
-	}
-
+            return $urlGenerator;
+        });
+    }
 }

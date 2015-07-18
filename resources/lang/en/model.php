@@ -19,12 +19,12 @@
 
 return [
 
-	'id'         => 'Id',
-	'name'       => 'Name',
-	'slug'       => 'Slug',
-	'created_at' => 'Created at',
-	'updated_at' => 'Updated at',
-	'status'     => 'Status',
-	'namespace'  => 'Namespace',
+    'id'         => 'Id',
+    'name'       => 'Name',
+    'slug'       => 'Slug',
+    'created_at' => 'Created at',
+    'updated_at' => 'Updated at',
+    'status'     => 'Status',
+    'namespace'  => 'Namespace',
 
 ];

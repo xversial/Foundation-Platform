@@ -1,4 +1,5 @@
-<?php namespace Cartalyst\Platform;
+<?php
+
 /**
  * Part of the Platform application.
  *
@@ -17,10 +18,11 @@
  * @link       http://cartalyst.com
  */
 
+namespace Cartalyst\Platform;
+
 use Platform\Access\Traits\RedirectorTrait;
 
-class Redirector extends \Illuminate\Routing\Redirector {
-
-	use RedirectorTrait;
-
+class Redirector extends \Illuminate\Routing\Redirector
+{
+    use RedirectorTrait;
 }

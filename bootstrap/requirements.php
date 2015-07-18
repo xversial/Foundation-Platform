@@ -1,4 +1,5 @@
-<?php namespace Platform\Bootstrap\Requirements;
+<?php
+
 /**
  * Part of the Platform Installer extension.
  *
@@ -17,6 +18,8 @@
  * @link       http://cartalyst.com
  */
 
+namespace Platform\Bootstrap\Requirements;
+
 /*
 |--------------------------------------------------------------------------
 | Platform requirement rules
@@ -29,198 +32,191 @@
 |
 */
 
-interface RequirementInterface {
+interface RequirementInterface
+{
+    /**
+     * Performs the requirement check.
+     *
+     * @param  array  $paths
+     * @return bool
+     */
+    public function check($paths = []);
 
-	/**
-	 * Performs the requirement check.
-	 *
-	 * @param  array  $paths
-	 * @return bool
-	 */
-	public function check($paths = []);
+    /**
+     * Returns the title translation key.
+     *
+     * @return string
+     */
+    public function title();
 
-	/**
-	 * Returns the title translation key.
-	 *
-	 * @return string
-	 */
-	public function title();
-
-	/**
-	 * Returns the message translation key.
-	 *
-	 * @return string
-	 */
-	public function message();
-
+    /**
+     * Returns the message translation key.
+     *
+     * @return string
+     */
+    public function message();
 }
 
-class DependenciesRequirement implements RequirementInterface {
+class DependenciesRequirement implements RequirementInterface
+{
+    /**
+     * {@inheritDoc}
+     */
+    public function check($paths = [])
+    {
+        return file_exists(realpath(__DIR__.'/../vendor'));
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function check($paths = [])
-	{
-		return file_exists(realpath(__DIR__.'/../vendor'));
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function title()
+    {
+        return 'Composer Dependencies';
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function title()
-	{
-		return 'Composer Dependencies';
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	public function message()
-	{
-		return 'Composer dependencies missing.';
-	}
-
+    /**
+     * {@inheritDoc}
+     */
+    public function message()
+    {
+        return 'Composer dependencies missing.';
+    }
 }
 
-class StoragePermissionsRequirement implements RequirementInterface {
+class StoragePermissionsRequirement implements RequirementInterface
+{
+    /**
+     * {@inheritDoc}
+     */
+    public function check($paths = [])
+    {
+        return is_writable(realpath($paths['storage']));
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function check($paths = [])
-	{
-		return is_writable(realpath($paths['storage']));
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function title()
+    {
+        return 'Storage Write Permissions';
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function title()
-	{
-		return 'Storage Write Permissions';
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	public function message()
-	{
-		return 'storage must be writable.';
-	}
-
+    /**
+     * {@inheritDoc}
+     */
+    public function message()
+    {
+        return 'storage must be writable.';
+    }
 }
 
-class PublicPermissionsRequirement implements RequirementInterface {
+class PublicPermissionsRequirement implements RequirementInterface
+{
+    /**
+     * {@inheritDoc}
+     */
+    public function check($paths = [])
+    {
+        return is_writable(realpath($paths['public'].'/cache'));
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function check($paths = [])
-	{
-		return is_writable(realpath($paths['public'].'/cache'));
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function title()
+    {
+        return 'Cache Write Permissions';
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function title()
-	{
-		return 'Cache Write Permissions';
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	public function message()
-	{
-		return 'public/cache must be writable.';
-	}
-
+    /**
+     * {@inheritDoc}
+     */
+    public function message()
+    {
+        return 'public/cache must be writable.';
+    }
 }
 
-class McryptExtensionRequirement implements RequirementInterface {
+class McryptExtensionRequirement implements RequirementInterface
+{
+    /**
+     * {@inheritDoc}
+     */
+    public function check($paths = [])
+    {
+        return extension_loaded('mcrypt');
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function check($paths = [])
-	{
-		return extension_loaded('mcrypt');
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function title()
+    {
+        return 'Mcrypt PHP Extension';
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function title()
-	{
-		return 'Mcrypt PHP Extension';
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	public function message()
-	{
-		return 'Mcrypt extension is required.';
-	}
-
+    /**
+     * {@inheritDoc}
+     */
+    public function message()
+    {
+        return 'Mcrypt extension is required.';
+    }
 }
 
-class GDExtensionRequirement implements RequirementInterface {
+class GDExtensionRequirement implements RequirementInterface
+{
+    /**
+     * {@inheritDoc}
+     */
+    public function check($paths = [])
+    {
+        return extension_loaded('gd');
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function check($paths = [])
-	{
-		return extension_loaded('gd');
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function title()
+    {
+        return 'GD PHP Extensions';
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function title()
-	{
-		return 'GD PHP Extensions';
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	public function message()
-	{
-		return 'GD extension is required.';
-	}
-
+    /**
+     * {@inheritDoc}
+     */
+    public function message()
+    {
+        return 'GD extension is required.';
+    }
 }
 
-class PDOExtensionRequirement implements RequirementInterface {
+class PDOExtensionRequirement implements RequirementInterface
+{
+    /**
+     * {@inheritDoc}
+     */
+    public function check($paths = [])
+    {
+        return defined('PDO::ATTR_DRIVER_NAME');
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function check($paths = [])
-	{
-		return defined('PDO::ATTR_DRIVER_NAME');
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public function title()
+    {
+        return 'PDO PHP Extension';
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public function title()
-	{
-		return 'PDO PHP Extension';
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	public function message()
-	{
-		return 'PDO extension is required.';
-	}
-
+    /**
+     * {@inheritDoc}
+     */
+    public function message()
+    {
+        return 'PDO extension is required.';
+    }
 }
 
 /*
@@ -234,12 +230,12 @@ class PDOExtensionRequirement implements RequirementInterface {
 */
 
 $requirements = [
-	new DependenciesRequirement,
-	new StoragePermissionsRequirement,
-	new PublicPermissionsRequirement,
-	new McryptExtensionRequirement,
-	new GDExtensionRequirement,
-	new PDOExtensionRequirement,
+    new DependenciesRequirement,
+    new StoragePermissionsRequirement,
+    new PublicPermissionsRequirement,
+    new McryptExtensionRequirement,
+    new GDExtensionRequirement,
+    new PDOExtensionRequirement,
 ];
 
 /*
@@ -253,23 +249,21 @@ $requirements = [
 */
 
 $paths = [
-	'storage' => realpath(__DIR__.'/../storage'),
-	'public'  => realpath(__DIR__.'/../public'),
+    'storage' => realpath(__DIR__.'/../storage'),
+    'public'  => realpath(__DIR__.'/../public'),
 ];
 
 $pass = true;
 
-foreach ($requirements as $requirement)
-{
-	if ( ! $requirement->check($paths))
-	{
-		$pass = false;
-		break;
-	}
+foreach ($requirements as $requirement) {
+    if (! $requirement->check($paths)) {
+        $pass = false;
+        break;
+    }
 }
 
 ?>
-<?php if ( ! $pass): ?>
+<?php if (! $pass): ?>
 
 	<!DOCTYPE html>
 	<html lang="en">
@@ -450,7 +444,7 @@ foreach ($requirements as $requirement)
 
 						<?php foreach ($requirements as $requirement): ?>
 
-							<?php if ( ! $requirement->check($paths)): ?>
+							<?php if (! $requirement->check($paths)): ?>
 								<div class="alert alert-danger" role="alert"><?php echo $requirement->message(); ?></div>
 							<?php else: ?>
 								<div class="alert alert-success" role="alert"><?php echo $requirement->message(); ?></div>
