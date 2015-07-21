@@ -17,9 +17,8 @@
 |
 */
 
-if (file_exists($requirements = __DIR__.'/../bootstrap/requirements.php'))
-{
-	require $requirements;
+if (file_exists($requirements = __DIR__.'/../bootstrap/requirements.php')) {
+    require $requirements;
 }
 
 /*

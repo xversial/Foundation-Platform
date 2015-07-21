@@ -1,4 +1,5 @@
-<?php namespace App\Widgets;
+<?php
+
 /**
  * Part of the Platform application.
  *
@@ -17,19 +18,20 @@
  * @link       http://cartalyst.com
  */
 
-class HelloWidget {
+namespace App\Widgets;
 
-	/**
-	 * Show a welcome message.
-	 *
-	 * @param  string  $name
-	 * @return string
-	 */
-	public function show($name = null)
-	{
-		$name = $name ?: 'stranger';
+class HelloWidget
+{
+    /**
+     * Show a welcome message.
+     *
+     * @param  string  $name
+     * @return string
+     */
+    public function show($name = null)
+    {
+        $name = $name ?: 'stranger';
 
-		return "Hello {$name}!";
-	}
-
+        return "Hello {$name}!";
+    }
 }

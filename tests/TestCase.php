@@ -73,8 +73,7 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
     {
         $tableNames = Schema::getConnection()->getDoctrineSchemaManager()->listTableNames();
 
-        foreach ($tableNames as $table)
-        {
+        foreach ($tableNames as $table) {
             Schema::drop($table);
         }
 

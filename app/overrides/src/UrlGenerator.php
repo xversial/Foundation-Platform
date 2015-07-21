@@ -1,4 +1,5 @@
-<?php namespace Cartalyst\Platform;
+<?php
+
 /**
  * Part of the Platform application.
  *
@@ -17,25 +18,26 @@
  * @link       http://cartalyst.com
  */
 
+namespace Cartalyst\Platform;
+
 use Platform\Access\Traits\UrlGeneratorTrait as AccessUrlGeneratorTrait;
 
-class UrlGenerator extends \Illuminate\Routing\UrlGenerator {
+class UrlGenerator extends \Illuminate\Routing\UrlGenerator
+{
+    use AccessUrlGeneratorTrait;
 
-	use AccessUrlGeneratorTrait;
+    /**
+     * Get the URL for the previous request.
+     *
+     * @param  string  $fallback
+     * @return string
+     */
+    public function previous($fallback = null)
+    {
+        $referer = $this->request->headers->get('referer', $fallback);
 
-	/**
-	 * Get the URL for the previous request.
-	 *
-	 * @param  string  $fallback
-	 * @return string
-	 */
-	public function previous($fallback = null)
-	{
-		$referer = $this->request->headers->get('referer', $fallback);
-
-		return $this->to(
-			$this->request->input('previous_url', $referer)
-		);
-	}
-
+        return $this->to(
+            $this->request->input('previous_url', $referer)
+        );
+    }
 }

@@ -19,9 +19,9 @@
 
 return [
 
-	'delete_record' => 'You are about to delete this record, do you want to continue?',
-	'not_logged_in' => 'You are not logged in.',
-	'loading'       => 'Processing Request',
-	'check_form'    => 'Check the form below for errors.',
+    'delete_record' => 'You are about to delete this record, do you want to continue?',
+    'not_logged_in' => 'You are not logged in.',
+    'loading'       => 'Processing Request',
+    'check_form'    => 'Check the form below for errors.',
 
 ];

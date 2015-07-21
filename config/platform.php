@@ -19,149 +19,149 @@
 
 return [
 
-	/*
-	|--------------------------------------------------------------------------
-	| App
-	|--------------------------------------------------------------------------
-	|
-	| Basic configuration for your Platform application.
-	|
-	*/
+    /*
+    |--------------------------------------------------------------------------
+    | App
+    |--------------------------------------------------------------------------
+    |
+    | Basic configuration for your Platform application.
+    |
+    */
 
-	'app' => [
+    'app' => [
 
-		/*
-		|--------------------------------------------------------------------------
-		| App Title
-		|--------------------------------------------------------------------------
-		|
-		| Here you may specify the title of the site you are building, to be used
-		| throughout your templates (as an example).
-		|
-		*/
+        /*
+        |--------------------------------------------------------------------------
+        | App Title
+        |--------------------------------------------------------------------------
+        |
+        | Here you may specify the title of the site you are building, to be used
+        | throughout your templates (as an example).
+        |
+        */
 
-		'title' => 'Platform',
+        'title' => 'Platform',
 
-		/*
-		|--------------------------------------------------------------------------
-		| App Tagline
-		|--------------------------------------------------------------------------
-		|
-		| Here you may specify the tagline of the site you are building, to be used
-		| throughout your templates (as an example).
-		|
-		*/
+        /*
+        |--------------------------------------------------------------------------
+        | App Tagline
+        |--------------------------------------------------------------------------
+        |
+        | Here you may specify the tagline of the site you are building, to be used
+        | throughout your templates (as an example).
+        |
+        */
 
-		'tagline' => 'An application base on Laravel',
+        'tagline' => 'An application base on Laravel',
 
-		/*
-		|--------------------------------------------------------------------------
-		| App Email
-		|--------------------------------------------------------------------------
-		|
-		| Here you may specify your website general email address, this can be
-		| used on other extensions to send emails.
-		|
-		*/
+        /*
+        |--------------------------------------------------------------------------
+        | App Email
+        |--------------------------------------------------------------------------
+        |
+        | Here you may specify your website general email address, this can be
+        | used on other extensions to send emails.
+        |
+        */
 
-		'email' => null,
+        'email' => null,
 
-		/*
-		|--------------------------------------------------------------------------
-		| App Copyright
-		|--------------------------------------------------------------------------
-		|
-		| Specify the copyright clause for your website
-		|
-		*/
+        /*
+        |--------------------------------------------------------------------------
+        | App Copyright
+        |--------------------------------------------------------------------------
+        |
+        | Specify the copyright clause for your website
+        |
+        */
 
-		'copyright' => '&copy; 2011-2015, Cartalyst LLC',
+        'copyright' => '&copy; 2011-2015, Cartalyst LLC',
 
-		/*
-		|--------------------------------------------------------------------------
-		| App Help
-		|--------------------------------------------------------------------------
-		|
-		| Enable or disable the help sections
-		|
-		*/
+        /*
+        |--------------------------------------------------------------------------
+        | App Help
+        |--------------------------------------------------------------------------
+        |
+        | Enable or disable the help sections
+        |
+        */
 
-		'help' => true,
+        'help' => true,
 
-	],
+    ],
 
-	/*
-	|--------------------------------------------------------------------------
-	| Frontend
-	|--------------------------------------------------------------------------
-	|
-	| Configuration the frontend of your Platform application.
-	|
-	*/
+    /*
+    |--------------------------------------------------------------------------
+    | Frontend
+    |--------------------------------------------------------------------------
+    |
+    | Configuration the frontend of your Platform application.
+    |
+    */
 
-	'frontend' => [
+    'frontend' => [
 
-		/*
-		|--------------------------------------------------------------------------
-		| Menu
-		|--------------------------------------------------------------------------
-		|
-		| Here you can list the order for which the menu children will appear
-		| in the admin of your application. Feel free to add any menus for
-		| any extensions your application ships with!
-		|
-		| If a menu children doesn't exist, it'll be skipped, the
-		| order however, will be preserved.
-		|
-		*/
+        /*
+        |--------------------------------------------------------------------------
+        | Menu
+        |--------------------------------------------------------------------------
+        |
+        | Here you can list the order for which the menu children will appear
+        | in the admin of your application. Feel free to add any menus for
+        | any extensions your application ships with!
+        |
+        | If a menu children doesn't exist, it'll be skipped, the
+        | order however, will be preserved.
+        |
+        */
 
-		'menu' => [
+        'menu' => [
 
-			'main-documentation',
-			'main-support',
-			'main-license',
+            'main-documentation',
+            'main-support',
+            'main-license',
 
-		],
+        ],
 
-	],
+    ],
 
-	/*
-	|--------------------------------------------------------------------------
-	| Admin
-	|--------------------------------------------------------------------------
-	|
-	| Configuration the administration of your Platform application.
-	|
-	*/
+    /*
+    |--------------------------------------------------------------------------
+    | Admin
+    |--------------------------------------------------------------------------
+    |
+    | Configuration the administration of your Platform application.
+    |
+    */
 
-	'admin' => [
+    'admin' => [
 
-		/*
-		|--------------------------------------------------------------------------
-		| Menu
-		|--------------------------------------------------------------------------
-		|
-		| Here you can list the order for which the menu children will appear
-		| in the admin of your application. Feel free to add any menus for
-		| any extensions your application ships with!
-		|
-		| If a menu children doesn't exist, it'll be skipped, the
-		| order however, will be preserved.
-		|
-		*/
+        /*
+        |--------------------------------------------------------------------------
+        | Menu
+        |--------------------------------------------------------------------------
+        |
+        | Here you can list the order for which the menu children will appear
+        | in the admin of your application. Feel free to add any menus for
+        | any extensions your application ships with!
+        |
+        | If a menu children doesn't exist, it'll be skipped, the
+        | order however, will be preserved.
+        |
+        */
 
-		'menu' => [
+        'menu' => [
 
-			'admin-pages',
-			'admin-content',
-			'admin-media',
-			'admin-attributes',
-			'admin-menus',
-			'admin-access',
-			'admin-operations',
+            'admin-pages',
+            'admin-content',
+            'admin-media',
+            'admin-attributes',
+            'admin-menus',
+            'admin-access',
+            'admin-operations',
 
-		],
+        ],
 
-	],
+    ],
 
 ];
