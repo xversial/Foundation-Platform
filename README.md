@@ -1,6 +1,6 @@
 # Platform
 
-[![Build Status](https://magnum.travis-ci.com/cartalyst/platform.svg?token=98Zt8zYdwyheTKqziswS&branch=4.0)](https://magnum.travis-ci.com/cartalyst/platform)
+[![Build Status](https://magnum.travis-ci.com/cartalyst/platform.svg?token=98Zt8zYdwyheTKqziswS&branch=master)](https://magnum.travis-ci.com/cartalyst/platform)
 
 Platform is not just another CMS, it's a starting point for you to build your application providing the tools you need to get the job done as easy as possible.
 
