@@ -144,7 +144,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-
         Cartalyst\Platform\Laravel\OverridesServiceProvider::class,
         Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
         Cartalyst\DataGrid\Laravel\DataGridServiceProvider::class,
@@ -153,7 +152,7 @@ return [
         Cartalyst\NestedSets\Laravel\NestedSetsServiceProvider::class,
         Cartalyst\Themes\Laravel\ThemeServiceProvider::class,
         Cartalyst\Widgets\Laravel\WidgetsServiceProvider::class,
-        
+
         Platform\Installer\Laravel\InstallerServiceProvider::class,
         Platform\Foundation\Laravel\PlatformServiceProvider::class,
 
@@ -216,7 +215,7 @@ return [
         'Sentinel'   => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
         'Theme'      => Cartalyst\Themes\Laravel\Facades\Theme::class,
         'Widget'     => Cartalyst\Widgets\Laravel\Facades\Widget::class,
-        
+
         'Installer'  => Platform\Installer\Laravel\Facades\Installer::class,
         'Page'       => Platform\Pages\Models\Page::class,
         'Platform'   => Platform\Foundation\Laravel\Facades\Platform::class,
