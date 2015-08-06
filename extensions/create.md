@@ -41,6 +41,54 @@ Manually creating an extensions takes a bit more work. There are two required fi
 
 See [requirements](#installation) for more info.
 
+Once your extension has been created, it's time to start adding functionality.
+
+At the heart of your extension is `extension.php`. This file holds your providers, routes, database seeds, permissions, widgets, settings, menus, and more.
+
+##### Menus
+
+Menus are defined using a nested array structure. Any menus that you create here are added to the database whenever your extension is installed, sychronized when it's upgraded, and removed when it's uninstalled. Menus that are defined here will be **appended** to any menus that are defined in the core application when the extension is installed through Platform's extensions interface.
+
+The best way to understand how extension menus work is to study some examples. Platform's Menus extension is the perfect place to start: https://github.com/cartalyst/platform-menus/blob/master/extension.php#L244-L398 . Notice that the top-level array keys match the menu names that are visible in the Platform Menus interface. This is how your extension adds menu items to a given menu. To add a new item to your site's primary navigation, for example, simply modify the `menus` array accordingly:
+
+	'menus' => [
+
+		'main' => [
+
+			[
+				'slug' => 'main-customer-service',
+				'name' => 'Customer Service',
+				'uri' => 'customer-service',
+				'children' => [
+
+					[
+						'slug'  => 'main-service-centers',
+						'name'  => 'Service Centers',
+						'uri'   => '#',
+						'class' => 'dropdown-header',
+						'roles' => [
+							'registered',
+						],
+
+					],
+
+				],
+
+			],
+
+		],
+
+	],
+
+This snippet would add a new "Customer Service" item to the end of the primary navigation menu, which would in turn have one child menu item, "Service Centers".
+
+The key names in the snippet above correspond to the column names in the database, which means that any menu property that can be defined using the Platform interface can also be used here.
+
+Restricting menu visibility to certain roles requires passing the `roles` key an array of role slugs.
+
+> **Note** It is necessary to uninstall/reinstall an extension for any changes to the menu data in `extension.php` to become effective. This is because the menu data is added to the database only upon installing the extension. There are buttons at the top of the Extension interface that may be used to perform the uninstall/reinstall.
+
+> **Note** Menu items are disabled as long as the extension is disabled, once enabled, the menu is automatically enabled and vice versa.
 
 #### Enabling an Extension
 
