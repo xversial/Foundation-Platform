@@ -54,37 +54,41 @@ The best way to understand how extension menus work is to study some examples. P
 	'menus' => [
 
 		'main' => [
-			
+
 			[
 				'slug' => 'main-customer-service',
 				'name' => 'Customer Service',
 				'uri' => 'customer-service',
 				'children' => [
-					
+
 					[
-						'slug' => 'main-service-centers',
-						'name' => 'Service Centers',
-						'uri' => '#',
+						'slug'  => 'main-service-centers',
+						'name'  => 'Service Centers',
+						'uri'   => '#',
 						'class' => 'dropdown-header',
-					
+						'roles' => [
+							'registered',
+						],
+
 					],
-					
+
 				],
-				
+
 			],
-			
+
 		],
 
 	],
 
 This snippet would add a new "Customer Service" item to the end of the primary navigation menu, which would in turn have one child menu item, "Service Centers".
 
-The key names in the snippet above correspond to the column names in the database, which means that any menu property that can be defined using the Platform interface can also be used here. The only nuance to the syntax comes into play when restricting menu visibility to certain roles: the roles must be defined as strings, e.g., `'roles' => '[1]',` (note the quotes around the `[1]` array).
+The key names in the snippet above correspond to the column names in the database, which means that any menu property that can be defined using the Platform interface can also be used here.
 
-<blockquote>
-	**Important note**: It is necessary to uninstall/reinstall an extension for any changes to the menu data in `extension.php` to become effective. This is because the menu data is added to the database only upon installing the extension. There are buttons at the top of the Extension interface that may be used to perform the uninstall/reinstall.
-</blockquote>
+Restricting menu visibility to certain roles requires passing the `roles` key an array of role slugs.
 
+> **Note** It is necessary to uninstall/reinstall an extension for any changes to the menu data in `extension.php` to become effective. This is because the menu data is added to the database only upon installing the extension. There are buttons at the top of the Extension interface that may be used to perform the uninstall/reinstall.
+
+> **Note** Menu items are disabled as long as the extension is disabled, once enabled, the menu is automatically enabled and vice versa.
 
 #### Enabling an Extension
 
