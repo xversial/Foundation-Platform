@@ -92,7 +92,7 @@
             "php artisan optimize",
             "php artisan platform:upgrade",
             "php artisan theme:publish --extensions",
-            "php artisan vendor:publish --provider='Platform\\Installer\\Laravel\\InstallerServiceProvider'",
+            "php artisan vendor:publish --provider='Platform\\Installer\\Laravel\\InstallerServiceProvider' --tag='assets'",
             "php artisan theme:compile"
         ],
         "pre-update-cmd": [
@@ -103,7 +103,7 @@
             "php artisan optimize",
             "php artisan platform:upgrade",
             "php artisan theme:publish --extensions",
-            "php artisan vendor:publish --provider='Platform\\Installer\\Laravel\\InstallerServiceProvider'",
+            "php artisan vendor:publish --provider='Platform\\Installer\\Laravel\\InstallerServiceProvider' --tag='assets'",
             "php artisan theme:compile"
         ]
     },
