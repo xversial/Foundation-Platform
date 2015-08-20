@@ -1,32 +1,27 @@
 ## Overrides
 
-Overrides in Platform 4 give you the ability to easily swap core functionality with your own custom functionality.
+Overrides in Platform 4 give you the ability to easily swap core functionality with your own custom functionality. You can override any of the Platform 4 defaults within your own custom extension.
 
 ### Route Overrides
 
-Because we use an internal REST API, you have the ability to override any route for an API call to your own logic. This makes extending Platform 4 extremely easy and can be done from anywhere.
+To override a route defined in another extension, create a custom extension which requires it as a dependency. Within the routes section of `extension.php`, any routes you define in your custom extension will take precedent over those defined in the other extension.
 
-To override them open the `app/routes.php`.
+### Model and Service Overrides
 
-For example, overriding the page slug route.
+The default Platform extensions use the IoC to resolve model instances. You can override these models here by simply returning your own model which extends ours or implements the appropriate interface.
 
-	Route::get('page/{slug}', 'My\Custom\PagesController@show')->where('slug', '.*?');
+Model or Service overrides should be placed in a service provider within a new extension. For example, these are the steps you would take to override the Users model within Platform:
 
-### Model Overrides
+ - Create a new custom extension (we'll call it `UserOverride`) in the workbench and define `Platform/Access` and `Platform/Users` as dependencies.
+ - Within the extension, create `src/Providers/UserOverrideServiceProvider.php` and add `'Platform\Useroverride\Providers\UserOverrideServiceProvider'` to the providers array in extension.php
+ - In your new service provider, set the new Users model on the IoC instance:
 
-The default Platform extensions use the IoC to resolve model instances. You can override these here by simply returning your own model which extends ours.
+    public function boot()
+    {
+        $this->app['sentinel.users']->setModel('My\Custom\Models\User');
+    }
 
-To override them open the `app/overrides/models.php`.
-
-For example, overriding the default Platform 4 Content model.
-
-	$app['Platform\Content\Models\Content'] = new My\Custom\Models\Content;
-
-### Service Overrides
-
-Each Service Provider and Extension registers a number of application services.
-
-To override them open the `app/overrides/services.php` and customize the behavior of your Platform application.
+Within your custom service provider, you can also override service bindings like this:
 
 	$app['foo.bar'] = $app->share(function($app)
 	{
