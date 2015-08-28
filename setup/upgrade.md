@@ -20,6 +20,34 @@ To add a new remote just run the following on your terminal:
 
 Now that you've the remote added, we can start the upgrade process.
 
+### Upgrade to 4.0 from 3.0
+
+1. Open your terminal and change the current working directory to your local project.
+
+2. Fetch the branches and their commits from the `upstream` remote.
+
+    ```
+    $ git fetch upstream
+    ```
+
+3. Check out the branch you wish to merge to. This is the branch that contains Platform 3.0 and by default is called `3.0`.
+
+    ```
+    $ git checkout 3.0
+    ```
+
+4. Pull the 3.0 branch from the upstream repository. This will keep your commit history.
+
+    ```
+    $ git merge upstream/4.0
+    ```
+
+5. If you have conflicts, you'll need to resolve them. You can get more information [here](https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line/).
+
+6. Commit the merge
+
+7. You're done :)
+
 ### Upgrade to 3.0 from 2.0
 
 1. Open your terminal and change the current working directory to your local project.
