@@ -6,6 +6,8 @@ Overrides in Platform 4 give you the ability to easily swap core functionality w
 
 To override a route defined in another extension, create a custom extension which requires it as a dependency. Within the routes section of `extension.php`, any routes you define in your custom extension will take precedent over those defined in the other extension.
 
+> **Note** Routes can also be overriden on any method that is executed after the `PlatformServiceProvider` is booted.
+
 ### Model and Service Overrides
 
 The default Platform extensions use the IoC to resolve model instances. You can override these models here by simply returning your own model which extends ours or implements the appropriate interface.
