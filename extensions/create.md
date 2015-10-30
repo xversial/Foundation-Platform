@@ -4,6 +4,8 @@ Because extensions are basically separated app folders there really is no limit 
 
 #### Using The Workshop Extension
 
+> **Note** Workshop uses a `workbench` directory and an optional `composer.phar`. These can be added manually to your Platform installation. Be sure that `workbench` is writable when creating the folder.
+
 The easiest way to get started with an extension is to create one though the Workshop extension. To get started browse to `admin/operations/workshop` in your Platform 2 back-end.
 
 You'll notice a series of input fields which will be needed to generate your extension files. We'll go over each one of them.
