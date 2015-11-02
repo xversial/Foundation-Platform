@@ -4,6 +4,10 @@ Because extensions are basically separated app folders there really is no limit 
 
 #### Using The Workshop Extension
 
+> **Note 1** Workshop requires a `workbench` directory in the application root. The directory must be writable by the web server.
+
+> **Note 2** Workshop requires access to `composer`, if composer is not globally installed or isn't accessible by the web server, you could download `composer.phar` into your project's main folder in order to use that instead.
+
 The easiest way to get started with an extension is to create one though the Workshop extension. To get started browse to `admin/operations/workshop` in your Platform 4 back-end.
 
 You'll notice a series of input fields which will be needed to generate your extension files. We'll go over each one of them.
