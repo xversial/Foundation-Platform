@@ -24,8 +24,10 @@ return [
     | Active Theme
     |--------------------------------------------------------------------------
     |
-    | Here you can specify the default active theme for your application,
+    | Here you can specify the default active theme for your installer,
     | or set to null if none is defined.
+    |
+    | The application theme is set via the themes extension configuration.
     |
     */
 
@@ -36,8 +38,10 @@ return [
     | Fallback Theme
     |--------------------------------------------------------------------------
     |
-    | Here you can specify the default fallback theme for your application,
+    | Here you can specify the default fallback theme for your installer,
     | or set to null if none is defined.
+    |
+    | The application theme is set via the themes extension configuration.
     |
     */
 
