@@ -145,7 +145,12 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Cartalyst\Platform\Laravel\OverridesServiceProvider::class,
+
         Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
+        Cartalyst\Sentinel\Activations\Laravel\ActivationsServiceProvider::class,
+        Cartalyst\Sentinel\Reminders\Laravel\RemindersServiceProvider::class,
+        Cartalyst\Sentinel\Throttle\Laravel\ThrottleServiceProvider::class,
+
         Cartalyst\DataGrid\Laravel\DataGridServiceProvider::class,
         Cartalyst\Extensions\Laravel\ExtensionsServiceProvider::class,
         Cartalyst\Filesystem\Laravel\FilesystemServiceProvider::class,
