@@ -43,7 +43,7 @@ Installer::after(function () {
     }
 
     // Create the registered role
-    $registeredRole = app('sentinel')->getRoleRepository()->createModel();
+    $registeredRole = app('sentinel')->roles()->createModel();
     $registeredRole->fill([
         'slug' => 'registered',
         'name' => 'Registered',
