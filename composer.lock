@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "adae6e55cfa97104e7c598d2da99fe8d",
-    "content-hash": "95e7fa88fc6df14c464be91e51038f9f",
+    "hash": "ddf701e14b5bde6d3d393b8095fc4eb3",
+    "content-hash": "8e11d704b68b85ae1778c5bf4f3b9019",
     "packages": [
         {
             "name": "cartalyst/alerts",
@@ -4350,16 +4350,16 @@
         },
         {
             "name": "platform/media",
-            "version": "v3.3.1",
+            "version": "dev-feature/six",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-media.git",
-                "reference": "1c7298d205125e0653a3b730006b189716a0978b"
+                "reference": "c488193dd7d855de54daa2f4589a454a8e8877f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/1c7298d205125e0653a3b730006b189716a0978b",
-                "reference": "1c7298d205125e0653a3b730006b189716a0978b",
+                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/c488193dd7d855de54daa2f4589a454a8e8877f9",
+                "reference": "c488193dd7d855de54daa2f4589a454a8e8877f9",
                 "shasum": ""
             },
             "require": {
@@ -4416,10 +4416,10 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-media/tree/v3.3.1",
+                "source": "https://github.com/cartalyst/platform-media/tree/v3.3.2",
                 "issues": "https://github.com/cartalyst/platform-media/issues"
             },
-            "time": "2016-06-25 02:58:24"
+            "time": "2016-07-20 11:56:20"
         },
         {
             "name": "platform/menus",
@@ -8242,6 +8242,7 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
+        "platform/media": 20,
         "cartalyst/data-grid": 20,
         "cartalyst/data-grid-laravel": 20,
         "cartalyst/data-grid-export": 20,
