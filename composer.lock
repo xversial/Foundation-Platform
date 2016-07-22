@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ddf701e14b5bde6d3d393b8095fc4eb3",
-    "content-hash": "8e11d704b68b85ae1778c5bf4f3b9019",
+    "hash": "0d6a9f5b43b966244d39905ab8ee9512",
+    "content-hash": "71bc70d50d9968491bf6241739506a5e",
     "packages": [
         {
             "name": "cartalyst/alerts",
@@ -3802,16 +3802,16 @@
         },
         {
             "name": "platform/admin-default",
-            "version": "v2.0.5",
+            "version": "dev-feature/six",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/theme-default-admin.git",
-                "reference": "a76dcf719136a53305ba7f7b6e3c3353767da674"
+                "reference": "0e59038322418eb2e6539e1981cd6e2a0fbb8968"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/theme-default-admin/zipball/a76dcf719136a53305ba7f7b6e3c3353767da674",
-                "reference": "a76dcf719136a53305ba7f7b6e3c3353767da674",
+                "url": "https://api.github.com/repos/cartalyst/theme-default-admin/zipball/0e59038322418eb2e6539e1981cd6e2a0fbb8968",
+                "reference": "0e59038322418eb2e6539e1981cd6e2a0fbb8968",
                 "shasum": ""
             },
             "require": {
@@ -3857,10 +3857,10 @@
                 "theme"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/theme-default-admin/tree/v2.0.5",
+                "source": "https://github.com/cartalyst/theme-default-admin/tree/feature/six",
                 "issues": "https://github.com/cartalyst/theme-default-admin/issues"
             },
-            "time": "2016-06-27 12:18:24"
+            "time": "2016-07-21 22:44:00"
         },
         {
             "name": "platform/attributes",
@@ -4113,16 +4113,16 @@
         },
         {
             "name": "platform/foundation",
-            "version": "v3.0.4",
+            "version": "dev-feature/six",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-foundation.git",
-                "reference": "35b1bd05847aa225eecc20debbbc3a652840431d"
+                "reference": "5f9eaa392aaad7d7b50919847ecf5649c8c6eb43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/35b1bd05847aa225eecc20debbbc3a652840431d",
-                "reference": "35b1bd05847aa225eecc20debbbc3a652840431d",
+                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/5f9eaa392aaad7d7b50919847ecf5649c8c6eb43",
+                "reference": "5f9eaa392aaad7d7b50919847ecf5649c8c6eb43",
                 "shasum": ""
             },
             "require": {
@@ -4204,10 +4204,10 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-foundation/tree/3.0",
+                "source": "https://github.com/cartalyst/platform-foundation/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-foundation/issues"
             },
-            "time": "2015-12-30 18:51:34"
+            "time": "2016-07-22 12:02:08"
         },
         {
             "name": "platform/frontend-default",
@@ -4354,12 +4354,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-media.git",
-                "reference": "c488193dd7d855de54daa2f4589a454a8e8877f9"
+                "reference": "0b81ce8a28a9c5fee40af33e9289419f27966b7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/c488193dd7d855de54daa2f4589a454a8e8877f9",
-                "reference": "c488193dd7d855de54daa2f4589a454a8e8877f9",
+                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/0b81ce8a28a9c5fee40af33e9289419f27966b7a",
+                "reference": "0b81ce8a28a9c5fee40af33e9289419f27966b7a",
                 "shasum": ""
             },
             "require": {
@@ -4416,10 +4416,10 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-media/tree/v3.3.2",
+                "source": "https://github.com/cartalyst/platform-media/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-media/issues"
             },
-            "time": "2016-07-20 11:56:20"
+            "time": "2016-07-22 12:02:42"
         },
         {
             "name": "platform/menus",
@@ -7617,16 +7617,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.26",
+            "version": "4.8.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "fc1d8cd5b5de11625979125c5639347896ac2c74"
+                "reference": "c062dddcb68e44b563f66ee319ddae2b5a322a90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/fc1d8cd5b5de11625979125c5639347896ac2c74",
-                "reference": "fc1d8cd5b5de11625979125c5639347896ac2c74",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c062dddcb68e44b563f66ee319ddae2b5a322a90",
+                "reference": "c062dddcb68e44b563f66ee319ddae2b5a322a90",
                 "shasum": ""
             },
             "require": {
@@ -7685,7 +7685,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-05-17 03:09:28"
+            "time": "2016-07-21 06:48:14"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -8216,6 +8216,12 @@
     ],
     "aliases": [
         {
+            "alias": "3.0.99",
+            "alias_normalized": "3.0.99.0",
+            "version": "dev-feature/six",
+            "package": "platform/foundation"
+        },
+        {
             "alias": "3.0.9999",
             "alias_normalized": "3.0.9999.0",
             "version": "dev-feature/4.0",
@@ -8242,6 +8248,8 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
+        "platform/admin-default": 20,
+        "platform/foundation": 20,
         "platform/media": 20,
         "cartalyst/data-grid": 20,
         "cartalyst/data-grid-laravel": 20,
