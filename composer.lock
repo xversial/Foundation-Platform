@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3a66ec41520f148b9c117dbe1d9076bf",
-    "content-hash": "3975b4b8686b090267091a1e2b2674b1",
+    "hash": "155f35d9ad7203f65b415d463ae965df",
+    "content-hash": "5cd3a13955d6474861a7753c23528e2c",
     "packages": [
         {
             "name": "cartalyst/alerts",
@@ -4080,6 +4080,78 @@
             "time": "2015-05-12 11:55:38"
         },
         {
+            "name": "platform/gallery",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:cartalyst/platform-gallery.git",
+                "reference": "f0736787028050e2656601bdc8ee727f1c59e65c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cartalyst/platform-gallery/zipball/f0736787028050e2656601bdc8ee727f1c59e65c",
+                "reference": "f0736787028050e2656601bdc8ee727f1c59e65c",
+                "shasum": ""
+            },
+            "require": {
+                "cartalyst/composer-installers": "1.2.*",
+                "cartalyst/support": "~1.2",
+                "php": ">=5.5.9",
+                "platform/access": "3.2.*",
+                "platform/attributes": "3.2.*",
+                "platform/foundation": "3.0.*",
+                "platform/media": "dev-feature/five",
+                "platform/tags": "3.2.*"
+            },
+            "require-dev": {
+                "cartalyst/testing": "~2.0@dev"
+            },
+            "type": "platform-extension",
+            "extra": {
+                "component": "extension",
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "database/migrations",
+                    "database/seeds"
+                ],
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Platform\\Gallery\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Cartalyst LLC",
+                    "email": "help@cartalyst.com",
+                    "homepage": "https://cartalyst.com"
+                }
+            ],
+            "description": "Gallery management for Platform.",
+            "keywords": [
+                "album",
+                "cartalyst",
+                "extension",
+                "gallery",
+                "laravel",
+                "php",
+                "platform"
+            ],
+            "support": {
+                "source": "https://github.com/cartalyst/platform-gallery/tree/master",
+                "issues": "https://github.com/cartalyst/platform-gallery/issues"
+            },
+            "time": "2016-07-28 13:37:56"
+        },
+        {
             "name": "platform/installer",
             "version": "v3.0.0",
             "source": {
@@ -8030,7 +8102,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "platform/media": 20
+        "platform/media": 20,
+        "platform/gallery": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
