@@ -2,7 +2,7 @@
 
 ### Requirements
 
-Platform is essentially just a series of components that work with Laravel 5.1. So the requirements are virtually the same. However some components may require dependencies with their own set of minimum requirments.
+Platform is essentially just a series of components that work with Laravel 5.1. So the requirements are virtually the same. However some components may require dependencies with their own set of minimum requirements.
 
 - PHP >= 5.4.0
 - MCrypt PHP Extension
