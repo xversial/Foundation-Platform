@@ -27,20 +27,20 @@
         "platform/admin-default": "dev-feature/five",
         "platform/frontend-default": "2.0.*",
 
-        "platform/foundation": "~3.0",
-        "platform/installer": "~3.0",
+        "platform/foundation": "dev-feature/five",
+        "platform/installer": "dev-feature/five",
 
-        "platform/access": "~3.0",
-        "platform/attributes": "~3.0",
-        "platform/content": "~3.0",
-        "platform/dashboard": "~3.0",
+        "platform/access": "dev-feature/five",
+        "platform/attributes": "dev-feature/five",
+        "platform/content": "dev-feature/five",
+        "platform/dashboard": "dev-feature/five",
         "platform/media": "dev-feature/five",
         "platform/gallery": "dev-master",
-        "platform/menus": "~3.0",
-        "platform/operations": "~3.0",
-        "platform/pages": "~3.0",
-        "platform/settings": "~3.0",
-        "platform/themes": "~3.0"
+        "platform/menus": "dev-feature/five",
+        "platform/operations": "dev-feature/five",
+        "platform/pages": "dev-feature/five",
+        "platform/settings": "dev-feature/five",
+        "platform/themes": "dev-feature/five"
     },
     "require-dev": {
         "doctrine/dbal": "~2.4",
@@ -94,5 +94,6 @@
     "extra": {
         "component": "application"
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

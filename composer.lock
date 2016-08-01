@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "63e9100425d776d14cf56a87736501d2",
-    "content-hash": "835577271c05b50dac8e027b55171ec9",
+    "hash": "76c29dac09325ad3c8cf7bebedd26319",
+    "content-hash": "ea4df4ecdf65bdd11660122adee8a3b0",
     "packages": [
         {
             "name": "cartalyst/alerts",
@@ -3092,16 +3092,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.20.0",
+            "version": "1.21.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "55841909e2bcde01b5318c35f2b74f8ecc86e037"
+                "reference": "f42fbdfd53e306bda545845e4dbfd3e72edb4952"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/55841909e2bcde01b5318c35f2b74f8ecc86e037",
-                "reference": "55841909e2bcde01b5318c35f2b74f8ecc86e037",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/f42fbdfd53e306bda545845e4dbfd3e72edb4952",
+                "reference": "f42fbdfd53e306bda545845e4dbfd3e72edb4952",
                 "shasum": ""
             },
             "require": {
@@ -3166,7 +3166,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-07-02 14:02:10"
+            "time": "2016-07-29 03:23:52"
         },
         {
             "name": "mtdowling/cron-expression",
@@ -3537,26 +3537,26 @@
         },
         {
             "name": "platform/access",
-            "version": "v3.2.0",
+            "version": "dev-feature/five",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-access.git",
-                "reference": "a9ddeab504af6e9c73b238165808c9ae5a96d5c0"
+                "reference": "80fb3a569fe2f6cb10f0df39e10592aba5b20d8c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-access/zipball/a9ddeab504af6e9c73b238165808c9ae5a96d5c0",
-                "reference": "a9ddeab504af6e9c73b238165808c9ae5a96d5c0",
+                "url": "https://api.github.com/repos/cartalyst/platform-access/zipball/80fb3a569fe2f6cb10f0df39e10592aba5b20d8c",
+                "reference": "80fb3a569fe2f6cb10f0df39e10592aba5b20d8c",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/alerts": "2.0.*",
                 "cartalyst/composer-installers": "1.2.*",
                 "php": ">=5.5.9",
-                "platform/foundation": "3.0.*",
-                "platform/permissions": "3.1.*",
-                "platform/roles": "3.2.*",
-                "platform/users": "3.2.*"
+                "platform/foundation": "dev-feature/five",
+                "platform/permissions": "dev-feature/five",
+                "platform/roles": "dev-feature/five",
+                "platform/users": "dev-feature/five"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev"
@@ -3608,10 +3608,10 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-access/tree/master",
+                "source": "https://github.com/cartalyst/platform-access/tree/feature/five",
                 "issues": "https://github.com/cartalyst/platform-access/issues"
             },
-            "time": "2016-01-20 23:10:19"
+            "time": "2016-08-01 14:07:53"
         },
         {
             "name": "platform/admin-default",
@@ -3619,12 +3619,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/theme-default-admin.git",
-                "reference": "2526d46baef505812a2349d71f5ff0beac7c7a15"
+                "reference": "432e75866a78baa119fce447362826b9719991a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/theme-default-admin/zipball/2526d46baef505812a2349d71f5ff0beac7c7a15",
-                "reference": "2526d46baef505812a2349d71f5ff0beac7c7a15",
+                "url": "https://api.github.com/repos/cartalyst/theme-default-admin/zipball/432e75866a78baa119fce447362826b9719991a3",
+                "reference": "432e75866a78baa119fce447362826b9719991a3",
                 "shasum": ""
             },
             "require": {
@@ -3673,20 +3673,20 @@
                 "source": "https://github.com/cartalyst/theme-default-admin/tree/feature/five",
                 "issues": "https://github.com/cartalyst/theme-default-admin/issues"
             },
-            "time": "2016-07-29 19:43:13"
+            "time": "2016-08-01 14:01:18"
         },
         {
             "name": "platform/attributes",
-            "version": "v3.2.1",
+            "version": "dev-feature/five",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-attributes.git",
-                "reference": "0461b3508363fb6eed6ca0072e9f27dddb88acbc"
+                "reference": "2bb73603a44e42608a7174a1372fcc4aa72796e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-attributes/zipball/0461b3508363fb6eed6ca0072e9f27dddb88acbc",
-                "reference": "0461b3508363fb6eed6ca0072e9f27dddb88acbc",
+                "url": "https://api.github.com/repos/cartalyst/platform-attributes/zipball/2bb73603a44e42608a7174a1372fcc4aa72796e3",
+                "reference": "2bb73603a44e42608a7174a1372fcc4aa72796e3",
                 "shasum": ""
             },
             "require": {
@@ -3694,8 +3694,8 @@
                 "cartalyst/composer-installers": "1.2.*",
                 "cartalyst/support": "~1.1",
                 "php": ">=5.5.9",
-                "platform/access": "3.2.*",
-                "platform/foundation": "3.0.*"
+                "platform/access": "dev-feature/five",
+                "platform/foundation": "dev-feature/five"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev"
@@ -3753,23 +3753,23 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-attributes/tree/master",
+                "source": "https://github.com/cartalyst/platform-attributes/tree/feature/five",
                 "issues": "https://github.com/cartalyst/platform-attributes/issues"
             },
-            "time": "2016-06-21 04:13:37"
+            "time": "2016-08-01 14:08:02"
         },
         {
             "name": "platform/content",
-            "version": "v3.3.1",
+            "version": "dev-feature/five",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-content.git",
-                "reference": "19a99a03a5550692c5deff6eb04ed85afc9e9825"
+                "reference": "882562261c37264f2f84633318f9d88f41baca01"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/19a99a03a5550692c5deff6eb04ed85afc9e9825",
-                "reference": "19a99a03a5550692c5deff6eb04ed85afc9e9825",
+                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/882562261c37264f2f84633318f9d88f41baca01",
+                "reference": "882562261c37264f2f84633318f9d88f41baca01",
                 "shasum": ""
             },
             "require": {
@@ -3777,10 +3777,10 @@
                 "cartalyst/interpret": "1.1.*",
                 "cartalyst/support": "~1.1",
                 "php": ">=5.5.9",
-                "platform/access": "3.2.*",
-                "platform/attributes": "3.2.*",
-                "platform/foundation": "3.0.*",
-                "platform/tags": "3.2.*"
+                "platform/access": "dev-feature/five",
+                "platform/attributes": "dev-feature/five",
+                "platform/foundation": "dev-feature/five",
+                "platform/tags": "dev-feature/five"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
@@ -3842,30 +3842,30 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-content/tree/master",
+                "source": "https://github.com/cartalyst/platform-content/tree/feature/five",
                 "issues": "https://github.com/cartalyst/platform-content/issues"
             },
-            "time": "2016-06-21 04:17:51"
+            "time": "2016-08-01 14:08:11"
         },
         {
             "name": "platform/dashboard",
-            "version": "v3.2.0",
+            "version": "dev-feature/five",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-dashboard.git",
-                "reference": "3b8b3217603948920f6110775eedad6afa9fce05"
+                "reference": "39ff5de9d10fafb207c5d843e8bba2c16096901b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-dashboard/zipball/3b8b3217603948920f6110775eedad6afa9fce05",
-                "reference": "3b8b3217603948920f6110775eedad6afa9fce05",
+                "url": "https://api.github.com/repos/cartalyst/platform-dashboard/zipball/39ff5de9d10fafb207c5d843e8bba2c16096901b",
+                "reference": "39ff5de9d10fafb207c5d843e8bba2c16096901b",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "1.2.*",
                 "php": ">=5.5.9",
-                "platform/access": "3.2.*",
-                "platform/foundation": "3.0.*"
+                "platform/access": "dev-feature/five",
+                "platform/foundation": "dev-feature/five"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev"
@@ -3919,23 +3919,23 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-dashboard/tree/master",
+                "source": "https://github.com/cartalyst/platform-dashboard/tree/feature/five",
                 "issues": "https://github.com/cartalyst/platform-dashboard/issues"
             },
-            "time": "2016-01-21 02:15:43"
+            "time": "2016-08-01 14:08:18"
         },
         {
             "name": "platform/foundation",
-            "version": "v3.0.4",
+            "version": "dev-feature/five",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-foundation.git",
-                "reference": "35b1bd05847aa225eecc20debbbc3a652840431d"
+                "reference": "5cebda1a15520669270dd0a4400b432842ab683f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/35b1bd05847aa225eecc20debbbc3a652840431d",
-                "reference": "35b1bd05847aa225eecc20debbbc3a652840431d",
+                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/5cebda1a15520669270dd0a4400b432842ab683f",
+                "reference": "5cebda1a15520669270dd0a4400b432842ab683f",
                 "shasum": ""
             },
             "require": {
@@ -3968,7 +3968,7 @@
             "extra": {
                 "component": "platform-package",
                 "branch-alias": {
-                    "dev-master": "3.0.x-dev"
+                    "dev-master": "4.0.x-dev"
                 }
             },
             "autoload": {
@@ -3986,26 +3986,6 @@
                 {
                     "name": "Cartalyst LLC",
                     "email": "help@cartalyst.com"
-                },
-                {
-                    "name": "Ben Corlett",
-                    "email": "ben.corlett@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Bruno Gaspar",
-                    "email": "bruno.gaspar@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Dan Syme",
-                    "email": "dan.syme@cartalyst.com",
-                    "role": "Project Lead"
-                },
-                {
-                    "name": "Suhayb Wardany",
-                    "email": "su.wardany@cartalyst.com",
-                    "role": "Developer"
                 }
             ],
             "description": "The heartbeat of Platform 2, keeping your application healthy.",
@@ -4017,10 +3997,10 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-foundation/tree/3.0",
+                "source": "https://github.com/cartalyst/platform-foundation/tree/feature/five",
                 "issues": "https://github.com/cartalyst/platform-foundation/issues"
             },
-            "time": "2015-12-30 18:51:34"
+            "time": "2016-08-01 13:24:28"
         },
         {
             "name": "platform/frontend-default",
@@ -4085,23 +4065,23 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-gallery.git",
-                "reference": "3da9b7cf3d85667295d6089b5c0faa87d75d56d8"
+                "reference": "6f259286f20d839f857bfacdc91f9ed8ac5633ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-gallery/zipball/3da9b7cf3d85667295d6089b5c0faa87d75d56d8",
-                "reference": "3da9b7cf3d85667295d6089b5c0faa87d75d56d8",
+                "url": "https://api.github.com/repos/cartalyst/platform-gallery/zipball/6f259286f20d839f857bfacdc91f9ed8ac5633ae",
+                "reference": "6f259286f20d839f857bfacdc91f9ed8ac5633ae",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "1.2.*",
                 "cartalyst/support": "~1.2",
                 "php": ">=5.5.9",
-                "platform/access": "3.2.*",
-                "platform/attributes": "3.2.*",
-                "platform/foundation": "3.0.*",
+                "platform/access": "dev-feature/five",
+                "platform/attributes": "dev-feature/five",
+                "platform/foundation": "dev-feature/five",
                 "platform/media": "dev-feature/five",
-                "platform/tags": "3.2.*"
+                "platform/tags": "dev-feature/five"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev"
@@ -4149,25 +4129,25 @@
                 "source": "https://github.com/cartalyst/platform-gallery/tree/master",
                 "issues": "https://github.com/cartalyst/platform-gallery/issues"
             },
-            "time": "2016-07-29 19:53:33"
+            "time": "2016-08-01 14:10:33"
         },
         {
             "name": "platform/installer",
-            "version": "v3.0.0",
+            "version": "dev-feature/five",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-installer.git",
-                "reference": "a3ceaedb7453ea4ab08e71ef60c28abd8acda660"
+                "reference": "14b951350b09334d9ba6307d2ef678b2aab3e2a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-installer/zipball/a3ceaedb7453ea4ab08e71ef60c28abd8acda660",
-                "reference": "a3ceaedb7453ea4ab08e71ef60c28abd8acda660",
+                "url": "https://api.github.com/repos/cartalyst/platform-installer/zipball/14b951350b09334d9ba6307d2ef678b2aab3e2a6",
+                "reference": "14b951350b09334d9ba6307d2ef678b2aab3e2a6",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5.9",
-                "platform/foundation": "3.0.*"
+                "platform/foundation": "dev-feature/five"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
@@ -4228,10 +4208,10 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-installer/tree/v3.0.0",
+                "source": "https://github.com/cartalyst/platform-installer/tree/feature/five",
                 "issues": "https://github.com/cartalyst/platform-installer/issues"
             },
-            "time": "2015-07-07 17:40:52"
+            "time": "2016-08-01 14:10:10"
         },
         {
             "name": "platform/media",
@@ -4239,12 +4219,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-media.git",
-                "reference": "9442241bb3d3e53f82e65714c4eb837e834cc735"
+                "reference": "2cdd7dfbe688ed8d40c7eb723615a9cd828c0228"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/9442241bb3d3e53f82e65714c4eb837e834cc735",
-                "reference": "9442241bb3d3e53f82e65714c4eb837e834cc735",
+                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/2cdd7dfbe688ed8d40c7eb723615a9cd828c0228",
+                "reference": "2cdd7dfbe688ed8d40c7eb723615a9cd828c0228",
                 "shasum": ""
             },
             "require": {
@@ -4254,9 +4234,9 @@
                 "intervention/image": "~2.3",
                 "intervention/imagecache": "~2.3",
                 "php": ">=5.5.9",
-                "platform/access": "3.2.*",
-                "platform/foundation": "3.0.*",
-                "platform/tags": "3.2.*"
+                "platform/access": "dev-feature/five",
+                "platform/foundation": "dev-feature/five",
+                "platform/tags": "dev-feature/five"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
@@ -4304,28 +4284,28 @@
                 "source": "https://github.com/cartalyst/platform-media/tree/feature/five",
                 "issues": "https://github.com/cartalyst/platform-media/issues"
             },
-            "time": "2016-07-29 19:53:42"
+            "time": "2016-08-01 14:10:21"
         },
         {
             "name": "platform/menus",
-            "version": "v3.2.2",
+            "version": "dev-feature/five",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-menus.git",
-                "reference": "25c42c2d2ed44b454b534afce25f3e1ddaa2de09"
+                "reference": "a30767c20a0d61c7e3240f6f8a0bd55dd67da716"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/25c42c2d2ed44b454b534afce25f3e1ddaa2de09",
-                "reference": "25c42c2d2ed44b454b534afce25f3e1ddaa2de09",
+                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/a30767c20a0d61c7e3240f6f8a0bd55dd67da716",
+                "reference": "a30767c20a0d61c7e3240f6f8a0bd55dd67da716",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "1.2.*",
                 "cartalyst/nested-sets": "3.0.*",
                 "php": ">=5.5.9",
-                "platform/access": "3.2.*",
-                "platform/foundation": "3.0.*"
+                "platform/access": "dev-feature/five",
+                "platform/foundation": "dev-feature/five"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
@@ -4385,23 +4365,23 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-menus/tree/3.2",
+                "source": "https://github.com/cartalyst/platform-menus/tree/feature/five",
                 "issues": "https://github.com/cartalyst/platform-menus/issues"
             },
-            "time": "2016-06-30 13:13:48"
+            "time": "2016-08-01 14:08:31"
         },
         {
             "name": "platform/operations",
-            "version": "v3.2.0",
+            "version": "dev-feature/five",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-operations.git",
-                "reference": "b8666203cdf3a34256a177adf4a93a5af74e7580"
+                "reference": "b70781a3a035e0afd6d8fe72bbc8c7e790b3bb38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/b8666203cdf3a34256a177adf4a93a5af74e7580",
-                "reference": "b8666203cdf3a34256a177adf4a93a5af74e7580",
+                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/b70781a3a035e0afd6d8fe72bbc8c7e790b3bb38",
+                "reference": "b70781a3a035e0afd6d8fe72bbc8c7e790b3bb38",
                 "shasum": ""
             },
             "require": {
@@ -4409,8 +4389,8 @@
                 "cartalyst/workshop": "2.0.*",
                 "laravelcollective/html": "5.1.*",
                 "php": ">=5.5.9",
-                "platform/access": "3.2.*",
-                "platform/foundation": "3.0.*"
+                "platform/access": "dev-feature/five",
+                "platform/foundation": "dev-feature/five"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev"
@@ -4464,31 +4444,31 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-operations/tree/master",
+                "source": "https://github.com/cartalyst/platform-operations/tree/feature/five",
                 "issues": "https://github.com/cartalyst/platform-operations/issues"
             },
-            "time": "2016-01-21 02:16:27"
+            "time": "2016-08-01 14:08:40"
         },
         {
             "name": "platform/pages",
-            "version": "v3.2.1",
+            "version": "dev-feature/five",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-pages.git",
-                "reference": "88b68cbcc9cc3766c3c822e857b63456b4850606"
+                "reference": "c63032a6f2fd545f37c273b628d9d17c6c3cb773"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/88b68cbcc9cc3766c3c822e857b63456b4850606",
-                "reference": "88b68cbcc9cc3766c3c822e857b63456b4850606",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/c63032a6f2fd545f37c273b628d9d17c6c3cb773",
+                "reference": "c63032a6f2fd545f37c273b628d9d17c6c3cb773",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "1.2.*",
                 "php": ">=5.5.9",
-                "platform/access": "3.2.*",
-                "platform/content": "~3.2",
-                "platform/foundation": "3.0.*"
+                "platform/access": "dev-feature/five",
+                "platform/content": "dev-feature/five",
+                "platform/foundation": "dev-feature/five"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
@@ -4551,30 +4531,30 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-pages/tree/3.2",
+                "source": "https://github.com/cartalyst/platform-pages/tree/feature/five",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2016-05-23 17:42:57"
+            "time": "2016-08-01 14:08:49"
         },
         {
             "name": "platform/permissions",
-            "version": "v3.1.0",
+            "version": "dev-feature/five",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-permissions.git",
-                "reference": "f42650e4988778f936f611a0df6940c6bff459a4"
+                "reference": "99cae10f101392cae5f7920bae0be7e7670686c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-permissions/zipball/f42650e4988778f936f611a0df6940c6bff459a4",
-                "reference": "f42650e4988778f936f611a0df6940c6bff459a4",
+                "url": "https://api.github.com/repos/cartalyst/platform-permissions/zipball/99cae10f101392cae5f7920bae0be7e7670686c9",
+                "reference": "99cae10f101392cae5f7920bae0be7e7670686c9",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "1.2.*",
                 "cartalyst/permissions": "1.0.*",
                 "php": ">=5.5.9",
-                "platform/foundation": "3.0.*"
+                "platform/foundation": "dev-feature/five"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev"
@@ -4626,31 +4606,31 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-permissions/tree/v3.1.0",
+                "source": "https://github.com/cartalyst/platform-permissions/tree/feature/five",
                 "issues": "https://github.com/cartalyst/platform-permissions/issues"
             },
-            "time": "2016-01-21 04:37:32"
+            "time": "2016-08-01 14:08:57"
         },
         {
             "name": "platform/roles",
-            "version": "v3.2.2",
+            "version": "dev-feature/five",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-roles.git",
-                "reference": "5d056db3944839e91d44e3045295a39525d02c8a"
+                "reference": "408c589aac83463ac47e2483a0e392b7e557bc31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-roles/zipball/5d056db3944839e91d44e3045295a39525d02c8a",
-                "reference": "5d056db3944839e91d44e3045295a39525d02c8a",
+                "url": "https://api.github.com/repos/cartalyst/platform-roles/zipball/408c589aac83463ac47e2483a0e392b7e557bc31",
+                "reference": "408c589aac83463ac47e2483a0e392b7e557bc31",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "1.2.*",
                 "php": ">=5.5.9",
-                "platform/access": "3.2.*",
-                "platform/attributes": "3.2.*",
-                "platform/foundation": "3.0.*"
+                "platform/access": "dev-feature/five",
+                "platform/attributes": "dev-feature/five",
+                "platform/foundation": "dev-feature/five"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
@@ -4705,31 +4685,31 @@
                 "roles"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-roles/tree/v3.2.2",
+                "source": "https://github.com/cartalyst/platform-roles/tree/feature/five",
                 "issues": "https://github.com/cartalyst/platform-roles/issues"
             },
-            "time": "2016-06-30 14:36:11"
+            "time": "2016-08-01 14:09:06"
         },
         {
             "name": "platform/settings",
-            "version": "v3.2.0",
+            "version": "dev-feature/five",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-settings.git",
-                "reference": "4670f49d51cab1563fb17db1b72f8e0a7a19dd34"
+                "reference": "c10a7d0faaf1b2a30b2fb4b1d23d14df48584988"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-settings/zipball/4670f49d51cab1563fb17db1b72f8e0a7a19dd34",
-                "reference": "4670f49d51cab1563fb17db1b72f8e0a7a19dd34",
+                "url": "https://api.github.com/repos/cartalyst/platform-settings/zipball/c10a7d0faaf1b2a30b2fb4b1d23d14df48584988",
+                "reference": "c10a7d0faaf1b2a30b2fb4b1d23d14df48584988",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "1.2.*",
                 "cartalyst/composite-config": "2.0.*",
                 "php": ">=5.5.9",
-                "platform/access": "3.2.*",
-                "platform/foundation": "3.0.*"
+                "platform/access": "dev-feature/five",
+                "platform/foundation": "dev-feature/five"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev"
@@ -4788,31 +4768,31 @@
                 "settings"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-settings/tree/master",
+                "source": "https://github.com/cartalyst/platform-settings/tree/feature/five",
                 "issues": "https://github.com/cartalyst/platform-settings/issues"
             },
-            "time": "2016-01-21 02:17:10"
+            "time": "2016-08-01 14:09:16"
         },
         {
             "name": "platform/tags",
-            "version": "v3.2.1",
+            "version": "dev-feature/five",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-tags.git",
-                "reference": "0f9b0413bf243ab92703ef3d9f61093f8b25582a"
+                "reference": "071abff49b754ae7a4b390d75dfc9571a994ee4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-tags/zipball/0f9b0413bf243ab92703ef3d9f61093f8b25582a",
-                "reference": "0f9b0413bf243ab92703ef3d9f61093f8b25582a",
+                "url": "https://api.github.com/repos/cartalyst/platform-tags/zipball/071abff49b754ae7a4b390d75dfc9571a994ee4e",
+                "reference": "071abff49b754ae7a4b390d75dfc9571a994ee4e",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "1.2.*",
                 "cartalyst/tags": "2.0.*",
                 "php": ">=5.5.9",
-                "platform/access": "3.2.*",
-                "platform/foundation": "3.0.*"
+                "platform/access": "dev-feature/five",
+                "platform/foundation": "dev-feature/five"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
@@ -4867,30 +4847,30 @@
                 "tags"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-tags/tree/v3.2.1",
+                "source": "https://github.com/cartalyst/platform-tags/tree/feature/five",
                 "issues": "https://github.com/cartalyst/platform-tags/issues"
             },
-            "time": "2016-07-05 20:37:57"
+            "time": "2016-08-01 14:09:25"
         },
         {
             "name": "platform/themes",
-            "version": "v3.0.0",
+            "version": "dev-feature/five",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-themes.git",
-                "reference": "1e5b89ecf590bcb4f246d24d882424b639e79e27"
+                "reference": "04af88381a24e419767f25c4abb41ab877baa25d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-themes/zipball/1e5b89ecf590bcb4f246d24d882424b639e79e27",
-                "reference": "1e5b89ecf590bcb4f246d24d882424b639e79e27",
+                "url": "https://api.github.com/repos/cartalyst/platform-themes/zipball/04af88381a24e419767f25c4abb41ab877baa25d",
+                "reference": "04af88381a24e419767f25c4abb41ab877baa25d",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "1.2.*",
                 "cartalyst/themes": "3.0.*",
                 "php": ">=5.5.9",
-                "platform/foundation": "3.0.*"
+                "platform/foundation": "dev-feature/five"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev"
@@ -4940,23 +4920,23 @@
                 "themes"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-themes/tree/v3.0.0",
+                "source": "https://github.com/cartalyst/platform-themes/tree/feature/five",
                 "issues": "https://github.com/cartalyst/platform-themes/issues"
             },
-            "time": "2015-07-06 21:22:12"
+            "time": "2016-08-01 14:09:34"
         },
         {
             "name": "platform/users",
-            "version": "v3.2.2",
+            "version": "dev-feature/five",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-users.git",
-                "reference": "e0e0b523f346bceac59dea8ed751ff3501594568"
+                "reference": "4d8c7db78e6969f0c307765974acd3b4a61b9925"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/e0e0b523f346bceac59dea8ed751ff3501594568",
-                "reference": "e0e0b523f346bceac59dea8ed751ff3501594568",
+                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/4d8c7db78e6969f0c307765974acd3b4a61b9925",
+                "reference": "4d8c7db78e6969f0c307765974acd3b4a61b9925",
                 "shasum": ""
             },
             "require": {
@@ -4964,9 +4944,9 @@
                 "cartalyst/sentinel-social": "2.0.*",
                 "cartalyst/support": "~1.1",
                 "php": ">=5.5.9",
-                "platform/access": "3.2.*",
-                "platform/attributes": "3.2.*",
-                "platform/foundation": "3.0.*"
+                "platform/access": "dev-feature/five",
+                "platform/attributes": "dev-feature/five",
+                "platform/foundation": "dev-feature/five"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
@@ -5029,10 +5009,10 @@
                 "users"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-users/tree/master",
+                "source": "https://github.com/cartalyst/platform-users/tree/feature/five",
                 "issues": "https://github.com/cartalyst/platform-users/issues"
             },
-            "time": "2016-06-21 04:53:25"
+            "time": "2016-08-01 14:09:42"
         },
         {
             "name": "psr/http-message",
@@ -8100,13 +8080,24 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
         "platform/admin-default": 20,
+        "platform/foundation": 20,
+        "platform/installer": 20,
+        "platform/access": 20,
+        "platform/attributes": 20,
+        "platform/content": 20,
+        "platform/dashboard": 20,
         "platform/media": 20,
-        "platform/gallery": 20
+        "platform/gallery": 20,
+        "platform/menus": 20,
+        "platform/operations": 20,
+        "platform/pages": 20,
+        "platform/settings": 20,
+        "platform/themes": 20
     },
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.5.9"
