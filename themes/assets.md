@@ -1,6 +1,6 @@
 ### Theme Assets
 
-Because Platform 4 uses Cartalyst's Themes 2 package it comes with all of the goodness for asset queuing and compiling. More info about using theme assets can be found in [the Themes 2 documentation](http://cartalyst.com/manual/themes).
+Because Platform 5 uses Cartalyst's Themes package it comes with all of the goodness for asset queuing and compiling. More info about using theme assets can be found in [the Themes documentation](http://cartalyst.com/manual/themes).
 
 **Asset Queuing**
 

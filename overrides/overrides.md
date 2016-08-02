@@ -1,6 +1,6 @@
 ## Overrides
 
-Overrides in Platform 4 give you the ability to easily swap core functionality with your own custom functionality. You can override any of the Platform 4 defaults within your own custom extension.
+Overrides in Platform 5 give you the ability to easily swap core functionality with your own custom functionality. You can override any of the Platform 5 defaults within your own custom extension.
 
 ### Route Overrides
 

@@ -1,6 +1,6 @@
 ## Themes
 
-Platform 4 uses [Cartalyst's Themes 3 package](http://cartalyst.com/manual/themes) for managing themes. Because of re-using it, Platform 4 comes with all of the goodness of Themes 3 like asset queuing and compiling. In the documentation below you can find out how to create your own custom themes.
+Platform 5 uses [Cartalyst's Themes package](http://cartalyst.com/manual/themes) for managing themes. Because of re-using it, Platform 5 comes with all of the goodness of Themes like asset queuing and compiling. In the documentation below you can find out how to create your own custom themes.
 
 ### Important Notes
 

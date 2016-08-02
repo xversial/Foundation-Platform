@@ -2,7 +2,7 @@
 
 **composer.json**
 
-One requirement for Platform 4 to detect composer packages as extensions is to
+One requirement for Platform 5 to detect composer packages as extensions is to
 place the following in your package's `composer.json` file:
 
     "type": "platform-extension",
@@ -10,7 +10,7 @@ place the following in your package's `composer.json` file:
         "cartalyst/composer-installers": "1.0.*"
     }
 
-The `"type": "platform-extension"` will identify your package as a Platform 4 extension. When extensions are published, Platform 4 will look for composer packages with this rule in their `composer.json` file and publish the extension to the extensions folder.
+The `"type": "platform-extension"` will identify your package as a Platform 5 extension. When extensions are published, Platform 5 will look for composer packages with this rule in their `composer.json` file and publish the extension to the extensions folder.
 
 > **Note:** Remember that you don't have to format your extensions to follow PSR-0 rules. Extensions extend the Laravel application directly and should be structured in the same way as your `app` directory.
 

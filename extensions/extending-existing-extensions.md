@@ -9,6 +9,6 @@ You can follow the instructions for creating a new extension [here](#creating-ex
 
 ### How Does It Work?
 
-What happens is that Platform 4 will cascade through your extensions with the same URI, based on the sequence in which the extensions require each other. Say, for example, that I have an extension B which extends A. I give extension B the same uri as A. Platform 4 will use all of the functionality from A but will override any functionality which you set in B. Platform 4 automatically knows to set B as an endpoint because it's the last to require A.
+What happens is that Platform 5 will cascade through your extensions with the same URI, based on the sequence in which the extensions require each other. Say, for example, that I have an extension B which extends A. I give extension B the same uri as A. Platform 5 will use all of the functionality from A but will override any functionality which you set in B. Platform 5 automatically knows to set B as an endpoint because it's the last to require A.
 
-This works for multiple extensions extending each other as well. Say, for example, that I have an extension C which extends B which extends A. Platform 4 will load C and its custom functionality last because of the hierarchy in which the extensions require one another.
+This works for multiple extensions extending each other as well. Say, for example, that I have an extension C which extends B which extends A. Platform 5 will load C and its custom functionality last because of the hierarchy in which the extensions require one another.

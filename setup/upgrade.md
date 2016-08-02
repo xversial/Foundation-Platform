@@ -1,6 +1,6 @@
 ## Upgrade
 
-When comes to upgrade Platform to a newer version, you have 2 options, a more manually way, where all the files and folder structure (if applicable) are manually updated or a more automated way, which is by using Git.
+When comes to upgrade Platform to a newer version, you have 2 options, a manual way, where all the files and folder structure (if applicable) are manually updated or a semi-automatic way, which is by using Git.
 
 This last method brings less work, but it may require a manual validation/patching on some files due to merge conflicts.
 
@@ -16,9 +16,39 @@ To add a new remote just run the following on your terminal:
 
     $ git remote add upstream git@github.com:cartalyst/platform
 
-> **Note**: You can change `upstream` to something else, like `cartalyst` if you feel it's more easier to remember.
+> **Note**: You can change `upstream` to something else, like `cartalyst` if you feel it is easier to remember.
 
-Now that you've the remote added, we can start the upgrade process.
+Now that you have the remote added, we can start the upgrade process.
+
+### Upgrade to 5.0 from 4.0
+
+1. Open your terminal and change the current working directory to your local project.
+
+2. Fetch the branches and their commits from the `upstream` remote.
+
+    ```
+    $ git fetch upstream
+    ```
+
+3. Check out the branch you wish to merge to. This is the branch that contains Platform 4.0 and by default is called `4.0`.
+
+    ```
+    $ git checkout 4.0
+    ```
+
+4. Pull the 4.0 branch from the upstream repository. This will keep your commit history.
+
+    ```
+    $ git merge upstream/5.0
+    ```
+
+5. If you have conflicts, you'll need to resolve them. You can get more information [here](https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line/).
+
+6. Commit the merge
+
+7. Run `composer update` in order to install the latest dependencies.
+
+8. You're done :)
 
 ### Upgrade to 4.0 from 3.0
 
