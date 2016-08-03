@@ -3925,16 +3925,16 @@
         },
         {
             "name": "platform/frontend-default",
-            "version": "v2.0.1",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/theme-default-frontend.git",
-                "reference": "92366150ac8e32cc994ddf3dc31944b875d97627"
+                "reference": "409b42ab8572ac14a8df5e92b57c3f5d99eec6ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/theme-default-frontend/zipball/92366150ac8e32cc994ddf3dc31944b875d97627",
-                "reference": "92366150ac8e32cc994ddf3dc31944b875d97627",
+                "url": "https://api.github.com/repos/cartalyst/theme-default-frontend/zipball/409b42ab8572ac14a8df5e92b57c3f5d99eec6ed",
+                "reference": "409b42ab8572ac14a8df5e92b57c3f5d99eec6ed",
                 "shasum": ""
             },
             "require": {
@@ -3975,10 +3975,10 @@
                 "theme"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/theme-default-frontend/tree/2.0",
+                "source": "https://github.com/cartalyst/theme-default-frontend/tree/v2.0.2",
                 "issues": "https://github.com/cartalyst/theme-default-frontend/issues"
             },
-            "time": "2015-05-12 11:55:38"
+            "time": "2016-08-03 18:10:41"
         },
         {
             "name": "platform/installer",
