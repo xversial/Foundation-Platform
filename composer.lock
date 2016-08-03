@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "76c29dac09325ad3c8cf7bebedd26319",
-    "content-hash": "ea4df4ecdf65bdd11660122adee8a3b0",
+    "hash": "a28da1f5973db5b95599ef8f41f2d6fc",
+    "content-hash": "2caf4eb291dde7873c8b85557e181f0c",
     "packages": [
         {
             "name": "cartalyst/alerts",
@@ -2730,16 +2730,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.25",
+            "version": "1.0.26",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "a76afa4035931be0c78ca8efc6abf3902362f437"
+                "reference": "fb3b30dca320b36931ea878fea17ebe136fba1b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/a76afa4035931be0c78ca8efc6abf3902362f437",
-                "reference": "a76afa4035931be0c78ca8efc6abf3902362f437",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/fb3b30dca320b36931ea878fea17ebe136fba1b0",
+                "reference": "fb3b30dca320b36931ea878fea17ebe136fba1b0",
                 "shasum": ""
             },
             "require": {
@@ -2809,7 +2809,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2016-07-18 12:22:57"
+            "time": "2016-08-03 09:49:11"
         },
         {
             "name": "league/fractal",
@@ -3537,26 +3537,26 @@
         },
         {
             "name": "platform/access",
-            "version": "dev-feature/five",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-access.git",
-                "reference": "80fb3a569fe2f6cb10f0df39e10592aba5b20d8c"
+                "reference": "40102c1388b617ecaa68c613b5863f9fbb2fbb61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-access/zipball/80fb3a569fe2f6cb10f0df39e10592aba5b20d8c",
-                "reference": "80fb3a569fe2f6cb10f0df39e10592aba5b20d8c",
+                "url": "https://api.github.com/repos/cartalyst/platform-access/zipball/40102c1388b617ecaa68c613b5863f9fbb2fbb61",
+                "reference": "40102c1388b617ecaa68c613b5863f9fbb2fbb61",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/alerts": "2.0.*",
                 "cartalyst/composer-installers": "1.2.*",
                 "php": ">=5.5.9",
-                "platform/foundation": "dev-feature/five",
-                "platform/permissions": "dev-feature/five",
-                "platform/roles": "dev-feature/five",
-                "platform/users": "dev-feature/five"
+                "platform/foundation": "4.0.*",
+                "platform/permissions": "4.0.*",
+                "platform/roles": "4.0.*",
+                "platform/users": "4.0.*"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev"
@@ -3565,7 +3565,7 @@
             "extra": {
                 "component": "extension",
                 "branch-alias": {
-                    "dev-master": "3.2.x-dev"
+                    "dev-master": "4.0.x-dev"
                 }
             },
             "autoload": {
@@ -3582,25 +3582,11 @@
             "authors": [
                 {
                     "name": "Cartalyst LLC",
-                    "email": "help@cartalyst.com"
-                },
-                {
-                    "name": "Bruno Gaspar",
-                    "email": "bruno.gaspar@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Dan Syme",
-                    "email": "dan.syme@cartalyst.com",
-                    "role": "Project Lead"
-                },
-                {
-                    "name": "Suhayb Wardany",
-                    "email": "su.wardany@cartalyst.com",
-                    "role": "Developer"
+                    "email": "help@cartalyst.com",
+                    "homepage": "https://cartalyst.com"
                 }
             ],
-            "description": "A Platform 2 extension that bootstraps some necessary requirements for Platform.",
+            "description": "A Platform 5 Extension that bootstraps some necessary requirements for Platform like filters, auth, and admin controllers. Includes Cartalyst Sentinel model overrides.",
             "keywords": [
                 "cartalyst",
                 "extension",
@@ -3608,23 +3594,23 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-access/tree/feature/five",
+                "source": "https://github.com/cartalyst/platform-access/tree/v4.0.0",
                 "issues": "https://github.com/cartalyst/platform-access/issues"
             },
-            "time": "2016-08-01 14:07:53"
+            "time": "2016-08-02 21:11:45"
         },
         {
             "name": "platform/admin-default",
-            "version": "dev-feature/five",
+            "version": "v3.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/theme-default-admin.git",
-                "reference": "432e75866a78baa119fce447362826b9719991a3"
+                "reference": "e59688b87c99f01877f6f40368af7dfb4c4d4065"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/theme-default-admin/zipball/432e75866a78baa119fce447362826b9719991a3",
-                "reference": "432e75866a78baa119fce447362826b9719991a3",
+                "url": "https://api.github.com/repos/cartalyst/theme-default-admin/zipball/e59688b87c99f01877f6f40368af7dfb4c4d4065",
+                "reference": "e59688b87c99f01877f6f40368af7dfb4c4d4065",
                 "shasum": ""
             },
             "require": {
@@ -3635,7 +3621,7 @@
             "extra": {
                 "component": "theme",
                 "branch-alias": {
-                    "dev-master": "2.0.x-dev"
+                    "dev-master": "3.0.x-dev"
                 }
             },
             "license": [
@@ -3644,22 +3630,8 @@
             "authors": [
                 {
                     "name": "Cartalyst LLC",
-                    "email": "help@cartalyst.com"
-                },
-                {
-                    "name": "Ben Corlett",
-                    "email": "ben.corlett@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Bruno Gaspar",
-                    "email": "bruno.gaspar@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Dan Syme",
-                    "email": "dan.syme@cartalyst.com",
-                    "role": "Creator & Designer"
+                    "email": "help@cartalyst.com",
+                    "homepage": "https://cartalyst.com"
                 }
             ],
             "description": "Default admin theme.",
@@ -3670,23 +3642,23 @@
                 "theme"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/theme-default-admin/tree/feature/five",
+                "source": "https://github.com/cartalyst/theme-default-admin/tree/v3.0.0",
                 "issues": "https://github.com/cartalyst/theme-default-admin/issues"
             },
-            "time": "2016-08-01 14:01:18"
+            "time": "2016-08-03 11:54:43"
         },
         {
             "name": "platform/attributes",
-            "version": "dev-feature/five",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-attributes.git",
-                "reference": "2bb73603a44e42608a7174a1372fcc4aa72796e3"
+                "reference": "fd8facd9a72362de9fddd0d8632fe41d8a6d31d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-attributes/zipball/2bb73603a44e42608a7174a1372fcc4aa72796e3",
-                "reference": "2bb73603a44e42608a7174a1372fcc4aa72796e3",
+                "url": "https://api.github.com/repos/cartalyst/platform-attributes/zipball/fd8facd9a72362de9fddd0d8632fe41d8a6d31d6",
+                "reference": "fd8facd9a72362de9fddd0d8632fe41d8a6d31d6",
                 "shasum": ""
             },
             "require": {
@@ -3694,8 +3666,8 @@
                 "cartalyst/composer-installers": "1.2.*",
                 "cartalyst/support": "~1.1",
                 "php": ">=5.5.9",
-                "platform/access": "dev-feature/five",
-                "platform/foundation": "dev-feature/five"
+                "platform/access": "4.0.*",
+                "platform/foundation": "4.0.*"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev"
@@ -3704,7 +3676,7 @@
             "extra": {
                 "component": "extension",
                 "branch-alias": {
-                    "dev-master": "3.2.x-dev"
+                    "dev-master": "4.0.x-dev"
                 }
             },
             "autoload": {
@@ -3722,27 +3694,8 @@
             "authors": [
                 {
                     "name": "Cartalyst LLC",
-                    "email": "help@cartalyst.com"
-                },
-                {
-                    "name": "Ben Corlett",
-                    "email": "ben.corlett@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Bruno Gaspar",
-                    "email": "bruno.gaspar@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Dan Syme",
-                    "email": "dan.syme@cartalyst.com",
-                    "role": "Project Lead"
-                },
-                {
-                    "name": "Suhayb Wardany",
-                    "email": "su.wardany@cartalyst.com",
-                    "role": "Developer"
+                    "email": "help@cartalyst.com",
+                    "homepage": "https://cartalyst.com"
                 }
             ],
             "description": "Manage your application attributes.",
@@ -3753,23 +3706,23 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-attributes/tree/feature/five",
+                "source": "https://github.com/cartalyst/platform-attributes/tree/v4.0.0",
                 "issues": "https://github.com/cartalyst/platform-attributes/issues"
             },
-            "time": "2016-08-01 14:08:02"
+            "time": "2016-08-03 10:49:06"
         },
         {
             "name": "platform/content",
-            "version": "dev-feature/five",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-content.git",
-                "reference": "882562261c37264f2f84633318f9d88f41baca01"
+                "reference": "a9a5219e44b284a5e7cd4099baef9d80ff2761cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/882562261c37264f2f84633318f9d88f41baca01",
-                "reference": "882562261c37264f2f84633318f9d88f41baca01",
+                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/a9a5219e44b284a5e7cd4099baef9d80ff2761cb",
+                "reference": "a9a5219e44b284a5e7cd4099baef9d80ff2761cb",
                 "shasum": ""
             },
             "require": {
@@ -3777,10 +3730,10 @@
                 "cartalyst/interpret": "1.1.*",
                 "cartalyst/support": "~1.1",
                 "php": ">=5.5.9",
-                "platform/access": "dev-feature/five",
-                "platform/attributes": "dev-feature/five",
-                "platform/foundation": "dev-feature/five",
-                "platform/tags": "dev-feature/five"
+                "platform/access": "4.0.*",
+                "platform/attributes": "4.0.*",
+                "platform/foundation": "4.0.*",
+                "platform/tags": "4.0.*"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
@@ -3792,7 +3745,7 @@
             "extra": {
                 "component": "extension",
                 "branch-alias": {
-                    "dev-master": "3.3.x-dev"
+                    "dev-master": "4.0.x-dev"
                 }
             },
             "autoload": {
@@ -3810,27 +3763,8 @@
             "authors": [
                 {
                     "name": "Cartalyst LLC",
-                    "email": "help@cartalyst.com"
-                },
-                {
-                    "name": "Ben Corlett",
-                    "email": "ben.corlett@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Bruno Gaspar",
-                    "email": "bruno.gaspar@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Dan Syme",
-                    "email": "dan.syme@cartalyst.com",
-                    "role": "Project Lead"
-                },
-                {
-                    "name": "Suhayb Wardany",
-                    "email": "su.wardany@cartalyst.com",
-                    "role": "Developer"
+                    "email": "help@cartalyst.com",
+                    "homepage": "https://cartalyst.com"
                 }
             ],
             "description": "An extension to manage your website content.",
@@ -3842,30 +3776,30 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-content/tree/feature/five",
+                "source": "https://github.com/cartalyst/platform-content/tree/v4.0.0",
                 "issues": "https://github.com/cartalyst/platform-content/issues"
             },
-            "time": "2016-08-01 14:08:11"
+            "time": "2016-08-03 10:50:06"
         },
         {
             "name": "platform/dashboard",
-            "version": "dev-feature/five",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-dashboard.git",
-                "reference": "39ff5de9d10fafb207c5d843e8bba2c16096901b"
+                "reference": "4c0009098ee96efd62bc9af3f32cb8e2bd70f3ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-dashboard/zipball/39ff5de9d10fafb207c5d843e8bba2c16096901b",
-                "reference": "39ff5de9d10fafb207c5d843e8bba2c16096901b",
+                "url": "https://api.github.com/repos/cartalyst/platform-dashboard/zipball/4c0009098ee96efd62bc9af3f32cb8e2bd70f3ae",
+                "reference": "4c0009098ee96efd62bc9af3f32cb8e2bd70f3ae",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "1.2.*",
                 "php": ">=5.5.9",
-                "platform/access": "dev-feature/five",
-                "platform/foundation": "dev-feature/five"
+                "platform/access": "4.0.*",
+                "platform/foundation": "4.0.*"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev"
@@ -3874,7 +3808,7 @@
             "extra": {
                 "component": "extension",
                 "branch-alias": {
-                    "dev-master": "3.2.x-dev"
+                    "dev-master": "4.0.x-dev"
                 }
             },
             "autoload": {
@@ -3892,22 +3826,8 @@
             "authors": [
                 {
                     "name": "Cartalyst LLC",
-                    "email": "help@cartalyst.com"
-                },
-                {
-                    "name": "Bruno Gaspar",
-                    "email": "bruno.gaspar@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Dan Syme",
-                    "email": "dan.syme@cartalyst.com",
-                    "role": "Project Lead"
-                },
-                {
-                    "name": "Suhayb Wardany",
-                    "email": "su.wardany@cartalyst.com",
-                    "role": "Developer"
+                    "email": "help@cartalyst.com",
+                    "homepage": "https://cartalyst.com"
                 }
             ],
             "description": "The administration screen of Platform.",
@@ -3919,23 +3839,23 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-dashboard/tree/feature/five",
+                "source": "https://github.com/cartalyst/platform-dashboard/tree/4.0",
                 "issues": "https://github.com/cartalyst/platform-dashboard/issues"
             },
-            "time": "2016-08-01 14:08:18"
+            "time": "2016-08-03 10:54:23"
         },
         {
             "name": "platform/foundation",
-            "version": "dev-feature/five",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-foundation.git",
-                "reference": "5cebda1a15520669270dd0a4400b432842ab683f"
+                "reference": "abb2b389ea5b27ca0ff1cf6e89e748b9e4e1b9ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/5cebda1a15520669270dd0a4400b432842ab683f",
-                "reference": "5cebda1a15520669270dd0a4400b432842ab683f",
+                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/abb2b389ea5b27ca0ff1cf6e89e748b9e4e1b9ed",
+                "reference": "abb2b389ea5b27ca0ff1cf6e89e748b9e4e1b9ed",
                 "shasum": ""
             },
             "require": {
@@ -3985,10 +3905,11 @@
             "authors": [
                 {
                     "name": "Cartalyst LLC",
-                    "email": "help@cartalyst.com"
+                    "email": "help@cartalyst.com",
+                    "homepage": "https://cartalyst.com"
                 }
             ],
-            "description": "The heartbeat of Platform 2, keeping your application healthy.",
+            "description": "The heartbeat of Platform 5, keeping your application healthy.",
             "keywords": [
                 "cartalyst",
                 "extension",
@@ -3997,10 +3918,10 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-foundation/tree/feature/five",
+                "source": "https://github.com/cartalyst/platform-foundation/tree/v4.0.0",
                 "issues": "https://github.com/cartalyst/platform-foundation/issues"
             },
-            "time": "2016-08-01 13:24:28"
+            "time": "2016-08-02 15:44:23"
         },
         {
             "name": "platform/frontend-default",
@@ -4060,94 +3981,22 @@
             "time": "2015-05-12 11:55:38"
         },
         {
-            "name": "platform/gallery",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:cartalyst/platform-gallery.git",
-                "reference": "6f259286f20d839f857bfacdc91f9ed8ac5633ae"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-gallery/zipball/6f259286f20d839f857bfacdc91f9ed8ac5633ae",
-                "reference": "6f259286f20d839f857bfacdc91f9ed8ac5633ae",
-                "shasum": ""
-            },
-            "require": {
-                "cartalyst/composer-installers": "1.2.*",
-                "cartalyst/support": "~1.2",
-                "php": ">=5.5.9",
-                "platform/access": "dev-feature/five",
-                "platform/attributes": "dev-feature/five",
-                "platform/foundation": "dev-feature/five",
-                "platform/media": "dev-feature/five",
-                "platform/tags": "dev-feature/five"
-            },
-            "require-dev": {
-                "cartalyst/testing": "~2.0@dev"
-            },
-            "type": "platform-extension",
-            "extra": {
-                "component": "extension",
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "classmap": [
-                    "database/migrations",
-                    "database/seeds"
-                ],
-                "files": [
-                    "src/helpers.php"
-                ],
-                "psr-4": {
-                    "Platform\\Gallery\\": "src/"
-                }
-            },
-            "license": [
-                "proprietary"
-            ],
-            "authors": [
-                {
-                    "name": "Cartalyst LLC",
-                    "email": "help@cartalyst.com",
-                    "homepage": "https://cartalyst.com"
-                }
-            ],
-            "description": "Gallery management for Platform.",
-            "keywords": [
-                "album",
-                "cartalyst",
-                "extension",
-                "gallery",
-                "laravel",
-                "php",
-                "platform"
-            ],
-            "support": {
-                "source": "https://github.com/cartalyst/platform-gallery/tree/master",
-                "issues": "https://github.com/cartalyst/platform-gallery/issues"
-            },
-            "time": "2016-08-01 14:10:33"
-        },
-        {
             "name": "platform/installer",
-            "version": "dev-feature/five",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-installer.git",
-                "reference": "14b951350b09334d9ba6307d2ef678b2aab3e2a6"
+                "reference": "7fe7dd5e9b3c11bdc896e459d477b00d7521e629"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-installer/zipball/14b951350b09334d9ba6307d2ef678b2aab3e2a6",
-                "reference": "14b951350b09334d9ba6307d2ef678b2aab3e2a6",
+                "url": "https://api.github.com/repos/cartalyst/platform-installer/zipball/7fe7dd5e9b3c11bdc896e459d477b00d7521e629",
+                "reference": "7fe7dd5e9b3c11bdc896e459d477b00d7521e629",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5.9",
-                "platform/foundation": "dev-feature/five"
+                "platform/foundation": "4.0.*"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
@@ -4162,7 +4011,7 @@
             "extra": {
                 "component": "platform-package",
                 "branch-alias": {
-                    "dev-master": "3.0.x-dev"
+                    "dev-master": "4.0.x-dev"
                 }
             },
             "autoload": {
@@ -4176,27 +4025,8 @@
             "authors": [
                 {
                     "name": "Cartalyst LLC",
-                    "email": "help@cartalyst.com"
-                },
-                {
-                    "name": "Ben Corlett",
-                    "email": "ben.corlett@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Bruno Gaspar",
-                    "email": "bruno.gaspar@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Dan Syme",
-                    "email": "dan.syme@cartalyst.com",
-                    "role": "Project Lead"
-                },
-                {
-                    "name": "Suhayb Wardany",
-                    "email": "su.wardany@cartalyst.com",
-                    "role": "Developer"
+                    "email": "help@cartalyst.com",
+                    "homepage": "https://cartalyst.com"
                 }
             ],
             "description": "Default installer for your Platform application.",
@@ -4208,23 +4038,23 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-installer/tree/feature/five",
+                "source": "https://github.com/cartalyst/platform-installer/tree/v4.0.0",
                 "issues": "https://github.com/cartalyst/platform-installer/issues"
             },
-            "time": "2016-08-01 14:10:10"
+            "time": "2016-08-02 15:54:34"
         },
         {
             "name": "platform/media",
-            "version": "dev-feature/five",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-media.git",
-                "reference": "2cdd7dfbe688ed8d40c7eb723615a9cd828c0228"
+                "reference": "06f7d2fae11b196f844cd957624f9f1cbc22be57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/2cdd7dfbe688ed8d40c7eb723615a9cd828c0228",
-                "reference": "2cdd7dfbe688ed8d40c7eb723615a9cd828c0228",
+                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/06f7d2fae11b196f844cd957624f9f1cbc22be57",
+                "reference": "06f7d2fae11b196f844cd957624f9f1cbc22be57",
                 "shasum": ""
             },
             "require": {
@@ -4234,9 +4064,9 @@
                 "intervention/image": "~2.3",
                 "intervention/imagecache": "~2.3",
                 "php": ">=5.5.9",
-                "platform/access": "dev-feature/five",
-                "platform/foundation": "dev-feature/five",
-                "platform/tags": "dev-feature/five"
+                "platform/access": "4.0.*",
+                "platform/foundation": "4.0.*",
+                "platform/tags": "4.0.*"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
@@ -4246,7 +4076,7 @@
             "extra": {
                 "component": "extension",
                 "branch-alias": {
-                    "dev-master": "3.3.x-dev"
+                    "dev-master": "4.0.x-dev"
                 }
             },
             "autoload": {
@@ -4281,31 +4111,31 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-media/tree/feature/five",
+                "source": "https://github.com/cartalyst/platform-media/tree/v4.0.0",
                 "issues": "https://github.com/cartalyst/platform-media/issues"
             },
-            "time": "2016-08-01 14:10:21"
+            "time": "2016-08-03 11:53:26"
         },
         {
             "name": "platform/menus",
-            "version": "dev-feature/five",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-menus.git",
-                "reference": "a30767c20a0d61c7e3240f6f8a0bd55dd67da716"
+                "reference": "0a8f4ac5e80414625d0a14a3949be71ea0531d50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/a30767c20a0d61c7e3240f6f8a0bd55dd67da716",
-                "reference": "a30767c20a0d61c7e3240f6f8a0bd55dd67da716",
+                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/0a8f4ac5e80414625d0a14a3949be71ea0531d50",
+                "reference": "0a8f4ac5e80414625d0a14a3949be71ea0531d50",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "1.2.*",
                 "cartalyst/nested-sets": "3.0.*",
                 "php": ">=5.5.9",
-                "platform/access": "dev-feature/five",
-                "platform/foundation": "dev-feature/five"
+                "platform/access": "4.0.*",
+                "platform/foundation": "4.0.*"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
@@ -4315,7 +4145,7 @@
             "extra": {
                 "component": "extension",
                 "branch-alias": {
-                    "dev-master": "3.2.x-dev"
+                    "dev-master": "4.0.x-dev"
                 }
             },
             "autoload": {
@@ -4333,27 +4163,8 @@
             "authors": [
                 {
                     "name": "Cartalyst LLC",
-                    "email": "help@cartalyst.com"
-                },
-                {
-                    "name": "Ben Corlett",
-                    "email": "ben.corlett@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Bruno Gaspar",
-                    "email": "bruno.gaspar@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Dan Syme",
-                    "email": "dan.syme@cartalyst.com",
-                    "role": "Project Lead"
-                },
-                {
-                    "name": "Suhayb Wardany",
-                    "email": "su.wardany@cartalyst.com",
-                    "role": "Developer"
+                    "email": "help@cartalyst.com",
+                    "homepage": "https://cartalyst.com"
                 }
             ],
             "description": "Manage all the menus throughout your website.",
@@ -4365,23 +4176,23 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-menus/tree/feature/five",
+                "source": "https://github.com/cartalyst/platform-menus/tree/v4.0.0",
                 "issues": "https://github.com/cartalyst/platform-menus/issues"
             },
-            "time": "2016-08-01 14:08:31"
+            "time": "2016-08-03 10:55:27"
         },
         {
             "name": "platform/operations",
-            "version": "dev-feature/five",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-operations.git",
-                "reference": "b70781a3a035e0afd6d8fe72bbc8c7e790b3bb38"
+                "reference": "c6b0bf2cf5181359a3fe9568f6071a9ed1561910"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/b70781a3a035e0afd6d8fe72bbc8c7e790b3bb38",
-                "reference": "b70781a3a035e0afd6d8fe72bbc8c7e790b3bb38",
+                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/c6b0bf2cf5181359a3fe9568f6071a9ed1561910",
+                "reference": "c6b0bf2cf5181359a3fe9568f6071a9ed1561910",
                 "shasum": ""
             },
             "require": {
@@ -4389,8 +4200,8 @@
                 "cartalyst/workshop": "2.0.*",
                 "laravelcollective/html": "5.1.*",
                 "php": ">=5.5.9",
-                "platform/access": "dev-feature/five",
-                "platform/foundation": "dev-feature/five"
+                "platform/access": "4.0.*",
+                "platform/foundation": "4.0.*"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev"
@@ -4399,7 +4210,7 @@
             "extra": {
                 "component": "extension",
                 "branch-alias": {
-                    "dev-master": "3.2.x-dev"
+                    "dev-master": "4.0.x-dev"
                 }
             },
             "autoload": {
@@ -4413,27 +4224,8 @@
             "authors": [
                 {
                     "name": "Cartalyst LLC",
-                    "email": "help@cartalyst.com"
-                },
-                {
-                    "name": "Ben Corlett",
-                    "email": "ben.corlett@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Bruno Gaspar",
-                    "email": "bruno.gaspar@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Dan Syme",
-                    "email": "dan.syme@cartalyst.com",
-                    "role": "Project Lead"
-                },
-                {
-                    "name": "Suhayb Wardany",
-                    "email": "su.wardany@cartalyst.com",
-                    "role": "Developer"
+                    "email": "help@cartalyst.com",
+                    "homepage": "https://cartalyst.com"
                 }
             ],
             "description": "Extension to power the administration of your website.",
@@ -4444,31 +4236,31 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-operations/tree/feature/five",
+                "source": "https://github.com/cartalyst/platform-operations/tree/v4.0.0",
                 "issues": "https://github.com/cartalyst/platform-operations/issues"
             },
-            "time": "2016-08-01 14:08:40"
+            "time": "2016-08-03 10:56:47"
         },
         {
             "name": "platform/pages",
-            "version": "dev-feature/five",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-pages.git",
-                "reference": "c63032a6f2fd545f37c273b628d9d17c6c3cb773"
+                "reference": "88ed098ad4c447306e3ed01b7a2612c32bfb65c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/c63032a6f2fd545f37c273b628d9d17c6c3cb773",
-                "reference": "c63032a6f2fd545f37c273b628d9d17c6c3cb773",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/88ed098ad4c447306e3ed01b7a2612c32bfb65c5",
+                "reference": "88ed098ad4c447306e3ed01b7a2612c32bfb65c5",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "1.2.*",
                 "php": ">=5.5.9",
-                "platform/access": "dev-feature/five",
-                "platform/content": "dev-feature/five",
-                "platform/foundation": "dev-feature/five"
+                "platform/access": "4.0.*",
+                "platform/content": "4.0.*",
+                "platform/foundation": "4.0.*"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
@@ -4481,7 +4273,7 @@
             "extra": {
                 "component": "extension",
                 "branch-alias": {
-                    "dev-master": "3.2.x-dev"
+                    "dev-master": "4.0.x-dev"
                 }
             },
             "autoload": {
@@ -4499,27 +4291,8 @@
             "authors": [
                 {
                     "name": "Cartalyst LLC",
-                    "email": "help@cartalyst.com"
-                },
-                {
-                    "name": "Ben Corlett",
-                    "email": "ben.corlett@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Bruno Gaspar",
-                    "email": "bruno.gaspar@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Dan Syme",
-                    "email": "dan.syme@cartalyst.com",
-                    "role": "Project Lead"
-                },
-                {
-                    "name": "Suhayb Wardany",
-                    "email": "su.wardany@cartalyst.com",
-                    "role": "Developer"
+                    "email": "help@cartalyst.com",
+                    "homepage": "https://cartalyst.com"
                 }
             ],
             "description": "An extension to manage your website pages.",
@@ -4531,30 +4304,30 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-pages/tree/feature/five",
+                "source": "https://github.com/cartalyst/platform-pages/tree/v4.0.0",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2016-08-01 14:08:49"
+            "time": "2016-08-03 10:59:06"
         },
         {
             "name": "platform/permissions",
-            "version": "dev-feature/five",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-permissions.git",
-                "reference": "99cae10f101392cae5f7920bae0be7e7670686c9"
+                "reference": "da72405df4e0919e3faf2924eea941cace138f38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-permissions/zipball/99cae10f101392cae5f7920bae0be7e7670686c9",
-                "reference": "99cae10f101392cae5f7920bae0be7e7670686c9",
+                "url": "https://api.github.com/repos/cartalyst/platform-permissions/zipball/da72405df4e0919e3faf2924eea941cace138f38",
+                "reference": "da72405df4e0919e3faf2924eea941cace138f38",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "1.2.*",
                 "cartalyst/permissions": "1.0.*",
                 "php": ">=5.5.9",
-                "platform/foundation": "dev-feature/five"
+                "platform/foundation": "4.0.*"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev"
@@ -4563,7 +4336,7 @@
             "extra": {
                 "component": "extension",
                 "branch-alias": {
-                    "dev-master": "3.1.x-dev"
+                    "dev-master": "4.0.x-dev"
                 }
             },
             "autoload": {
@@ -4581,22 +4354,8 @@
             "authors": [
                 {
                     "name": "Cartalyst LLC",
-                    "email": "help@cartalyst.com"
-                },
-                {
-                    "name": "Bruno Gaspar",
-                    "email": "bruno.gaspar@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Dan Syme",
-                    "email": "dan.syme@cartalyst.com",
-                    "role": "Project Lead"
-                },
-                {
-                    "name": "Suhayb Wardany",
-                    "email": "su.wardany@cartalyst.com",
-                    "role": "Developer"
+                    "email": "help@cartalyst.com",
+                    "homepage": "https://cartalyst.com"
                 }
             ],
             "keywords": [
@@ -4606,31 +4365,31 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-permissions/tree/feature/five",
+                "source": "https://github.com/cartalyst/platform-permissions/tree/v4.0.0",
                 "issues": "https://github.com/cartalyst/platform-permissions/issues"
             },
-            "time": "2016-08-01 14:08:57"
+            "time": "2016-08-03 10:59:39"
         },
         {
             "name": "platform/roles",
-            "version": "dev-feature/five",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-roles.git",
-                "reference": "408c589aac83463ac47e2483a0e392b7e557bc31"
+                "reference": "bcd26246aef5d7915bcef221cea01e2720c52201"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-roles/zipball/408c589aac83463ac47e2483a0e392b7e557bc31",
-                "reference": "408c589aac83463ac47e2483a0e392b7e557bc31",
+                "url": "https://api.github.com/repos/cartalyst/platform-roles/zipball/bcd26246aef5d7915bcef221cea01e2720c52201",
+                "reference": "bcd26246aef5d7915bcef221cea01e2720c52201",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "1.2.*",
                 "php": ">=5.5.9",
-                "platform/access": "dev-feature/five",
-                "platform/attributes": "dev-feature/five",
-                "platform/foundation": "dev-feature/five"
+                "platform/access": "4.0.*",
+                "platform/attributes": "4.0.*",
+                "platform/foundation": "4.0.*"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
@@ -4640,7 +4399,7 @@
             "extra": {
                 "component": "extension",
                 "branch-alias": {
-                    "dev-master": "3.2.x-dev"
+                    "dev-master": "4.0.x-dev"
                 }
             },
             "autoload": {
@@ -4658,25 +4417,11 @@
             "authors": [
                 {
                     "name": "Cartalyst LLC",
-                    "email": "help@cartalyst.com"
-                },
-                {
-                    "name": "Bruno Gaspar",
-                    "email": "bruno.gaspar@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Dan Syme",
-                    "email": "dan.syme@cartalyst.com",
-                    "role": "Project Lead"
-                },
-                {
-                    "name": "Suhayb Wardany",
-                    "email": "su.wardany@cartalyst.com",
-                    "role": "Developer"
+                    "email": "help@cartalyst.com",
+                    "homepage": "https://cartalyst.com"
                 }
             ],
-            "description": "A Platform 2 extension to manage users roles.",
+            "description": "A Platform 5 extension to manage users roles.",
             "keywords": [
                 "cartalyst",
                 "extension",
@@ -4685,31 +4430,31 @@
                 "roles"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-roles/tree/feature/five",
+                "source": "https://github.com/cartalyst/platform-roles/tree/4.0",
                 "issues": "https://github.com/cartalyst/platform-roles/issues"
             },
-            "time": "2016-08-01 14:09:06"
+            "time": "2016-08-03 11:00:15"
         },
         {
             "name": "platform/settings",
-            "version": "dev-feature/five",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-settings.git",
-                "reference": "c10a7d0faaf1b2a30b2fb4b1d23d14df48584988"
+                "reference": "aa3168ed389970bd82fc826fa9bfddf01bf6ce3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-settings/zipball/c10a7d0faaf1b2a30b2fb4b1d23d14df48584988",
-                "reference": "c10a7d0faaf1b2a30b2fb4b1d23d14df48584988",
+                "url": "https://api.github.com/repos/cartalyst/platform-settings/zipball/aa3168ed389970bd82fc826fa9bfddf01bf6ce3e",
+                "reference": "aa3168ed389970bd82fc826fa9bfddf01bf6ce3e",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "1.2.*",
                 "cartalyst/composite-config": "2.0.*",
                 "php": ">=5.5.9",
-                "platform/access": "dev-feature/five",
-                "platform/foundation": "dev-feature/five"
+                "platform/access": "4.0.*",
+                "platform/foundation": "4.0.*"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev"
@@ -4718,7 +4463,7 @@
             "extra": {
                 "component": "extension",
                 "branch-alias": {
-                    "dev-master": "3.2.x-dev"
+                    "dev-master": "4.0.x-dev"
                 }
             },
             "autoload": {
@@ -4736,27 +4481,8 @@
             "authors": [
                 {
                     "name": "Cartalyst LLC",
-                    "email": "help@cartalyst.com"
-                },
-                {
-                    "name": "Ben Corlett",
-                    "email": "ben.corlett@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Bruno Gaspar",
-                    "email": "bruno.gaspar@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Dan Syme",
-                    "email": "dan.syme@cartalyst.com",
-                    "role": "Project Lead"
-                },
-                {
-                    "name": "Suhayb Wardany",
-                    "email": "su.wardany@cartalyst.com",
-                    "role": "Developer"
+                    "email": "help@cartalyst.com",
+                    "homepage": "https://cartalyst.com"
                 }
             ],
             "description": "An extension to manage your website's configuration.",
@@ -4768,31 +4494,31 @@
                 "settings"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-settings/tree/feature/five",
+                "source": "https://github.com/cartalyst/platform-settings/tree/v4.0.0",
                 "issues": "https://github.com/cartalyst/platform-settings/issues"
             },
-            "time": "2016-08-01 14:09:16"
+            "time": "2016-08-03 11:02:56"
         },
         {
             "name": "platform/tags",
-            "version": "dev-feature/five",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-tags.git",
-                "reference": "071abff49b754ae7a4b390d75dfc9571a994ee4e"
+                "reference": "b747262eaa662a4643173c7d6f3fe3e2dba06fd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-tags/zipball/071abff49b754ae7a4b390d75dfc9571a994ee4e",
-                "reference": "071abff49b754ae7a4b390d75dfc9571a994ee4e",
+                "url": "https://api.github.com/repos/cartalyst/platform-tags/zipball/b747262eaa662a4643173c7d6f3fe3e2dba06fd1",
+                "reference": "b747262eaa662a4643173c7d6f3fe3e2dba06fd1",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "1.2.*",
                 "cartalyst/tags": "2.0.*",
                 "php": ">=5.5.9",
-                "platform/access": "dev-feature/five",
-                "platform/foundation": "dev-feature/five"
+                "platform/access": "4.0.*",
+                "platform/foundation": "4.0.*"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
@@ -4802,7 +4528,7 @@
             "extra": {
                 "component": "extension",
                 "branch-alias": {
-                    "dev-master": "3.2.x-dev"
+                    "dev-master": "4.0.x-dev"
                 }
             },
             "autoload": {
@@ -4820,22 +4546,8 @@
             "authors": [
                 {
                     "name": "Cartalyst LLC",
-                    "email": "help@cartalyst.com"
-                },
-                {
-                    "name": "Bruno Gaspar",
-                    "email": "bruno.gaspar@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Dan Syme",
-                    "email": "dan.syme@cartalyst.com",
-                    "role": "Project Lead"
-                },
-                {
-                    "name": "Suhayb Wardany",
-                    "email": "su.wardany@cartalyst.com",
-                    "role": "Developer"
+                    "email": "help@cartalyst.com",
+                    "homepage": "https://cartalyst.com"
                 }
             ],
             "description": "An extension to manage your website tags.",
@@ -4847,30 +4559,30 @@
                 "tags"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-tags/tree/feature/five",
+                "source": "https://github.com/cartalyst/platform-tags/tree/v4.0.0",
                 "issues": "https://github.com/cartalyst/platform-tags/issues"
             },
-            "time": "2016-08-01 14:09:25"
+            "time": "2016-08-03 11:03:25"
         },
         {
             "name": "platform/themes",
-            "version": "dev-feature/five",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-themes.git",
-                "reference": "04af88381a24e419767f25c4abb41ab877baa25d"
+                "reference": "361e3181d2cb8a659951fc05df29bb294429f709"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-themes/zipball/04af88381a24e419767f25c4abb41ab877baa25d",
-                "reference": "04af88381a24e419767f25c4abb41ab877baa25d",
+                "url": "https://api.github.com/repos/cartalyst/platform-themes/zipball/361e3181d2cb8a659951fc05df29bb294429f709",
+                "reference": "361e3181d2cb8a659951fc05df29bb294429f709",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "1.2.*",
                 "cartalyst/themes": "3.0.*",
                 "php": ">=5.5.9",
-                "platform/foundation": "dev-feature/five"
+                "platform/foundation": "4.0.*"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev"
@@ -4879,7 +4591,7 @@
             "extra": {
                 "component": "extension",
                 "branch-alias": {
-                    "dev-master": "3.0.x-dev"
+                    "dev-master": "4.0.x-dev"
                 }
             },
             "autoload": {
@@ -4893,25 +4605,11 @@
             "authors": [
                 {
                     "name": "Cartalyst LLC",
-                    "email": "help@cartalyst.com"
-                },
-                {
-                    "name": "Bruno Gaspar",
-                    "email": "bruno.gaspar@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Dan Syme",
-                    "email": "dan.syme@cartalyst.com",
-                    "role": "Project Lead"
-                },
-                {
-                    "name": "Suhayb Wardany",
-                    "email": "su.wardany@cartalyst.com",
-                    "role": "Developer"
+                    "email": "help@cartalyst.com",
+                    "homepage": "https://cartalyst.com"
                 }
             ],
-            "description": "A Platform 2 Extension to manage the Platform themes.",
+            "description": "A Platform 5 Extension to manage the Platform themes.",
             "keywords": [
                 "cartalyst",
                 "extension",
@@ -4920,23 +4618,23 @@
                 "themes"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-themes/tree/feature/five",
+                "source": "https://github.com/cartalyst/platform-themes/tree/v4.0.0",
                 "issues": "https://github.com/cartalyst/platform-themes/issues"
             },
-            "time": "2016-08-01 14:09:34"
+            "time": "2016-08-02 17:09:53"
         },
         {
             "name": "platform/users",
-            "version": "dev-feature/five",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-users.git",
-                "reference": "4d8c7db78e6969f0c307765974acd3b4a61b9925"
+                "reference": "0cb1e483413bbed1e03aa467f11cc0ba325ebeef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/4d8c7db78e6969f0c307765974acd3b4a61b9925",
-                "reference": "4d8c7db78e6969f0c307765974acd3b4a61b9925",
+                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/0cb1e483413bbed1e03aa467f11cc0ba325ebeef",
+                "reference": "0cb1e483413bbed1e03aa467f11cc0ba325ebeef",
                 "shasum": ""
             },
             "require": {
@@ -4944,9 +4642,9 @@
                 "cartalyst/sentinel-social": "2.0.*",
                 "cartalyst/support": "~1.1",
                 "php": ">=5.5.9",
-                "platform/access": "dev-feature/five",
-                "platform/attributes": "dev-feature/five",
-                "platform/foundation": "dev-feature/five"
+                "platform/access": "4.0.*",
+                "platform/attributes": "4.0.*",
+                "platform/foundation": "4.0.*"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
@@ -4956,7 +4654,7 @@
             "extra": {
                 "component": "extension",
                 "branch-alias": {
-                    "dev-master": "3.2.x-dev"
+                    "dev-master": "4.0.x-dev"
                 }
             },
             "autoload": {
@@ -4974,30 +4672,11 @@
             "authors": [
                 {
                     "name": "Cartalyst LLC",
-                    "email": "help@cartalyst.com"
-                },
-                {
-                    "name": "Ben Corlett",
-                    "email": "ben.corlett@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Bruno Gaspar",
-                    "email": "bruno.gaspar@cartalyst.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Dan Syme",
-                    "email": "dan.syme@cartalyst.com",
-                    "role": "Project Lead"
-                },
-                {
-                    "name": "Suhayb Wardany",
-                    "email": "su.wardany@cartalyst.com",
-                    "role": "Developer"
+                    "email": "help@cartalyst.com",
+                    "homepage": "https://cartalyst.com"
                 }
             ],
-            "description": "A Platform 2 extension to manage users.",
+            "description": "A Platform 5 extension to manage users.",
             "keywords": [
                 "cartalyst",
                 "extension",
@@ -5009,10 +4688,10 @@
                 "users"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-users/tree/feature/five",
+                "source": "https://github.com/cartalyst/platform-users/tree/v4.0.0",
                 "issues": "https://github.com/cartalyst/platform-users/issues"
             },
-            "time": "2016-08-01 14:09:42"
+            "time": "2016-08-03 11:04:36"
         },
         {
             "name": "psr/http-message",
@@ -8080,24 +7759,9 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
-    "stability-flags": {
-        "platform/admin-default": 20,
-        "platform/foundation": 20,
-        "platform/installer": 20,
-        "platform/access": 20,
-        "platform/attributes": 20,
-        "platform/content": 20,
-        "platform/dashboard": 20,
-        "platform/media": 20,
-        "platform/gallery": 20,
-        "platform/menus": 20,
-        "platform/operations": 20,
-        "platform/pages": 20,
-        "platform/settings": 20,
-        "platform/themes": 20
-    },
-    "prefer-stable": true,
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.5.9"

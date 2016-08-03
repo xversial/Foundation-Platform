@@ -24,22 +24,22 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
 
-        "platform/admin-default": "dev-feature/five",
+        "platform/admin-default": "3.0.*",
         "platform/frontend-default": "2.0.*",
 
-        "platform/foundation": "dev-feature/five",
-        "platform/installer": "dev-feature/five",
+        "platform/foundation": "4.0.*",
+        "platform/installer": "4.0.*",
 
-        "platform/access": "dev-feature/five",
-        "platform/attributes": "dev-feature/five",
-        "platform/content": "dev-feature/five",
-        "platform/dashboard": "dev-feature/five",
-        "platform/media": "dev-feature/five",
-        "platform/menus": "dev-feature/five",
-        "platform/operations": "dev-feature/five",
-        "platform/pages": "dev-feature/five",
-        "platform/settings": "dev-feature/five",
-        "platform/themes": "dev-feature/five"
+        "platform/access": "4.0.*",
+        "platform/attributes": "4.0.*",
+        "platform/content": "4.0.*",
+        "platform/dashboard": "4.0.*",
+        "platform/media": "4.0.*",
+        "platform/menus": "4.0.*",
+        "platform/operations": "4.0.*",
+        "platform/pages": "4.0.*",
+        "platform/settings": "4.0.*",
+        "platform/themes": "4.0.*"
     },
     "require-dev": {
         "doctrine/dbal": "~2.4",
@@ -93,6 +93,5 @@
     "extra": {
         "component": "application"
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "minimum-stability": "stable"
 }
