@@ -539,16 +539,16 @@
         },
         {
             "name": "cartalyst/extensions",
-            "version": "v2.0.0",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/extensions.git",
-                "reference": "019285910c1853998f48b85b84b546c61ae5267c"
+                "reference": "0354ee493f89e0b4ded49579eed0509dd7584684"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/extensions/zipball/019285910c1853998f48b85b84b546c61ae5267c",
-                "reference": "019285910c1853998f48b85b84b546c61ae5267c",
+                "url": "https://api.github.com/repos/cartalyst/extensions/zipball/0354ee493f89e0b4ded49579eed0509dd7584684",
+                "reference": "0354ee493f89e0b4ded49579eed0509dd7584684",
                 "shasum": ""
             },
             "require": {
@@ -569,7 +569,7 @@
             "extra": {
                 "component": "package",
                 "branch-alias": {
-                    "dev-master": "2.0.x-dev"
+                    "dev-master": "2.1.x-dev"
                 }
             },
             "autoload": {
@@ -612,10 +612,10 @@
                 "php"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/extensions/tree/v2.0.0",
+                "source": "https://github.com/cartalyst/extensions/tree/master",
                 "issues": "https://github.com/cartalyst/extensions/issues"
             },
-            "time": "2015-02-17 23:24:23"
+            "time": "2016-08-31 17:56:50"
         },
         {
             "name": "cartalyst/filesystem",
@@ -2498,16 +2498,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.1.40",
+            "version": "v5.1.43",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "555269ee07cfe4e966ad16b394c89fa0b586d8b0"
+                "reference": "db580b5b073ea3f1e095b30a75ae5d6394eb8e51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/555269ee07cfe4e966ad16b394c89fa0b586d8b0",
-                "reference": "555269ee07cfe4e966ad16b394c89fa0b586d8b0",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/db580b5b073ea3f1e095b30a75ae5d6394eb8e51",
+                "reference": "db580b5b073ea3f1e095b30a75ae5d6394eb8e51",
                 "shasum": ""
             },
             "require": {
@@ -2623,7 +2623,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-06-17 19:23:17"
+            "time": "2016-08-26 11:44:21"
         },
         {
             "name": "laravelcollective/html",
@@ -2730,16 +2730,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.26",
+            "version": "1.0.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "fb3b30dca320b36931ea878fea17ebe136fba1b0"
+                "reference": "50e2045ed70a7e75a5e30bc3662904f3b67af8a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/fb3b30dca320b36931ea878fea17ebe136fba1b0",
-                "reference": "fb3b30dca320b36931ea878fea17ebe136fba1b0",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/50e2045ed70a7e75a5e30bc3662904f3b67af8a9",
+                "reference": "50e2045ed70a7e75a5e30bc3662904f3b67af8a9",
                 "shasum": ""
             },
             "require": {
@@ -2809,20 +2809,20 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2016-08-03 09:49:11"
+            "time": "2016-08-10 08:55:11"
         },
         {
             "name": "league/fractal",
-            "version": "0.13.0",
+            "version": "0.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/fractal.git",
-                "reference": "3caeefbad51bce7a06947321938128512f42346c"
+                "reference": "56ad8933fbb40328ca3321c84143b2c16186eebf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/3caeefbad51bce7a06947321938128512f42346c",
-                "reference": "3caeefbad51bce7a06947321938128512f42346c",
+                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/56ad8933fbb40328ca3321c84143b2c16186eebf",
+                "reference": "56ad8933fbb40328ca3321c84143b2c16186eebf",
                 "shasum": ""
             },
             "require": {
@@ -2872,7 +2872,7 @@
                 "league",
                 "rest"
             ],
-            "time": "2015-10-07 14:48:58"
+            "time": "2016-07-21 09:56:14"
         },
         {
             "name": "league/oauth1-client",
@@ -3846,23 +3846,23 @@
         },
         {
             "name": "platform/foundation",
-            "version": "v4.0.0",
+            "version": "v4.0.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-foundation.git",
-                "reference": "abb2b389ea5b27ca0ff1cf6e89e748b9e4e1b9ed"
+                "reference": "ec885502009b3472efc3fd87f5829f590e6f6297"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/abb2b389ea5b27ca0ff1cf6e89e748b9e4e1b9ed",
-                "reference": "abb2b389ea5b27ca0ff1cf6e89e748b9e4e1b9ed",
+                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/ec885502009b3472efc3fd87f5829f590e6f6297",
+                "reference": "ec885502009b3472efc3fd87f5829f590e6f6297",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/alerts": "2.0.*",
                 "cartalyst/assetic-filters": "1.2.*",
                 "cartalyst/data-grid": "3.0.*",
-                "cartalyst/extensions": "2.0.*",
+                "cartalyst/extensions": "2.1.*",
                 "cartalyst/filesystem": "3.0.*",
                 "cartalyst/sentinel": "2.0.*",
                 "cartalyst/settings": "2.0.*",
@@ -3918,10 +3918,10 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-foundation/tree/v4.0.0",
+                "source": "https://github.com/cartalyst/platform-foundation/tree/4.0",
                 "issues": "https://github.com/cartalyst/platform-foundation/issues"
             },
-            "time": "2016-08-02 15:44:23"
+            "time": "2016-08-31 17:50:10"
         },
         {
             "name": "platform/frontend-default",
@@ -4045,16 +4045,16 @@
         },
         {
             "name": "platform/media",
-            "version": "v4.0.0",
+            "version": "v4.0.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-media.git",
-                "reference": "66ac31e8edeab98246cef1097d6495732c86a267"
+                "reference": "24c10c436e4e51dde31565d01ece6e8cab4f0478"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/66ac31e8edeab98246cef1097d6495732c86a267",
-                "reference": "66ac31e8edeab98246cef1097d6495732c86a267",
+                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/24c10c436e4e51dde31565d01ece6e8cab4f0478",
+                "reference": "24c10c436e4e51dde31565d01ece6e8cab4f0478",
                 "shasum": ""
             },
             "require": {
@@ -4114,7 +4114,7 @@
                 "source": "https://github.com/cartalyst/platform-media/tree/4.0",
                 "issues": "https://github.com/cartalyst/platform-media/issues"
             },
-            "time": "2016-08-03 16:10:17"
+            "time": "2016-08-10 14:23:10"
         },
         {
             "name": "platform/menus",
@@ -4695,16 +4695,16 @@
         },
         {
             "name": "psr/http-message",
-            "version": "1.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/http-message.git",
-                "reference": "85d63699f0dbedb190bbd4b0d2b9dc707ea4c298"
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/http-message/zipball/85d63699f0dbedb190bbd4b0d2b9dc707ea4c298",
-                "reference": "85d63699f0dbedb190bbd4b0d2b9dc707ea4c298",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
                 "shasum": ""
             },
             "require": {
@@ -4732,6 +4732,7 @@
                 }
             ],
             "description": "Common interface for HTTP messages",
+            "homepage": "https://github.com/php-fig/http-message",
             "keywords": [
                 "http",
                 "http-message",
@@ -4740,7 +4741,7 @@
                 "request",
                 "response"
             ],
-            "time": "2015-05-04 20:22:00"
+            "time": "2016-08-06 14:39:51"
         },
         {
             "name": "psr/log",
@@ -7405,23 +7406,23 @@
         },
         {
             "name": "sebastian/environment",
-            "version": "1.3.7",
+            "version": "1.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "4e8f0da10ac5802913afc151413bc8c53b6c2716"
+                "reference": "be2c607e43ce4c89ecd60e75c6a85c126e754aea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/4e8f0da10ac5802913afc151413bc8c53b6c2716",
-                "reference": "4e8f0da10ac5802913afc151413bc8c53b6c2716",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/be2c607e43ce4c89ecd60e75c6a85c126e754aea",
+                "reference": "be2c607e43ce4c89ecd60e75c6a85c126e754aea",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": "^5.3.3 || ^7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.4"
+                "phpunit/phpunit": "^4.8 || ^5.0"
             },
             "type": "library",
             "extra": {
@@ -7451,7 +7452,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2016-05-17 03:18:57"
+            "time": "2016-08-18 05:49:44"
         },
         {
             "name": "sebastian/exporter",
@@ -7710,28 +7711,29 @@
         },
         {
             "name": "webmozart/assert",
-            "version": "1.0.2",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webmozart/assert.git",
-                "reference": "30eed06dd6bc88410a4ff7f77b6d22f3ce13dbde"
+                "reference": "bb2d123231c095735130cc8f6d31385a44c7b308"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/30eed06dd6bc88410a4ff7f77b6d22f3ce13dbde",
-                "reference": "30eed06dd6bc88410a4ff7f77b6d22f3ce13dbde",
+                "url": "https://api.github.com/repos/webmozart/assert/zipball/bb2d123231c095735130cc8f6d31385a44c7b308",
+                "reference": "bb2d123231c095735130cc8f6d31385a44c7b308",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": "^5.3.3|^7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.6"
+                "phpunit/phpunit": "^4.6",
+                "sebastian/version": "^1.0.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -7755,7 +7757,7 @@
                 "check",
                 "validate"
             ],
-            "time": "2015-08-24 13:29:44"
+            "time": "2016-08-09 15:02:57"
         }
     ],
     "aliases": [],
