@@ -34,12 +34,16 @@
 			"role": "Developer"
 		}
 	],
-	"repositories": [
-		{
-			"type": "composer",
-			"url": "https://packages.cartalyst.com"
-		}
-	],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.vionox.com"
+        },
+        {
+            "type": "composer",
+            "url": "https://packages.cartalyst.com"
+        }
+    ],
 	"require": {
 		"laravel/framework": "5.0.*",
 
