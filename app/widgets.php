@@ -16,7 +16,7 @@
  * @copyright  (c) 2011-2016, Cartalyst LLC
  * @link       http://cartalyst.com
  */
-
+return;
 /*
 |--------------------------------------------------------------------------
 | Application Widgets

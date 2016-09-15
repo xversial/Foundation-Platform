@@ -49,7 +49,7 @@ class OverridesServiceProvider extends ServiceProvider
      */
     protected function registerRedirector()
     {
-        $this->app->bindShared('redirect', function ($app) {
+        $this->app->singleton('redirect', function ($app) {
             $redirector = new Redirector($app['url']);
 
             // If the session is set on the application instance, we'll inject it into

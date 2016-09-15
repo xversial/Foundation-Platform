@@ -27,6 +27,8 @@
 |
 */
 
+return;
+
 Installer::before(function () {
     // Called before Platform is to be installed
 });

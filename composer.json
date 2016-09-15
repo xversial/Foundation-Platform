@@ -27,19 +27,19 @@
         "platform/admin-default": "dev-feature/six",
         "platform/frontend-default": "2.0.*",
 
-        "platform/foundation": "dev-feature/six as 3.0.99",
-        "platform/installer": "~3.0",
+        "platform/foundation": "dev-feature/six",
+        "platform/installer": "dev-feature/six",
 
-        "platform/access": "~3.0",
-        "platform/attributes": "~3.0",
-        "platform/content": "~3.0",
-        "platform/dashboard": "~3.0",
+        "platform/access": "dev-feature/six",
+        "platform/attributes": "dev-feature/six",
+        "platform/content": "dev-feature/six",
+        "platform/dashboard": "dev-feature/six",
         "platform/media": "dev-feature/six",
-        "platform/menus": "~3.0",
-        "platform/operations": "~3.0",
-        "platform/pages": "~3.0",
-        "platform/settings": "~3.0",
-        "platform/themes": "~3.0",
+        "platform/menus": "dev-feature/six",
+        "platform/operations": "dev-feature/six",
+        "platform/pages": "dev-feature/six",
+        "platform/settings": "dev-feature/six",
+        "platform/themes": "dev-feature/six",
 
         "cartalyst/data-grid": "dev-feature/4.0 as 3.0.9999",
         "cartalyst/data-grid-laravel": "dev-master as 1.0.9999",
@@ -76,19 +76,13 @@
             "Illuminate\\Foundation\\ComposerScripts::postInstall",
             "php artisan platform:check-env-file",
             "php artisan optimize",
-            "php artisan platform:upgrade",
-            "php artisan theme:publish --extensions",
-            "php artisan vendor:publish --provider='Platform\\Installer\\Laravel\\InstallerServiceProvider' --tag='assets'",
-            "php artisan theme:compile"
+            "php artisan vendor:publish --tag='platform:installer.assets'"
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
             "php artisan platform:check-env-file",
             "php artisan optimize",
-            "php artisan platform:upgrade",
-            "php artisan theme:publish --extensions",
-            "php artisan vendor:publish --provider='Platform\\Installer\\Laravel\\InstallerServiceProvider' --tag='assets'",
-            "php artisan theme:compile"
+            "php artisan vendor:publish --tag='platform:installer.assets'"
         ]
     },
     "config": {
@@ -97,5 +91,6 @@
     "extra": {
         "component": "application"
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

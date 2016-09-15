@@ -181,14 +181,14 @@ return [
         Cartalyst\Platform\Laravel\OverridesServiceProvider::class,
         Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
         Cartalyst\DataGrid\Laravel\DataGridServiceProvider::class,
-        Cartalyst\Extensions\Laravel\ExtensionsServiceProvider::class,
+        Cartalyst\Extensions\ExtensionsServiceProvider::class,
         Cartalyst\Filesystem\Laravel\FilesystemServiceProvider::class,
         Cartalyst\NestedSets\Laravel\NestedSetsServiceProvider::class,
         Cartalyst\Themes\Laravel\ThemeServiceProvider::class,
-        Cartalyst\Widgets\Laravel\WidgetsServiceProvider::class,
+        #Cartalyst\Widgets\Laravel\WidgetsServiceProvider::class,
 
-        Platform\Installer\Laravel\InstallerServiceProvider::class,
-        Platform\Foundation\Laravel\PlatformServiceProvider::class,
+        Platform\Installer\InstallerServiceProvider::class,
+        Platform\Foundation\PlatformServiceProvider::class,
 
     ],
 
@@ -242,16 +242,16 @@ return [
         'Auth'       => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
         'DataGrid'   => Cartalyst\DataGrid\Laravel\Facades\DataGrid::class,
         'Extension'  => Cartalyst\Extensions\Extension::class,
-        'Extensions' => Cartalyst\Extensions\Laravel\Facades\Extensions::class,
+        'Extensions' => Cartalyst\Extensions\Facades\Extensions::class,
         'Filesystem' => Cartalyst\Filesystem\Laravel\Facades\Filesystem::class,
         'Reminder'   => Cartalyst\Sentinel\Laravel\Facades\Reminder::class,
         'Sentinel'   => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
         'Theme'      => Cartalyst\Themes\Laravel\Facades\Theme::class,
         'Widget'     => Cartalyst\Widgets\Laravel\Facades\Widget::class,
 
-        'Installer'  => Platform\Installer\Laravel\Facades\Installer::class,
+        'Installer'  => Platform\Installer\Facades\Installer::class,
         'Page'       => Platform\Pages\Models\Page::class,
-        'Platform'   => Platform\Foundation\Laravel\Facades\Platform::class,
+        'Platform'   => Platform\Foundation\Facades\Platform::class,
 
     ],
 
