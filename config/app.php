@@ -183,9 +183,9 @@ return [
         Cartalyst\DataGrid\Laravel\DataGridServiceProvider::class,
         Cartalyst\Extensions\ExtensionsServiceProvider::class,
         Cartalyst\Filesystem\Laravel\FilesystemServiceProvider::class,
-        //Cartalyst\NestedSets\Laravel\NestedSetsServiceProvider::class,
+        Cartalyst\NestedSets\Laravel\NestedSetsServiceProvider::class,
         Cartalyst\Themes\ThemesServiceProvider::class,
-        #Cartalyst\Widgets\Laravel\WidgetsServiceProvider::class,
+        # Cartalyst\Widgets\Laravel\WidgetsServiceProvider::class,
 
         Platform\Installer\InstallerServiceProvider::class,
         Platform\Foundation\PlatformServiceProvider::class,
