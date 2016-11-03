@@ -32,19 +32,18 @@
 
         "platform/access": "dev-feature/six",
         "platform/attributes": "dev-feature/six",
-        "platform/content": "dev-feature/six",
         "platform/dashboard": "dev-feature/six",
         "platform/media": "dev-feature/six",
-        "platform/menus": "dev-feature/six",
         "platform/operations": "dev-feature/six",
-        "platform/pages": "dev-feature/six",
         "platform/settings": "dev-feature/six",
         "platform/themes": "dev-feature/six",
 
         "cartalyst/data-grid": "dev-feature/4.0 as 3.0.9999",
         "cartalyst/data-grid-laravel": "dev-master as 1.0.9999",
         "cartalyst/data-grid-export": "dev-master as 1.0.9999",
-        "cartalyst/collections": "dev-master as 1.2.99"
+        "cartalyst/collections": "dev-master as 1.2.99",
+        "cartalyst/themes": "dev-feature/4.0 as 3.0.9999",
+        "cartalyst/composer-installers": "dev-master as 1.2.9999"
     },
     "require-dev": {
         "doctrine/dbal": "~2.4",

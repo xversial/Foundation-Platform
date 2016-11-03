@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Part of the Platform application.
  *
@@ -16,7 +17,7 @@
  * @copyright  (c) 2011-2016, Cartalyst LLC
  * @link       http://cartalyst.com
  */
-return;
+
 /*
 |--------------------------------------------------------------------------
 | Application Widgets
@@ -27,4 +28,4 @@ return;
 |
 */
 
-Widget::map('hello', 'App\Widgets\HelloWidget@show');
+# Widget::map('hello', 'App\Widgets\HelloWidget@show');

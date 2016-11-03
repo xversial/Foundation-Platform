@@ -183,8 +183,8 @@ return [
         Cartalyst\DataGrid\Laravel\DataGridServiceProvider::class,
         Cartalyst\Extensions\ExtensionsServiceProvider::class,
         Cartalyst\Filesystem\Laravel\FilesystemServiceProvider::class,
-        Cartalyst\NestedSets\Laravel\NestedSetsServiceProvider::class,
-        Cartalyst\Themes\Laravel\ThemeServiceProvider::class,
+        //Cartalyst\NestedSets\Laravel\NestedSetsServiceProvider::class,
+        Cartalyst\Themes\ThemesServiceProvider::class,
         #Cartalyst\Widgets\Laravel\WidgetsServiceProvider::class,
 
         Platform\Installer\InstallerServiceProvider::class,
@@ -246,7 +246,7 @@ return [
         'Filesystem' => Cartalyst\Filesystem\Laravel\Facades\Filesystem::class,
         'Reminder'   => Cartalyst\Sentinel\Laravel\Facades\Reminder::class,
         'Sentinel'   => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
-        'Theme'      => Cartalyst\Themes\Laravel\Facades\Theme::class,
+        'Theme'      => Cartalyst\Themes\Facades\Theme::class,
         'Widget'     => Cartalyst\Widgets\Laravel\Facades\Widget::class,
 
         'Installer'  => Platform\Installer\Facades\Installer::class,
