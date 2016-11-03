@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b1fc80afe2a57c90f4388c2bd0555f34",
-    "content-hash": "45f95170be43c84a2df0a1ec4bf6df71",
+    "hash": "3d5eb28115267f03b696b9071b23ee32",
+    "content-hash": "07aab579f4d05911bbe541b91f613168",
     "packages": [
         {
             "name": "cartalyst/alerts",
@@ -775,6 +775,163 @@
             "time": "2016-02-05 22:06:11"
         },
         {
+            "name": "cartalyst/interpret",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cartalyst/interpret.git",
+                "reference": "eb725bcc737206f425ad22b68ea0ef36fbc15203"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cartalyst/interpret/zipball/eb725bcc737206f425ad22b68ea0ef36fbc15203",
+                "reference": "eb725bcc737206f425ad22b68ea0ef36fbc15203",
+                "shasum": ""
+            },
+            "require": {
+                "michelf/php-markdown": "1.4.*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.1"
+            },
+            "type": "library",
+            "extra": {
+                "component": "package",
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Cartalyst\\Interpret\\": "src/"
+                }
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Cartalyst LLC",
+                    "email": "help@cartalyst.com"
+                },
+                {
+                    "name": "Ben Corlett",
+                    "email": "ben.corlett@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Bruno Gaspar",
+                    "email": "bruno.gaspar@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dan Syme",
+                    "email": "dan.syme@cartalyst.com",
+                    "role": "Project Lead"
+                },
+                {
+                    "name": "Suhayb Wardany",
+                    "email": "su.wardany@cartalyst.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A driver-based content rendering package, with support for HTML, Markdown & plain text. You can register custom drivers for custom content types.",
+            "keywords": [
+                "cartalyst",
+                "content",
+                "html",
+                "interpret",
+                "laravel",
+                "markdown",
+                "php"
+            ],
+            "support": {
+                "source": "https://github.com/cartalyst/interpret/tree/v1.1.1",
+                "issues": "https://github.com/cartalyst/interpret/issues"
+            },
+            "time": "2014-12-10 21:15:58"
+        },
+        {
+            "name": "cartalyst/nested-sets",
+            "version": "v3.0.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:cartalyst/nested-sets.git",
+                "reference": "75cacdffffa9449f3a7b8d8f3fa8a10bbd50bb62"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cartalyst/nested-sets/zipball/75cacdffffa9449f3a7b8d8f3fa8a10bbd50bb62",
+                "reference": "75cacdffffa9449f3a7b8d8f3fa8a10bbd50bb62",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "illuminate/database": "~5",
+                "mockery/mockery": "0.9.*"
+            },
+            "suggest": {
+                "illuminate/database": "We (by default) provide an Eloquent implementation (and illuminate/database worker). Required if you are not building your own implementations."
+            },
+            "type": "library",
+            "extra": {
+                "component": "package",
+                "branch-alias": {
+                    "dev-master": "3.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Cartalyst\\NestedSets\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Cartalyst LLC",
+                    "email": "help@cartalyst.com"
+                },
+                {
+                    "name": "Ben Corlett",
+                    "email": "ben.corlett@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Bruno Gaspar",
+                    "email": "bruno.gaspar@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dan Syme",
+                    "email": "dan.syme@cartalyst.com",
+                    "role": "Creator & Designer"
+                },
+                {
+                    "name": "Suhayb Wardany",
+                    "email": "su.wardany@cartalyst.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP 5.4+ nested sets package utilizing the Modified Preorder Tree Traversal algorithm.",
+            "keywords": [
+                "categories",
+                "mptt",
+                "nested",
+                "nested-sets",
+                "tags"
+            ],
+            "support": {
+                "source": "https://github.com/cartalyst/nested-sets/tree/3.0",
+                "issues": "https://github.com/cartalyst/nested-sets/issues"
+            },
+            "time": "2015-03-03 00:26:02"
+        },
+        {
             "name": "cartalyst/permissions",
             "version": "v1.0.1",
             "source": {
@@ -1228,12 +1385,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/themes.git",
-                "reference": "88d3fc933a5f4196924d1b50019077c635d8f91d"
+                "reference": "0696729595d5e249cfee8af4e4587e77a9cd8c34"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/themes/zipball/88d3fc933a5f4196924d1b50019077c635d8f91d",
-                "reference": "88d3fc933a5f4196924d1b50019077c635d8f91d",
+                "url": "https://api.github.com/repos/cartalyst/themes/zipball/0696729595d5e249cfee8af4e4587e77a9cd8c34",
+                "reference": "0696729595d5e249cfee8af4e4587e77a9cd8c34",
                 "shasum": ""
             },
             "require": {
@@ -1288,7 +1445,7 @@
                 "source": "https://github.com/cartalyst/themes/tree/feature/4.0",
                 "issues": "https://github.com/cartalyst/themes/issues"
             },
-            "time": "2016-11-02 21:29:45"
+            "time": "2016-11-03 17:57:08"
         },
         {
             "name": "cartalyst/workshop",
@@ -2505,6 +2662,57 @@
             "time": "2015-06-20 16:06:31"
         },
         {
+            "name": "michelf/php-markdown",
+            "version": "1.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/michelf/php-markdown.git",
+                "reference": "de9a19c7bf352d41cc99ed86c3c0ef17e87394b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/de9a19c7bf352d41cc99ed86c3c0ef17e87394b6",
+                "reference": "de9a19c7bf352d41cc99ed86c3c0ef17e87394b6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-lib": "1.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Michelf": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Michel Fortin",
+                    "email": "michel.fortin@michelf.ca",
+                    "homepage": "http://michelf.ca/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "John Gruber",
+                    "homepage": "http://daringfireball.net/"
+                }
+            ],
+            "description": "PHP Markdown",
+            "homepage": "http://michelf.ca/projects/php-markdown/",
+            "keywords": [
+                "markdown"
+            ],
+            "time": "2014-05-05 02:43:50"
+        },
+        {
             "name": "monolog/monolog",
             "version": "1.21.0",
             "source": {
@@ -3030,6 +3238,76 @@
             "time": "2016-10-31 17:17:35"
         },
         {
+            "name": "platform/content",
+            "version": "dev-feature/six",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:cartalyst/platform-content.git",
+                "reference": "a8ab0105cdd4c0f4f3e6946cb179f1c15dd5f935"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/a8ab0105cdd4c0f4f3e6946cb179f1c15dd5f935",
+                "reference": "a8ab0105cdd4c0f4f3e6946cb179f1c15dd5f935",
+                "shasum": ""
+            },
+            "require": {
+                "cartalyst/composer-installers": "1.2.*",
+                "cartalyst/interpret": "1.1.*",
+                "cartalyst/support": "~1.1",
+                "php": ">=5.6.4",
+                "platform/access": "dev-feature/six@dev",
+                "platform/attributes": "dev-feature/six@dev",
+                "platform/foundation": "dev-feature/six@dev",
+                "platform/tags": "dev-feature/six@dev"
+            },
+            "require-dev": {
+                "cartalyst/testing": "~2.0@dev",
+                "cartalyst/widgets": "~1.1",
+                "patchwork/utf8": "~1.1",
+                "platform/media": "dev-feature/six@dev"
+            },
+            "type": "platform-extension",
+            "extra": {
+                "component": "extension",
+                "branch-alias": {
+                    "dev-master": "5.0.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "resources/database/migrations",
+                    "resources/database/seeds"
+                ],
+                "psr-4": {
+                    "Platform\\Content\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Cartalyst LLC",
+                    "email": "help@cartalyst.com",
+                    "homepage": "https://cartalyst.com"
+                }
+            ],
+            "description": "A Platform 6 Extension to manage your website content.",
+            "keywords": [
+                "cartalyst",
+                "content",
+                "extension",
+                "laravel",
+                "platform"
+            ],
+            "support": {
+                "source": "https://github.com/cartalyst/platform-content/tree/feature/six",
+                "issues": "https://github.com/cartalyst/platform-content/issues"
+            },
+            "time": "2016-09-15 14:38:38"
+        },
+        {
             "name": "platform/dashboard",
             "version": "dev-feature/six",
             "source": {
@@ -3358,6 +3636,71 @@
             "time": "2016-09-15 14:42:49"
         },
         {
+            "name": "platform/menus",
+            "version": "dev-feature/six",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:cartalyst/platform-menus.git",
+                "reference": "bde7df15a89ab529c7d3562b194ac9f716e7fe27"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/bde7df15a89ab529c7d3562b194ac9f716e7fe27",
+                "reference": "bde7df15a89ab529c7d3562b194ac9f716e7fe27",
+                "shasum": ""
+            },
+            "require": {
+                "cartalyst/composer-installers": "1.2.*",
+                "cartalyst/nested-sets": "3.0.*",
+                "php": ">=5.6.4",
+                "platform/access": "dev-feature/six@dev",
+                "platform/foundation": "dev-feature/six@dev"
+            },
+            "require-dev": {
+                "cartalyst/testing": "~2.0@dev",
+                "platform/pages": "dev-feature/six@dev"
+            },
+            "type": "platform-extension",
+            "extra": {
+                "component": "extension",
+                "branch-alias": {
+                    "dev-master": "5.0.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "resources/database/migrations",
+                    "resources/database/seeds"
+                ],
+                "psr-4": {
+                    "Platform\\Menus\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Cartalyst LLC",
+                    "email": "help@cartalyst.com",
+                    "homepage": "https://cartalyst.com"
+                }
+            ],
+            "description": "A Platform 6 Extension that allows you to manage all the menus throughout your website.",
+            "keywords": [
+                "cartalyst",
+                "extension",
+                "laravel",
+                "menus",
+                "platform"
+            ],
+            "support": {
+                "source": "https://github.com/cartalyst/platform-menus/tree/feature/six",
+                "issues": "https://github.com/cartalyst/platform-menus/issues"
+            },
+            "time": "2016-09-15 13:18:13"
+        },
+        {
             "name": "platform/operations",
             "version": "dev-feature/six",
             "source": {
@@ -3416,6 +3759,74 @@
                 "issues": "https://github.com/cartalyst/platform-operations/issues"
             },
             "time": "2016-11-03 15:39:54"
+        },
+        {
+            "name": "platform/pages",
+            "version": "dev-feature/six",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:cartalyst/platform-pages.git",
+                "reference": "661f26dac7f55d79e3fedb71106fc0f3959e635a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/661f26dac7f55d79e3fedb71106fc0f3959e635a",
+                "reference": "661f26dac7f55d79e3fedb71106fc0f3959e635a",
+                "shasum": ""
+            },
+            "require": {
+                "cartalyst/composer-installers": "1.2.*",
+                "php": ">=5.6.4",
+                "platform/access": "dev-feature/six@dev",
+                "platform/content": "dev-feature/six@dev",
+                "platform/foundation": "dev-feature/six@dev"
+            },
+            "require-dev": {
+                "cartalyst/testing": "~2.0@dev",
+                "illuminate/database": "5.3.*",
+                "patchwork/utf8": "~1.1",
+                "platform/menus": "dev-feature/six@dev",
+                "platform/users": "dev-feature/six@dev"
+            },
+            "type": "platform-extension",
+            "extra": {
+                "component": "extension",
+                "branch-alias": {
+                    "dev-master": "5.0.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "resources/database/migrations",
+                    "resources/database/seeds"
+                ],
+                "psr-4": {
+                    "Platform\\Pages\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Cartalyst LLC",
+                    "email": "help@cartalyst.com",
+                    "homepage": "https://cartalyst.com"
+                }
+            ],
+            "description": "A Platform 6 Extension to manage your website pages.",
+            "keywords": [
+                "cartalyst",
+                "extension",
+                "laravel",
+                "pages",
+                "platform"
+            ],
+            "support": {
+                "source": "https://github.com/cartalyst/platform-pages/tree/feature/six",
+                "issues": "https://github.com/cartalyst/platform-pages/issues"
+            },
+            "time": "2016-09-15 15:08:38"
         },
         {
             "name": "platform/permissions",
@@ -7047,9 +7458,12 @@
         "platform/installer": 20,
         "platform/access": 20,
         "platform/attributes": 20,
+        "platform/content": 20,
         "platform/dashboard": 20,
         "platform/media": 20,
+        "platform/menus": 20,
         "platform/operations": 20,
+        "platform/pages": 20,
         "platform/settings": 20,
         "platform/themes": 20,
         "cartalyst/data-grid": 20,
