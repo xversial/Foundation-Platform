@@ -163,6 +163,13 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+        /**
+         * Platform Service Providers...
+         */
+        Platform\Foundation\PlatformServiceProvider::class,
+        Platform\Installer\InstallerServiceProvider::class,
+        Cartalyst\Platform\Laravel\OverridesServiceProvider::class, # Improve this and namespace!
+
         /*
          * Package Service Providers...
          */
@@ -177,18 +184,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
-        Cartalyst\Platform\Laravel\OverridesServiceProvider::class,
-        Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
-        Cartalyst\DataGrid\Laravel\DataGridServiceProvider::class,
-        Cartalyst\Extensions\ExtensionsServiceProvider::class,
-        Cartalyst\Filesystem\Laravel\FilesystemServiceProvider::class,
-        Cartalyst\NestedSets\Laravel\NestedSetsServiceProvider::class,
-        Cartalyst\Themes\ThemesServiceProvider::class,
-        # Cartalyst\Widgets\Laravel\WidgetsServiceProvider::class,
-
-        Platform\Installer\InstallerServiceProvider::class,
-        Platform\Foundation\PlatformServiceProvider::class,
 
     ],
 
@@ -237,21 +232,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
-        'Activation' => Cartalyst\Sentinel\Laravel\Facades\Activation::class,
-        'Asset'      => Cartalyst\Themes\Laravel\Facades\Asset::class,
-        'Auth'       => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
-        'DataGrid'   => Cartalyst\DataGrid\Laravel\Facades\DataGrid::class,
-        'Extension'  => Cartalyst\Extensions\Extension::class,
-        'Extensions' => Cartalyst\Extensions\Facades\Extensions::class,
-        'Filesystem' => Cartalyst\Filesystem\Laravel\Facades\Filesystem::class,
-        'Reminder'   => Cartalyst\Sentinel\Laravel\Facades\Reminder::class,
-        'Sentinel'   => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
-        'Theme'      => Cartalyst\Themes\Facades\Theme::class,
-        'Widget'     => Cartalyst\Widgets\Laravel\Facades\Widget::class,
-
-        'Installer'  => Platform\Installer\Facades\Installer::class,
-        'Page'       => Platform\Pages\Models\Page::class,
-        'Platform'   => Platform\Foundation\Facades\Platform::class,
+        'Platform' => Platform\Foundation\Facades\Platform::class,
 
     ],
 
