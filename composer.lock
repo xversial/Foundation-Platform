@@ -85,6 +85,75 @@
             "time": "2016-02-11 12:16:47"
         },
         {
+            "name": "cartalyst/assetic-filters",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cartalyst/assetic-filters.git",
+                "reference": "e5c99ddb48380d76fa59e962e27624f2171ba9d7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cartalyst/assetic-filters/zipball/e5c99ddb48380d76fa59e962e27624f2171ba9d7",
+                "reference": "e5c99ddb48380d76fa59e962e27624f2171ba9d7",
+                "shasum": ""
+            },
+            "require": {
+                "coffeescript/coffeescript": "~1",
+                "kriswallsmith/assetic": "~1",
+                "php": ">=5.3.0",
+                "richthegeek/phpsass": "dev-master"
+            },
+            "type": "library",
+            "extra": {
+                "component": "package",
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Cartalyst\\AsseticFilters": "src"
+                }
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Cartalyst LLC",
+                    "email": "help@cartalyst.com"
+                },
+                {
+                    "name": "Ben Corlett",
+                    "email": "ben.corlett@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Bruno Gaspar",
+                    "email": "bruno.gaspar@cartalyst.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dan Syme",
+                    "email": "dan.syme@cartalyst.com",
+                    "role": "Creator & Designer"
+                }
+            ],
+            "description": "Additional assetic filters (such as a PHP SASS compiler) to enhance Assetic.",
+            "keywords": [
+                "assetic",
+                "assets",
+                "filters",
+                "themes"
+            ],
+            "support": {
+                "source": "https://github.com/cartalyst/assetic-filters/tree/v1.2.0",
+                "issues": "https://github.com/cartalyst/assetic-filters/issues"
+            },
+            "time": "2014-02-04 23:28:24"
+        },
+        {
             "name": "cartalyst/attributes",
             "version": "v1.1.0",
             "source": {
@@ -628,12 +697,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/extensions.git",
-                "reference": "3a1dbca9eba57852a52c3d2e913365ba917a1124"
+                "reference": "f10559e2f16c9591fc1ac2f3f3937b2019fa73a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/extensions/zipball/3a1dbca9eba57852a52c3d2e913365ba917a1124",
-                "reference": "3a1dbca9eba57852a52c3d2e913365ba917a1124",
+                "url": "https://api.github.com/repos/cartalyst/extensions/zipball/f10559e2f16c9591fc1ac2f3f3937b2019fa73a3",
+                "reference": "f10559e2f16c9591fc1ac2f3f3937b2019fa73a3",
                 "shasum": ""
             },
             "require": {
@@ -691,7 +760,7 @@
                 "source": "https://github.com/cartalyst/extensions/tree/feature/3.0",
                 "issues": "https://github.com/cartalyst/extensions/issues"
             },
-            "time": "2016-10-31 17:46:08"
+            "time": "2016-11-10 07:50:50"
         },
         {
             "name": "cartalyst/filesystem",
@@ -1385,18 +1454,19 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/themes.git",
-                "reference": "0696729595d5e249cfee8af4e4587e77a9cd8c34"
+                "reference": "86d6b467f7ff295221aa6c02a96815f8fb749b37"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/themes/zipball/0696729595d5e249cfee8af4e4587e77a9cd8c34",
-                "reference": "0696729595d5e249cfee8af4e4587e77a9cd8c34",
+                "url": "https://api.github.com/repos/cartalyst/themes/zipball/86d6b467f7ff295221aa6c02a96815f8fb749b37",
+                "reference": "86d6b467f7ff295221aa6c02a96815f8fb749b37",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/dependencies": "^1.0",
                 "herrera-io/json": "^1.0",
                 "illuminate/support": "^5.3",
+                "kriswallsmith/assetic": "~1.2",
                 "php": ">=5.6.4",
                 "symfony/filesystem": "^3.1"
             },
@@ -1445,7 +1515,64 @@
                 "source": "https://github.com/cartalyst/themes/tree/feature/4.0",
                 "issues": "https://github.com/cartalyst/themes/issues"
             },
-            "time": "2016-11-03 17:57:08"
+            "time": "2016-11-10 16:54:10"
+        },
+        {
+            "name": "cartalyst/widgets",
+            "version": "dev-feature/2.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:cartalyst/widgets.git",
+                "reference": "8914de561b0c095b8687ebbcfe9f4120522e2fdc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cartalyst/widgets/zipball/8914de561b0c095b8687ebbcfe9f4120522e2fdc",
+                "reference": "8914de561b0c095b8687ebbcfe9f4120522e2fdc",
+                "shasum": ""
+            },
+            "require": {
+                "cartalyst/extensions": "dev-feature/3.0@dev",
+                "illuminate/container": "~5.3",
+                "php": ">=5.6.4"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9"
+            },
+            "type": "library",
+            "extra": {
+                "component": "package",
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Cartalyst\\Widgets\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Cartalyst LLC",
+                    "email": "help@cartalyst.com",
+                    "homepage": "https://cartalyst.com"
+                }
+            ],
+            "description": "Widget registering with automatic resolving and integration with Cartalyst Extensions.",
+            "keywords": [
+                "bootstrap",
+                "ecommerce",
+                "laravel",
+                "platform"
+            ],
+            "support": {
+                "source": "https://github.com/cartalyst/widgets/tree/feature/2.0",
+                "issues": "https://github.com/cartalyst/widgets/issues"
+            },
+            "time": "2016-11-09 16:34:00"
         },
         {
             "name": "cartalyst/workshop",
@@ -1580,6 +1707,50 @@
             "time": "2015-11-09 22:51:51"
         },
         {
+            "name": "coffeescript/coffeescript",
+            "version": "1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alxlit/coffeescript-php.git",
+                "reference": "ef262881d3f1edcca1366f4ddf18293843370da5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alxlit/coffeescript-php/zipball/ef262881d3f1edcca1366f4ddf18293843370da5",
+                "reference": "ef262881d3f1edcca1366f4ddf18293843370da5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "CoffeeScript": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Little",
+                    "email": "alxlit@gmail.com",
+                    "homepage": "http://alxlit.name"
+                }
+            ],
+            "description": "A port of the CoffeeScript compiler to PHP.",
+            "homepage": "http://github.com/alxlit/coffeescript-php",
+            "keywords": [
+                "JS",
+                "coffee",
+                "coffeescript",
+                "javascript"
+            ],
+            "time": "2012-08-04 14:44:51"
+        },
+        {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",
             "source": {
@@ -1681,46 +1852,30 @@
         },
         {
             "name": "dompdf/dompdf",
-            "version": "v0.7.0",
+            "version": "v0.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dompdf/dompdf.git",
-                "reference": "5c98652b1a5beb7e3cc8ec35419b2828dd63ab14"
+                "reference": "cc06008f75262510ee135b8cbb14e333a309f651"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dompdf/dompdf/zipball/5c98652b1a5beb7e3cc8ec35419b2828dd63ab14",
-                "reference": "5c98652b1a5beb7e3cc8ec35419b2828dd63ab14",
+                "url": "https://api.github.com/repos/dompdf/dompdf/zipball/cc06008f75262510ee135b8cbb14e333a309f651",
+                "reference": "cc06008f75262510ee135b8cbb14e333a309f651",
                 "shasum": ""
             },
             "require": {
-                "ext-dom": "*",
-                "ext-gd": "*",
-                "ext-mbstring": "*",
-                "phenx/php-font-lib": "0.4.*",
-                "phenx/php-svg-lib": "0.1.*",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "3.7.*"
+                "phenx/php-font-lib": "0.2.*"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-develop": "0.7-dev"
-                }
-            },
             "autoload": {
-                "psr-4": {
-                    "Dompdf\\": "src/"
-                },
                 "classmap": [
-                    "lib/"
+                    "include/"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL-2.1"
+                "LGPL"
             ],
             "authors": [
                 {
@@ -1730,15 +1885,11 @@
                 {
                     "name": "Brian Sweeney",
                     "email": "eclecticgeek@gmail.com"
-                },
-                {
-                    "name": "Gabriel Bull",
-                    "email": "me@gabrielbull.com"
                 }
             ],
             "description": "DOMPDF is a CSS 2.1 compliant HTML to PDF converter",
             "homepage": "https://github.com/dompdf/dompdf",
-            "time": "2016-05-11 00:36:29"
+            "time": "2015-12-07 04:07:13"
         },
         {
             "name": "guzzle/guzzle",
@@ -2278,6 +2429,83 @@
             "time": "2016-01-25 15:43:01"
         },
         {
+            "name": "kriswallsmith/assetic",
+            "version": "v1.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kriswallsmith/assetic.git",
+                "reference": "9928f7c4ad98b234e3559d1049abd13387f86db5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/9928f7c4ad98b234e3559d1049abd13387f86db5",
+                "reference": "9928f7c4ad98b234e3559d1049abd13387f86db5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.1",
+                "symfony/process": "~2.1|~3.0"
+            },
+            "conflict": {
+                "twig/twig": "<1.23"
+            },
+            "require-dev": {
+                "cssmin/cssmin": "3.0.1",
+                "joliclic/javascript-packer": "1.1",
+                "kamicane/packager": "1.0",
+                "leafo/lessphp": "^0.3.7",
+                "leafo/scssphp": "~0.1",
+                "mrclay/minify": "~2.2",
+                "patchwork/jsqueeze": "~1.0|~2.0",
+                "phpunit/phpunit": "~4.8",
+                "psr/log": "~1.0",
+                "ptachoire/cssembed": "~1.0",
+                "symfony/phpunit-bridge": "~2.7|~3.0",
+                "twig/twig": "~1.8|~2.0"
+            },
+            "suggest": {
+                "leafo/lessphp": "Assetic provides the integration with the lessphp LESS compiler",
+                "leafo/scssphp": "Assetic provides the integration with the scssphp SCSS compiler",
+                "leafo/scssphp-compass": "Assetic provides the integration with the SCSS compass plugin",
+                "patchwork/jsqueeze": "Assetic provides the integration with the JSqueeze JavaScript compressor",
+                "ptachoire/cssembed": "Assetic provides the integration with phpcssembed to embed data uris",
+                "twig/twig": "Assetic provides the integration with the Twig templating engine"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Assetic": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kris Wallsmith",
+                    "email": "kris.wallsmith@gmail.com",
+                    "homepage": "http://kriswallsmith.net/"
+                }
+            ],
+            "description": "Asset Management for PHP",
+            "homepage": "https://github.com/kriswallsmith/assetic",
+            "keywords": [
+                "assets",
+                "compression",
+                "minification"
+            ],
+            "time": "2015-11-12 13:51:40"
+        },
+        {
             "name": "laravel/framework",
             "version": "v5.3.22",
             "source": {
@@ -2458,6 +2686,59 @@
             "description": "HTML and Form Builders for the Laravel Framework",
             "homepage": "http://laravelcollective.com",
             "time": "2016-08-27 23:52:43"
+        },
+        {
+            "name": "leafo/scssphp",
+            "version": "v0.6.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/leafo/scssphp.git",
+                "reference": "6fdfe19d2b13a3f12ba0792227f0718809ce4e4d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/leafo/scssphp/zipball/6fdfe19d2b13a3f12ba0792227f0718809ce4e4d",
+                "reference": "6fdfe19d2b13a3f12ba0792227f0718809ce4e4d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "kherge/box": "~2.5",
+                "phpunit/phpunit": "~3.7",
+                "squizlabs/php_codesniffer": "~2.5"
+            },
+            "bin": [
+                "bin/pscss"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Leafo\\ScssPhp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Leaf Corcoran",
+                    "email": "leafot@gmail.com",
+                    "homepage": "http://leafo.net"
+                }
+            ],
+            "description": "scssphp is a compiler for SCSS written in PHP.",
+            "homepage": "http://leafo.github.io/scssphp/",
+            "keywords": [
+                "css",
+                "less",
+                "sass",
+                "scss",
+                "stylesheet"
+            ],
+            "time": "2016-09-11 01:34:11"
         },
         {
             "name": "league/flysystem",
@@ -2662,6 +2943,52 @@
             "time": "2015-06-20 16:06:31"
         },
         {
+            "name": "lmammino/jsmin4assetic",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lmammino/JsMin4Assetic.git",
+                "reference": "56407baa5a867b6557d1052eff5df9c8fad24e96"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lmammino/JsMin4Assetic/zipball/56407baa5a867b6557d1052eff5df9c8fad24e96",
+                "reference": "56407baa5a867b6557d1052eff5df9c8fad24e96",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luciano Mammino",
+                    "email": "lmammino@oryzone.com",
+                    "homepage": "http://oryzone.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Douglas Crockford",
+                    "homepage": "http://www.crockford.com"
+                },
+                {
+                    "name": "Bogdan Yurov",
+                    "email": "bogdan@yurov.me"
+                }
+            ],
+            "description": "Library for minifying JavaScript files using jsmin with assetic and composer",
+            "time": "2013-02-28 11:59:46"
+        },
+        {
             "name": "michelf/php-markdown",
             "version": "1.4.1",
             "source": {
@@ -2835,6 +3162,53 @@
             "time": "2016-01-26 21:23:30"
         },
         {
+            "name": "natxet/CssMin",
+            "version": "v3.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/natxet/CssMin.git",
+                "reference": "92de3fe3ccb4f8298d31952490ef7d5395855c39"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/natxet/CssMin/zipball/92de3fe3ccb4f8298d31952490ef7d5395855c39",
+                "reference": "92de3fe3ccb4f8298d31952490ef7d5395855c39",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joe Scylla",
+                    "email": "joe.scylla@gmail.com",
+                    "homepage": "https://profiles.google.com/joe.scylla"
+                }
+            ],
+            "description": "Minifying CSS",
+            "homepage": "http://code.google.com/p/cssmin/",
+            "keywords": [
+                "css",
+                "minify"
+            ],
+            "time": "2015-09-25 11:13:11"
+        },
+        {
             "name": "nesbot/carbon",
             "version": "1.21.0",
             "source": {
@@ -2933,17 +3307,79 @@
             "time": "2016-09-16 12:04:44"
         },
         {
-            "name": "paragonie/random_compat",
-            "version": "v2.0.3",
+            "name": "oyejorge/less.php",
+            "version": "v1.7.0.10",
             "source": {
                 "type": "git",
-                "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "c0125896dbb151380ab47e96c621741e79623beb"
+                "url": "https://github.com/oyejorge/less.php.git",
+                "reference": "a1e2d3c20794b37ac4d0baeb24613e579584033b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/c0125896dbb151380ab47e96c621741e79623beb",
-                "reference": "c0125896dbb151380ab47e96c621741e79623beb",
+                "url": "https://api.github.com/repos/oyejorge/less.php/zipball/a1e2d3c20794b37ac4d0baeb24613e579584033b",
+                "reference": "a1e2d3c20794b37ac4d0baeb24613e579584033b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8.18"
+            },
+            "bin": [
+                "bin/lessc"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Less": "lib/"
+                },
+                "classmap": [
+                    "lessc.inc.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Matt Agar",
+                    "homepage": "https://github.com/agar"
+                },
+                {
+                    "name": "Martin Jantošovič",
+                    "homepage": "https://github.com/Mordred"
+                },
+                {
+                    "name": "Josh Schmidt",
+                    "homepage": "https://github.com/oyejorge"
+                }
+            ],
+            "description": "PHP port of the Javascript version of LESS http://lesscss.org",
+            "homepage": "http://lessphp.gpeasy.com",
+            "keywords": [
+                "css",
+                "less",
+                "less.js",
+                "lesscss",
+                "php",
+                "stylesheet"
+            ],
+            "time": "2015-12-30 05:47:36"
+        },
+        {
+            "name": "paragonie/random_compat",
+            "version": "v2.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paragonie/random_compat.git",
+                "reference": "a9b97968bcde1c4de2a5ec6cbd06a0f6c919b46e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/a9b97968bcde1c4de2a5ec6cbd06a0f6c919b46e",
+                "reference": "a9b97968bcde1c4de2a5ec6cbd06a0f6c919b46e",
                 "shasum": ""
             },
             "require": {
@@ -2978,31 +3414,31 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-10-17 15:23:22"
+            "time": "2016-11-07 23:38:38"
         },
         {
             "name": "phenx/php-font-lib",
-            "version": "0.4",
+            "version": "0.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PhenX/php-font-lib.git",
-                "reference": "b8af0cacdc3cbf1e41a586fcb78f506f4121a088"
+                "reference": "c30c7fc00a6b0d863e9bb4c5d5dd015298b2dc82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PhenX/php-font-lib/zipball/b8af0cacdc3cbf1e41a586fcb78f506f4121a088",
-                "reference": "b8af0cacdc3cbf1e41a586fcb78f506f4121a088",
+                "url": "https://api.github.com/repos/PhenX/php-font-lib/zipball/c30c7fc00a6b0d863e9bb4c5d5dd015298b2dc82",
+                "reference": "c30c7fc00a6b0d863e9bb4c5d5dd015298b2dc82",
                 "shasum": ""
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "FontLib\\": "src/"
-                }
+                "classmap": [
+                    "classes/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL-3.0"
+                "LGPL"
             ],
             "authors": [
                 {
@@ -3012,41 +3448,7 @@
             ],
             "description": "A library to read, parse, export and make subsets of different types of font files.",
             "homepage": "https://github.com/PhenX/php-font-lib",
-            "time": "2015-05-06 20:02:39"
-        },
-        {
-            "name": "phenx/php-svg-lib",
-            "version": "0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PhenX/php-svg-lib.git",
-                "reference": "b419766515b3426c6da74b0e29e93d71c4f17099"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/PhenX/php-svg-lib/zipball/b419766515b3426c6da74b0e29e93d71c4f17099",
-                "reference": "b419766515b3426c6da74b0e29e93d71c4f17099",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Svg\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Ménager",
-                    "email": "fabien.menager@gmail.com"
-                }
-            ],
-            "description": "A library to read, parse and export to PDF SVG files.",
-            "homepage": "https://github.com/PhenX/php-svg-lib",
-            "time": "2015-05-06 18:49:49"
+            "time": "2014-02-01 15:22:28"
         },
         {
             "name": "platform/access",
@@ -3180,12 +3582,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-attributes.git",
-                "reference": "1ad50d7f3e65a4e41c12a07b4a1884ff56ede70a"
+                "reference": "7ada1571e0de81d4575abfb4797af0cadd172ec1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-attributes/zipball/1ad50d7f3e65a4e41c12a07b4a1884ff56ede70a",
-                "reference": "1ad50d7f3e65a4e41c12a07b4a1884ff56ede70a",
+                "url": "https://api.github.com/repos/cartalyst/platform-attributes/zipball/7ada1571e0de81d4575abfb4797af0cadd172ec1",
+                "reference": "7ada1571e0de81d4575abfb4797af0cadd172ec1",
                 "shasum": ""
             },
             "require": {
@@ -3235,7 +3637,7 @@
                 "source": "https://github.com/cartalyst/platform-attributes/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-attributes/issues"
             },
-            "time": "2016-10-31 17:17:35"
+            "time": "2016-11-09 20:36:07"
         },
         {
             "name": "platform/content",
@@ -3243,12 +3645,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-content.git",
-                "reference": "a8ab0105cdd4c0f4f3e6946cb179f1c15dd5f935"
+                "reference": "1386ce81e341830bc6b098426d7d1c3c8f5fe756"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/a8ab0105cdd4c0f4f3e6946cb179f1c15dd5f935",
-                "reference": "a8ab0105cdd4c0f4f3e6946cb179f1c15dd5f935",
+                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/1386ce81e341830bc6b098426d7d1c3c8f5fe756",
+                "reference": "1386ce81e341830bc6b098426d7d1c3c8f5fe756",
                 "shasum": ""
             },
             "require": {
@@ -3305,7 +3707,7 @@
                 "source": "https://github.com/cartalyst/platform-content/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-content/issues"
             },
-            "time": "2016-09-15 14:38:38"
+            "time": "2016-11-10 09:11:04"
         },
         {
             "name": "platform/dashboard",
@@ -3376,24 +3778,30 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-foundation.git",
-                "reference": "364d41c33a00d5d3d62f806465a30558fbf525ce"
+                "reference": "472068d74ff267653b62c3a17456577ddf43081c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/364d41c33a00d5d3d62f806465a30558fbf525ce",
-                "reference": "364d41c33a00d5d3d62f806465a30558fbf525ce",
+                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/472068d74ff267653b62c3a17456577ddf43081c",
+                "reference": "472068d74ff267653b62c3a17456577ddf43081c",
                 "shasum": ""
             },
             "require": {
-                "cartalyst/alerts": "2.0.*",
-                "cartalyst/data-grid": "3.0.*",
+                "cartalyst/alerts": "^2.0",
+                "cartalyst/assetic-filters": "^1.2",
+                "cartalyst/data-grid": "^3.0",
                 "cartalyst/extensions": "dev-feature/3.0@dev",
                 "cartalyst/filesystem": "3.0.*@dev",
-                "cartalyst/sentinel": "2.0.*",
-                "cartalyst/settings": "2.0.*",
-                "cartalyst/themes": "3.0.*",
-                "dompdf/dompdf": "~0.6",
+                "cartalyst/sentinel": "^2.0",
+                "cartalyst/settings": "^2.0",
+                "cartalyst/themes": "^3.0",
+                "cartalyst/widgets": "dev-feature/2.0@dev",
+                "dompdf/dompdf": "^0.6",
                 "illuminate/routing": "5.3.*",
+                "leafo/scssphp": "^0.6",
+                "lmammino/jsmin4assetic": "^1.0",
+                "natxet/cssmin": "^3.0",
+                "oyejorge/less.php": "^1.7",
                 "php": ">=5.6.4"
             },
             "require-dev": {
@@ -3440,7 +3848,7 @@
                 "source": "https://github.com/cartalyst/platform-foundation/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-foundation/issues"
             },
-            "time": "2016-11-03 15:42:38"
+            "time": "2016-11-10 16:53:31"
         },
         {
             "name": "platform/frontend-default",
@@ -3961,12 +4369,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-settings.git",
-                "reference": "3a10e32ba2f9c73581044f05c917ab01fb9083eb"
+                "reference": "78be13609534d7f2acdb15c158b4337e66b15395"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-settings/zipball/3a10e32ba2f9c73581044f05c917ab01fb9083eb",
-                "reference": "3a10e32ba2f9c73581044f05c917ab01fb9083eb",
+                "url": "https://api.github.com/repos/cartalyst/platform-settings/zipball/78be13609534d7f2acdb15c158b4337e66b15395",
+                "reference": "78be13609534d7f2acdb15c158b4337e66b15395",
                 "shasum": ""
             },
             "require": {
@@ -4017,7 +4425,7 @@
                 "source": "https://github.com/cartalyst/platform-settings/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-settings/issues"
             },
-            "time": "2016-09-15 14:58:30"
+            "time": "2016-11-03 18:13:10"
         },
         {
             "name": "platform/tags",
@@ -4461,6 +4869,57 @@
                 "uuid"
             ],
             "time": "2016-10-02 15:51:17"
+        },
+        {
+            "name": "richthegeek/phpsass",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/richthegeek/phpsass.git",
+                "reference": "7488db4c6bff76de6c95c3a893f966d3a6cca4bd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/richthegeek/phpsass/zipball/7488db4c6bff76de6c95c3a893f966d3a6cca4bd",
+                "reference": "7488db4c6bff76de6c95c3a893f966d3a6cca4bd",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "script/",
+                    "renderers/",
+                    "tree/",
+                    "SassException.php",
+                    "SassFile.php",
+                    "SassParser.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Richard Lyon",
+                    "homepage": "https://github.com/richthegeek"
+                },
+                {
+                    "name": "Sebastian Siemssen",
+                    "homepage": "https://twitter.com/thefubhy"
+                },
+                {
+                    "name": "Steve Jones",
+                    "homepage": "https://github.com/darthsteven"
+                },
+                {
+                    "name": "Sam Richard",
+                    "homepage": "https://github.com/snugug"
+                }
+            ],
+            "description": "PHPSass is a PHP compiler for SASS, a popular CSS pre-processor language.",
+            "homepage": "http://phpsass.com",
+            "time": "2016-08-23 22:40:12"
         },
         {
             "name": "seld/jsonlint",
