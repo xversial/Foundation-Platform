@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3d5eb28115267f03b696b9071b23ee32",
-    "content-hash": "07aab579f4d05911bbe541b91f613168",
+    "hash": "49e8d2224e8c633f322bee928762f27a",
+    "content-hash": "e555fea0274290bb17f82606c488398f",
     "packages": [
         {
             "name": "cartalyst/alerts",
@@ -1454,12 +1454,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/themes.git",
-                "reference": "86d6b467f7ff295221aa6c02a96815f8fb749b37"
+                "reference": "2c331b4cf0e6c0d2a7f1dd87cfbd8992724bcb64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/themes/zipball/86d6b467f7ff295221aa6c02a96815f8fb749b37",
-                "reference": "86d6b467f7ff295221aa6c02a96815f8fb749b37",
+                "url": "https://api.github.com/repos/cartalyst/themes/zipball/2c331b4cf0e6c0d2a7f1dd87cfbd8992724bcb64",
+                "reference": "2c331b4cf0e6c0d2a7f1dd87cfbd8992724bcb64",
                 "shasum": ""
             },
             "require": {
@@ -1515,7 +1515,7 @@
                 "source": "https://github.com/cartalyst/themes/tree/feature/4.0",
                 "issues": "https://github.com/cartalyst/themes/issues"
             },
-            "time": "2016-11-10 16:54:10"
+            "time": "2016-11-10 21:39:53"
         },
         {
             "name": "cartalyst/widgets",
@@ -3645,12 +3645,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-content.git",
-                "reference": "1386ce81e341830bc6b098426d7d1c3c8f5fe756"
+                "reference": "390f32aa05b8cdc97e1bd7ea6f5d51b6465c5193"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/1386ce81e341830bc6b098426d7d1c3c8f5fe756",
-                "reference": "1386ce81e341830bc6b098426d7d1c3c8f5fe756",
+                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/390f32aa05b8cdc97e1bd7ea6f5d51b6465c5193",
+                "reference": "390f32aa05b8cdc97e1bd7ea6f5d51b6465c5193",
                 "shasum": ""
             },
             "require": {
@@ -3707,7 +3707,7 @@
                 "source": "https://github.com/cartalyst/platform-content/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-content/issues"
             },
-            "time": "2016-11-10 09:11:04"
+            "time": "2016-11-10 21:43:34"
         },
         {
             "name": "platform/dashboard",
@@ -3852,16 +3852,16 @@
         },
         {
             "name": "platform/frontend-default",
-            "version": "v2.0.2",
+            "version": "dev-feature/six",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/theme-default-frontend.git",
-                "reference": "409b42ab8572ac14a8df5e92b57c3f5d99eec6ed"
+                "reference": "5a0e5062f172d2f81dd0541f88140c4125a85bae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/theme-default-frontend/zipball/409b42ab8572ac14a8df5e92b57c3f5d99eec6ed",
-                "reference": "409b42ab8572ac14a8df5e92b57c3f5d99eec6ed",
+                "url": "https://api.github.com/repos/cartalyst/theme-default-frontend/zipball/5a0e5062f172d2f81dd0541f88140c4125a85bae",
+                "reference": "5a0e5062f172d2f81dd0541f88140c4125a85bae",
                 "shasum": ""
             },
             "require": {
@@ -3902,10 +3902,10 @@
                 "theme"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/theme-default-frontend/tree/v2.0.2",
+                "source": "https://github.com/cartalyst/theme-default-frontend/tree/feature/six",
                 "issues": "https://github.com/cartalyst/theme-default-frontend/issues"
             },
-            "time": "2016-08-03 18:10:41"
+            "time": "2016-11-11 05:31:53"
         },
         {
             "name": "platform/installer",
@@ -4049,12 +4049,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-menus.git",
-                "reference": "bde7df15a89ab529c7d3562b194ac9f716e7fe27"
+                "reference": "3271e9f1ad4fc9d1d7219608e92f98db4b0b9a37"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/bde7df15a89ab529c7d3562b194ac9f716e7fe27",
-                "reference": "bde7df15a89ab529c7d3562b194ac9f716e7fe27",
+                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/3271e9f1ad4fc9d1d7219608e92f98db4b0b9a37",
+                "reference": "3271e9f1ad4fc9d1d7219608e92f98db4b0b9a37",
                 "shasum": ""
             },
             "require": {
@@ -4106,7 +4106,7 @@
                 "source": "https://github.com/cartalyst/platform-menus/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-menus/issues"
             },
-            "time": "2016-09-15 13:18:13"
+            "time": "2016-11-11 05:21:55"
         },
         {
             "name": "platform/operations",
@@ -4174,12 +4174,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-pages.git",
-                "reference": "661f26dac7f55d79e3fedb71106fc0f3959e635a"
+                "reference": "aa9c5d0fa76d5b49623b8757b9ce29432baf95d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/661f26dac7f55d79e3fedb71106fc0f3959e635a",
-                "reference": "661f26dac7f55d79e3fedb71106fc0f3959e635a",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/aa9c5d0fa76d5b49623b8757b9ce29432baf95d2",
+                "reference": "aa9c5d0fa76d5b49623b8757b9ce29432baf95d2",
                 "shasum": ""
             },
             "require": {
@@ -4234,7 +4234,7 @@
                 "source": "https://github.com/cartalyst/platform-pages/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2016-09-15 15:08:38"
+            "time": "2016-11-10 19:00:56"
         },
         {
             "name": "platform/permissions",
@@ -4557,12 +4557,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-users.git",
-                "reference": "e2487a824ca89fbeb3adba2ea49eba9baec45d2e"
+                "reference": "ec18b1c13541552628cb125a5ed93a059fd00622"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/e2487a824ca89fbeb3adba2ea49eba9baec45d2e",
-                "reference": "e2487a824ca89fbeb3adba2ea49eba9baec45d2e",
+                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/ec18b1c13541552628cb125a5ed93a059fd00622",
+                "reference": "ec18b1c13541552628cb125a5ed93a059fd00622",
                 "shasum": ""
             },
             "require": {
@@ -4619,7 +4619,7 @@
                 "source": "https://github.com/cartalyst/platform-users/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-users/issues"
             },
-            "time": "2016-11-03 15:40:43"
+            "time": "2016-11-10 17:16:55"
         },
         {
             "name": "psr/http-message",
@@ -7913,6 +7913,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "platform/admin-default": 20,
+        "platform/frontend-default": 20,
         "platform/foundation": 20,
         "platform/installer": 20,
         "platform/access": 20,
