@@ -8,7 +8,7 @@ Part of the Cartalyst Arsenal & licensed [Cartalyst PSL](LICENSE). Code well, ro
 
 ## Documentation
 
-Reader-friendly Documentation can be found here. [Platform Manual](https://cartalyst.com/manual/platform/4.0).
+Reader-friendly Documentation can be found here. [Platform Manual](https://cartalyst.com/manual/platform/5.0).
 
 Raw files can be found via this projects docs/version branch.
 
