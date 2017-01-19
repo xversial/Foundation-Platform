@@ -40,6 +40,7 @@ abstract class TestCase extends Illuminate\Foundation\Testing\TestCase
      */
     protected function setUpPlatform()
     {
+        $this->app['config']->set('database.connections.sqlite.prefix', null);
         $this->app['config']->set('database.connections.sqlite.database', ':memory:');
         $this->app['config']->set('database.default', 'sqlite');
 
