@@ -70,7 +70,7 @@ class OverridesServiceProvider extends ServiceProvider
      */
     protected function registerUrlGenerator()
     {
-        $this->app['url'] = $this->app->share(function ($app) {
+        $this->app->singleton('url', function ($app) {
             $routes = $app['router']->getRoutes();
 
             $app->instance('routes', $routes);
