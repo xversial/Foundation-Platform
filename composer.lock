@@ -239,7 +239,7 @@
                 "php"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/attributes/tree/1.1",
+                "source": "https://github.com/cartalyst/attributes/tree/v1.1.0",
                 "issues": "https://github.com/cartalyst/attributes/issues"
             },
             "time": "2015-07-14T23:45:57+00:00"
@@ -592,30 +592,30 @@
                 "php"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/extensions/tree/master",
+                "source": "https://github.com/cartalyst/extensions/tree/v2.1.0",
                 "issues": "https://github.com/cartalyst/extensions/issues"
             },
             "time": "2016-08-31T17:56:50+00:00"
         },
         {
             "name": "cartalyst/filesystem",
-            "version": "v3.0.5",
+            "version": "v3.0.6",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/filesystem.git",
-                "reference": "79f9189b2f28ad63cc5914afbb59174d386d9cfa"
+                "reference": "7986ee098bea1bf0934922a619d6ed01916c5cb2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/filesystem/zipball/79f9189b2f28ad63cc5914afbb59174d386d9cfa",
-                "reference": "79f9189b2f28ad63cc5914afbb59174d386d9cfa",
+                "url": "https://api.github.com/repos/cartalyst/filesystem/zipball/7986ee098bea1bf0934922a619d6ed01916c5cb2",
+                "reference": "7986ee098bea1bf0934922a619d6ed01916c5cb2",
                 "shasum": ""
             },
             "require": {
                 "illuminate/support": "~5.0",
                 "league/flysystem": "1.0.*",
                 "php": ">=5.4.0",
-                "symfony/http-foundation": "~2.5"
+                "symfony/http-foundation": "~2.5|~3.0"
             },
             "require-dev": {
                 "league/flysystem-aws-s3-v2": "~1.0",
@@ -673,10 +673,10 @@
                 "php"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/filesystem/tree/v3.0.5",
+                "source": "https://github.com/cartalyst/filesystem/tree/v3.0.6",
                 "issues": "https://github.com/cartalyst/filesystem/issues"
             },
-            "time": "2016-04-28T12:39:35+00:00"
+            "time": "2017-01-27T16:32:56+00:00"
         },
         {
             "name": "cartalyst/interpret",
@@ -830,7 +830,7 @@
                 "tags"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/nested-sets/tree/3.0",
+                "source": "https://github.com/cartalyst/nested-sets/tree/v3.0.0",
                 "issues": "https://github.com/cartalyst/nested-sets/issues"
             },
             "time": "2015-03-03T00:26:02+00:00"
@@ -951,16 +951,16 @@
         },
         {
             "name": "cartalyst/sentinel",
-            "version": "v2.0.13",
+            "version": "v2.0.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cartalyst/sentinel.git",
-                "reference": "04e9e55b4642e18d3404af458b3dae0af5238592"
+                "reference": "98a8387e234abc552baa81effc0c1005959b11e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentinel/zipball/04e9e55b4642e18d3404af458b3dae0af5238592",
-                "reference": "04e9e55b4642e18d3404af458b3dae0af5238592",
+                "url": "https://api.github.com/repos/cartalyst/sentinel/zipball/98a8387e234abc552baa81effc0c1005959b11e5",
+                "reference": "98a8387e234abc552baa81effc0c1005959b11e5",
                 "shasum": ""
             },
             "require": {
@@ -971,6 +971,7 @@
             "require-dev": {
                 "illuminate/cookie": "~5.0",
                 "illuminate/database": "~5.0",
+                "illuminate/events": "~5.0",
                 "illuminate/http": "~5.0",
                 "illuminate/session": "~5.0",
                 "ircmaxell/password-compat": "~1.0",
@@ -1017,10 +1018,10 @@
                 "security"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/sentinel/tree/v2.0.13",
+                "source": "https://github.com/cartalyst/sentinel/tree/v2.0.14",
                 "issues": "https://github.com/cartalyst/sentinel/issues"
             },
-            "time": "2016-09-05T15:16:16+00:00"
+            "time": "2017-01-30T08:20:40+00:00"
         },
         {
             "name": "cartalyst/sentinel-social",
@@ -1249,7 +1250,7 @@
                 "support"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/support/tree/master",
+                "source": "https://github.com/cartalyst/support/tree/v1.2.0",
                 "issues": "https://github.com/cartalyst/support/issues"
             },
             "time": "2016-06-21T04:08:43+00:00"
@@ -1520,7 +1521,7 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/workshop/tree/master",
+                "source": "https://github.com/cartalyst/workshop/tree/v2.0.9",
                 "issues": "https://github.com/cartalyst/workshop/issues"
             },
             "time": "2016-07-18T07:20:49+00:00"
@@ -1996,16 +1997,16 @@
         },
         {
             "name": "intervention/image",
-            "version": "2.3.9",
+            "version": "2.3.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Intervention/image.git",
-                "reference": "2bce9a59c43b868300b02a7d31a1e4aa67a200ae"
+                "reference": "88911910dcbb7bf617f1370602ba1706489c8505"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/image/zipball/2bce9a59c43b868300b02a7d31a1e4aa67a200ae",
-                "reference": "2bce9a59c43b868300b02a7d31a1e4aa67a200ae",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/88911910dcbb7bf617f1370602ba1706489c8505",
+                "reference": "88911910dcbb7bf617f1370602ba1706489c8505",
                 "shasum": ""
             },
             "require": {
@@ -2054,7 +2055,7 @@
                 "thumbnail",
                 "watermark"
             ],
-            "time": "2017-01-10T14:15:56+00:00"
+            "time": "2017-01-25T18:52:04+00:00"
         },
         {
             "name": "intervention/imagecache",
@@ -3806,7 +3807,7 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-dashboard/tree/4.0",
+                "source": "https://github.com/cartalyst/platform-dashboard/tree/v4.0.0",
                 "issues": "https://github.com/cartalyst/platform-dashboard/issues"
             },
             "time": "2016-08-03T10:54:23+00:00"
@@ -4078,7 +4079,7 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-media/tree/master",
+                "source": "https://github.com/cartalyst/platform-media/tree/v4.0.4",
                 "issues": "https://github.com/cartalyst/platform-media/issues"
             },
             "time": "2016-12-15T19:18:06+00:00"
@@ -6241,16 +6242,16 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "v2.5.9",
+            "version": "v2.5.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "0d2f8187d4b4c7b72d8e2acba359e25c36feaf5e"
+                "reference": "fc376f7a61498e18520cd6fa083752a4ca08072b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/0d2f8187d4b4c7b72d8e2acba359e25c36feaf5e",
-                "reference": "0d2f8187d4b4c7b72d8e2acba359e25c36feaf5e",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/fc376f7a61498e18520cd6fa083752a4ca08072b",
+                "reference": "fc376f7a61498e18520cd6fa083752a4ca08072b",
                 "shasum": ""
             },
             "require": {
@@ -6308,7 +6309,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2017-01-19T13:27:33+00:00"
+            "time": "2017-01-23T23:17:10+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -7142,16 +7143,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.32",
+            "version": "4.8.34",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "f5e1941a8dacf0d904753ff2895c6f68e54bcee1"
+                "reference": "7eb45205d27edd94bd2b3614085ea158bd1e2bca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/f5e1941a8dacf0d904753ff2895c6f68e54bcee1",
-                "reference": "f5e1941a8dacf0d904753ff2895c6f68e54bcee1",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/7eb45205d27edd94bd2b3614085ea158bd1e2bca",
+                "reference": "7eb45205d27edd94bd2b3614085ea158bd1e2bca",
                 "shasum": ""
             },
             "require": {
@@ -7210,7 +7211,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-01-22T08:37:05+00:00"
+            "time": "2017-01-26T16:15:36+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -7270,16 +7271,16 @@
         },
         {
             "name": "sebastian/comparator",
-            "version": "1.2.2",
+            "version": "1.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/comparator.git",
-                "reference": "6a1ed12e8b2409076ab22e3897126211ff8b1f7f"
+                "reference": "2b7424b55f5047b47ac6e5ccb20b2aea4011d9be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/6a1ed12e8b2409076ab22e3897126211ff8b1f7f",
-                "reference": "6a1ed12e8b2409076ab22e3897126211ff8b1f7f",
+                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/2b7424b55f5047b47ac6e5ccb20b2aea4011d9be",
+                "reference": "2b7424b55f5047b47ac6e5ccb20b2aea4011d9be",
                 "shasum": ""
             },
             "require": {
@@ -7330,7 +7331,7 @@
                 "compare",
                 "equality"
             ],
-            "time": "2016-11-19T09:18:40+00:00"
+            "time": "2017-01-29T09:50:25+00:00"
         },
         {
             "name": "sebastian/diff",
