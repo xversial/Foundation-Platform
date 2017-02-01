@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e555fea0274290bb17f82606c488398f",
+    "content-hash": "d5c4d3129c27ff6d974ed4f410b780af",
     "packages": [
         {
             "name": "cartalyst/alerts",
@@ -3533,12 +3533,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-access.git",
-                "reference": "401ad38183dc40d74ed76a1f062bec9ab768e37d"
+                "reference": "fd19555b9138cb6a0417b0904fc46161ca4ab6fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-access/zipball/401ad38183dc40d74ed76a1f062bec9ab768e37d",
-                "reference": "401ad38183dc40d74ed76a1f062bec9ab768e37d",
+                "url": "https://api.github.com/repos/cartalyst/platform-access/zipball/fd19555b9138cb6a0417b0904fc46161ca4ab6fd",
+                "reference": "fd19555b9138cb6a0417b0904fc46161ca4ab6fd",
                 "shasum": ""
             },
             "require": {
@@ -3546,12 +3546,11 @@
                 "cartalyst/composer-installers": "1.2.*",
                 "php": ">=5.6.4",
                 "platform/foundation": "dev-feature/six@dev",
-                "platform/permissions": "dev-feature/six@dev",
-                "platform/roles": "dev-feature/six@dev",
-                "platform/users": "dev-feature/six@dev"
+                "platform/permissions": "dev-feature/six@dev"
             },
             "require-dev": {
-                "cartalyst/testing": "~2.0@dev"
+                "cartalyst/testing": "~2.0@dev",
+                "phpunit/phpunit": "^5.7"
             },
             "type": "platform-extension",
             "extra": {
@@ -3589,7 +3588,7 @@
                 "source": "https://github.com/cartalyst/platform-access/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-access/issues"
             },
-            "time": "2016-11-14 19:18:11"
+            "time": "2017-02-01 17:23:14"
         },
         {
             "name": "platform/admin-default",
@@ -3841,18 +3840,19 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-foundation.git",
-                "reference": "9c20ab5801b69da4f8891f8ab077a858824363ea"
+                "reference": "1a69cd10eb6b66a31ce90990c5cb7be8a804b693"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/9c20ab5801b69da4f8891f8ab077a858824363ea",
-                "reference": "9c20ab5801b69da4f8891f8ab077a858824363ea",
+                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/1a69cd10eb6b66a31ce90990c5cb7be8a804b693",
+                "reference": "1a69cd10eb6b66a31ce90990c5cb7be8a804b693",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/alerts": "^2.0",
                 "cartalyst/assetic-filters": "dev-feature/six",
-                "cartalyst/data-grid": "^3.0",
+                "cartalyst/data-grid-export": "^1.0@dev",
+                "cartalyst/data-grid-laravel": "^1.0@dev",
                 "cartalyst/extensions": "dev-feature/3.0",
                 "cartalyst/filesystem": "3.0.*@dev",
                 "cartalyst/sentinel": "^2.0",
@@ -3911,7 +3911,7 @@
                 "source": "https://github.com/cartalyst/platform-foundation/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-foundation/issues"
             },
-            "time": "2017-01-31T20:00:56+00:00"
+            "time": "2017-02-01T17:03:32+00:00"
         },
         {
             "name": "platform/frontend-default",
@@ -7949,36 +7949,6 @@
     ],
     "aliases": [
         {
-            "alias": "3.0.9999",
-            "alias_normalized": "3.0.9999.0",
-            "version": "dev-feature/4.0",
-            "package": "cartalyst/data-grid"
-        },
-        {
-            "alias": "1.0.9999",
-            "alias_normalized": "1.0.9999.0",
-            "version": "9999999-dev",
-            "package": "cartalyst/data-grid-laravel"
-        },
-        {
-            "alias": "1.0.9999",
-            "alias_normalized": "1.0.9999.0",
-            "version": "9999999-dev",
-            "package": "cartalyst/data-grid-export"
-        },
-        {
-            "alias": "1.2.99",
-            "alias_normalized": "1.2.99.0",
-            "version": "9999999-dev",
-            "package": "cartalyst/collections"
-        },
-        {
-            "alias": "3.0.9999",
-            "alias_normalized": "3.0.9999.0",
-            "version": "dev-feature/4.0",
-            "package": "cartalyst/themes"
-        },
-        {
             "alias": "1.2.9999",
             "alias_normalized": "1.2.9999.0",
             "version": "9999999-dev",
@@ -7999,13 +7969,10 @@
         "platform/menus": 20,
         "platform/operations": 20,
         "platform/pages": 20,
+        "platform/roles": 20,
         "platform/settings": 20,
         "platform/themes": 20,
-        "cartalyst/data-grid": 20,
-        "cartalyst/data-grid-laravel": 20,
-        "cartalyst/data-grid-export": 20,
-        "cartalyst/collections": 20,
-        "cartalyst/themes": 20,
+        "platform/users": 20,
         "cartalyst/composer-installers": 20
     },
     "prefer-stable": true,
