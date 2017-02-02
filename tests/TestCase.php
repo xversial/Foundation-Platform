@@ -62,7 +62,7 @@ abstract class TestCase extends Illuminate\Foundation\Testing\TestCase
         $this->app['Illuminate\Contracts\Console\Kernel']->call('migrate', ['--env' => 'testing']);
 
         // Boot extensions
-        $this->app['platform']->bootExtensions();
+        $this->app['extensions']->boot();
     }
 
     /**
