@@ -43,15 +43,15 @@
         "platform/themes": "dev-feature/seven",
         "platform/users": "dev-feature/seven",
 
-        "cartalyst/composer-installers": "dev-master as 1.2.9999"
+        "cartalyst/composer-installers": "dev-master as 1.2.9999",
+
+        "laravel/tinker": "~1.0"
     },
     "require-dev": {
         "doctrine/dbal": "~2.4",
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~5.0",
-        "symfony/css-selector": "3.1.*",
-        "symfony/dom-crawler": "3.1.*"
+        "phpunit/phpunit": "~5.7"
     },
     "autoload": {
         "classmap": [
@@ -66,9 +66,9 @@
         }
     },
     "autoload-dev": {
-        "classmap": [
-            "tests/TestCase.php"
-        ]
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
     },
     "scripts": {
         "post-install-cmd": [
