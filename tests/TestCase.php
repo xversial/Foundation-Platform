@@ -2,6 +2,7 @@
 
 namespace Tests;
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
@@ -47,7 +48,7 @@ abstract class TestCase extends BaseTestCase
         $this->app['Illuminate\Contracts\Console\Kernel']->call('migrate', ['--env' => 'testing']);
 
         // Boot extensions
-        $this->app['platform']->bootExtensions();
+        $this->app['extensions']->boot();
     }
 
     /**
