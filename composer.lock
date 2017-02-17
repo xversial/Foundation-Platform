@@ -348,12 +348,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/data-grid.git",
-                "reference": "24a5f6d128517df667e6ce54c13d42a3ecbcf026"
+                "reference": "41859db92ffff93b56671b42e71a988abf573a58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/data-grid/zipball/24a5f6d128517df667e6ce54c13d42a3ecbcf026",
-                "reference": "24a5f6d128517df667e6ce54c13d42a3ecbcf026",
+                "url": "https://api.github.com/repos/cartalyst/data-grid/zipball/41859db92ffff93b56671b42e71a988abf573a58",
+                "reference": "41859db92ffff93b56671b42e71a988abf573a58",
                 "shasum": ""
             },
             "require": {
@@ -411,7 +411,7 @@
                 "source": "https://github.com/cartalyst/data-grid/tree/master",
                 "issues": "https://github.com/cartalyst/data-grid/issues"
             },
-            "time": "2017-02-06T14:58:18+00:00"
+            "time": "2017-02-17 19:54:29"
         },
         {
             "name": "cartalyst/data-grid-export",
@@ -419,12 +419,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/data-grid-export.git",
-                "reference": "88ecf4d58bd7dac4f2c3b1588da5a663899ddc32"
+                "reference": "95c77eaf99909093e6442ca7ca1aed59f47fb830"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/data-grid-export/zipball/88ecf4d58bd7dac4f2c3b1588da5a663899ddc32",
-                "reference": "88ecf4d58bd7dac4f2c3b1588da5a663899ddc32",
+                "url": "https://api.github.com/repos/cartalyst/data-grid-export/zipball/95c77eaf99909093e6442ca7ca1aed59f47fb830",
+                "reference": "95c77eaf99909093e6442ca7ca1aed59f47fb830",
                 "shasum": ""
             },
             "require": {
@@ -475,7 +475,7 @@
                 "source": "https://github.com/cartalyst/data-grid-export/tree/master",
                 "issues": "https://github.com/cartalyst/data-grid-export/issues"
             },
-            "time": "2017-02-06T16:37:08+00:00"
+            "time": "2017-02-17 20:17:30"
         },
         {
             "name": "cartalyst/data-grid-laravel",
@@ -483,12 +483,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/data-grid-laravel.git",
-                "reference": "95a849ad22c045d6f2462e2c449157388b2e87d7"
+                "reference": "f0348b17d1cb7597284800fcaf7a7b1a120275ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/data-grid-laravel/zipball/95a849ad22c045d6f2462e2c449157388b2e87d7",
-                "reference": "95a849ad22c045d6f2462e2c449157388b2e87d7",
+                "url": "https://api.github.com/repos/cartalyst/data-grid-laravel/zipball/f0348b17d1cb7597284800fcaf7a7b1a120275ff",
+                "reference": "f0348b17d1cb7597284800fcaf7a7b1a120275ff",
                 "shasum": ""
             },
             "require": {
@@ -544,7 +544,7 @@
                 "source": "https://github.com/cartalyst/data-grid-laravel/tree/master",
                 "issues": "https://github.com/cartalyst/data-grid-laravel/issues"
             },
-            "time": "2017-02-06T16:38:29+00:00"
+            "time": "2017-02-17 20:48:48"
         },
         {
             "name": "cartalyst/dependencies",
@@ -1532,12 +1532,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/workshop.git",
-                "reference": "f69dcbf58adb2921c992a1507c5eeb7fac60f56f"
+                "reference": "e17ede34aefa3c2dce1f8f4f0a5ba2b0f9c291be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/workshop/zipball/f69dcbf58adb2921c992a1507c5eeb7fac60f56f",
-                "reference": "f69dcbf58adb2921c992a1507c5eeb7fac60f56f",
+                "url": "https://api.github.com/repos/cartalyst/workshop/zipball/e17ede34aefa3c2dce1f8f4f0a5ba2b0f9c291be",
+                "reference": "e17ede34aefa3c2dce1f8f4f0a5ba2b0f9c291be",
                 "shasum": ""
             },
             "require": {
@@ -1588,7 +1588,7 @@
                 "source": "https://github.com/cartalyst/workshop/tree/master",
                 "issues": "https://github.com/cartalyst/workshop/issues"
             },
-            "time": "2017-02-16 18:43:28"
+            "time": "2017-02-17 19:54:06"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -1746,30 +1746,46 @@
         },
         {
             "name": "dompdf/dompdf",
-            "version": "v0.6.2",
+            "version": "v0.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dompdf/dompdf.git",
-                "reference": "cc06008f75262510ee135b8cbb14e333a309f651"
+                "reference": "5c98652b1a5beb7e3cc8ec35419b2828dd63ab14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dompdf/dompdf/zipball/cc06008f75262510ee135b8cbb14e333a309f651",
-                "reference": "cc06008f75262510ee135b8cbb14e333a309f651",
+                "url": "https://api.github.com/repos/dompdf/dompdf/zipball/5c98652b1a5beb7e3cc8ec35419b2828dd63ab14",
+                "reference": "5c98652b1a5beb7e3cc8ec35419b2828dd63ab14",
                 "shasum": ""
             },
             "require": {
-                "phenx/php-font-lib": "0.2.*"
+                "ext-dom": "*",
+                "ext-gd": "*",
+                "ext-mbstring": "*",
+                "phenx/php-font-lib": "0.4.*",
+                "phenx/php-svg-lib": "0.1.*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.7-dev"
+                }
+            },
             "autoload": {
+                "psr-4": {
+                    "Dompdf\\": "src/"
+                },
                 "classmap": [
-                    "include/"
+                    "lib/"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL"
+                "LGPL-2.1"
             ],
             "authors": [
                 {
@@ -1779,11 +1795,15 @@
                 {
                     "name": "Brian Sweeney",
                     "email": "eclecticgeek@gmail.com"
+                },
+                {
+                    "name": "Gabriel Bull",
+                    "email": "me@gabrielbull.com"
                 }
             ],
             "description": "DOMPDF is a CSS 2.1 compliant HTML to PDF converter",
             "homepage": "https://github.com/dompdf/dompdf",
-            "time": "2015-12-07T04:07:13+00:00"
+            "time": "2016-05-11T00:36:29+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -3349,27 +3369,27 @@
         },
         {
             "name": "phenx/php-font-lib",
-            "version": "0.2.2",
+            "version": "0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PhenX/php-font-lib.git",
-                "reference": "c30c7fc00a6b0d863e9bb4c5d5dd015298b2dc82"
+                "reference": "b8af0cacdc3cbf1e41a586fcb78f506f4121a088"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PhenX/php-font-lib/zipball/c30c7fc00a6b0d863e9bb4c5d5dd015298b2dc82",
-                "reference": "c30c7fc00a6b0d863e9bb4c5d5dd015298b2dc82",
+                "url": "https://api.github.com/repos/PhenX/php-font-lib/zipball/b8af0cacdc3cbf1e41a586fcb78f506f4121a088",
+                "reference": "b8af0cacdc3cbf1e41a586fcb78f506f4121a088",
                 "shasum": ""
             },
             "type": "library",
             "autoload": {
-                "classmap": [
-                    "classes/"
-                ]
+                "psr-0": {
+                    "FontLib\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL"
+                "LGPL-3.0"
             ],
             "authors": [
                 {
@@ -3379,7 +3399,41 @@
             ],
             "description": "A library to read, parse, export and make subsets of different types of font files.",
             "homepage": "https://github.com/PhenX/php-font-lib",
-            "time": "2014-02-01T15:22:28+00:00"
+            "time": "2015-05-06T20:02:39+00:00"
+        },
+        {
+            "name": "phenx/php-svg-lib",
+            "version": "0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PhenX/php-svg-lib.git",
+                "reference": "b419766515b3426c6da74b0e29e93d71c4f17099"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PhenX/php-svg-lib/zipball/b419766515b3426c6da74b0e29e93d71c4f17099",
+                "reference": "b419766515b3426c6da74b0e29e93d71c4f17099",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Svg\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Ménager",
+                    "email": "fabien.menager@gmail.com"
+                }
+            ],
+            "description": "A library to read, parse and export to PDF SVG files.",
+            "homepage": "https://github.com/PhenX/php-svg-lib",
+            "time": "2015-05-06T18:49:49+00:00"
         },
         {
             "name": "platform/access",
@@ -3694,12 +3748,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-foundation.git",
-                "reference": "be092a51c104227982336dfdea7125c9b1521e61"
+                "reference": "394604dafd36a30caf88bafeb1407e0b9e69eb57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/be092a51c104227982336dfdea7125c9b1521e61",
-                "reference": "be092a51c104227982336dfdea7125c9b1521e61",
+                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/394604dafd36a30caf88bafeb1407e0b9e69eb57",
+                "reference": "394604dafd36a30caf88bafeb1407e0b9e69eb57",
                 "shasum": ""
             },
             "require": {
@@ -3713,7 +3767,7 @@
                 "cartalyst/settings": "^2.0",
                 "cartalyst/themes": "dev-feature/4.0",
                 "cartalyst/widgets": "^2.0",
-                "dompdf/dompdf": "^0.6",
+                "dompdf/dompdf": "^0.7",
                 "illuminate/routing": "5.3.*",
                 "leafo/scssphp": "^0.6",
                 "lmammino/jsmin4assetic": "^1.0",
@@ -3765,7 +3819,7 @@
                 "source": "https://github.com/cartalyst/platform-foundation/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-foundation/issues"
             },
-            "time": "2017-02-16T08:37:16+00:00"
+            "time": "2017-02-17 20:02:21"
         },
         {
             "name": "platform/frontend-default",
