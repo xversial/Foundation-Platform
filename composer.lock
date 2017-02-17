@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d5c4d3129c27ff6d974ed4f410b780af",
+    "content-hash": "54cc72f6ec8da1db8fc3330a13a598a0",
     "packages": [
         {
             "name": "cartalyst/alerts",
@@ -282,7 +282,7 @@
                 "source": "https://github.com/cartalyst/composer-installers/tree/master",
                 "issues": "https://github.com/cartalyst/composer-installers/issues"
             },
-            "time": "2016-11-03 01:01:20"
+            "time": "2016-11-03T01:01:20+00:00"
         },
         {
             "name": "cartalyst/composite-config",
@@ -411,7 +411,7 @@
                 "source": "https://github.com/cartalyst/data-grid/tree/master",
                 "issues": "https://github.com/cartalyst/data-grid/issues"
             },
-            "time": "2017-02-06 14:58:18"
+            "time": "2017-02-06T14:58:18+00:00"
         },
         {
             "name": "cartalyst/data-grid-export",
@@ -475,7 +475,7 @@
                 "source": "https://github.com/cartalyst/data-grid-export/tree/master",
                 "issues": "https://github.com/cartalyst/data-grid-export/issues"
             },
-            "time": "2017-02-06 16:37:08"
+            "time": "2017-02-06T16:37:08+00:00"
         },
         {
             "name": "cartalyst/data-grid-laravel",
@@ -544,7 +544,7 @@
                 "source": "https://github.com/cartalyst/data-grid-laravel/tree/master",
                 "issues": "https://github.com/cartalyst/data-grid-laravel/issues"
             },
-            "time": "2017-02-06 16:38:29"
+            "time": "2017-02-06T16:38:29+00:00"
         },
         {
             "name": "cartalyst/dependencies",
@@ -617,16 +617,16 @@
         },
         {
             "name": "cartalyst/extensions",
-            "version": "v3.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/extensions.git",
-                "reference": "25b03cb05eeffd95242ad038d34891422f6353fa"
+                "reference": "8455b57ed50a720b35361122010b7f0189bd6ea7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/extensions/zipball/25b03cb05eeffd95242ad038d34891422f6353fa",
-                "reference": "25b03cb05eeffd95242ad038d34891422f6353fa",
+                "url": "https://api.github.com/repos/cartalyst/extensions/zipball/8455b57ed50a720b35361122010b7f0189bd6ea7",
+                "reference": "8455b57ed50a720b35361122010b7f0189bd6ea7",
                 "shasum": ""
             },
             "require": {
@@ -635,6 +635,7 @@
                 "illuminate/database": "^5.0",
                 "illuminate/events": "^5.0",
                 "illuminate/filesystem": "^5.0",
+                "illuminate/support": "^5.0",
                 "php": ">=5.6.4"
             },
             "require-dev": {
@@ -681,7 +682,7 @@
                 "source": "https://github.com/cartalyst/extensions/tree/master",
                 "issues": "https://github.com/cartalyst/extensions/issues"
             },
-            "time": "2017-02-03T15:17:17+00:00"
+            "time": "2017-02-16T18:32:45+00:00"
         },
         {
             "name": "cartalyst/filesystem",
@@ -1111,16 +1112,16 @@
         },
         {
             "name": "cartalyst/sentinel-social",
-            "version": "v3.0.1",
+            "version": "v3.0.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/sentinel-social.git",
-                "reference": "3de785cc2bd91c7fb483122d132a07578ddb6334"
+                "reference": "d9bdd463e35f59c884b4ba4bf6f0787a73b01b73"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/sentinel-social/zipball/3de785cc2bd91c7fb483122d132a07578ddb6334",
-                "reference": "3de785cc2bd91c7fb483122d132a07578ddb6334",
+                "url": "https://api.github.com/repos/cartalyst/sentinel-social/zipball/d9bdd463e35f59c884b4ba4bf6f0787a73b01b73",
+                "reference": "d9bdd463e35f59c884b4ba4bf6f0787a73b01b73",
                 "shasum": ""
             },
             "require": {
@@ -1179,10 +1180,10 @@
                 "security"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/sentinel-social/tree/v3.0.1",
+                "source": "https://github.com/cartalyst/sentinel-social/tree/v3.0.2",
                 "issues": "https://github.com/cartalyst/sentinel-social/issues"
             },
-            "time": "2017-01-29T12:24:37+00:00"
+            "time": "2017-02-15T17:56:23+00:00"
         },
         {
             "name": "cartalyst/settings",
@@ -1397,12 +1398,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/themes.git",
-                "reference": "9a5eab7919421d539e6d6b3d2d485044d491d629"
+                "reference": "7ee5d0475ae3c74b88b562974636845411ea2d95"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/themes/zipball/9a5eab7919421d539e6d6b3d2d485044d491d629",
-                "reference": "9a5eab7919421d539e6d6b3d2d485044d491d629",
+                "url": "https://api.github.com/repos/cartalyst/themes/zipball/7ee5d0475ae3c74b88b562974636845411ea2d95",
+                "reference": "7ee5d0475ae3c74b88b562974636845411ea2d95",
                 "shasum": ""
             },
             "require": {
@@ -1465,7 +1466,7 @@
                 "source": "https://github.com/cartalyst/themes/tree/feature/4.0",
                 "issues": "https://github.com/cartalyst/themes/issues"
             },
-            "time": "2017-01-31 14:42:39"
+            "time": "2017-02-16T18:51:17+00:00"
         },
         {
             "name": "cartalyst/widgets",
@@ -1531,12 +1532,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/workshop.git",
-                "reference": "c60c39116b727f749988ec14b2a963c1991b3bf4"
+                "reference": "f69dcbf58adb2921c992a1507c5eeb7fac60f56f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/workshop/zipball/c60c39116b727f749988ec14b2a963c1991b3bf4",
-                "reference": "c60c39116b727f749988ec14b2a963c1991b3bf4",
+                "url": "https://api.github.com/repos/cartalyst/workshop/zipball/f69dcbf58adb2921c992a1507c5eeb7fac60f56f",
+                "reference": "f69dcbf58adb2921c992a1507c5eeb7fac60f56f",
                 "shasum": ""
             },
             "require": {
@@ -1587,7 +1588,7 @@
                 "source": "https://github.com/cartalyst/workshop/tree/master",
                 "issues": "https://github.com/cartalyst/workshop/issues"
             },
-            "time": "2017-02-15 10:48:01"
+            "time": "2017-02-16 18:43:28"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -3441,7 +3442,7 @@
                 "source": "https://github.com/cartalyst/platform-access/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-access/issues"
             },
-            "time": "2017-02-01 17:23:14"
+            "time": "2017-02-01T17:23:14+00:00"
         },
         {
             "name": "platform/admin-default",
@@ -3489,7 +3490,7 @@
                 "source": "https://github.com/cartalyst/theme-default-admin/tree/feature/six",
                 "issues": "https://github.com/cartalyst/theme-default-admin/issues"
             },
-            "time": "2016-12-13 15:36:25"
+            "time": "2016-12-13T15:36:25+00:00"
         },
         {
             "name": "platform/attributes",
@@ -3552,7 +3553,7 @@
                 "source": "https://github.com/cartalyst/platform-attributes/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-attributes/issues"
             },
-            "time": "2017-02-03 08:38:05"
+            "time": "2017-02-03T08:38:05+00:00"
         },
         {
             "name": "platform/content",
@@ -3622,7 +3623,7 @@
                 "source": "https://github.com/cartalyst/platform-content/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-content/issues"
             },
-            "time": "2017-01-28 14:39:20"
+            "time": "2017-01-28T14:39:20+00:00"
         },
         {
             "name": "platform/dashboard",
@@ -3685,7 +3686,7 @@
                 "source": "https://github.com/cartalyst/platform-dashboard/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-dashboard/issues"
             },
-            "time": "2016-11-14 19:18:51"
+            "time": "2016-11-14T19:18:51+00:00"
         },
         {
             "name": "platform/foundation",
@@ -3693,12 +3694,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-foundation.git",
-                "reference": "5d35d018954df2673f56f42fc884912581248d5e"
+                "reference": "be092a51c104227982336dfdea7125c9b1521e61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/5d35d018954df2673f56f42fc884912581248d5e",
-                "reference": "5d35d018954df2673f56f42fc884912581248d5e",
+                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/be092a51c104227982336dfdea7125c9b1521e61",
+                "reference": "be092a51c104227982336dfdea7125c9b1521e61",
                 "shasum": ""
             },
             "require": {
@@ -3764,7 +3765,7 @@
                 "source": "https://github.com/cartalyst/platform-foundation/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-foundation/issues"
             },
-            "time": "2017-02-15 10:58:54"
+            "time": "2017-02-16T08:37:16+00:00"
         },
         {
             "name": "platform/frontend-default",
@@ -3821,7 +3822,7 @@
                 "source": "https://github.com/cartalyst/theme-default-frontend/tree/feature/six",
                 "issues": "https://github.com/cartalyst/theme-default-frontend/issues"
             },
-            "time": "2016-12-13 15:36:07"
+            "time": "2016-12-13T15:36:07+00:00"
         },
         {
             "name": "platform/installer",
@@ -3884,7 +3885,7 @@
                 "source": "https://github.com/cartalyst/platform-installer/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-installer/issues"
             },
-            "time": "2017-02-01 20:46:36"
+            "time": "2017-02-01T20:46:36+00:00"
         },
         {
             "name": "platform/media",
@@ -3957,7 +3958,7 @@
                 "source": "https://github.com/cartalyst/platform-media/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-media/issues"
             },
-            "time": "2017-01-30 13:48:34"
+            "time": "2017-01-30T13:48:34+00:00"
         },
         {
             "name": "platform/menus",
@@ -4022,7 +4023,7 @@
                 "source": "https://github.com/cartalyst/platform-menus/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-menus/issues"
             },
-            "time": "2017-01-30 17:09:08"
+            "time": "2017-01-30T17:09:08+00:00"
         },
         {
             "name": "platform/operations",
@@ -4030,12 +4031,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-operations.git",
-                "reference": "762e208f24e3256d36341140f5c6031e5fd40874"
+                "reference": "22507cc4a32a09e7a0c4babce85672f606bc6922"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/762e208f24e3256d36341140f5c6031e5fd40874",
-                "reference": "762e208f24e3256d36341140f5c6031e5fd40874",
+                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/22507cc4a32a09e7a0c4babce85672f606bc6922",
+                "reference": "22507cc4a32a09e7a0c4babce85672f606bc6922",
                 "shasum": ""
             },
             "require": {
@@ -4082,7 +4083,7 @@
                 "source": "https://github.com/cartalyst/platform-operations/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-operations/issues"
             },
-            "time": "2017-02-15 10:59:56"
+            "time": "2017-02-16T18:33:53+00:00"
         },
         {
             "name": "platform/pages",
@@ -4150,7 +4151,7 @@
                 "source": "https://github.com/cartalyst/platform-pages/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2017-01-28 14:39:00"
+            "time": "2017-01-28T14:39:00+00:00"
         },
         {
             "name": "platform/permissions",
@@ -4212,7 +4213,7 @@
                 "source": "https://github.com/cartalyst/platform-permissions/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-permissions/issues"
             },
-            "time": "2016-12-07 14:18:37"
+            "time": "2016-12-07T14:18:37+00:00"
         },
         {
             "name": "platform/roles",
@@ -4277,7 +4278,7 @@
                 "source": "https://github.com/cartalyst/platform-roles/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-roles/issues"
             },
-            "time": "2016-12-16 12:23:55"
+            "time": "2016-12-16T12:23:55+00:00"
         },
         {
             "name": "platform/settings",
@@ -4341,7 +4342,7 @@
                 "source": "https://github.com/cartalyst/platform-settings/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-settings/issues"
             },
-            "time": "2016-12-09 16:13:21"
+            "time": "2016-12-09T16:13:21+00:00"
         },
         {
             "name": "platform/tags",
@@ -4406,7 +4407,7 @@
                 "source": "https://github.com/cartalyst/platform-tags/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-tags/issues"
             },
-            "time": "2017-01-30 15:20:32"
+            "time": "2017-01-30T15:20:32+00:00"
         },
         {
             "name": "platform/themes",
@@ -4465,7 +4466,7 @@
                 "source": "https://github.com/cartalyst/platform-themes/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-themes/issues"
             },
-            "time": "2017-01-28 14:33:48"
+            "time": "2017-01-28T14:33:48+00:00"
         },
         {
             "name": "platform/users",
@@ -4535,7 +4536,7 @@
                 "source": "https://github.com/cartalyst/platform-users/tree/feature/six",
                 "issues": "https://github.com/cartalyst/platform-users/issues"
             },
-            "time": "2017-01-30 15:03:04"
+            "time": "2017-01-30T15:03:04+00:00"
         },
         {
             "name": "psr/http-message",
@@ -5060,7 +5061,7 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v3.2.3",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
@@ -5120,7 +5121,7 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v3.2.3",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
@@ -7696,16 +7697,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.2.3",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "e1718c6bf57e1efbb8793ada951584b2ab27775b"
+                "reference": "9724c684646fcb5387d579b4bfaa63ee0b0c64c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/e1718c6bf57e1efbb8793ada951584b2ab27775b",
-                "reference": "e1718c6bf57e1efbb8793ada951584b2ab27775b",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/9724c684646fcb5387d579b4bfaa63ee0b0c64c8",
+                "reference": "9724c684646fcb5387d579b4bfaa63ee0b0c64c8",
                 "shasum": ""
             },
             "require": {
@@ -7747,7 +7748,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-01-21T17:06:35+00:00"
+            "time": "2017-02-16T22:46:52+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -7826,6 +7827,7 @@
         "platform/settings": 20,
         "platform/themes": 20,
         "platform/users": 20,
+        "cartalyst/extensions": 20,
         "cartalyst/composer-installers": 20
     },
     "prefer-stable": true,
