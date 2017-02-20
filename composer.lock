@@ -1405,32 +1405,32 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/themes.git",
-                "reference": "7ee5d0475ae3c74b88b562974636845411ea2d95"
+                "reference": "262e5b0b4fdc0f11364bcd67d2ff6ae13b44fd61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/themes/zipball/7ee5d0475ae3c74b88b562974636845411ea2d95",
-                "reference": "7ee5d0475ae3c74b88b562974636845411ea2d95",
+                "url": "https://api.github.com/repos/cartalyst/themes/zipball/262e5b0b4fdc0f11364bcd67d2ff6ae13b44fd61",
+                "reference": "262e5b0b4fdc0f11364bcd67d2ff6ae13b44fd61",
                 "shasum": ""
             },
             "require": {
-                "cartalyst/dependencies": "^1.0",
-                "cartalyst/resource-watcher": "^1.1",
-                "cartalyst/support": "^1.2",
-                "illuminate/filesystem": "^5.3",
-                "illuminate/support": "^5.3",
-                "illuminate/view": "^5.3",
-                "kherge/json": "^1.0",
-                "kriswallsmith/assetic": "^1.2",
+                "cartalyst/dependencies": "~1",
+                "cartalyst/resource-watcher": "1.1.*",
+                "cartalyst/support": "~1.1",
+                "illuminate/filesystem": "~5.0",
+                "illuminate/support": "~5.0",
+                "illuminate/view": "~5.0",
+                "kherge/json": "1.0.*",
+                "kriswallsmith/assetic": "~1.2",
                 "php": ">=5.6.4",
-                "symfony/filesystem": "^3.0"
+                "symfony/filesystem": "~3.0"
             },
             "require-dev": {
-                "illuminate/events": "^5.3",
-                "illuminate/routing": "^5.3",
-                "illuminate/view": "^5.3",
-                "mockery/mockery": "^0.9",
-                "phpunit/phpunit": "^5.0"
+                "illuminate/events": "~5.0",
+                "illuminate/routing": "~5.0",
+                "illuminate/view": "~5.0",
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.8"
             },
             "suggest": {
                 "cartalyst/assetic-filters": "CoffeeScript & SASS PHP compiler.",
@@ -1473,7 +1473,7 @@
                 "source": "https://github.com/cartalyst/themes/tree/feature/4.0",
                 "issues": "https://github.com/cartalyst/themes/issues"
             },
-            "time": "2017-02-16 18:51:17"
+            "time": "2017-02-20 07:07:30"
         },
         {
             "name": "cartalyst/widgets",
