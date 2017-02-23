@@ -622,20 +622,21 @@
         },
         {
             "name": "cartalyst/extensions",
-            "version": "v3.0.1",
+            "version": "v3.0.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/extensions.git",
-                "reference": "d9400be28e8e595aa1de1204fdd6fdc60289d2d9"
+                "reference": "18a03f51ece1016b019263f8426562201a63d611"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/extensions/zipball/d9400be28e8e595aa1de1204fdd6fdc60289d2d9",
-                "reference": "d9400be28e8e595aa1de1204fdd6fdc60289d2d9",
+                "url": "https://api.github.com/repos/cartalyst/extensions/zipball/18a03f51ece1016b019263f8426562201a63d611",
+                "reference": "18a03f51ece1016b019263f8426562201a63d611",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/dependencies": "^1.0",
+                "cartalyst/support": "^2.0",
                 "illuminate/cache": "^5.0",
                 "illuminate/database": "^5.0",
                 "illuminate/events": "^5.0",
@@ -684,10 +685,10 @@
                 "php"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/extensions/tree/v3.0.1",
+                "source": "https://github.com/cartalyst/extensions/tree/v3.0.2",
                 "issues": "https://github.com/cartalyst/extensions/issues"
             },
-            "time": "2017-02-19T16:46:11+00:00"
+            "time": "2017-02-23T12:14:12+00:00"
         },
         {
             "name": "cartalyst/filesystem",
@@ -1266,16 +1267,16 @@
         },
         {
             "name": "cartalyst/support",
-            "version": "v2.0.0",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cartalyst/support.git",
-                "reference": "a141ca403b9f369affdce93f91b9de72b9bc5132"
+                "reference": "c32a7ebcf8dc8ebd6926e0059b3b3e23360e5abb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/support/zipball/a141ca403b9f369affdce93f91b9de72b9bc5132",
-                "reference": "a141ca403b9f369affdce93f91b9de72b9bc5132",
+                "url": "https://api.github.com/repos/cartalyst/support/zipball/c32a7ebcf8dc8ebd6926e0059b3b3e23360e5abb",
+                "reference": "c32a7ebcf8dc8ebd6926e0059b3b3e23360e5abb",
                 "shasum": ""
             },
             "require": {
@@ -1318,10 +1319,10 @@
                 "support"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/support/tree/master",
+                "source": "https://github.com/cartalyst/support/tree/v2.0.1",
                 "issues": "https://github.com/cartalyst/support/issues"
             },
-            "time": "2017-02-23T09:45:20+00:00"
+            "time": "2017-02-23T12:05:30+00:00"
         },
         {
             "name": "cartalyst/tags",
@@ -1465,16 +1466,16 @@
         },
         {
             "name": "cartalyst/widgets",
-            "version": "v2.0.0",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/widgets.git",
-                "reference": "ec9519356c39a7c8d639b5d3521017a7a0947062"
+                "reference": "80f6cbfc1f2dcd18c5665bee89fe20d00fba14aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/widgets/zipball/ec9519356c39a7c8d639b5d3521017a7a0947062",
-                "reference": "ec9519356c39a7c8d639b5d3521017a7a0947062",
+                "url": "https://api.github.com/repos/cartalyst/widgets/zipball/80f6cbfc1f2dcd18c5665bee89fe20d00fba14aa",
+                "reference": "80f6cbfc1f2dcd18c5665bee89fe20d00fba14aa",
                 "shasum": ""
             },
             "require": {
@@ -1516,10 +1517,10 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/widgets/tree/v2.0.0",
+                "source": "https://github.com/cartalyst/widgets/tree/v2.0.1",
                 "issues": "https://github.com/cartalyst/widgets/issues"
             },
-            "time": "2017-02-03T15:30:58+00:00"
+            "time": "2017-02-23T12:10:22+00:00"
         },
         {
             "name": "cartalyst/workshop",
@@ -1527,12 +1528,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/workshop.git",
-                "reference": "e17ede34aefa3c2dce1f8f4f0a5ba2b0f9c291be"
+                "reference": "da4f6e9b4a7221964aa4a9af1422dc04d283600f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/workshop/zipball/e17ede34aefa3c2dce1f8f4f0a5ba2b0f9c291be",
-                "reference": "e17ede34aefa3c2dce1f8f4f0a5ba2b0f9c291be",
+                "url": "https://api.github.com/repos/cartalyst/workshop/zipball/da4f6e9b4a7221964aa4a9af1422dc04d283600f",
+                "reference": "da4f6e9b4a7221964aa4a9af1422dc04d283600f",
                 "shasum": ""
             },
             "require": {
@@ -1583,7 +1584,7 @@
                 "source": "https://github.com/cartalyst/workshop/tree/master",
                 "issues": "https://github.com/cartalyst/workshop/issues"
             },
-            "time": "2017-02-17 19:54:06"
+            "time": "2017-02-23 12:44:02"
         },
         {
             "name": "classpreloader/classpreloader",
