@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "77686e6c902bfcb4e72cc4b990437873",
+    "content-hash": "52f56c0a4d707f0d0919ff34d96ddfce",
     "packages": [
         {
             "name": "cartalyst/alerts",
@@ -3444,24 +3444,24 @@
         },
         {
             "name": "platform/access",
-            "version": "dev-feature/six",
+            "version": "v5.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-access.git",
-                "reference": "00b112d8cd89bcaf4f31f9640a26a745185f7e82"
+                "reference": "779c1149e526936c2bc3d1acb4f5df5e00073956"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-access/zipball/00b112d8cd89bcaf4f31f9640a26a745185f7e82",
-                "reference": "00b112d8cd89bcaf4f31f9640a26a745185f7e82",
+                "url": "https://api.github.com/repos/cartalyst/platform-access/zipball/779c1149e526936c2bc3d1acb4f5df5e00073956",
+                "reference": "779c1149e526936c2bc3d1acb4f5df5e00073956",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/alerts": "2.0.*",
                 "cartalyst/composer-installers": "^2.0",
                 "php": ">=5.6.4",
-                "platform/foundation": "dev-feature/six@dev",
-                "platform/permissions": "dev-feature/six@dev"
+                "platform/foundation": "~5.0",
+                "platform/permissions": "~5.0"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
@@ -3500,34 +3500,34 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-access/tree/feature/six",
+                "source": "https://github.com/cartalyst/platform-access/tree/v5.0.0",
                 "issues": "https://github.com/cartalyst/platform-access/issues"
             },
-            "time": "2017-02-24T16:03:40+00:00"
+            "time": "2017-02-24T19:58:46+00:00"
         },
         {
             "name": "platform/admin-default",
-            "version": "dev-feature/six",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/theme-default-admin.git",
-                "reference": "03c7d2f550e4c1ea3bb66dd4f627a5d432f94d6b"
+                "reference": "a38ab04806c8ca058568e7f5ed4fd8d2b4f43506"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/theme-default-admin/zipball/03c7d2f550e4c1ea3bb66dd4f627a5d432f94d6b",
-                "reference": "03c7d2f550e4c1ea3bb66dd4f627a5d432f94d6b",
+                "url": "https://api.github.com/repos/cartalyst/theme-default-admin/zipball/a38ab04806c8ca058568e7f5ed4fd8d2b4f43506",
+                "reference": "a38ab04806c8ca058568e7f5ed4fd8d2b4f43506",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "^2.0",
-                "php": ">=5.4.0"
+                "php": ">=5.6.4"
             },
             "type": "platform-theme",
             "extra": {
                 "component": "theme",
                 "branch-alias": {
-                    "dev-master": "3.0.x-dev"
+                    "dev-master": "4.0.x-dev"
                 }
             },
             "license": [
@@ -3548,23 +3548,23 @@
                 "theme"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/theme-default-admin/tree/feature/seven",
+                "source": "https://github.com/cartalyst/theme-default-admin/tree/v4.0.0",
                 "issues": "https://github.com/cartalyst/theme-default-admin/issues"
             },
-            "time": "2017-02-19T17:23:08+00:00"
+            "time": "2017-02-24T19:16:26+00:00"
         },
         {
             "name": "platform/attributes",
-            "version": "dev-feature/six",
+            "version": "v5.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-attributes.git",
-                "reference": "58094eeb4d3662d9aaaa8f51127b0a8ccabad6d7"
+                "reference": "94d3a175b993a575e7b01beb0576977f3a5d310e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-attributes/zipball/58094eeb4d3662d9aaaa8f51127b0a8ccabad6d7",
-                "reference": "58094eeb4d3662d9aaaa8f51127b0a8ccabad6d7",
+                "url": "https://api.github.com/repos/cartalyst/platform-attributes/zipball/94d3a175b993a575e7b01beb0576977f3a5d310e",
+                "reference": "94d3a175b993a575e7b01beb0576977f3a5d310e",
                 "shasum": ""
             },
             "require": {
@@ -3572,8 +3572,8 @@
                 "cartalyst/composer-installers": "^2.0",
                 "cartalyst/support": "~2.0",
                 "php": ">=5.6.4",
-                "platform/access": "dev-feature/six@dev",
-                "platform/foundation": "dev-feature/six@dev"
+                "platform/access": "~5.0",
+                "platform/foundation": "~5.0"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
@@ -3612,23 +3612,23 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-attributes/tree/feature/six",
+                "source": "https://github.com/cartalyst/platform-attributes/tree/v5.0.0",
                 "issues": "https://github.com/cartalyst/platform-attributes/issues"
             },
-            "time": "2017-02-24T16:21:51+00:00"
+            "time": "2017-02-24T20:00:51+00:00"
         },
         {
             "name": "platform/content",
-            "version": "dev-feature/six",
+            "version": "v5.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-content.git",
-                "reference": "ec409866724742c55d27f9d7eec2458964c77642"
+                "reference": "bf2f8756b3bb9a22c8bb05740624518f3a7f2829"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/ec409866724742c55d27f9d7eec2458964c77642",
-                "reference": "ec409866724742c55d27f9d7eec2458964c77642",
+                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/bf2f8756b3bb9a22c8bb05740624518f3a7f2829",
+                "reference": "bf2f8756b3bb9a22c8bb05740624518f3a7f2829",
                 "shasum": ""
             },
             "require": {
@@ -3636,17 +3636,17 @@
                 "cartalyst/interpret": "1.1.*",
                 "cartalyst/support": "~2.0",
                 "php": ">=5.6.4",
-                "platform/access": "dev-feature/six@dev",
-                "platform/attributes": "dev-feature/six@dev",
-                "platform/foundation": "dev-feature/six@dev",
-                "platform/tags": "dev-feature/six@dev"
+                "platform/access": "~5.0",
+                "platform/attributes": "~5.0",
+                "platform/foundation": "~5.0",
+                "platform/tags": "~5.0"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
                 "cartalyst/widgets": "~2.0",
                 "laravel/framework": "~5.3",
                 "patchwork/utf8": "~1.1",
-                "platform/media": "dev-feature/six@dev"
+                "platform/media": "~5.0"
             },
             "type": "platform-extension",
             "extra": {
@@ -3683,30 +3683,30 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-content/tree/feature/six",
+                "source": "https://github.com/cartalyst/platform-content/tree/v5.0.0",
                 "issues": "https://github.com/cartalyst/platform-content/issues"
             },
-            "time": "2017-02-24T16:27:23+00:00"
+            "time": "2017-02-24T20:02:30+00:00"
         },
         {
             "name": "platform/dashboard",
-            "version": "dev-feature/six",
+            "version": "v5.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-dashboard.git",
-                "reference": "e36017f60821c35fc460f253914e148bf27e1f47"
+                "reference": "ac5f13756488256a21410a6ace53157d481e4db7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-dashboard/zipball/e36017f60821c35fc460f253914e148bf27e1f47",
-                "reference": "e36017f60821c35fc460f253914e148bf27e1f47",
+                "url": "https://api.github.com/repos/cartalyst/platform-dashboard/zipball/ac5f13756488256a21410a6ace53157d481e4db7",
+                "reference": "ac5f13756488256a21410a6ace53157d481e4db7",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "^2.0",
                 "php": ">=5.6.4",
-                "platform/access": "dev-feature/six@dev",
-                "platform/foundation": "dev-feature/six@dev"
+                "platform/access": "~5.0",
+                "platform/foundation": "~5.0"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev"
@@ -3746,23 +3746,23 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-dashboard/tree/feature/six",
+                "source": "https://github.com/cartalyst/platform-dashboard/tree/v5.0.0",
                 "issues": "https://github.com/cartalyst/platform-dashboard/issues"
             },
-            "time": "2017-02-24T16:25:17+00:00"
+            "time": "2017-02-24T20:04:38+00:00"
         },
         {
             "name": "platform/foundation",
-            "version": "dev-feature/six",
+            "version": "v5.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-foundation.git",
-                "reference": "8de70375cca324053eec682b6f862769693823f4"
+                "reference": "e6f6fdfaff6431544f8f97352df2a0f057723d44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/8de70375cca324053eec682b6f862769693823f4",
-                "reference": "8de70375cca324053eec682b6f862769693823f4",
+                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/e6f6fdfaff6431544f8f97352df2a0f057723d44",
+                "reference": "e6f6fdfaff6431544f8f97352df2a0f057723d44",
                 "shasum": ""
             },
             "require": {
@@ -3825,23 +3825,23 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-foundation/tree/feature/six",
+                "source": "https://github.com/cartalyst/platform-foundation/tree/v5.0.0",
                 "issues": "https://github.com/cartalyst/platform-foundation/issues"
             },
-            "time": "2017-02-24T16:13:47+00:00"
+            "time": "2017-02-24T19:26:59+00:00"
         },
         {
             "name": "platform/frontend-default",
-            "version": "dev-feature/six",
+            "version": "v3.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/theme-default-frontend.git",
-                "reference": "889d0d8528f5618033ada0e0189e07f988f521eb"
+                "reference": "6e004c70f50ad176cf62f1e9ff40ab6581812fda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/theme-default-frontend/zipball/889d0d8528f5618033ada0e0189e07f988f521eb",
-                "reference": "889d0d8528f5618033ada0e0189e07f988f521eb",
+                "url": "https://api.github.com/repos/cartalyst/theme-default-frontend/zipball/6e004c70f50ad176cf62f1e9ff40ab6581812fda",
+                "reference": "6e004c70f50ad176cf62f1e9ff40ab6581812fda",
                 "shasum": ""
             },
             "require": {
@@ -3882,28 +3882,28 @@
                 "theme"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/theme-default-frontend/tree/feature/seven",
+                "source": "https://github.com/cartalyst/theme-default-frontend/tree/v3.0.0",
                 "issues": "https://github.com/cartalyst/theme-default-frontend/issues"
             },
-            "time": "2017-02-19T17:23:23+00:00"
+            "time": "2017-02-24T19:22:25+00:00"
         },
         {
             "name": "platform/installer",
-            "version": "dev-feature/six",
+            "version": "v5.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-installer.git",
-                "reference": "35c658e4446a5a17be203548dbe57451588f7cb7"
+                "reference": "d8234b33bbe30bf18601f54e732d08c741cf84b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-installer/zipball/35c658e4446a5a17be203548dbe57451588f7cb7",
-                "reference": "35c658e4446a5a17be203548dbe57451588f7cb7",
+                "url": "https://api.github.com/repos/cartalyst/platform-installer/zipball/d8234b33bbe30bf18601f54e732d08c741cf84b1",
+                "reference": "d8234b33bbe30bf18601f54e732d08c741cf84b1",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.6.4",
-                "platform/foundation": "dev-feature/six@dev"
+                "platform/foundation": "~5.0"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
@@ -3945,35 +3945,35 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-installer/tree/feature/six",
+                "source": "https://github.com/cartalyst/platform-installer/tree/v5.0.0",
                 "issues": "https://github.com/cartalyst/platform-installer/issues"
             },
-            "time": "2017-02-24T15:35:42+00:00"
+            "time": "2017-02-24T20:49:36+00:00"
         },
         {
             "name": "platform/media",
-            "version": "dev-feature/six",
+            "version": "v5.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-media.git",
-                "reference": "99f0999e38aad2d3074bd882c90299dcd4069989"
+                "reference": "188696d6797500c16ff96afdeacdc28d5bdcc623"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/99f0999e38aad2d3074bd882c90299dcd4069989",
-                "reference": "99f0999e38aad2d3074bd882c90299dcd4069989",
+                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/188696d6797500c16ff96afdeacdc28d5bdcc623",
+                "reference": "188696d6797500c16ff96afdeacdc28d5bdcc623",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "^2.0",
-                "cartalyst/filesystem": "3.0.*@dev",
+                "cartalyst/filesystem": "3.0.*",
                 "cartalyst/support": "~2.0",
                 "intervention/image": "~2.3",
                 "intervention/imagecache": "~2.3",
                 "php": ">=5.6.4",
-                "platform/access": "dev-feature/six@dev",
-                "platform/foundation": "dev-feature/six@dev",
-                "platform/tags": "dev-feature/six@dev"
+                "platform/access": "~5.0",
+                "platform/foundation": "~5.0",
+                "platform/tags": "~5.0"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
@@ -4019,36 +4019,36 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-media/tree/feature/six",
+                "source": "https://github.com/cartalyst/platform-media/tree/v5.0.0",
                 "issues": "https://github.com/cartalyst/platform-media/issues"
             },
-            "time": "2017-02-24T16:31:55+00:00"
+            "time": "2017-02-24T20:08:01+00:00"
         },
         {
             "name": "platform/menus",
-            "version": "dev-feature/six",
+            "version": "v5.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-menus.git",
-                "reference": "dd78815292463d6c4a70526966bc9f074fbb5057"
+                "reference": "5088cda02877857b9b4c151fe56206eab34417e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/dd78815292463d6c4a70526966bc9f074fbb5057",
-                "reference": "dd78815292463d6c4a70526966bc9f074fbb5057",
+                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/5088cda02877857b9b4c151fe56206eab34417e8",
+                "reference": "5088cda02877857b9b4c151fe56206eab34417e8",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "^2.0",
                 "cartalyst/nested-sets": "^3.0",
                 "php": ">=5.6.4",
-                "platform/access": "dev-feature/six@dev",
-                "platform/foundation": "dev-feature/six@dev"
+                "platform/access": "~5.0",
+                "platform/foundation": "~5.0"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
                 "laravel/framework": "~5.3",
-                "platform/pages": "dev-feature/six@dev"
+                "platform/pages": "~5.0"
             },
             "type": "platform-extension",
             "extra": {
@@ -4085,23 +4085,23 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-menus/tree/feature/six",
+                "source": "https://github.com/cartalyst/platform-menus/tree/5.0",
                 "issues": "https://github.com/cartalyst/platform-menus/issues"
             },
-            "time": "2017-02-24T16:46:26+00:00"
+            "time": "2017-02-24T20:11:55+00:00"
         },
         {
             "name": "platform/operations",
-            "version": "dev-feature/six",
+            "version": "v5.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-operations.git",
-                "reference": "d1863a23dfe49aed45a6d9f02bc3d50b3faec228"
+                "reference": "b868cbe1c615804d568b0f328045d8ec2aad2a00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/d1863a23dfe49aed45a6d9f02bc3d50b3faec228",
-                "reference": "d1863a23dfe49aed45a6d9f02bc3d50b3faec228",
+                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/b868cbe1c615804d568b0f328045d8ec2aad2a00",
+                "reference": "b868cbe1c615804d568b0f328045d8ec2aad2a00",
                 "shasum": ""
             },
             "require": {
@@ -4109,8 +4109,8 @@
                 "cartalyst/workshop": "^3.0",
                 "laravelcollective/html": "^5.3",
                 "php": ">=5.6.4",
-                "platform/access": "dev-feature/six@dev",
-                "platform/foundation": "dev-feature/six@dev"
+                "platform/access": "~5.0",
+                "platform/foundation": "~5.0"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
@@ -4146,38 +4146,38 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-operations/tree/feature/six",
+                "source": "https://github.com/cartalyst/platform-operations/tree/v5.0.0",
                 "issues": "https://github.com/cartalyst/platform-operations/issues"
             },
-            "time": "2017-02-24T16:36:47+00:00"
+            "time": "2017-02-24T20:16:13+00:00"
         },
         {
             "name": "platform/pages",
-            "version": "dev-feature/six",
+            "version": "v5.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-pages.git",
-                "reference": "5ab88f9bb54a894c531732628de7b01962878dda"
+                "reference": "8f274c3d79dd4a332da51abd6cc7df0ec169864f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/5ab88f9bb54a894c531732628de7b01962878dda",
-                "reference": "5ab88f9bb54a894c531732628de7b01962878dda",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/8f274c3d79dd4a332da51abd6cc7df0ec169864f",
+                "reference": "8f274c3d79dd4a332da51abd6cc7df0ec169864f",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "^2.0",
                 "php": ">=5.6.4",
-                "platform/access": "dev-feature/six@dev",
-                "platform/content": "dev-feature/six@dev",
-                "platform/foundation": "dev-feature/six@dev"
+                "platform/access": "~5.0",
+                "platform/content": "~5.0",
+                "platform/foundation": "~5.0"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
                 "laravel/framework": "~5.3",
                 "patchwork/utf8": "~1.1",
-                "platform/menus": "dev-feature/six@dev",
-                "platform/users": "dev-feature/six@dev"
+                "platform/menus": "~5.0",
+                "platform/users": "~5.0"
             },
             "type": "platform-extension",
             "extra": {
@@ -4214,30 +4214,30 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-pages/tree/feature/six",
+                "source": "https://github.com/cartalyst/platform-pages/tree/v5.0.0",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2017-02-24T18:03:07+00:00"
+            "time": "2017-02-24T20:19:13+00:00"
         },
         {
             "name": "platform/permissions",
-            "version": "dev-feature/six",
+            "version": "v5.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-permissions.git",
-                "reference": "747b641d152835dfd67cb7cb188ca5a7f17719f5"
+                "reference": "c0cbdd4317083ad78bfd1c73940e9073fbd91a8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-permissions/zipball/747b641d152835dfd67cb7cb188ca5a7f17719f5",
-                "reference": "747b641d152835dfd67cb7cb188ca5a7f17719f5",
+                "url": "https://api.github.com/repos/cartalyst/platform-permissions/zipball/c0cbdd4317083ad78bfd1c73940e9073fbd91a8d",
+                "reference": "c0cbdd4317083ad78bfd1c73940e9073fbd91a8d",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "^2.0",
                 "cartalyst/permissions": "1.0.*",
                 "php": ">=5.6.4",
-                "platform/foundation": "dev-feature/six@dev"
+                "platform/foundation": "~5.0"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev"
@@ -4276,37 +4276,37 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-permissions/tree/feature/six",
+                "source": "https://github.com/cartalyst/platform-permissions/tree/5.0",
                 "issues": "https://github.com/cartalyst/platform-permissions/issues"
             },
-            "time": "2017-02-24T17:07:06+00:00"
+            "time": "2017-02-24T20:23:23+00:00"
         },
         {
             "name": "platform/roles",
-            "version": "dev-feature/six",
+            "version": "v5.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-roles.git",
-                "reference": "45a27633a9430d7e228755ca2133dba32d872210"
+                "reference": "0126e038f2e74885fa1a956455b63b30e60e1361"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-roles/zipball/45a27633a9430d7e228755ca2133dba32d872210",
-                "reference": "45a27633a9430d7e228755ca2133dba32d872210",
+                "url": "https://api.github.com/repos/cartalyst/platform-roles/zipball/0126e038f2e74885fa1a956455b63b30e60e1361",
+                "reference": "0126e038f2e74885fa1a956455b63b30e60e1361",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "^2.0",
                 "php": ">=5.6.4",
-                "platform/access": "dev-feature/six@dev",
-                "platform/attributes": "dev-feature/six@dev",
-                "platform/foundation": "dev-feature/six@dev"
+                "platform/access": "~5.0",
+                "platform/attributes": "~5.0",
+                "platform/foundation": "~5.0"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
                 "illuminate/support": "5.3.*",
                 "laravel/framework": "~5.3",
-                "platform/users": "dev-feature/six@dev"
+                "platform/users": "~5.0"
             },
             "type": "platform-extension",
             "extra": {
@@ -4343,31 +4343,31 @@
                 "roles"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-roles/tree/feature/six",
+                "source": "https://github.com/cartalyst/platform-roles/tree/v5.0.0",
                 "issues": "https://github.com/cartalyst/platform-roles/issues"
             },
-            "time": "2017-02-24T17:16:47+00:00"
+            "time": "2017-02-24T20:27:45+00:00"
         },
         {
             "name": "platform/settings",
-            "version": "dev-feature/six",
+            "version": "v5.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-settings.git",
-                "reference": "f6b81bd9ac1587264c1c112a3bdbb54dab938537"
+                "reference": "98538505caa68c78d8839efaf2811ce652c86ddd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-settings/zipball/f6b81bd9ac1587264c1c112a3bdbb54dab938537",
-                "reference": "f6b81bd9ac1587264c1c112a3bdbb54dab938537",
+                "url": "https://api.github.com/repos/cartalyst/platform-settings/zipball/98538505caa68c78d8839efaf2811ce652c86ddd",
+                "reference": "98538505caa68c78d8839efaf2811ce652c86ddd",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "^2.0",
                 "cartalyst/composite-config": "2.0.*",
                 "php": ">=5.6.4",
-                "platform/access": "dev-feature/six@dev",
-                "platform/foundation": "dev-feature/six@dev"
+                "platform/access": "~5.0",
+                "platform/foundation": "~5.0"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
@@ -4408,31 +4408,31 @@
                 "settings"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-settings/tree/feature/six",
+                "source": "https://github.com/cartalyst/platform-settings/tree/v5.0.0",
                 "issues": "https://github.com/cartalyst/platform-settings/issues"
             },
-            "time": "2017-02-24T17:21:38+00:00"
+            "time": "2017-02-24T20:30:43+00:00"
         },
         {
             "name": "platform/tags",
-            "version": "dev-feature/six",
+            "version": "v5.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-tags.git",
-                "reference": "355660bff90cceb675bb637181609b825ca041fa"
+                "reference": "e075b914a136fae1a7cb332e1dba3553add943c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-tags/zipball/355660bff90cceb675bb637181609b825ca041fa",
-                "reference": "355660bff90cceb675bb637181609b825ca041fa",
+                "url": "https://api.github.com/repos/cartalyst/platform-tags/zipball/e075b914a136fae1a7cb332e1dba3553add943c0",
+                "reference": "e075b914a136fae1a7cb332e1dba3553add943c0",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "^2.0",
                 "cartalyst/tags": "^3.0",
                 "php": ">=5.6.4",
-                "platform/access": "dev-feature/six@dev",
-                "platform/foundation": "dev-feature/six@dev"
+                "platform/access": "~5.0",
+                "platform/foundation": "~5.0"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
@@ -4474,30 +4474,30 @@
                 "tags"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-tags/tree/feature/six",
+                "source": "https://github.com/cartalyst/platform-tags/tree/v5.0.0",
                 "issues": "https://github.com/cartalyst/platform-tags/issues"
             },
-            "time": "2017-02-24T17:27:51+00:00"
+            "time": "2017-02-24T20:33:31+00:00"
         },
         {
             "name": "platform/themes",
-            "version": "dev-feature/six",
+            "version": "v5.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-themes.git",
-                "reference": "062b883be5ca470b261f63c0a7ea22adea66d5c4"
+                "reference": "d1401fceef1386060f7cc433ad288f0c0cdaad59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-themes/zipball/062b883be5ca470b261f63c0a7ea22adea66d5c4",
-                "reference": "062b883be5ca470b261f63c0a7ea22adea66d5c4",
+                "url": "https://api.github.com/repos/cartalyst/platform-themes/zipball/d1401fceef1386060f7cc433ad288f0c0cdaad59",
+                "reference": "d1401fceef1386060f7cc433ad288f0c0cdaad59",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "^2.0",
                 "cartalyst/themes": "^4.0",
                 "php": ">=5.6.4",
-                "platform/foundation": "dev-feature/six"
+                "platform/foundation": "~5.0"
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev"
@@ -4533,23 +4533,23 @@
                 "themes"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-themes/tree/feature/six",
+                "source": "https://github.com/cartalyst/platform-themes/tree/v5.0.0",
                 "issues": "https://github.com/cartalyst/platform-themes/issues"
             },
-            "time": "2017-02-24T17:19:36+00:00"
+            "time": "2017-02-24T20:37:16+00:00"
         },
         {
             "name": "platform/users",
-            "version": "dev-feature/six",
+            "version": "v5.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-users.git",
-                "reference": "96a0c10926a95d743d6e7dcbae5673b0f542dd63"
+                "reference": "967a1491783fe8d1505fe380724bfe62064af0ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/96a0c10926a95d743d6e7dcbae5673b0f542dd63",
-                "reference": "96a0c10926a95d743d6e7dcbae5673b0f542dd63",
+                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/967a1491783fe8d1505fe380724bfe62064af0ee",
+                "reference": "967a1491783fe8d1505fe380724bfe62064af0ee",
                 "shasum": ""
             },
             "require": {
@@ -4557,9 +4557,9 @@
                 "cartalyst/sentinel-social": "^3.0",
                 "cartalyst/support": "^2.0",
                 "php": ">=5.6.4",
-                "platform/access": "dev-feature/six@dev",
-                "platform/attributes": "dev-feature/six@dev",
-                "platform/foundation": "dev-feature/six@dev"
+                "platform/access": "~5.0",
+                "platform/attributes": "~5.0",
+                "platform/foundation": "~5.0"
             },
             "require-dev": {
                 "cartalyst/testing": "^2.0@dev",
@@ -4604,10 +4604,10 @@
                 "users"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-users/tree/feature/six",
+                "source": "https://github.com/cartalyst/platform-users/tree/v5.0.0",
                 "issues": "https://github.com/cartalyst/platform-users/issues"
             },
-            "time": "2017-02-24T17:28:17+00:00"
+            "time": "2017-02-24T20:39:52+00:00"
         },
         {
             "name": "psr/http-message",
@@ -7874,24 +7874,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "platform/admin-default": 20,
-        "platform/frontend-default": 20,
-        "platform/foundation": 20,
-        "platform/installer": 20,
-        "platform/access": 20,
-        "platform/attributes": 20,
-        "platform/content": 20,
-        "platform/dashboard": 20,
-        "platform/media": 20,
-        "platform/menus": 20,
-        "platform/operations": 20,
-        "platform/pages": 20,
-        "platform/roles": 20,
-        "platform/settings": 20,
-        "platform/themes": 20,
-        "platform/users": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
