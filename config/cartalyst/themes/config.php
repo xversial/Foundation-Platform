@@ -14,7 +14,7 @@
  * @version    4.0.0
  * @author     Cartalyst LLC
  * @license    Cartalyst PSL
- * @copyright  (c) 2011-2016, Cartalyst LLC
+ * @copyright  (c) 2011-2017, Cartalyst LLC
  * @link       http://cartalyst.com
  */
 
@@ -164,12 +164,12 @@ return [
 
         ],
 
-        // 'sass' => [
-        //
-        //     'Cartalyst\AsseticFilters\SassphpFilter',
-        //     'Cartalyst\AsseticFilters\UriRewriteFilter',
-        //
-        // ],
+        'sass' => [
+
+            'Cartalyst\AsseticFilters\SassphpFilter',
+            'Cartalyst\AsseticFilters\UriRewriteFilter',
+
+        ],
 
         'scss' => [
 
@@ -183,13 +183,6 @@ return [
             'Assetic\Filter\JSMinFilter',
 
         ],
-
-        // 'coffee' => [
-        //
-        //     'Cartalyst\AsseticFilters\CoffeeScriptphpFilter',
-        //     'Assetic\Filter\JSMinFilter',
-        //
-        // ],
 
     ],
 
