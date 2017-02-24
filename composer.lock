@@ -4336,12 +4336,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-roles.git",
-                "reference": "82b71d7027d83614f015ffd46274b667b2e44a49"
+                "reference": "73b3cb9253e6fd65e5d4a81336565f6109bc8c96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-roles/zipball/82b71d7027d83614f015ffd46274b667b2e44a49",
-                "reference": "82b71d7027d83614f015ffd46274b667b2e44a49",
+                "url": "https://api.github.com/repos/cartalyst/platform-roles/zipball/73b3cb9253e6fd65e5d4a81336565f6109bc8c96",
+                "reference": "73b3cb9253e6fd65e5d4a81336565f6109bc8c96",
                 "shasum": ""
             },
             "require": {
@@ -4355,7 +4355,7 @@
                 "cartalyst/testing": "~2.0@dev",
                 "illuminate/support": "^5.4",
                 "laravel/framework": "~5.3",
-                "platform/users": "dev-feature/six@dev"
+                "platform/users": "dev-feature/seven@dev"
             },
             "type": "platform-extension",
             "extra": {
@@ -4395,7 +4395,7 @@
                 "source": "https://github.com/cartalyst/platform-roles/tree/feature/seven",
                 "issues": "https://github.com/cartalyst/platform-roles/issues"
             },
-            "time": "2017-02-24T17:16:54+00:00"
+            "time": "2017-02-24T18:34:14+00:00"
         },
         {
             "name": "platform/settings",
