@@ -3497,12 +3497,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-access.git",
-                "reference": "8dbd1c3ef829c954a1ecc631a687602964a99707"
+                "reference": "bf30eec39c4d3570a37beefe5f3c1b07083b03c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-access/zipball/8dbd1c3ef829c954a1ecc631a687602964a99707",
-                "reference": "8dbd1c3ef829c954a1ecc631a687602964a99707",
+                "url": "https://api.github.com/repos/cartalyst/platform-access/zipball/bf30eec39c4d3570a37beefe5f3c1b07083b03c5",
+                "reference": "bf30eec39c4d3570a37beefe5f3c1b07083b03c5",
                 "shasum": ""
             },
             "require": {
@@ -3552,7 +3552,7 @@
                 "source": "https://github.com/cartalyst/platform-access/tree/feature/seven",
                 "issues": "https://github.com/cartalyst/platform-access/issues"
             },
-            "time": "2017-02-19 17:34:55"
+            "time": "2017-02-24T16:03:50+00:00"
         },
         {
             "name": "platform/admin-default",
@@ -3600,7 +3600,7 @@
                 "source": "https://github.com/cartalyst/theme-default-admin/tree/feature/seven",
                 "issues": "https://github.com/cartalyst/theme-default-admin/issues"
             },
-            "time": "2017-02-19 17:23:08"
+            "time": "2017-02-19T17:23:08+00:00"
         },
         {
             "name": "platform/attributes",
@@ -3608,12 +3608,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-attributes.git",
-                "reference": "fc5b73dc95a0a8ae672655595929fbc2a44b5218"
+                "reference": "3da0131d8145715834c29bdf8a7ac196a6135467"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-attributes/zipball/fc5b73dc95a0a8ae672655595929fbc2a44b5218",
-                "reference": "fc5b73dc95a0a8ae672655595929fbc2a44b5218",
+                "url": "https://api.github.com/repos/cartalyst/platform-attributes/zipball/3da0131d8145715834c29bdf8a7ac196a6135467",
+                "reference": "3da0131d8145715834c29bdf8a7ac196a6135467",
                 "shasum": ""
             },
             "require": {
@@ -3625,7 +3625,8 @@
                 "platform/foundation": "dev-feature/seven@dev"
             },
             "require-dev": {
-                "cartalyst/testing": "~2.0@dev"
+                "cartalyst/testing": "~2.0@dev",
+                "laravel/framework": "~5.3"
             },
             "type": "platform-extension",
             "extra": {
@@ -3663,7 +3664,7 @@
                 "source": "https://github.com/cartalyst/platform-attributes/tree/feature/seven",
                 "issues": "https://github.com/cartalyst/platform-attributes/issues"
             },
-            "time": "2017-02-23T10:16:52+00:00"
+            "time": "2017-02-24T16:21:57+00:00"
         },
         {
             "name": "platform/content",
@@ -3671,12 +3672,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-content.git",
-                "reference": "f5ca9d198826c881ce3525e010653079a7f56950"
+                "reference": "a5e7c981c5e97bab571bfe5c848c6cb26e7a429a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/f5ca9d198826c881ce3525e010653079a7f56950",
-                "reference": "f5ca9d198826c881ce3525e010653079a7f56950",
+                "url": "https://api.github.com/repos/cartalyst/platform-content/zipball/a5e7c981c5e97bab571bfe5c848c6cb26e7a429a",
+                "reference": "a5e7c981c5e97bab571bfe5c848c6cb26e7a429a",
                 "shasum": ""
             },
             "require": {
@@ -3691,7 +3692,8 @@
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
-                "cartalyst/widgets": "~1.1",
+                "cartalyst/widgets": "~2.0",
+                "laravel/framework": "~5.3",
                 "patchwork/utf8": "~1.1",
                 "platform/media": "dev-feature/seven@dev"
             },
@@ -3733,7 +3735,7 @@
                 "source": "https://github.com/cartalyst/platform-content/tree/feature/seven",
                 "issues": "https://github.com/cartalyst/platform-content/issues"
             },
-            "time": "2017-02-23T10:17:15+00:00"
+            "time": "2017-02-24T16:28:02+00:00"
         },
         {
             "name": "platform/dashboard",
@@ -3741,12 +3743,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-dashboard.git",
-                "reference": "bd5c8c7e7c54fdd3ffef94f77d6e0241e8f237ae"
+                "reference": "b4583abcdc4381c97649a11a9a505cf8b7d95775"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-dashboard/zipball/bd5c8c7e7c54fdd3ffef94f77d6e0241e8f237ae",
-                "reference": "bd5c8c7e7c54fdd3ffef94f77d6e0241e8f237ae",
+                "url": "https://api.github.com/repos/cartalyst/platform-dashboard/zipball/b4583abcdc4381c97649a11a9a505cf8b7d95775",
+                "reference": "b4583abcdc4381c97649a11a9a505cf8b7d95775",
                 "shasum": ""
             },
             "require": {
@@ -3796,7 +3798,7 @@
                 "source": "https://github.com/cartalyst/platform-dashboard/tree/feature/seven",
                 "issues": "https://github.com/cartalyst/platform-dashboard/issues"
             },
-            "time": "2017-02-19 17:33:36"
+            "time": "2017-02-24T16:25:26+00:00"
         },
         {
             "name": "platform/foundation",
@@ -3804,12 +3806,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-foundation.git",
-                "reference": "42bc57e6ca78c73f5234516288002e248af0aae1"
+                "reference": "496522e126f15dbff38c29a18766faeb8a2f6782"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/42bc57e6ca78c73f5234516288002e248af0aae1",
-                "reference": "42bc57e6ca78c73f5234516288002e248af0aae1",
+                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/496522e126f15dbff38c29a18766faeb8a2f6782",
+                "reference": "496522e126f15dbff38c29a18766faeb8a2f6782",
                 "shasum": ""
             },
             "require": {
@@ -3836,7 +3838,7 @@
                 "illuminate/config": "^5.4",
                 "illuminate/container": "^5.4",
                 "illuminate/http": "^5.4",
-                "symfony/http-kernel": "3.1.*"
+                "symfony/http-kernel": "~3.1"
             },
             "type": "library",
             "extra": {
@@ -3875,7 +3877,7 @@
                 "source": "https://github.com/cartalyst/platform-foundation/tree/feature/seven",
                 "issues": "https://github.com/cartalyst/platform-foundation/issues"
             },
-            "time": "2017-02-24 13:52:59"
+            "time": "2017-02-24T16:14:09+00:00"
         },
         {
             "name": "platform/frontend-default",
@@ -3932,7 +3934,7 @@
                 "source": "https://github.com/cartalyst/theme-default-frontend/tree/feature/seven",
                 "issues": "https://github.com/cartalyst/theme-default-frontend/issues"
             },
-            "time": "2017-02-19 17:23:23"
+            "time": "2017-02-19T17:23:23+00:00"
         },
         {
             "name": "platform/installer",
@@ -3940,12 +3942,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-installer.git",
-                "reference": "0bdb0cb2fef23bd340aacf627489a126b2c4be0a"
+                "reference": "a9f87c3a2be16db3a3b408f3dc2d2d1046a504f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-installer/zipball/0bdb0cb2fef23bd340aacf627489a126b2c4be0a",
-                "reference": "0bdb0cb2fef23bd340aacf627489a126b2c4be0a",
+                "url": "https://api.github.com/repos/cartalyst/platform-installer/zipball/a9f87c3a2be16db3a3b408f3dc2d2d1046a504f2",
+                "reference": "a9f87c3a2be16db3a3b408f3dc2d2d1046a504f2",
                 "shasum": ""
             },
             "require": {
@@ -3995,7 +3997,7 @@
                 "source": "https://github.com/cartalyst/platform-installer/tree/feature/seven",
                 "issues": "https://github.com/cartalyst/platform-installer/issues"
             },
-            "time": "2017-02-01 20:47:04"
+            "time": "2017-02-24T15:40:17+00:00"
         },
         {
             "name": "platform/media",
@@ -4003,12 +4005,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-media.git",
-                "reference": "4b44698b7d19c818beddc4d6b0ce89fb3371029d"
+                "reference": "5a558ff850c4b7d547240698f4cda87ee8a53e58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/4b44698b7d19c818beddc4d6b0ce89fb3371029d",
-                "reference": "4b44698b7d19c818beddc4d6b0ce89fb3371029d",
+                "url": "https://api.github.com/repos/cartalyst/platform-media/zipball/5a558ff850c4b7d547240698f4cda87ee8a53e58",
+                "reference": "5a558ff850c4b7d547240698f4cda87ee8a53e58",
                 "shasum": ""
             },
             "require": {
@@ -4024,6 +4026,7 @@
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
+                "laravel/framework": "~5.3",
                 "patchwork/utf8": "~1.1"
             },
             "type": "platform-extension",
@@ -4068,7 +4071,7 @@
                 "source": "https://github.com/cartalyst/platform-media/tree/feature/seven",
                 "issues": "https://github.com/cartalyst/platform-media/issues"
             },
-            "time": "2017-02-23T10:17:31+00:00"
+            "time": "2017-02-24T16:32:01+00:00"
         },
         {
             "name": "platform/menus",
@@ -4076,12 +4079,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-menus.git",
-                "reference": "c259057fd187919564a4090264aed07bd360049a"
+                "reference": "22defe56705228edc7ba169c74b0c4aa89452664"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/c259057fd187919564a4090264aed07bd360049a",
-                "reference": "c259057fd187919564a4090264aed07bd360049a",
+                "url": "https://api.github.com/repos/cartalyst/platform-menus/zipball/22defe56705228edc7ba169c74b0c4aa89452664",
+                "reference": "22defe56705228edc7ba169c74b0c4aa89452664",
                 "shasum": ""
             },
             "require": {
@@ -4093,6 +4096,7 @@
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
+                "laravel/framework": "~5.3",
                 "platform/pages": "dev-feature/seven@dev"
             },
             "type": "platform-extension",
@@ -4133,7 +4137,7 @@
                 "source": "https://github.com/cartalyst/platform-menus/tree/feature/seven",
                 "issues": "https://github.com/cartalyst/platform-menus/issues"
             },
-            "time": "2017-02-23 10:00:42"
+            "time": "2017-02-24T16:46:31+00:00"
         },
         {
             "name": "platform/operations",
@@ -4141,12 +4145,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-operations.git",
-                "reference": "b9e872aa47db881f4b05ca2ad44d6f6d37be678c"
+                "reference": "10bbb7019bcdb35b011ec467a7a474b83e357ab2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/b9e872aa47db881f4b05ca2ad44d6f6d37be678c",
-                "reference": "b9e872aa47db881f4b05ca2ad44d6f6d37be678c",
+                "url": "https://api.github.com/repos/cartalyst/platform-operations/zipball/10bbb7019bcdb35b011ec467a7a474b83e357ab2",
+                "reference": "10bbb7019bcdb35b011ec467a7a474b83e357ab2",
                 "shasum": ""
             },
             "require": {
@@ -4158,7 +4162,8 @@
                 "platform/foundation": "dev-feature/seven@dev"
             },
             "require-dev": {
-                "cartalyst/testing": "~2.0@dev"
+                "cartalyst/testing": "~2.0@dev",
+                "laravel/framework": "~5.3"
             },
             "type": "platform-extension",
             "extra": {
@@ -4193,7 +4198,7 @@
                 "source": "https://github.com/cartalyst/platform-operations/tree/feature/seven",
                 "issues": "https://github.com/cartalyst/platform-operations/issues"
             },
-            "time": "2017-02-19 17:32:05"
+            "time": "2017-02-24T16:36:56+00:00"
         },
         {
             "name": "platform/pages",
@@ -4201,12 +4206,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-pages.git",
-                "reference": "fe35873cb0c249eed77c2fd8e68140bfaadfb6e0"
+                "reference": "857e5bdfc006c5f2912f1a0fec9a4ccc954e1728"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/fe35873cb0c249eed77c2fd8e68140bfaadfb6e0",
-                "reference": "fe35873cb0c249eed77c2fd8e68140bfaadfb6e0",
+                "url": "https://api.github.com/repos/cartalyst/platform-pages/zipball/857e5bdfc006c5f2912f1a0fec9a4ccc954e1728",
+                "reference": "857e5bdfc006c5f2912f1a0fec9a4ccc954e1728",
                 "shasum": ""
             },
             "require": {
@@ -4218,7 +4223,7 @@
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
-                "illuminate/database": "^5.4",
+                "laravel/framework": "~5.3",
                 "patchwork/utf8": "~1.1",
                 "platform/menus": "dev-feature/seven@dev",
                 "platform/users": "dev-feature/seven@dev"
@@ -4261,7 +4266,7 @@
                 "source": "https://github.com/cartalyst/platform-pages/tree/feature/seven",
                 "issues": "https://github.com/cartalyst/platform-pages/issues"
             },
-            "time": "2017-02-23 10:01:34"
+            "time": "2017-02-24T18:03:16+00:00"
         },
         {
             "name": "platform/permissions",
@@ -4269,12 +4274,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-permissions.git",
-                "reference": "6573d1b44d92020e7075564c7cd96895d80f33ca"
+                "reference": "863b39d38e1a5a8537263af452f98102b8980ac6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-permissions/zipball/6573d1b44d92020e7075564c7cd96895d80f33ca",
-                "reference": "6573d1b44d92020e7075564c7cd96895d80f33ca",
+                "url": "https://api.github.com/repos/cartalyst/platform-permissions/zipball/863b39d38e1a5a8537263af452f98102b8980ac6",
+                "reference": "863b39d38e1a5a8537263af452f98102b8980ac6",
                 "shasum": ""
             },
             "require": {
@@ -4323,7 +4328,7 @@
                 "source": "https://github.com/cartalyst/platform-permissions/tree/feature/seven",
                 "issues": "https://github.com/cartalyst/platform-permissions/issues"
             },
-            "time": "2017-02-19 17:30:51"
+            "time": "2017-02-24T17:07:16+00:00"
         },
         {
             "name": "platform/roles",
@@ -4331,12 +4336,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-roles.git",
-                "reference": "830ce8d6816fdf54be2aa982cff44746b9c4f733"
+                "reference": "82b71d7027d83614f015ffd46274b667b2e44a49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-roles/zipball/830ce8d6816fdf54be2aa982cff44746b9c4f733",
-                "reference": "830ce8d6816fdf54be2aa982cff44746b9c4f733",
+                "url": "https://api.github.com/repos/cartalyst/platform-roles/zipball/82b71d7027d83614f015ffd46274b667b2e44a49",
+                "reference": "82b71d7027d83614f015ffd46274b667b2e44a49",
                 "shasum": ""
             },
             "require": {
@@ -4348,7 +4353,9 @@
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
-                "illuminate/support": "^5.4"
+                "illuminate/support": "^5.4",
+                "laravel/framework": "~5.3",
+                "platform/users": "dev-feature/six@dev"
             },
             "type": "platform-extension",
             "extra": {
@@ -4388,7 +4395,7 @@
                 "source": "https://github.com/cartalyst/platform-roles/tree/feature/seven",
                 "issues": "https://github.com/cartalyst/platform-roles/issues"
             },
-            "time": "2017-02-23 10:01:55"
+            "time": "2017-02-24T17:16:54+00:00"
         },
         {
             "name": "platform/settings",
@@ -4396,12 +4403,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-settings.git",
-                "reference": "85ba78e4a46343f79421a3111322ef10829096fe"
+                "reference": "706d45144b6174377ef947d5e1af41c061bbf34d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-settings/zipball/85ba78e4a46343f79421a3111322ef10829096fe",
-                "reference": "85ba78e4a46343f79421a3111322ef10829096fe",
+                "url": "https://api.github.com/repos/cartalyst/platform-settings/zipball/706d45144b6174377ef947d5e1af41c061bbf34d",
+                "reference": "706d45144b6174377ef947d5e1af41c061bbf34d",
                 "shasum": ""
             },
             "require": {
@@ -4412,7 +4419,8 @@
                 "platform/foundation": "dev-feature/seven@dev"
             },
             "require-dev": {
-                "cartalyst/testing": "~2.0@dev"
+                "cartalyst/testing": "~2.0@dev",
+                "laravel/framework": "^5.3"
             },
             "type": "platform-extension",
             "extra": {
@@ -4452,7 +4460,7 @@
                 "source": "https://github.com/cartalyst/platform-settings/tree/feature/seven",
                 "issues": "https://github.com/cartalyst/platform-settings/issues"
             },
-            "time": "2017-02-19 17:29:44"
+            "time": "2017-02-24T17:21:49+00:00"
         },
         {
             "name": "platform/tags",
@@ -4460,12 +4468,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-tags.git",
-                "reference": "f7a432a16d3b220417e12bf2604563d087824184"
+                "reference": "fedcb51131846b42dc2ebb00c482524a5607c321"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-tags/zipball/f7a432a16d3b220417e12bf2604563d087824184",
-                "reference": "f7a432a16d3b220417e12bf2604563d087824184",
+                "url": "https://api.github.com/repos/cartalyst/platform-tags/zipball/fedcb51131846b42dc2ebb00c482524a5607c321",
+                "reference": "fedcb51131846b42dc2ebb00c482524a5607c321",
                 "shasum": ""
             },
             "require": {
@@ -4477,6 +4485,7 @@
             },
             "require-dev": {
                 "cartalyst/testing": "~2.0@dev",
+                "laravel/framework": "^5.3",
                 "patchwork/utf8": "~1.1"
             },
             "type": "platform-extension",
@@ -4517,7 +4526,7 @@
                 "source": "https://github.com/cartalyst/platform-tags/tree/feature/seven",
                 "issues": "https://github.com/cartalyst/platform-tags/issues"
             },
-            "time": "2017-02-23 10:02:17"
+            "time": "2017-02-24T17:27:56+00:00"
         },
         {
             "name": "platform/themes",
@@ -4525,12 +4534,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-themes.git",
-                "reference": "8f1f215bd589a4c1c80c37c0e1927bb873c45afa"
+                "reference": "5e8368076e336bd91da2ac489d69a4a6553d58c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-themes/zipball/8f1f215bd589a4c1c80c37c0e1927bb873c45afa",
-                "reference": "8f1f215bd589a4c1c80c37c0e1927bb873c45afa",
+                "url": "https://api.github.com/repos/cartalyst/platform-themes/zipball/5e8368076e336bd91da2ac489d69a4a6553d58c0",
+                "reference": "5e8368076e336bd91da2ac489d69a4a6553d58c0",
                 "shasum": ""
             },
             "require": {
@@ -4576,7 +4585,7 @@
                 "source": "https://github.com/cartalyst/platform-themes/tree/feature/seven",
                 "issues": "https://github.com/cartalyst/platform-themes/issues"
             },
-            "time": "2017-02-24 13:53:29"
+            "time": "2017-02-24T17:19:42+00:00"
         },
         {
             "name": "platform/users",
@@ -4584,12 +4593,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-users.git",
-                "reference": "dbebbbc3b1a6835e50a55eea9d56e89551121ed3"
+                "reference": "49979b1fb23e10d36534ca20d91518a80b8e75db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/dbebbbc3b1a6835e50a55eea9d56e89551121ed3",
-                "reference": "dbebbbc3b1a6835e50a55eea9d56e89551121ed3",
+                "url": "https://api.github.com/repos/cartalyst/platform-users/zipball/49979b1fb23e10d36534ca20d91518a80b8e75db",
+                "reference": "49979b1fb23e10d36534ca20d91518a80b8e75db",
                 "shasum": ""
             },
             "require": {
@@ -4603,7 +4612,8 @@
             },
             "require-dev": {
                 "cartalyst/testing": "^2.0@dev",
-                "illuminate/database": "^5.4"
+                "illuminate/database": "^5.4",
+                "laravel/framework": "^5.3"
             },
             "type": "platform-extension",
             "extra": {
@@ -4646,7 +4656,7 @@
                 "source": "https://github.com/cartalyst/platform-users/tree/feature/seven",
                 "issues": "https://github.com/cartalyst/platform-users/issues"
             },
-            "time": "2017-02-23T10:18:05+00:00"
+            "time": "2017-02-24T17:28:25+00:00"
         },
         {
             "name": "psr/http-message",
@@ -6036,16 +6046,16 @@
     "packages-dev": [
         {
             "name": "doctrine/annotations",
-            "version": "v1.3.1",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "bd4461328621bde0ae6b1b2675fbc6aca4ceb558"
+                "reference": "54cacc9b81758b14e3ce750f205a393d52339e97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/bd4461328621bde0ae6b1b2675fbc6aca4ceb558",
-                "reference": "bd4461328621bde0ae6b1b2675fbc6aca4ceb558",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/54cacc9b81758b14e3ce750f205a393d52339e97",
+                "reference": "54cacc9b81758b14e3ce750f205a393d52339e97",
                 "shasum": ""
             },
             "require": {
@@ -6054,7 +6064,7 @@
             },
             "require-dev": {
                 "doctrine/cache": "1.*",
-                "phpunit/phpunit": "^5.6.1"
+                "phpunit/phpunit": "^5.7"
             },
             "type": "library",
             "extra": {
@@ -6100,7 +6110,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2016-12-30T15:59:45+00:00"
+            "time": "2017-02-24T16:22:25+00:00"
         },
         {
             "name": "doctrine/cache",
