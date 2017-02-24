@@ -85,22 +85,22 @@
         },
         {
             "name": "cartalyst/assetic-filters",
-            "version": "v2.0.0",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cartalyst/assetic-filters.git",
-                "reference": "e827a4b560e53fe111c7a0bc2a46f1bba78cc3a1"
+                "reference": "2ea65661b1da10d65eb15559845669e4e2e16a2d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/assetic-filters/zipball/e827a4b560e53fe111c7a0bc2a46f1bba78cc3a1",
-                "reference": "e827a4b560e53fe111c7a0bc2a46f1bba78cc3a1",
+                "url": "https://api.github.com/repos/cartalyst/assetic-filters/zipball/2ea65661b1da10d65eb15559845669e4e2e16a2d",
+                "reference": "2ea65661b1da10d65eb15559845669e4e2e16a2d",
                 "shasum": ""
             },
             "require": {
                 "kriswallsmith/assetic": "^1.2",
                 "php": ">=5.6.4",
-                "richthegeek/phpsass": "~1",
+                "richthegeek/phpsass": "dev-master",
                 "symfony/http-foundation": "^2.5|^3.0"
             },
             "require-dev": {
@@ -140,10 +140,10 @@
                 "themes"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/assetic-filters/tree/v2.0.0",
+                "source": "https://github.com/cartalyst/assetic-filters/tree/v2.0.1",
                 "issues": "https://github.com/cartalyst/assetic-filters/issues"
             },
-            "time": "2017-02-06T13:18:07+00:00"
+            "time": "2017-02-24T13:33:54+00:00"
         },
         {
             "name": "cartalyst/attributes",
@@ -1389,16 +1389,16 @@
         },
         {
             "name": "cartalyst/themes",
-            "version": "dev-feature/4.0",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/themes.git",
-                "reference": "76a9229cea5c74980fe8f4d89147c2e6e6c584a0"
+                "reference": "fb005d0e9475e2909677e842ffc2f29ba205e1e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/themes/zipball/76a9229cea5c74980fe8f4d89147c2e6e6c584a0",
-                "reference": "76a9229cea5c74980fe8f4d89147c2e6e6c584a0",
+                "url": "https://api.github.com/repos/cartalyst/themes/zipball/fb005d0e9475e2909677e842ffc2f29ba205e1e7",
+                "reference": "fb005d0e9475e2909677e842ffc2f29ba205e1e7",
                 "shasum": ""
             },
             "require": {
@@ -1461,10 +1461,10 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/themes/tree/feature/4.0",
+                "source": "https://github.com/cartalyst/themes/tree/v4.0.0",
                 "issues": "https://github.com/cartalyst/themes/issues"
             },
-            "time": "2017-02-23 10:22:44"
+            "time": "2017-02-24T13:42:52+00:00"
         },
         {
             "name": "cartalyst/widgets",
@@ -3311,23 +3311,23 @@
         },
         {
             "name": "oyejorge/less.php",
-            "version": "v1.7.0.10",
+            "version": "v1.7.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/oyejorge/less.php.git",
-                "reference": "a1e2d3c20794b37ac4d0baeb24613e579584033b"
+                "reference": "f1bccbee4bc9c7fdb6873e8c246063e01365a9a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/oyejorge/less.php/zipball/a1e2d3c20794b37ac4d0baeb24613e579584033b",
-                "reference": "a1e2d3c20794b37ac4d0baeb24613e579584033b",
+                "url": "https://api.github.com/repos/oyejorge/less.php/zipball/f1bccbee4bc9c7fdb6873e8c246063e01365a9a8",
+                "reference": "f1bccbee4bc9c7fdb6873e8c246063e01365a9a8",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.8.18"
+                "phpunit/phpunit": "~4.8.24"
             },
             "bin": [
                 "bin/lessc"
@@ -3357,9 +3357,13 @@
                 {
                     "name": "Josh Schmidt",
                     "homepage": "https://github.com/oyejorge"
+                },
+                {
+                    "name": "Michaël Marinetti",
+                    "homepage": "https://github.com/Asenar"
                 }
             ],
-            "description": "PHP port of the Javascript version of LESS http://lesscss.org",
+            "description": "PHP port of the Javascript version of LESS http://lesscss.org (Originally maintained by Josh Schmidt)",
             "homepage": "http://lessphp.gpeasy.com",
             "keywords": [
                 "css",
@@ -3369,7 +3373,7 @@
                 "php",
                 "stylesheet"
             ],
-            "time": "2015-12-30T05:47:36+00:00"
+            "time": "2017-02-23T14:18:55+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -3800,12 +3804,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-foundation.git",
-                "reference": "c5093ce27c43443a3a9c23f84678984d528495b3"
+                "reference": "42bc57e6ca78c73f5234516288002e248af0aae1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/c5093ce27c43443a3a9c23f84678984d528495b3",
-                "reference": "c5093ce27c43443a3a9c23f84678984d528495b3",
+                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/42bc57e6ca78c73f5234516288002e248af0aae1",
+                "reference": "42bc57e6ca78c73f5234516288002e248af0aae1",
                 "shasum": ""
             },
             "require": {
@@ -3817,7 +3821,7 @@
                 "cartalyst/filesystem": "^3.0",
                 "cartalyst/sentinel": "^2.0",
                 "cartalyst/settings": "^2.0",
-                "cartalyst/themes": "dev-feature/4.0",
+                "cartalyst/themes": "^4.0",
                 "cartalyst/widgets": "^2.0",
                 "dompdf/dompdf": "^0.7",
                 "illuminate/routing": "^5.4",
@@ -3871,7 +3875,7 @@
                 "source": "https://github.com/cartalyst/platform-foundation/tree/feature/seven",
                 "issues": "https://github.com/cartalyst/platform-foundation/issues"
             },
-            "time": "2017-02-20 06:59:11"
+            "time": "2017-02-24 13:52:59"
         },
         {
             "name": "platform/frontend-default",
@@ -4521,17 +4525,17 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-themes.git",
-                "reference": "659fd5b4920825b0a60e55bc4ffcc71ab02ff0c5"
+                "reference": "8f1f215bd589a4c1c80c37c0e1927bb873c45afa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-themes/zipball/659fd5b4920825b0a60e55bc4ffcc71ab02ff0c5",
-                "reference": "659fd5b4920825b0a60e55bc4ffcc71ab02ff0c5",
+                "url": "https://api.github.com/repos/cartalyst/platform-themes/zipball/8f1f215bd589a4c1c80c37c0e1927bb873c45afa",
+                "reference": "8f1f215bd589a4c1c80c37c0e1927bb873c45afa",
                 "shasum": ""
             },
             "require": {
                 "cartalyst/composer-installers": "^2.0",
-                "cartalyst/themes": "dev-feature/4.0",
+                "cartalyst/themes": "^4.0",
                 "php": ">=5.6.4",
                 "platform/foundation": "dev-feature/seven"
             },
@@ -4572,7 +4576,7 @@
                 "source": "https://github.com/cartalyst/platform-themes/tree/feature/seven",
                 "issues": "https://github.com/cartalyst/platform-themes/issues"
             },
-            "time": "2017-02-19 17:28:26"
+            "time": "2017-02-24 13:53:29"
         },
         {
             "name": "platform/users",
@@ -4898,16 +4902,16 @@
         },
         {
             "name": "richthegeek/phpsass",
-            "version": "1.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/richthegeek/phpsass.git",
-                "reference": "96923ffb2acd942426a48631e95a99a38456106d"
+                "reference": "7488db4c6bff76de6c95c3a893f966d3a6cca4bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/richthegeek/phpsass/zipball/96923ffb2acd942426a48631e95a99a38456106d",
-                "reference": "96923ffb2acd942426a48631e95a99a38456106d",
+                "url": "https://api.github.com/repos/richthegeek/phpsass/zipball/7488db4c6bff76de6c95c3a893f966d3a6cca4bd",
+                "reference": "7488db4c6bff76de6c95c3a893f966d3a6cca4bd",
                 "shasum": ""
             },
             "type": "library",
@@ -4945,7 +4949,7 @@
             ],
             "description": "PHPSass is a PHP compiler for SASS, a popular CSS pre-processor language.",
             "homepage": "http://phpsass.com",
-            "time": "2014-11-06T13:25:54+00:00"
+            "time": "2016-08-23T22:40:12+00:00"
         },
         {
             "name": "seld/jsonlint",
