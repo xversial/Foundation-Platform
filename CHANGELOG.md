@@ -11,6 +11,18 @@ We do not give estimated times for completion on `Accepted` Proposals.
 
 ---
 
+### v7.0.0 - 2015-07-13
+
+- Upgraded to Laravel 5.4.
+
+### v6.0.0 - 2015-07-13
+
+- Upgraded to Laravel 5.3.
+
+### v5.0.0 - 2016-08-02
+
+- New media management features.
+
 ### v4.0.0 - 2015-07-13
 
 - Upgraded to Laravel 5.1.
