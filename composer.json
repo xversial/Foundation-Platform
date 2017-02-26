@@ -74,14 +74,16 @@
             "php artisan platform:check-env-file",
             "php artisan optimize",
             "php artisan theme:publish --extensions",
-            "php artisan vendor:publish --tag='platform:installer.assets'"
+            "php artisan vendor:publish --tag='platform:installer.assets'",
+            "php artisan platform:check-updates"
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
             "php artisan platform:check-env-file",
             "php artisan optimize",
             "php artisan theme:publish --extensions",
-            "php artisan vendor:publish --tag='platform:installer.assets'"
+            "php artisan vendor:publish --tag='platform:installer.assets'",
+            "php artisan platform:check-updates"
         ]
     },
     "config": {
