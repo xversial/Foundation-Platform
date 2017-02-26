@@ -1,6 +1,6 @@
 # Platform
 
-[![Build Status](https://magnum.travis-ci.com/cartalyst/platform.svg?token=98Zt8zYdwyheTKqziswS&branch=6.0)](https://magnum.travis-ci.com/cartalyst/platform)
+[![Build Status](https://magnum.travis-ci.com/cartalyst/platform.svg?token=98Zt8zYdwyheTKqziswS&branch=7.0)](https://magnum.travis-ci.com/cartalyst/platform)
 
 Platform is not just another CMS, it's a starting point for you to build your application providing the tools you need to get the job done as easy as possible.
 
@@ -8,10 +8,11 @@ Part of the Cartalyst Arsenal & licensed [Cartalyst PSL](LICENSE). Code well, ro
 
 ## Documentation
 
-Reader-friendly Documentation can be found here. [Platform Manual](https://cartalyst.com/manual/platform/6.0).
+Reader-friendly Documentation can be found here. [Platform Manual](https://cartalyst.com/manual/platform/7.0).
 
 Raw files can be found via this projects docs/version branch.
 
+- [7.0](https://github.com/cartalyst/platform/tree/docs/7.0)
 - [6.0](https://github.com/cartalyst/platform/tree/docs/6.0)
 - [5.0](https://github.com/cartalyst/platform/tree/docs/5.0)
 - [4.0](https://github.com/cartalyst/platform/tree/docs/4.0)
@@ -22,6 +23,7 @@ Raw files can be found via this projects docs/version branch.
 
 Important versions listed below. Refer to the [Changelog](CHANGELOG.md) for a full history of the project.
 
+- [7.0](CHANGELOG.md) - 2017-02-24
 - [6.0](CHANGELOG.md) - 2017-02-24
 - [5.0](CHANGELOG.md) - 2016-08-02
 - [4.0](CHANGELOG.md) - 2015-07-13
