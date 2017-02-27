@@ -11,10 +11,10 @@
  * bundled with this package in the LICENSE file.
  *
  * @package    Sentinel Social
- * @version    1.0.0
+ * @version    3.0.3
  * @author     Cartalyst LLC
  * @license    Cartalyst PSL
- * @copyright  (c) 2011-2016, Cartalyst LLC
+ * @copyright  (c) 2011-2017, Cartalyst LLC
  * @link       http://cartalyst.com
  */
 
@@ -31,7 +31,7 @@ return [
     | driver or may match your own custom class name that inherits from a
     | valid base driver.
     |
-    | Make sure each connection contains an "identifier" and a "secret". Thse
+    | Make sure each connection contains an "identifier" and a "secret". These
     | are also known as "key" and "secret", "app id" and "app secret"
     | depending on the service. We're using "identifier" and
     | "secret" for consistency.
@@ -52,53 +52,8 @@ return [
             'scopes'     => [
                 'email',
             ],
-        ],
-
-        'github' => [
-            'driver'     => 'GitHub',
-            'identifier' => '',
-            'secret'     => '',
-            'scopes'     => [
-                'user',
-            ],
-        ],
-
-        'google' => [
-            'driver'     => 'Google',
-            'identifier' => '',
-            'secret'     => '',
-            'scopes'     => [
-                'https://www.googleapis.com/auth/userinfo.profile',
-                'https://www.googleapis.com/auth/userinfo.email',
-            ],
-        ],
-
-        'instagram' => [
-            'driver'     => 'Instagram',
-            'identifier' => '',
-            'secret'     => '',
-            'scopes'     => [
-                'basic',
-            ],
-        ],
-
-        'linkedin' => [
-            'driver'     => 'LinkedIn',
-            'identifier' => '',
-            'secret'     => '',
-            'scopes'     => [
-                'r_fullprofile',
-                'r_emailaddress',
-            ],
-        ],
-
-        'microsoft' => [
-            'driver'     => 'Microsoft',
-            'identifier' => '',
-            'secret'     => '',
-            'scopes'     => [
-                'wl.basic',
-                'wl.emails'
+            'additional_options' => [
+                'graphApiVersion' => 'v2.8',
             ],
         ],
 
@@ -106,19 +61,6 @@ return [
             'driver'     => 'Twitter',
             'identifier' => '',
             'secret'     => '',
-        ],
-
-        'tumblr' => [
-            'driver'     => 'Tumblr',
-            'identifier' => '',
-            'secret'     => '',
-        ],
-
-        'vkontakte' => [
-            'driver'     => 'Vkontakte',
-            'identifier' => '',
-            'secret'     => '',
-            'scopes'     => [],
         ],
 
     ],
