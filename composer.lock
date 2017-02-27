@@ -4481,16 +4481,16 @@
         },
         {
             "name": "platform/themes",
-            "version": "v5.0.0",
+            "version": "v5.0.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-themes.git",
-                "reference": "d1401fceef1386060f7cc433ad288f0c0cdaad59"
+                "reference": "c7687bc5102460a1de5f19a81a8b0e472e2528a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-themes/zipball/d1401fceef1386060f7cc433ad288f0c0cdaad59",
-                "reference": "d1401fceef1386060f7cc433ad288f0c0cdaad59",
+                "url": "https://api.github.com/repos/cartalyst/platform-themes/zipball/c7687bc5102460a1de5f19a81a8b0e472e2528a3",
+                "reference": "c7687bc5102460a1de5f19a81a8b0e472e2528a3",
                 "shasum": ""
             },
             "require": {
@@ -4533,10 +4533,10 @@
                 "themes"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-themes/tree/v5.0.0",
+                "source": "https://github.com/cartalyst/platform-themes/tree/v5.0.1",
                 "issues": "https://github.com/cartalyst/platform-themes/issues"
             },
-            "time": "2017-02-24T20:37:16+00:00"
+            "time": "2017-02-27T10:38:31+00:00"
         },
         {
             "name": "platform/users",
@@ -6961,16 +6961,16 @@
         },
         {
             "name": "phpunit/php-token-stream",
-            "version": "1.4.10",
+            "version": "1.4.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-token-stream.git",
-                "reference": "284fb0679dd25fb5ffb56dad92c72860c0a22f1b"
+                "reference": "e03f8f67534427a787e21a385a67ec3ca6978ea7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/284fb0679dd25fb5ffb56dad92c72860c0a22f1b",
-                "reference": "284fb0679dd25fb5ffb56dad92c72860c0a22f1b",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/e03f8f67534427a787e21a385a67ec3ca6978ea7",
+                "reference": "e03f8f67534427a787e21a385a67ec3ca6978ea7",
                 "shasum": ""
             },
             "require": {
@@ -7006,7 +7006,7 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2017-02-23T06:14:45+00:00"
+            "time": "2017-02-27T10:12:30+00:00"
         },
         {
             "name": "phpunit/phpunit",
