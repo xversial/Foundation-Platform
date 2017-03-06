@@ -13,7 +13,18 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // Get the Laravel Filesystem instance
+        $fs = $this->app['files'];
+
+        // Load the hooks
+        if ($fs->exists($path = app_path('hooks.php'))) {
+            require_once $path;
+        }
+
+        // Load the widget mappings
+        if ($fs->exists($path = app_path('widgets.php'))) {
+            require_once $path;
+        }
     }
 
     /**

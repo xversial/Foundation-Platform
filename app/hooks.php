@@ -11,12 +11,15 @@
  * bundled with this package in the LICENSE file.
  *
  * @package    Platform
- * @version    5.0.0
+ * @version    6.0.0
  * @author     Cartalyst LLC
  * @license    Cartalyst PSL
- * @copyright  (c) 2011-2016, Cartalyst LLC
+ * @copyright  (c) 2011-2017, Cartalyst LLC
  * @link       http://cartalyst.com
  */
+
+use Cartalyst\Extensions\Extension;
+use Platform\Installer\Facades\Installer;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,9 +41,9 @@ Installer::after(function () {
     // set the order of the admin menu according to the
     // specific application requirements.
     if (class_exists('Platform\Menus\Models\Menu')) {
-        set_menu_order('admin', config('platform.admin.menu'));
+        set_menu_order('admin', config('platform.config.admin.menu'));
 
-        set_menu_order('main', config('platform.frontend.menu'));
+        set_menu_order('main', config('platform.config.frontend.menu'));
     }
 
     // Create the registered role
@@ -61,17 +64,19 @@ Installer::after(function () {
 |
 */
 
-Platform::booting(function ($platform) {
-    // Before Platform and it's extensions have booted
-});
+# TODO: address platform hooks
 
-Platform::booted(function ($platform) {
-    // When everything is setup and ready to roll
-});
+// Platform::booting(function ($platform) {
+//     // Before Platform and it's extensions have booted
+// });
 
-Platform::ineligible(function ($platform) {
-    // Whenever Platform cannot run (needs installing etc)
-});
+// Platform::booted(function ($platform) {
+//     // When everything is setup and ready to roll
+// });
+
+// Platform::ineligible(function ($platform) {
+//     // Whenever Platform cannot run (needs installing etc)
+// });
 
 /*
 |--------------------------------------------------------------------------
@@ -83,13 +88,15 @@ Platform::ineligible(function ($platform) {
 |
 */
 
-Extension::registering(function (Extension $extension) {
-    // Before an extension is registered (happens for every extension)
-});
+# TODO: address registration hooks
 
-Extension::registered(function (Extension $extension) {
-    // After an extension is registered
-});
+// Extension::registering(function (Extension $extension) {
+//     // Before an extension is registered (happens for every extension)
+// });
+
+// Extension::registered(function (Extension $extension) {
+//     // After an extension is registered
+// });
 
 Extension::booting(function (Extension $extension) {
     // Before an installed and enabled extension boots (after all are registered)
@@ -131,13 +138,15 @@ Extension::disabled(function (Extension $extension) {
     // After an extension is disabled
 });
 
-Extension::upgrading(function (Extension $extension) {
-    // Before an extension is upgraded
-});
+# TODO: address upgrade hooks
 
-Extension::upgraded(function (Extension $extension) {
-    // After an extension is upgraded
-});
+// Extension::upgrading(function (Extension $extension) {
+//     // Before an extension is upgraded
+// });
+
+// Extension::upgraded(function (Extension $extension) {
+//     // After an extension is upgraded
+// });
 
 /*
 |--------------------------------------------------------------------------

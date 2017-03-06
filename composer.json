@@ -1,7 +1,9 @@
 {
-    "name": "cartalyst/platform",
-    "description": "Platform",
+    "name": "foundation/platform",
+    "description": "Foundation - Platform",
     "keywords": [
+        "vionox",
+        "foundation",
         "cartalyst",
         "laravel",
         "platform",
@@ -9,6 +11,10 @@
     ],
     "license": "proprietary",
     "authors": [
+        {
+            "name": "Brandon Xversial",
+            "email": "xversial@vionox.com"
+        },
         {
             "name": "Cartalyst LLC",
             "email": "help@cartalyst.com"
@@ -25,33 +31,35 @@
         }
     ],
     "require": {
-        "php": ">=5.5.9",
-        "laravel/framework": "5.1.*",
+        "php": ">=5.6.4",
+        "laravel/framework": "5.3.*",
 
-        "platform/admin-default": "3.0.*",
-        "platform/frontend-default": "2.0.*",
+        "platform/admin-default": "~4.0",
+        "platform/frontend-default": "~3.0",
 
-        "platform/foundation": "4.0.*",
-        "platform/installer": "4.0.*",
+        "platform/foundation": "~5.0",
+        "platform/installer": "~5.0",
 
-        "platform/access": "4.0.*",
-        "platform/attributes": "4.0.*",
-        "platform/content": "4.0.*",
-        "platform/dashboard": "4.0.*",
-        "platform/media": "4.0.*",
-        "platform/menus": "4.0.*",
-        "platform/operations": "4.0.*",
-        "platform/pages": "4.0.*",
-        "platform/settings": "4.0.*",
-        "platform/themes": "4.0.*"
+        "platform/access": "~5.0",
+        "platform/attributes": "~5.0",
+        "platform/content": "~5.0",
+        "platform/dashboard": "~5.0",
+        "platform/media": "~5.0",
+        "platform/menus": "~5.0",
+        "platform/operations": "~5.0",
+        "platform/pages": "~5.0",
+        "platform/roles": "~5.0",
+        "platform/settings": "~5.0",
+        "platform/themes": "~5.0",
+        "platform/users": "~5.0"
     },
     "require-dev": {
         "doctrine/dbal": "~2.4",
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~4.0",
-        "phpspec/phpspec": "~2.1",
-        "barryvdh/laravel-ide-helper": "^2.2"
+        "phpunit/phpunit": "~5.0",
+        "symfony/css-selector": "3.1.*",
+        "symfony/dom-crawler": "3.1.*"
     },
     "autoload": {
         "classmap": [
@@ -72,31 +80,29 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "php artisan clear-compiled",
+            "Illuminate\\Foundation\\ComposerScripts::postInstall",
             "php artisan platform:check-env-file",
             "php artisan optimize",
-            "php artisan platform:upgrade",
             "php artisan theme:publish --extensions",
-            "php artisan vendor:publish --provider='Platform\\Installer\\Laravel\\InstallerServiceProvider' --tag='assets'",
-            "php artisan theme:compile"
-        ],
-        "pre-update-cmd": [
-            "php artisan clear-compiled"
+            "php artisan vendor:publish --tag='platform:installer.assets'",
+            "php artisan platform:check-updates"
         ],
         "post-update-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
             "php artisan platform:check-env-file",
             "php artisan optimize",
-            "php artisan platform:upgrade",
             "php artisan theme:publish --extensions",
-            "php artisan vendor:publish --provider='Platform\\Installer\\Laravel\\InstallerServiceProvider' --tag='assets'",
-            "php artisan theme:compile"
+            "php artisan vendor:publish --tag='platform:installer.assets'",
+            "php artisan platform:check-updates"
         ]
     },
     "config": {
-        "preferred-install": "dist"
+        "preferred-install": "dist",
+        "sort-packages": true
     },
     "extra": {
         "component": "application"
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

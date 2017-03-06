@@ -11,10 +11,10 @@
  * bundled with this package in the LICENSE file.
  *
  * @package    Platform
- * @version    5.0.0
+ * @version    6.0.0
  * @author     Cartalyst LLC
  * @license    Cartalyst PSL
- * @copyright  (c) 2011-2016, Cartalyst LLC
+ * @copyright  (c) 2011-2017, Cartalyst LLC
  * @link       http://cartalyst.com
  */
 
@@ -49,7 +49,7 @@ class OverridesServiceProvider extends ServiceProvider
      */
     protected function registerRedirector()
     {
-        $this->app->bindShared('redirect', function ($app) {
+        $this->app->singleton('redirect', function ($app) {
             $redirector = new Redirector($app['url']);
 
             // If the session is set on the application instance, we'll inject it into
@@ -70,7 +70,7 @@ class OverridesServiceProvider extends ServiceProvider
      */
     protected function registerUrlGenerator()
     {
-        $this->app['url'] = $this->app->share(function ($app) {
+        $this->app->singleton('url', function ($app) {
             $routes = $app['router']->getRoutes();
 
             $app->instance('routes', $routes);

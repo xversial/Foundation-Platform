@@ -1,6 +1,6 @@
 <?php
 
-class TestCase extends Illuminate\Foundation\Testing\TestCase
+abstract class TestCase extends Illuminate\Foundation\Testing\TestCase
 {
     /**
      * The base URL to use while testing the application.
@@ -62,7 +62,7 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
         $this->app['Illuminate\Contracts\Console\Kernel']->call('migrate', ['--env' => 'testing']);
 
         // Boot extensions
-        $this->app['platform']->bootExtensions();
+        $this->app['extensions']->boot();
     }
 
     /**

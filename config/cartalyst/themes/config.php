@@ -11,10 +11,10 @@
  * bundled with this package in the LICENSE file.
  *
  * @package    Themes
- * @version    3.0.5
+ * @version    4.0.0
  * @author     Cartalyst LLC
  * @license    Cartalyst PSL
- * @copyright  (c) 2011-2016, Cartalyst LLC
+ * @copyright  (c) 2011-2017, Cartalyst LLC
  * @link       http://cartalyst.com
  */
 
@@ -25,24 +25,20 @@ return [
     | Active Theme
     |--------------------------------------------------------------------------
     |
-    | Here you can specify the default active theme for your installer,
-    | or set to null if none is defined.
-    |
-    | The application theme is set via the themes extension configuration.
+    | Here you will define the default active theme your application
+    | will be using. Set the value to null if no theme is defined.
     |
     */
 
-    'active' => 'frontend::default',
+    'active' => null,
 
     /*
     |--------------------------------------------------------------------------
     | Fallback Theme
     |--------------------------------------------------------------------------
     |
-    | Here you can specify the default fallback theme for your installer,
-    | or set to null if none is defined.
-    |
-    | The application theme is set via the themes extension configuration.
+    | Here you'll define the default fallback theme your application
+    | will be using. Set the value to null if no theme is defined.
     |
     */
 
@@ -53,15 +49,15 @@ return [
     | Theme Paths
     |--------------------------------------------------------------------------
     |
-    | Here you set the default theme paths for your application. Paths should
-    | also be set relative to a publicly accessible directory so assets
-    | can be resolved.
+    | Here you'll define the default theme paths for your application.
     |
     */
 
-    'paths' => array(
-        public_path().'/themes',
-    ),
+    'paths' => [
+
+        resource_path('themes'),
+
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -83,11 +79,11 @@ return [
     | We even let you theme up Laravel 5 view namespaces. You can register a
     | namespace for a view, for example:
     |
-    |	View::addNamespace('foo/bar', '/var/www/some/namespace');
+    |   View::addNamespace('foo/bar', '/var/www/some/namespace');
     |
     | This means that, when you call:
     |
-    |	View::make('foo/bar::test');
+    |   View::make('foo/bar::test');
     |
     | It will look in the namespace you specified. However, you can also call
     | Theme::namespace('foo/bar'); which means that all calls to the 'foo/bar'
@@ -128,8 +124,8 @@ return [
     | Assets Cache Path
     |--------------------------------------------------------------------------
     |
-    | The path (relative to your public path) where assets are cached upon
-    | compilation.
+    | The path, relative to your public directory, where
+    | the assets will be cached upon compilation.
     |
     */
 
@@ -184,13 +180,6 @@ return [
 
         'js' => [
 
-            'Assetic\Filter\JSMinFilter',
-
-        ],
-
-        'coffee' => [
-
-            'Cartalyst\AsseticFilters\CoffeeScriptphpFilter',
             'Assetic\Filter\JSMinFilter',
 
         ],
