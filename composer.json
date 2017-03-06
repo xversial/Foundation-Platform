@@ -32,34 +32,34 @@
     ],
     "require": {
         "php": ">=5.6.4",
-        "laravel/framework": "5.3.*",
+        "laravel/framework": "5.4.*",
 
-        "platform/admin-default": "~4.0",
-        "platform/frontend-default": "~3.0",
+        "platform/admin-default": "~5.0",
+        "platform/frontend-default": "~4.0",
 
-        "platform/foundation": "~5.0",
-        "platform/installer": "~5.0",
+        "platform/foundation": "~6.0",
+        "platform/installer": "~6.0",
 
-        "platform/access": "~5.0",
-        "platform/attributes": "~5.0",
-        "platform/content": "~5.0",
-        "platform/dashboard": "~5.0",
-        "platform/media": "~5.0",
-        "platform/menus": "~5.0",
-        "platform/operations": "~5.0",
-        "platform/pages": "~5.0",
-        "platform/roles": "~5.0",
-        "platform/settings": "~5.0",
-        "platform/themes": "~5.0",
-        "platform/users": "~5.0"
+        "platform/access": "~6.0",
+        "platform/attributes": "~6.0",
+        "platform/content": "~6.0",
+        "platform/dashboard": "~6.0",
+        "platform/media": "~6.0",
+        "platform/menus": "~6.0",
+        "platform/operations": "~6.0",
+        "platform/pages": "~6.0",
+        "platform/roles": "~6.0",
+        "platform/settings": "~6.0",
+        "platform/themes": "~6.0",
+        "platform/users": "~6.0",
+
+        "laravel/tinker": "~1.0"
     },
     "require-dev": {
         "doctrine/dbal": "~2.4",
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~5.0",
-        "symfony/css-selector": "3.1.*",
-        "symfony/dom-crawler": "3.1.*"
+        "phpunit/phpunit": "~5.7"
     },
     "autoload": {
         "classmap": [
@@ -74,9 +74,9 @@
         }
     },
     "autoload-dev": {
-        "classmap": [
-            "tests/TestCase.php"
-        ]
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
     },
     "scripts": {
         "post-install-cmd": [

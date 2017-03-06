@@ -11,6 +11,14 @@ We do not give estimated times for completion on `Accepted` Proposals.
 
 ---
 
+### v7.0.0 - 2017-02-24
+
+- Upgraded to Laravel 5.4.
+- Upgraded to Themes v4 package.
+- Upgraded to Extensions v3 package.
+- Upgraded to Data Grid v4.
+- Upgraded to Sentinel Social v3.
+
 ### v6.0.0 - 2017-02-24
 
 - Upgraded to Laravel 5.3.
