@@ -56,6 +56,7 @@
         "laravel/tinker": "~1.0"
     },
     "require-dev": {
+        "barryvdh/laravel-ide-helper": "^2.3",
         "doctrine/dbal": "~2.4",
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
@@ -84,7 +85,7 @@
             "php artisan platform:check-env-file",
             "php artisan optimize",
             "php artisan theme:publish --extensions",
-            "php artisan vendor:publish --tag='platform:installer.assets'",
+            "php artisan vendor:publish --tag=platform:installer.assets",
             "php artisan platform:check-updates"
         ],
         "post-update-cmd": [
@@ -92,7 +93,7 @@
             "php artisan platform:check-env-file",
             "php artisan optimize",
             "php artisan theme:publish --extensions",
-            "php artisan vendor:publish --tag='platform:installer.assets'",
+            "php artisan vendor:publish --tag=platform:installer.assets",
             "php artisan platform:check-updates"
         ]
     },
