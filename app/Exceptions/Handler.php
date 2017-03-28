@@ -44,6 +44,14 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if ($pages = $this->container['platform.pages']) {
+            if ($notFoundPage = $this->container['config']->get('platform.pages.config.not_found')) {
+                if ($page = $pages->findBySlug($notFoundPage)) {
+                    return response()->make($pages->render($page));
+                }
+            }
+        }
+
         return parent::render($request, $exception);
     }
 
