@@ -18,6 +18,7 @@
  * @link       http://cartalyst.com
  */
 
+use Platform\Pages\Models\Page;
 use Cartalyst\Extensions\Extension;
 use Platform\Installer\Facades\Installer;
 
@@ -57,29 +58,6 @@ Installer::after(function () {
 
 /*
 |--------------------------------------------------------------------------
-| Platform Hooks
-|--------------------------------------------------------------------------
-|
-| Hooks for events of Platform itself.
-|
-*/
-
-# TODO: address platform hooks
-
-// Platform::booting(function ($platform) {
-//     // Before Platform and it's extensions have booted
-// });
-
-// Platform::booted(function ($platform) {
-//     // When everything is setup and ready to roll
-// });
-
-// Platform::ineligible(function ($platform) {
-//     // Whenever Platform cannot run (needs installing etc)
-// });
-
-/*
-|--------------------------------------------------------------------------
 | Extension Hooks
 |--------------------------------------------------------------------------
 |
@@ -87,16 +65,6 @@ Installer::after(function () {
 | individual extension properties through $extension->getSlug().
 |
 */
-
-# TODO: address registration hooks
-
-// Extension::registering(function (Extension $extension) {
-//     // Before an extension is registered (happens for every extension)
-// });
-
-// Extension::registered(function (Extension $extension) {
-//     // After an extension is registered
-// });
 
 Extension::booting(function (Extension $extension) {
     // Before an installed and enabled extension boots (after all are registered)
@@ -138,16 +106,6 @@ Extension::disabled(function (Extension $extension) {
     // After an extension is disabled
 });
 
-# TODO: address upgrade hooks
-
-// Extension::upgrading(function (Extension $extension) {
-//     // Before an extension is upgraded
-// });
-
-// Extension::upgraded(function (Extension $extension) {
-//     // After an extension is upgraded
-// });
-
 /*
 |--------------------------------------------------------------------------
 | Miscellaneous Hooks
@@ -157,8 +115,8 @@ Extension::disabled(function (Extension $extension) {
 |
 */
 
-if (class_exists('Page')) {
-    Page::rendering(function (Page $page) {
+if (class_exists('Platform\Pages\Models\Page')) {
+    Page::rendering(function ($event, $payload) {
         // Page is rendering, return an array of additional data
     });
 }
