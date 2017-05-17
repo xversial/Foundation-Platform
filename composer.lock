@@ -1526,16 +1526,16 @@
         },
         {
             "name": "cartalyst/workshop",
-            "version": "v3.0.3",
+            "version": "v3.0.4",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/workshop.git",
-                "reference": "98e3d37acbe2af7fbd069ef48b4f255d9b05e9ad"
+                "reference": "7fc967fb7db6d15fbb2a874b2e85fb66b58feaad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/workshop/zipball/98e3d37acbe2af7fbd069ef48b4f255d9b05e9ad",
-                "reference": "98e3d37acbe2af7fbd069ef48b4f255d9b05e9ad",
+                "url": "https://api.github.com/repos/cartalyst/workshop/zipball/7fc967fb7db6d15fbb2a874b2e85fb66b58feaad",
+                "reference": "7fc967fb7db6d15fbb2a874b2e85fb66b58feaad",
                 "shasum": ""
             },
             "require": {
@@ -1583,10 +1583,10 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/workshop/tree/v3.0.3",
+                "source": "https://github.com/cartalyst/workshop/tree/v3.0.4",
                 "issues": "https://github.com/cartalyst/workshop/issues"
             },
-            "time": "2017-03-19T16:18:06+00:00"
+            "time": "2017-05-05T20:28:41+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2435,16 +2435,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.4.21",
+            "version": "v5.4.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "2ed668f96d1a6ca42f50d5c87ee9ceecfc0a6eee"
+                "reference": "ad82327705658dbf5f0ce72805caa950dfbe150d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/2ed668f96d1a6ca42f50d5c87ee9ceecfc0a6eee",
-                "reference": "2ed668f96d1a6ca42f50d5c87ee9ceecfc0a6eee",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/ad82327705658dbf5f0ce72805caa950dfbe150d",
+                "reference": "ad82327705658dbf5f0ce72805caa950dfbe150d",
                 "shasum": ""
             },
             "require": {
@@ -2560,7 +2560,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-04-28T15:40:01+00:00"
+            "time": "2017-05-11T20:10:35+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -2622,16 +2622,16 @@
         },
         {
             "name": "laravelcollective/html",
-            "version": "v5.4.1",
+            "version": "v5.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LaravelCollective/html.git",
-                "reference": "7570f25d58a00fd6909c0563808590f9cdb14d47"
+                "reference": "023efce5fd8057cb3b5ce503f3391cc4effa7caa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/7570f25d58a00fd6909c0563808590f9cdb14d47",
-                "reference": "7570f25d58a00fd6909c0563808590f9cdb14d47",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/023efce5fd8057cb3b5ce503f3391cc4effa7caa",
+                "reference": "023efce5fd8057cb3b5ce503f3391cc4effa7caa",
                 "shasum": ""
             },
             "require": {
@@ -2672,7 +2672,7 @@
             ],
             "description": "HTML and Form Builders for the Laravel Framework",
             "homepage": "http://laravelcollective.com",
-            "time": "2017-01-26T19:27:05+00:00"
+            "time": "2017-05-15T09:38:20+00:00"
         },
         {
             "name": "leafo/scssphp",
@@ -4273,16 +4273,16 @@
         },
         {
             "name": "platform/permissions",
-            "version": "v6.0.0",
+            "version": "v6.0.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-permissions.git",
-                "reference": "7bb21e1d2cdf5e2bdac0160af69f28692250b2f2"
+                "reference": "1917a9533d580f53b86b467fda29faddbb408644"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-permissions/zipball/7bb21e1d2cdf5e2bdac0160af69f28692250b2f2",
-                "reference": "7bb21e1d2cdf5e2bdac0160af69f28692250b2f2",
+                "url": "https://api.github.com/repos/cartalyst/platform-permissions/zipball/1917a9533d580f53b86b467fda29faddbb408644",
+                "reference": "1917a9533d580f53b86b467fda29faddbb408644",
                 "shasum": ""
             },
             "require": {
@@ -4320,7 +4320,7 @@
                     "homepage": "https://cartalyst.com"
                 }
             ],
-            "description": "A Platform 6 extension to manage your application permissions.",
+            "description": "A Platform extension to manage your application permissions.",
             "keywords": [
                 "cartalyst",
                 "extension",
@@ -4328,10 +4328,10 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-permissions/tree/6.0",
+                "source": "https://github.com/cartalyst/platform-permissions/tree/v6.0.1",
                 "issues": "https://github.com/cartalyst/platform-permissions/issues"
             },
-            "time": "2017-02-24T20:24:22+00:00"
+            "time": "2017-05-17T15:34:26+00:00"
         },
         {
             "name": "platform/roles",
@@ -4760,16 +4760,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.8.3",
+            "version": "v0.8.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "1dd4bbbc64d71e7ec075ffe82b42d9e096dc8d5e"
+                "reference": "38a9d21406597a0440690eafbcb0222f528c8ac6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/1dd4bbbc64d71e7ec075ffe82b42d9e096dc8d5e",
-                "reference": "1dd4bbbc64d71e7ec075ffe82b42d9e096dc8d5e",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/38a9d21406597a0440690eafbcb0222f528c8ac6",
+                "reference": "38a9d21406597a0440690eafbcb0222f528c8ac6",
                 "shasum": ""
             },
             "require": {
@@ -4829,7 +4829,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2017-03-19T21:40:44+00:00"
+            "time": "2017-05-17T06:49:19+00:00"
         },
         {
             "name": "ramsey/uuid",
@@ -5056,16 +5056,16 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.4.7",
+            "version": "v5.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "56db4ed32a6d5c9824c3ecc1d2e538f663f47eb4"
+                "reference": "9a06dc570a0367850280eefd3f1dc2da45aef517"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/56db4ed32a6d5c9824c3ecc1d2e538f663f47eb4",
-                "reference": "56db4ed32a6d5c9824c3ecc1d2e538f663f47eb4",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/9a06dc570a0367850280eefd3f1dc2da45aef517",
+                "reference": "9a06dc570a0367850280eefd3f1dc2da45aef517",
                 "shasum": ""
             },
             "require": {
@@ -5106,7 +5106,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2017-04-20T17:32:18+00:00"
+            "time": "2017-05-01T15:54:03+00:00"
         },
         {
             "name": "symfony/console",
