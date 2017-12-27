@@ -397,7 +397,7 @@ foreach ($requirements as $requirement) {
 			<header>
 				<div class="brand">
 					<div class="brand__image">
-						<img src="brand.svg" alt="Ornery Octopus">
+						<img src="hardy-hedgehog.svg" alt="Hardy Hedgehog">
 					</div>
 				</div>
 			</header>
