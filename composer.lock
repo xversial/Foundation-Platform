@@ -4025,16 +4025,16 @@
         },
         {
             "name": "platform/foundation",
-            "version": "v7.0.1",
+            "version": "v7.0.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-foundation.git",
-                "reference": "642a990787a80e48db2be2a5ba1cb31926c14b1b"
+                "reference": "01953b084a150c315616a7d67da43f3b90cbeddd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/642a990787a80e48db2be2a5ba1cb31926c14b1b",
-                "reference": "642a990787a80e48db2be2a5ba1cb31926c14b1b",
+                "url": "https://api.github.com/repos/cartalyst/platform-foundation/zipball/01953b084a150c315616a7d67da43f3b90cbeddd",
+                "reference": "01953b084a150c315616a7d67da43f3b90cbeddd",
                 "shasum": ""
             },
             "require": {
@@ -4097,10 +4097,10 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-foundation/tree/v7.0.1",
+                "source": "https://github.com/cartalyst/platform-foundation/tree/v7.0.2",
                 "issues": "https://github.com/cartalyst/platform-foundation/issues"
             },
-            "time": "2017-12-27T21:39:20+00:00"
+            "time": "2017-12-29T22:58:35+00:00"
         },
         {
             "name": "platform/frontend-default",
@@ -4152,16 +4152,16 @@
         },
         {
             "name": "platform/installer",
-            "version": "v7.0.1",
+            "version": "v7.0.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:cartalyst/platform-installer.git",
-                "reference": "5b3832b24f7224979ad6c077c8c3b63ab7952966"
+                "reference": "a2f81480a9516d5e5f84a79302beb8c8edadb028"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cartalyst/platform-installer/zipball/5b3832b24f7224979ad6c077c8c3b63ab7952966",
-                "reference": "5b3832b24f7224979ad6c077c8c3b63ab7952966",
+                "url": "https://api.github.com/repos/cartalyst/platform-installer/zipball/a2f81480a9516d5e5f84a79302beb8c8edadb028",
+                "reference": "a2f81480a9516d5e5f84a79302beb8c8edadb028",
                 "shasum": ""
             },
             "require": {
@@ -4175,7 +4175,8 @@
                 "illuminate/container": "^5.5",
                 "illuminate/database": "^5.5",
                 "illuminate/events": "^5.5",
-                "illuminate/validation": "^5.5"
+                "illuminate/validation": "^5.5",
+                "vlucas/phpdotenv": "~2.2"
             },
             "type": "library",
             "extra": {
@@ -4208,10 +4209,10 @@
                 "platform"
             ],
             "support": {
-                "source": "https://github.com/cartalyst/platform-installer/tree/v7.0.1",
+                "source": "https://github.com/cartalyst/platform-installer/tree/v7.0.2",
                 "issues": "https://github.com/cartalyst/platform-installer/issues"
             },
-            "time": "2017-12-27T21:39:17+00:00"
+            "time": "2017-12-29T22:58:04+00:00"
         },
         {
             "name": "platform/media",
@@ -5068,16 +5069,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.8.16",
+            "version": "v0.8.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "d4c8eab0683dc056f2ca54ca67f5388527c068b1"
+                "reference": "5069b70e8c4ea492c2b5939b6eddc78bfe41cfec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/d4c8eab0683dc056f2ca54ca67f5388527c068b1",
-                "reference": "d4c8eab0683dc056f2ca54ca67f5388527c068b1",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/5069b70e8c4ea492c2b5939b6eddc78bfe41cfec",
+                "reference": "5069b70e8c4ea492c2b5939b6eddc78bfe41cfec",
                 "shasum": ""
             },
             "require": {
@@ -5136,7 +5137,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2017-12-10T21:49:27+00:00"
+            "time": "2017-12-28T16:14:16+00:00"
         },
         {
             "name": "ramsey/uuid",
