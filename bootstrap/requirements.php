@@ -138,33 +138,6 @@ class PublicPermissionsRequirement implements RequirementInterface
     }
 }
 
-class McryptExtensionRequirement implements RequirementInterface
-{
-    /**
-     * {@inheritDoc}
-     */
-    public function check($paths = [])
-    {
-        return extension_loaded('mcrypt');
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function title()
-    {
-        return 'Mcrypt PHP Extension';
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function message()
-    {
-        return 'Mcrypt extension is required.';
-    }
-}
-
 class GDExtensionRequirement implements RequirementInterface
 {
     /**
@@ -233,7 +206,6 @@ $requirements = [
     new DependenciesRequirement,
     new StoragePermissionsRequirement,
     new PublicPermissionsRequirement,
-    new McryptExtensionRequirement,
     new GDExtensionRequirement,
     new PDOExtensionRequirement,
 ];
