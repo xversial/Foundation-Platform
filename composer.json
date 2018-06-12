@@ -31,40 +31,43 @@
         }
     ],
     "require": {
-        "php": ">=5.6.4",
-        "laravel/framework": "5.4.*",
+        "php": ">=7.0.0",
+        "fideloper/proxy": "~3.3",
+        "laravel/framework": "5.5.*",
 
-        "platform/admin-default": "~5.0",
-        "platform/frontend-default": "~4.0",
+        "platform/admin-default": "~6.0",
+        "platform/frontend-default": "~5.0",
 
-        "platform/foundation": "~6.0",
-        "platform/installer": "~6.0",
+        "platform/foundation": "~7.0",
+        "platform/installer": "~7.0",
 
-        "platform/access": "~6.0",
-        "platform/attributes": "~6.0",
-        "platform/content": "~6.0",
-        "platform/dashboard": "~6.0",
-        "platform/media": "~6.0",
-        "platform/menus": "~6.0",
-        "platform/operations": "~6.0",
-        "platform/pages": "~6.0",
-        "platform/roles": "~6.0",
-        "platform/settings": "~6.0",
-        "platform/themes": "~6.0",
-        "platform/users": "~6.0",
+        "platform/access": "~7.0",
+        "platform/attributes": "~7.0",
+        "platform/content": "~7.0",
+        "platform/dashboard": "~7.0",
+        "platform/media": "~7.0",
+        "platform/menus": "~7.0",
+        "platform/operations": "~7.0",
+        "platform/pages": "~7.0",
+        "platform/roles": "~7.0",
+        "platform/settings": "~7.0",
+        "platform/themes": "~7.0",
+        "platform/users": "~7.0",
 
         "laravel/tinker": "~1.0"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.3",
         "doctrine/dbal": "~2.4",
+        "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
-        "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~5.7"
+        "mockery/mockery": "~1.0",
+        "phpunit/phpunit": "~6.0"
     },
     "autoload": {
         "classmap": [
-            "database"
+            "database/seeds",
+            "database/factories"
         ],
         "files": [
             "app/functions.php"
@@ -77,6 +80,13 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "component": "application",
+        "laravel": {
+            "dont-discover": [
+            ]
         }
     },
     "scripts": {
@@ -95,14 +105,22 @@
             "php artisan theme:publish --extensions",
             "php artisan vendor:publish --tag='platform:installer.assets'",
             "php artisan platform:check-updates"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate"
+        ],
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover"
         ]
     },
     "config": {
         "preferred-install": "dist",
-        "sort-packages": true
-    },
-    "extra": {
-        "component": "application"
+        "sort-packages": true,
+        "optimize-autoloader": true
     },
     "minimum-stability": "dev",
     "prefer-stable": true
