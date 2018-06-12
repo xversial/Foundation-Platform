@@ -14,6 +14,10 @@ abstract class TestCase extends BaseTestCase
      */
     public function setUp()
     {
+        putenv('DB_CONNECTION=sqlite');
+        putenv('DB_DATABASE=:memory:');
+        putenv('DB_PREFIX=""');
+
         parent::setUp();
 
         $this->app['Illuminate\Contracts\Http\Kernel']->disableMiddleware();
@@ -26,10 +30,6 @@ abstract class TestCase extends BaseTestCase
      */
     protected function setUpPlatform()
     {
-        $this->app['config']->set('database.connections.sqlite.prefix', null);
-        $this->app['config']->set('database.connections.sqlite.database', ':memory:');
-        $this->app['config']->set('database.default', 'sqlite');
-
         // Installer instance
         $installer = $this->app['platform.installer'];
 
